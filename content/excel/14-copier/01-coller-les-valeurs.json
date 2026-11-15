@@ -1,0 +1,27 @@
+{
+ "id": "coller-les-valeurs",
+ "titre": "Coller uniquement les valeurs",
+ "niveau": 1,
+ "resume": "Coller un résultat sans emporter la formule.",
+ "motsCles": "collage spécial coller valeurs formule #REF copier",
+ "syntaxe": "Clic droit › Collage spécial › Valeurs",
+ "arguments": [
+  ["Collage normal","Copie la formule, qui s'adapte à son nouvel emplacement"],
+  ["Valeurs","Ne colle que le résultat affiché"],
+  ["Ctrl + Alt + V","Ouvre le collage spécial"]
+ ],
+ "grille": [
+  ["Prix HT","TVA","Prix TTC"],
+  ["100","20 %","120"],
+  ["200","20 %","240"],
+  ["50","20 %","60"],
+  ["",""],
+  ["Copie",""]
+ ],
+ "etapes": [
+  {"c":"C2","bar":"=A2*(1+B2)","t":"La cellule C2 affiche 120, mais elle contient une formule."},
+  {"c":"C2","sel":"C2:C4","drag":1,"copy":"C2:C4","keys":"Ctrl + C","t":"Copiez les trois résultats."},
+  {"c":"A7","keys":"Ctrl + V","set":{"A7":"#REF!","A8":"#REF!","A9":"#REF!"},"mark":"A7 A8 A9","t":"Un collage normal copie la formule. Déplacée, elle ne retrouve plus ses cellules : erreur."},
+  {"c":"A7","menu":"Clic droit › Collage spécial › <b>Valeurs</b>","set":{"A7":"120","A8":"240","A9":"60"},"copy":"","t":"Clic droit, Collage spécial, Valeurs : seuls les résultats sont collés, sans formule."}
+ ]
+}

@@ -1,0 +1,21 @@
+{
+ "id": "transposer",
+ "titre": "Transposer un tableau",
+ "niveau": 1,
+ "resume": "Transformer des lignes en colonnes, et inversement.",
+ "motsCles": "transposer collage spécial lignes colonnes pivoter inverser tableau",
+ "syntaxe": "Clic droit › Collage spécial › Transposer",
+ "arguments": [
+  ["Transposer","Les lignes deviennent des colonnes"],
+  ["Résultat","Une copie : le tableau d'origine reste en place"]
+ ],
+ "grille": [
+  ["Mois","Janv","Févr","Mars"],
+  ["Ventes","120","90","150"]
+ ],
+ "etapes": [
+  {"c":"A1","sel":"A1:D2","drag":1,"copy":"A1:D2","keys":"Ctrl + C","t":"Ce tableau est en ligne, on le voudrait en colonne. Copiez-le."},
+  {"c":"A4","menu":"Clic droit › Collage spécial › <b>Transposer</b>","set":{"A4":"Mois","B4":"Ventes","A5":"Janv","B5":"120","A6":"Févr","B6":"90","A7":"Mars","B7":"150"},"fmt":{"A4:B4":"b"},"copy":"","t":"Collage spécial, Transposer : les lignes deviennent des colonnes."},
+  {"c":"A4","sel":"A4:B7","t":"Les données sont identiques, seule l'orientation a changé."}
+ ]
+}

@@ -1,0 +1,25 @@
+{
+ "id": "proteger-par-mot-de-passe",
+ "titre": "Protéger par mot de passe",
+ "niveau": 2,
+ "resume": "Demander un mot de passe à l'ouverture du classeur.",
+ "motsCles": "mot de passe chiffrer protéger classeur ouverture sécurité",
+ "syntaxe": "Fichier › Informations › Protéger le classeur",
+ "ruban": true,
+ "arguments": [
+  ["Chiffrer avec mot de passe","Le fichier ne s'ouvre plus sans le mot de passe"],
+  ["Attention","Un mot de passe oublié ne se récupère pas"]
+ ],
+ "grille": [
+  ["Client","Ville","Montant"],
+  ["Durand","Lille","120"],
+  ["Martin","Lyon","340"],
+  ["Petit","Nantes","210"]
+ ],
+ "etapes": [
+  {"c":"A1","tab":"Fichier","btn":"Informations","t":"Ouvrez Fichier › Informations › Protéger le classeur."},
+  {"c":"A1","menu":"Protéger le classeur › <b>Chiffrer avec mot de passe</b>","rule":"••••••••","t":"« Chiffrer avec mot de passe » : saisissez-le deux fois, puis enregistrez."},
+  {"c":"A1","tab":"Fichier","msg":"Ce classeur est protégé. Saisissez le mot de passe pour l'ouvrir.","t":"À la prochaine ouverture, Excel le demandera."},
+  {"c":"A1","tab":"Fichier","t":"Attention : un mot de passe oublié ne se récupère pas. Notez-le dans un endroit sûr."}
+ ]
+}

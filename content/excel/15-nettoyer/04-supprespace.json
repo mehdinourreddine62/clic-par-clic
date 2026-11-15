@@ -1,0 +1,24 @@
+{
+ "id": "supprespace",
+ "titre": "SUPPRESPACE",
+ "niveau": 2,
+ "resume": "Retirer les espaces en trop qui faussent les recherches.",
+ "motsCles": "supprespace espaces en trop nettoyer texte trim nbcar",
+ "syntaxe": "=SUPPRESPACE(texte)",
+ "arguments": [
+  ["texte","La cellule à nettoyer"],
+  ["Effet","Retire les espaces au début, à la fin, et les espaces doubles"]
+ ],
+ "grille": [
+  ["Nom","Nettoyé","Avant","Après"],
+  ["  Durand","","",""],
+  ["Martin  ","","",""],
+  ["Petit   Louis","","",""]
+ ],
+ "etapes": [
+  {"c":"A2","mark":"A2 A4","t":"Des espaces en trop se cachent dans les données copiées. Ils font échouer les recherches."},
+  {"c":"B2","f":"=SUPPRESPACE(A2)","v":"Durand","fill":{"B3":"Martin","B4":"Petit Louis"},"t":"SUPPRESPACE retire les espaces du début, de la fin, et les doubles espaces."},
+  {"c":"C2","f":"=NBCAR(A2)","v":"8","t":"NBCAR compte les caractères : 8 dans la cellule d'origine."},
+  {"c":"D2","f":"=NBCAR(B2)","v":"6","mark":"C2 D2","t":"Et 6 après nettoyage : les deux espaces invisibles ont disparu."}
+ ]
+}

@@ -1,0 +1,27 @@
+{
+ "id": "tenir-sur-une-page",
+ "titre": "Faire tenir sur une page",
+ "niveau": 1,
+ "resume": "Éviter les colonnes qui débordent sur une deuxième feuille.",
+ "motsCles": "imprimer une page ajuster échelle paysage orientation largeur déborde",
+ "syntaxe": "Mise en page › Largeur : 1 page",
+ "ruban": true,
+ "arguments": [
+  ["Orientation","Portrait ou paysage"],
+  ["Largeur : 1 page","Réduit le tableau pour qu'il tienne en largeur"],
+  ["Hauteur : Automatique","Laisse le tableau continuer sur plusieurs pages"]
+ ],
+ "grille": [
+  ["Client","Janv","Févr","Mars","Avr","Mai","Juin","Juil"],
+  ["Durand","120","135","90","160","140","150","170"],
+  ["Martin","340","300","320","280","360","310","330"],
+  ["Bernard","90","110","95","130","100","120","105"],
+  ["Petit","210","190","230","250","220","240","260"]
+ ],
+ "etapes": [
+  {"c":"A1","tab":"Mise en page","keys":"Ctrl + P","preview":{"pages":[[5,6,0],[3,6,0]]},"t":"Le tableau est trop large : les dernières colonnes partent sur une deuxième page."},
+  {"c":"A1","tab":"Mise en page","btn":"Orientation","preview":{"pages":[[8,6,0]],"land":1},"t":"Première solution : Orientation › Paysage, pour gagner en largeur."},
+  {"c":"A1","tab":"Mise en page","btn":"Largeur : 1 page","preview":{"pages":[[8,6,0]]},"t":"Seconde solution : régler la largeur sur « 1 page ». Excel réduit le tableau pour qu'il tienne."},
+  {"c":"A1","tab":"Mise en page","t":"Regardez toujours l'aperçu avant d'imprimer : trop réduit, le texte devient illisible."}
+ ]
+}

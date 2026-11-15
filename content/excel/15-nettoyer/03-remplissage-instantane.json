@@ -1,0 +1,25 @@
+{
+ "id": "remplissage-instantane",
+ "titre": "Remplissage instantané",
+ "niveau": 1,
+ "resume": "Montrer un exemple et laisser Excel faire le reste.",
+ "motsCles": "remplissage instantané ctrl e flash fill extraire prénom nom exemple",
+ "syntaxe": "Ctrl + E",
+ "arguments": [
+  ["Exemple","Tapez vous-même le premier résultat"],
+  ["Ctrl + E","Excel devine la logique et remplit la colonne"],
+  ["Limite","Le résultat est fixe : il ne se met pas à jour"]
+ ],
+ "grille": [
+  ["Nom complet","Prénom","Nom"],
+  ["Marie Durand","",""],
+  ["Karim Benali","",""],
+  ["Julie Martin","",""]
+ ],
+ "etapes": [
+  {"c":"B2","f":"Marie","t":"Tapez vous-même le premier résultat attendu."},
+  {"c":"B3","kb":1,"keys":"Ctrl + E","set":{"B3":"Karim","B4":"Julie"},"t":"Appuyez sur Ctrl + E : Excel comprend la logique et remplit le reste."},
+  {"c":"C2","f":"DURAND","t":"Autre exemple : le nom, en majuscules."},
+  {"c":"C3","kb":1,"keys":"Ctrl + E","set":{"C3":"BENALI","C4":"MARTIN"},"t":"Ctrl + E à nouveau. Vérifiez toujours : ce sont des valeurs fixes, pas des formules."}
+ ]
+}

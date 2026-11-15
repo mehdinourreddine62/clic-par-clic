@@ -77,6 +77,10 @@ L'`id` devient l'adresse de la page (`/excel/ma-fonction/`) : minuscules, chiffr
 | `msg` | Message d'alerte affiché au centre de la feuille |
 | `freeze` | Volets figés : `{"r": 1, "c": 1}` trace un trait sous la ligne 1 et à droite de la colonne A |
 | `hide`, `hidec` | Lignes et colonnes masquées, pour simuler un défilement : `[2, 3]`, `["B", "C"]` |
+| `preview` | Aperçu avant impression : `{"pages": [[colonnes, lignes, titres], …], "land": 1}` |
+| `note` | Commentaire sur une cellule : `{"at": "C3", "text": "…", "reply": "…", "closed": 1}` |
+| `peer` | Cellule d'un collègue en coédition : `{"at": "C4", "name": "Léa"}` |
+| `retry` | Avec `msg` : affiche les boutons Réessayer et Annuler au lieu de OK |
 | `spark` | Mini-graphiques dans des cellules : `{"F2": {"r": "B2:E2", "type": "line"}}` |
 | `fmt` | En plus des lettres déjà listées : h en-tête de tableau, z ligne à bande |
 

@@ -16,9 +16,9 @@
   ["Relance",""]
  ],
  "etapes": [
-  {"c":"B3","f":"Fini","v":"","dd":{"at":"B3"},"msg":"Cette valeur ne correspond pas aux restrictions de validation des données définies pour cette cellule.","t":"Tapez une valeur absente de la liste : Excel la refuse."},
+  {"c":"B3","f":"Fini","v":"","dd":{"at":"B3"},"retry":1,"msg":"Cette valeur ne correspond pas aux restrictions de validation des données définies pour cette cellule.","t":"Tapez une valeur absente de la liste : Excel la refuse."},
   {"c":"B3","menu":"Validation des données › onglet <b>Alerte d'erreur</b>","rule":"Choisissez un statut dans la liste.","dd":{"at":"B3"},"t":"Ce message est peu clair. Dans l'onglet « Alerte d'erreur », écrivez le vôtre."},
-  {"c":"B3","f":"Fini","v":"","dd":{"at":"B3"},"msg":"Choisissez un statut dans la liste.","t":"La personne qui remplit le fichier comprend tout de suite quoi faire."},
+  {"c":"B3","f":"Fini","v":"","dd":{"at":"B3"},"retry":1,"msg":"Choisissez un statut dans la liste.","t":"La personne qui remplit le fichier comprend tout de suite quoi faire."},
   {"c":"B3","menu":"Validation des données › onglet <b>Message de saisie</b>","rule":"Cliquez sur la flèche","dd":{"at":"B3"},"t":"L'onglet « Message de saisie » affiche une aide dès qu'on clique sur la cellule."}
  ]
 }

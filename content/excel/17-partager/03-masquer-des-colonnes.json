@@ -1,0 +1,24 @@
+{
+ "id": "masquer-des-colonnes",
+ "titre": "Masquer des colonnes",
+ "niveau": 1,
+ "resume": "Cacher une colonne sans la supprimer.",
+ "motsCles": "masquer afficher colonne ligne cacher clic droit",
+ "syntaxe": "Clic droit sur la lettre › Masquer",
+ "arguments": [
+  ["Masquer","La colonne disparaît de l'écran et de l'impression"],
+  ["Afficher","Sélectionner les colonnes voisines, puis clic droit"]
+ ],
+ "grille": [
+  ["Client","Ville","Marge","Montant"],
+  ["Durand","Lille","32 %","120"],
+  ["Martin","Lyon","28 %","340"],
+  ["Petit","Nantes","35 %","210"]
+ ],
+ "etapes": [
+  {"c":"C1","sel":"col:C","menu":"Clic droit sur la lettre de la colonne › <b>Masquer</b>","spot":"cols","t":"Pour cacher une colonne sans la supprimer : clic droit sur sa lettre, Masquer."},
+  {"c":"B1","hidec":["C"],"t":"La colonne disparaît de l'écran et de l'impression. Les lettres passent directement de B à D."},
+  {"c":"B2","f":"Roubaix","hidec":["C"],"t":"Ses données sont toujours là, et les formules qui les utilisent continuent de fonctionner."},
+  {"c":"B1","sel":"B1:D1","menu":"Sélectionner les colonnes B et D › clic droit › <b>Afficher</b>","hidec":[],"t":"Pour la retrouver : sélectionnez les deux colonnes voisines, clic droit, Afficher."}
+ ]
+}

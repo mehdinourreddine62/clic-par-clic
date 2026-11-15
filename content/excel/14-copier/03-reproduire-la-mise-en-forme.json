@@ -1,0 +1,26 @@
+{
+ "id": "reproduire-la-mise-en-forme",
+ "titre": "Reproduire la mise en forme",
+ "niveau": 1,
+ "resume": "Copier l'apparence d'un tableau sur un autre, en un geste.",
+ "motsCles": "pinceau reproduire mise en forme copier format style",
+ "syntaxe": "Accueil › Reproduire la mise en forme",
+ "ruban": true,
+ "sansEnTete": true,
+ "arguments": [
+  ["Un clic sur le pinceau","Applique la mise en forme une fois"],
+  ["Double-clic","La garde active pour plusieurs applications"],
+  ["Échap","Désactive le pinceau"]
+ ],
+ "grille": [
+  ["Produit","Prix","","Article","Tarif"],
+  ["Stylo","1,20 €","","Gomme","0,80 €"],
+  ["Cahier","3,50 €","","Règle","1,50 €"]
+ ],
+ "etapes": [
+  {"c":"A1","tab":"Accueil","fmt":{"A1:B1":"h","A3:B3":"z"},"t":"Le premier tableau est mis en forme, le second non."},
+  {"c":"A1","sel":"A1:B3","drag":1,"tab":"Accueil","btn":"Reproduire la mise en forme","copy":"A1:B3","t":"Sélectionnez le modèle, puis cliquez sur le pinceau « Reproduire la mise en forme »."},
+  {"c":"D1","sel":"D1:E3","drag":1,"tab":"Accueil","copy":"","fmt":{"D1:E1":"h","D3:E3":"z"},"t":"Faites glisser sur l'autre tableau : il reçoit la même mise en forme, sans toucher aux valeurs."},
+  {"c":"D1","tab":"Accueil","btn":"Reproduire la mise en forme","t":"Double-cliquez sur le pinceau pour l'appliquer à plusieurs endroits à la suite."}
+ ]
+}

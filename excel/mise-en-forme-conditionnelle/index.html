@@ -32,7 +32,7 @@
     <div class="win">
       <div id="ribwrap"><div class="ribbon" id="ribbon"></div><div class="ribpanel" id="ribpanel" hidden></div></div>
       <div class="fbar"><div class="namebox" id="namebox"></div><div class="fx">fx</div><div class="formula" id="formula"></div></div>
-      <div class="stage"><div class="sheetwrap" id="sheetwrap"><div class="sheetinner"><table class="sheet" id="sheet"></table><div class="ov" id="ov"></div></div></div><aside class="pivot" id="pivot" hidden></aside><div class="keys" id="keys" hidden></div><div class="msg" id="msg" hidden></div></div>
+      <div class="stage"><div class="sheetwrap" id="sheetwrap"><div class="sheetinner"><table class="sheet" id="sheet"></table><div class="ov" id="ov"></div></div></div><aside class="pivot" id="pivot" hidden></aside><div class="keys" id="keys" hidden></div><div class="msg" id="msg" hidden></div><div class="preview" id="preview" hidden></div></div>
       <div class="tabs" id="tabs"></div>
       <p class="cap" id="text" aria-live="polite">Sélectionnez d'abord les cellules à surveiller.</p>
       <div class="bar">
@@ -46,7 +46,7 @@
     <p class="hint">Clavier : <kbd>←</kbd> <kbd>→</kbd> pour changer d'étape, <kbd>Espace</kbd> pour lancer ou mettre en pause.</p>
     <details class="sx"><summary>Syntaxe <code>Accueil › Mise en forme conditionnelle</code></summary><dl><dt>Règle simple</dt><dd>Colore les cellules supérieures, inférieures ou égales à une valeur</dd><dt>Règle par formule</dt><dd>Colore quand la formule renvoie VRAI</dd></dl></details>
     <details class="sx"><summary>Résumé écrit des étapes</summary><ol class="steps"><li>Sélectionnez d'abord les cellules à surveiller.</li><li>Les stocks inférieurs à 50 passent en rouge, et la couleur suivra les valeurs.</li><li>Avec une formule, chaque stock est comparé à son propre seuil et toute la ligne se colore.</li></ol></details>
-    <nav class="lnav" aria-label="Leçons voisines"><a href="../somme-cumulee/"><small>← Précédente</small>Somme cumulée</a><a class="nx" id="nextLesson" href="../mettre-sous-forme-de-tableau/"><small>Suivante →</small>Mettre sous forme de tableau</a></nav>
+    <nav class="lnav" aria-label="Leçons voisines"><a href="../somme-cumulee/"><small>← Précédente</small>Somme cumulée</a><a class="nx" id="nextLesson" href="../coller-les-valeurs/"><small>Suivante →</small>Coller uniquement les valeurs</a></nav>
   </main>
 </div>
 <script type="application/json" id="lesson-data">{"id":"mise-en-forme-conditionnelle","g":[["Produit","Stock","Seuil"],["Vis","120","50"],["Écrous","35","50"],["Rondelles","80","40"],["Chevilles","12","30"],["Clous","55","60"]],"s":[{"c":"B2","sel":"B2:B6","t":"Sélectionnez d'abord les cellules à surveiller."},{"c":"B2","sel":"B2:B6","menu":"Mise en forme conditionnelle › Règles de mise en surbrillance › \u003cb>Inférieur à…\u003c/b>","rule":"50","bad":"B3 B5","t":"Les stocks inférieurs à 50 passent en rouge, et la couleur suivra les valeurs."},{"c":"A2","sel":"A2:C6","menu":"Mise en forme conditionnelle › Nouvelle règle › \u003cb>Utiliser une formule\u003c/b>","rule":"=$B2\u003c$C2","bad":"A3 C3 A5 C5 A6 B6 C6","t":"Avec une formule, chaque stock est comparé à son propre seuil et toute la ligne se colore."}]}</script>

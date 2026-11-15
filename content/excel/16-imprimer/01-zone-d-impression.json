@@ -1,0 +1,26 @@
+{
+ "id": "zone-d-impression",
+ "titre": "Définir la zone d'impression",
+ "niveau": 1,
+ "resume": "N'imprimer que la partie utile de la feuille.",
+ "motsCles": "imprimer zone d'impression partie sélection aperçu",
+ "syntaxe": "Mise en page › Zone d'impression › Définir",
+ "ruban": true,
+ "arguments": [
+  ["Définir","N'imprime que les cellules sélectionnées"],
+  ["Annuler","Revient à la feuille entière"],
+  ["Ctrl + P","Ouvre l'aperçu avant impression"]
+ ],
+ "grille": [
+  ["Produit","Prix","Stock","","Brouillon"],
+  ["Stylo","1,20 €","40","","à vérifier"],
+  ["Cahier","3,50 €","25","","relancer"],
+  ["Classeur","5,90 €","12","",""]
+ ],
+ "etapes": [
+  {"c":"A1","tab":"Mise en page","keys":"Ctrl + P","preview":{"pages":[[5,5,0]]},"mark":"E1 E2 E3","t":"Par défaut, Excel imprime tout ce que contient la feuille, brouillons compris."},
+  {"c":"A1","sel":"A1:C4","drag":1,"tab":"Mise en page","btn":"Zone d'impression","copy":"A1:C4","t":"Sélectionnez ce qui doit sortir, puis Mise en page › Zone d'impression › Définir."},
+  {"c":"A1","tab":"Mise en page","keys":"Ctrl + P","preview":{"pages":[[3,5,0]]},"t":"L'aperçu ne montre plus que la zone choisie."},
+  {"c":"A1","tab":"Mise en page","btn":"Zone d'impression","copy":"","t":"Pour revenir à la feuille entière : Zone d'impression › Annuler."}
+ ]
+}

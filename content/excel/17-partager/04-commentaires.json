@@ -1,0 +1,26 @@
+{
+ "id": "commentaires",
+ "titre": "Ajouter un commentaire",
+ "niveau": 1,
+ "resume": "Laisser une remarque sur une cellule sans modifier son contenu.",
+ "motsCles": "commentaire note remarque révision discussion répondre",
+ "syntaxe": "Révision › Nouveau commentaire",
+ "ruban": true,
+ "arguments": [
+  ["Nouveau commentaire","Attache une remarque à la cellule"],
+  ["Repère coloré","Signale une cellule commentée"],
+  ["Répondre","La discussion reste dans le fichier"]
+ ],
+ "grille": [
+  ["Client","Ville","Montant"],
+  ["Durand","Lille","120"],
+  ["Martin","Lyon","340"],
+  ["Petit","Nantes","210"]
+ ],
+ "etapes": [
+  {"c":"C3","tab":"Révision","btn":"Nouveau commentaire","note":{"at":"C3","text":""},"t":"Cliquez sur une cellule, puis Révision › Nouveau commentaire."},
+  {"c":"C3","tab":"Révision","note":{"at":"C3","text":"Montant à vérifier avec le client."},"t":"Écrivez votre remarque : elle reste attachée à la cellule, sans modifier son contenu."},
+  {"c":"A1","tab":"Révision","note":{"at":"C3","closed":1},"t":"Un repère coloré dans le coin signale la présence d'un commentaire."},
+  {"c":"C3","tab":"Révision","note":{"at":"C3","text":"Montant à vérifier avec le client.","reply":"Vérifié, c'est bon."},"t":"Les autres peuvent répondre : la discussion reste dans le fichier."}
+ ]
+}

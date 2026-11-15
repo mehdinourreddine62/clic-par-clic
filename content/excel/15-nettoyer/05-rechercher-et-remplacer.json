@@ -1,0 +1,27 @@
+{
+ "id": "rechercher-et-remplacer",
+ "titre": "Rechercher et remplacer",
+ "niveau": 1,
+ "resume": "Corriger le même texte partout, en une seule fois.",
+ "motsCles": "rechercher remplacer ctrl f ctrl h corriger texte partout",
+ "syntaxe": "Ctrl + H",
+ "arguments": [
+  ["Ctrl + F","Rechercher"],
+  ["Ctrl + H","Remplacer"],
+  ["Remplacer tout","Corrige toutes les cellules concernées"]
+ ],
+ "grille": [
+  ["Client","Ville"],
+  ["Durand","St-Étienne"],
+  ["Martin","Lyon"],
+  ["Petit","St-Étienne"],
+  ["Simon","Paris"],
+  ["Robert","St-Étienne"]
+ ],
+ "etapes": [
+  {"c":"B2","kb":1,"keys":"Ctrl + F","mark":"B2 B4 B6","t":"Ctrl + F recherche un texte dans toute la feuille."},
+  {"c":"B2","menu":"Rechercher et remplacer › Rechercher : <b>St-</b> › Remplacer par : <b>Saint-</b>","keys":"Ctrl + H","t":"Ctrl + H ouvre Remplacer : indiquez l'ancien texte et le nouveau."},
+  {"c":"B2","set":{"B2":"Saint-Étienne","B4":"Saint-Étienne","B6":"Saint-Étienne"},"msg":"Nous avons effectué 3 remplacements.","t":"« Remplacer tout » corrige toutes les cellules d'un coup."},
+  {"c":"B1","sel":"col:B","t":"Sélectionnez d'abord une colonne pour limiter le remplacement à cette zone."}
+ ]
+}

@@ -1,0 +1,22 @@
+{
+ "id": "options-de-recopie",
+ "titre": "Les options de recopie",
+ "niveau": 2,
+ "resume": "Choisir ce que la poignée recopie : jours, mois ou simple copie.",
+ "motsCles": "options de recopie incrémentée jours ouvrés mois copier ctrl",
+ "syntaxe": "Bouton « Options de recopie incrémentée »",
+ "arguments": [
+  ["Copier les cellules","Répète la même valeur"],
+  ["Incrémenter une série","Continue la suite"],
+  ["Jours ouvrés, mois","Avance en sautant les week-ends, ou de mois en mois"]
+ ],
+ "grille": [
+  ["Échéance","Numéro"]
+ ],
+ "etapes": [
+  {"c":"A2","f":"05/01/2026","fill":{"A3":"06/01/2026","A4":"07/01/2026","A5":"08/01/2026"},"dd":{"at":"A5"},"t":"Après une recopie, un petit bouton apparaît en bas de la sélection : les options de recopie."},
+  {"c":"A2","sel":"A2:A5","dd":{"at":"A5","items":["Copier les cellules","Incrémenter une série","Incrémenter les jours ouvrés","Incrémenter les mois"],"open":1,"pick":3},"set":{"A3":"05/02/2026","A4":"05/03/2026","A5":"05/04/2026"},"t":"Choisissez « Incrémenter les mois » : la date avance d'un mois à chaque ligne."},
+  {"c":"A2","sel":"A2:A5","dd":{"at":"A5","items":["Copier les cellules","Incrémenter une série","Incrémenter les jours ouvrés","Incrémenter les mois"],"open":1,"pick":0},"set":{"A3":"05/01/2026","A4":"05/01/2026","A5":"05/01/2026"},"t":"« Copier les cellules » répète la même valeur partout."},
+  {"c":"B2","f":"10","keys":"Ctrl","fill":{"B3":"11","B4":"12","B5":"13"},"t":"Avec un seul nombre, maintenez Ctrl en tirant pour obtenir une suite au lieu d'une copie."}
+ ]
+}

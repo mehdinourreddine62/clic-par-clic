@@ -1,0 +1,26 @@
+{
+ "id": "travailler-a-plusieurs",
+ "titre": "Travailler à plusieurs",
+ "niveau": 2,
+ "resume": "Modifier le même classeur en même temps que ses collègues.",
+ "motsCles": "partager coédition collaborer onedrive sharepoint plusieurs en même temps",
+ "syntaxe": "Bouton Partager",
+ "ruban": true,
+ "arguments": [
+  ["OneDrive ou SharePoint","Le classeur doit y être enregistré"],
+  ["Partager","Inviter et choisir : peut modifier ou peut afficher"],
+  ["Coédition","Chacun voit les modifications des autres en direct"]
+ ],
+ "grille": [
+  ["Client","Ville","Montant"],
+  ["Durand","Lille","120"],
+  ["Martin","Lyon","340"],
+  ["Petit","Nantes","210"]
+ ],
+ "etapes": [
+  {"c":"A1","tab":"Fichier","btn":"Enregistrer sous","t":"Pour travailler à plusieurs, enregistrez d'abord le classeur sur OneDrive ou SharePoint."},
+  {"c":"A1","menu":"Bouton <b>Partager</b>, en haut à droite › adresse du collègue › Peut modifier","t":"Cliquez sur Partager, invitez vos collègues et choisissez s'ils peuvent modifier ou seulement lire."},
+  {"c":"A2","tab":"Accueil","peer":{"at":"C4","name":"Léa"},"t":"Chacun voit la cellule où travaillent les autres, en couleur et avec leur nom."},
+  {"c":"A2","tab":"Accueil","peer":{"at":"C4","name":"Léa"},"set":{"C4":"250"},"t":"Les modifications apparaissent en direct, sans s'envoyer le fichier par e-mail."}
+ ]
+}

@@ -1,10 +1,10 @@
 /* Lecteur animé d'une leçon Excel */
 const TABS=["Fichier","Accueil","Insertion","Mise en page","Formules","Données","Révision","Affichage"];
 const RIB={
- "Fichier":[["Classeur",["Nouveau","Ouvrir","Enregistrer","Enregistrer sous","Imprimer"]]],
- "Accueil":[["Presse-papiers",["Coller","Couper","Copier"]],["Police",["G","I","S","Bordures","Remplissage"]],["Alignement",["Gauche","Centrer","Droite"]],["Nombre",["€","%","000"]],["Styles",["Mise en forme conditionnelle","Mettre sous forme de tableau"]],["Édition",["Somme","Rechercher"]]],
+ "Fichier":[["Classeur",["Informations","Nouveau","Ouvrir","Enregistrer","Enregistrer sous","Imprimer"]]],
+ "Accueil":[["Presse-papiers",["Coller","Couper","Copier","Reproduire la mise en forme"]],["Police",["G","I","S","Bordures","Remplissage"]],["Alignement",["Gauche","Centrer","Droite"]],["Nombre",["€","%","000"]],["Styles",["Mise en forme conditionnelle","Mettre sous forme de tableau"]],["Édition",["Somme","Rechercher"]]],
  "Insertion":[["Tableaux",["Tableau croisé dynamique","Tableau"]],["Illustrations",["Images","Formes"]],["Graphiques",["Histogramme","Barres","Courbes","Secteurs","Nuage de points"]],["Sparkline",["Sparkline Courbe","Sparkline Histogramme"]]],
- "Mise en page":[["Mise en page",["Marges","Orientation","Taille","Zone d'impression"]]],
+ "Mise en page":[["Mise en page",["Marges","Orientation","Taille","Zone d'impression","Sauts de page","Imprimer les titres"]],["Mise à l'échelle",["Largeur : 1 page","Hauteur : Automatique"]]],
  "Formules":[["Bibliothèque de fonctions",["Insérer une fonction","Somme automatique","Logique","Texte","Date et heure","Recherche"]]],
  "Données":[["Trier et filtrer",["Trier","Filtrer"]],["Outils de données",["Validation des données","Supprimer les doublons","Convertir"]]],
  "Révision":[["Vérification",["Orthographe"]],["Commentaires",["Nouveau commentaire"]],["Protéger",["Protéger la feuille"]]],
@@ -12,7 +12,7 @@ const RIB={
  "Analyse du tableau croisé":[["Données",["Actualiser","Changer la source de données"]],["Filtrer",["Insérer un segment"]],["Outils",["Graphique croisé dynamique"]]],
  "Création de tableau":[["Options de style",["Ligne d'en-tête","Ligne Total","Lignes à bandes"]]],
  "Sparkline":[["Type",["Courbe","Histogramme"]],["Afficher",["Point haut","Point bas"]]],
- "Affichage":[["Affichages",["Normal","Mise en page"]],["Fenêtre",["Figer les volets"]],["Zoom",["Zoom","100 %"]]]};
+ "Affichage":[["Affichages",["Normal","Aperçu des sauts de page","Mise en page"]],["Fenêtre",["Figer les volets"]],["Zoom",["Zoom","100 %"]]]};
 
 /* ---------- moteur de la feuille ---------- */
 let cur=null,idx=0,playing=false,running=false,token=0,boxes={};
@@ -23,7 +23,7 @@ let curC=0,curR=0;
 function dims(les){
   let C=0,R=les.g.length;les.g.forEach(r=>C=Math.max(C,r.length));
   const t=k=>{if(!/^\$?[A-Z]+\$?\d/.test(k))return;const g=pRange(k);C=Math.max(C,g.c2+1);R=Math.max(R,g.r2+1);};
-  les.s.forEach(s=>[s.c,s.sel,s.sel2,s.copy,s.dd&&s.dd.at,...Object.keys(s.spark||{}),...ls(s.mark),...ls(s.spill),...Object.keys(s.set||{}),...Object.keys(s.fill||{}),...Object.keys(s.fmt||{})].filter(Boolean).forEach(t));
+  les.s.forEach(s=>[s.c,s.sel,s.sel2,s.copy,s.dd&&s.dd.at,s.note&&s.note.at,s.peer&&s.peer.at,...Object.keys(s.spark||{}),...ls(s.mark),...ls(s.spill),...Object.keys(s.set||{}),...Object.keys(s.fill||{}),...Object.keys(s.fmt||{})].filter(Boolean).forEach(t));
   les._dr=R;
   if(les.chart){
     if(innerWidth<640){C=Math.max(C,4);R=Math.max(R,les._dr+8);}
@@ -41,7 +41,7 @@ function selR(x){
 }
 function stateAt(les,i){
   const v={},fm={};les.g.forEach((row,r)=>row.forEach((x,c)=>{if(x!=="")v[colName(c)+(r+1)]=x;}));
-  let bad={},spill=[],hide=[],fmt={},w={...(les.w||{})},copy="",sheets={list:["Feuil1"],on:0},chart=null,spark={},pivot=null,dd=null,freeze={},hidec=[];
+  let bad={},spill=[],hide=[],fmt={},w={...(les.w||{})},copy="",sheets={list:["Feuil1"],on:0},chart=null,spark={},pivot=null,dd=null,freeze={},hidec=[],note=null,peer=null;
   const put=(k,val)=>{if(val==="")delete v[k];else v[k]=val;};
   for(let n=0;n<=i;n++){const s=les.s[n];
     if(s.f!==undefined){if(s.f[0]==="=")fm[s.c]=s.f;else delete fm[s.c];put(s.c,s.v!==undefined?s.v:s.f);}
@@ -59,6 +59,8 @@ function stateAt(les,i){
     if(s.pivot!==undefined)pivot=s.pivot||null;
     if(dd&&(dd.open||dd.pick!=null))dd={at:dd.at};
     if(s.dd!==undefined)dd=s.dd||null;
+    if(s.note!==undefined)note=s.note||null;
+    if(s.peer!==undefined)peer=s.peer||null;
     if(s.spark)Object.assign(spark,s.spark);
     if(s.freeze)freeze=s.freeze;
     if(s.hidec)hidec=s.hidec;
@@ -66,7 +68,7 @@ function stateAt(les,i){
       if(!s.chart)chart=null;
       else{chart={...(chart||les.chart||{})};if(typeof s.chart==="object")Object.assign(chart,s.chart);}
     }}
-  return{v,fm,bad,spill,hide,fmt,w,copy,sheets,chart,spark,pivot,dd,freeze,hidec};
+  return{v,fm,bad,spill,hide,fmt,w,copy,sheets,chart,spark,pivot,dd,freeze,hidec,note,peer};
 }
 function build(les){
   const{C,R}=dims(les);curC=C;curR=R;
@@ -104,7 +106,8 @@ function persist(st){
   document.querySelectorAll("#sheet tbody tr").forEach(tr=>tr.classList.toggle("frr",+tr.dataset.r===fz.r));
   document.querySelectorAll("#sheet td[data-x],#sheet thead th[data-c]").forEach(e=>{const x=+(e.dataset.x!==undefined?e.dataset.x:e.dataset.c);e.classList.toggle("frc",!!fz.c&&x===fz.c-1);e.classList.toggle("hidc",st.hidec.includes(colName(x)));});
   for(const[k,o]of Object.entries(st.spark)){const td=cellEl(k);if(td)td.innerHTML=sparkSvg(cellsOf(o.r).map(c=>num(st.v[c])),o.type);}
-  lastSt=st;renderPivot(st);renderDD(st);
+  lastSt=st;renderPivot(st);renderDD(st);renderNote(st);
+  setBox("peer",st.peer?pRange(st.peer.at):null,"peer");if(st.peer&&boxes.peer)boxes.peer.el.dataset.n=st.peer.name;
   renderChart(st);
 }
 let lastSt=null;
@@ -124,6 +127,14 @@ function renderPivot(st){
   const isNew=x=>p.pick&&(x===p.pick||x.endsWith(" de "+p.pick));
   el.innerHTML=`<b>Champs de tableau croisé dynamique</b><div class="pf">${p.fields.map(f=>`<span class="${p.pick===f?"hot":""}"><i class="${used(f)?"on":""}"></i>${esc(f)}</span>`).join("")}</div><div class="pz">${zones.map(([n,l])=>`<div><small>${n}</small>${l.map(x=>`<em class="${isNew(x)?"new":""}">${esc(x)}</em>`).join("")}</div>`).join("")}</div>`;
   if(was)setTimeout(placeAll,30);
+}
+function renderNote(st){
+  document.querySelectorAll("#ov .ntc,#ov .ntb").forEach(e=>e.remove());
+  const n=st&&st.note;if(!n)return;const r=rect(pRange(n.at));if(!r)return;
+  const c=document.createElement("div");c.className="ntc";Object.assign(c.style,{left:r.x+r.w-9+"px",top:r.y+"px"});$("#ov").appendChild(c);
+  if(n.closed)return;
+  const b=document.createElement("div");b.className="ntb";Object.assign(b.style,innerWidth<640?{left:Math.max(4,r.x+r.w-190)+"px",top:r.y+r.h+7+"px"}:{left:r.x+r.w+8+"px",top:r.y+"px"});
+  b.innerHTML=`<b>Vous</b><p>${n.text?esc(n.text):'<span class="caret"></span>'}</p>${n.reply?`<b>Léa</b><p>${esc(n.reply)}</p>`:""}`;$("#ov").appendChild(b);
 }
 function renderDD(st){
   document.querySelectorAll("#ov .dda,#ov .ddl").forEach(e=>e.remove());
@@ -303,7 +314,7 @@ function setBox(key,g,cls,color){
   b.g=g;if(color)b.el.style.color=`var(--${color})`;place(b);
 }
 const clearBoxes=pre=>{for(const k in boxes)if(k.startsWith(pre))setBox(k,null);};
-const placeAll=()=>{for(const k in boxes)place(boxes[k]);placeChart();if(lastSt)renderDD(lastSt);};
+const placeAll=()=>{for(const k in boxes)place(boxes[k]);placeChart();if(lastSt){renderDD(lastSt);renderNote(lastSt);}};
 function refBoxes(f,st){
   const refs=f&&f[0]==="="?colorize(f).refs:[];
   refs.forEach((k,j)=>{let g=pRange(k);if(k.endsWith("#")){const sp=st.spill.find(x=>x.split(":")[0]===k.slice(0,-1));if(sp)g=pRange(sp);}setBox("ref"+j,g,"ref","r"+(j%6));});
@@ -351,7 +362,11 @@ function transient(s){
   const map={ribbon:"#ribwrap",namebox:"#namebox",formula:"#formula",tabs:"#tabs",cols:"#sheet thead th.on",rows:"#sheet tbody th.on"};
   ls(s.spot).forEach(z=>{if(z==="cell"){if(boxes.act)boxes.act.el.classList.add("spot");return;}document.querySelectorAll(map[z]).forEach(e=>e.classList.add("spot"));});
   setBox("sel2",s.sel2?pRange(s.sel2):null,"selb");
-  const m=$("#msg");if(m){if(s.msg){m.innerHTML=`<b>Microsoft Excel</b><p>${esc(s.msg)}</p><div><span>Réessayer</span><span>Annuler</span></div>`;m.hidden=false;}else m.hidden=true;}
+  const m=$("#msg");if(m){if(s.msg){m.innerHTML=`<b>Microsoft Excel</b><p>${esc(s.msg)}</p><div>${s.retry?"<span>Réessayer</span><span>Annuler</span>":"<span>OK</span>"}</div>`;m.hidden=false;}else m.hidden=true;}
+  const pv=$("#preview");
+  if(pv){if(s.preview){const P=s.preview;
+    pv.innerHTML=`<b>Aperçu avant impression</b><div class="pgs">${P.pages.map(([c,r,h],i)=>`<div class="pg${P.land?" land":""}"><div class="pgt" style="grid-template-columns:repeat(${c},1fr);width:${Math.min(c*17,P.land?138:98)}px">${Array.from({length:c*r},(_,k)=>`<i class="${h&&k<c?"ph":""}"></i>`).join("")}</div><small>Page ${i+1}</small></div>`).join("")}</div>`;
+    pv.hidden=false;}else pv.hidden=true;}
   const k=$("#keys");
   if(s.keys){k.innerHTML=s.keys.split(" + ").map(x=>`<kbd>${esc(x)}</kbd>`).join(" + ");k.hidden=false;k.classList.remove("in");void k.offsetWidth;k.classList.add("in");}else k.hidden=true;
 }

@@ -1,0 +1,27 @@
+{
+ "id": "proteger-une-feuille",
+ "titre": "Protéger une feuille",
+ "niveau": 2,
+ "resume": "Empêcher qu'une formule soit effacée par erreur.",
+ "motsCles": "protéger feuille verrouiller cellules formules protection modifier",
+ "syntaxe": "Révision › Protéger la feuille",
+ "ruban": true,
+ "arguments": [
+  ["Verrouillée","Toutes les cellules le sont par défaut"],
+  ["Déverrouiller","À faire pour les cellules à laisser modifiables"],
+  ["Protéger la feuille","Active le verrouillage"]
+ ],
+ "grille": [
+  ["Article","Quantité","Prix","Total"],
+  ["Stylo","10","1,20 €","12,00 €"],
+  ["Cahier","4","3,50 €","14,00 €"],
+  ["Classeur","2","5,90 €","11,80 €"]
+ ],
+ "etapes": [
+  {"c":"D2","tab":"Révision","bar":"=B2*C2","mark":"D2 D3 D4","t":"Les formules de la colonne Total ne doivent pas être effacées par erreur."},
+  {"c":"B2","sel":"B2:C4","drag":1,"menu":"Clic droit › Format de cellule › Protection › décocher <b>Verrouillée</b>","t":"Sélectionnez les cellules à laisser modifiables et décochez « Verrouillée »."},
+  {"c":"B2","tab":"Révision","btn":"Protéger la feuille","t":"Révision › Protéger la feuille active le verrouillage de tout le reste."},
+  {"c":"D2","tab":"Révision","f":"5","v":"12,00 €","bar":"=B2*C2","msg":"La cellule que vous essayez de modifier se trouve sur une feuille protégée.","t":"Essayez de modifier un total : Excel refuse."},
+  {"c":"B2","tab":"Révision","f":"12","set":{"D2":"14,40 €"},"mark":"D2","t":"Les quantités restent modifiables, et le total se recalcule."}
+ ]
+}

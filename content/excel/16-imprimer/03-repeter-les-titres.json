@@ -1,0 +1,29 @@
+{
+ "id": "repeter-les-titres",
+ "titre": "Répéter les titres sur chaque page",
+ "niveau": 2,
+ "resume": "Garder la ligne de titres en haut de toutes les pages imprimées.",
+ "motsCles": "imprimer les titres répéter ligne en-tête chaque page long tableau",
+ "syntaxe": "Mise en page › Imprimer les titres",
+ "ruban": true,
+ "arguments": [
+  ["Lignes à répéter en haut","La ou les lignes de titres, par exemple $1:$1"],
+  ["Colonnes à répéter à gauche","Pour un tableau très large"]
+ ],
+ "grille": [
+  ["Client","Ville","Montant"],
+  ["Durand","Lille","120"],
+  ["Martin","Lyon","340"],
+  ["Bernard","Paris","90"],
+  ["Petit","Nantes","210"],
+  ["Robert","Lille","150"],
+  ["Richard","Paris","400"],
+  ["Moreau","Lyon","75"],
+  ["Simon","Nantes","260"]
+ ],
+ "etapes": [
+  {"c":"A1","tab":"Mise en page","keys":"Ctrl + P","preview":{"pages":[[3,8,1],[3,6,0]]},"t":"Sur un long tableau, la deuxième page n'a plus de titres : on ne sait plus quoi lire."},
+  {"c":"A1","sel":"row:1","menu":"Imprimer les titres › <b>Lignes à répéter en haut</b>","rule":"$1:$1","t":"Mise en page › Imprimer les titres : indiquez la ligne 1 comme ligne à répéter."},
+  {"c":"A1","tab":"Mise en page","keys":"Ctrl + P","preview":{"pages":[[3,8,1],[3,7,1]]},"t":"Les titres reviennent en haut de chaque page."}
+ ]
+}
