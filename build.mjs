@@ -64,8 +64,8 @@ ${FONTS}
 
 /* ---------- accueil ---------- */
 function home(){
-  const title=`Apprendre Excel gratuitement : ${lessons.length} leçons animées | ${SITE.nom}`;
-  const desc=`Cours Excel gratuit pour débutants et étudiants : ${lessons.length} leçons animées pas à pas. Découverte de l'écran et du ruban, raccourcis clavier, SOMME, SI, RECHERCHEV, RECHERCHEX, dates et pourcentages.`;
+  const title=`Apprendre Excel gratuitement, en animation | ${SITE.nom}`;
+  const desc=`Cours Excel gratuit pour débutants et étudiants : des leçons animées pas à pas. Découverte de l'écran et du ruban, raccourcis clavier, graphiques, SOMME, SI, RECHERCHEV, RECHERCHEX, dates et pourcentages.`;
   const ld={"@context":"https://schema.org","@type":"Course",name:`${SITE.nom} : apprendre Excel en animation`,description:desc,inLanguage:"fr",isAccessibleForFree:true,url:SITE.url,provider:{"@type":"Organization",name:SITE.nom,url:SITE.url}};
   const sections=cats.map(c=>{
     const g=lessons.filter(l=>l.cat===c);if(!g.length)return"";
@@ -76,7 +76,7 @@ function home(){
   return head({title,desc,url:SITE.url,root:"",ld,extra:verif})+`  <div id="home">
     <header class="hero">
       <h1>Excel, <em>une formule à la fois.</em></h1>
-      <p>${lessons.length} leçons animées : la découverte d'Excel, puis les formules, directement dans une feuille de calcul.</p>
+      <p>Des leçons animées pour découvrir Excel, puis maîtriser les formules et les graphiques, directement dans une feuille de calcul.</p>
     </header>
     <div class="tools">
       <input id="q" type="search" placeholder="Rechercher : somme, date, pourcentage…" aria-label="Rechercher une leçon">
