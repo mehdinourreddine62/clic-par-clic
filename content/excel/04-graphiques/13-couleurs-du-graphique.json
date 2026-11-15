@@ -1,0 +1,28 @@
+{
+ "id": "couleurs-du-graphique",
+ "titre": "Couleurs et styles",
+ "niveau": 1,
+ "resume": "Changer les couleurs et mettre une barre en évidence.",
+ "motsCles": "couleur palette style mettre en évidence barre graphique modifier les couleurs",
+ "syntaxe": "Création de graphique › Modifier les couleurs",
+ "ruban": true,
+ "graphique": {"type":"col","labels":"A2:A5","series":["B2:B5"],"title":"Ventes par produit","at":"D2:H8"},
+ "arguments": [
+  ["Modifier les couleurs","Applique une palette à tout le graphique"],
+  ["Deux clics sur une barre","La sélectionne seule pour la colorer"],
+  ["Conseil","Une seule couleur forte, pour guider le regard"]
+ ],
+ "grille": [
+  ["Produit","Ventes"],
+  ["Stylos","320"],
+  ["Cahiers","210"],
+  ["Classeurs","140"],
+  ["Trousses","260"]
+ ],
+ "etapes": [
+  {"c":"A1","tab":"Création de graphique","chart":{"selected":1},"t":"Un clic sur le graphique fait apparaître l'onglet Création de graphique."},
+  {"c":"A1","tab":"Création de graphique","btn":"Modifier les couleurs","chart":{"color":"r4"},"t":"« Modifier les couleurs » applique une autre palette à tout le graphique."},
+  {"c":"A1","tab":"Création de graphique","chart":{"color":"r0","hi":0},"t":"Cliquez deux fois sur une barre pour la sélectionner seule, et gardez-lui une couleur vive."},
+  {"c":"A1","tab":"Création de graphique","chart":{"selected":0},"t":"Une seule couleur forte guide le regard. Évitez l'arc-en-ciel : il ne veut rien dire."}
+ ]
+}

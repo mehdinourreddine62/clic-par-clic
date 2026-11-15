@@ -1,0 +1,30 @@
+{
+ "id": "choisir-un-type-de-graphique",
+ "titre": "Choisir le bon type",
+ "niveau": 1,
+ "resume": "Histogramme, courbe, secteurs ou barres : à chaque question son graphique.",
+ "motsCles": "type graphique choisir histogramme courbe secteurs barres comparer évolution répartition",
+ "syntaxe": "Une question, un type de graphique",
+ "ruban": true,
+ "graphique": {"type":"col","labels":"A2:A5","series":["B2:B5"],"title":"Ventes par mois","at":"D2:H8"},
+ "arguments": [
+  ["Histogramme","Comparer des valeurs"],
+  ["Courbe","Montrer une évolution dans le temps"],
+  ["Secteurs","Montrer la part de chacun dans un total"],
+  ["Barres","Faire un classement, afficher des noms longs"]
+ ],
+ "grille": [
+  ["Mois","Ventes"],
+  ["Janvier","120"],
+  ["Février","90"],
+  ["Mars","150"],
+  ["Avril","110"]
+ ],
+ "etapes": [
+  {"c":"A1","sel":"A1:B5","drag":1,"tab":"Insertion","btn":"Histogramme","chart":1,"t":"Pour comparer des valeurs entre elles : l'histogramme."},
+  {"c":"A1","sel":"A1:B5","tab":"Insertion","btn":"Courbes","chart":{"type":"line"},"t":"Pour montrer une évolution dans le temps : la courbe."},
+  {"c":"A1","sel":"A1:B5","tab":"Insertion","btn":"Secteurs","chart":{"type":"pie","legend":true},"t":"Pour montrer la part de chacun dans un total : les secteurs."},
+  {"c":"A1","sel":"A1:B5","tab":"Insertion","btn":"Barres","chart":{"type":"bar","legend":false},"t":"Pour un classement, ou des noms longs : les barres horizontales."},
+  {"c":"A1","sel":"A1:B5","tab":"Création de graphique","btn":"Modifier le type de graphique","chart":{"type":"col"},"t":"Vous pouvez changer d'avis : « Modifier le type de graphique » conserve les données."}
+ ]
+}

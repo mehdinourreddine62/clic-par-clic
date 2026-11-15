@@ -1,0 +1,29 @@
+{
+ "id": "graphique-en-secteurs",
+ "titre": "Secteurs (camembert)",
+ "niveau": 1,
+ "resume": "Montrer comment un total se répartit, et savoir quand l'éviter.",
+ "motsCles": "secteurs camembert répartition pourcentage parts total graphique",
+ "syntaxe": "Insertion › Secteurs",
+ "ruban": true,
+ "graphique": {"type":"pie","labels":"A2:A5","series":["B2:B5"],"title":"Budget du mois","legend":true,"at":"D1:H9"},
+ "arguments": [
+  ["Une part","Une catégorie"],
+  ["Le disque entier","Le total, soit 100 %"],
+  ["À éviter","Au-delà de cinq ou six parts"]
+ ],
+ "grille": [
+  ["Poste","Budget"],
+  ["Loyer","600"],
+  ["Courses","300"],
+  ["Transport","150"],
+  ["Loisirs","150"]
+ ],
+ "etapes": [
+  {"c":"A1","sel":"A1:B5","drag":1,"tab":"Insertion","btn":"Secteurs","chart":1,"t":"Les secteurs montrent comment un total se répartit."},
+  {"c":"A1","tab":"Insertion","chart":{"dlabels":true},"t":"Affichez les pourcentages avec les étiquettes de données : Excel les calcule tout seul."},
+  {"c":"A2","tab":"Insertion","chart":{"hi":0},"mark":"B2","t":"Il fonctionne bien avec peu de parts, dont une domine : le loyer pèse la moitié du budget."},
+  {"c":"A6","tab":"Insertion","set":{"A6":"Sport","B6":"60","A7":"Téléphone","B7":"40","A8":"Livres","B8":"50","A9":"Divers","B9":"70"},"chart":{"labels":"A2:A9","series":["B2:B9"],"hi":null},"t":"Au-delà de cinq ou six parts, il devient illisible."},
+  {"c":"A6","tab":"Création de graphique","btn":"Modifier le type de graphique","chart":{"type":"bar","legend":false},"t":"Préférez alors des barres : les mêmes données redeviennent comparables."}
+ ]
+}

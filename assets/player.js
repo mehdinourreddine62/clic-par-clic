@@ -3,11 +3,12 @@ const TABS=["Fichier","Accueil","Insertion","Mise en page","Formules","Données"
 const RIB={
  "Fichier":[["Classeur",["Nouveau","Ouvrir","Enregistrer","Enregistrer sous","Imprimer"]]],
  "Accueil":[["Presse-papiers",["Coller","Couper","Copier"]],["Police",["G","I","S","Bordures","Remplissage"]],["Alignement",["Gauche","Centrer","Droite"]],["Nombre",["€","%","000"]],["Styles",["Mise en forme conditionnelle"]],["Édition",["Somme","Rechercher"]]],
- "Insertion":[["Tableaux",["Tableau croisé dynamique","Tableau"]],["Illustrations",["Images","Formes"]],["Graphiques",["Histogramme","Courbes","Secteurs"]]],
+ "Insertion":[["Tableaux",["Tableau croisé dynamique","Tableau"]],["Illustrations",["Images","Formes"]],["Graphiques",["Histogramme","Barres","Courbes","Secteurs"]]],
  "Mise en page":[["Mise en page",["Marges","Orientation","Taille","Zone d'impression"]]],
  "Formules":[["Bibliothèque de fonctions",["Insérer une fonction","Somme automatique","Logique","Texte","Date et heure","Recherche"]]],
  "Données":[["Trier et filtrer",["Trier","Filtrer"]],["Outils de données",["Supprimer les doublons","Convertir"]]],
  "Révision":[["Vérification",["Orthographe"]],["Commentaires",["Nouveau commentaire"]],["Protéger",["Protéger la feuille"]]],
+ "Création de graphique":[["Dispositions",["Ajouter un élément"]],["Styles",["Modifier les couleurs"]],["Données",["Intervertir lignes/colonnes","Sélectionner des données"]],["Type",["Modifier le type de graphique"]],["Emplacement",["Déplacer le graphique"]]],
  "Affichage":[["Affichages",["Normal","Mise en page"]],["Fenêtre",["Figer les volets"]],["Zoom",["Zoom","100 %"]]]};
 
 /* ---------- moteur de la feuille ---------- */
@@ -20,7 +21,11 @@ function dims(les){
   let C=0,R=les.g.length;les.g.forEach(r=>C=Math.max(C,r.length));
   const t=k=>{if(!/^\$?[A-Z]+\$?\d/.test(k))return;const g=pRange(k);C=Math.max(C,g.c2+1);R=Math.max(R,g.r2+1);};
   les.s.forEach(s=>[s.c,s.sel,s.sel2,s.copy,...ls(s.mark),...ls(s.spill),...Object.keys(s.set||{}),...Object.keys(s.fill||{}),...Object.keys(s.fmt||{})].filter(Boolean).forEach(t));
-  if(les.chart)t(les.chart.at);
+  les._dr=R;
+  if(les.chart){
+    if(innerWidth<640){C=Math.max(C,4);R=Math.max(R,les._dr+8);}
+    else[les.chart.at,...les.s.map(s=>s.chart&&s.chart.at)].filter(a=>a&&a!=="all").forEach(t);
+  }
   return{C:innerWidth<640?C+1:Math.max(C+1,8),R:Math.max(R+1,7)};
 }
 function cellsOf(x){const g=pRange(x),o=[];for(let r=g.r1;r<=g.r2;r++)for(let c=g.c1;c<=g.c2;c++)o.push(colName(c)+(r+1));return o;}
@@ -32,7 +37,7 @@ function selR(x){
 }
 function stateAt(les,i){
   const v={},fm={};les.g.forEach((row,r)=>row.forEach((x,c)=>{if(x!=="")v[colName(c)+(r+1)]=x;}));
-  let bad={},spill=[],hide=[],fmt={},w={...(les.w||{})},copy="",sheets={list:["Feuil1"],on:0},chart=false;
+  let bad={},spill=[],hide=[],fmt={},w={...(les.w||{})},copy="",sheets={list:["Feuil1"],on:0},chart=null;
   const put=(k,val)=>{if(val==="")delete v[k];else v[k]=val;};
   for(let n=0;n<=i;n++){const s=les.s[n];
     if(s.f!==undefined){if(s.f[0]==="=")fm[s.c]=s.f;else delete fm[s.c];put(s.c,s.v!==undefined?s.v:s.f);}
@@ -45,7 +50,11 @@ function stateAt(les,i){
     if(s.w)Object.assign(w,s.w);
     if(s.copy!==undefined)copy=s.copy;
     if(s.sheets)sheets=s.sheets;
-    if(s.chart)chart=true;}
+    if(chart&&(chart.spot||chart.panel||chart.pick)){chart={...chart};delete chart.spot;delete chart.panel;delete chart.pick;}
+    if(s.chart!==undefined){
+      if(!s.chart)chart=null;
+      else{chart={...(chart||les.chart||{})};if(typeof s.chart==="object")Object.assign(chart,s.chart);}
+    }}
   return{v,fm,bad,spill,hide,fmt,w,copy,sheets,chart};
 }
 function build(les){
@@ -82,17 +91,138 @@ function persist(st){
   $("#tabs").innerHTML=st.sheets.list.map((n,j)=>`<span class="${j===st.sheets.on?"on":""}">${esc(n)}</span>`).join("")+"<span>+</span>";
   renderChart(st);
 }
-function placeChart(){const el=$("#chart");if(!el||!cur||!cur.chart)return;const r=rect(pRange(cur.chart.at));if(!r)return;Object.assign(el.style,{left:r.x+6+"px",top:r.y+4+"px",width:r.w-12+"px",height:r.h-8+"px"});}
+/* ---------- graphiques ---------- */
+const CH_COL=["r0","r4","r3","r2","r1","r5","k7","k8"];
+let chPrev=null,chAnim=false,chRaf=0;
+const num=x=>parseFloat(String(x||"0").replace(/[\s €%]/g,"").replace(",","."))||0;
+const fr=n=>(Math.round(n*10)/10).toLocaleString("fr-FR");
+const cutTxt=(s,n)=>s.length>n?s.slice(0,Math.max(1,n-1))+"…":s;
+function nice(m){if(m<=0)return 1;const p=Math.pow(10,Math.floor(Math.log10(m))),x=m/p;return(x<=1?1:x<=2?2:x<=2.5?2.5:x<=4?4:x<=5?5:10)*p;}
+function ticks(min,max,step){
+  if(!step){const d=max-min,a=d/5,p=Math.pow(10,Math.floor(Math.log10(a||1))),x=Math.round(a/p*100)/100;step=[1,2,5,10].includes(x)?a:d/4;}
+  const o=[];if(step<=0)return[min,max];for(let t=min;t<=max+1e-9&&o.length<12;t+=step)o.push(t);return o;
+}
+function chartRange(cfg){
+  if(cfg.at==="all")return{c1:0,r1:0,c2:curC-1,r2:curR-1};
+  if(innerWidth<640){const r=cur._dr+1;return{c1:0,r1:r,c2:3,r2:r+6};}
+  return pRange(cfg.at);
+}
+function chartModel(st){
+  const cfg=st.chart,rs=cfg.series||[cfg.vals];
+  return{cfg,labs:cellsOf(cfg.labels).map(k=>kind(st.v[k]||"")[1]),ser:rs.map(r=>cellsOf(r).map(k=>num(st.v[k]))),
+    names:rs.map((r,j)=>{const g=pRange(r);return(g.r1>0&&kind(st.v[colName(g.c1)+g.r1]||"")[1])||"Série "+(j+1);})};
+}
+function drawChart(el,M,ser,min,max,p,fresh){
+  const cfg=M.cfg,type=cfg.type||"col",W=el.clientWidth||300,H=el.clientHeight||200,nS=ser.length,nC=M.labs.length,CW=6.1;
+  const tok=j=>cfg.color&&nS===1?cfg.color:CH_COL[j%CH_COL.length],fill=j=>`fill="var(--${tok(j)})"`;
+  const dim=i=>cfg.hi!=null&&cfg.hi!==i?' opacity=".25"':"";
+  const axisOn=cfg.axis!==false,legOn=cfg.legend!=null?!!cfg.legend:nS>1,dl=!!cfg.dlabels;
+  const clamp=v=>Math.min(Math.max(v,min),max),span=(max-min)||1;
+  let L=12,R=W-12,T=10,B=H-10,grid="",body="",lab="",ttl="",leg="",spot=null;
+  const pw=cfg.panel?Math.min(160,W*.44):0;if(pw)R-=pw+4;
+  if(cfg.title){ttl=`<text class="ct${fresh.title?" cnew":""}" x="${(L+R)/2}" y="${T+12}" text-anchor="middle">${esc(cutTxt(cfg.title,Math.floor((R-L)/7)))}</text>`;if(cfg.spot==="title")spot=[L,T-5,R-L,24];T+=26;}
+  if(legOn){
+    const items=type==="pie"?M.labs.map((l,i)=>[l,CH_COL[i%CH_COL.length]]):M.names.map((n,j)=>[n,tok(j)]);
+    const rows=[[]];let w=0;
+    items.forEach(it=>{const iw=it[0].length*CW+26;if(w+iw>R-L&&rows[rows.length-1].length){rows.push([]);w=0;}rows[rows.length-1].push([it,iw]);w+=iw;});
+    B-=rows.length*15;
+    rows.forEach((row,ri)=>{let x=(L+R)/2-row.reduce((a,b)=>a+b[1],0)/2+6;const y=B+13+ri*15;
+      row.forEach(([it,iw])=>{leg+=`<rect x="${x}" y="${y-8}" width="9" height="9" rx="2" fill="var(--${it[1]})"/><text x="${x+13}" y="${y}">${esc(it[0])}</text>`;x+=iw;});});
+    if(cfg.spot==="legend")spot=[L,B+2,R-L,rows.length*15+5];
+    leg=`<g class="${fresh.legend?"cnew":""}">${leg}</g>`;B-=5;
+  }
+  if(type==="pie"){
+    const v0=ser[0],tot=v0.reduce((a,b)=>a+b,0)||1,cx=(L+R)/2,cy=(T+B)/2,r=Math.max(10,Math.min(R-L,B-T)/2-2);
+    let a=-Math.PI/2;
+    v0.forEach((v,i)=>{const sw=v/tot*2*Math.PI*p,a2=a+sw;
+      if(sw>.002){
+        if(sw>=2*Math.PI-.002)body+=`<circle cx="${cx}" cy="${cy}" r="${r}" fill="var(--${CH_COL[i%CH_COL.length]})"${dim(i)}/>`;
+        else body+=`<path d="M${cx} ${cy}L${cx+r*Math.cos(a)} ${cy+r*Math.sin(a)}A${r} ${r} 0 ${sw>Math.PI?1:0} 1 ${cx+r*Math.cos(a2)} ${cy+r*Math.sin(a2)}Z" fill="var(--${CH_COL[i%CH_COL.length]})" stroke="var(--surface)" stroke-width="1.5"${dim(i)}/>`;
+        if(dl&&p===1&&v/tot>=.045){const m=(a+a2)/2;lab+=`<text class="cdl cin${fresh.dlabels?" cnew":""}" x="${cx+r*.64*Math.cos(m)}" y="${cy+r*.64*Math.sin(m)+4}" text-anchor="middle">${fr(v/tot*100)} %</text>`;}
+      }a=a2;});
+    if(cfg.spot==="plot")spot=[cx-r-4,cy-r-4,2*r+8,2*r+8];
+  }else if(type==="bar"){
+    const v0=ser[0],lw=Math.min(Math.max(...M.labs.map(s=>s.length),1)*CW+12,(R-L)*.45);L+=lw;if(dl)R-=32;
+    const tk=ticks(min,max,cfg.step);if(axisOn)B-=16;
+    const X=v=>L+(clamp(v)-min)/span*(R-L),slot=(B-T)/nC;
+    if(axisOn){tk.forEach(t=>{const x=X(t);grid+=`<line class="cg" x1="${x}" x2="${x}" y1="${T}" y2="${B}"/><text x="${x}" y="${B+13}" text-anchor="middle">${fr(t)}</text>`;});if(cfg.spot==="axis")spot=[L-4,B+1,R-L+8,17];}
+    grid+=`<line class="cax" x1="${L}" x2="${L}" y1="${T}" y2="${B}"/>`;
+    v0.forEach((v,i)=>{const yc=B-slot*(i+.5),bh=slot*.62,w=Math.max(0,(X(v)-L)*p);
+      body+=`<rect x="${L}" y="${yc-bh/2}" width="${w}" height="${bh}" rx="1.5" ${fill(0)}${dim(i)}/>`;
+      lab+=`<text x="${L-6}" y="${yc+4}" text-anchor="end"${dim(i)}>${esc(cutTxt(M.labs[i],Math.floor(lw/CW)))}</text>`;
+      if(dl&&p===1)lab+=`<text class="cdl${fresh.dlabels?" cnew":""}" x="${L+w+5}" y="${yc+4}">${fr(v)}</text>`;});
+    if(cfg.spot==="plot")spot=[L-2,T-2,R-L+4,B-T+4];
+  }else{
+    if(dl)T+=14;
+    const tk=ticks(min,max,cfg.step),tl=tk.map(fr);
+    if(axisOn)L+=Math.max(...tl.map(s=>s.length))*CW+8;
+    B-=16;
+    const Y=v=>B-(clamp(v)-min)/span*(B-T),slot=(R-L)/nC;
+    if(axisOn){tk.forEach((t,i)=>{const y=Y(t);grid+=`<line class="cg" x1="${L}" x2="${R}" y1="${y}" y2="${y}"/><text x="${L-5}" y="${y+4}" text-anchor="end">${tl[i]}</text>`;});if(cfg.spot==="axis")spot=[2,T-8,L+2,B-T+16];}
+    grid+=`<line class="cax" x1="${L}" x2="${R}" y1="${B}" y2="${B}"/>`;
+    M.labs.forEach((l,i)=>lab+=`<text x="${L+slot*(i+.5)}" y="${B+13}" text-anchor="middle"${dim(i)}>${esc(cutTxt(l,Math.max(2,Math.floor(slot/CW))))}</text>`);
+    const dcls=`cdl${fresh.dlabels?" cnew":""}`;
+    if(type==="line"){
+      let g="";
+      ser.forEach((s,j)=>{const pts=s.map((v,i)=>[L+slot*(i+.5),Y(v)]);
+        g+=`<path d="M${pts.map(q=>q.join(" ")).join("L")}" fill="none" stroke="var(--${tok(j)})" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>`;
+        pts.forEach((q,i)=>{g+=`<circle cx="${q[0]}" cy="${q[1]}" r="${cfg.hi===i?6:3.2}" ${fill(j)} stroke="var(--surface)" stroke-width="1.5"/>`;
+          if(dl&&p===1)lab+=`<text class="${dcls}" x="${q[0]}" y="${q[1]-8}" text-anchor="middle">${fr(s[i])}</text>`;});});
+      body+=`<clipPath id="ccl"><rect x="0" y="0" width="${L+(R-L)*p+4}" height="${H}"/></clipPath><g clip-path="url(#ccl)">${g}</g>`;
+    }else if(type==="stack"){
+      const cum=new Array(nC).fill(0);
+      ser.forEach((s,j)=>s.forEach((v,i)=>{const y0=B-(B-Y(min+cum[i]))*p;cum[i]+=v;const y1=B-(B-Y(min+cum[i]))*p,bw=slot*.58,x=L+slot*i+slot*.21;
+        body+=`<rect x="${x}" y="${y1}" width="${bw}" height="${Math.max(0,y0-y1)}" ${fill(j)}${dim(i)}/>`;
+        if(dl&&p===1&&y0-y1>13)lab+=`<text class="${dcls} cin" x="${x+bw/2}" y="${(y0+y1)/2+4}" text-anchor="middle">${fr(v)}</text>`;}));
+    }else{
+      ser.forEach((s,j)=>s.forEach((v,i)=>{const gw=slot*.68,bw=gw/nS,x=L+slot*i+slot*.16+bw*j,h=Math.max(0,(B-Y(v))*p);
+        body+=`<rect x="${x}" y="${B-h}" width="${Math.max(1,bw-(nS>1?1.5:0))}" height="${h}" rx="1.5" ${fill(j)}${dim(i)}/>`;
+        if(dl&&p===1)lab+=`<text class="${dcls}" x="${x+bw/2}" y="${B-h-4}" text-anchor="middle"${dim(i)}>${fr(v)}</text>`;}));
+    }
+    if(cfg.spot==="plot")spot=[L-2,T-2,R-L+4,B-T+4];
+  }
+  let html=`<svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="none" width="100%" height="100%" role="img" aria-label="${esc(cfg.title||"Graphique")}">${grid}${body}${lab}${ttl}${leg}${spot?`<rect class="cspot" x="${spot[0]}" y="${spot[1]}" width="${spot[2]}" height="${spot[3]}" rx="4"/>`:""}</svg>`;
+  if(cfg.panel){const it=[["title","Titre du graphique",!!cfg.title],["axis","Axes",axisOn],["dlabels","Étiquettes de données",dl],["legend","Légende",legOn]];
+    html+=`<div class="cpanel" style="width:${pw}px"><b>Éléments de graphique</b>${it.map(([k,n,on])=>`<span class="${cfg.pick===k?"hot"+(fresh.pick?" press":""):""}"><i class="${on?"on":""}"></i>${n}</span>`).join("")}</div>`;}
+  if(cfg.selected)html+=[[0,0],[50,0],[100,0],[0,50],[100,50],[0,100],[50,100],[100,100]].map(([x,y])=>`<i class="hd" style="left:${x}%;top:${y}%"></i>`).join("");
+  el.innerHTML=html;
+}
+function placeChartEl(el,cfg){const r=rect(chartRange(cfg));if(!r)return;Object.assign(el.style,{left:r.x+5+"px",top:r.y+4+"px",width:r.w-10+"px",height:r.h-8+"px"});}
+function redrawChart(){const el=$("#chart");if(el&&chPrev)drawChart(el,chPrev.M,chPrev.M.ser,chPrev.min,chPrev.max,1,{});}
+function placeChart(){const el=$("#chart");if(!el||!chPrev)return;placeChartEl(el,chPrev.M.cfg);redrawChart();}
+function chartVisible(cfg){
+  const w=$("#sheetwrap"),r=rect(chartRange(cfg));if(!r)return;
+  if(r.x+r.w>w.scrollLeft+w.clientWidth)w.scrollTo({left:r.x+r.w-w.clientWidth+16,behavior:"smooth"});
+  if(innerWidth<640){const el=$("#chart");el&&el.scrollIntoView({block:"nearest",behavior:"smooth"});}
+}
 function renderChart(st){
+  cancelAnimationFrame(chRaf);
   let el=$("#chart");
-  if(!cur||!cur.chart||!st.chart){if(el)el.remove();return;}
-  const ch=cur.chart,labs=cellsOf(ch.labels),nums=cellsOf(ch.vals).map(k=>parseFloat((st.v[k]||"0").replace(/[\s ]/g,"").replace(",","."))||0),max=Math.max(...nums,1);
-  const fresh=!el;
-  if(fresh){el=document.createElement("div");el.id="chart";el.className="chart";
-    el.innerHTML=`<b>${esc(ch.title)}</b><div class="bars">${labs.map(()=>"<i></i>").join("")}</div><div class="blab">${labs.map(k=>`<span>${esc(st.v[k]||"")}</span>`).join("")}</div>`;
-    $("#ov").appendChild(el);placeChart();}
-  const set=()=>el.querySelectorAll(".bars i").forEach((b,j)=>b.style.height=nums[j]/max*100+"%");
-  if(fresh&&!reduce)requestAnimationFrame(()=>requestAnimationFrame(set));else set();
+  if(!cur||!st.chart){if(el)el.remove();chPrev=null;return;}
+  const M=chartModel(st),cfg=M.cfg,type=cfg.type||"col";
+  if(!el){el=document.createElement("div");el.id="chart";el.className="chart";$("#ov").appendChild(el);placeChartEl(el,cfg);void el.offsetWidth;}
+  el.classList.toggle("sel",!!cfg.selected);
+  const moved=chPrev&&chPrev.M.cfg.at!==cfg.at;placeChartEl(el,cfg);
+  const flat=M.ser.flat(),dataMax=type==="stack"?Math.max(...M.labs.map((_,i)=>M.ser.reduce((a,s)=>a+(s[i]||0),0))):Math.max(...flat,0);
+  const tmin=cfg.min!=null?cfg.min:0,tmax=cfg.max!=null?cfg.max:nice(dataMax);
+  const key=type+"|"+M.ser.map(s=>s.length).join(","),pc=chPrev&&chPrev.M.cfg,same=!!chPrev&&chPrev.key===key;
+  const from=same?chPrev:{v:flat,min:tmin,max:tmax};
+  const changed=!same||from.v.some((x,i)=>x!==flat[i])||from.min!==tmin||from.max!==tmax;
+  const go=chAnim&&!reduce;
+  const fresh=go?{title:!!cfg.title&&(!pc||pc.title!==cfg.title),legend:!!pc&&!pc.legend&&!!cfg.legend,dlabels:!!cfg.dlabels&&(!pc||!pc.dlabels),pick:true}:{};
+  const unflat=v=>{let k=0;return M.ser.map(s=>s.map(()=>v[k++]));};
+  const fv=from.v.slice(),fmin=from.min,fmax=from.max;
+  chPrev={key,v:flat,min:tmin,max:tmax,M};
+  const final=()=>drawChart(el,M,M.ser,tmin,tmax,1,fresh);
+  if(go&&changed){
+    const t0=performance.now(),D=same?600:800;
+    const tick=now=>{const t=Math.min(1,(now-t0)/D),e=1-Math.pow(1-t,3);
+      if(t>=1){final();return;}
+      drawChart(el,M,unflat(fv.map((a,i)=>a+(flat[i]-a)*e)),fmin+(tmin-fmin)*e,fmax+(tmax-fmax)*e,same?1:e,{});
+      chRaf=requestAnimationFrame(tick);};
+    drawChart(el,M,unflat(fv),fmin,fmax,same?1:0,{});chRaf=requestAnimationFrame(tick);
+  }else final();
+  if(moved)setTimeout(()=>{if($("#chart")===el)redrawChart();},480);
 }
 function rect(g){
   const tb=$("#sheet");let a,b;
@@ -144,7 +274,7 @@ function ghosts(refs,st,target){
 function ribbon(s,editing,press){
   const rb=$("#ribbon"),pn=$("#ribpanel"),tab=s.tab||(editing?"Formules":"Accueil");
   if(s.menu)rb.innerHTML=`<span class="tab cur">Accueil</span><span class="path">${s.menu}${s.rule?` &nbsp;<code>${colorize(s.rule).html}</code>`:""}</span>`;
-  else rb.innerHTML=TABS.map(t=>`<span class="tab${t===tab?" cur":""}">${t}</span>`).join("");
+  else{const tabs=TABS.includes(tab)?TABS:[...TABS,tab];rb.innerHTML=tabs.map(t=>`<span class="tab${t===tab?" cur":""}">${t}</span>`).join("");rb.scrollLeft=TABS.includes(tab)?0:rb.scrollWidth;}
   if(!cur||!cur.rib){pn.hidden=true;return;}
   pn.hidden=false;
   if(pn.dataset.tab!==tab){pn.dataset.tab=tab;pn.scrollLeft=0;
@@ -225,10 +355,10 @@ async function animate(i){
   if(s.f!==undefined&&!fin.v[s.c])paint(cellEl(s.c),"");
   document.querySelectorAll("#sheet td").forEach(td=>{const b=!!fin.bad[td.dataset.k];if(b&&!td.classList.contains("bad")){td.classList.add("bad","pop");}});
   document.querySelectorAll("#sheet tbody tr").forEach(tr=>tr.classList.toggle("hid",fin.hide.includes(+tr.dataset.r)));
-  persist(fin);placeAll();spillBoxes(fin.spill);
+  chAnim=true;persist(fin);chAnim=false;placeAll();spillBoxes(fin.spill);
   const bar=barOf(s,fin);barSet(bar);refBoxes(bar,fin);ribbon(s,false);
   if(s.sel){setBox("sel",selR(s.sel),"selb");hdr(selR(s.sel));}
-  if(fin.chart&&!prev.chart)ensureVisible("F2");
+  if(fin.chart&&!prev.chart)chartVisible(fin.chart);
   if(fillK.length){
     await wait(500);if(!ok())return;
     cu.classList.add("on");moveCursor(s.c,true);await wait(480);if(!ok())return;clickFx();await wait(160);

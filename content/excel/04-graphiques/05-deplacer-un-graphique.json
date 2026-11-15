@@ -1,0 +1,28 @@
+{
+ "id": "deplacer-un-graphique",
+ "titre": "Déplacer et redimensionner",
+ "niveau": 1,
+ "resume": "Placer le graphique où l'on veut et changer sa taille.",
+ "motsCles": "déplacer redimensionner taille poignées feuille graphique emplacement",
+ "syntaxe": "Glisser le contour · tirer une poignée",
+ "ruban": true,
+ "graphique": {"type":"col","labels":"A2:A5","series":["B2:B5"],"title":"Ventes","at":"C1:F6"},
+ "arguments": [
+  ["Contour","Faire glisser pour déplacer"],
+  ["Poignées","Tirer pour redimensionner"],
+  ["Déplacer le graphique","L'installer seul sur une nouvelle feuille"]
+ ],
+ "grille": [
+  ["Mois","Ventes"],
+  ["Janvier","120"],
+  ["Février","90"],
+  ["Mars","150"],
+  ["Avril","110"]
+ ],
+ "etapes": [
+  {"c":"A1","chart":{"selected":1},"t":"Cliquez sur le graphique pour le sélectionner : des poignées apparaissent sur son contour."},
+  {"c":"A1","chart":{"at":"E3:H8"},"t":"Faites-le glisser par son contour pour le déplacer."},
+  {"c":"A1","chart":{"at":"C2:H9"},"t":"Tirez une poignée d'angle pour changer sa taille."},
+  {"c":"A1","tab":"Création de graphique","btn":"Déplacer le graphique","chart":{"at":"all","selected":0},"sheets":{"list":["Feuil1","Graphique1"],"on":1},"t":"« Déplacer le graphique » l'installe seul, en grand, sur une nouvelle feuille."}
+ ]
+}

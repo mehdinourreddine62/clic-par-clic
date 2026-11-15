@@ -3,10 +3,10 @@
  "titre": "Créer un graphique",
  "niveau": 1,
  "resume": "Transformer un tableau en graphique en deux clics.",
- "motsCles": "graphique histogramme courbe secteurs insertion barres",
+ "motsCles": "graphique histogramme courbe secteurs insertion barres créer",
  "syntaxe": "Insertion › Graphiques",
  "ruban": true,
- "graphique": {"title":"Ventes","labels":"A2:A5","vals":"B2:B5","at":"D2:G7"},
+ "graphique": {"type":"col","labels":"A2:A5","series":["B2:B5"],"title":"Ventes","at":"D2:H8"},
  "arguments": [
   ["Histogramme","Comparer des valeurs"],
   ["Courbes","Suivre une évolution dans le temps"],

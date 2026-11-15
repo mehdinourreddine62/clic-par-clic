@@ -1,0 +1,28 @@
+{
+ "id": "preparer-ses-donnees",
+ "titre": "Bien préparer ses données",
+ "niveau": 1,
+ "resume": "Un tableau propre donne un graphique juste.",
+ "motsCles": "données tableau préparer ligne vide total titres graphique faux",
+ "syntaxe": "Un bloc continu, avec une ligne de titres",
+ "graphique": {"type":"col","labels":"A2:A6","series":["B2:B6"],"title":"Ventes","at":"D2:H8"},
+ "arguments": [
+  ["Ligne de titres","Sert à nommer les axes et la légende"],
+  ["Bloc continu","Aucune ligne ni colonne vide au milieu"],
+  ["Total","À laisser hors de la sélection"]
+ ],
+ "grille": [
+  ["Mois","Ventes"],
+  ["Janvier","120"],
+  ["",""],
+  ["Février","90"],
+  ["Mars","150"],
+  ["Total","360"]
+ ],
+ "etapes": [
+  {"c":"A1","chart":1,"mark":"A3 A6","t":"Ce graphique est faussé : une ligne vide crée un trou, et le total écrase les autres barres."},
+  {"c":"A3","sel":"row:3","set":{"A3":"Février","B3":"90","A4":"Mars","B4":"150","A5":"Total","B5":"360","A6":"","B6":""},"chart":{"labels":"A2:A5","series":["B2:B5"]},"t":"Supprimez les lignes vides : les données doivent former un bloc continu."},
+  {"c":"A1","sel":"A1:B4","chart":{"labels":"A2:A4","series":["B2:B4"]},"mark":"A5 B5","t":"Laissez le total hors de la sélection : ce n'est pas une catégorie comme les autres."},
+  {"c":"A1","sel":"A1:B1","mark":"A1 B1","t":"Gardez une ligne de titres : Excel s'en sert pour nommer les axes et la légende."}
+ ]
+}

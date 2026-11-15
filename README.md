@@ -68,6 +68,24 @@ L'`id` devient l'adresse de la page (`/excel/ma-fonction/`) : minuscules, chiffr
 | `w` | Largeur de colonnes : `{"A": 170}` |
 | `sheets`, `copy`, `chart`, `bar` | Onglets de feuilles, pointillés de copie, graphique, contenu forcé de la barre de formule |
 
+### Graphiques
+
+Une leçon avec graphique déclare un champ `graphique` (réglages de départ), puis chaque étape peut le modifier avec `chart`.
+
+| Réglage | Effet |
+|---|---|
+| `type` | `col` histogramme, `bar` barres horizontales, `line` courbe, `pie` secteurs, `stack` histogramme empilé |
+| `labels`, `series` | Plage des catégories et liste des plages de valeurs : `"A2:A5"`, `["B2:B5", "C2:C5"]` |
+| `at` | Emplacement sur la feuille : `"D2:H8"`, ou `"all"` pour toute la feuille |
+| `title`, `legend`, `axis`, `dlabels` | Titre, légende, axe, étiquettes de données |
+| `min`, `max`, `step` | Échelle de l'axe |
+| `hi` | Numéro de la catégorie mise en évidence (0 pour la première) |
+| `color` | Couleur de la série : `r0` à `r5` |
+| `selected` | Affiche les poignées de sélection |
+| `panel`, `pick`, `spot` | Liste « Éléments de graphique », ligne cochée, zone illuminée (`title`, `legend`, `axis`, `plot`) ; valables pour une seule étape |
+
+Dans une étape, `"chart": 1` affiche le graphique et `"chart": {"type": "line"}` change un réglage. Sur téléphone, le graphique se place automatiquement sous le tableau.
+
 ## Ajouter un autre logiciel plus tard
 
 Les leçons Excel sont publiées sous `/excel/…`. Un futur logiciel aura son propre dossier `content/word/` et ses pages sous `/word/…`. Le lecteur animé actuel (`src/player.js`) imite une feuille de calcul : un autre logiciel demandera son propre lecteur.

@@ -1,0 +1,30 @@
+{
+ "id": "graphique-en-courbe",
+ "titre": "Courbe",
+ "niveau": 1,
+ "resume": "Suivre une évolution dans le temps.",
+ "motsCles": "courbe ligne évolution temps tendance graphique mois",
+ "syntaxe": "Insertion › Courbes",
+ "ruban": true,
+ "graphique": {"type":"line","labels":"A2:A7","series":["B2:B7"],"title":"Visiteurs par mois","at":"D2:H9"},
+ "arguments": [
+  ["Axe horizontal","Le temps, dans l'ordre"],
+  ["Axe vertical","La valeur mesurée"],
+  ["À utiliser pour","Une évolution : jours, mois, années"]
+ ],
+ "grille": [
+  ["Mois","Visiteurs"],
+  ["Janv","210"],
+  ["Févr","240"],
+  ["Mars","230"],
+  ["Avr","300"],
+  ["Mai","340"],
+  ["Juin","390"]
+ ],
+ "etapes": [
+  {"c":"A1","sel":"A1:B7","drag":1,"tab":"Insertion","btn":"Courbes","chart":1,"t":"La courbe relie les points dans l'ordre : elle montre une évolution."},
+  {"c":"A2","sel":"A2:A7","tab":"Insertion","t":"L'axe horizontal doit suivre le temps : jours, mois ou années, dans l'ordre."},
+  {"c":"B5","tab":"Insertion","chart":{"hi":3},"mark":"B5","t":"La pente raconte l'histoire : ici, la fréquentation décolle à partir d'avril."},
+  {"c":"B4","f":"150","tab":"Insertion","chart":{"hi":2},"t":"Un creux ou un pic saute aux yeux, bien plus que dans un tableau de chiffres."}
+ ]
+}

@@ -1,0 +1,30 @@
+{
+ "id": "elements-d-un-graphique",
+ "titre": "Les éléments d'un graphique",
+ "niveau": 1,
+ "resume": "Titre, axes, étiquettes et légende : les afficher ou les masquer.",
+ "motsCles": "titre axes légende étiquettes de données éléments graphique bouton plus",
+ "syntaxe": "Clic sur le graphique › bouton +",
+ "graphique": {"type":"col","labels":"A2:A5","series":["B2:B5"],"title":null,"axis":false,"at":"D2:H8"},
+ "arguments": [
+  ["Titre","De quoi parle le graphique"],
+  ["Axes","L'échelle des valeurs"],
+  ["Étiquettes de données","La valeur exacte sur chaque barre"],
+  ["Légende","À quoi correspond chaque couleur"]
+ ],
+ "grille": [
+  ["Mois","Ventes"],
+  ["Janvier","120"],
+  ["Février","90"],
+  ["Mars","150"],
+  ["Avril","110"]
+ ],
+ "etapes": [
+  {"c":"A1","chart":{"panel":1},"t":"Voici un graphique nu. Un clic dessus donne accès à la liste des éléments de graphique."},
+  {"c":"A1","chart":{"panel":1,"pick":"title","title":"Ventes par mois"},"t":"Le titre dit de quoi parle le graphique."},
+  {"c":"A1","chart":{"panel":1,"pick":"axis","axis":true},"t":"Les axes donnent l'échelle des valeurs."},
+  {"c":"A1","chart":{"panel":1,"pick":"dlabels","dlabels":true},"t":"Les étiquettes de données affichent la valeur exacte sur chaque barre."},
+  {"c":"A1","chart":{"panel":1,"pick":"legend","legend":true},"t":"La légende indique à quoi correspond chaque couleur."},
+  {"c":"A1","chart":{"panel":1,"pick":"legend","legend":false},"t":"Avec une seule série, elle est inutile : décochez ce qui n'apporte rien."}
+ ]
+}

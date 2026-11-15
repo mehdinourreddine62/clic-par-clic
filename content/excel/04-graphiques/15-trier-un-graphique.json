@@ -1,0 +1,29 @@
+{
+ "id": "trier-un-graphique",
+ "titre": "Trier pour mieux lire",
+ "niveau": 1,
+ "resume": "Classer les barres de la plus grande à la plus petite.",
+ "motsCles": "trier classement ordre décroissant barres graphique lisible",
+ "syntaxe": "Données › Trier",
+ "ruban": true,
+ "graphique": {"type":"col","labels":"A2:A6","series":["B2:B6"],"title":"Clients par ville","at":"D2:H8"},
+ "arguments": [
+  ["Trier le tableau","Le graphique suit l'ordre des lignes"],
+  ["Du plus grand au plus petit","Le classement se lit de gauche à droite"],
+  ["Exception","Ne pas trier des mois ou des tranches d'âge"]
+ ],
+ "grille": [
+  ["Ville","Clients"],
+  ["Bordeaux","140"],
+  ["Lille","95"],
+  ["Lyon","210"],
+  ["Nantes","120"],
+  ["Paris","310"]
+ ],
+ "etapes": [
+  {"c":"A1","tab":"Données","chart":1,"t":"Par ordre alphabétique, il faut lire chaque barre pour trouver le classement."},
+  {"c":"B2","tab":"Données","btn":"Trier","set":{"A2":"Paris","B2":"310","A3":"Lyon","B3":"210","A4":"Bordeaux","B4":"140","A5":"Nantes","B5":"120","A6":"Lille","B6":"95"},"t":"Triez la colonne des valeurs du plus grand au plus petit : le graphique suit l'ordre du tableau."},
+  {"c":"B2","tab":"Données","chart":{"hi":0},"mark":"B2","t":"Le classement se lit maintenant de gauche à droite, sans effort."},
+  {"c":"A1","tab":"Données","chart":{"hi":null},"t":"Exception : ne triez pas quand l'ordre a un sens, comme des mois ou des tranches d'âge."}
+ ]
+}

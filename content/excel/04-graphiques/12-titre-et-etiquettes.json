@@ -1,0 +1,27 @@
+{
+ "id": "titre-et-etiquettes",
+ "titre": "Titre et étiquettes",
+ "niveau": 1,
+ "resume": "Écrire un titre utile et afficher les valeurs.",
+ "motsCles": "titre étiquettes de données valeurs message graphique lisible",
+ "syntaxe": "Double-clic sur le titre pour le modifier",
+ "graphique": {"type":"col","labels":"A2:A5","series":["B2:B5"],"title":"Ventes","at":"D2:H8"},
+ "arguments": [
+  ["Titre","Annonce le message, pas seulement le sujet"],
+  ["Étiquettes de données","Affichent la valeur sur chaque barre"],
+  ["Axe","Peut être retiré quand les valeurs sont écrites"]
+ ],
+ "grille": [
+  ["Produit","Ventes"],
+  ["Stylos","320"],
+  ["Cahiers","210"],
+  ["Classeurs","140"],
+  ["Trousses","260"]
+ ],
+ "etapes": [
+  {"c":"A1","chart":{"spot":"title"},"t":"« Ventes » ne dit pas grand-chose. Double-cliquez sur le titre pour le modifier."},
+  {"c":"A1","chart":{"title":"Les stylos en tête des ventes de mars"},"t":"Un bon titre annonce le message, pas seulement le sujet."},
+  {"c":"A1","chart":{"panel":1,"pick":"dlabels","dlabels":true},"t":"Ajoutez les étiquettes de données pour afficher les valeurs."},
+  {"c":"A1","chart":{"panel":1,"pick":"axis","axis":false},"t":"Les valeurs étant écrites, l'axe vertical fait doublon : on peut le retirer."}
+ ]
+}
