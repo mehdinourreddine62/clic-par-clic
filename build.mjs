@@ -20,6 +20,8 @@ const cats=readJson(`content/${LOGICIEL}/categories.json`);
 const memo=readJson(`content/${LOGICIEL}/aide-memoire-raccourcis.json`);
 const dirs=fs.readdirSync(`content/${LOGICIEL}`).filter(d=>/^\d+-/.test(d)).sort();
 const MEMO_ID="raccourcis-clavier";
+const slug=s=>norm(s).replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"");
+const RECAP_ICON='<rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18M3 15h18M10 4v16"/>';
 const nbRacc=memo.reduce((a,g)=>a+g.raccourcis.length,0);
 const lessons=[];
 for(const d of dirs){
@@ -63,7 +65,7 @@ ${FONTS}
 </head>
 <body>
 <div class="wrap">
-  <div class="topbar"><a class="brand" href="${root||"./"}"><span class="logo" aria-hidden="true"><i></i><i class="on"></i><i></i><i class="on"></i><i class="on"></i><i></i></span>${esc(SITE.nom)}</a><nav class="tnav"><a href="${root}${LOGICIEL}/${MEMO_ID}/">Raccourcis clavier</a><button class="theme" id="theme" type="button"></button></nav></div>
+  <div class="topbar"><a class="brand" href="${root||"./"}"><span class="logo" aria-hidden="true"><i></i><i class="on"></i><i></i><i class="on"></i><i class="on"></i><i></i></span>${esc(SITE.nom)}</a><button class="theme" id="theme" type="button"></button></div>
 `;}
 
 /* ---------- accueil ---------- */
@@ -74,7 +76,7 @@ function home(){
   const sections=cats.map(c=>{
     const g=lessons.filter(l=>l.cat===c);if(!g.length)return"";
     const cards=g.map(l=>`<a class="card" href="${LOGICIEL}/${l.id}/" data-id="${l.id}" data-c="${c.id}" data-l="${l.niveau}" data-s="${esc(norm(`${l.titre} ${l.resume} ${l.motsCles||""} ${c.nom}`))}"><span class="cn">${esc(l.titre)}</span><span class="cd">${esc(l.resume)}</span><span class="cf">${bars(l.niveau)}<span>${l.etapes.length} étapes</span></span></a>`).join("\n");
-    const m=c.id==="raccourcis"?`<a class="memolink" href="${LOGICIEL}/${MEMO_ID}/"><span><b>Aide-mémoire</b>Les ${nbRacc} raccourcis réunis sur une seule page</span><span aria-hidden="true">→</span></a>`:"";
+    const m=c.id==="raccourcis"?`\n<section class="sec" id="theme-recap" data-unit="groupe" style="--k:var(--${c.couleur})"><h2><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24">${RECAP_ICON}</svg></span><span class="st">Récap raccourcis clavier<small>${memo.length} groupes</small></span></h2><div class="cards">\n${memo.map(x=>`<a class="card" href="${LOGICIEL}/${MEMO_ID}/#${slug(x.groupe)}" data-c="recap" data-l="0" data-s="${esc(norm(`raccourcis clavier recap tableau ${x.groupe} ${x.raccourcis.map(r=>r.join(" ")).join(" ")}`))}"><span class="cn">${esc(x.groupe)}</span><span class="cd">${x.raccourcis.slice(0,3).map(r=>`<span class="kc">${kbd(r[0])}</span>`).join(" ")}</span><span class="cf"><span></span><span>${x.raccourcis.length} raccourcis</span></span></a>`).join("\n")}\n</div></section>`:"";
     return `<section class="sec" id="theme-${c.id}" style="--k:var(--${c.couleur})"><h2><span class="ico" aria-hidden="true">${ico(c)}</span><span class="st">${esc(c.nom)}<small>${g.length} leçon${g.length>1?"s":""}</small></span></h2><div class="cards">\n${cards}\n</div>${m}</section>`;
   }).join("\n");
   const verif=SITE.verificationGoogle?`<meta name="google-site-verification" content="${SITE.verificationGoogle}">\n`:"";
@@ -152,22 +154,24 @@ function shortcutsPage(){
   const groups=memo.map(g=>{
     const l=g.lecon&&lessons.find(x=>x.id===g.lecon);
     if(g.lecon&&!l)throw new Error(`aide-memoire-raccourcis.json : leçon « ${g.lecon} » introuvable`);
-    return `<section class="kgroup"><h2>${esc(g.groupe)}</h2><dl>${g.raccourcis.map(([k,d])=>`<div class="krow" data-s="${esc(norm(k+" "+d+" "+g.groupe))}"><dt>${kbd(k)}</dt><dd>${esc(d)}</dd></div>`).join("")}</dl>${l?`<a class="kmore" href="../${l.id}/">Voir en animation →</a>`:""}</section>`;
+    return `<tbody class="kgroup" id="${slug(g.groupe)}"><tr class="kg"><th colspan="2" scope="colgroup"><span>${esc(g.groupe)}</span>${l?`<a class="kmore" href="../${l.id}/">Voir en animation →</a>`:""}</th></tr>
+${g.raccourcis.map(([k,d])=>`<tr class="krow" data-s="${esc(norm(k+" "+d+" "+g.groupe))}"><td>${kbd(k)}</td><td>${esc(d)}</td></tr>`).join("\n")}</tbody>`;
   }).join("\n");
   return head({title,desc,url,root:"../../",ld})+`  <main id="memo">
     <a class="back" href="../../">← Toutes les leçons</a>
     <div class="lhead">
       <div class="meta"><span class="tag" style="--k:var(--${cat.couleur})">${ico(cat)}${esc(cat.nom)}</span><span>${nbRacc} raccourcis</span></div>
-      <h1>Raccourcis clavier Excel</h1>
+      <h1>Récap raccourcis clavier</h1>
       <p>L'aide-mémoire à garder sous la main. Raccourcis pour Excel en français sur Windows ; sur Mac, la touche Ctrl est le plus souvent remplacée par ⌘.</p>
     </div>
     <div class="ktools">
       <input id="kq" type="search" placeholder="Rechercher : copier, date, colonne…" aria-label="Rechercher un raccourci">
       <button class="theme" id="kprint" type="button">Imprimer</button>
     </div>
-    <div class="kgrid">
+    <table class="ktable">
+      <thead><tr><th scope="col">Raccourci</th><th scope="col">Action</th></tr></thead>
 ${groups}
-    </div>
+    </table>
     <p class="empty" id="knone" hidden>Aucun raccourci ne correspond à votre recherche.</p>
   </main>
 </div>
