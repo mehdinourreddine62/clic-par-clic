@@ -1,0 +1,23 @@
+{
+ "id": "sommeprod",
+ "titre": "SOMMEPROD",
+ "niveau": 2,
+ "resume": "Multiplier deux colonnes ligne par ligne, puis tout additionner.",
+ "motsCles": "sumproduct total quantité prix pondérée",
+ "syntaxe": "=SOMMEPROD(plage1; plage2)",
+ "arguments": [
+  ["plage1","La première colonne, par exemple les quantités"],
+  ["plage2","La seconde colonne, de même taille, par exemple les prix"]
+ ],
+ "grille": [
+  ["Article","Quantité","Prix"],
+  ["Stylo","10","1,20 €"],
+  ["Cahier","4","3,50 €"],
+  ["Classeur","2","5,90 €"],
+  ["Total","",""]
+ ],
+ "etapes": [
+  {"c":"C5","f":"=SOMMEPROD(B2:B4;C2:C4)","v":"37,80 €","t":"SOMMEPROD multiplie chaque quantité par son prix, puis additionne le tout."},
+  {"c":"C5","mark":"B2 C2","t":"10 × 1,20 + 4 × 3,50 + 2 × 5,90 : le total, sans colonne intermédiaire."}
+ ]
+}

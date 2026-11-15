@@ -1,0 +1,24 @@
+{
+ "id": "si",
+ "titre": "SI",
+ "niveau": 1,
+ "resume": "Afficher un résultat différent selon une condition.",
+ "motsCles": "condition test alors sinon if",
+ "syntaxe": "=SI(test; si_vrai; si_faux)",
+ "arguments": [
+  ["test","Une comparaison, par exemple B2>=10"],
+  ["si_vrai","Ce qui s'affiche si le test est vrai"],
+  ["si_faux","Ce qui s'affiche sinon"]
+ ],
+ "grille": [
+  ["Élève","Note","Résultat"],
+  ["Léa","14",""],
+  ["Hugo","9,5",""],
+  ["Inès","17",""],
+  ["Tom","8",""]
+ ],
+ "etapes": [
+  {"c":"C2","f":"=SI(B2>=10;\"Admis\";\"Ajourné\")","v":"Admis","t":"Le test, puis la réponse s'il est vrai, puis la réponse s'il est faux."},
+  {"c":"C2","fill":{"C3":"Ajourné","C4":"Admis","C5":"Ajourné"},"t":"Recopiez : chaque note est testée à son tour."}
+ ]
+}

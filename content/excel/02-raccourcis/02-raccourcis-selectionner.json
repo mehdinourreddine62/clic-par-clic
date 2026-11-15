@@ -1,0 +1,26 @@
+{
+ "id": "raccourcis-selectionner",
+ "titre": "Sélectionner au clavier",
+ "niveau": 1,
+ "resume": "Sélectionner une plage, une colonne ou une ligne avec les touches.",
+ "motsCles": "raccourci clavier sélection maj flèche espace colonne ligne",
+ "syntaxe": "Maj + flèche",
+ "arguments": [
+  ["Maj + flèche","Étend la sélection d'une cellule"],
+  ["Ctrl + Maj + flèche","Étend jusqu'au bord des données"],
+  ["Ctrl + Espace","Toute la colonne"],
+  ["Maj + Espace","Toute la ligne"]
+ ],
+ "grille": [
+  ["Produit","Prix","Stock"],
+  ["Stylo","1,20 €","40"],
+  ["Cahier","3,50 €","25"],
+  ["Classeur","5,90 €","12"]
+ ],
+ "etapes": [
+  {"c":"A2","sel":"A2:B2","kb":1,"keys":"Maj + →","t":"Maj + flèche étend la sélection d'une cellule."},
+  {"c":"A2","sel":"A2:B4","kb":1,"keys":"Ctrl + Maj + ↓","t":"Ajoutez Ctrl pour aller d'un coup jusqu'à la dernière ligne."},
+  {"c":"B2","sel":"col:B","kb":1,"keys":"Ctrl + Espace","spot":"cols","t":"Ctrl + Espace sélectionne toute la colonne."},
+  {"c":"B2","sel":"row:2","kb":1,"keys":"Maj + Espace","spot":"rows","t":"Maj + Espace sélectionne toute la ligne."}
+ ]
+}

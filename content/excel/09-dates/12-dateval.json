@@ -1,0 +1,21 @@
+{
+ "id": "dateval",
+ "titre": "DATEVAL",
+ "niveau": 2,
+ "resume": "Transformer un texte en vraie date utilisable dans les calculs.",
+ "motsCles": "convertir texte date import datevalue",
+ "syntaxe": "=DATEVAL(texte)",
+ "arguments": [
+  ["texte","Une date écrite sous forme de texte"]
+ ],
+ "grille": [
+  ["Texte importé","Vraie date","Lendemain"],
+  ["'13/11/2026","",""],
+  ["'01/12/2026","",""]
+ ],
+ "etapes": [
+  {"c":"A2","mark":"A2 A3","t":"Une date importée est parfois du texte : elle s'aligne à gauche et ne se calcule pas."},
+  {"c":"B2","f":"=DATEVAL(A2)","v":"13/11/2026","fill":{"B3":"01/12/2026"},"t":"DATEVAL la convertit en vraie date. Mettez ensuite la cellule au format Date."},
+  {"c":"C2","f":"=B2+1","v":"14/11/2026","fill":{"C3":"02/12/2026"},"t":"On peut maintenant calculer avec : ajouter 1 donne le lendemain."}
+ ]
+}

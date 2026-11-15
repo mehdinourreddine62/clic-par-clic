@@ -1,0 +1,23 @@
+{
+ "id": "joursem",
+ "titre": "JOURSEM",
+ "niveau": 2,
+ "resume": "Savoir quel jour de la semaine tombe une date.",
+ "motsCles": "jour semaine lundi week-end weekday",
+ "syntaxe": "=JOURSEM(date; 2)",
+ "arguments": [
+  ["date","La date à analyser"],
+  ["2","La semaine commence le lundi : lundi = 1, dimanche = 7"]
+ ],
+ "grille": [
+  ["Date","Numéro","Jour","Type"],
+  ["13/11/2026","","",""],
+  ["14/11/2026","","",""],
+  ["16/11/2026","","",""]
+ ],
+ "etapes": [
+  {"c":"B2","f":"=JOURSEM(A2;2)","v":"5","fill":{"B3":"6","B4":"1"},"t":"Avec le 2, la semaine commence le lundi : lundi = 1, dimanche = 7."},
+  {"c":"C2","f":"=TEXTE(A2;\"jjjj\")","v":"vendredi","fill":{"C3":"samedi","C4":"lundi"},"t":"Pour obtenir le nom du jour, utilisez TEXTE avec le format « jjjj »."},
+  {"c":"D2","f":"=SI(JOURSEM(A2;2)>5;\"Week-end\";\"Semaine\")","v":"Semaine","fill":{"D3":"Week-end","D4":"Semaine"},"t":"Au-delà de 5, c'est le week-end."}
+ ]
+}

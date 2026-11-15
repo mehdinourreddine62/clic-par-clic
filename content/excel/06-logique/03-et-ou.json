@@ -1,0 +1,23 @@
+{
+ "id": "et-ou",
+ "titre": "ET et OU",
+ "niveau": 2,
+ "resume": "Combiner plusieurs conditions dans un SI.",
+ "motsCles": "plusieurs conditions and or si",
+ "syntaxe": "=SI(ET(test1; test2); si_vrai; si_faux)",
+ "arguments": [
+  ["ET","Vrai seulement si tous les tests sont vrais"],
+  ["OU","Vrai si au moins un test est vrai"]
+ ],
+ "grille": [
+  ["Candidat","Écrit","Oral","Admis","Rattrapage"],
+  ["Léa","14","12","",""],
+  ["Hugo","15","8","",""],
+  ["Inès","11","10","",""],
+  ["Tom","7","9","",""]
+ ],
+ "etapes": [
+  {"c":"D2","f":"=SI(ET(B2>=10;C2>=10);\"Oui\";\"Non\")","v":"Oui","fill":{"D3":"Non","D4":"Oui","D5":"Non"},"t":"ET : toutes les conditions doivent être vraies."},
+  {"c":"E2","f":"=SI(OU(B2>=10;C2>=10);\"Possible\";\"Non\")","v":"Possible","fill":{"E3":"Possible","E4":"Possible","E5":"Non"},"t":"OU : une seule condition vraie suffit."}
+ ]
+}

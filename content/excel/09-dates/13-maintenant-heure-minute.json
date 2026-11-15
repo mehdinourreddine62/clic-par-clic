@@ -1,0 +1,22 @@
+{
+ "id": "maintenant-heure-minute",
+ "titre": "MAINTENANT, HEURE et MINUTE",
+ "niveau": 1,
+ "resume": "Afficher l'heure actuelle et en extraire les heures ou les minutes.",
+ "motsCles": "heure actuelle minute maintenant now hour",
+ "syntaxe": "=MAINTENANT()",
+ "arguments": [
+  ["MAINTENANT()","La date et l'heure actuelles"],
+  ["HEURE","Les heures, de 0 à 23"],
+  ["MINUTE","Les minutes, de 0 à 59"]
+ ],
+ "grille": [
+  ["Maintenant","Heure","Minute"],
+  ["","",""]
+ ],
+ "etapes": [
+  {"c":"A2","f":"=MAINTENANT()","v":"13/11/2026 14:35","t":"MAINTENANT renvoie la date et l'heure actuelles."},
+  {"c":"B2","f":"=HEURE(A2)","v":"14","t":"HEURE extrait les heures."},
+  {"c":"C2","f":"=MINUTE(A2)","v":"35","t":"MINUTE extrait les minutes."}
+ ]
+}

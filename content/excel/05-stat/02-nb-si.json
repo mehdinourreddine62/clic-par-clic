@@ -1,0 +1,26 @@
+{
+ "id": "nb-si",
+ "titre": "NB.SI",
+ "niveau": 2,
+ "resume": "Compter les cellules qui respectent une condition.",
+ "motsCles": "compter nombre critère condition countif",
+ "syntaxe": "=NB.SI(plage; critère)",
+ "arguments": [
+  ["plage","Les cellules à examiner"],
+  ["critère","Un texte, un nombre, une cellule ou une comparaison comme \">100\""]
+ ],
+ "grille": [
+  ["Commande","Statut","","Statut","Nombre"],
+  ["C-101","Livré","","Livré",""],
+  ["C-102","En cours","","En cours",""],
+  ["C-103","Livré","","Annulé",""],
+  ["C-104","Annulé","","",""],
+  ["C-105","Livré","","",""],
+  ["C-106","En cours","","",""]
+ ],
+ "etapes": [
+  {"c":"E2","f":"=NB.SI($B$2:$B$7;D2)","v":"3","mark":"B2 B4 B6","t":"NB.SI compte les cellules égales au critère, ici « Livré »."},
+  {"c":"E2","fill":{"E3":"2","E4":"1"},"t":"La plage est figée avec des $ : la formule se recopie pour chaque statut."},
+  {"c":"E2","t":"Le critère peut aussi être une comparaison écrite entre guillemets, comme <code>\"&gt;100\"</code>."}
+ ]
+}

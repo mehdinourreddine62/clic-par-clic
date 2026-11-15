@@ -1,0 +1,23 @@
+{
+ "id": "date",
+ "titre": "DATE",
+ "niveau": 1,
+ "resume": "Construire une date à partir d'une année, d'un mois et d'un jour.",
+ "motsCles": "construire assembler date année mois jour",
+ "syntaxe": "=DATE(année; mois; jour)",
+ "arguments": [
+  ["année","Sur 4 chiffres"],
+  ["mois","De 1 à 12. Au-delà, Excel passe à l'année suivante"],
+  ["jour","Le jour du mois"]
+ ],
+ "grille": [
+  ["Année","Mois","Jour","Date"],
+  ["2026","7","14",""],
+  ["2025","12","25",""],
+  ["2026","13","1",""]
+ ],
+ "etapes": [
+  {"c":"D2","f":"=DATE(A2;B2;C2)","v":"14/07/2026","fill":{"D3":"25/12/2025","D4":"01/01/2027"},"t":"DATE assemble trois nombres en une vraie date."},
+  {"c":"D4","mark":"B4","t":"Un mois 13 ? Excel passe automatiquement à janvier de l'année suivante."}
+ ]
+}

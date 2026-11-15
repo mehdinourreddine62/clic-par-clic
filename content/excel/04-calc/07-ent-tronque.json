@@ -1,0 +1,23 @@
+{
+ "id": "ent-tronque",
+ "titre": "ENT et TRONQUE",
+ "niveau": 2,
+ "resume": "Garder uniquement la partie entière d'un nombre.",
+ "motsCles": "entier partie entière tronquer décimales",
+ "syntaxe": "=ENT(nombre)",
+ "arguments": [
+  ["ENT","L'entier immédiatement inférieur"],
+  ["TRONQUE","Supprime les décimales, sans arrondir"]
+ ],
+ "grille": [
+  ["Valeur","ENT","TRONQUE"],
+  ["7,8","",""],
+  ["3,2","",""],
+  ["-7,8","",""]
+ ],
+ "etapes": [
+  {"c":"B2","f":"=ENT(A2)","v":"7","fill":{"B3":"3","B4":"-8"},"t":"ENT renvoie l'entier inférieur."},
+  {"c":"C2","f":"=TRONQUE(A2)","v":"7","fill":{"C3":"3","C4":"-7"},"t":"TRONQUE coupe simplement les décimales."},
+  {"c":"A4","mark":"B4 C4","t":"La différence se voit sur les nombres négatifs : -8 pour ENT, -7 pour TRONQUE."}
+ ]
+}

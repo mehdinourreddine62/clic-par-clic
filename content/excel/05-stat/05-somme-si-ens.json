@@ -1,0 +1,25 @@
+{
+ "id": "somme-si-ens",
+ "titre": "SOMME.SI.ENS",
+ "niveau": 2,
+ "resume": "Additionner selon plusieurs critères.",
+ "motsCles": "additionner plusieurs conditions critères sumifs",
+ "syntaxe": "=SOMME.SI.ENS(plage_somme; plage1; critère1; …)",
+ "arguments": [
+  ["plage_somme","Les montants à additionner, toujours en premier"],
+  ["plage1; critère1","La première condition"],
+  ["…","D'autres couples plage + critère"]
+ ],
+ "grille": [
+  ["Vendeur","Région","Montant","","Vendeur","Région","Total"],
+  ["Alice","Nord","500","","Alice","Nord",""],
+  ["Bruno","Sud","300","","","",""],
+  ["Alice","Sud","200","","","",""],
+  ["Chloé","Nord","450","","","",""],
+  ["Alice","Nord","150","","","",""]
+ ],
+ "etapes": [
+  {"c":"G2","f":"=SOMME.SI.ENS(C2:C6;A2:A6;E2;B2:B6;F2)","v":"650","mark":"C2 C6","t":"La plage à additionner vient en premier, puis chaque couple plage + critère."},
+  {"c":"F2","f":"Sud","set":{"G2":"200"},"mark":"G2 C4","t":"Changez un critère : le total suit, sans toucher à la formule."}
+ ]
+}

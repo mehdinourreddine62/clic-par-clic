@@ -1,0 +1,20 @@
+{
+ "id": "produit",
+ "titre": "PRODUIT",
+ "niveau": 1,
+ "resume": "Multiplier toutes les valeurs d'une plage.",
+ "motsCles": "multiplier multiplication volume",
+ "syntaxe": "=PRODUIT(plage)",
+ "arguments": [
+  ["plage","Les cellules à multiplier entre elles"]
+ ],
+ "grille": [
+  ["Longueur","Largeur","Hauteur","Volume"],
+  ["2","3","4",""],
+  ["5","2","1,5",""]
+ ],
+ "etapes": [
+  {"c":"D2","f":"=PRODUIT(A2:C2)","v":"24","t":"PRODUIT multiplie toutes les valeurs de la plage : 2 × 3 × 4."},
+  {"c":"D2","fill":{"D3":"15"},"t":"Pratique dès qu'il y a plus de deux nombres à multiplier."}
+ ]
+}

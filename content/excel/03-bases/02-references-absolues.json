@@ -1,0 +1,25 @@
+{
+ "id": "references-absolues",
+ "titre": "Références absolues ($)",
+ "niveau": 2,
+ "resume": "Empêcher une référence de bouger quand on recopie.",
+ "motsCles": "dollar f4 figer relative absolue mixte recopie",
+ "syntaxe": "$E$2",
+ "arguments": [
+  ["E2","Relative : elle glisse quand on recopie"],
+  ["$E$2","Absolue : elle ne bouge jamais"],
+  ["$E2 ou E$2","Mixte : seule la colonne, ou seule la ligne, est figée"]
+ ],
+ "grille": [
+  ["Produit","Prix HT","Prix TTC","","Taux TVA"],
+  ["Chaise","45,00 €","","","20 %"],
+  ["Table","180,00 €","","",""],
+  ["Lampe","32,00 €","","",""]
+ ],
+ "etapes": [
+  {"c":"C2","f":"=B2*(1+E2)","v":"54,00 €","t":"Le taux de TVA est écrit une seule fois, en E2."},
+  {"c":"C2","fill":{"C3":"180,00 €","C4":"32,00 €"},"mark":"E3 E4","t":"En recopiant, E2 glisse vers E3 puis E4, qui sont vides : la TVA disparaît."},
+  {"c":"C2","f":"=B2*(1+$E$2)","v":"54,00 €","t":"Ajoutez des $ avec la touche <kbd>F4</kbd> : $E$2 ne bougera plus."},
+  {"c":"C2","fill":{"C3":"216,00 €","C4":"38,40 €"},"t":"Recopiez à nouveau : chaque ligne utilise maintenant le bon taux."}
+ ]
+}

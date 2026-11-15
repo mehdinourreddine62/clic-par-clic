@@ -1,0 +1,24 @@
+{
+ "id": "gauche-droite-stxt",
+ "titre": "GAUCHE, DROITE et STXT",
+ "niveau": 2,
+ "resume": "Extraire le début, la fin ou le milieu d'un texte.",
+ "motsCles": "extraire caractères texte left right mid code",
+ "syntaxe": "=GAUCHE(texte; nombre)",
+ "arguments": [
+  ["GAUCHE(texte; nombre)","Les premiers caractères"],
+  ["DROITE(texte; nombre)","Les derniers caractères"],
+  ["STXT(texte; début; nombre)","Des caractères au milieu"]
+ ],
+ "grille": [
+  ["Code","Pays","Zone","Numéro"],
+  ["FR-75-0012","","",""],
+  ["FR-69-0458","","",""],
+  ["BE-10-0931","","",""]
+ ],
+ "etapes": [
+  {"c":"B2","f":"=GAUCHE(A2;2)","v":"FR","fill":{"B3":"FR","B4":"BE"},"t":"GAUCHE prend les 2 premiers caractères."},
+  {"c":"C2","f":"=STXT(A2;4;2)","v":"'75","fill":{"C3":"'69","C4":"'10"},"t":"STXT part du 4e caractère et en prend 2."},
+  {"c":"D2","f":"=DROITE(A2;4)","v":"'0012","fill":{"D3":"'0458","D4":"'0931"},"t":"DROITE prend les 4 derniers. Le résultat est du texte : les zéros sont conservés."}
+ ]
+}

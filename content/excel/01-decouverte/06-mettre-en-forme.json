@@ -1,0 +1,28 @@
+{
+ "id": "mettre-en-forme",
+ "titre": "Mettre en forme un tableau",
+ "niveau": 1,
+ "resume": "Gras, couleur de fond, alignement et bordures.",
+ "motsCles": "gras couleur remplissage bordures centrer police présentation",
+ "syntaxe": "Sélectionner, puis cliquer dans l'onglet Accueil",
+ "ruban": true,
+ "sansEnTete": true,
+ "arguments": [
+  ["G","Gras"],
+  ["Remplissage","Couleur de fond"],
+  ["Alignement","Gauche, centre, droite"],
+  ["Bordures","Traits visibles à l'impression"]
+ ],
+ "grille": [
+  ["Produit","Prix","Stock"],
+  ["Stylo","1,20 €","40"],
+  ["Cahier","3,50 €","25"],
+  ["Classeur","5,90 €","12"]
+ ],
+ "etapes": [
+  {"c":"A1","sel":"A1:C1","drag":1,"tab":"Accueil","btn":"G","fmt":{"A1:C1":"b"},"t":"Sélectionnez les titres, puis cliquez sur G pour les mettre en gras."},
+  {"c":"A1","sel":"A1:C1","tab":"Accueil","btn":"Remplissage","fmt":{"A1:C1":"f"},"t":"Le pot de peinture colore le fond des cellules."},
+  {"c":"A1","sel":"A1:C1","tab":"Accueil","btn":"Centrer","fmt":{"A1:C1":"c"},"t":"Les boutons d'alignement placent le contenu à gauche, au centre ou à droite."},
+  {"c":"A1","sel":"A1:C4","drag":1,"tab":"Accueil","btn":"Bordures","fmt":{"A1:C4":"d"},"t":"Sélectionnez tout le tableau et ajoutez des bordures : elles seront visibles à l'impression."}
+ ]
+}

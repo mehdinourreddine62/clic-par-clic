@@ -1,0 +1,23 @@
+{
+ "id": "mois-decaler",
+ "titre": "MOIS.DECALER",
+ "niveau": 2,
+ "resume": "Ajouter ou retirer des mois à une date.",
+ "motsCles": "ajouter mois échéance décaler edate",
+ "syntaxe": "=MOIS.DECALER(date; mois)",
+ "arguments": [
+  ["date","La date de départ"],
+  ["mois","Le nombre de mois à ajouter, ou à retirer s'il est négatif"]
+ ],
+ "grille": [
+  ["Début","Mois à ajouter","Échéance"],
+  ["15/01/2026","3",""],
+  ["31/01/2026","1",""],
+  ["13/11/2026","-2",""]
+ ],
+ "etapes": [
+  {"c":"C2","f":"=MOIS.DECALER(A2;B2)","v":"15/04/2026","fill":{"C3":"28/02/2026","C4":"13/09/2026"},"t":"MOIS.DECALER ajoute un nombre de mois à une date."},
+  {"c":"C3","mark":"C3","t":"Le 31 février n'existe pas : Excel s'arrête au dernier jour du mois."},
+  {"c":"C4","mark":"B4","t":"Un nombre négatif recule dans le temps."}
+ ]
+}

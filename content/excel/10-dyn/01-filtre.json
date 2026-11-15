@@ -1,0 +1,27 @@
+{
+ "id": "filtre",
+ "titre": "FILTRE",
+ "niveau": 3,
+ "resume": "Extraire les lignes d'un tableau qui respectent une condition.",
+ "motsCles": "filter filtrer extraire lignes propagation dynamique",
+ "syntaxe": "=FILTRE(tableau; condition; [si_vide])",
+ "arguments": [
+  ["tableau","Les lignes à filtrer"],
+  ["condition","Le test appliqué à chaque ligne"],
+  ["si_vide","Le texte affiché si aucune ligne ne correspond"],
+  ["Version","Excel 2021 et Microsoft 365"]
+ ],
+ "grille": [
+  ["Nom","Service","Salaire","","Service :","Ventes",""],
+  ["Anne","Compta","2 800","","","",""],
+  ["Marc","Ventes","3 100","","","",""],
+  ["Lucie","Compta","3 000","","","",""],
+  ["Yann","RH","2 600","","","",""],
+  ["Sofia","Ventes","3 400","","","",""]
+ ],
+ "etapes": [
+  {"c":"E3","f":"=FILTRE(A2:C6;B2:B6=F1;\"Aucun\")","v":"Marc","set":{"F3":"Ventes","G3":"3 100","E4":"Sofia","F4":"Ventes","G4":"3 400"},"spill":"E3:G4","mark":"B3 B6","t":"Une seule formule en E3 : le résultat se propage dans les cellules voisines."},
+  {"c":"F1","f":"Compta","set":{"E3":"Anne","F3":"Compta","G3":"2 800","E4":"Lucie","F4":"Compta","G4":"3 000"},"mark":"B2 B4","t":"Changez le critère : la liste se met à jour."},
+  {"c":"E3","f":"=FILTRE(A2:C6;(B2:B6=F1)*(C2:C6>2900))","v":"Lucie","set":{"F3":"Compta","G3":"3 000","E4":"","F4":"","G4":""},"spill":"E3:G3","t":"Pour combiner deux conditions, multipliez-les, chacune entre parenthèses."}
+ ]
+}

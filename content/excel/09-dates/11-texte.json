@@ -1,0 +1,23 @@
+{
+ "id": "texte",
+ "titre": "TEXTE",
+ "niveau": 2,
+ "resume": "Afficher une date dans le format de son choix.",
+ "motsCles": "format date jour mois année afficher text",
+ "syntaxe": "=TEXTE(date; \"format\")",
+ "arguments": [
+  ["j","Le jour : jj donne 13, jjjj donne vendredi"],
+  ["m","Le mois : mm donne 11, mmmm donne novembre"],
+  ["a","L'année : aa donne 26, aaaa donne 2026"]
+ ],
+ "grille": [
+  ["Date","Format","Résultat"],
+  ["13/11/2026","jjjj j mmmm aaaa",""],
+  ["13/11/2026","mmmm aaaa",""],
+  ["13/11/2026","jj/mm",""]
+ ],
+ "etapes": [
+  {"c":"C2","f":"=TEXTE(A2;B2)","v":"vendredi 13 novembre 2026","t":"TEXTE affiche une date dans le format demandé."},
+  {"c":"C2","fill":{"C3":"novembre 2026","C4":"13/11"},"t":"j pour le jour, m pour le mois, a pour l'année. Plus il y a de lettres, plus le résultat est détaillé."}
+ ]
+}

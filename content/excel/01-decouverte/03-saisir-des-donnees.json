@@ -1,0 +1,25 @@
+{
+ "id": "saisir-des-donnees",
+ "titre": "Saisir et modifier des données",
+ "niveau": 1,
+ "resume": "Écrire dans une cellule, valider, corriger, effacer.",
+ "motsCles": "taper écrire saisie entrée tabulation corriger effacer supprimer",
+ "syntaxe": "Cliquer, taper, valider",
+ "sansEnTete": true,
+ "arguments": [
+  ["Entrée","Valide et descend d'une ligne"],
+  ["Tabulation","Valide et passe à la cellule de droite"],
+  ["F2 ou double-clic","Modifie le contenu sans tout retaper"],
+  ["Suppr","Vide la cellule"]
+ ],
+ "grille": [
+  [""]
+ ],
+ "etapes": [
+  {"c":"A1","f":"Produit","keys":"Tab","t":"Cliquez sur une cellule et tapez. La touche Tabulation valide et passe à droite."},
+  {"c":"B1","f":"Prix","keys":"Entrée","t":"La touche Entrée valide et descend d'une ligne."},
+  {"c":"A2","f":"Stylo","set":{"B2":"1,2"},"mark":"A2 B2","t":"Le texte se range à gauche, les nombres à droite : c'est ainsi qu'Excel les distingue."},
+  {"c":"A2","f":"Stylo bleu","keys":"F2","t":"Pour corriger sans tout retaper, double-cliquez sur la cellule ou appuyez sur F2."},
+  {"c":"B2","set":{"B2":""},"keys":"Suppr","t":"La touche Suppr vide la cellule."}
+ ]
+}

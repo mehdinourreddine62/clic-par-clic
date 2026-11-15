@@ -1,0 +1,24 @@
+{
+ "id": "somme-cumulee",
+ "titre": "Somme cumulée",
+ "niveau": 2,
+ "resume": "Un total qui progresse ligne après ligne.",
+ "motsCles": "cumul cumulé progressif running total",
+ "syntaxe": "=SOMME($B$2:B2)",
+ "arguments": [
+  ["$B$2","Le début de la plage, figé"],
+  ["B2","La fin de la plage, qui descend à chaque ligne"]
+ ],
+ "grille": [
+  ["Mois","Ventes","Cumul"],
+  ["Janvier","200",""],
+  ["Février","150",""],
+  ["Mars","300",""],
+  ["Avril","250",""]
+ ],
+ "etapes": [
+  {"c":"C2","f":"=SOMME($B$2:B2)","v":"200","t":"Le début de la plage est figé avec des $, la fin reste libre."},
+  {"c":"C2","fill":{"C3":"350","C4":"650","C5":"900"},"t":"En recopiant, la plage s'allonge d'une ligne à chaque fois."},
+  {"c":"C5","f":"=SOMME($B$2:B5)","v":"900","t":"En C5, la plage va de B2 à B5 : c'est le total depuis janvier."}
+ ]
+}

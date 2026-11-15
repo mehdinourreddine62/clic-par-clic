@@ -1,0 +1,25 @@
+{
+ "id": "formats-de-nombre",
+ "titre": "Formats de nombre",
+ "niveau": 1,
+ "resume": "Afficher des euros, des pourcentages et des milliers lisibles.",
+ "motsCles": "format monétaire euro pourcentage milliers décimales affichage",
+ "syntaxe": "Accueil › groupe Nombre",
+ "ruban": true,
+ "arguments": [
+  ["€","Format monétaire, avec deux décimales"],
+  ["%","Pourcentage"],
+  ["000","Séparateur de milliers"]
+ ],
+ "grille": [
+  ["Article","Prix","Remise","Quantité"],
+  ["Ordinateur","1249,5","0,15","12000"],
+  ["Écran","189","0,2","3500"]
+ ],
+ "etapes": [
+  {"c":"B2","sel":"B2:B3","drag":1,"tab":"Accueil","btn":"€","set":{"B2":"1 249,50 €","B3":"189,00 €"},"t":"Le bouton monétaire ajoute le symbole € et deux décimales."},
+  {"c":"C2","sel":"C2:C3","drag":1,"tab":"Accueil","btn":"%","set":{"C2":"15 %","C3":"20 %"},"t":"Le bouton % affiche 0,15 sous la forme 15 %."},
+  {"c":"D2","sel":"D2:D3","drag":1,"tab":"Accueil","btn":"000","set":{"D2":"12 000","D3":"3 500"},"t":"Le séparateur de milliers rend les grands nombres plus lisibles."},
+  {"c":"B2","bar":"1249,5","spot":"formula","t":"Le format change seulement l'affichage : la barre de formule montre toujours la vraie valeur."}
+ ]
+}

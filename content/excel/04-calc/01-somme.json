@@ -1,0 +1,27 @@
+{
+ "id": "somme",
+ "titre": "SOMME",
+ "niveau": 1,
+ "resume": "Additionner une plage de cellules.",
+ "motsCles": "addition total plage autosomme additionner",
+ "syntaxe": "=SOMME(plage1; [plage2]; …)",
+ "arguments": [
+  ["plage1","Les cellules à additionner, par exemple B2:B6"],
+  ["plage2…","D'autres plages, séparées par un point-virgule"]
+ ],
+ "grille": [
+  ["Mois","Ventes"],
+  ["Janvier","1 200"],
+  ["Février","950"],
+  ["Mars","1 430"],
+  ["Avril","1 100"],
+  ["Mai","1 320"],
+  ["Total",""],
+  ["Sans mars",""]
+ ],
+ "etapes": [
+  {"c":"B7","f":"=SOMME(B2:B6)","v":"6 000","t":"SOMME additionne toute la plage, de B2 jusqu'à B6."},
+  {"c":"B8","f":"=SOMME(B2:B3;B5:B6)","v":"4 570","t":"Plusieurs plages ? Séparez-les par un point-virgule."},
+  {"c":"B7","t":"Raccourci : <kbd>Alt</kbd> + <kbd>=</kbd> écrit la SOMME à votre place."}
+ ]
+}

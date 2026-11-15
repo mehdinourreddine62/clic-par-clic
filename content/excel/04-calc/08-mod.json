@@ -1,0 +1,22 @@
+{
+ "id": "mod",
+ "titre": "MOD",
+ "niveau": 2,
+ "resume": "Le reste d'une division : utile pour repérer les nombres pairs.",
+ "motsCles": "reste division pair impair modulo",
+ "syntaxe": "=MOD(nombre; diviseur)",
+ "arguments": [
+  ["nombre","Le nombre à diviser"],
+  ["diviseur","Par combien on divise"]
+ ],
+ "grille": [
+  ["Nombre","Reste","Pair ou impair"],
+  ["7","",""],
+  ["12","",""],
+  ["25","",""]
+ ],
+ "etapes": [
+  {"c":"B2","f":"=MOD(A2;2)","v":"1","fill":{"B3":"0","B4":"1"},"t":"MOD renvoie le reste de la division : 7 divisé par 2 donne 3, reste 1."},
+  {"c":"C2","f":"=SI(MOD(A2;2)=0;\"Pair\";\"Impair\")","v":"Impair","fill":{"C3":"Pair","C4":"Impair"},"t":"Un reste égal à 0 signifie que le nombre est pair."}
+ ]
+}

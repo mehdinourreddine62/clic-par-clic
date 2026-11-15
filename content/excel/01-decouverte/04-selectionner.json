@@ -1,0 +1,29 @@
+{
+ "id": "selectionner",
+ "titre": "Sélectionner des cellules",
+ "niveau": 1,
+ "resume": "Sélectionner une cellule, une plage, une colonne ou tout un tableau.",
+ "motsCles": "sélection plage colonne ligne ctrl glisser",
+ "syntaxe": "A2:B3 = de A2 jusqu'à B3",
+ "arguments": [
+  ["Clic","Une cellule"],
+  ["Cliquer-glisser","Une plage"],
+  ["Clic sur une lettre","Toute la colonne"],
+  ["Ctrl + clic","Ajoute une autre sélection"],
+  ["Ctrl + A","Tout le tableau"]
+ ],
+ "grille": [
+  ["Produit","Prix","Stock"],
+  ["Stylo","1,20 €","40"],
+  ["Cahier","3,50 €","25"],
+  ["Classeur","5,90 €","12"]
+ ],
+ "etapes": [
+  {"c":"A2","t":"Un clic sélectionne une cellule."},
+  {"c":"A2","sel":"A2:B3","drag":1,"t":"Cliquez et faites glisser pour sélectionner une plage. Celle-ci se note A2:B3."},
+  {"c":"B1","sel":"col:B","spot":"cols","t":"Un clic sur la lettre d'une colonne sélectionne toute la colonne."},
+  {"c":"A3","sel":"row:3","spot":"rows","t":"Un clic sur un numéro sélectionne toute la ligne."},
+  {"c":"A2","sel":"A2:A4","sel2":"C2:C4","drag":1,"keys":"Ctrl","t":"Maintenez Ctrl pour ajouter une seconde sélection, même éloignée."},
+  {"c":"A1","sel":"A1:C4","keys":"Ctrl + A","t":"Ctrl + A sélectionne tout le tableau d'un coup."}
+ ]
+}

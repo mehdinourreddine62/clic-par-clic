@@ -1,0 +1,24 @@
+{
+ "id": "raccourcis-formules",
+ "titre": "Les raccourcis des formules",
+ "niveau": 2,
+ "resume": "Somme automatique, références figées et saisie annulée.",
+ "motsCles": "raccourci clavier somme automatique f4 dollar échap alt égal",
+ "syntaxe": "Alt + =",
+ "arguments": [
+  ["Alt + =","Écrit la somme de la colonne"],
+  ["F4","Ajoute les $ autour d'une référence"],
+  ["Échap","Annule la saisie en cours"]
+ ],
+ "grille": [
+  ["Mois","Ventes","Part"],
+  ["Janvier","200",""],
+  ["Février","150",""],
+  ["Total","",""]
+ ],
+ "etapes": [
+  {"c":"B4","kb":1,"keys":"Alt + =","f":"=SOMME(B2:B3)","v":"350","t":"Alt + = écrit la somme de la colonne à votre place."},
+  {"c":"C2","kb":1,"keys":"F4","f":"=B2/$B$4","v":"57 %","t":"Pendant la saisie, F4 ajoute les $ autour de la référence."},
+  {"c":"C3","kb":1,"keys":"Échap","t":"Échap annule une saisie en cours, sans rien modifier."}
+ ]
+}

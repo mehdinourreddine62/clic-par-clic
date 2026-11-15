@@ -1,0 +1,21 @@
+{
+ "id": "abs",
+ "titre": "ABS",
+ "niveau": 1,
+ "resume": "Supprimer le signe d'un nombre pour ne garder que l'écart.",
+ "motsCles": "valeur absolue écart signe négatif",
+ "syntaxe": "=ABS(nombre)",
+ "arguments": [
+  ["nombre","La valeur dont on retire le signe"]
+ ],
+ "grille": [
+  ["Prévu","Réel","Écart","Écart absolu"],
+  ["100","120","",""],
+  ["80","65","",""],
+  ["50","50","",""]
+ ],
+ "etapes": [
+  {"c":"C2","f":"=B2-A2","v":"20","fill":{"C3":"-15","C4":"0"},"t":"L'écart peut être positif ou négatif."},
+  {"c":"D2","f":"=ABS(C2)","v":"20","fill":{"D3":"15","D4":"0"},"mark":"D3","t":"ABS retire le signe : on ne garde que la taille de l'écart."}
+ ]
+}

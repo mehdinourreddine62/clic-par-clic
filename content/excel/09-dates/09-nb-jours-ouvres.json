@@ -1,0 +1,20 @@
+{
+ "id": "nb-jours-ouvres",
+ "titre": "NB.JOURS.OUVRES",
+ "niveau": 2,
+ "resume": "Compter les jours travaillés entre deux dates.",
+ "motsCles": "jours ouvrés travaillés week-end férié networkdays",
+ "syntaxe": "=NB.JOURS.OUVRES(début; fin; [fériés])",
+ "arguments": [
+  ["début; fin","Les deux dates, comprises dans le calcul"],
+  ["fériés","Les jours fériés à retirer"]
+ ],
+ "grille": [
+  ["Début","Fin","Jours ouvrés","","Jour férié"],
+  ["02/11/2026","13/11/2026","","","11/11/2026"]
+ ],
+ "etapes": [
+  {"c":"C2","f":"=NB.JOURS.OUVRES(A2;B2)","v":"10","t":"Du lundi au vendredi uniquement : les week-ends ne sont pas comptés."},
+  {"c":"C2","f":"=NB.JOURS.OUVRES(A2;B2;E2)","v":"9","mark":"E2","t":"Ajoutez les jours fériés en troisième argument : le 11 novembre est retiré."}
+ ]
+}

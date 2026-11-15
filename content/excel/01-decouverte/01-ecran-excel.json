@@ -1,0 +1,28 @@
+{
+ "id": "ecran-excel",
+ "titre": "L'écran d'Excel",
+ "niveau": 1,
+ "resume": "Repérer les zones principales de la fenêtre.",
+ "motsCles": "interface fenêtre zones cellule adresse barre découverte débuter",
+ "syntaxe": "Colonne + ligne = adresse",
+ "ruban": true,
+ "arguments": [
+  ["Ruban","Toutes les commandes, rangées par onglets"],
+  ["Zone Nom","L'adresse de la cellule sélectionnée"],
+  ["Barre de formule","Le contenu réel de la cellule"],
+  ["Onglets de feuilles","Les différentes feuilles du classeur"]
+ ],
+ "grille": [
+  ["Produit","Prix"],
+  ["Stylo","1,20 €"],
+  ["Cahier","3,50 €"]
+ ],
+ "etapes": [
+  {"c":"A1","spot":"ribbon","t":"En haut, le ruban regroupe toutes les commandes, rangées par onglets."},
+  {"c":"B2","spot":"cell","t":"La feuille est une grille de cellules. Un clic sélectionne une cellule."},
+  {"c":"B2","spot":"cols rows","t":"Chaque cellule a une adresse : la lettre de sa colonne, puis le numéro de sa ligne. Ici, B2."},
+  {"c":"B2","spot":"namebox","t":"La zone Nom affiche l'adresse de la cellule sélectionnée."},
+  {"c":"B2","spot":"formula","t":"La barre de formule montre le contenu réel de la cellule."},
+  {"c":"B2","spot":"tabs","t":"En bas, les onglets permettent de passer d'une feuille à l'autre."}
+ ]
+}

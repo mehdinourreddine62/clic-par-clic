@@ -1,0 +1,26 @@
+{
+ "id": "trier-et-filtrer",
+ "titre": "Trier et filtrer",
+ "niveau": 1,
+ "resume": "Classer une liste et n'afficher que certaines lignes.",
+ "motsCles": "tri trier filtre filtrer ordre croissant masquer données",
+ "syntaxe": "Données › Trier · Données › Filtrer",
+ "ruban": true,
+ "arguments": [
+  ["Trier","Réorganise les lignes entières"],
+  ["Filtrer","Masque les lignes qui ne correspondent pas, sans les supprimer"]
+ ],
+ "grille": [
+  ["Produit","Catégorie","Prix"],
+  ["Stylo","Écriture","1,20 €"],
+  ["Classeur","Rangement","5,90 €"],
+  ["Crayon","Écriture","0,80 €"],
+  ["Chemise","Rangement","2,10 €"]
+ ],
+ "etapes": [
+  {"c":"C2","tab":"Données","btn":"Trier","set":{"A2":"Crayon","B2":"Écriture","C2":"0,80 €","A3":"Stylo","B3":"Écriture","C3":"1,20 €","A4":"Chemise","B4":"Rangement","C4":"2,10 €","A5":"Classeur","B5":"Rangement","C5":"5,90 €"},"t":"Cliquez dans la colonne Prix, puis sur Trier : les lignes entières se réorganisent, du moins cher au plus cher."},
+  {"c":"A1","tab":"Données","btn":"Filtrer","set":{"A1":"Produit ▾","B1":"Catégorie ▾","C1":"Prix ▾"},"t":"Le bouton Filtrer ajoute une flèche à côté de chaque titre."},
+  {"c":"B1","tab":"Données","hide":[4,5],"t":"Cliquez sur la flèche et cochez « Écriture » : les autres lignes sont masquées, pas supprimées."},
+  {"c":"B1","tab":"Données","hide":[],"t":"Effacez le filtre pour tout retrouver."}
+ ]
+}

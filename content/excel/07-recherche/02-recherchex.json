@@ -1,0 +1,26 @@
+{
+ "id": "recherchex",
+ "titre": "RECHERCHEX",
+ "niveau": 2,
+ "resume": "La version moderne de RECHERCHEV, plus simple et plus souple.",
+ "motsCles": "xlookup chercher trouver correspondance",
+ "syntaxe": "=RECHERCHEX(valeur; plage_recherche; plage_résultat; [si_introuvable])",
+ "arguments": [
+  ["valeur","Ce que l'on cherche"],
+  ["plage_recherche","La colonne où chercher"],
+  ["plage_résultat","La colonne à renvoyer, à gauche ou à droite"],
+  ["si_introuvable","Le texte affiché si rien n'est trouvé"],
+  ["Version","Excel 2021 et Microsoft 365"]
+ ],
+ "grille": [
+  ["Produit","Réf","Stock","","Réf","Produit"],
+  ["Clavier","P01","42","","P04",""],
+  ["Souris","P02","130","","",""],
+  ["Écran","P03","8","","",""],
+  ["Casque","P04","25","","",""]
+ ],
+ "etapes": [
+  {"c":"F2","f":"=RECHERCHEX(E2;B2:B5;A2:A5;\"Introuvable\")","v":"Casque","mark":"B5 A5","t":"Où chercher, puis quoi renvoyer. La colonne résultat peut être à gauche."},
+  {"c":"E2","f":"P07","set":{"F2":"Introuvable"},"mark":"F2","t":"Si rien n'est trouvé, le quatrième argument s'affiche à la place de l'erreur."}
+ ]
+}

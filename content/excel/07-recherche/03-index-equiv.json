@@ -1,0 +1,24 @@
+{
+ "id": "index-equiv",
+ "titre": "INDEX + EQUIV",
+ "niveau": 3,
+ "resume": "Lire une valeur à l'intersection d'une ligne et d'une colonne.",
+ "motsCles": "index match equiv position double entrée tableau",
+ "syntaxe": "=INDEX(tableau; EQUIV(…); EQUIV(…))",
+ "arguments": [
+  ["EQUIV(valeur; plage; 0)","La position de la valeur dans la plage"],
+  ["INDEX(tableau; ligne; colonne)","La valeur à cette position"]
+ ],
+ "grille": [
+  ["Ville","Janv","Févr","Mars","","",""],
+  ["Paris","120","135","150","","Ville","Lyon"],
+  ["Lyon","80","95","90","","Mois","Mars"],
+  ["Lille","60","70","85","","Valeur",""]
+ ],
+ "etapes": [
+  {"c":"G4","f":"=EQUIV(G2;A2:A4;0)","v":"2","mark":"A3","t":"EQUIV donne la position de Lyon dans la plage : 2."},
+  {"c":"G4","f":"=EQUIV(G3;B1:D1;0)","v":"3","mark":"D1","t":"Même chose pour le mois : Mars est en position 3."},
+  {"c":"G4","f":"=INDEX(B2:D4;EQUIV(G2;A2:A4;0);EQUIV(G3;B1:D1;0))","v":"90","mark":"D3","t":"INDEX lit la case située à la ligne 2 et à la colonne 3 du tableau."},
+  {"c":"G2","f":"Paris","set":{"G4":"150"},"mark":"D2 G4","t":"Changez la ville : le résultat suit."}
+ ]
+}

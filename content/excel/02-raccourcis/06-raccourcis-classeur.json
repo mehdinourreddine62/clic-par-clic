@@ -1,0 +1,28 @@
+{
+ "id": "raccourcis-classeur",
+ "titre": "Gérer le classeur",
+ "niveau": 1,
+ "resume": "Enregistrer, rechercher, remplacer, imprimer et changer de feuille.",
+ "motsCles": "raccourci clavier enregistrer rechercher remplacer imprimer feuille ctrl s f h p",
+ "syntaxe": "Ctrl + S",
+ "arguments": [
+  ["Ctrl + S","Enregistrer"],
+  ["Ctrl + F","Rechercher"],
+  ["Ctrl + H","Remplacer"],
+  ["Ctrl + P","Imprimer"],
+  ["Ctrl + Page suivante","Feuille suivante"]
+ ],
+ "grille": [
+  ["Produit","Prix","Stock"],
+  ["Stylo","1,20 €","40"],
+  ["Cahier","3,50 €","25"],
+  ["Classeur","5,90 €","12"]
+ ],
+ "etapes": [
+  {"c":"A1","sheets":{"list":["Feuil1","Feuil2"],"on":0},"keys":"Ctrl + S","t":"Ctrl + S enregistre le classeur. À faire souvent."},
+  {"c":"A3","kb":1,"keys":"Ctrl + F","mark":"A3","t":"Ctrl + F recherche un mot dans la feuille, ici « Cahier »."},
+  {"c":"A3","keys":"Ctrl + H","set":{"A3":"Carnet"},"t":"Ctrl + H remplace un texte par un autre, partout à la fois."},
+  {"c":"A3","keys":"Ctrl + P","t":"Ctrl + P ouvre l'aperçu avant impression."},
+  {"c":"A3","sheets":{"list":["Feuil1","Feuil2"],"on":1},"keys":"Ctrl + Page suivante","spot":"tabs","t":"Ctrl + Page suivante passe à la feuille suivante."}
+ ]
+}

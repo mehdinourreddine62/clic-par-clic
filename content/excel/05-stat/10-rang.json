@@ -1,0 +1,25 @@
+{
+ "id": "rang",
+ "titre": "RANG",
+ "niveau": 2,
+ "resume": "Donner le classement de chaque valeur.",
+ "motsCles": "classement position rank podium",
+ "syntaxe": "=RANG(nombre; plage; [ordre])",
+ "arguments": [
+  ["nombre","La valeur à classer"],
+  ["plage","Toutes les valeurs, figées avec des $"],
+  ["ordre","Rien pour un classement du plus grand au plus petit, 1 pour l'inverse"]
+ ],
+ "grille": [
+  ["Joueur","Score","Rang"],
+  ["Léa","82",""],
+  ["Hugo","95",""],
+  ["Inès","70",""],
+  ["Tom","88",""],
+  ["Nora","91",""]
+ ],
+ "etapes": [
+  {"c":"C2","f":"=RANG(B2;$B$2:$B$6)","v":"4","fill":{"C3":"1","C4":"5","C5":"3","C6":"2"},"t":"RANG donne la position de chaque score. Le plus grand obtient le rang 1."},
+  {"c":"C2","f":"=RANG(B2;$B$2:$B$6;1)","v":"2","fill":{"C3":"5","C4":"1","C5":"3","C6":"4"},"t":"Ajoutez 1 en troisième argument pour classer du plus petit au plus grand."}
+ ]
+}

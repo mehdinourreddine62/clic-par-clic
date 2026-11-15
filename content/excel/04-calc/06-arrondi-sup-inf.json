@@ -1,0 +1,23 @@
+{
+ "id": "arrondi-sup-inf",
+ "titre": "ARRONDI.SUP et ARRONDI.INF",
+ "niveau": 1,
+ "resume": "Arrondir toujours vers le haut, ou toujours vers le bas.",
+ "motsCles": "arrondir supérieur inférieur plafond plancher",
+ "syntaxe": "=ARRONDI.SUP(nombre; décimales)",
+ "arguments": [
+  ["ARRONDI.SUP","Toujours vers le haut"],
+  ["ARRONDI.INF","Toujours vers le bas"],
+  ["décimales","Comme pour ARRONDI"]
+ ],
+ "grille": [
+  ["Valeur","Vers le haut","Vers le bas"],
+  ["12,31","",""],
+  ["7,89","",""],
+  ["4,5","",""]
+ ],
+ "etapes": [
+  {"c":"B2","f":"=ARRONDI.SUP(A2;0)","v":"13","fill":{"B3":"8","B4":"5"},"t":"ARRONDI.SUP arrondit toujours vers le haut, même pour 12,31."},
+  {"c":"C2","f":"=ARRONDI.INF(A2;0)","v":"12","fill":{"C3":"7","C4":"4"},"t":"ARRONDI.INF arrondit toujours vers le bas, même pour 7,89."}
+ ]
+}

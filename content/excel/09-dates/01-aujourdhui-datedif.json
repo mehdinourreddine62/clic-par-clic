@@ -1,0 +1,25 @@
+{
+ "id": "aujourdhui-datedif",
+ "titre": "AUJOURDHUI et DATEDIF",
+ "niveau": 2,
+ "resume": "Afficher la date du jour et calculer une ancienneté ou un âge.",
+ "motsCles": "date jour ancienneté âge écart années mois",
+ "syntaxe": "=DATEDIF(début; fin; \"y\")",
+ "arguments": [
+  ["AUJOURDHUI()","La date du jour"],
+  ["\"y\"","Années complètes"],
+  ["\"m\"","Mois complets"],
+  ["\"d\"","Jours"]
+ ],
+ "grille": [
+  ["Salarié","Entrée","Ancienneté","","Aujourd'hui"],
+  ["Sami","15/03/2018","","",""],
+  ["Claire","01/12/2020","","",""],
+  ["Paul","20/09/2024","","",""]
+ ],
+ "etapes": [
+  {"c":"E2","f":"=AUJOURDHUI()","v":"13/11/2026","t":"AUJOURDHUI affiche la date du jour et se met à jour toute seule."},
+  {"c":"C2","f":"=DATEDIF(B2;$E$2;\"y\")","v":"8","fill":{"C3":"5","C4":"2"},"t":"DATEDIF compte les années complètes entre deux dates."},
+  {"c":"C3","mark":"B3","t":"Claire est entrée en décembre 2020 : elle n'a pas encore 6 ans complets, donc 5."}
+ ]
+}

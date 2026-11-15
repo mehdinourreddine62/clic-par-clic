@@ -1,0 +1,24 @@
+{
+ "id": "sous-total",
+ "titre": "SOUS.TOTAL",
+ "niveau": 2,
+ "resume": "Un total qui ne compte que les lignes visibles après un filtre.",
+ "motsCles": "filtre lignes visibles total subtotal",
+ "syntaxe": "=SOUS.TOTAL(9; plage)",
+ "arguments": [
+  ["9","Somme. 1 pour la moyenne, 2 pour compter, 4 pour le maximum"],
+  ["plage","Les cellules à totaliser"]
+ ],
+ "grille": [
+  ["Ville","Ventes"],
+  ["Paris","500"],
+  ["Lyon","300"],
+  ["Paris","200"],
+  ["Lille","400"],
+  ["Total",""]
+ ],
+ "etapes": [
+  {"c":"B6","f":"=SOUS.TOTAL(9;B2:B5)","v":"1 400","t":"Le 9 signifie « somme ». Pour l'instant, le résultat est le même qu'avec SOMME."},
+  {"c":"B6","hide":[3,5],"set":{"B6":"700"},"mark":"B6","t":"Filtrez sur Paris : seules les lignes visibles sont comptées. SOMME serait restée à 1 400."}
+ ]
+}

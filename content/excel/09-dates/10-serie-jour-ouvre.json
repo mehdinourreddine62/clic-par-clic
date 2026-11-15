@@ -1,0 +1,22 @@
+{
+ "id": "serie-jour-ouvre",
+ "titre": "SERIE.JOUR.OUVRE",
+ "niveau": 2,
+ "resume": "Trouver la date après un certain nombre de jours travaillés.",
+ "motsCles": "délai livraison jours ouvrés échéance workday",
+ "syntaxe": "=SERIE.JOUR.OUVRE(début; jours; [fériés])",
+ "arguments": [
+  ["début","La date de départ"],
+  ["jours","Le nombre de jours travaillés à ajouter"],
+  ["fériés","Les jours fériés à sauter"]
+ ],
+ "grille": [
+  ["Commande","Délai en jours ouvrés","Livraison"],
+  ["13/11/2026","5",""],
+  ["13/11/2026","1",""]
+ ],
+ "etapes": [
+  {"c":"C2","f":"=SERIE.JOUR.OUVRE(A2;B2)","v":"20/11/2026","t":"Cinq jours ouvrés après le vendredi 13 : le week-end est sauté."},
+  {"c":"C2","fill":{"C3":"16/11/2026"},"mark":"C3","t":"Un jour ouvré après un vendredi, c'est le lundi suivant."}
+ ]
+}

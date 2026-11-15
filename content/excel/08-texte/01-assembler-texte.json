@@ -1,0 +1,24 @@
+{
+ "id": "assembler-texte",
+ "titre": "Assembler du texte (&)",
+ "niveau": 1,
+ "resume": "Coller plusieurs textes dans une seule cellule.",
+ "motsCles": "concat concaténer esperluette majuscule joindre",
+ "syntaxe": "=A2&\" \"&B2",
+ "arguments": [
+  ["&","Colle deux textes"],
+  ["\" \"","Un espace, écrit entre guillemets"],
+  ["CONCAT(…)","Le même résultat sous forme de fonction"]
+ ],
+ "grille": [
+  ["Prénom","Nom","Nom complet"],
+  ["Marie","Durand",""],
+  ["Karim","Benali",""],
+  ["Julie","Martin",""]
+ ],
+ "etapes": [
+  {"c":"C2","f":"=A2&B2","v":"MarieDurand","t":"Le symbole &amp; colle deux textes. Il manque l'espace."},
+  {"c":"C2","f":"=A2&\" \"&B2","v":"Marie Durand","fill":{"C3":"Karim Benali","C4":"Julie Martin"},"t":"Ajoutez un espace entre guillemets."},
+  {"c":"C2","f":"=A2&\" \"&MAJUSCULE(B2)","v":"Marie DURAND","fill":{"C3":"Karim BENALI","C4":"Julie MARTIN"},"t":"MAJUSCULE met le nom en capitales au passage."}
+ ]
+}

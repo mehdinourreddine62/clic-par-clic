@@ -1,0 +1,24 @@
+{
+ "id": "si-conditions",
+ "titre": "SI.CONDITIONS",
+ "niveau": 2,
+ "resume": "Gérer plusieurs cas sans imbriquer des SI.",
+ "motsCles": "plusieurs cas mention ifs imbriqués",
+ "syntaxe": "=SI.CONDITIONS(test1; valeur1; test2; valeur2; …)",
+ "arguments": [
+  ["test1; valeur1","Le premier cas"],
+  ["test2; valeur2","Le cas suivant, et ainsi de suite"],
+  ["VRAI; valeur","Le dernier cas, pour tout le reste"]
+ ],
+ "grille": [
+  ["Élève","Note","Mention"],
+  ["Léa","17",""],
+  ["Hugo","13",""],
+  ["Inès","9",""],
+  ["Tom","15",""]
+ ],
+ "etapes": [
+  {"c":"C2","f":"=SI.CONDITIONS(B2>=16;\"Très bien\";B2>=14;\"Bien\";B2>=10;\"Passable\";VRAI;\"Insuffisant\")","v":"Très bien","t":"Excel lit les tests dans l'ordre et s'arrête au premier qui est vrai."},
+  {"c":"C2","fill":{"C3":"Passable","C4":"Insuffisant","C5":"Bien"},"mark":"C4","t":"Le VRAI final sert de « sinon » pour tous les autres cas."}
+ ]
+}

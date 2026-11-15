@@ -1,0 +1,23 @@
+{
+ "id": "arrondi",
+ "titre": "ARRONDI",
+ "niveau": 1,
+ "resume": "Garder le nombre de décimales voulu.",
+ "motsCles": "décimales arrondir entier centimes",
+ "syntaxe": "=ARRONDI(nombre; décimales)",
+ "arguments": [
+  ["nombre","La valeur à arrondir"],
+  ["décimales","2 pour les centimes, 0 pour un entier, -1 pour la dizaine"]
+ ],
+ "grille": [
+  ["Valeur","2 décimales","Entier","Dizaine"],
+  ["12,3456","","",""],
+  ["7,891","","",""],
+  ["105,5","","",""]
+ ],
+ "etapes": [
+  {"c":"B2","f":"=ARRONDI(A2;2)","v":"12,35","fill":{"B3":"7,89","B4":"105,5"},"t":"Le 2 indique le nombre de décimales à garder."},
+  {"c":"C2","f":"=ARRONDI(A2;0)","v":"12","fill":{"C3":"8","C4":"106"},"t":"Avec 0, on obtient un entier. À partir de 0,5, Excel arrondit vers le haut."},
+  {"c":"D2","f":"=ARRONDI(A2;-1)","v":"10","fill":{"D3":"10","D4":"110"},"t":"Un nombre négatif arrondit à la dizaine (-1) ou à la centaine (-2)."}
+ ]
+}

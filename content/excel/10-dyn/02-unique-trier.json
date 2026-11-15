@@ -1,0 +1,28 @@
+{
+ "id": "unique-trier",
+ "titre": "UNIQUE et TRIER",
+ "niveau": 3,
+ "resume": "Obtenir une liste sans doublons, classée automatiquement.",
+ "motsCles": "doublons unique sort trier liste distincte propagation",
+ "syntaxe": "=TRIER(UNIQUE(plage))",
+ "arguments": [
+  ["UNIQUE","Supprime les doublons"],
+  ["TRIER","Classe les valeurs par ordre croissant"],
+  ["C2#","Toute la liste propagée à partir de C2"],
+  ["Version","Excel 2021 et Microsoft 365"]
+ ],
+ "grille": [
+  ["Client","","Clients","Commandes"],
+  ["Dupont","","",""],
+  ["Martin","","",""],
+  ["Dupont","","",""],
+  ["Leroy","","",""],
+  ["Martin","","",""],
+  ["Bernard","","",""]
+ ],
+ "etapes": [
+  {"c":"C2","f":"=UNIQUE(A2:A7)","v":"Dupont","set":{"C3":"Martin","C4":"Leroy","C5":"Bernard"},"spill":"C2:C5","t":"UNIQUE renvoie chaque client une seule fois."},
+  {"c":"C2","f":"=TRIER(UNIQUE(A2:A7))","v":"Bernard","set":{"C3":"Dupont","C4":"Leroy","C5":"Martin"},"t":"TRIER classe la liste par ordre alphabétique."},
+  {"c":"D2","f":"=NB.SI(A2:A7;C2#)","v":"1","set":{"D3":"2","D4":"1","D5":"2"},"spill":"C2:C5 D2:D5","t":"C2# désigne toute la liste propagée : une seule formule compte les commandes de chaque client."}
+ ]
+}

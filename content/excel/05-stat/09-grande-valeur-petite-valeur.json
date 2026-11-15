@@ -1,0 +1,24 @@
+{
+ "id": "grande-valeur-petite-valeur",
+ "titre": "GRANDE.VALEUR et PETITE.VALEUR",
+ "niveau": 2,
+ "resume": "Trouver la 2e, la 3e… plus grande ou plus petite valeur.",
+ "motsCles": "deuxième troisième podium top large small",
+ "syntaxe": "=GRANDE.VALEUR(plage; rang)",
+ "arguments": [
+  ["plage","Les valeurs à comparer"],
+  ["rang","1 pour la première, 2 pour la deuxième…"]
+ ],
+ "grille": [
+  ["Joueur","Score","","Position","Score"],
+  ["Léa","82","","2e meilleur",""],
+  ["Hugo","95","","2e plus faible",""],
+  ["Inès","70","","",""],
+  ["Tom","88","","",""],
+  ["Nora","91","","",""]
+ ],
+ "etapes": [
+  {"c":"E2","f":"=GRANDE.VALEUR(B2:B6;2)","v":"91","mark":"B6","t":"Le 2 demande la deuxième plus grande valeur. Avec 1, on retrouve le maximum."},
+  {"c":"E3","f":"=PETITE.VALEUR(B2:B6;2)","v":"82","mark":"B2","t":"PETITE.VALEUR fait la même chose en partant du bas."}
+ ]
+}

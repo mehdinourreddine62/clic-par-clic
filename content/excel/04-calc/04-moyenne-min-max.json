@@ -1,0 +1,27 @@
+{
+ "id": "moyenne-min-max",
+ "titre": "MOYENNE, MIN et MAX",
+ "niveau": 1,
+ "resume": "La moyenne, la plus petite et la plus grande valeur.",
+ "motsCles": "moyenne minimum maximum statistique note",
+ "syntaxe": "=MOYENNE(plage)",
+ "arguments": [
+  ["MOYENNE","La somme divisée par le nombre de valeurs"],
+  ["MIN","La plus petite valeur"],
+  ["MAX","La plus grande valeur"]
+ ],
+ "grille": [
+  ["Élève","Note","","Statistique","Valeur"],
+  ["Léa","14","","Moyenne",""],
+  ["Hugo","9,5","","Minimum",""],
+  ["Inès","17","","Maximum",""],
+  ["Tom","11","","",""],
+  ["Nora","12,5","","",""]
+ ],
+ "etapes": [
+  {"c":"E2","f":"=MOYENNE(B2:B6)","v":"12,8","t":"MOYENNE additionne les notes et divise par leur nombre."},
+  {"c":"E3","f":"=MIN(B2:B6)","v":"9,5","mark":"B3","t":"MIN renvoie la plus petite valeur."},
+  {"c":"E4","f":"=MAX(B2:B6)","v":"17","mark":"B4","t":"MAX renvoie la plus grande."},
+  {"c":"B5","set":{"B5":"","E2":"13,25"},"mark":"E2","t":"Une cellule vide est ignorée : la moyenne se calcule maintenant sur 4 élèves."}
+ ]
+}

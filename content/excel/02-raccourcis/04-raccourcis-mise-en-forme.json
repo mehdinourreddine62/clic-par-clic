@@ -1,0 +1,25 @@
+{
+ "id": "raccourcis-mise-en-forme",
+ "titre": "Mettre en forme au clavier",
+ "niveau": 1,
+ "resume": "Gras, italique et souligné sans passer par le ruban.",
+ "motsCles": "raccourci clavier gras italique souligné ctrl g i u",
+ "syntaxe": "Ctrl + G",
+ "sansEnTete": true,
+ "arguments": [
+  ["Ctrl + G","Gras"],
+  ["Ctrl + I","Italique"],
+  ["Ctrl + U","Souligné"]
+ ],
+ "grille": [
+  ["Produit","Prix","Stock"],
+  ["Stylo","1,20 €","40"],
+  ["Cahier","3,50 €","25"],
+  ["Classeur","5,90 €","12"]
+ ],
+ "etapes": [
+  {"c":"A1","sel":"A1:C1","drag":1,"keys":"Ctrl + G","fmt":{"A1:C1":"b"},"t":"Ctrl + G met la sélection en gras. La même touche l'enlève."},
+  {"c":"A2","sel":"A2:A4","drag":1,"keys":"Ctrl + I","fmt":{"A2:A4":"i"},"t":"Ctrl + I met en italique."},
+  {"c":"C4","keys":"Ctrl + U","fmt":{"C4":"u"},"t":"Ctrl + U souligne."}
+ ]
+}

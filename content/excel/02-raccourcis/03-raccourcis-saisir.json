@@ -1,0 +1,26 @@
+{
+ "id": "raccourcis-saisir",
+ "titre": "Saisir plus vite",
+ "niveau": 1,
+ "resume": "Date du jour, recopie et remplissage en une combinaison de touches.",
+ "motsCles": "raccourci clavier saisie date recopier remplir alt entrée",
+ "syntaxe": "Ctrl + ;",
+ "arguments": [
+  ["Ctrl + ;","Insère la date du jour"],
+  ["Ctrl + B","Recopie la cellule du dessus"],
+  ["Ctrl + Entrée","Remplit toute la sélection"],
+  ["Alt + Entrée","Va à la ligne dans la cellule"]
+ ],
+ "grille": [
+  ["Tâche","Date","Statut"],
+  ["Devis","",""],
+  ["Facture","",""],
+  ["Relance","",""]
+ ],
+ "etapes": [
+  {"c":"B2","kb":1,"keys":"Ctrl + ;","set":{"B2":"13/11/2026"},"t":"Ctrl + ; insère la date du jour."},
+  {"c":"B3","kb":1,"keys":"Ctrl + B","set":{"B3":"13/11/2026"},"t":"Ctrl + B recopie la cellule du dessus."},
+  {"c":"C2","sel":"C2:C4","kb":1,"keys":"Ctrl + Entrée","set":{"C2":"À faire","C3":"À faire","C4":"À faire"},"t":"Sélectionnez plusieurs cellules, tapez, puis Ctrl + Entrée : toutes sont remplies d'un coup."},
+  {"c":"A2","kb":1,"keys":"Alt + Entrée","t":"Alt + Entrée permet d'aller à la ligne à l'intérieur d'une cellule."}
+ ]
+}

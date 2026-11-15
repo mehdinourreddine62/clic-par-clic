@@ -1,0 +1,24 @@
+{
+ "id": "ecrire-une-formule",
+ "titre": "Écrire une formule",
+ "niveau": 1,
+ "resume": "Faire un calcul entre deux cellules.",
+ "motsCles": "égal opérateur addition multiplication poignée recopie calcul",
+ "syntaxe": "=B2*C2",
+ "arguments": [
+  ["=","Le début de toute formule"],
+  ["+ - * /","Addition, soustraction, multiplication, division"],
+  ["( )","Priorité dans le calcul"]
+ ],
+ "grille": [
+  ["Article","Prix unitaire","Quantité","Total"],
+  ["Stylo","1,20 €","10",""],
+  ["Cahier","3,50 €","4",""],
+  ["Classeur","5,90 €","2",""]
+ ],
+ "etapes": [
+  {"c":"D2","f":"=B2*C2","v":"12,00 €","t":"Une formule commence toujours par le signe =. Ici, on multiplie le prix par la quantité."},
+  {"c":"D2","fill":{"D3":"14,00 €","D4":"11,80 €"},"t":"Tirez la poignée vers le bas : la formule s'adapte à chaque ligne."},
+  {"c":"C2","f":"12","set":{"D2":"14,40 €"},"mark":"D2","t":"Changez une quantité : le total se recalcule tout seul."}
+ ]
+}

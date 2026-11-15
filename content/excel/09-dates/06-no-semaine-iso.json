@@ -1,0 +1,22 @@
+{
+ "id": "no-semaine-iso",
+ "titre": "NO.SEMAINE.ISO",
+ "niveau": 2,
+ "resume": "Obtenir le numéro de semaine d'une date.",
+ "motsCles": "numéro semaine calendrier week",
+ "syntaxe": "=NO.SEMAINE.ISO(date)",
+ "arguments": [
+  ["date","La date à analyser"],
+  ["Norme ISO","La semaine commence le lundi, comme en France"]
+ ],
+ "grille": [
+  ["Date","Semaine"],
+  ["13/11/2026",""],
+  ["01/01/2027",""],
+  ["04/01/2027",""]
+ ],
+ "etapes": [
+  {"c":"B2","f":"=NO.SEMAINE.ISO(A2)","v":"46","fill":{"B3":"53","B4":"1"},"t":"NO.SEMAINE.ISO donne le numéro de semaine utilisé en France et en Europe."},
+  {"c":"B3","mark":"A3","t":"Le 1er janvier 2027 tombe un vendredi : il appartient encore à la semaine 53 de 2026."}
+ ]
+}

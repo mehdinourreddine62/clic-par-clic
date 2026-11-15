@@ -1,0 +1,23 @@
+{
+ "id": "mediane",
+ "titre": "MEDIANE",
+ "niveau": 2,
+ "resume": "La valeur du milieu, moins sensible aux valeurs extrêmes que la moyenne.",
+ "motsCles": "médiane milieu statistique salaire",
+ "syntaxe": "=MEDIANE(plage)",
+ "arguments": [
+  ["plage","Les valeurs à analyser"]
+ ],
+ "grille": [
+  ["Salarié","Salaire","","Indicateur","Valeur"],
+  ["Anne","1 800","","Moyenne",""],
+  ["Marc","2 000","","Médiane",""],
+  ["Lucie","2 100","","",""],
+  ["Yann","2 300","","",""],
+  ["Sofia","6 800","","",""]
+ ],
+ "etapes": [
+  {"c":"E2","f":"=MOYENNE(B2:B6)","v":"3 000","mark":"B6","t":"Un seul très gros salaire tire la moyenne vers le haut."},
+  {"c":"E3","f":"=MEDIANE(B2:B6)","v":"2 100","mark":"B4","t":"La médiane est la valeur du milieu : autant de salaires au-dessus qu'en dessous."}
+ ]
+}

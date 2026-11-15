@@ -1,0 +1,25 @@
+{
+ "id": "somme-si",
+ "titre": "SOMME.SI",
+ "niveau": 2,
+ "resume": "Additionner uniquement les lignes qui respectent un critère.",
+ "motsCles": "additionner condition critère sumif catégorie",
+ "syntaxe": "=SOMME.SI(plage; critère; plage_somme)",
+ "arguments": [
+  ["plage","Où chercher le critère"],
+  ["critère","Ce qu'il faut trouver"],
+  ["plage_somme","Les montants à additionner"]
+ ],
+ "grille": [
+  ["Catégorie","Montant","","Catégorie","Total"],
+  ["Fruits","30","","Fruits",""],
+  ["Légumes","20","","Légumes",""],
+  ["Fruits","15","","Boissons",""],
+  ["Boissons","40","","",""],
+  ["Légumes","25","","",""]
+ ],
+ "etapes": [
+  {"c":"E2","f":"=SOMME.SI($A$2:$A$6;D2;$B$2:$B$6)","v":"45","mark":"B2 B4","t":"Où chercher, quoi chercher, quoi additionner : trois arguments."},
+  {"c":"E2","fill":{"E3":"45","E4":"40"},"t":"Recopiez pour obtenir le total de chaque catégorie."}
+ ]
+}

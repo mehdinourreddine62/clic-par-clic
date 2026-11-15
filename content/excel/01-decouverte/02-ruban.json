@@ -1,0 +1,34 @@
+{
+ "id": "ruban",
+ "titre": "Le ruban et ses onglets",
+ "niveau": 1,
+ "resume": "Savoir dans quel onglet trouver chaque commande.",
+ "motsCles": "menu menus ruban onglet accueil insertion formules données affichage fichier",
+ "syntaxe": "Un onglet = une famille de commandes",
+ "ruban": true,
+ "arguments": [
+  ["Accueil","Copier, coller, police, alignement, nombres"],
+  ["Insertion","Tableaux, images, graphiques"],
+  ["Mise en page","Impression"],
+  ["Formules","Les fonctions par famille"],
+  ["Données","Trier, filtrer, nettoyer"],
+  ["Révision","Orthographe, commentaires, protection"],
+  ["Affichage","Zoom, volets figés"],
+  ["Fichier","Ouvrir, enregistrer, imprimer"]
+ ],
+ "grille": [
+  ["Produit","Prix"],
+  ["Stylo","1,20 €"],
+  ["Cahier","3,50 €"]
+ ],
+ "etapes": [
+  {"c":"A1","tab":"Accueil","t":"Accueil : les commandes de tous les jours. Copier, coller, police, alignement, format des nombres."},
+  {"tab":"Insertion","t":"Insertion : ajouter un tableau, une image ou un graphique.","c":"A1"},
+  {"tab":"Mise en page","t":"Mise en page : préparer l'impression, avec les marges et l'orientation.","c":"A1"},
+  {"tab":"Formules","t":"Formules : toutes les fonctions, classées par famille.","c":"A1"},
+  {"tab":"Données","t":"Données : trier, filtrer et nettoyer une liste.","c":"A1"},
+  {"tab":"Révision","t":"Révision : vérifier l'orthographe, commenter et protéger la feuille.","c":"A1"},
+  {"tab":"Affichage","t":"Affichage : zoomer et figer les titres pour qu'ils restent visibles.","c":"A1"},
+  {"tab":"Fichier","t":"Fichier : ouvrir, enregistrer et imprimer le classeur.","c":"A1"}
+ ]
+}

@@ -1,0 +1,27 @@
+{
+ "id": "creer-un-graphique",
+ "titre": "Créer un graphique",
+ "niveau": 1,
+ "resume": "Transformer un tableau en graphique en deux clics.",
+ "motsCles": "graphique histogramme courbe secteurs insertion barres",
+ "syntaxe": "Insertion › Graphiques",
+ "ruban": true,
+ "graphique": {"title":"Ventes","labels":"A2:A5","vals":"B2:B5","at":"D2:G7"},
+ "arguments": [
+  ["Histogramme","Comparer des valeurs"],
+  ["Courbes","Suivre une évolution dans le temps"],
+  ["Secteurs","Montrer une répartition"]
+ ],
+ "grille": [
+  ["Mois","Ventes"],
+  ["Janvier","120"],
+  ["Février","90"],
+  ["Mars","150"],
+  ["Avril","110"]
+ ],
+ "etapes": [
+  {"c":"A1","sel":"A1:B5","drag":1,"t":"Sélectionnez les données, titres compris."},
+  {"c":"A1","sel":"A1:B5","tab":"Insertion","btn":"Histogramme","chart":1,"t":"Dans l'onglet Insertion, choisissez un type de graphique : il apparaît sur la feuille."},
+  {"c":"B3","f":"200","tab":"Insertion","t":"Le graphique reste lié aux données : modifiez une valeur, la barre suit."}
+ ]
+}

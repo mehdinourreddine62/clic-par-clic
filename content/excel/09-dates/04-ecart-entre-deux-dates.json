@@ -1,0 +1,22 @@
+{
+ "id": "ecart-entre-deux-dates",
+ "titre": "Écart entre deux dates",
+ "niveau": 1,
+ "resume": "Compter le nombre de jours entre deux dates.",
+ "motsCles": "différence jours durée soustraction days",
+ "syntaxe": "=fin-début",
+ "arguments": [
+  ["fin − début","Une soustraction suffit"],
+  ["JOURS(fin; début)","La même chose sous forme de fonction"]
+ ],
+ "grille": [
+  ["Début","Fin","Jours"],
+  ["01/11/2026","13/11/2026",""],
+  ["15/12/2026","05/01/2027",""]
+ ],
+ "etapes": [
+  {"c":"C2","f":"=B2-A2","v":"12","fill":{"C3":"21"},"t":"Pour Excel, une date est un nombre de jours : une soustraction donne l'écart."},
+  {"c":"C2","f":"=JOURS(B2;A2)","v":"12","fill":{"C3":"21"},"t":"JOURS fait le même calcul. Attention : la date de fin vient en premier."},
+  {"c":"C2","t":"Si le résultat s'affiche comme une date, repassez la cellule au format Standard."}
+ ]
+}

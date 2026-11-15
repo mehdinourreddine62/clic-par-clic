@@ -1,0 +1,23 @@
+{
+ "id": "puissance-racine",
+ "titre": "PUISSANCE et RACINE",
+ "niveau": 1,
+ "resume": "Calculer un carré ou une racine carrée.",
+ "motsCles": "carré exposant puissance racine carrée",
+ "syntaxe": "=A2^2 · =RACINE(nombre)",
+ "arguments": [
+  ["^","Élève à la puissance : A2^2 pour le carré"],
+  ["PUISSANCE(nombre; exposant)","Le même calcul sous forme de fonction"],
+  ["RACINE","La racine carrée"]
+ ],
+ "grille": [
+  ["Nombre","Carré","Racine"],
+  ["9","",""],
+  ["16","",""],
+  ["2","",""]
+ ],
+ "etapes": [
+  {"c":"B2","f":"=A2^2","v":"81","fill":{"B3":"256","B4":"4"},"t":"L'accent circonflexe élève à la puissance. =PUISSANCE(A2;2) donne le même résultat."},
+  {"c":"C2","f":"=RACINE(A2)","v":"3","fill":{"C3":"4","C4":"1,414"},"t":"RACINE calcule la racine carrée."}
+ ]
+}

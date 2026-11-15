@@ -1,0 +1,25 @@
+{
+ "id": "mise-en-forme-conditionnelle",
+ "titre": "Mise en forme conditionnelle",
+ "niveau": 2,
+ "resume": "Colorer automatiquement les cellules selon leur valeur.",
+ "motsCles": "couleur surbrillance règle colorer format",
+ "syntaxe": "Accueil › Mise en forme conditionnelle",
+ "arguments": [
+  ["Règle simple","Colore les cellules supérieures, inférieures ou égales à une valeur"],
+  ["Règle par formule","Colore quand la formule renvoie VRAI"]
+ ],
+ "grille": [
+  ["Produit","Stock","Seuil"],
+  ["Vis","120","50"],
+  ["Écrous","35","50"],
+  ["Rondelles","80","40"],
+  ["Chevilles","12","30"],
+  ["Clous","55","60"]
+ ],
+ "etapes": [
+  {"c":"B2","sel":"B2:B6","t":"Sélectionnez d'abord les cellules à surveiller."},
+  {"c":"B2","sel":"B2:B6","menu":"Mise en forme conditionnelle › Règles de mise en surbrillance › <b>Inférieur à…</b>","rule":"50","bad":"B3 B5","t":"Les stocks inférieurs à 50 passent en rouge, et la couleur suivra les valeurs."},
+  {"c":"A2","sel":"A2:C6","menu":"Mise en forme conditionnelle › Nouvelle règle › <b>Utiliser une formule</b>","rule":"=$B2<$C2","bad":"A3 C3 A5 C5 A6 B6 C6","t":"Avec une formule, chaque stock est comparé à son propre seuil et toute la ligne se colore."}
+ ]
+}

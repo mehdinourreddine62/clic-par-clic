@@ -1,0 +1,53 @@
+[
+ {"groupe":"Se déplacer","raccourcis":[
+  ["Ctrl + flèche","Aller au bord des données"],
+  ["Ctrl + Origine","Revenir en A1"],
+  ["Ctrl + Fin","Dernière cellule utilisée"],
+  ["Ctrl + Page suivante","Feuille suivante"],
+  ["Ctrl + Page précédente","Feuille précédente"]
+ ]},
+ {"groupe":"Sélectionner","raccourcis":[
+  ["Maj + flèche","Étendre la sélection"],
+  ["Ctrl + Maj + flèche","Étendre jusqu'au bord des données"],
+  ["Ctrl + Espace","Toute la colonne"],
+  ["Maj + Espace","Toute la ligne"],
+  ["Ctrl + A","Tout le tableau"]
+ ]},
+ {"groupe":"Saisir","raccourcis":[
+  ["Entrée","Valider et descendre"],
+  ["Tab","Valider et aller à droite"],
+  ["F2","Modifier la cellule"],
+  ["Échap","Annuler la saisie"],
+  ["Alt + Entrée","Aller à la ligne dans la cellule"],
+  ["Ctrl + Entrée","Remplir toute la sélection"],
+  ["Ctrl + ;","Date du jour"],
+  ["Ctrl + B","Recopier vers le bas"],
+  ["Ctrl + D","Recopier vers la droite"]
+ ]},
+ {"groupe":"Copier et corriger","raccourcis":[
+  ["Ctrl + C","Copier"],
+  ["Ctrl + X","Couper"],
+  ["Ctrl + V","Coller"],
+  ["Ctrl + Z","Annuler"],
+  ["Ctrl + Y","Rétablir"],
+  ["Suppr","Vider la cellule"]
+ ]},
+ {"groupe":"Mettre en forme","raccourcis":[
+  ["Ctrl + G","Gras"],
+  ["Ctrl + I","Italique"],
+  ["Ctrl + U","Souligné"]
+ ]},
+ {"groupe":"Formules","raccourcis":[
+  ["Alt + =","Somme automatique"],
+  ["F4","Ajouter les $ à une référence"],
+  ["F9","Recalculer"]
+ ]},
+ {"groupe":"Classeur","raccourcis":[
+  ["Ctrl + S","Enregistrer"],
+  ["Ctrl + N","Nouveau classeur"],
+  ["Ctrl + O","Ouvrir"],
+  ["Ctrl + P","Imprimer"],
+  ["Ctrl + F","Rechercher"],
+  ["Ctrl + H","Remplacer"]
+ ]}
+]

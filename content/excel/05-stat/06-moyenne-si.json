@@ -1,0 +1,25 @@
+{
+ "id": "moyenne-si",
+ "titre": "MOYENNE.SI",
+ "niveau": 2,
+ "resume": "Calculer une moyenne pour un seul groupe.",
+ "motsCles": "moyenne condition critère averageif groupe classe",
+ "syntaxe": "=MOYENNE.SI(plage; critère; plage_moyenne)",
+ "arguments": [
+  ["plage","Où chercher le critère"],
+  ["critère","Ce qu'il faut trouver"],
+  ["plage_moyenne","Les valeurs dont on veut la moyenne"]
+ ],
+ "grille": [
+  ["Élève","Classe","Note","","Classe","Moyenne"],
+  ["Léa","A","14","","A",""],
+  ["Hugo","B","9","","B",""],
+  ["Inès","A","16","","",""],
+  ["Tom","B","11","","",""],
+  ["Nora","A","12","","",""]
+ ],
+ "etapes": [
+  {"c":"F2","f":"=MOYENNE.SI($B$2:$B$6;E2;$C$2:$C$6)","v":"14","mark":"C2 C4 C6","t":"Même logique que SOMME.SI, mais pour une moyenne : ici, celle de la classe A."},
+  {"c":"F2","fill":{"F3":"10"},"mark":"C3 C5","t":"Recopiez pour la classe B."}
+ ]
+}

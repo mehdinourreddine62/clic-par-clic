@@ -1,0 +1,22 @@
+{
+ "id": "sierreur",
+ "titre": "SIERREUR",
+ "niveau": 2,
+ "resume": "Remplacer un message d'erreur par la valeur de son choix.",
+ "motsCles": "erreur #div/0! #n/a masquer",
+ "syntaxe": "=SIERREUR(calcul; valeur_si_erreur)",
+ "arguments": [
+  ["calcul","La formule qui peut échouer"],
+  ["valeur_si_erreur","Ce qui s'affiche à la place de l'erreur"]
+ ],
+ "grille": [
+  ["Produit","CA","Unités","Prix moyen"],
+  ["Café","1 200 €","300",""],
+  ["Thé","0 €","0",""],
+  ["Cacao","450 €","90",""]
+ ],
+ "etapes": [
+  {"c":"D2","f":"=B2/C2","v":"4,00 €","fill":{"D3":"#DIV/0!","D4":"5,00 €"},"mark":"C3","t":"Diviser par zéro est impossible : Excel affiche une erreur."},
+  {"c":"D2","f":"=SIERREUR(B2/C2;\"-\")","v":"4,00 €","fill":{"D3":"-","D4":"5,00 €"},"t":"SIERREUR remplace l'erreur par la valeur de votre choix, ici un tiret."}
+ ]
+}

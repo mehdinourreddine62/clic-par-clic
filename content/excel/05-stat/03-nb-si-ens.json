@@ -1,0 +1,24 @@
+{
+ "id": "nb-si-ens",
+ "titre": "NB.SI.ENS",
+ "niveau": 2,
+ "resume": "Compter selon plusieurs conditions à la fois.",
+ "motsCles": "compter plusieurs critères conditions countifs",
+ "syntaxe": "=NB.SI.ENS(plage1; critère1; plage2; critère2)",
+ "arguments": [
+  ["plage1; critère1","La première condition"],
+  ["plage2; critère2","La deuxième condition, et ainsi de suite"]
+ ],
+ "grille": [
+  ["Vendeur","Région","Montant","","Résultat"],
+  ["Alice","Nord","500","",""],
+  ["Bruno","Sud","300","",""],
+  ["Alice","Sud","200","",""],
+  ["Chloé","Nord","450","",""],
+  ["Alice","Nord","150","",""]
+ ],
+ "etapes": [
+  {"c":"E2","f":"=NB.SI.ENS(A2:A6;\"Alice\";B2:B6;\"Nord\")","v":"2","mark":"A2 B2 A6 B6","t":"Chaque couple plage + critère ajoute une condition. Toutes doivent être vraies."},
+  {"c":"E2","f":"=NB.SI.ENS(A2:A6;\"Alice\";C2:C6;\">=200\")","v":"2","mark":"C2 C4","t":"Le critère peut être une comparaison : ici, les ventes d'Alice d'au moins 200."}
+ ]
+}
