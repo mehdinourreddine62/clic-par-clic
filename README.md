@@ -1,7 +1,7 @@
 # Clic par clic
 
 Leçons animées pour apprendre Excel, publiées avec GitHub Pages :
-https://mehdinourreddine62.github.io/Formation-Excel/
+https://mehdinourreddine62.github.io/clic-par-clic/
 
 ## Organisation
 
