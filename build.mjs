@@ -75,7 +75,7 @@ function home(){
   const verif=SITE.verificationGoogle?`<meta name="google-site-verification" content="${SITE.verificationGoogle}">\n`:"";
   return head({title,desc,url:SITE.url,root:"",ld,extra:verif})+`  <div id="home">
     <header class="hero">
-      <h1>Excel, <em>une formule à la fois.</em></h1>
+      <h1>Excel, <em>étape par étape.</em></h1>
       <p>Des leçons animées pour découvrir Excel, puis maîtriser les formules et les graphiques, directement dans une feuille de calcul.</p>
     </header>
     <div class="tools">
