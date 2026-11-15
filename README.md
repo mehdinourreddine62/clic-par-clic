@@ -8,6 +8,7 @@ https://mehdinourreddine62.github.io/Formation-Excel/
 | Dossier ou fichier | Rôle |
 |---|---|
 | `content/excel/` | Les leçons : un dossier par thème, un fichier `.json` par leçon |
+| `content/excel/aide-memoire-raccourcis.json` | Les raccourcis de la page `/excel/raccourcis-clavier/`, par groupe, avec la leçon animée associée |
 | `content/excel/categories.json` | Les thèmes : nom, couleur, icône, ordre d'affichage |
 | `src/` | Le style (`style.css`) et les scripts (`app.js`, `player.js`, `home.js`) |
 | `site.json` | Adresse du site, nom, balise de validation Google |

@@ -19,6 +19,8 @@ const LOGICIEL="excel";
 const cats=readJson(`content/${LOGICIEL}/categories.json`);
 const memo=readJson(`content/${LOGICIEL}/aide-memoire-raccourcis.json`);
 const dirs=fs.readdirSync(`content/${LOGICIEL}`).filter(d=>/^\d+-/.test(d)).sort();
+const MEMO_ID="raccourcis-clavier";
+const nbRacc=memo.reduce((a,g)=>a+g.raccourcis.length,0);
 const lessons=[];
 for(const d of dirs){
   const cat=cats.find(c=>d.endsWith("-"+c.id));
@@ -27,6 +29,7 @@ for(const d of dirs){
     const l=readJson(`content/${LOGICIEL}/${d}/${f}`);
     for(const k of ["id","titre","niveau","resume","syntaxe","arguments","grille","etapes"])if(l[k]===undefined)throw new Error(`${d}/${f} : champ « ${k} » manquant`);
     if(!/^[a-z0-9-]+$/.test(l.id))throw new Error(`${d}/${f} : id invalide « ${l.id} »`);
+    if(l.id===MEMO_ID)throw new Error(`${d}/${f} : l'id « ${MEMO_ID} » est réservé à la page des raccourcis`);
     if(lessons.some(x=>x.id===l.id))throw new Error(`${d}/${f} : id « ${l.id} » déjà utilisé`);
     l.cat=cat;lessons.push(l);
   }
@@ -60,7 +63,7 @@ ${FONTS}
 </head>
 <body>
 <div class="wrap">
-  <div class="topbar"><a class="brand" href="${root||"./"}"><span class="logo" aria-hidden="true"><i></i><i class="on"></i><i></i><i class="on"></i><i class="on"></i><i></i></span>${esc(SITE.nom)}</a><button class="theme" id="theme" type="button"></button></div>
+  <div class="topbar"><a class="brand" href="${root||"./"}"><span class="logo" aria-hidden="true"><i></i><i class="on"></i><i></i><i class="on"></i><i class="on"></i><i></i></span>${esc(SITE.nom)}</a><nav class="tnav"><a href="${root}${LOGICIEL}/${MEMO_ID}/">Raccourcis clavier</a><button class="theme" id="theme" type="button"></button></nav></div>
 `;}
 
 /* ---------- accueil ---------- */
@@ -71,7 +74,7 @@ function home(){
   const sections=cats.map(c=>{
     const g=lessons.filter(l=>l.cat===c);if(!g.length)return"";
     const cards=g.map(l=>`<a class="card" href="${LOGICIEL}/${l.id}/" data-id="${l.id}" data-c="${c.id}" data-l="${l.niveau}" data-s="${esc(norm(`${l.titre} ${l.resume} ${l.motsCles||""} ${c.nom}`))}"><span class="cn">${esc(l.titre)}</span><span class="cd">${esc(l.resume)}</span><span class="cf">${bars(l.niveau)}<span>${l.etapes.length} étapes</span></span></a>`).join("\n");
-    const m=c.id==="raccourcis"?`<details class="memo"><summary>Aide-mémoire : tous les raccourcis</summary><p>Raccourcis pour Excel en français sur Windows. Sur Mac, la touche Ctrl est le plus souvent remplacée par ⌘.</p><div class="cols">${memo.map(x=>`<div><h3>${esc(x.groupe)}</h3><dl>${x.raccourcis.map(([k,d])=>`<dt>${kbd(k)}</dt><dd>${esc(d)}</dd>`).join("")}</dl></div>`).join("")}</div></details>`:"";
+    const m=c.id==="raccourcis"?`<a class="memolink" href="${LOGICIEL}/${MEMO_ID}/"><span><b>Aide-mémoire</b>Les ${nbRacc} raccourcis réunis sur une seule page</span><span aria-hidden="true">→</span></a>`:"";
     return `<section class="sec" id="theme-${c.id}" style="--k:var(--${c.couleur})"><h2><span class="ico" aria-hidden="true">${ico(c)}</span><span class="st">${esc(c.nom)}<small>${g.length} leçon${g.length>1?"s":""}</small></span></h2><div class="cards">\n${cards}\n</div>${m}</section>`;
   }).join("\n");
   const verif=SITE.verificationGoogle?`<meta name="google-site-verification" content="${SITE.verificationGoogle}">\n`:"";
@@ -139,14 +142,61 @@ function lessonPage(l,i){
 </html>
 `;}
 
+/* ---------- page des raccourcis clavier ---------- */
+function shortcutsPage(){
+  const url=`${SITE.url}${LOGICIEL}/${MEMO_ID}/`;
+  const title=`Raccourcis clavier Excel : l'aide-mémoire complet | ${SITE.nom}`;
+  const desc=`Les ${nbRacc} raccourcis clavier Excel les plus utiles, en français pour Windows, classés par usage : se déplacer, sélectionner, saisir, copier, mettre en forme, formules.`;
+  const ld={"@context":"https://schema.org","@type":"LearningResource",name:"Raccourcis clavier Excel",description:desc,inLanguage:"fr",isAccessibleForFree:true,learningResourceType:"Aide-mémoire",url,isPartOf:{"@type":"Course",name:`${SITE.nom} : apprendre Excel en animation`,url:SITE.url}};
+  const cat=cats.find(c=>c.id==="raccourcis");
+  const groups=memo.map(g=>{
+    const l=g.lecon&&lessons.find(x=>x.id===g.lecon);
+    if(g.lecon&&!l)throw new Error(`aide-memoire-raccourcis.json : leçon « ${g.lecon} » introuvable`);
+    return `<section class="kgroup"><h2>${esc(g.groupe)}</h2><dl>${g.raccourcis.map(([k,d])=>`<div class="krow" data-s="${esc(norm(k+" "+d+" "+g.groupe))}"><dt>${kbd(k)}</dt><dd>${esc(d)}</dd></div>`).join("")}</dl>${l?`<a class="kmore" href="../${l.id}/">Voir en animation →</a>`:""}</section>`;
+  }).join("\n");
+  return head({title,desc,url,root:"../../",ld})+`  <main id="memo">
+    <a class="back" href="../../">← Toutes les leçons</a>
+    <div class="lhead">
+      <div class="meta"><span class="tag" style="--k:var(--${cat.couleur})">${ico(cat)}${esc(cat.nom)}</span><span>${nbRacc} raccourcis</span></div>
+      <h1>Raccourcis clavier Excel</h1>
+      <p>L'aide-mémoire à garder sous la main. Raccourcis pour Excel en français sur Windows ; sur Mac, la touche Ctrl est le plus souvent remplacée par ⌘.</p>
+    </div>
+    <div class="ktools">
+      <input id="kq" type="search" placeholder="Rechercher : copier, date, colonne…" aria-label="Rechercher un raccourci">
+      <button class="theme" id="kprint" type="button">Imprimer</button>
+    </div>
+    <div class="kgrid">
+${groups}
+    </div>
+    <p class="empty" id="knone" hidden>Aucun raccourci ne correspond à votre recherche.</p>
+  </main>
+</div>
+<script src="../../assets/app.js"></script>
+<script>
+(function(){
+  const rows=[...document.querySelectorAll(".krow")];
+  $("#kq").addEventListener("input",e=>{
+    const q=norm(e.target.value.trim());let n=0;
+    rows.forEach(r=>{r.hidden=!!q&&!r.dataset.s.includes(q);if(!r.hidden)n++;});
+    document.querySelectorAll(".kgroup").forEach(g=>g.hidden=!g.querySelector(".krow:not([hidden])"));
+    $("#knone").hidden=n>0;
+  });
+  $("#kprint").onclick=()=>print();
+})();
+</script>
+</body>
+</html>
+`;}
+
 /* ---------- écriture ---------- */
 fs.rmSync(LOGICIEL,{recursive:true,force:true});
 fs.rmSync("assets",{recursive:true,force:true});
 write("index.html",home());
 lessons.forEach((l,i)=>write(`${LOGICIEL}/${l.id}/index.html`,lessonPage(l,i)));
+write(`${LOGICIEL}/${MEMO_ID}/index.html`,shortcutsPage());
 write("assets/app.css",fs.readFileSync("src/style.css","utf8"));
 for(const f of ["app.js","player.js","home.js"])write(`assets/${f}`,fs.readFileSync(`src/${f}`,"utf8"));
-write("sitemap.xml",`<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n  <url><loc>${SITE.url}</loc></url>\n${lessons.map(l=>`  <url><loc>${SITE.url}${LOGICIEL}/${l.id}/</loc></url>`).join("\n")}\n</urlset>\n`);
+write("sitemap.xml",`<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n  <url><loc>${SITE.url}</loc></url>\n  <url><loc>${SITE.url}${LOGICIEL}/${MEMO_ID}/</loc></url>\n${lessons.map(l=>`  <url><loc>${SITE.url}${LOGICIEL}/${l.id}/</loc></url>`).join("\n")}\n</urlset>\n`);
 write("404.html",`<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>Page introuvable | ${esc(SITE.nom)}</title><style>body{font:16px system-ui,sans-serif;max-width:32em;margin:18vh auto;padding:0 16px;line-height:1.5}a{color:#147347}</style></head><body><h1>Page introuvable</h1><p>Cette page n'existe pas ou a été déplacée.</p><p><a href="${SITE.url}">Retour à toutes les leçons</a></p></body></html>\n`);
 write(".nojekyll","");
 console.log(`${lessons.length} leçons, ${cats.length} thèmes → site généré`);

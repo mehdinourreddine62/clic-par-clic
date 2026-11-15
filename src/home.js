@@ -12,7 +12,7 @@
     document.querySelectorAll(".sec").forEach(s=>{
       const n=s.querySelectorAll(".card:not([hidden])").length;total+=n;s.hidden=!n;
       s.querySelector(".st small").textContent=n+" leçon"+(n>1?"s":"");
-      const m=s.querySelector(".memo");if(m)m.hidden=!!(q||lvlF);
+      const m=s.querySelector(".memolink");if(m)m.hidden=!!(q||lvlF);
     });
     $("#none").hidden=total>0;
   }
