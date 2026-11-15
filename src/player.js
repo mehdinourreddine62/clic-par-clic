@@ -2,13 +2,16 @@
 const TABS=["Fichier","Accueil","Insertion","Mise en page","Formules","Données","Révision","Affichage"];
 const RIB={
  "Fichier":[["Classeur",["Nouveau","Ouvrir","Enregistrer","Enregistrer sous","Imprimer"]]],
- "Accueil":[["Presse-papiers",["Coller","Couper","Copier"]],["Police",["G","I","S","Bordures","Remplissage"]],["Alignement",["Gauche","Centrer","Droite"]],["Nombre",["€","%","000"]],["Styles",["Mise en forme conditionnelle"]],["Édition",["Somme","Rechercher"]]],
- "Insertion":[["Tableaux",["Tableau croisé dynamique","Tableau"]],["Illustrations",["Images","Formes"]],["Graphiques",["Histogramme","Barres","Courbes","Secteurs"]]],
+ "Accueil":[["Presse-papiers",["Coller","Couper","Copier"]],["Police",["G","I","S","Bordures","Remplissage"]],["Alignement",["Gauche","Centrer","Droite"]],["Nombre",["€","%","000"]],["Styles",["Mise en forme conditionnelle","Mettre sous forme de tableau"]],["Édition",["Somme","Rechercher"]]],
+ "Insertion":[["Tableaux",["Tableau croisé dynamique","Tableau"]],["Illustrations",["Images","Formes"]],["Graphiques",["Histogramme","Barres","Courbes","Secteurs","Nuage de points"]],["Sparkline",["Sparkline Courbe","Sparkline Histogramme"]]],
  "Mise en page":[["Mise en page",["Marges","Orientation","Taille","Zone d'impression"]]],
  "Formules":[["Bibliothèque de fonctions",["Insérer une fonction","Somme automatique","Logique","Texte","Date et heure","Recherche"]]],
- "Données":[["Trier et filtrer",["Trier","Filtrer"]],["Outils de données",["Supprimer les doublons","Convertir"]]],
+ "Données":[["Trier et filtrer",["Trier","Filtrer"]],["Outils de données",["Validation des données","Supprimer les doublons","Convertir"]]],
  "Révision":[["Vérification",["Orthographe"]],["Commentaires",["Nouveau commentaire"]],["Protéger",["Protéger la feuille"]]],
  "Création de graphique":[["Dispositions",["Ajouter un élément"]],["Styles",["Modifier les couleurs"]],["Données",["Intervertir lignes/colonnes","Sélectionner des données"]],["Type",["Modifier le type de graphique"]],["Emplacement",["Déplacer le graphique"]]],
+ "Analyse du tableau croisé":[["Données",["Actualiser","Changer la source de données"]],["Filtrer",["Insérer un segment"]],["Outils",["Graphique croisé dynamique"]]],
+ "Création de tableau":[["Options de style",["Ligne d'en-tête","Ligne Total","Lignes à bandes"]]],
+ "Sparkline":[["Type",["Courbe","Histogramme"]],["Afficher",["Point haut","Point bas"]]],
  "Affichage":[["Affichages",["Normal","Mise en page"]],["Fenêtre",["Figer les volets"]],["Zoom",["Zoom","100 %"]]]};
 
 /* ---------- moteur de la feuille ---------- */
@@ -20,12 +23,13 @@ let curC=0,curR=0;
 function dims(les){
   let C=0,R=les.g.length;les.g.forEach(r=>C=Math.max(C,r.length));
   const t=k=>{if(!/^\$?[A-Z]+\$?\d/.test(k))return;const g=pRange(k);C=Math.max(C,g.c2+1);R=Math.max(R,g.r2+1);};
-  les.s.forEach(s=>[s.c,s.sel,s.sel2,s.copy,...ls(s.mark),...ls(s.spill),...Object.keys(s.set||{}),...Object.keys(s.fill||{}),...Object.keys(s.fmt||{})].filter(Boolean).forEach(t));
+  les.s.forEach(s=>[s.c,s.sel,s.sel2,s.copy,s.dd&&s.dd.at,...Object.keys(s.spark||{}),...ls(s.mark),...ls(s.spill),...Object.keys(s.set||{}),...Object.keys(s.fill||{}),...Object.keys(s.fmt||{})].filter(Boolean).forEach(t));
   les._dr=R;
   if(les.chart){
     if(innerWidth<640){C=Math.max(C,4);R=Math.max(R,les._dr+8);}
     else[les.chart.at,...les.s.map(s=>s.chart&&s.chart.at)].filter(a=>a&&a!=="all").forEach(t);
   }
+  if(les.s.some(s=>s.pivot))return{C,R:Math.max(R+1,7)};
   return{C:innerWidth<640?C+1:Math.max(C+1,8),R:Math.max(R+1,7)};
 }
 function cellsOf(x){const g=pRange(x),o=[];for(let r=g.r1;r<=g.r2;r++)for(let c=g.c1;c<=g.c2;c++)o.push(colName(c)+(r+1));return o;}
@@ -37,7 +41,7 @@ function selR(x){
 }
 function stateAt(les,i){
   const v={},fm={};les.g.forEach((row,r)=>row.forEach((x,c)=>{if(x!=="")v[colName(c)+(r+1)]=x;}));
-  let bad={},spill=[],hide=[],fmt={},w={...(les.w||{})},copy="",sheets={list:["Feuil1"],on:0},chart=null;
+  let bad={},spill=[],hide=[],fmt={},w={...(les.w||{})},copy="",sheets={list:["Feuil1"],on:0},chart=null,spark={},pivot=null,dd=null,freeze={},hidec=[];
   const put=(k,val)=>{if(val==="")delete v[k];else v[k]=val;};
   for(let n=0;n<=i;n++){const s=les.s[n];
     if(s.f!==undefined){if(s.f[0]==="=")fm[s.c]=s.f;else delete fm[s.c];put(s.c,s.v!==undefined?s.v:s.f);}
@@ -51,11 +55,18 @@ function stateAt(les,i){
     if(s.copy!==undefined)copy=s.copy;
     if(s.sheets)sheets=s.sheets;
     if(chart&&(chart.spot||chart.panel||chart.pick)){chart={...chart};delete chart.spot;delete chart.panel;delete chart.pick;}
+    if(pivot&&pivot.pick){pivot={...pivot};delete pivot.pick;}
+    if(s.pivot!==undefined)pivot=s.pivot||null;
+    if(dd&&(dd.open||dd.pick!=null))dd={at:dd.at};
+    if(s.dd!==undefined)dd=s.dd||null;
+    if(s.spark)Object.assign(spark,s.spark);
+    if(s.freeze)freeze=s.freeze;
+    if(s.hidec)hidec=s.hidec;
     if(s.chart!==undefined){
       if(!s.chart)chart=null;
       else{chart={...(chart||les.chart||{})};if(typeof s.chart==="object")Object.assign(chart,s.chart);}
     }}
-  return{v,fm,bad,spill,hide,fmt,w,copy,sheets,chart};
+  return{v,fm,bad,spill,hide,fmt,w,copy,sheets,chart,spark,pivot,dd,freeze,hidec};
 }
 function build(les){
   const{C,R}=dims(les);curC=C;curR=R;
@@ -81,7 +92,7 @@ function applyState(st){
 let lastW="";
 function persist(st){
   document.querySelectorAll("#sheet td").forEach(td=>{const f=st.fmt[td.dataset.k]||"";
-    td.classList.toggle("fb",f.includes("b"));td.classList.toggle("ff",f.includes("f"));td.classList.toggle("fc",f.includes("c"));td.classList.toggle("fbd",f.includes("d"));td.classList.toggle("fi",f.includes("i"));td.classList.toggle("fu",f.includes("u"));});
+    td.classList.toggle("fb",f.includes("b"));td.classList.toggle("ff",f.includes("f"));td.classList.toggle("fc",f.includes("c"));td.classList.toggle("fbd",f.includes("d"));td.classList.toggle("fh",f.includes("h"));td.classList.toggle("fz",f.includes("z"));td.classList.toggle("fi",f.includes("i"));td.classList.toggle("fu",f.includes("u"));});
   const wk=JSON.stringify(st.w);
   if(wk!==lastW){lastW=wk;
     for(let c=0;c<curC;c++){const w=st.w[colName(c)],px=w?w+"px":"";
@@ -89,7 +100,37 @@ function persist(st){
     setTimeout(placeAll,340);}
   setBox("copy",st.copy?pRange(st.copy):null,"ants");
   $("#tabs").innerHTML=st.sheets.list.map((n,j)=>`<span class="${j===st.sheets.on?"on":""}">${esc(n)}</span>`).join("")+"<span>+</span>";
+  const fz=st.freeze||{};
+  document.querySelectorAll("#sheet tbody tr").forEach(tr=>tr.classList.toggle("frr",+tr.dataset.r===fz.r));
+  document.querySelectorAll("#sheet td[data-x],#sheet thead th[data-c]").forEach(e=>{const x=+(e.dataset.x!==undefined?e.dataset.x:e.dataset.c);e.classList.toggle("frc",!!fz.c&&x===fz.c-1);e.classList.toggle("hidc",st.hidec.includes(colName(x)));});
+  for(const[k,o]of Object.entries(st.spark)){const td=cellEl(k);if(td)td.innerHTML=sparkSvg(cellsOf(o.r).map(c=>num(st.v[c])),o.type);}
+  lastSt=st;renderPivot(st);renderDD(st);
   renderChart(st);
+}
+let lastSt=null;
+function sparkSvg(v,type){
+  const W=76,H=20,mx=Math.max(...v,1),mn=Math.min(...v),n=v.length;let o="";
+  if(type==="col"){const bw=W/n;v.forEach((x,i)=>{const h=4+(x-mn)/((mx-mn)||1)*(H-6);o+=`<rect x="${i*bw+1.5}" y="${H-h}" width="${bw-3}" height="${h}" fill="var(--${x===mx?"r1":"r0"})"/>`;});}
+  else{const pts=v.map((x,i)=>[4+i*(W-8)/Math.max(1,n-1),H-3-(x-mn)/((mx-mn)||1)*(H-6)]);
+    o=`<polyline points="${pts.map(q=>q.join(",")).join(" ")}" fill="none" stroke="var(--r0)" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/><circle cx="${pts[n-1][0]}" cy="${pts[n-1][1]}" r="2.4" fill="var(--r1)"/>`;}
+  return`<svg class="spk" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" aria-hidden="true">${o}</svg>`;
+}
+function renderPivot(st){
+  const el=$("#pivot");if(!el)return;const p=st.pivot;
+  if(!p){el.hidden=true;return;}
+  const was=el.hidden;el.hidden=false;
+  const zones=[["Filtres",p.filt||[]],["Colonnes",p.cols||[]],["Lignes",p.rows||[]],["Valeurs",p.vals||[]]];
+  const used=f=>zones.some(z=>z[1].some(x=>x===f||x.endsWith(" de "+f)));
+  const isNew=x=>p.pick&&(x===p.pick||x.endsWith(" de "+p.pick));
+  el.innerHTML=`<b>Champs de tableau croisé dynamique</b><div class="pf">${p.fields.map(f=>`<span class="${p.pick===f?"hot":""}"><i class="${used(f)?"on":""}"></i>${esc(f)}</span>`).join("")}</div><div class="pz">${zones.map(([n,l])=>`<div><small>${n}</small>${l.map(x=>`<em class="${isNew(x)?"new":""}">${esc(x)}</em>`).join("")}</div>`).join("")}</div>`;
+  if(was)setTimeout(placeAll,30);
+}
+function renderDD(st){
+  document.querySelectorAll("#ov .dda,#ov .ddl").forEach(e=>e.remove());
+  const d=st&&st.dd;if(!d)return;const r=rect(pRange(d.at));if(!r)return;
+  const a=document.createElement("div");a.className="dda";Object.assign(a.style,{left:r.x+r.w-20+"px",top:r.y+3+"px",height:r.h-6+"px"});$("#ov").appendChild(a);
+  if(d.open&&d.items){const l=document.createElement("div");l.className="ddl";Object.assign(l.style,{left:r.x+"px",top:r.y+r.h+1+"px",minWidth:r.w+"px"});
+    l.innerHTML=d.items.map((x,i)=>`<span class="${d.pick===i?"on":""}">${esc(x)}</span>`).join("");$("#ov").appendChild(l);}
 }
 /* ---------- graphiques ---------- */
 const CH_COL=["r0","r4","r3","r2","r1","r5","k7","k8"];
@@ -110,7 +151,7 @@ function chartRange(cfg){
 function chartModel(st){
   const cfg=st.chart,rs=cfg.series||[cfg.vals];
   return{cfg,labs:cellsOf(cfg.labels).map(k=>kind(st.v[k]||"")[1]),ser:rs.map(r=>cellsOf(r).map(k=>num(st.v[k]))),
-    names:rs.map((r,j)=>{const g=pRange(r);return(g.r1>0&&kind(st.v[colName(g.c1)+g.r1]||"")[1])||"Série "+(j+1);})};
+    names:cfg.names?cfg.names.map(n=>/^[A-Z]+\d+$/.test(n)?kind(st.v[n]||"")[1]:n):rs.map((r,j)=>{const g=pRange(r);return(g.r1>0&&kind(st.v[colName(g.c1)+g.r1]||"")[1])||"Série "+(j+1);})};
 }
 function drawChart(el,M,ser,min,max,p,fresh){
   const cfg=M.cfg,type=cfg.type||"col",W=el.clientWidth||300,H=el.clientHeight||200,nS=ser.length,nC=M.labs.length,CW=6.1;
@@ -152,40 +193,62 @@ function drawChart(el,M,ser,min,max,p,fresh){
       lab+=`<text x="${L-6}" y="${yc+4}" text-anchor="end"${dim(i)}>${esc(cutTxt(M.labs[i],Math.floor(lw/CW)))}</text>`;
       if(dl&&p===1)lab+=`<text class="cdl${fresh.dlabels?" cnew":""}" x="${L+w+5}" y="${yc+4}">${fr(v)}</text>`;});
     if(cfg.spot==="plot")spot=[L-2,T-2,R-L+4,B-T+4];
+  }else if(type==="scatter"){
+    const xs=M.labs.map(num),ys=ser[0],xmax=nice(Math.max(...xs,0)),tx=ticks(0,xmax),tk=ticks(min,max,cfg.step),tl=tk.map(fr),L0=L;
+    L+=Math.max(...tl.map(s=>s.length))*CW+8+(cfg.yt?15:0);B-=16+(cfg.xt?15:0);
+    const X=v=>L+v/xmax*(R-L-6),Y=v=>B-(clamp(v)-min)/span*(B-T);
+    tk.forEach((t,i)=>{const y=Y(t);grid+=`<line class="cg" x1="${L}" x2="${R}" y1="${y}" y2="${y}"/><text x="${L-5}" y="${y+4}" text-anchor="end">${tl[i]}</text>`;});
+    tx.forEach(t=>grid+=`<text x="${X(t)}" y="${B+13}" text-anchor="middle">${fr(t)}</text>`);
+    grid+=`<line class="cax" x1="${L}" x2="${R}" y1="${B}" y2="${B}"/><line class="cax" x1="${L}" x2="${L}" y1="${T}" y2="${B}"/>`;
+    if(cfg.xt)lab+=`<text class="cat" x="${(L+R)/2}" y="${B+28}" text-anchor="middle">${esc(cfg.xt)}</text>`;
+    if(cfg.yt)lab+=`<text class="cat" transform="translate(${L0+10} ${(T+B)/2}) rotate(-90)" text-anchor="middle">${esc(cfg.yt)}</text>`;
+    if(cfg.trend&&p===1)body+=trendLine(xs,ys,X,Y,Math.min(...xs),Math.max(...xs),fresh.trend);
+    xs.forEach((x,i)=>body+=`<circle cx="${X(x)}" cy="${B-(B-Y(ys[i]))*p}" r="${cfg.hi===i?7:4.5}" ${fill(0)} stroke="var(--surface)" stroke-width="1.5"${dim(i)}/>`);
+    if(cfg.spot==="plot")spot=[L-2,T-2,R-L+4,B-T+4];
   }else{
     if(dl)T+=14;
-    const tk=ticks(min,max,cfg.step),tl=tk.map(fr);
+    const all=ser.map((_,j)=>j),lineIdx=type==="line"?all:type==="combo"?(cfg.line||[nS-1]):[],barIdx=all.filter(j=>!lineIdx.includes(j));
+    const ax2=type==="combo"&&!!cfg.axis2,tk=ticks(min,max,cfg.step),tl=tk.map(fr),u2=cfg.unit2||"";
     if(axisOn)L+=Math.max(...tl.map(s=>s.length))*CW+8;
+    let m2=1,t2=[];
+    if(ax2){m2=nice(Math.max(...lineIdx.flatMap(j=>ser[j]),0));t2=ticks(0,m2);R-=Math.max(...t2.map(t=>(fr(t)+u2).length))*CW+8;}
     B-=16;
-    const Y=v=>B-(clamp(v)-min)/span*(B-T),slot=(R-L)/nC;
+    const Y=v=>B-(clamp(v)-min)/span*(B-T),Y2=v=>B-Math.min(Math.max(v,0),m2)/m2*(B-T),slot=(R-L)/nC;
     if(axisOn){tk.forEach((t,i)=>{const y=Y(t);grid+=`<line class="cg" x1="${L}" x2="${R}" y1="${y}" y2="${y}"/><text x="${L-5}" y="${y+4}" text-anchor="end">${tl[i]}</text>`;});if(cfg.spot==="axis")spot=[2,T-8,L+2,B-T+16];}
+    if(ax2)t2.forEach(t=>grid+=`<text class="${fresh.axis2?"cnew":""}" x="${R+5}" y="${Y2(t)+4}" fill="var(--${tok(lineIdx[0])})">${fr(t)+u2}</text>`);
     grid+=`<line class="cax" x1="${L}" x2="${R}" y1="${B}" y2="${B}"/>`;
     M.labs.forEach((l,i)=>lab+=`<text x="${L+slot*(i+.5)}" y="${B+13}" text-anchor="middle"${dim(i)}>${esc(cutTxt(l,Math.max(2,Math.floor(slot/CW))))}</text>`);
     const dcls=`cdl${fresh.dlabels?" cnew":""}`;
-    if(type==="line"){
-      let g="";
-      ser.forEach((s,j)=>{const pts=s.map((v,i)=>[L+slot*(i+.5),Y(v)]);
-        g+=`<path d="M${pts.map(q=>q.join(" ")).join("L")}" fill="none" stroke="var(--${tok(j)})" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>`;
-        pts.forEach((q,i)=>{g+=`<circle cx="${q[0]}" cy="${q[1]}" r="${cfg.hi===i?6:3.2}" ${fill(j)} stroke="var(--surface)" stroke-width="1.5"/>`;
-          if(dl&&p===1)lab+=`<text class="${dcls}" x="${q[0]}" y="${q[1]-8}" text-anchor="middle">${fr(s[i])}</text>`;});});
-      body+=`<clipPath id="ccl"><rect x="0" y="0" width="${L+(R-L)*p+4}" height="${H}"/></clipPath><g clip-path="url(#ccl)">${g}</g>`;
-    }else if(type==="stack"){
+    if(type==="stack"){
       const cum=new Array(nC).fill(0);
       ser.forEach((s,j)=>s.forEach((v,i)=>{const y0=B-(B-Y(min+cum[i]))*p;cum[i]+=v;const y1=B-(B-Y(min+cum[i]))*p,bw=slot*.58,x=L+slot*i+slot*.21;
         body+=`<rect x="${x}" y="${y1}" width="${bw}" height="${Math.max(0,y0-y1)}" ${fill(j)}${dim(i)}/>`;
         if(dl&&p===1&&y0-y1>13)lab+=`<text class="${dcls} cin" x="${x+bw/2}" y="${(y0+y1)/2+4}" text-anchor="middle">${fr(v)}</text>`;}));
     }else{
-      ser.forEach((s,j)=>s.forEach((v,i)=>{const gw=slot*.68,bw=gw/nS,x=L+slot*i+slot*.16+bw*j,h=Math.max(0,(B-Y(v))*p);
-        body+=`<rect x="${x}" y="${B-h}" width="${Math.max(1,bw-(nS>1?1.5:0))}" height="${h}" rx="1.5" ${fill(j)}${dim(i)}/>`;
+      const nB=barIdx.length;
+      barIdx.forEach((j,bj)=>ser[j].forEach((v,i)=>{const gw=slot*.68,bw=gw/nB,x=L+slot*i+slot*.16+bw*bj,h=Math.max(0,(B-Y(v))*p);
+        body+=`<rect x="${x}" y="${B-h}" width="${Math.max(1,bw-(nB>1?1.5:0))}" height="${h}" rx="1.5" ${fill(j)}${dim(i)}/>`;
         if(dl&&p===1)lab+=`<text class="${dcls}" x="${x+bw/2}" y="${B-h-4}" text-anchor="middle"${dim(i)}>${fr(v)}</text>`;}));
+      let g="";
+      lineIdx.forEach(j=>{const Yl=ax2?Y2:Y,pts=ser[j].map((v,i)=>[L+slot*(i+.5),Yl(v)]);
+        g+=`<path d="M${pts.map(q=>q.join(" ")).join("L")}" fill="none" stroke="var(--${tok(j)})" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>`;
+        pts.forEach((q,i)=>{g+=`<circle cx="${q[0]}" cy="${q[1]}" r="${cfg.hi===i&&type==="line"?6:3.2}" ${fill(j)} stroke="var(--surface)" stroke-width="1.5"/>`;
+          if(dl&&p===1&&type==="line")lab+=`<text class="${dcls}" x="${q[0]}" y="${q[1]-8}" text-anchor="middle">${fr(ser[j][i])}</text>`;});});
+      if(g)body+=`<clipPath id="ccl"><rect x="0" y="0" width="${L+(R-L)*p+4}" height="${H}"/></clipPath><g clip-path="url(#ccl)">${g}</g>`;
+      if(cfg.trend&&p===1)body+=trendLine(ser[0].map((_,i)=>i),ser[0],i=>L+slot*(i+.5),Y,0,nC-1,fresh.trend);
     }
     if(cfg.spot==="plot")spot=[L-2,T-2,R-L+4,B-T+4];
   }
   let html=`<svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="none" width="100%" height="100%" role="img" aria-label="${esc(cfg.title||"Graphique")}">${grid}${body}${lab}${ttl}${leg}${spot?`<rect class="cspot" x="${spot[0]}" y="${spot[1]}" width="${spot[2]}" height="${spot[3]}" rx="4"/>`:""}</svg>`;
-  if(cfg.panel){const it=[["title","Titre du graphique",!!cfg.title],["axis","Axes",axisOn],["dlabels","Étiquettes de données",dl],["legend","Légende",legOn]];
+  if(cfg.panel){const it=[["title","Titre du graphique",!!cfg.title],["axis","Axes",axisOn],["dlabels","Étiquettes de données",dl],["legend","Légende",legOn],["trend","Courbe de tendance",!!cfg.trend]];
     html+=`<div class="cpanel" style="width:${pw}px"><b>Éléments de graphique</b>${it.map(([k,n,on])=>`<span class="${cfg.pick===k?"hot"+(fresh.pick?" press":""):""}"><i class="${on?"on":""}"></i>${n}</span>`).join("")}</div>`;}
   if(cfg.selected)html+=[[0,0],[50,0],[100,0],[0,50],[100,50],[0,100],[50,100],[100,100]].map(([x,y])=>`<i class="hd" style="left:${x}%;top:${y}%"></i>`).join("");
   el.innerHTML=html;
+}
+function trendLine(xs,ys,X,Y,x0,x1,isNew){
+  const n=xs.length,mx=xs.reduce((a,b)=>a+b,0)/n,my=ys.reduce((a,b)=>a+b,0)/n;
+  const b=xs.reduce((a,x,i)=>a+(x-mx)*(ys[i]-my),0)/(xs.reduce((a,x)=>a+(x-mx)*(x-mx),0)||1),a=my-b*mx;
+  return`<line class="ctr${isNew?" cnew":""}" x1="${X(x0)}" y1="${Y(a+b*x0)}" x2="${X(x1)}" y2="${Y(a+b*x1)}"/>`;
 }
 function placeChartEl(el,cfg){const r=rect(chartRange(cfg));if(!r)return;Object.assign(el.style,{left:r.x+5+"px",top:r.y+4+"px",width:r.w-10+"px",height:r.h-8+"px"});}
 function redrawChart(){const el=$("#chart");if(el&&chPrev)drawChart(el,chPrev.M,chPrev.M.ser,chPrev.min,chPrev.max,1,{});}
@@ -203,13 +266,14 @@ function renderChart(st){
   if(!el){el=document.createElement("div");el.id="chart";el.className="chart";$("#ov").appendChild(el);placeChartEl(el,cfg);void el.offsetWidth;}
   el.classList.toggle("sel",!!cfg.selected);
   const moved=chPrev&&chPrev.M.cfg.at!==cfg.at;placeChartEl(el,cfg);
-  const flat=M.ser.flat(),dataMax=type==="stack"?Math.max(...M.labs.map((_,i)=>M.ser.reduce((a,s)=>a+(s[i]||0),0))):Math.max(...flat,0);
+  const lineSet=type==="combo"&&cfg.axis2?(cfg.line||[M.ser.length-1]):[];
+  const flat=M.ser.flat(),dataMax=type==="stack"?Math.max(...M.labs.map((_,i)=>M.ser.reduce((a,s)=>a+(s[i]||0),0))):Math.max(...M.ser.filter((_,j)=>!lineSet.includes(j)).flat(),0);
   const tmin=cfg.min!=null?cfg.min:0,tmax=cfg.max!=null?cfg.max:nice(dataMax);
   const key=type+"|"+M.ser.map(s=>s.length).join(","),pc=chPrev&&chPrev.M.cfg,same=!!chPrev&&chPrev.key===key;
   const from=same?chPrev:{v:flat,min:tmin,max:tmax};
   const changed=!same||from.v.some((x,i)=>x!==flat[i])||from.min!==tmin||from.max!==tmax;
   const go=chAnim&&!reduce;
-  const fresh=go?{title:!!cfg.title&&(!pc||pc.title!==cfg.title),legend:!!pc&&!pc.legend&&!!cfg.legend,dlabels:!!cfg.dlabels&&(!pc||!pc.dlabels),pick:true}:{};
+  const fresh=go?{title:!!cfg.title&&(!pc||pc.title!==cfg.title),legend:!!pc&&!pc.legend&&!!cfg.legend,dlabels:!!cfg.dlabels&&(!pc||!pc.dlabels),trend:!!cfg.trend&&(!pc||!pc.trend),axis2:!!cfg.axis2&&(!pc||!pc.axis2),pick:true}:{};
   const unflat=v=>{let k=0;return M.ser.map(s=>s.map(()=>v[k++]));};
   const fv=from.v.slice(),fmin=from.min,fmax=from.max;
   chPrev={key,v:flat,min:tmin,max:tmax,M};
@@ -239,7 +303,7 @@ function setBox(key,g,cls,color){
   b.g=g;if(color)b.el.style.color=`var(--${color})`;place(b);
 }
 const clearBoxes=pre=>{for(const k in boxes)if(k.startsWith(pre))setBox(k,null);};
-const placeAll=()=>{for(const k in boxes)place(boxes[k]);placeChart();};
+const placeAll=()=>{for(const k in boxes)place(boxes[k]);placeChart();if(lastSt)renderDD(lastSt);};
 function refBoxes(f,st){
   const refs=f&&f[0]==="="?colorize(f).refs:[];
   refs.forEach((k,j)=>{let g=pRange(k);if(k.endsWith("#")){const sp=st.spill.find(x=>x.split(":")[0]===k.slice(0,-1));if(sp)g=pRange(sp);}setBox("ref"+j,g,"ref","r"+(j%6));});
@@ -287,6 +351,7 @@ function transient(s){
   const map={ribbon:"#ribwrap",namebox:"#namebox",formula:"#formula",tabs:"#tabs",cols:"#sheet thead th.on",rows:"#sheet tbody th.on"};
   ls(s.spot).forEach(z=>{if(z==="cell"){if(boxes.act)boxes.act.el.classList.add("spot");return;}document.querySelectorAll(map[z]).forEach(e=>e.classList.add("spot"));});
   setBox("sel2",s.sel2?pRange(s.sel2):null,"selb");
+  const m=$("#msg");if(m){if(s.msg){m.innerHTML=`<b>Microsoft Excel</b><p>${esc(s.msg)}</p><div><span>Réessayer</span><span>Annuler</span></div>`;m.hidden=false;}else m.hidden=true;}
   const k=$("#keys");
   if(s.keys){k.innerHTML=s.keys.split(" + ").map(x=>`<kbd>${esc(x)}</kbd>`).join(" + ");k.hidden=false;k.classList.remove("in");void k.offsetWidth;k.classList.add("in");}else k.hidden=true;
 }

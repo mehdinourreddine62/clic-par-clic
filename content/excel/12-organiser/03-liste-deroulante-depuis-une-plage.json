@@ -1,0 +1,24 @@
+{
+ "id": "liste-deroulante-depuis-une-plage",
+ "titre": "Liste déroulante depuis une plage",
+ "niveau": 2,
+ "resume": "Une liste qui se met à jour quand ses choix changent.",
+ "motsCles": "liste déroulante source plage validation des données dynamique",
+ "syntaxe": "Source : =$D$2:$D$4",
+ "arguments": [
+  ["Source","Une plage de cellules contenant les choix"],
+  ["Avantage","Un seul endroit à tenir à jour"]
+ ],
+ "grille": [
+  ["Tâche","Statut","","Choix"],
+  ["Devis","","","À faire"],
+  ["Facture","","","En cours"],
+  ["Relance","","","Terminé"]
+ ],
+ "etapes": [
+  {"c":"B2","sel":"B2:B4","drag":1,"menu":"Validation des données › Liste › <b>Source</b>","rule":"=$D$2:$D$4","mark":"D2 D3 D4","dd":{"at":"B2"},"t":"Au lieu de taper les choix, désignez une plage qui les contient."},
+  {"c":"B2","dd":{"at":"B2","items":["À faire","En cours","Terminé"],"open":1},"t":"La liste reprend le contenu de la plage."},
+  {"c":"D3","f":"En attente","dd":{"at":"B2"},"t":"Modifiez un choix dans la plage : inutile de rouvrir la validation."},
+  {"c":"B2","dd":{"at":"B2","items":["À faire","En attente","Terminé"],"open":1,"pick":1},"set":{"B2":"En attente"},"t":"La liste a suivi. Pratique quand les choix évoluent : un seul endroit à tenir à jour."}
+ ]
+}

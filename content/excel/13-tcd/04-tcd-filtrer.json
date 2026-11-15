@@ -1,0 +1,31 @@
+{
+ "id": "tcd-filtrer",
+ "titre": "Filtrer un tableau croisé",
+ "niveau": 2,
+ "resume": "N'afficher qu'une partie des données, sans les modifier.",
+ "motsCles": "tcd filtre filtrer zone filtres vendeur tous segment",
+ "syntaxe": "Glisser un champ dans la zone Filtres",
+ "ruban": true,
+ "largeurs": {"E":26},
+ "arguments": [
+  ["Zone Filtres","Ajoute une liste au-dessus du tableau"],
+  ["(Tous)","Affiche toutes les données"]
+ ],
+ "grille": [
+  ["Vendeur","Région","Produit","Montant"],
+  ["Alice","Nord","Stylos","120"],
+  ["Bruno","Sud","Cahiers","80"],
+  ["Alice","Sud","Stylos","60"],
+  ["Chloé","Nord","Cahiers","150"],
+  ["Bruno","Nord","Stylos","90"],
+  ["Chloé","Sud","Stylos","110"],
+  ["Alice","Nord","Cahiers","70"],
+  ["Bruno","Sud","Stylos","40"]
+ ],
+ "etapes": [
+  {"c":"F3","tab":"Analyse du tableau croisé","pivot":{"fields":["Vendeur","Région","Produit","Montant"],"filt":[],"cols":[],"rows":["Région"],"vals":["Somme de Montant"]},"set":{"F3":"Étiquettes de lignes","G3":"Somme de Montant","F4":"Nord","G4":"430","F5":"Sud","G5":"290","F6":"Total général","G6":"720"},"fmt":{"F3:G3":"h","F6:G6":"b"},"t":"Voici les ventes par région, tous vendeurs confondus."},
+  {"c":"G1","tab":"Analyse du tableau croisé","pivot":{"fields":["Vendeur","Région","Produit","Montant"],"filt":["Vendeur"],"cols":[],"rows":["Région"],"vals":["Somme de Montant"],"pick":"Vendeur"},"set":{"F1":"Vendeur","G1":"(Tous)"},"fmt":{"F1":"b"},"dd":{"at":"G1"},"t":"Glissez Vendeur dans la zone Filtres : une liste apparaît au-dessus du tableau."},
+  {"c":"G1","tab":"Analyse du tableau croisé","dd":{"at":"G1","items":["(Tous)","Alice","Bruno","Chloé"],"open":1,"pick":1},"set":{"G1":"Alice","G4":"190","G5":"60","G6":"250"},"t":"Choisissez Alice : le tableau ne montre plus que ses ventes."},
+  {"c":"G1","tab":"Analyse du tableau croisé","dd":{"at":"G1","items":["(Tous)","Alice","Bruno","Chloé"],"open":1,"pick":0},"set":{"G1":"(Tous)","G4":"430","G5":"290","G6":"720"},"t":"Revenez sur « (Tous) » pour tout réafficher. Les données d'origine ne sont jamais modifiées."}
+ ]
+}

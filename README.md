@@ -68,13 +68,26 @@ L'`id` devient l'adresse de la page (`/excel/ma-fonction/`) : minuscules, chiffr
 | `w` | Largeur de colonnes : `{"A": 170}` |
 | `sheets`, `copy`, `chart`, `bar` | Onglets de feuilles, pointillés de copie, graphique, contenu forcé de la barre de formule |
 
+### Tableaux croisés, listes déroulantes, volets figés
+
+| Champ d'étape | Effet |
+|---|---|
+| `pivot` | Liste des champs d'un tableau croisé : `{"fields": [...], "filt": [], "cols": [], "rows": [], "vals": [], "pick": "Région"}`. Le résultat se place dans la feuille avec `set` |
+| `dd` | Liste déroulante : `{"at": "B2", "items": [...], "open": 1, "pick": 1}` |
+| `msg` | Message d'alerte affiché au centre de la feuille |
+| `freeze` | Volets figés : `{"r": 1, "c": 1}` trace un trait sous la ligne 1 et à droite de la colonne A |
+| `hide`, `hidec` | Lignes et colonnes masquées, pour simuler un défilement : `[2, 3]`, `["B", "C"]` |
+| `spark` | Mini-graphiques dans des cellules : `{"F2": {"r": "B2:E2", "type": "line"}}` |
+| `fmt` | En plus des lettres déjà listées : h en-tête de tableau, z ligne à bande |
+
 ### Graphiques
 
 Une leçon avec graphique déclare un champ `graphique` (réglages de départ), puis chaque étape peut le modifier avec `chart`.
 
 | Réglage | Effet |
 |---|---|
-| `type` | `col` histogramme, `bar` barres horizontales, `line` courbe, `pie` secteurs, `stack` histogramme empilé |
+| `type` | `col` histogramme, `bar` barres horizontales, `line` courbe, `pie` secteurs, `stack` empilé, `combo` combiné (`line`, `axis2`), `scatter` nuage de points |
+| `trend`, `names` | Courbe de tendance ; noms des séries (cellules ou textes) |
 | `labels`, `series` | Plage des catégories et liste des plages de valeurs : `"A2:A5"`, `["B2:B5", "C2:C5"]` |
 | `at` | Emplacement sur la feuille : `"D2:H8"`, ou `"all"` pour toute la feuille |
 | `title`, `legend`, `axis`, `dlabels` | Titre, légende, axe, étiquettes de données |

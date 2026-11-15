@@ -1,0 +1,26 @@
+{
+ "id": "liste-deroulante",
+ "titre": "Créer une liste déroulante",
+ "niveau": 1,
+ "resume": "Faire choisir une valeur dans une liste, sans faute de frappe.",
+ "motsCles": "liste déroulante validation des données choix menu saisie",
+ "syntaxe": "Données › Validation des données › Liste",
+ "ruban": true,
+ "arguments": [
+  ["Autoriser","Choisir « Liste »"],
+  ["Source","Les choix, séparés par des points-virgules"]
+ ],
+ "grille": [
+  ["Tâche","Statut"],
+  ["Devis",""],
+  ["Facture",""],
+  ["Relance",""]
+ ],
+ "etapes": [
+  {"c":"B2","sel":"B2:B4","drag":1,"tab":"Données","btn":"Validation des données","t":"Sélectionnez les cellules à contrôler, puis ouvrez « Validation des données »."},
+  {"c":"B2","sel":"B2:B4","menu":"Validation des données › Autoriser : <b>Liste</b> › Source","rule":"À faire;En cours;Terminé","dd":{"at":"B2"},"t":"Choisissez « Liste » et tapez les choix, séparés par des points-virgules."},
+  {"c":"B2","tab":"Données","dd":{"at":"B2","items":["À faire","En cours","Terminé"],"open":1},"t":"Une flèche apparaît dans la cellule : un clic ouvre la liste."},
+  {"c":"B2","tab":"Données","dd":{"at":"B2","items":["À faire","En cours","Terminé"],"open":1,"pick":1},"set":{"B2":"En cours"},"t":"Choisissez une valeur : plus de faute de frappe, tout le monde écrit la même chose."},
+  {"c":"B3","tab":"Données","dd":{"at":"B3","items":["À faire","En cours","Terminé"],"open":1,"pick":2},"set":{"B3":"Terminé"},"t":"La liste fonctionne dans toutes les cellules sélectionnées au départ."}
+ ]
+}

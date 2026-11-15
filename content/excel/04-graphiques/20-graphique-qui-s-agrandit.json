@@ -1,0 +1,27 @@
+{
+ "id": "graphique-qui-s-agrandit",
+ "titre": "Un graphique qui s'agrandit tout seul",
+ "niveau": 2,
+ "resume": "Faire suivre le graphique quand on ajoute des données.",
+ "motsCles": "graphique dynamique tableau ajouter données automatique étendre plage",
+ "syntaxe": "Mettre les données sous forme de tableau",
+ "ruban": true,
+ "graphique": {"type":"col","labels":"A2:A5","series":["B2:B5"],"title":"Ventes","at":"D2:H8"},
+ "arguments": [
+  ["Plage classique","Le graphique ne voit pas les nouvelles lignes"],
+  ["Tableau","Le graphique suit le tableau quand il s'agrandit"]
+ ],
+ "grille": [
+  ["Mois","Ventes"],
+  ["Janvier","120"],
+  ["Février","90"],
+  ["Mars","150"],
+  ["Avril","110"]
+ ],
+ "etapes": [
+  {"c":"A1","tab":"Accueil","chart":1,"t":"Un graphique classique dessine une plage fixe : ici, de janvier à avril."},
+  {"c":"A6","f":"Mai","tab":"Accueil","set":{"B6":"170"},"mark":"A6 B6","t":"Ajoutez un mois sous les données : le graphique l'ignore."},
+  {"c":"A1","sel":"A1:B6","tab":"Accueil","btn":"Mettre sous forme de tableau","keys":"Ctrl + L","fmt":{"A1:B1":"h","A3:B3":"z","A5:B5":"z"},"chart":{"labels":"A2:A6","series":["B2:B6"]},"t":"Mettez les données sous forme de tableau : le graphique prend maintenant tout le tableau."},
+  {"c":"A7","f":"Juin","tab":"Accueil","set":{"B7":"190"},"fmt":{"A7:B7":"z"},"chart":{"labels":"A2:A7","series":["B2:B7"]},"t":"Ajoutez une ligne : le tableau s'étend, et le graphique suit tout seul."}
+ ]
+}

@@ -1,0 +1,28 @@
+{
+ "id": "mettre-sous-forme-de-tableau",
+ "titre": "Mettre sous forme de tableau",
+ "niveau": 1,
+ "resume": "Un vrai tableau : mise en forme, filtres et total automatiques.",
+ "motsCles": "tableau structuré mettre sous forme bandes filtre ligne total ctrl l",
+ "syntaxe": "Accueil › Mettre sous forme de tableau",
+ "ruban": true,
+ "sansEnTete": true,
+ "arguments": [
+  ["Ctrl + L","Le raccourci"],
+  ["Lignes à bandes","Une ligne sur deux colorée"],
+  ["Ligne Total","Un total calculé tout seul"],
+  ["Extension","Le tableau s'agrandit quand on ajoute une ligne"]
+ ],
+ "grille": [
+  ["Produit","Prix","Stock"],
+  ["Stylo","1,20 €","40"],
+  ["Cahier","3,50 €","25"],
+  ["Classeur","5,90 €","12"]
+ ],
+ "etapes": [
+  {"c":"A1","sel":"A1:C4","drag":1,"tab":"Accueil","btn":"Mettre sous forme de tableau","keys":"Ctrl + L","fmt":{"A1:C1":"h","A3:C3":"z"},"set":{"A1":"Produit ▾","B1":"Prix ▾","C1":"Stock ▾"},"t":"Cliquez dans vos données, puis « Mettre sous forme de tableau » : couleurs et flèches de filtre arrivent d'un coup."},
+  {"c":"A5","f":"Trousse","tab":"Accueil","set":{"B5":"4,20 €","C5":"18"},"fmt":{"A5:C5":"z"},"t":"Tapez juste en dessous : le tableau s'agrandit tout seul et garde sa mise en forme."},
+  {"c":"A6","tab":"Création de tableau","btn":"Ligne Total","set":{"A6":"Total","C6":"95"},"fmt":{"A6:C6":"b"},"t":"Cochez « Ligne Total » pour ajouter un total, calculé automatiquement."},
+  {"c":"C6","tab":"Création de tableau","bar":"=SOUS.TOTAL(109;[Stock])","t":"Les formules utilisent le nom des colonnes : elles restent lisibles et suivent le tableau."}
+ ]
+}

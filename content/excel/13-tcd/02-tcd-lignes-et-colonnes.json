@@ -1,0 +1,32 @@
+{
+ "id": "tcd-lignes-et-colonnes",
+ "titre": "Lignes et colonnes",
+ "niveau": 2,
+ "resume": "Croiser deux informations dans le même tableau.",
+ "motsCles": "tcd tableau croisé dynamique lignes colonnes croiser zones champs",
+ "syntaxe": "Glisser un champ dans Lignes ou Colonnes",
+ "ruban": true,
+ "largeurs": {"E":26},
+ "arguments": [
+  ["Lignes","Un champ affiché de haut en bas"],
+  ["Colonnes","Un champ affiché de gauche à droite"],
+  ["Échanger","Glisser un champ d'une zone à l'autre"]
+ ],
+ "grille": [
+  ["Vendeur","Région","Produit","Montant"],
+  ["Alice","Nord","Stylos","120"],
+  ["Bruno","Sud","Cahiers","80"],
+  ["Alice","Sud","Stylos","60"],
+  ["Chloé","Nord","Cahiers","150"],
+  ["Bruno","Nord","Stylos","90"],
+  ["Chloé","Sud","Stylos","110"],
+  ["Alice","Nord","Cahiers","70"],
+  ["Bruno","Sud","Stylos","40"]
+ ],
+ "etapes": [
+  {"c":"F1","tab":"Analyse du tableau croisé","pivot":{"fields":["Vendeur","Région","Produit","Montant"],"filt":[],"cols":[],"rows":["Région"],"vals":["Somme de Montant"]},"set":{"F1":"Étiquettes de lignes","G1":"Somme de Montant","F2":"Nord","G2":"430","F3":"Sud","G3":"290","F4":"Total général","G4":"720"},"fmt":{"F1:G1":"h","F4:G4":"b"},"t":"Point de départ : le total des ventes par région."},
+  {"c":"G1","tab":"Analyse du tableau croisé","pivot":{"fields":["Vendeur","Région","Produit","Montant"],"filt":[],"cols":["Produit"],"rows":["Région"],"vals":["Somme de Montant"],"pick":"Produit"},"set":{"F1":"Région","G1":"Cahiers","H1":"Stylos","I1":"Total général","G2":"220","H2":"210","I2":"430","G3":"80","H3":"210","I3":"290","G4":"300","H4":"420","I4":"720"},"fmt":{"F1:I1":"h","F4:I4":"b"},"t":"Glissez Produit dans la zone Colonnes : le tableau se croise, région en ligne et produit en colonne."},
+  {"c":"G3","tab":"Analyse du tableau croisé","mark":"G3","t":"Chaque case répond à une question précise : le Sud a vendu pour 80 de cahiers."},
+  {"c":"F1","tab":"Analyse du tableau croisé","pivot":{"fields":["Vendeur","Région","Produit","Montant"],"filt":[],"cols":["Région"],"rows":["Produit"],"vals":["Somme de Montant"],"pick":"Région"},"set":{"F1":"Produit","G1":"Nord","H1":"Sud","F2":"Cahiers","G2":"220","H2":"80","I2":"300","F3":"Stylos","G3":"210","H3":"210","I3":"420","G4":"430","H4":"290","I4":"720"},"t":"Échangez les deux champs pour changer de point de vue, en une seconde."}
+ ]
+}

@@ -25,14 +25,14 @@
   <main id="lesson">
     <a class="back" href="../../">← Toutes les leçons</a>
     <div class="lhead">
-      <div class="meta"><span class="tag" style="--k:var(--k8)"><svg viewBox="0 0 24 24"><path d="M13 3L5 13h6l-1 8 8-10h-6z"/></svg>Tableaux dynamiques</span><span><span class="lvl" title="Avancé" aria-label="Avancé"><i class="on"></i><i class="on"></i><i class="on"></i></span> Avancé</span></div>
+      <div class="meta"><span class="tag" style="--k:var(--k8)"><svg viewBox="0 0 24 24"><path d="M13 3L5 13h6l-1 8 8-10h-6z"/></svg>Formules dynamiques</span><span><span class="lvl" title="Avancé" aria-label="Avancé"><i class="on"></i><i class="on"></i><i class="on"></i></span> Avancé</span></div>
       <h1>FILTRE</h1>
       <p>Extraire les lignes d'un tableau qui respectent une condition.</p>
     </div>
     <div class="win">
       <div id="ribwrap"><div class="ribbon" id="ribbon"></div><div class="ribpanel" id="ribpanel" hidden></div></div>
       <div class="fbar"><div class="namebox" id="namebox"></div><div class="fx">fx</div><div class="formula" id="formula"></div></div>
-      <div class="stage"><div class="sheetwrap" id="sheetwrap"><div class="sheetinner"><table class="sheet" id="sheet"></table><div class="ov" id="ov"></div></div></div><div class="keys" id="keys" hidden></div></div>
+      <div class="stage"><div class="sheetwrap" id="sheetwrap"><div class="sheetinner"><table class="sheet" id="sheet"></table><div class="ov" id="ov"></div></div></div><aside class="pivot" id="pivot" hidden></aside><div class="keys" id="keys" hidden></div><div class="msg" id="msg" hidden></div></div>
       <div class="tabs" id="tabs"></div>
       <p class="cap" id="text" aria-live="polite">Une seule formule en E3 : le résultat se propage dans les cellules voisines.</p>
       <div class="bar">
@@ -46,7 +46,7 @@
     <p class="hint">Clavier : <kbd>←</kbd> <kbd>→</kbd> pour changer d'étape, <kbd>Espace</kbd> pour lancer ou mettre en pause.</p>
     <details class="sx"><summary>Syntaxe <code>=FILTRE(tableau; condition; [si_vide])</code></summary><dl><dt>tableau</dt><dd>Les lignes à filtrer</dd><dt>condition</dt><dd>Le test appliqué à chaque ligne</dd><dt>si_vide</dt><dd>Le texte affiché si aucune ligne ne correspond</dd><dt>Version</dt><dd>Excel 2021 et Microsoft 365</dd></dl></details>
     <details class="sx"><summary>Résumé écrit des étapes</summary><ol class="steps"><li>Une seule formule en E3 : le résultat se propage dans les cellules voisines.</li><li>Changez le critère : la liste se met à jour.</li><li>Pour combiner deux conditions, multipliez-les, chacune entre parenthèses.</li></ol></details>
-    <nav class="lnav" aria-label="Leçons voisines"><a href="../calcul-d-heures/"><small>← Précédente</small>Calcul d'heures</a><a class="nx" id="nextLesson" href="../unique-trier/"><small>Suivante →</small>UNIQUE et TRIER</a></nav>
+    <nav class="lnav" aria-label="Leçons voisines"><a href="../tcd-grouper-par-mois/"><small>← Précédente</small>Grouper des dates par mois</a><a class="nx" id="nextLesson" href="../unique-trier/"><small>Suivante →</small>UNIQUE et TRIER</a></nav>
   </main>
 </div>
 <script type="application/json" id="lesson-data">{"id":"filtre","g":[["Nom","Service","Salaire","","Service :","Ventes",""],["Anne","Compta","2 800","","","",""],["Marc","Ventes","3 100","","","",""],["Lucie","Compta","3 000","","","",""],["Yann","RH","2 600","","","",""],["Sofia","Ventes","3 400","","","",""]],"s":[{"c":"E3","f":"=FILTRE(A2:C6;B2:B6=F1;\"Aucun\")","v":"Marc","set":{"F3":"Ventes","G3":"3 100","E4":"Sofia","F4":"Ventes","G4":"3 400"},"spill":"E3:G4","mark":"B3 B6","t":"Une seule formule en E3 : le résultat se propage dans les cellules voisines."},{"c":"F1","f":"Compta","set":{"E3":"Anne","F3":"Compta","G3":"2 800","E4":"Lucie","F4":"Compta","G4":"3 000"},"mark":"B2 B4","t":"Changez le critère : la liste se met à jour."},{"c":"E3","f":"=FILTRE(A2:C6;(B2:B6=F1)*(C2:C6>2900))","v":"Lucie","set":{"F3":"Compta","G3":"3 000","E4":"","F4":"","G4":""},"spill":"E3:G3","t":"Pour combiner deux conditions, multipliez-les, chacune entre parenthèses."}]}</script>

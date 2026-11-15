@@ -1,0 +1,33 @@
+{
+ "id": "creer-un-tableau-croise-dynamique",
+ "titre": "Créer un tableau croisé dynamique",
+ "niveau": 2,
+ "resume": "Résumer un tableau en quelques clics, sans formule.",
+ "motsCles": "tcd tableau croisé dynamique pivot créer champs lignes valeurs résumer",
+ "syntaxe": "Insertion › Tableau croisé dynamique",
+ "ruban": true,
+ "largeurs": {"E":26},
+ "arguments": [
+  ["Champs","Les colonnes de votre tableau"],
+  ["Lignes","Ce que l'on veut regrouper"],
+  ["Valeurs","Ce que l'on veut calculer"]
+ ],
+ "grille": [
+  ["Vendeur","Région","Produit","Montant"],
+  ["Alice","Nord","Stylos","120"],
+  ["Bruno","Sud","Cahiers","80"],
+  ["Alice","Sud","Stylos","60"],
+  ["Chloé","Nord","Cahiers","150"],
+  ["Bruno","Nord","Stylos","90"],
+  ["Chloé","Sud","Stylos","110"],
+  ["Alice","Nord","Cahiers","70"],
+  ["Bruno","Sud","Stylos","40"]
+ ],
+ "etapes": [
+  {"c":"A1","sel":"A1:D9","drag":1,"tab":"Insertion","btn":"Tableau croisé dynamique","t":"Cliquez dans vos données, puis Insertion › Tableau croisé dynamique."},
+  {"c":"F1","tab":"Analyse du tableau croisé","pivot":{"fields":["Vendeur","Région","Produit","Montant"],"filt":[],"cols":[],"rows":[],"vals":[]},"t":"La liste des champs s'ouvre : chaque champ correspond à une colonne de votre tableau."},
+  {"c":"F1","tab":"Analyse du tableau croisé","pivot":{"fields":["Vendeur","Région","Produit","Montant"],"filt":[],"cols":[],"rows":["Région"],"vals":[],"pick":"Région"},"set":{"F1":"Étiquettes de lignes","F2":"Nord","F3":"Sud","F4":"Total général"},"fmt":{"F1:G1":"h","F4:G4":"b"},"t":"Cochez Région : elle arrive dans la zone Lignes, une ligne par région."},
+  {"c":"G2","tab":"Analyse du tableau croisé","pivot":{"fields":["Vendeur","Région","Produit","Montant"],"filt":[],"cols":[],"rows":["Région"],"vals":["Somme de Montant"],"pick":"Montant"},"set":{"G1":"Somme de Montant","G2":"430","G3":"290","G4":"720"},"t":"Cochez Montant : il va dans Valeurs, et Excel additionne les ventes de chaque région."},
+  {"c":"G2","tab":"Analyse du tableau croisé","mark":"D2 D5 D6 D8","t":"430 est la somme des quatre ventes du Nord, sans écrire une seule formule."}
+ ]
+}

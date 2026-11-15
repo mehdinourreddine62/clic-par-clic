@@ -1,0 +1,27 @@
+{
+ "id": "modifier-les-donnees-d-un-graphique",
+ "titre": "Changer les données d'un graphique",
+ "niveau": 2,
+ "resume": "Ajouter une série et inverser lignes et colonnes.",
+ "motsCles": "sélectionner des données série ajouter intervertir lignes colonnes graphique",
+ "syntaxe": "Création de graphique › Sélectionner des données",
+ "ruban": true,
+ "graphique": {"type":"col","labels":"A2:A5","series":["B2:B5"],"title":"Ventes","legend":true,"at":"E2:I8"},
+ "arguments": [
+  ["Sélectionner des données","Ajouter, retirer ou modifier une série"],
+  ["Intervertir lignes/colonnes","Échange l'axe et la légende"]
+ ],
+ "grille": [
+  ["Trimestre","Nord","Sud"],
+  ["T1","120","90"],
+  ["T2","140","110"],
+  ["T3","100","130"],
+  ["T4","180","150"]
+ ],
+ "etapes": [
+  {"c":"A1","tab":"Création de graphique","chart":{"selected":1},"t":"Ce graphique ne montre que le Nord. Sélectionnez-le pour ouvrir l'onglet Création de graphique."},
+  {"c":"A1","sel":"A1:C5","drag":1,"tab":"Création de graphique","btn":"Sélectionner des données","chart":{"series":["B2:B5","C2:C5"]},"t":"« Sélectionner des données » permet d'ajouter une série : étendez la plage à la colonne Sud."},
+  {"c":"A1","tab":"Création de graphique","btn":"Intervertir lignes/colonnes","chart":{"labels":"B1:C1","series":["B2:C2","B3:C3","B4:C4","B5:C5"],"names":["A2","A3","A4","A5"]},"t":"« Intervertir lignes/colonnes » retourne le graphique : les régions passent sur l'axe, les trimestres en couleurs."},
+  {"c":"A1","tab":"Création de graphique","btn":"Intervertir lignes/colonnes","chart":{"labels":"A2:A5","series":["B2:B5","C2:C5"],"names":null},"t":"Mêmes données, autre question. Choisissez le sens qui répond à la vôtre."}
+ ]
+}

@@ -1,0 +1,31 @@
+{
+ "id": "nuage-de-points",
+ "titre": "Nuage de points",
+ "niveau": 2,
+ "resume": "Voir s'il existe un lien entre deux mesures.",
+ "motsCles": "nuage de points dispersion relation corrélation deux variables xy graphique",
+ "syntaxe": "Insertion › Nuage de points",
+ "ruban": true,
+ "graphique": {"type":"scatter","labels":"A2:A8","series":["B2:B8"],"title":"Prix et ventes","xt":"Prix","yt":"Ventes","at":"D2:H9"},
+ "arguments": [
+  ["Axe horizontal","La première mesure"],
+  ["Axe vertical","La seconde mesure"],
+  ["Un point","Une ligne du tableau"]
+ ],
+ "grille": [
+  ["Prix","Ventes"],
+  ["5","95"],
+  ["8","80"],
+  ["10","74"],
+  ["12","60"],
+  ["15","52"],
+  ["18","35"],
+  ["20","30"]
+ ],
+ "etapes": [
+  {"c":"A1","sel":"A1:B8","drag":1,"tab":"Insertion","btn":"Nuage de points","chart":1,"t":"Le nuage de points place chaque ligne selon deux nombres : ici le prix et les ventes."},
+  {"c":"A4","sel":"A4:B4","tab":"Insertion","chart":{"hi":2},"t":"Un point = une ligne du tableau : prix de 10, 74 ventes."},
+  {"c":"A1","tab":"Insertion","chart":{"hi":null,"trend":true},"t":"Ajoutez une courbe de tendance : le lien apparaît. Plus le prix monte, moins on vend."},
+  {"c":"A1","tab":"Insertion","t":"À utiliser pour chercher un lien entre deux mesures, jamais pour des catégories ou des dates."}
+ ]
+}
