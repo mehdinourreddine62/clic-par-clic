@@ -72,22 +72,6 @@ kbd{border:1px solid var(--line);border-bottom-width:2px;padding:0 5px;border-ra
 .cd{font-size:.9rem;color:var(--ink);flex:1}
 .cf{display:flex;justify-content:space-between;align-items:center;font-size:.76rem;color:var(--muted);margin-top:4px}
 .cf .seen{color:var(--accent);font-weight:600}
-.card .cd kbd{font-size:.8rem}
-.kc{white-space:nowrap;display:inline-block;margin:0 8px 5px 0}
-.ktools{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:20px}
-#kq{flex:1;min-width:200px;max-width:440px;padding:11px 14px;border:1px solid var(--line);border-radius:10px;background:var(--surface);font:inherit;color:var(--ink)}
-.ktable{width:100%;max-width:780px;border-collapse:collapse;background:var(--surface);border:1px solid var(--line);font-size:.95rem}
-.ktable th,.ktable td{padding:9px 14px;text-align:left;border-bottom:1px solid var(--grid);vertical-align:baseline}
-.ktable thead th{background:var(--head);color:var(--head-ink);font-size:.76rem;text-transform:uppercase;letter-spacing:.07em;font-weight:600;border-bottom:1px solid var(--line)}
-.ktable td:first-child{white-space:nowrap;width:1%;padding-right:28px}
-.ktable .kg th{font-family:var(--f-display);font-weight:800;font-size:1.08rem;padding-top:18px;background:color-mix(in srgb,var(--k10) 9%,var(--surface));border-bottom:1px solid var(--line);scroll-margin-top:12px}
-.ktable .kg th{display:table-cell}
-.ktable .kg span{margin-right:14px}
-.ktable tbody{scroll-margin-top:12px}
-.kmore{font-family:var(--f-body);font-size:.84rem;font-weight:600;color:var(--accent);text-decoration:none;white-space:nowrap}
-.kmore:hover{text-decoration:underline}
-@media (max-width:520px){.ktable th,.ktable td{padding:8px 10px}.ktable td:first-child{padding-right:12px;white-space:normal;width:44%}}
-@media print{.topbar,.back,.ktools,.kmore{display:none!important}body{background:#fff}.wrap{padding:0;max-width:none}.ktable{max-width:none;font-size:.85rem}.ktable th,.ktable td{padding:4px 10px}.lhead h1{font-size:1.6rem}}
 .lvl{display:inline-flex;gap:2px;align-items:center}
 .lvl i{width:5px;height:11px;border-radius:1px;background:var(--line)}
 .lvl i.on{background:var(--muted)}

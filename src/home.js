@@ -11,7 +11,7 @@
     cards.forEach(c=>{c.hidden=!((!catF||c.dataset.c===catF)&&(!lvlF||+c.dataset.l===lvlF)&&(!q||c.dataset.s.includes(q)));});
     document.querySelectorAll(".sec").forEach(s=>{
       const n=s.querySelectorAll(".card:not([hidden])").length;total+=n;s.hidden=!n;
-      s.querySelector(".st small").textContent=n+" "+(s.dataset.unit||"leçon")+(n>1?"s":"");
+      s.querySelector(".st small").textContent=n+" leçon"+(n>1?"s":"");
     });
     $("#none").hidden=total>0;
   }
