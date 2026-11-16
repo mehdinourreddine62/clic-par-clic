@@ -1,0 +1,32 @@
+{
+ "id": "tcd-trier",
+ "titre": "Trier un tableau croisé",
+ "niveau": 2,
+ "resume": "Classer les lignes du plus grand au plus petit.",
+ "motsCles": "tcd trier classement ordre décroissant tableau croisé dynamique",
+ "syntaxe": "Clic droit sur une valeur › Trier",
+ "ruban": true,
+ "largeurs": {"E":26},
+ "arguments": [
+  ["Clic droit sur une valeur","Trier selon les montants"],
+  ["Clic droit sur une étiquette","Trier par ordre alphabétique"],
+  ["Mémoire","Le tri est conservé après une actualisation"]
+ ],
+ "grille": [
+  ["Vendeur","Région","Produit","Montant"],
+  ["Alice","Nord","Stylos","120"],
+  ["Bruno","Sud","Cahiers","80"],
+  ["Alice","Sud","Stylos","60"],
+  ["Chloé","Nord","Cahiers","150"],
+  ["Bruno","Nord","Stylos","90"],
+  ["Chloé","Sud","Stylos","110"],
+  ["Alice","Nord","Cahiers","70"],
+  ["Bruno","Sud","Stylos","40"]
+ ],
+ "etapes": [
+  {"c":"F1","tab":"Analyse du tableau croisé","pivot":{"fields":["Vendeur","Région","Produit","Montant"],"filt":[],"cols":[],"rows":["Vendeur"],"vals":["Somme de Montant"]},"set":{"F1":"Étiquettes de lignes","G1":"Somme de Montant","F2":"Alice","G2":"250","F3":"Bruno","G3":"210","F4":"Chloé","G4":"260","F5":"Total général","G5":"720"},"fmt":{"F1:G1":"h","F5:G5":"b"},"t":"Par défaut, les lignes sont classées par ordre alphabétique."},
+  {"c":"G2","menu":"Clic droit sur une valeur › Trier › <b>Trier du plus grand au plus petit</b>","set":{"F2":"Chloé","G2":"260","F3":"Alice","G3":"250","F4":"Bruno","G4":"210"},"t":"Clic droit sur un montant, Trier, du plus grand au plus petit : la meilleure vendeuse passe en tête."},
+  {"c":"D2","f":"20","tab":"Analyse du tableau croisé","t":"Modifions une vente d'Alice dans les données : 120 devient 20."},
+  {"c":"G2","tab":"Analyse du tableau croisé","btn":"Actualiser","set":{"F3":"Bruno","G3":"210","F4":"Alice","G4":"150","G5":"620"},"mark":"F4 G4","t":"Après Actualiser, le classement se refait tout seul : le tri est mémorisé."}
+ ]
+}

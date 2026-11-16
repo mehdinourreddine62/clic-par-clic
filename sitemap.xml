@@ -21,7 +21,6 @@
   <url><loc>https://mehdinourreddine62.github.io/clic-par-clic/excel/references-absolues/</loc></url>
   <url><loc>https://mehdinourreddine62.github.io/clic-par-clic/excel/pourcentages/</loc></url>
   <url><loc>https://mehdinourreddine62.github.io/clic-par-clic/excel/somme-cumulee/</loc></url>
-  <url><loc>https://mehdinourreddine62.github.io/clic-par-clic/excel/mise-en-forme-conditionnelle/</loc></url>
   <url><loc>https://mehdinourreddine62.github.io/clic-par-clic/excel/coller-les-valeurs/</loc></url>
   <url><loc>https://mehdinourreddine62.github.io/clic-par-clic/excel/transposer/</loc></url>
   <url><loc>https://mehdinourreddine62.github.io/clic-par-clic/excel/reproduire-la-mise-en-forme/</loc></url>
@@ -33,6 +32,12 @@
   <url><loc>https://mehdinourreddine62.github.io/clic-par-clic/excel/liste-deroulante-message-d-erreur/</loc></url>
   <url><loc>https://mehdinourreddine62.github.io/clic-par-clic/excel/figer-la-ligne-de-titres/</loc></url>
   <url><loc>https://mehdinourreddine62.github.io/clic-par-clic/excel/figer-les-volets/</loc></url>
+  <url><loc>https://mehdinourreddine62.github.io/clic-par-clic/excel/mise-en-forme-conditionnelle/</loc></url>
+  <url><loc>https://mehdinourreddine62.github.io/clic-par-clic/excel/mfc-barres-de-donnees/</loc></url>
+  <url><loc>https://mehdinourreddine62.github.io/clic-par-clic/excel/mfc-nuances-de-couleurs/</loc></url>
+  <url><loc>https://mehdinourreddine62.github.io/clic-par-clic/excel/mfc-jeux-d-icones/</loc></url>
+  <url><loc>https://mehdinourreddine62.github.io/clic-par-clic/excel/mfc-doublons/</loc></url>
+  <url><loc>https://mehdinourreddine62.github.io/clic-par-clic/excel/mfc-valeurs-les-plus-elevees/</loc></url>
   <url><loc>https://mehdinourreddine62.github.io/clic-par-clic/excel/supprimer-les-doublons/</loc></url>
   <url><loc>https://mehdinourreddine62.github.io/clic-par-clic/excel/convertir-texte-en-colonnes/</loc></url>
   <url><loc>https://mehdinourreddine62.github.io/clic-par-clic/excel/remplissage-instantane/</loc></url>
@@ -145,6 +150,11 @@
   <url><loc>https://mehdinourreddine62.github.io/clic-par-clic/excel/tcd-actualiser/</loc></url>
   <url><loc>https://mehdinourreddine62.github.io/clic-par-clic/excel/tcd-pourcentage-du-total/</loc></url>
   <url><loc>https://mehdinourreddine62.github.io/clic-par-clic/excel/tcd-grouper-par-mois/</loc></url>
+  <url><loc>https://mehdinourreddine62.github.io/clic-par-clic/excel/tcd-segments/</loc></url>
+  <url><loc>https://mehdinourreddine62.github.io/clic-par-clic/excel/tcd-chronologie/</loc></url>
+  <url><loc>https://mehdinourreddine62.github.io/clic-par-clic/excel/tcd-champ-calcule/</loc></url>
+  <url><loc>https://mehdinourreddine62.github.io/clic-par-clic/excel/graphique-croise-dynamique/</loc></url>
+  <url><loc>https://mehdinourreddine62.github.io/clic-par-clic/excel/tcd-trier/</loc></url>
   <url><loc>https://mehdinourreddine62.github.io/clic-par-clic/excel/filtre/</loc></url>
   <url><loc>https://mehdinourreddine62.github.io/clic-par-clic/excel/unique-trier/</loc></url>
 </urlset>

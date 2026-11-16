@@ -23,9 +23,9 @@
 <div class="wrap">
   <div class="topbar"><a class="brand" href="../../"><span class="logo" aria-hidden="true"><i></i><i class="on"></i><i></i><i class="on"></i><i class="on"></i><i></i></span>Clic par clic</a><button class="theme" id="theme" type="button"></button></div>
   <main id="lesson">
-    <a class="back" href="../../#theme-bases">← Les bases</a>
+    <a class="back" href="../../#theme-mfc">← Mise en forme conditionnelle</a>
     <div class="lhead">
-      <div class="meta"><span class="tag" style="--k:var(--r3)"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8 10h8M8 14h8"/></svg>Les bases</span><span><span class="lvl" title="Intermédiaire" aria-label="Intermédiaire"><i class="on"></i><i class="on"></i><i class=""></i></span> Intermédiaire</span></div>
+      <div class="meta"><span class="tag" style="--k:var(--r1)"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18M3 15h18"/><path d="M6.5 12.5h5" stroke-width="3.2"/></svg>Mise en forme conditionnelle</span><span><span class="lvl" title="Intermédiaire" aria-label="Intermédiaire"><i class="on"></i><i class="on"></i><i class=""></i></span> Intermédiaire</span></div>
       <h1>Mise en forme conditionnelle</h1>
       <p>Colorer automatiquement les cellules selon leur valeur.</p>
     </div>
@@ -46,7 +46,7 @@
     <p class="hint">Clavier : <kbd>←</kbd> <kbd>→</kbd> pour changer d'étape, <kbd>Espace</kbd> pour lancer ou mettre en pause.</p>
     <details class="sx"><summary>Syntaxe <code>Accueil › Mise en forme conditionnelle</code></summary><dl><dt>Règle simple</dt><dd>Colore les cellules supérieures, inférieures ou égales à une valeur</dd><dt>Règle par formule</dt><dd>Colore quand la formule renvoie VRAI</dd></dl></details>
     <details class="sx"><summary>Résumé écrit des étapes</summary><ol class="steps"><li>Sélectionnez d'abord les cellules à surveiller.</li><li>Les stocks inférieurs à 50 passent en rouge, et la couleur suivra les valeurs.</li><li>Avec une formule, chaque stock est comparé à son propre seuil et toute la ligne se colore.</li></ol></details>
-    <nav class="lnav" aria-label="Leçons voisines"><a href="../somme-cumulee/"><small>← Précédente</small>Somme cumulée</a><a class="nx" id="nextLesson" href="../coller-les-valeurs/"><small>Suivante →</small>Coller uniquement les valeurs</a></nav>
+    <nav class="lnav" aria-label="Leçons voisines"><a href="../figer-les-volets/"><small>← Précédente</small>Figer lignes et colonnes</a><a class="nx" id="nextLesson" href="../mfc-barres-de-donnees/"><small>Suivante →</small>Barres de données</a></nav>
   </main>
 </div>
 <script type="application/json" id="lesson-data">{"id":"mise-en-forme-conditionnelle","g":[["Produit","Stock","Seuil"],["Vis","120","50"],["Écrous","35","50"],["Rondelles","80","40"],["Chevilles","12","30"],["Clous","55","60"]],"s":[{"c":"B2","sel":"B2:B6","t":"Sélectionnez d'abord les cellules à surveiller."},{"c":"B2","sel":"B2:B6","menu":"Mise en forme conditionnelle › Règles de mise en surbrillance › \u003cb>Inférieur à…\u003c/b>","rule":"50","bad":"B3 B5","t":"Les stocks inférieurs à 50 passent en rouge, et la couleur suivra les valeurs."},{"c":"A2","sel":"A2:C6","menu":"Mise en forme conditionnelle › Nouvelle règle › \u003cb>Utiliser une formule\u003c/b>","rule":"=$B2\u003c$C2","bad":"A3 C3 A5 C5 A6 B6 C6","t":"Avec une formule, chaque stock est comparé à son propre seuil et toute la ligne se colore."}]}</script>

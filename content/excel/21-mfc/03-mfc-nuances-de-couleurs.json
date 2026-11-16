@@ -1,0 +1,26 @@
+{
+ "id": "mfc-nuances-de-couleurs",
+ "titre": "Nuances de couleurs",
+ "niveau": 1,
+ "resume": "Transformer un tableau de chiffres en carte de chaleur.",
+ "motsCles": "nuances de couleurs échelle carte de chaleur heatmap mise en forme conditionnelle",
+ "syntaxe": "Mise en forme conditionnelle › Nuances de couleurs",
+ "ruban": true,
+ "arguments": [
+  ["Échelle","Un dégradé entre la plus petite et la plus grande valeur"],
+  ["Sens","À choisir selon que les grandes valeurs sont bonnes ou mauvaises"]
+ ],
+ "grille": [
+  ["Jour","9 h","12 h","15 h","18 h"],
+  ["Lundi","12","45","20","38"],
+  ["Mardi","15","52","18","41"],
+  ["Mercredi","30","60","35","55"],
+  ["Jeudi","10","48","22","36"]
+ ],
+ "etapes": [
+  {"c":"B2","sel":"B2:E5","drag":1,"tab":"Accueil","btn":"Mise en forme conditionnelle","t":"Un tableau de fréquentation : difficile d'y voir quelque chose. Sélectionnez les valeurs."},
+  {"c":"B2","sel":"B2:E5","menu":"Mise en forme conditionnelle › <b>Nuances de couleurs</b>","scale":{"r":"B2:E5"},"t":"Nuances de couleurs : du rouge pour les plus petites valeurs au vert pour les plus grandes."},
+  {"c":"C1","tab":"Accueil","mark":"C1","t":"Le tableau se lit comme une carte : le créneau de 12 h ressort tout de suite."},
+  {"c":"B2","tab":"Accueil","scale":{"r":"B2:E5","inv":1},"t":"Choisissez le sens selon le sujet : pour des retards ou des coûts, le rouge doit signaler les valeurs élevées."}
+ ]
+}

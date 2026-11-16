@@ -1,0 +1,29 @@
+{
+ "id": "mfc-valeurs-les-plus-elevees",
+ "titre": "Les plus hautes valeurs",
+ "niveau": 1,
+ "resume": "Colorer le podium, ou tout ce qui dépasse la moyenne.",
+ "motsCles": "valeurs les plus élevées top podium au-dessus de la moyenne mise en forme conditionnelle",
+ "syntaxe": "Règles des valeurs de plage haute/basse",
+ "ruban": true,
+ "arguments": [
+  ["10 valeurs les plus élevées","Le nombre se règle : 3 pour un podium"],
+  ["Au-dessus de la moyenne","Excel calcule la moyenne tout seul"],
+  ["Gérer les règles","Pour revoir ou supprimer les règles"]
+ ],
+ "grille": [
+  ["Vendeur","Ventes"],
+  ["Alice","900"],
+  ["Bruno","400"],
+  ["Chloé","660"],
+  ["David","150"],
+  ["Emma","780"],
+  ["Farid","600"]
+ ],
+ "etapes": [
+  {"c":"B2","sel":"B2:B7","drag":1,"menu":"Règles des valeurs de plage haute/basse › <b>10 valeurs les plus élevées</b>","rule":"3","fmt":{"B2":"g","B4":"g","B6":"g"},"t":"« 10 valeurs les plus élevées », réglé sur 3 : le podium se colore."},
+  {"c":"B2","sel":"B2:B7","menu":"Règles des valeurs de plage haute/basse › <b>Au-dessus de la moyenne</b>","fmt":{"B7":"g"},"t":"« Au-dessus de la moyenne » : Excel calcule la moyenne tout seul et colore ce qui la dépasse."},
+  {"c":"B7","tab":"Accueil","mark":"A7","t":"Farid n'est pas sur le podium, mais il dépasse la moyenne : sa cellule se colore aussi."},
+  {"c":"B2","tab":"Accueil","btn":"Mise en forme conditionnelle","t":"Les règles se cumulent. Pour les revoir ou les supprimer : Mise en forme conditionnelle › Gérer les règles."}
+ ]
+}

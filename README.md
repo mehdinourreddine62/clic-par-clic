@@ -81,10 +81,13 @@ L'`id` devient l'adresse de la page (`/excel/ma-fonction/`) : minuscules, chiffr
 | `note` | Commentaire sur une cellule : `{"at": "C3", "text": "…", "reply": "…", "closed": 1}` |
 | `peer` | Cellule d'un collègue en coédition : `{"at": "C4", "name": "Léa"}` |
 | `retry` | Avec `msg` : affiche les boutons Réessayer et Annuler au lieu de OK |
+| `slicer` | Segment ou chronologie d'un tableau croisé : `{"at": "F7:G10", "title": "Région", "items": [...], "on": [0], "kind": "time"}` |
+| `bars`, `scale`, `icons` | Mise en forme conditionnelle : barres de données (`"B2:B6"`), nuances de couleurs (`{"r": "B2:E5", "inv": 1}`), jeux d'icônes (`{"r": "B2:B6", "hi": 0.001, "lo": 0}`) |
+| `unbad` | Retire la couleur posée par `bad` |
 | `arrows` | Flèches d'audit entre cellules : `[["C2", "E2"], ["D2", "E2"]]` |
 | `nb` | Texte affiché dans la zone Nom, pour nommer une plage |
 | `spark` | Mini-graphiques dans des cellules : `{"F2": {"r": "B2:E2", "type": "line"}}` |
-| `fmt` | En plus des lettres déjà listées : h en-tête de tableau, z ligne à bande |
+| `fmt` | En plus des lettres déjà listées : h en-tête de tableau, z ligne à bande, g surbrillance verte |
 
 ### Graphiques
 

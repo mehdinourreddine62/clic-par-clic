@@ -1,0 +1,30 @@
+{
+ "id": "tcd-chronologie",
+ "titre": "Filtrer par date avec une chronologie",
+ "niveau": 2,
+ "resume": "Une frise pour choisir la période affichée.",
+ "motsCles": "tcd chronologie timeline filtrer dates mois période tableau croisé",
+ "syntaxe": "Analyse du tableau croisé › Insérer une chronologie",
+ "ruban": true,
+ "arguments": [
+  ["Chronologie","Une frise liée à une colonne de dates"],
+  ["Clic","Filtre sur un mois"],
+  ["Étirer","Couvre plusieurs mois"]
+ ],
+ "grille": [
+  ["Date","Produit","Montant"],
+  ["05/01/2026","Stylos","100"],
+  ["18/01/2026","Cahiers","50"],
+  ["03/02/2026","Stylos","80"],
+  ["20/02/2026","Cahiers","120"],
+  ["11/03/2026","Stylos","60"],
+  ["25/03/2026","Cahiers","90"]
+ ],
+ "etapes": [
+  {"c":"E1","tab":"Analyse du tableau croisé","pivot":{"fields":["Date","Produit","Montant"],"filt":[],"cols":[],"rows":["Produit"],"vals":["Somme de Montant"]},"set":{"E1":"Étiquettes de lignes","F1":"Somme de Montant","E2":"Cahiers","F2":"260","E3":"Stylos","F3":"240","E4":"Total général","F4":"500"},"fmt":{"E1:F1":"h","E4:F4":"b"},"t":"Voici les ventes par produit, sur tout le trimestre."},
+  {"c":"E1","tab":"Analyse du tableau croisé","btn":"Insérer une chronologie","slicer":{"kind":"time","at":"E6:G8","title":"Date","items":["janv","févr","mars"],"on":[0,1,2]},"t":"Insérer une chronologie, cochez Date : une frise des mois apparaît."},
+  {"c":"E1","tab":"Analyse du tableau croisé","slicer":{"kind":"time","at":"E6:G8","title":"Date","items":["janv","févr","mars"],"on":[1]},"set":{"F2":"120","F3":"80","F4":"200"},"t":"Cliquez sur février : seules les ventes de ce mois sont comptées."},
+  {"c":"E1","tab":"Analyse du tableau croisé","slicer":{"kind":"time","at":"E6:G8","title":"Date","items":["janv","févr","mars"],"on":[0,1]},"set":{"F2":"170","F3":"180","F4":"350"},"t":"Étirez la sélection pour couvrir plusieurs mois."},
+  {"c":"A2","sel":"A2:A7","tab":"Analyse du tableau croisé","slicer":{"kind":"time","at":"E6:G8","title":"Date","items":["janv","févr","mars"],"on":[0,1]},"t":"Condition : la colonne doit contenir de vraies dates, pas du texte."}
+ ]
+}

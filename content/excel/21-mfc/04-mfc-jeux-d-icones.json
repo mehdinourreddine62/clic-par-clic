@@ -1,0 +1,28 @@
+{
+ "id": "mfc-jeux-d-icones",
+ "titre": "Jeux d'icônes",
+ "niveau": 2,
+ "resume": "Une flèche ou un feu tricolore à côté de chaque valeur.",
+ "motsCles": "jeux d'icônes flèches feux tricolores indicateur mise en forme conditionnelle seuils",
+ "syntaxe": "Mise en forme conditionnelle › Jeux d'icônes",
+ "ruban": true,
+ "arguments": [
+  ["Icône","Choisie selon la valeur de la cellule"],
+  ["Par défaut","Excel découpe la plage en trois tiers"],
+  ["Gérer les règles","Pour fixer ses propres seuils"]
+ ],
+ "grille": [
+  ["Produit","Évolution"],
+  ["Stylos","12 %"],
+  ["Cahiers","-2 %"],
+  ["Classeurs","3 %"],
+  ["Trousses","8 %"],
+  ["Gommes","-11 %"]
+ ],
+ "etapes": [
+  {"c":"B2","sel":"B2:B6","drag":1,"menu":"Mise en forme conditionnelle › <b>Jeux d'icônes</b> › 3 flèches","icons":{"r":"B2:B6"},"t":"Jeux d'icônes : une flèche verte, jaune ou rouge s'ajoute selon la valeur."},
+  {"c":"B3","tab":"Accueil","mark":"A3","t":"Attention : par défaut, Excel découpe en trois tiers. Les cahiers, en baisse de 2 %, reçoivent une flèche jaune."},
+  {"c":"B2","sel":"B2:B6","menu":"Mise en forme conditionnelle › Gérer les règles › <b>Modifier la règle</b>","rule":"> 0","icons":{"r":"B2:B6","hi":0.001,"lo":0},"t":"Dans Gérer les règles, fixez vos propres seuils : vert au-dessus de zéro, rouge en dessous."},
+  {"c":"B3","tab":"Accueil","mark":"A3 A4","t":"Les icônes disent maintenant la vérité : hausse en vert, baisse en rouge."}
+ ]
+}

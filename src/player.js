@@ -9,7 +9,7 @@ const RIB={
  "Données":[["Trier et filtrer",["Trier","Filtrer"]],["Outils de données",["Validation des données","Supprimer les doublons","Convertir"]]],
  "Révision":[["Vérification",["Orthographe"]],["Commentaires",["Nouveau commentaire"]],["Protéger",["Protéger la feuille"]]],
  "Création de graphique":[["Dispositions",["Ajouter un élément"]],["Styles",["Modifier les couleurs"]],["Données",["Intervertir lignes/colonnes","Sélectionner des données"]],["Type",["Modifier le type de graphique"]],["Emplacement",["Déplacer le graphique"]]],
- "Analyse du tableau croisé":[["Données",["Actualiser","Changer la source de données"]],["Filtrer",["Insérer un segment"]],["Outils",["Graphique croisé dynamique"]]],
+ "Analyse du tableau croisé":[["Données",["Actualiser","Changer la source de données"]],["Filtrer",["Insérer un segment","Insérer une chronologie"]],["Calculs",["Champs, éléments et jeux"]],["Outils",["Graphique croisé dynamique"]]],
  "Création de tableau":[["Options de style",["Ligne d'en-tête","Ligne Total","Lignes à bandes"]]],
  "Sparkline":[["Type",["Courbe","Histogramme"]],["Afficher",["Point haut","Point bas"]]],
  "Affichage":[["Affichages",["Normal","Aperçu des sauts de page","Mise en page"]],["Fenêtre",["Figer les volets"]],["Zoom",["Zoom","100 %"]]]};
@@ -23,7 +23,7 @@ let curC=0,curR=0;
 function dims(les){
   let C=0,R=les.g.length;les.g.forEach(r=>C=Math.max(C,r.length));
   const t=k=>{if(!/^\$?[A-Z]+\$?\d/.test(k))return;const g=pRange(k);C=Math.max(C,g.c2+1);R=Math.max(R,g.r2+1);};
-  les.s.forEach(s=>[s.c,s.sel,s.sel2,s.copy,s.dd&&s.dd.at,s.note&&s.note.at,s.peer&&s.peer.at,...(s.arrows||[]).flat(),...Object.keys(s.spark||{}),...ls(s.mark),...ls(s.spill),...Object.keys(s.set||{}),...Object.keys(s.fill||{}),...Object.keys(s.fmt||{})].filter(Boolean).forEach(t));
+  les.s.forEach(s=>[s.c,s.sel,s.sel2,s.copy,s.dd&&s.dd.at,s.note&&s.note.at,s.peer&&s.peer.at,...(s.arrows||[]).flat(),s.slicer&&s.slicer.at,s.bars,s.scale&&s.scale.r,s.icons&&s.icons.r,...Object.keys(s.spark||{}),...ls(s.mark),...ls(s.spill),...Object.keys(s.set||{}),...Object.keys(s.fill||{}),...Object.keys(s.fmt||{})].filter(Boolean).forEach(t));
   les._dr=R;
   if(les.chart){
     if(innerWidth<640){C=Math.max(C,4);R=Math.max(R,les._dr+8);}
@@ -41,7 +41,7 @@ function selR(x){
 }
 function stateAt(les,i){
   const v={},fm={};les.g.forEach((row,r)=>row.forEach((x,c)=>{if(x!=="")v[colName(c)+(r+1)]=x;}));
-  let bad={},spill=[],hide=[],fmt={},w={...(les.w||{})},copy="",sheets={list:["Feuil1"],on:0},chart=null,spark={},pivot=null,dd=null,freeze={},hidec=[],note=null,peer=null,arrows=[];
+  let bad={},spill=[],hide=[],fmt={},w={...(les.w||{})},copy="",sheets={list:["Feuil1"],on:0},chart=null,spark={},pivot=null,dd=null,freeze={},hidec=[],note=null,peer=null,arrows=[],slicer=null,bars="",scale=null,icons=null;
   const put=(k,val)=>{if(val==="")delete v[k];else v[k]=val;};
   for(let n=0;n<=i;n++){const s=les.s[n];
     if(s.f!==undefined){if(s.f[0]==="=")fm[s.c]=s.f;else delete fm[s.c];put(s.c,s.v!==undefined?s.v:s.f);}
@@ -60,6 +60,11 @@ function stateAt(les,i){
     if(dd&&(dd.open||dd.pick!=null))dd={at:dd.at};
     if(s.dd!==undefined)dd=s.dd||null;
     if(s.arrows)arrows=s.arrows;
+    if(s.slicer!==undefined)slicer=s.slicer||null;
+    if(s.bars!==undefined)bars=s.bars;
+    if(s.scale!==undefined)scale=s.scale;
+    if(s.icons!==undefined)icons=s.icons;
+    ls(s.unbad).forEach(k=>delete bad[k]);
     if(s.note!==undefined)note=s.note||null;
     if(s.peer!==undefined)peer=s.peer||null;
     if(s.spark)Object.assign(spark,s.spark);
@@ -69,7 +74,7 @@ function stateAt(les,i){
       if(!s.chart)chart=null;
       else{chart={...(chart||les.chart||{})};if(typeof s.chart==="object")Object.assign(chart,s.chart);}
     }}
-  return{v,fm,bad,spill,hide,fmt,w,copy,sheets,chart,spark,pivot,dd,freeze,hidec,note,peer,arrows};
+  return{v,fm,bad,spill,hide,fmt,w,copy,sheets,chart,spark,pivot,dd,freeze,hidec,note,peer,arrows,slicer,bars,scale,icons};
 }
 function build(les){
   const{C,R}=dims(les);curC=C;curR=R;
@@ -95,7 +100,7 @@ function applyState(st){
 let lastW="";
 function persist(st){
   document.querySelectorAll("#sheet td").forEach(td=>{const f=st.fmt[td.dataset.k]||"";
-    td.classList.toggle("fb",f.includes("b"));td.classList.toggle("ff",f.includes("f"));td.classList.toggle("fc",f.includes("c"));td.classList.toggle("fbd",f.includes("d"));td.classList.toggle("fh",f.includes("h"));td.classList.toggle("fz",f.includes("z"));td.classList.toggle("fi",f.includes("i"));td.classList.toggle("fu",f.includes("u"));});
+    td.classList.toggle("fb",f.includes("b"));td.classList.toggle("ff",f.includes("f"));td.classList.toggle("fc",f.includes("c"));td.classList.toggle("fbd",f.includes("d"));td.classList.toggle("fg",f.includes("g"));td.classList.toggle("fh",f.includes("h"));td.classList.toggle("fz",f.includes("z"));td.classList.toggle("fi",f.includes("i"));td.classList.toggle("fu",f.includes("u"));});
   const wk=JSON.stringify(st.w);
   if(wk!==lastW){lastW=wk;
     for(let c=0;c<curC;c++){const w=st.w[colName(c)],px=w?w+"px":"";
@@ -107,7 +112,15 @@ function persist(st){
   document.querySelectorAll("#sheet tbody tr").forEach(tr=>tr.classList.toggle("frr",+tr.dataset.r===fz.r));
   document.querySelectorAll("#sheet td[data-x],#sheet thead th[data-c]").forEach(e=>{const x=+(e.dataset.x!==undefined?e.dataset.x:e.dataset.c);e.classList.toggle("frc",!!fz.c&&x===fz.c-1);e.classList.toggle("hidc",st.hidec.includes(colName(x)));});
   for(const[k,o]of Object.entries(st.spark)){const td=cellEl(k);if(td)td.innerHTML=sparkSvg(cellsOf(o.r).map(c=>num(st.v[c])),o.type);}
-  lastSt=st;renderPivot(st);renderDD(st);renderNote(st);renderArrows(st);
+  document.querySelectorAll("#sheet td").forEach(td=>{if(td.style.background||td.style.color){td.style.background="";td.style.color="";}});
+  if(st.bars){const ks=cellsOf(st.bars),mx=Math.max(...ks.map(k=>num(st.v[k])),1);
+    ks.forEach(k=>{const td=cellEl(k);if(!td)return;const p=Math.max(0,num(st.v[k]))/mx*100;td.style.background=`linear-gradient(90deg,color-mix(in srgb,var(--r0) 38%,transparent) ${p}%,transparent ${p}%)`;});}
+  if(st.scale){const ks=cellsOf(st.scale.r),vs=ks.map(k=>num(st.v[k])),mn=Math.min(...vs),mx=Math.max(...vs);
+    ks.forEach((k,i)=>{const td=cellEl(k);if(!td)return;let t=(vs[i]-mn)/((mx-mn)||1);if(st.scale.inv)t=1-t;td.style.background=`hsl(${Math.round(t*120)} 62% 76%)`;td.style.color="#17201b";});}
+  if(st.icons){const ks=cellsOf(st.icons.r),vs=ks.map(k=>num(st.v[k])),mn=Math.min(...vs),mx=Math.max(...vs);
+    const hi=st.icons.hi!==undefined?st.icons.hi:mn+(mx-mn)*.67,lo=st.icons.lo!==undefined?st.icons.lo:mn+(mx-mn)*.33;
+    ks.forEach((k,i)=>{const td=cellEl(k);if(!td)return;const c=vs[i]>=hi?["up","▲"]:vs[i]>=lo?["mid","▶"]:["down","▼"];td.innerHTML=`<span class="ic3 ${c[0]}">${c[1]}</span>${esc(kind(st.v[k]||"")[1])}`;});}
+  lastSt=st;renderPivot(st);renderSlicer(st);renderDD(st);renderNote(st);renderArrows(st);
   setBox("peer",st.peer?pRange(st.peer.at):null,"peer");if(st.peer&&boxes.peer)boxes.peer.el.dataset.n=st.peer.name;
   renderChart(st);
 }
@@ -128,6 +141,14 @@ function renderPivot(st){
   const isNew=x=>p.pick&&(x===p.pick||x.endsWith(" de "+p.pick));
   el.innerHTML=`<b>Champs de tableau croisé dynamique</b><div class="pf">${p.fields.map(f=>`<span class="${p.pick===f?"hot":""}"><i class="${used(f)?"on":""}"></i>${esc(f)}</span>`).join("")}</div><div class="pz">${zones.map(([n,l])=>`<div><small>${n}</small>${l.map(x=>`<em class="${isNew(x)?"new":""}">${esc(x)}</em>`).join("")}</div>`).join("")}</div>`;
   if(was)setTimeout(placeAll,30);
+}
+function renderSlicer(st){
+  document.querySelectorAll("#ov .slc").forEach(e=>e.remove());
+  const s=st&&st.slicer;if(!s)return;const r=rect(pRange(s.at));if(!r)return;
+  const d=document.createElement("div");d.className="slc"+(s.kind==="time"?" time":"");
+  Object.assign(d.style,{left:r.x+4+"px",top:r.y+4+"px",width:r.w-8+"px",minHeight:r.h-8+"px"});
+  d.innerHTML=`<b>${esc(s.title)}</b><div>${s.items.map((x,i)=>`<span class="${s.on.includes(i)?"on":""}">${esc(x)}</span>`).join("")}</div>`;
+  $("#ov").appendChild(d);
 }
 function renderArrows(st){
   const old=$("#ov .arw");if(old)old.remove();
@@ -325,7 +346,7 @@ function setBox(key,g,cls,color){
   b.g=g;if(color)b.el.style.color=`var(--${color})`;place(b);
 }
 const clearBoxes=pre=>{for(const k in boxes)if(k.startsWith(pre))setBox(k,null);};
-const placeAll=()=>{for(const k in boxes)place(boxes[k]);placeChart();if(lastSt){renderDD(lastSt);renderNote(lastSt);renderArrows(lastSt);}};
+const placeAll=()=>{for(const k in boxes)place(boxes[k]);placeChart();if(lastSt){renderSlicer(lastSt);renderDD(lastSt);renderNote(lastSt);renderArrows(lastSt);}};
 function refBoxes(f,st){
   const refs=f&&f[0]==="="?colorize(f).refs:[];
   refs.forEach((k,j)=>{let g=pRange(k);if(k.endsWith("#")){const sp=st.spill.find(x=>x.split(":")[0]===k.slice(0,-1));if(sp)g=pRange(sp);}setBox("ref"+j,g,"ref","r"+(j%6));});

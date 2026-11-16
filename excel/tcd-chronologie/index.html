@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Filtrer par date avec une chronologie – Excel en animation | Clic par clic</title>
+<meta name="description" content="Une frise pour choisir la période affichée. Leçon Excel animée en 5 étapes, niveau intermédiaire, gratuite.">
+<link rel="canonical" href="https://mehdinourreddine62.github.io/clic-par-clic/excel/tcd-chronologie/">
+<meta name="robots" content="index,follow">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="Clic par clic">
+<meta property="og:title" content="Filtrer par date avec une chronologie – Excel en animation | Clic par clic">
+<meta property="og:description" content="Une frise pour choisir la période affichée. Leçon Excel animée en 5 étapes, niveau intermédiaire, gratuite.">
+<meta property="og:url" content="https://mehdinourreddine62.github.io/clic-par-clic/excel/tcd-chronologie/">
+<meta name="twitter:card" content="summary">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","name":"Filtrer par date avec une chronologie dans Excel","description":"Une frise pour choisir la période affichée.","inLanguage":"fr","isAccessibleForFree":true,"educationalLevel":"Intermédiaire","learningResourceType":"Leçon animée","url":"https://mehdinourreddine62.github.io/clic-par-clic/excel/tcd-chronologie/","isPartOf":{"@type":"Course","name":"Clic par clic : apprendre Excel en animation","url":"https://mehdinourreddine62.github.io/clic-par-clic/"}}</script>
+<script>document.documentElement.classList.add("js");try{var t=localStorage.getItem("cpc-theme");if(t==="dark"||t==="light")document.documentElement.dataset.theme=t}catch(e){}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="../../assets/app.css">
+</head>
+<body>
+<div class="wrap">
+  <div class="topbar"><a class="brand" href="../../"><span class="logo" aria-hidden="true"><i></i><i class="on"></i><i></i><i class="on"></i><i class="on"></i><i></i></span>Clic par clic</a><button class="theme" id="theme" type="button"></button></div>
+  <main id="lesson">
+    <a class="back" href="../../#theme-tcd">← Tableaux croisés dynamiques</a>
+    <div class="lhead">
+      <div class="meta"><span class="tag" style="--k:var(--k13)"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 3v18"/><path d="M13 13l4 4M17 13v4h-4"/></svg>Tableaux croisés dynamiques</span><span><span class="lvl" title="Intermédiaire" aria-label="Intermédiaire"><i class="on"></i><i class="on"></i><i class=""></i></span> Intermédiaire</span></div>
+      <h1>Filtrer par date avec une chronologie</h1>
+      <p>Une frise pour choisir la période affichée.</p>
+    </div>
+    <div class="win haspv">
+      <div id="ribwrap"><div class="ribbon" id="ribbon"></div><div class="ribpanel" id="ribpanel" hidden></div></div>
+      <div class="fbar"><div class="namebox" id="namebox"></div><div class="fx">fx</div><div class="formula" id="formula"></div></div>
+      <div class="stage"><div class="sheetwrap" id="sheetwrap"><div class="sheetinner"><table class="sheet" id="sheet"></table><div class="ov" id="ov"></div></div></div><aside class="pivot" id="pivot" hidden></aside><div class="keys" id="keys" hidden></div><div class="msg" id="msg" hidden></div><div class="preview" id="preview" hidden></div></div>
+      <div class="tabs" id="tabs"></div>
+      <p class="cap" id="text" aria-live="polite">Voici les ventes par produit, sur tout le trimestre.</p>
+      <div class="bar">
+        <button class="ic" id="prev" aria-label="Étape précédente"><svg viewBox="0 0 16 16"><path d="M10.5 2 4 8l6.5 6 1.2-1.3L6.6 8l5.1-4.7z"/></svg></button>
+        <button class="ic play" id="play" aria-label="Lecture"></button>
+        <button class="ic" id="next" aria-label="Étape suivante"><svg viewBox="0 0 16 16"><path d="M5.5 2 12 8l-6.5 6-1.2-1.3L9.4 8 4.3 3.3z"/></svg></button>
+        <div class="progress" id="progress"></div>
+        <span class="count" id="count"></span>
+      </div>
+    </div>
+    <p class="hint">Clavier : <kbd>←</kbd> <kbd>→</kbd> pour changer d'étape, <kbd>Espace</kbd> pour lancer ou mettre en pause.</p>
+    <details class="sx"><summary>Syntaxe <code>Analyse du tableau croisé › Insérer une chronologie</code></summary><dl><dt>Chronologie</dt><dd>Une frise liée à une colonne de dates</dd><dt>Clic</dt><dd>Filtre sur un mois</dd><dt>Étirer</dt><dd>Couvre plusieurs mois</dd></dl></details>
+    <details class="sx"><summary>Résumé écrit des étapes</summary><ol class="steps"><li>Voici les ventes par produit, sur tout le trimestre.</li><li>Insérer une chronologie, cochez Date : une frise des mois apparaît.</li><li>Cliquez sur février : seules les ventes de ce mois sont comptées.</li><li>Étirez la sélection pour couvrir plusieurs mois.</li><li>Condition : la colonne doit contenir de vraies dates, pas du texte.</li></ol></details>
+    <nav class="lnav" aria-label="Leçons voisines"><a href="../tcd-segments/"><small>← Précédente</small>Filtrer avec un segment</a><a class="nx" id="nextLesson" href="../tcd-champ-calcule/"><small>Suivante →</small>Ajouter un champ calculé</a></nav>
+  </main>
+</div>
+<script type="application/json" id="lesson-data">{"id":"tcd-chronologie","g":[["Date","Produit","Montant"],["05/01/2026","Stylos","100"],["18/01/2026","Cahiers","50"],["03/02/2026","Stylos","80"],["20/02/2026","Cahiers","120"],["11/03/2026","Stylos","60"],["25/03/2026","Cahiers","90"]],"s":[{"c":"E1","tab":"Analyse du tableau croisé","pivot":{"fields":["Date","Produit","Montant"],"filt":[],"cols":[],"rows":["Produit"],"vals":["Somme de Montant"]},"set":{"E1":"Étiquettes de lignes","F1":"Somme de Montant","E2":"Cahiers","F2":"260","E3":"Stylos","F3":"240","E4":"Total général","F4":"500"},"fmt":{"E1:F1":"h","E4:F4":"b"},"t":"Voici les ventes par produit, sur tout le trimestre."},{"c":"E1","tab":"Analyse du tableau croisé","btn":"Insérer une chronologie","slicer":{"kind":"time","at":"E6:G8","title":"Date","items":["janv","févr","mars"],"on":[0,1,2]},"t":"Insérer une chronologie, cochez Date : une frise des mois apparaît."},{"c":"E1","tab":"Analyse du tableau croisé","slicer":{"kind":"time","at":"E6:G8","title":"Date","items":["janv","févr","mars"],"on":[1]},"set":{"F2":"120","F3":"80","F4":"200"},"t":"Cliquez sur février : seules les ventes de ce mois sont comptées."},{"c":"E1","tab":"Analyse du tableau croisé","slicer":{"kind":"time","at":"E6:G8","title":"Date","items":["janv","févr","mars"],"on":[0,1]},"set":{"F2":"170","F3":"180","F4":"350"},"t":"Étirez la sélection pour couvrir plusieurs mois."},{"c":"A2","sel":"A2:A7","tab":"Analyse du tableau croisé","slicer":{"kind":"time","at":"E6:G8","title":"Date","items":["janv","févr","mars"],"on":[0,1]},"t":"Condition : la colonne doit contenir de vraies dates, pas du texte."}],"rib":1}</script>
+<script src="../../assets/app.js"></script>
+<script src="../../assets/player.js"></script>
+</body>
+</html>

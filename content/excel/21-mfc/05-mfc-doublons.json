@@ -1,0 +1,28 @@
+{
+ "id": "mfc-doublons",
+ "titre": "Repérer les doublons",
+ "niveau": 1,
+ "resume": "Colorer automatiquement les valeurs saisies deux fois.",
+ "motsCles": "doublons valeurs en double repérer surbrillance mise en forme conditionnelle",
+ "syntaxe": "Règles de mise en surbrillance › Valeurs en double",
+ "ruban": true,
+ "arguments": [
+  ["Valeurs en double","Colore toutes les cellules qui se répètent"],
+  ["En direct","La couleur disparaît dès que le doublon est corrigé"]
+ ],
+ "grille": [
+  ["Inscrits"],
+  ["lea@ecole.fr"],
+  ["tom@campus.org"],
+  ["ines@ecole.fr"],
+  ["tom@campus.org"],
+  ["nora@campus.org"],
+  ["lea@ecole.fr"]
+ ],
+ "etapes": [
+  {"c":"A2","sel":"A2:A7","drag":1,"tab":"Accueil","btn":"Mise en forme conditionnelle","t":"Sélectionnez la liste, puis ouvrez Mise en forme conditionnelle."},
+  {"c":"A2","sel":"A2:A7","menu":"Règles de mise en surbrillance des cellules › <b>Valeurs en double</b>","bad":"A2 A3 A5 A7","t":"Valeurs en double : toutes les cellules qui se répètent passent en rouge."},
+  {"c":"A5","f":"tim@campus.org","tab":"Accueil","unbad":"A3 A5","t":"Corrigez une saisie : la couleur disparaît d'elle-même."},
+  {"c":"A7","tab":"Accueil","t":"Pour supprimer les doublons plutôt que les repérer, utilisez Données › Supprimer les doublons."}
+ ]
+}

@@ -231,6 +231,17 @@ table.sheet{border-collapse:collapse;font-size:14px;font-family:var(--f-body);fo
 .pgt i{height:7px;background:#b4c2b9}
 .pgt i.ph{background:#147347}
 .pg small{font-size:9px;color:#6b7a70;text-align:center}
+.slc{position:absolute;background:var(--surface);border:1px solid var(--muted);border-radius:6px;box-shadow:0 8px 20px -10px rgba(0,0,0,.45);padding:7px 8px;z-index:4;font-size:12.5px;display:flex;flex-direction:column;gap:6px;animation:fadein .35s}
+.slc b{font-size:12px}
+.slc div{display:flex;flex-direction:column;gap:4px}
+.slc span{border:1px solid var(--line);border-radius:4px;padding:4px 8px;color:var(--muted);transition:background .25s,color .25s}
+.slc span.on{background:var(--r0);border-color:var(--r0);color:var(--surface);font-weight:600}
+.slc.time div{flex-direction:row;gap:0}
+.slc.time span{flex:1;text-align:center;border-radius:0;border-left-width:0}
+.slc.time span:first-child{border-left-width:1px;border-radius:4px 0 0 4px}
+.slc.time span:last-child{border-radius:0 4px 4px 0}
+.ic3{display:inline-block;margin-right:7px;font-size:11px}
+.ic3.up{color:#1c8a4a}.ic3.mid{color:#c79a00}.ic3.down{color:#d13438}
 .arw{position:absolute;inset:0;z-index:5;animation:fadein .4s}
 .arw line{stroke:var(--r0);stroke-width:2}
 .arw circle,.arw path{fill:var(--r0)}
@@ -248,6 +259,7 @@ table.sheet{border-collapse:collapse;font-size:14px;font-family:var(--f-body);fo
 .ddl span.on{background:var(--accent);color:var(--accent-ink)}
 .sheet td.fh{background:var(--accent);color:var(--accent-ink);font-weight:600}
 .sheet td.fz{background:var(--accent-soft)}
+.sheet td.fg{background:#c6efce;color:#006100;font-weight:600}
 .sheet tr.frr td,.sheet tr.frr th{border-bottom:2.5px solid var(--ink)}
 .sheet td.frc,.sheet th.frc{border-right:2.5px solid var(--ink)}
 .sheet .hidc{display:none}

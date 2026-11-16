@@ -1,0 +1,27 @@
+{
+ "id": "mfc-barres-de-donnees",
+ "titre": "Barres de données",
+ "niveau": 1,
+ "resume": "Une barre dans chaque cellule, proportionnelle à sa valeur.",
+ "motsCles": "barres de données mise en forme conditionnelle mini graphique cellule",
+ "syntaxe": "Mise en forme conditionnelle › Barres de données",
+ "ruban": true,
+ "arguments": [
+  ["Barre","Sa longueur suit la valeur de la cellule"],
+  ["Référence","La plus grande valeur de la sélection remplit la cellule"]
+ ],
+ "grille": [
+  ["Vendeur","Ventes"],
+  ["Alice","900"],
+  ["Bruno","400"],
+  ["Chloé","660"],
+  ["David","150"],
+  ["Emma","780"]
+ ],
+ "etapes": [
+  {"c":"B2","sel":"B2:B6","drag":1,"tab":"Accueil","btn":"Mise en forme conditionnelle","t":"Sélectionnez les valeurs, puis ouvrez Mise en forme conditionnelle."},
+  {"c":"B2","sel":"B2:B6","menu":"Mise en forme conditionnelle › <b>Barres de données</b>","bars":"B2:B6","t":"Barres de données : chaque cellule reçoit une barre proportionnelle à sa valeur."},
+  {"c":"B5","f":"820","tab":"Accueil","t":"Les barres suivent les valeurs : modifiez un chiffre, sa barre s'allonge."},
+  {"c":"B2","tab":"Accueil","t":"Un mini-graphique sans quitter le tableau : les plus grands et les plus petits se repèrent d'un coup d'œil."}
+ ]
+}
