@@ -34,7 +34,7 @@ lessons.sort((a,b)=>cats.indexOf(a.cat)-cats.indexOf(b.cat));
 
 /* ---------- gabarits ---------- */
 const FONTS=`<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap">`;
-const THEME=`<script>try{var t=localStorage.getItem("cpc-theme");if(t==="dark"||t==="light")document.documentElement.dataset.theme=t}catch(e){}</script>`;
+const THEME=`<script>document.documentElement.classList.add("js");try{var t=localStorage.getItem("cpc-theme");if(t==="dark"||t==="light")document.documentElement.dataset.theme=t}catch(e){}</script>`;
 function head({title,desc,url,root,ld,extra=""}){
   return `<!doctype html>
 <html lang="fr">
@@ -73,17 +73,26 @@ function home(){
     return `<section class="sec" id="theme-${c.id}" style="--k:var(--${c.couleur})"><h2><span class="ico" aria-hidden="true">${ico(c)}</span><span class="st">${esc(c.nom)}<small>${g.length} leçon${g.length>1?"s":""}</small></span></h2><div class="cards">\n${cards}\n</div></section>`;
   }).join("\n");
   const verif=SITE.verificationGoogle?`<meta name="google-site-verification" content="${SITE.verificationGoogle}">\n`:"";
+  const fams=[...new Set(cats.map(c=>c.famille||"Rubriques"))];
+  const tiles=fams.map(f=>`<section class="fam"><h2>${esc(f)}</h2><div class="tgrid">
+${cats.filter(c=>(c.famille||"Rubriques")===f).map(c=>{const n=lessons.filter(l=>l.cat===c).length;return n?`<a class="tile" href="#theme-${c.id}" data-c="${c.id}" data-n="${n}" style="--k:var(--${c.couleur})"><span class="ico" aria-hidden="true">${ico(c)}</span><span class="tt"><b>${esc(c.nom)}</b><small>${n} leçon${n>1?"s":""}</small></span><span class="tp" aria-hidden="true"><i></i></span></a>`:"";}).join("\n")}
+</div></section>`).join("\n");
+  const first=lessons[0];
   return head({title,desc,url:SITE.url,root:"",ld,extra:verif})+`  <div id="home">
     <header class="hero">
       <h1>Excel, <em>étape par étape.</em></h1>
       <p>Des leçons animées pour découvrir Excel, puis maîtriser les formules et les graphiques, directement dans une feuille de calcul.</p>
     </header>
     <div class="tools">
-      <input id="q" type="search" placeholder="Rechercher : somme, date, pourcentage…" aria-label="Rechercher une leçon">
-      <div class="chips" id="cats" role="group" aria-label="Filtrer par thème"><button class="chip" data-v="" aria-pressed="true">Tout</button>${cats.map(c=>`<button class="chip" data-v="${c.id}" aria-pressed="false"><i style="--k:var(--${c.couleur})"></i>${esc(c.nom)}</button>`).join("")}</div>
+      <input id="q" type="search" placeholder="Rechercher une leçon : somme, date, imprimer…" aria-label="Rechercher une leçon">
       <div class="chips" id="levels" role="group" aria-label="Filtrer par niveau"><button class="chip" data-v="0" aria-pressed="true">Tous niveaux</button>${[1,2,3].map(n=>`<button class="chip" data-v="${n}" aria-pressed="false">${LV[n]}</button>`).join("")}</div>
     </div>
+    <a class="resume" id="resume" href="${LOGICIEL}/${first.id}/"><span><small>Par où commencer ?</small><b>${esc(first.titre)}</b></span><span aria-hidden="true">→</span></a>
+    <div id="tiles">
+${tiles}
+    </div>
     <div id="list">
+    <a class="back" id="backHome" href="#">← Toutes les rubriques</a>
 ${sections}
     <p class="empty" id="none" hidden>Aucune leçon ne correspond à votre recherche.</p>
     </div>
@@ -104,7 +113,7 @@ function lessonPage(l,i){
   const data={id:l.id,g:l.grille,s:l.etapes};
   if(l.ruban)data.rib=1;if(l.sansEnTete)data.nh=1;if(l.largeurs)data.w=l.largeurs;if(l.graphique)data.chart=l.graphique;
   return head({title,desc,url,root:"../../",ld})+`  <main id="lesson">
-    <a class="back" href="../../">← Toutes les leçons</a>
+    <a class="back" href="../../#theme-${c.id}">← ${esc(c.nom)}</a>
     <div class="lhead">
       <div class="meta"><span class="tag" style="--k:var(--${c.couleur})">${ico(c)}${esc(c.nom)}</span><span>${bars(l.niveau)} ${LV[l.niveau]}</span></div>
       <h1>${esc(l.titre)}</h1>

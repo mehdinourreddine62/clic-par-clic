@@ -8,7 +8,7 @@ https://mehdinourreddine62.github.io/clic-par-clic/
 | Dossier ou fichier | Rôle |
 |---|---|
 | `content/excel/` | Les leçons : un dossier par thème, un fichier `.json` par leçon |
-| `content/excel/categories.json` | Les thèmes : nom, couleur, icône, ordre d'affichage |
+| `content/excel/categories.json` | Les rubriques : nom, couleur, icône, famille (le groupe affiché sur l'accueil) et ordre d'affichage |
 | `src/` | Le style (`style.css`) et les scripts (`app.js`, `player.js`, `home.js`) |
 | `site.json` | Adresse du site, nom, balise de validation Google |
 | `build.mjs` | Le script qui génère le site |
