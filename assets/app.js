@@ -8,7 +8,7 @@ const colIdx=s=>s.split("").reduce((a,c)=>a*26+c.charCodeAt(0)-64,0)-1;
 const colName=i=>{let s="";i++;while(i>0){const m=(i-1)%26;s=String.fromCharCode(65+m)+s;i=Math.floor((i-1)/26);}return s;};
 const pRef=r=>{const m=r.replace(/\$/g,"").match(/^([A-Z]+)(\d+)$/);return{c:colIdx(m[1]),r:+m[2]-1};};
 function pRange(s){s=s.replace(/[\$#]/g,"");const[a,b]=s.split(":");const p=pRef(a),q=b?pRef(b):p;return{c1:Math.min(p.c,q.c),r1:Math.min(p.r,q.r),c2:Math.max(p.c,q.c),r2:Math.max(p.r,q.r)};}
-const REF=/(?<![A-Za-z0-9_.$])\$?[A-Z]{1,3}\$?\d+(?::\$?[A-Z]{1,3}\$?\d+)?#?(?![A-Za-z0-9_(])/g;
+const REF=/(?<![A-Za-z0-9_.$!])\$?[A-Z]{1,3}\$?\d+(?::\$?[A-Z]{1,3}\$?\d+)?#?(?![A-Za-z0-9_(])/g;
 function colorize(f){
   const refs=[],idx={};let html="";
   for(const p of f.split(/("[^"]*"?)/)){

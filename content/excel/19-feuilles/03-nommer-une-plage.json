@@ -1,0 +1,27 @@
+{
+ "id": "nommer-une-plage",
+ "titre": "Nommer une plage",
+ "niveau": 2,
+ "resume": "Remplacer une référence par un nom lisible.",
+ "motsCles": "nommer plage nom défini zone nom gestionnaire de noms lisible",
+ "syntaxe": "=SOMME(Ventes)",
+ "ruban": true,
+ "arguments": [
+  ["Zone Nom","Sélectionner la plage, taper le nom, valider"],
+  ["Règles","Pas d'espace, pas de chiffre au début"],
+  ["Gestionnaire de noms","Modifier ou supprimer un nom"]
+ ],
+ "grille": [
+  ["Mois","Ventes"],
+  ["Janvier","120"],
+  ["Février","90"],
+  ["Mars","150"],
+  ["Total",""]
+ ],
+ "etapes": [
+  {"c":"B2","sel":"B2:B4","drag":1,"tab":"Formules","spot":"namebox","t":"Sélectionnez la plage, puis cliquez dans la zone Nom, à gauche de la barre de formule."},
+  {"c":"B2","sel":"B2:B4","tab":"Formules","nb":"Ventes","spot":"namebox","keys":"Entrée","t":"Tapez un nom sans espace, par exemple Ventes, et validez avec Entrée."},
+  {"c":"B5","tab":"Formules","f":"=SOMME(Ventes)","v":"360","mark":"B2 B3 B4","t":"Le nom remplace la référence dans les formules : plus lisible que B2:B4."},
+  {"c":"B5","tab":"Formules","btn":"Gestionnaire de noms","t":"Formules › Gestionnaire de noms liste tous les noms du classeur, pour les modifier ou les supprimer."}
+ ]
+}

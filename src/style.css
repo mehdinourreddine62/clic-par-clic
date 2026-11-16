@@ -231,6 +231,9 @@ table.sheet{border-collapse:collapse;font-size:14px;font-family:var(--f-body);fo
 .pgt i{height:7px;background:#b4c2b9}
 .pgt i.ph{background:#147347}
 .pg small{font-size:9px;color:#6b7a70;text-align:center}
+.arw{position:absolute;inset:0;z-index:5;animation:fadein .4s}
+.arw line{stroke:var(--r0);stroke-width:2}
+.arw circle,.arw path{fill:var(--r0)}
 .ntc{position:absolute;border:4.5px solid transparent;border-top-color:var(--r2);border-right-color:var(--r2);z-index:5}
 .ntb{position:absolute;width:190px;background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--r2);border-radius:6px;box-shadow:0 10px 24px -10px rgba(0,0,0,.45);padding:7px 9px;font-size:12px;z-index:6;animation:fadein .3s}
 .ntb b{font-size:11px;color:var(--r2)}

@@ -1,0 +1,23 @@
+{
+ "id": "reference-a-une-autre-feuille",
+ "titre": "Utiliser une cellule d'une autre feuille",
+ "niveau": 2,
+ "resume": "Reprendre un résultat calculé sur une autre feuille.",
+ "motsCles": "référence autre feuille point d'exclamation lier feuilles onglet",
+ "syntaxe": "=Ventes!B4",
+ "sansEnTete": true,
+ "arguments": [
+  ["Ventes","Le nom de la feuille"],
+  ["!","Sépare la feuille et la cellule"],
+  ["Apostrophes","Ajoutées si le nom contient un espace"]
+ ],
+ "grille": [
+  ["Total des ventes",""]
+ ],
+ "etapes": [
+  {"c":"B1","sheets":{"list":["Synthèse","Ventes"],"on":0},"spot":"tabs","t":"Les données sont sur la feuille Ventes, mais on veut leur total ici, sur Synthèse."},
+  {"c":"B4","sheets":{"list":["Synthèse","Ventes"],"on":1},"set":{"A1":"Région","B1":"Montant","A2":"Nord","B2":"430","A3":"Sud","B3":"290","A4":"Total","B4":"720"},"bar":"=Ventes!B4","t":"Tapez = puis cliquez sur l'onglet Ventes et sur la cellule B4 : Excel écrit la référence tout seul."},
+  {"c":"B1","sheets":{"list":["Synthèse","Ventes"],"on":0},"set":{"A1":"Total des ventes","B1":"720","A2":"","B2":"","A3":"","B3":"","A4":"","B4":""},"bar":"=Ventes!B4","t":"Validez : Synthèse affiche 720. Le point d'exclamation sépare le nom de la feuille et la cellule."},
+  {"c":"B1","sheets":{"list":["Synthèse","Ventes 2026"],"on":0},"bar":"='Ventes 2026'!B4","t":"Si le nom de la feuille contient un espace, Excel l'entoure d'apostrophes."}
+ ]
+}

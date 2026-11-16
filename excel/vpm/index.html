@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>VPM : calculer une mensualité – Excel en animation | Clic par clic</title>
+<meta name="description" content="Savoir combien on rembourse chaque mois pour un emprunt. Leçon Excel animée en 5 étapes, niveau intermédiaire, gratuite.">
+<link rel="canonical" href="https://mehdinourreddine62.github.io/clic-par-clic/excel/vpm/">
+<meta name="robots" content="index,follow">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="Clic par clic">
+<meta property="og:title" content="VPM : calculer une mensualité – Excel en animation | Clic par clic">
+<meta property="og:description" content="Savoir combien on rembourse chaque mois pour un emprunt. Leçon Excel animée en 5 étapes, niveau intermédiaire, gratuite.">
+<meta property="og:url" content="https://mehdinourreddine62.github.io/clic-par-clic/excel/vpm/">
+<meta name="twitter:card" content="summary">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","name":"VPM : calculer une mensualité dans Excel","description":"Savoir combien on rembourse chaque mois pour un emprunt.","inLanguage":"fr","isAccessibleForFree":true,"educationalLevel":"Intermédiaire","learningResourceType":"Leçon animée","url":"https://mehdinourreddine62.github.io/clic-par-clic/excel/vpm/","isPartOf":{"@type":"Course","name":"Clic par clic : apprendre Excel en animation","url":"https://mehdinourreddine62.github.io/clic-par-clic/"}}</script>
+<script>document.documentElement.classList.add("js");try{var t=localStorage.getItem("cpc-theme");if(t==="dark"||t==="light")document.documentElement.dataset.theme=t}catch(e){}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="../../assets/app.css">
+</head>
+<body>
+<div class="wrap">
+  <div class="topbar"><a class="brand" href="../../"><span class="logo" aria-hidden="true"><i></i><i class="on"></i><i></i><i class="on"></i><i class="on"></i><i></i></span>Clic par clic</a><button class="theme" id="theme" type="button"></button></div>
+  <main id="lesson">
+    <a class="back" href="../../#theme-quotidien">← Calculs du quotidien</a>
+    <div class="lhead">
+      <div class="meta"><span class="tag" style="--k:var(--r3)"><svg viewBox="0 0 24 24"><path d="M19 5L5 19"/><circle cx="7" cy="7" r="2.5"/><circle cx="17" cy="17" r="2.5"/></svg>Calculs du quotidien</span><span><span class="lvl" title="Intermédiaire" aria-label="Intermédiaire"><i class="on"></i><i class="on"></i><i class=""></i></span> Intermédiaire</span></div>
+      <h1>VPM : calculer une mensualité</h1>
+      <p>Savoir combien on rembourse chaque mois pour un emprunt.</p>
+    </div>
+    <div class="win">
+      <div id="ribwrap"><div class="ribbon" id="ribbon"></div><div class="ribpanel" id="ribpanel" hidden></div></div>
+      <div class="fbar"><div class="namebox" id="namebox"></div><div class="fx">fx</div><div class="formula" id="formula"></div></div>
+      <div class="stage"><div class="sheetwrap" id="sheetwrap"><div class="sheetinner"><table class="sheet" id="sheet"></table><div class="ov" id="ov"></div></div></div><aside class="pivot" id="pivot" hidden></aside><div class="keys" id="keys" hidden></div><div class="msg" id="msg" hidden></div><div class="preview" id="preview" hidden></div></div>
+      <div class="tabs" id="tabs"></div>
+      <p class="cap" id="text" aria-live="polite">VPM calcule une mensualité : le taux par mois, le nombre de mois, le montant emprunté.</p>
+      <div class="bar">
+        <button class="ic" id="prev" aria-label="Étape précédente"><svg viewBox="0 0 16 16"><path d="M10.5 2 4 8l6.5 6 1.2-1.3L6.6 8l5.1-4.7z"/></svg></button>
+        <button class="ic play" id="play" aria-label="Lecture"></button>
+        <button class="ic" id="next" aria-label="Étape suivante"><svg viewBox="0 0 16 16"><path d="M5.5 2 12 8l-6.5 6-1.2-1.3L9.4 8 4.3 3.3z"/></svg></button>
+        <div class="progress" id="progress"></div>
+        <span class="count" id="count"></span>
+      </div>
+    </div>
+    <p class="hint">Clavier : <kbd>←</kbd> <kbd>→</kbd> pour changer d'étape, <kbd>Espace</kbd> pour lancer ou mettre en pause.</p>
+    <details class="sx"><summary>Syntaxe <code>=VPM(taux/12; années*12; -montant)</code></summary><dl><dt>taux/12</dt><dd>Le taux par mois</dd><dt>années*12</dt><dd>Le nombre de mensualités</dd><dt>-montant</dt><dd>Le capital emprunté, avec un signe moins</dd></dl></details>
+    <details class="sx"><summary>Résumé écrit des étapes</summary><ol class="steps"><li>VPM calcule une mensualité : le taux par mois, le nombre de mois, le montant emprunté.</li><li>Tout doit être dans la même unité : le taux annuel est divisé par 12, la durée multipliée par 12.</li><li>Le signe moins devant le montant donne un résultat positif. Sans lui, VPM affiche un nombre négatif.</li><li>Mensualité × nombre de mois : le total réellement remboursé.</li><li>La différence avec le montant emprunté est le coût du crédit.</li></ol></details>
+    <nav class="lnav" aria-label="Leçons voisines"><a href="../interets-composes/"><small>← Précédente</small>Intérêts composés</a><a class="nx" id="nextLesson" href="../moyenne-ponderee/"><small>Suivante →</small>Moyenne pondérée</a></nav>
+  </main>
+</div>
+<script type="application/json" id="lesson-data">{"id":"vpm","g":[["Montant emprunté","10 000,00 €"],["Taux annuel","4 %"],["Durée en années","3"],["Mensualité",""],["Total remboursé",""],["Coût du crédit",""]],"s":[{"c":"B4","f":"=VPM(B2/12;B3*12;-B1)","v":"295,24 €","t":"VPM calcule une mensualité : le taux par mois, le nombre de mois, le montant emprunté."},{"c":"B4","mark":"B2 B3","t":"Tout doit être dans la même unité : le taux annuel est divisé par 12, la durée multipliée par 12."},{"c":"B4","mark":"B1","t":"Le signe moins devant le montant donne un résultat positif. Sans lui, VPM affiche un nombre négatif."},{"c":"B5","f":"=B4*B3*12","v":"10 628,63 €","t":"Mensualité × nombre de mois : le total réellement remboursé."},{"c":"B6","f":"=B5-B1","v":"628,63 €","mark":"B6","t":"La différence avec le montant emprunté est le coût du crédit."}],"nh":1}</script>
+<script src="../../assets/app.js"></script>
+<script src="../../assets/player.js"></script>
+</body>
+</html>

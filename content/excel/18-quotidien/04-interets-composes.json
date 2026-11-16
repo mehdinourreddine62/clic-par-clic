@@ -1,0 +1,23 @@
+{
+ "id": "interets-composes",
+ "titre": "Intérêts composés",
+ "niveau": 2,
+ "resume": "Calculer ce que devient un capital placé plusieurs années.",
+ "motsCles": "intérêts composés capital placement taux années épargne puissance",
+ "syntaxe": "=capital*(1+taux)^années",
+ "arguments": [
+  ["1 + taux","Ce que devient 1 € en un an"],
+  ["^ années","Répété chaque année"],
+  ["Intérêts simples","capital × (1 + taux × années)"]
+ ],
+ "grille": [
+  ["Capital","Taux","Années","Capital final","Intérêts simples"],
+  ["1 000,00 €","5 %","1","",""],
+  ["1 000,00 €","5 %","10","",""]
+ ],
+ "etapes": [
+  {"c":"D2","f":"=A2*(1+B2)^C2","v":"1 050,00 €","t":"Après un an à 5 %, 1 000 € deviennent 1 050 €."},
+  {"c":"D2","fill":{"D3":"1 628,89 €"},"t":"Chaque année, les intérêts s'ajoutent au capital et rapportent à leur tour."},
+  {"c":"E3","f":"=A3*(1+B3*C3)","v":"1 500,00 €","mark":"D3 E3","t":"Sans cet effet, on n'aurait que 1 500 €. L'écart grandit avec le temps."}
+ ]
+}

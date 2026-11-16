@@ -1,0 +1,25 @@
+{
+ "id": "erreur-nom",
+ "titre": "Corriger #NOM?",
+ "niveau": 1,
+ "resume": "Trouver la faute de frappe dans une formule.",
+ "motsCles": "#NOM? erreur nom fonction faute de frappe guillemets texte",
+ "syntaxe": "Vérifier l'orthographe et les guillemets",
+ "arguments": [
+  ["Cause 1","Un nom de fonction mal orthographié"],
+  ["Cause 2","Un texte écrit sans guillemets"],
+  ["Astuce","Choisir la fonction dans la liste proposée à la saisie"]
+ ],
+ "grille": [
+  ["Mois","Ventes","Bon mois ?"],
+  ["Janvier","200",""],
+  ["Février","150",""],
+  ["Total","",""]
+ ],
+ "etapes": [
+  {"c":"B4","f":"=SOMM(B2:B3)","v":"#NOM?","t":"#NOM? : Excel ne reconnaît pas un mot de la formule. Ici, SOMM au lieu de SOMME."},
+  {"c":"B4","f":"=SOMME(B2:B3)","v":"350","t":"Corrigez le nom. Astuce : choisissez la fonction dans la liste proposée pendant la saisie."},
+  {"c":"C2","f":"=SI(B2>180;Oui;Non)","v":"#NOM?","t":"Autre cause : un texte sans guillemets. Excel prend Oui pour un nom qu'il ne connaît pas."},
+  {"c":"C2","f":"=SI(B2>180;\"Oui\";\"Non\")","v":"Oui","fill":{"C3":"Non"},"t":"Entre guillemets, le texte est compris."}
+ ]
+}

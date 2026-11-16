@@ -1,0 +1,23 @@
+{
+ "id": "nommer-une-cellule",
+ "titre": "Nommer une cellule",
+ "niveau": 2,
+ "resume": "Donner un nom à un taux pour ne plus penser aux $.",
+ "motsCles": "nommer cellule constante taux nom défini référence absolue dollar",
+ "syntaxe": "=B2*(1+TauxTVA)",
+ "arguments": [
+  ["TauxTVA","Le nom donné à la cellule du taux"],
+  ["Avantage","Le nom désigne toujours la même cellule"]
+ ],
+ "grille": [
+  ["Produit","Prix HT","Prix TTC","","Taux TVA"],
+  ["Chaise","45,00 €","","","20 %"],
+  ["Table","180,00 €","","",""]
+ ],
+ "etapes": [
+  {"c":"E2","nb":"TauxTVA","spot":"namebox","keys":"Entrée","t":"Cliquez sur la cellule du taux et tapez TauxTVA dans la zone Nom."},
+  {"c":"C2","f":"=B2*(1+TauxTVA)","v":"54,00 €","mark":"E2","t":"Utilisez ce nom dans la formule, à la place de $E$2."},
+  {"c":"C2","fill":{"C3":"216,00 €"},"t":"Un nom désigne toujours la même cellule : la formule se recopie sans penser aux $."},
+  {"c":"E2","f":"10 %","set":{"C2":"49,50 €","C3":"198,00 €"},"t":"Changez le taux à un seul endroit : tous les prix suivent."}
+ ]
+}

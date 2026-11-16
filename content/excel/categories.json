@@ -70,6 +70,13 @@
   "famille": "Calculer avec des formules"
  },
  {
+  "id": "quotidien",
+  "nom": "Calculs du quotidien",
+  "couleur": "r3",
+  "icone": "<path d=\"M19 5L5 19\"/><circle cx=\"7\" cy=\"7\" r=\"2.5\"/><circle cx=\"17\" cy=\"17\" r=\"2.5\"/>",
+  "famille": "Calculer avec des formules"
+ },
+ {
   "id": "stat",
   "nom": "Compter et classer",
   "couleur": "r2",
@@ -102,6 +109,20 @@
   "nom": "Dates et heures",
   "couleur": "k7",
   "icone": "<rect x=\"3\" y=\"5\" width=\"18\" height=\"16\" rx=\"2\"/><path d=\"M3 10h18M8 3v4M16 3v4\"/>",
+  "famille": "Calculer avec des formules"
+ },
+ {
+  "id": "feuilles",
+  "nom": "Feuilles et noms",
+  "couleur": "k10",
+  "icone": "<path d=\"M12 3l9 5-9 5-9-5z\"/><path d=\"M3 13l9 5 9-5\"/>",
+  "famille": "Calculer avec des formules"
+ },
+ {
+  "id": "erreurs",
+  "nom": "Erreurs et vérification",
+  "couleur": "r1",
+  "icone": "<path d=\"M12 4l9 16H3z\"/><path d=\"M12 10v4M12 17h.01\"/>",
   "famille": "Calculer avec des formules"
  },
  {

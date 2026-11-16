@@ -5,7 +5,7 @@ const RIB={
  "Accueil":[["Presse-papiers",["Coller","Couper","Copier","Reproduire la mise en forme"]],["Police",["G","I","S","Bordures","Remplissage"]],["Alignement",["Gauche","Centrer","Droite"]],["Nombre",["€","%","000"]],["Styles",["Mise en forme conditionnelle","Mettre sous forme de tableau"]],["Édition",["Somme","Rechercher"]]],
  "Insertion":[["Tableaux",["Tableau croisé dynamique","Tableau"]],["Illustrations",["Images","Formes"]],["Graphiques",["Histogramme","Barres","Courbes","Secteurs","Nuage de points"]],["Sparkline",["Sparkline Courbe","Sparkline Histogramme"]]],
  "Mise en page":[["Mise en page",["Marges","Orientation","Taille","Zone d'impression","Sauts de page","Imprimer les titres"]],["Mise à l'échelle",["Largeur : 1 page","Hauteur : Automatique"]]],
- "Formules":[["Bibliothèque de fonctions",["Insérer une fonction","Somme automatique","Logique","Texte","Date et heure","Recherche"]]],
+ "Formules":[["Bibliothèque de fonctions",["Insérer une fonction","Somme automatique","Logique","Texte","Date et heure","Recherche"]],["Noms définis",["Gestionnaire de noms","Définir un nom"]],["Vérification des formules",["Repérer les antécédents","Repérer les dépendants","Supprimer les flèches","Afficher les formules","Évaluer la formule"]]],
  "Données":[["Trier et filtrer",["Trier","Filtrer"]],["Outils de données",["Validation des données","Supprimer les doublons","Convertir"]]],
  "Révision":[["Vérification",["Orthographe"]],["Commentaires",["Nouveau commentaire"]],["Protéger",["Protéger la feuille"]]],
  "Création de graphique":[["Dispositions",["Ajouter un élément"]],["Styles",["Modifier les couleurs"]],["Données",["Intervertir lignes/colonnes","Sélectionner des données"]],["Type",["Modifier le type de graphique"]],["Emplacement",["Déplacer le graphique"]]],
@@ -23,7 +23,7 @@ let curC=0,curR=0;
 function dims(les){
   let C=0,R=les.g.length;les.g.forEach(r=>C=Math.max(C,r.length));
   const t=k=>{if(!/^\$?[A-Z]+\$?\d/.test(k))return;const g=pRange(k);C=Math.max(C,g.c2+1);R=Math.max(R,g.r2+1);};
-  les.s.forEach(s=>[s.c,s.sel,s.sel2,s.copy,s.dd&&s.dd.at,s.note&&s.note.at,s.peer&&s.peer.at,...Object.keys(s.spark||{}),...ls(s.mark),...ls(s.spill),...Object.keys(s.set||{}),...Object.keys(s.fill||{}),...Object.keys(s.fmt||{})].filter(Boolean).forEach(t));
+  les.s.forEach(s=>[s.c,s.sel,s.sel2,s.copy,s.dd&&s.dd.at,s.note&&s.note.at,s.peer&&s.peer.at,...(s.arrows||[]).flat(),...Object.keys(s.spark||{}),...ls(s.mark),...ls(s.spill),...Object.keys(s.set||{}),...Object.keys(s.fill||{}),...Object.keys(s.fmt||{})].filter(Boolean).forEach(t));
   les._dr=R;
   if(les.chart){
     if(innerWidth<640){C=Math.max(C,4);R=Math.max(R,les._dr+8);}
@@ -41,7 +41,7 @@ function selR(x){
 }
 function stateAt(les,i){
   const v={},fm={};les.g.forEach((row,r)=>row.forEach((x,c)=>{if(x!=="")v[colName(c)+(r+1)]=x;}));
-  let bad={},spill=[],hide=[],fmt={},w={...(les.w||{})},copy="",sheets={list:["Feuil1"],on:0},chart=null,spark={},pivot=null,dd=null,freeze={},hidec=[],note=null,peer=null;
+  let bad={},spill=[],hide=[],fmt={},w={...(les.w||{})},copy="",sheets={list:["Feuil1"],on:0},chart=null,spark={},pivot=null,dd=null,freeze={},hidec=[],note=null,peer=null,arrows=[];
   const put=(k,val)=>{if(val==="")delete v[k];else v[k]=val;};
   for(let n=0;n<=i;n++){const s=les.s[n];
     if(s.f!==undefined){if(s.f[0]==="=")fm[s.c]=s.f;else delete fm[s.c];put(s.c,s.v!==undefined?s.v:s.f);}
@@ -59,6 +59,7 @@ function stateAt(les,i){
     if(s.pivot!==undefined)pivot=s.pivot||null;
     if(dd&&(dd.open||dd.pick!=null))dd={at:dd.at};
     if(s.dd!==undefined)dd=s.dd||null;
+    if(s.arrows)arrows=s.arrows;
     if(s.note!==undefined)note=s.note||null;
     if(s.peer!==undefined)peer=s.peer||null;
     if(s.spark)Object.assign(spark,s.spark);
@@ -68,7 +69,7 @@ function stateAt(les,i){
       if(!s.chart)chart=null;
       else{chart={...(chart||les.chart||{})};if(typeof s.chart==="object")Object.assign(chart,s.chart);}
     }}
-  return{v,fm,bad,spill,hide,fmt,w,copy,sheets,chart,spark,pivot,dd,freeze,hidec,note,peer};
+  return{v,fm,bad,spill,hide,fmt,w,copy,sheets,chart,spark,pivot,dd,freeze,hidec,note,peer,arrows};
 }
 function build(les){
   const{C,R}=dims(les);curC=C;curR=R;
@@ -106,7 +107,7 @@ function persist(st){
   document.querySelectorAll("#sheet tbody tr").forEach(tr=>tr.classList.toggle("frr",+tr.dataset.r===fz.r));
   document.querySelectorAll("#sheet td[data-x],#sheet thead th[data-c]").forEach(e=>{const x=+(e.dataset.x!==undefined?e.dataset.x:e.dataset.c);e.classList.toggle("frc",!!fz.c&&x===fz.c-1);e.classList.toggle("hidc",st.hidec.includes(colName(x)));});
   for(const[k,o]of Object.entries(st.spark)){const td=cellEl(k);if(td)td.innerHTML=sparkSvg(cellsOf(o.r).map(c=>num(st.v[c])),o.type);}
-  lastSt=st;renderPivot(st);renderDD(st);renderNote(st);
+  lastSt=st;renderPivot(st);renderDD(st);renderNote(st);renderArrows(st);
   setBox("peer",st.peer?pRange(st.peer.at):null,"peer");if(st.peer&&boxes.peer)boxes.peer.el.dataset.n=st.peer.name;
   renderChart(st);
 }
@@ -127,6 +128,16 @@ function renderPivot(st){
   const isNew=x=>p.pick&&(x===p.pick||x.endsWith(" de "+p.pick));
   el.innerHTML=`<b>Champs de tableau croisé dynamique</b><div class="pf">${p.fields.map(f=>`<span class="${p.pick===f?"hot":""}"><i class="${used(f)?"on":""}"></i>${esc(f)}</span>`).join("")}</div><div class="pz">${zones.map(([n,l])=>`<div><small>${n}</small>${l.map(x=>`<em class="${isNew(x)?"new":""}">${esc(x)}</em>`).join("")}</div>`).join("")}</div>`;
   if(was)setTimeout(placeAll,30);
+}
+function renderArrows(st){
+  const old=$("#ov .arw");if(old)old.remove();
+  const l=st&&st.arrows;if(!l||!l.length)return;
+  const c=k=>{const r=rect(pRange(k));return r?[r.x+r.w/2,r.y+r.h/2]:null;};
+  let o="";
+  l.forEach(([a,b])=>{const p=c(a),q=c(b);if(!p||!q)return;o+=`<circle cx="${p[0]}" cy="${p[1]}" r="3.5"/><line x1="${p[0]}" y1="${p[1]}" x2="${q[0]}" y2="${q[1]}" marker-end="url(#arh)"/>`;});
+  const d=document.createElement("div");d.className="arw";
+  d.innerHTML=`<svg width="100%" height="100%"><defs><marker id="arh" markerWidth="9" markerHeight="9" refX="7.5" refY="4.5" orient="auto"><path d="M0 0L9 4.5L0 9z"/></marker></defs>${o}</svg>`;
+  $("#ov").appendChild(d);
 }
 function renderNote(st){
   document.querySelectorAll("#ov .ntc,#ov .ntb").forEach(e=>e.remove());
@@ -314,7 +325,7 @@ function setBox(key,g,cls,color){
   b.g=g;if(color)b.el.style.color=`var(--${color})`;place(b);
 }
 const clearBoxes=pre=>{for(const k in boxes)if(k.startsWith(pre))setBox(k,null);};
-const placeAll=()=>{for(const k in boxes)place(boxes[k]);placeChart();if(lastSt){renderDD(lastSt);renderNote(lastSt);}};
+const placeAll=()=>{for(const k in boxes)place(boxes[k]);placeChart();if(lastSt){renderDD(lastSt);renderNote(lastSt);renderArrows(lastSt);}};
 function refBoxes(f,st){
   const refs=f&&f[0]==="="?colorize(f).refs:[];
   refs.forEach((k,j)=>{let g=pRange(k);if(k.endsWith("#")){const sp=st.spill.find(x=>x.split(":")[0]===k.slice(0,-1));if(sp)g=pRange(sp);}setBox("ref"+j,g,"ref","r"+(j%6));});
@@ -388,7 +399,7 @@ function finalDeco(s,st){
   const fk=Object.keys(s.fill||{});
   const g=s.sel?selR(s.sel):fk.length?pRange(s.c+":"+fk[fk.length-1]):null;
   setBox("sel",g,"selb");setBox("act",pRange(s.c),"act");hdr(g||pRange(s.c));
-  $("#namebox").textContent=s.c;ribbon(s,false);transient(s);
+  $("#namebox").textContent=s.nb||s.c;ribbon(s,false);transient(s);
 }
 function showStatic(i){
   token++;running=false;idx=i;
@@ -450,6 +461,7 @@ async function animate(i){
     }
   }
   ls(s.mark).forEach(k=>cellEl(k).classList.add("mark"));
+  if(s.nb)$("#namebox").textContent=s.nb;
   transient(s);
   await wait(250);if(!ok())return;
   cu.classList.remove("on");running=false;updatePlay();

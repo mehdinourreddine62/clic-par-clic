@@ -1,0 +1,25 @@
+{
+ "id": "erreur-propagation",
+ "titre": "Corriger #PROPAGATION!",
+ "niveau": 3,
+ "resume": "Libérer la place dont une formule dynamique a besoin.",
+ "motsCles": "#PROPAGATION! #EPARS! erreur formule dynamique unique filtre place occupée",
+ "syntaxe": "Vider les cellules qui gênent",
+ "arguments": [
+  ["Cause","Le résultat a besoin de plusieurs cellules, dont une est occupée"],
+  ["Solution","Vider la cellule qui bloque"],
+  ["Autre nom","#EPARS! dans certaines versions"]
+ ],
+ "grille": [
+  ["Client","","Clients"],
+  ["Dupont","",""],
+  ["Martin","",""],
+  ["Dupont","","occupé"],
+  ["Leroy","",""]
+ ],
+ "etapes": [
+  {"c":"C2","f":"=UNIQUE(A2:A5)","v":"#PROPAGATION!","mark":"C4","t":"#PROPAGATION! : le résultat a besoin de plusieurs cellules, mais l'une d'elles est occupée."},
+  {"c":"C4","keys":"Suppr","set":{"C2":"Dupont","C3":"Martin","C4":"Leroy"},"spill":"C2:C4","t":"Videz la cellule qui gêne : le résultat se déploie aussitôt."},
+  {"c":"C2","t":"Gardez toujours de la place sous et à droite d'une formule dynamique."}
+ ]
+}

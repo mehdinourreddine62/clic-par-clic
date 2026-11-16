@@ -1,0 +1,22 @@
+{
+ "id": "tva-ht-et-ttc",
+ "titre": "TVA : passer du HT au TTC",
+ "niveau": 1,
+ "resume": "Ajouter la TVA, et la retirer sans se tromper.",
+ "motsCles": "tva ht ttc hors taxe toutes taxes taux prix calcul",
+ "syntaxe": "=HT*(1+taux) · =TTC/(1+taux)",
+ "arguments": [
+  ["HT vers TTC","Multiplier par 1 + taux"],
+  ["TTC vers HT","Diviser par 1 + taux"],
+  ["Piège","Ne jamais retirer 20 % du TTC"]
+ ],
+ "grille": [
+  ["Prix HT","Prix TTC","","Prix TTC","Prix HT","","Taux"],
+  ["100,00 €","","","60,00 €","","","20 %"]
+ ],
+ "etapes": [
+  {"c":"B2","f":"=A2*(1+$G$2)","v":"120,00 €","t":"Du hors taxe au TTC : on multiplie par 1 + le taux."},
+  {"c":"E2","f":"=D2/(1+$G$2)","v":"50,00 €","t":"Du TTC au hors taxe : on divise par 1 + le taux."},
+  {"c":"E3","f":"=D2*(1-$G$2)","v":"48,00 €","mark":"E3","t":"L'erreur classique : retirer 20 % du TTC donne 48. C'est faux, le bon prix HT est 50."}
+ ]
+}

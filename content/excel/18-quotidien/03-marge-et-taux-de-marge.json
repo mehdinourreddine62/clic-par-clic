@@ -1,0 +1,23 @@
+{
+ "id": "marge-et-taux-de-marge",
+ "titre": "Marge, taux de marge et taux de marque",
+ "niveau": 2,
+ "resume": "Trois calculs proches, qu'il ne faut pas confondre.",
+ "motsCles": "marge taux de marge taux de marque coût prix de vente rentabilité",
+ "syntaxe": "=marge/coût · =marge/prix_de_vente",
+ "arguments": [
+  ["Marge","Prix de vente moins coût"],
+  ["Taux de marge","Marge divisée par le coût"],
+  ["Taux de marque","Marge divisée par le prix de vente"]
+ ],
+ "grille": [
+  ["Produit","Coût","Prix de vente","Marge","Taux de marge","Taux de marque"],
+  ["Sac","40,00 €","60,00 €","","",""],
+  ["Montre","75,00 €","100,00 €","","",""]
+ ],
+ "etapes": [
+  {"c":"D2","f":"=C2-B2","v":"20,00 €","fill":{"D3":"25,00 €"},"t":"La marge, c'est le prix de vente moins le coût."},
+  {"c":"E2","f":"=D2/B2","v":"50 %","fill":{"E3":"33 %"},"t":"Le taux de marge compare la marge au coût."},
+  {"c":"F2","f":"=D2/C2","v":"33 %","fill":{"F3":"25 %"},"t":"Le taux de marque la compare au prix de vente. Même marge, deux pourcentages différents."}
+ ]
+}

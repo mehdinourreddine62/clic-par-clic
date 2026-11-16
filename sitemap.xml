@@ -79,6 +79,12 @@
   <url><loc>https://mehdinourreddine62.github.io/clic-par-clic/excel/abs/</loc></url>
   <url><loc>https://mehdinourreddine62.github.io/clic-par-clic/excel/puissance-racine/</loc></url>
   <url><loc>https://mehdinourreddine62.github.io/clic-par-clic/excel/sous-total/</loc></url>
+  <url><loc>https://mehdinourreddine62.github.io/clic-par-clic/excel/calculer-une-remise/</loc></url>
+  <url><loc>https://mehdinourreddine62.github.io/clic-par-clic/excel/tva-ht-et-ttc/</loc></url>
+  <url><loc>https://mehdinourreddine62.github.io/clic-par-clic/excel/marge-et-taux-de-marge/</loc></url>
+  <url><loc>https://mehdinourreddine62.github.io/clic-par-clic/excel/interets-composes/</loc></url>
+  <url><loc>https://mehdinourreddine62.github.io/clic-par-clic/excel/vpm/</loc></url>
+  <url><loc>https://mehdinourreddine62.github.io/clic-par-clic/excel/moyenne-ponderee/</loc></url>
   <url><loc>https://mehdinourreddine62.github.io/clic-par-clic/excel/nb-nbval-nb-vide/</loc></url>
   <url><loc>https://mehdinourreddine62.github.io/clic-par-clic/excel/nb-si/</loc></url>
   <url><loc>https://mehdinourreddine62.github.io/clic-par-clic/excel/nb-si-ens/</loc></url>
@@ -98,6 +104,12 @@
   <url><loc>https://mehdinourreddine62.github.io/clic-par-clic/excel/index-equiv/</loc></url>
   <url><loc>https://mehdinourreddine62.github.io/clic-par-clic/excel/assembler-texte/</loc></url>
   <url><loc>https://mehdinourreddine62.github.io/clic-par-clic/excel/gauche-droite-stxt/</loc></url>
+  <url><loc>https://mehdinourreddine62.github.io/clic-par-clic/excel/majuscule-minuscule-nompropre/</loc></url>
+  <url><loc>https://mehdinourreddine62.github.io/clic-par-clic/excel/nbcar/</loc></url>
+  <url><loc>https://mehdinourreddine62.github.io/clic-par-clic/excel/cherche/</loc></url>
+  <url><loc>https://mehdinourreddine62.github.io/clic-par-clic/excel/texte-avant-texte-apres/</loc></url>
+  <url><loc>https://mehdinourreddine62.github.io/clic-par-clic/excel/substitue/</loc></url>
+  <url><loc>https://mehdinourreddine62.github.io/clic-par-clic/excel/joindre-texte/</loc></url>
   <url><loc>https://mehdinourreddine62.github.io/clic-par-clic/excel/aujourdhui-datedif/</loc></url>
   <url><loc>https://mehdinourreddine62.github.io/clic-par-clic/excel/annee-mois-jour/</loc></url>
   <url><loc>https://mehdinourreddine62.github.io/clic-par-clic/excel/date/</loc></url>
@@ -112,6 +124,20 @@
   <url><loc>https://mehdinourreddine62.github.io/clic-par-clic/excel/dateval/</loc></url>
   <url><loc>https://mehdinourreddine62.github.io/clic-par-clic/excel/maintenant-heure-minute/</loc></url>
   <url><loc>https://mehdinourreddine62.github.io/clic-par-clic/excel/calcul-d-heures/</loc></url>
+  <url><loc>https://mehdinourreddine62.github.io/clic-par-clic/excel/reference-a-une-autre-feuille/</loc></url>
+  <url><loc>https://mehdinourreddine62.github.io/clic-par-clic/excel/somme-sur-plusieurs-feuilles/</loc></url>
+  <url><loc>https://mehdinourreddine62.github.io/clic-par-clic/excel/nommer-une-plage/</loc></url>
+  <url><loc>https://mehdinourreddine62.github.io/clic-par-clic/excel/nommer-une-cellule/</loc></url>
+  <url><loc>https://mehdinourreddine62.github.io/clic-par-clic/excel/erreur-div-0/</loc></url>
+  <url><loc>https://mehdinourreddine62.github.io/clic-par-clic/excel/erreur-na/</loc></url>
+  <url><loc>https://mehdinourreddine62.github.io/clic-par-clic/excel/erreur-valeur/</loc></url>
+  <url><loc>https://mehdinourreddine62.github.io/clic-par-clic/excel/erreur-ref/</loc></url>
+  <url><loc>https://mehdinourreddine62.github.io/clic-par-clic/excel/erreur-nom/</loc></url>
+  <url><loc>https://mehdinourreddine62.github.io/clic-par-clic/excel/erreur-propagation/</loc></url>
+  <url><loc>https://mehdinourreddine62.github.io/clic-par-clic/excel/reference-circulaire/</loc></url>
+  <url><loc>https://mehdinourreddine62.github.io/clic-par-clic/excel/afficher-les-formules/</loc></url>
+  <url><loc>https://mehdinourreddine62.github.io/clic-par-clic/excel/antecedents-et-dependants/</loc></url>
+  <url><loc>https://mehdinourreddine62.github.io/clic-par-clic/excel/evaluer-la-formule/</loc></url>
   <url><loc>https://mehdinourreddine62.github.io/clic-par-clic/excel/creer-un-tableau-croise-dynamique/</loc></url>
   <url><loc>https://mehdinourreddine62.github.io/clic-par-clic/excel/tcd-lignes-et-colonnes/</loc></url>
   <url><loc>https://mehdinourreddine62.github.io/clic-par-clic/excel/tcd-somme-nombre-moyenne/</loc></url>

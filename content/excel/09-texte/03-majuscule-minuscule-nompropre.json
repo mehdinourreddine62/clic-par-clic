@@ -1,0 +1,23 @@
+{
+ "id": "majuscule-minuscule-nompropre",
+ "titre": "MAJUSCULE, MINUSCULE et NOMPROPRE",
+ "niveau": 1,
+ "resume": "Uniformiser la casse de noms saisis n'importe comment.",
+ "motsCles": "majuscule minuscule nompropre casse capitale texte uniformiser",
+ "syntaxe": "=NOMPROPRE(texte)",
+ "arguments": [
+  ["MAJUSCULE","Tout en capitales"],
+  ["MINUSCULE","Tout en minuscules"],
+  ["NOMPROPRE","Une capitale au début de chaque mot"]
+ ],
+ "grille": [
+  ["Nom saisi","MAJUSCULE","MINUSCULE","NOMPROPRE"],
+  ["marie DURAND","","",""],
+  ["KARIM benali","","",""]
+ ],
+ "etapes": [
+  {"c":"B2","f":"=MAJUSCULE(A2)","v":"MARIE DURAND","fill":{"B3":"KARIM BENALI"},"t":"MAJUSCULE met tout le texte en capitales."},
+  {"c":"C2","f":"=MINUSCULE(A2)","v":"marie durand","fill":{"C3":"karim benali"},"t":"MINUSCULE fait l'inverse."},
+  {"c":"D2","f":"=NOMPROPRE(A2)","v":"Marie Durand","fill":{"D3":"Karim Benali"},"t":"NOMPROPRE met une capitale au début de chaque mot : idéal pour des noms."}
+ ]
+}

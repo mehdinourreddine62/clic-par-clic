@@ -1,0 +1,24 @@
+{
+ "id": "reference-circulaire",
+ "titre": "Référence circulaire",
+ "niveau": 2,
+ "resume": "Corriger une formule qui se calcule à partir d'elle-même.",
+ "motsCles": "référence circulaire erreur formule elle-même boucle zéro",
+ "syntaxe": "La plage ne doit pas contenir la cellule de la formule",
+ "arguments": [
+  ["Cause","La formule utilise sa propre cellule"],
+  ["Signe","Un message d'alerte, et souvent un résultat à 0"],
+  ["Solution","Corriger la plage"]
+ ],
+ "grille": [
+  ["Mois","Ventes"],
+  ["Janvier","200"],
+  ["Février","150"],
+  ["Total",""]
+ ],
+ "etapes": [
+  {"c":"B4","f":"=SOMME(B2:B4)","v":"0","msg":"Il existe une ou plusieurs références circulaires : une formule fait référence à sa propre cellule.","t":"La plage inclut la cellule du total elle-même : la formule tourne en rond."},
+  {"c":"B4","mark":"B4","t":"Excel affiche 0 et signale le problème dans la barre d'état, en bas de la fenêtre."},
+  {"c":"B4","f":"=SOMME(B2:B3)","v":"350","t":"Corrigez la plage pour qu'elle s'arrête avant la cellule de la formule."}
+ ]
+}

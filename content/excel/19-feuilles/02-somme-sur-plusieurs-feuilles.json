@@ -1,0 +1,23 @@
+{
+ "id": "somme-sur-plusieurs-feuilles",
+ "titre": "Additionner plusieurs feuilles",
+ "niveau": 3,
+ "resume": "Faire le total de la même cellule sur plusieurs feuilles.",
+ "motsCles": "somme plusieurs feuilles référence 3d onglets total mois",
+ "syntaxe": "=SOMME(Janvier:Mars!B2)",
+ "arguments": [
+  ["Janvier:Mars","De la feuille Janvier à la feuille Mars"],
+  ["!B2","La même cellule sur chacune"],
+  ["Condition","Des feuilles construites à l'identique"]
+ ],
+ "grille": [
+  ["Produit","Ventes"],
+  ["Stylos","120"]
+ ],
+ "etapes": [
+  {"c":"B2","sheets":{"list":["Janvier","Février","Mars","Total"],"on":0},"spot":"tabs","t":"Trois feuilles construites à l'identique : les ventes de stylos sont toujours en B2."},
+  {"c":"B2","sheets":{"list":["Janvier","Février","Mars","Total"],"on":2},"set":{"B2":"150"},"t":"Février affiche 90, et Mars 150, au même endroit."},
+  {"c":"B2","sheets":{"list":["Janvier","Février","Mars","Total"],"on":3},"f":"=SOMME(Janvier:Mars!B2)","v":"360","t":"Sur la feuille Total, cette formule additionne B2 de Janvier jusqu'à Mars."},
+  {"c":"B2","sheets":{"list":["Janvier","Février","Bonus","Mars","Total"],"on":4},"bar":"=SOMME(Janvier:Mars!B2)","set":{"B2":"410"},"mark":"B2","t":"Glissez une nouvelle feuille entre Janvier et Mars : elle est comptée automatiquement."}
+ ]
+}

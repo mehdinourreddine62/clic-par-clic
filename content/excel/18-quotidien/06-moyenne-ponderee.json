@@ -1,0 +1,25 @@
+{
+ "id": "moyenne-ponderee",
+ "titre": "Moyenne pondérée",
+ "niveau": 2,
+ "resume": "Calculer une moyenne avec des coefficients.",
+ "motsCles": "moyenne pondérée coefficient notes sommeprod bulletin",
+ "syntaxe": "=SOMMEPROD(notes; coefficients)/SOMME(coefficients)",
+ "arguments": [
+  ["SOMMEPROD","Chaque note multipliée par son coefficient, puis le tout additionné"],
+  ["SOMME","La somme des coefficients"]
+ ],
+ "grille": [
+  ["Matière","Note","Coefficient"],
+  ["Maths","12","2"],
+  ["Français","15","3"],
+  ["Sport","9","1"],
+  ["Moyenne simple","",""],
+  ["Moyenne pondérée","",""]
+ ],
+ "etapes": [
+  {"c":"B5","f":"=MOYENNE(B2:B4)","v":"12","t":"La moyenne simple traite toutes les notes de la même façon : 12."},
+  {"c":"B6","f":"=SOMMEPROD(B2:B4;C2:C4)/SOMME(C2:C4)","v":"13","t":"La moyenne pondérée multiplie chaque note par son coefficient, puis divise par la somme des coefficients."},
+  {"c":"B6","mark":"B3 C3","t":"Le français, coefficient 3, pèse le plus : il tire la moyenne vers le haut."}
+ ]
+}

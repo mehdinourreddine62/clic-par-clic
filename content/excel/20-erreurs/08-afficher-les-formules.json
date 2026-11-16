@@ -1,0 +1,25 @@
+{
+ "id": "afficher-les-formules",
+ "titre": "Afficher les formules",
+ "niveau": 1,
+ "resume": "Voir d'un coup tous les calculs d'une feuille.",
+ "motsCles": "afficher les formules vérifier audit calcul voir contrôle",
+ "syntaxe": "Formules › Afficher les formules",
+ "ruban": true,
+ "arguments": [
+  ["Afficher les formules","Chaque cellule montre son calcul"],
+  ["Second clic","Retour à l'affichage normal"]
+ ],
+ "grille": [
+  ["Article","Quantité","Prix","Total"],
+  ["Stylo","10","1,20 €","12,00 €"],
+  ["Cahier","4","3,50 €","14,00 €"],
+  ["Total","","","26,00 €"]
+ ],
+ "etapes": [
+  {"c":"D2","tab":"Formules","t":"Une feuille n'affiche que des résultats. Impossible de voir d'un coup d'œil où sont les formules."},
+  {"c":"D2","tab":"Formules","btn":"Afficher les formules","set":{"D2":"'=B2*C2","D3":"'=B3*C3","D4":"'=SOMME(D2:D3)"},"t":"Formules › Afficher les formules : chaque cellule montre son calcul au lieu de son résultat."},
+  {"c":"D2","tab":"Formules","mark":"D2 D3 D4","t":"Pratique pour vérifier un tableau reçu, ou repérer une valeur tapée à la main au milieu des formules."},
+  {"c":"D2","tab":"Formules","btn":"Afficher les formules","set":{"D2":"12,00 €","D3":"14,00 €","D4":"26,00 €"},"t":"Un second clic revient à l'affichage normal."}
+ ]
+}

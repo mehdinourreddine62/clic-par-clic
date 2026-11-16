@@ -1,0 +1,23 @@
+{
+ "id": "cherche",
+ "titre": "CHERCHE",
+ "niveau": 2,
+ "resume": "Trouver la position d'un caractère dans un texte.",
+ "motsCles": "cherche trouve position caractère arobase extraire gauche",
+ "syntaxe": "=CHERCHE(texte_cherché; texte)",
+ "arguments": [
+  ["texte_cherché","Le caractère ou le mot à trouver"],
+  ["texte","La cellule où chercher"],
+  ["TROUVE","La même chose, en distinguant majuscules et minuscules"]
+ ],
+ "grille": [
+  ["E-mail","Position du @","Identifiant"],
+  ["lea.martin@ecole.fr","",""],
+  ["tom@campus.org","",""]
+ ],
+ "etapes": [
+  {"c":"B2","f":"=CHERCHE(\"@\";A2)","v":"11","fill":{"B3":"4"},"t":"CHERCHE donne la position d'un caractère : l'arobase est le 11e caractère."},
+  {"c":"C2","f":"=GAUCHE(A2;B2-1)","v":"lea.martin","fill":{"C3":"tom"},"t":"Cette position sert à découper : GAUCHE prend tout ce qui précède l'arobase."},
+  {"c":"C2","t":"C'est la méthode qui fonctionne dans toutes les versions d'Excel, même anciennes."}
+ ]
+}

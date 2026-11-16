@@ -1,0 +1,23 @@
+{
+ "id": "texte-avant-texte-apres",
+ "titre": "TEXTE.AVANT et TEXTE.APRES",
+ "niveau": 2,
+ "resume": "Extraire ce qui se trouve avant ou après un caractère.",
+ "motsCles": "texte.avant texte.apres extraire séparateur arobase domaine découper",
+ "syntaxe": "=TEXTE.AVANT(texte; \"@\")",
+ "arguments": [
+  ["texte","La cellule à découper"],
+  ["délimiteur","Le caractère qui sert de repère"],
+  ["Version","Microsoft 365"]
+ ],
+ "grille": [
+  ["E-mail","Identifiant","Domaine"],
+  ["lea.martin@ecole.fr","",""],
+  ["tom@campus.org","",""]
+ ],
+ "etapes": [
+  {"c":"B2","f":"=TEXTE.AVANT(A2;\"@\")","v":"lea.martin","fill":{"B3":"tom"},"t":"TEXTE.AVANT renvoie tout ce qui précède le caractère indiqué."},
+  {"c":"C2","f":"=TEXTE.APRES(A2;\"@\")","v":"ecole.fr","fill":{"C3":"campus.org"},"t":"TEXTE.APRES renvoie tout ce qui le suit."},
+  {"c":"C2","t":"Plus simple que CHERCHE et GAUCHE, mais réservé aux versions récentes d'Excel."}
+ ]
+}

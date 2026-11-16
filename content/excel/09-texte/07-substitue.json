@@ -1,0 +1,23 @@
+{
+ "id": "substitue",
+ "titre": "SUBSTITUE",
+ "niveau": 2,
+ "resume": "Remplacer un morceau de texte par un autre, avec une formule.",
+ "motsCles": "substitue remplacer texte caractère formule supprimer tiret",
+ "syntaxe": "=SUBSTITUE(texte; ancien; nouveau)",
+ "arguments": [
+  ["ancien","Le texte à remplacer"],
+  ["nouveau","Le texte de remplacement, ou \"\" pour supprimer"],
+  ["4e argument","Le numéro de l'occurrence à remplacer"]
+ ],
+ "grille": [
+  ["Référence","Nouvelle année","Sans tiret","2e tiret"],
+  ["REF-2025-001","","",""],
+  ["REF-2025-002","","",""]
+ ],
+ "etapes": [
+  {"c":"B2","f":"=SUBSTITUE(A2;\"2025\";\"2026\")","v":"REF-2026-001","fill":{"B3":"REF-2026-002"},"t":"SUBSTITUE remplace un texte par un autre, sans toucher à l'original."},
+  {"c":"C2","f":"=SUBSTITUE(A2;\"-\";\"\")","v":"REF2025001","fill":{"C3":"REF2025002"},"t":"Remplacer par rien, deux guillemets collés, revient à supprimer."},
+  {"c":"D2","f":"=SUBSTITUE(A2;\"-\";\"/\";2)","v":"REF-2025/001","fill":{"D3":"REF-2025/002"},"t":"Un quatrième argument vise une seule occurrence : ici, le deuxième tiret seulement."}
+ ]
+}

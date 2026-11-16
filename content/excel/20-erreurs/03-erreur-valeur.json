@@ -1,0 +1,25 @@
+{
+ "id": "erreur-valeur",
+ "titre": "Corriger #VALEUR!",
+ "niveau": 1,
+ "resume": "Repérer le texte qui empêche un calcul.",
+ "motsCles": "#VALEUR! erreur texte nombre unité calcul impossible",
+ "syntaxe": "Un nombre, sans unité, dans la cellule",
+ "arguments": [
+  ["Cause","Du texte là où la formule attend un nombre"],
+  ["Indice","Le texte s'aligne à gauche, les nombres à droite"],
+  ["Solution","Mettre l'unité dans le titre de la colonne"]
+ ],
+ "grille": [
+  ["Article","Poids","Prix au kilo","Total"],
+  ["Pommes","3","2,50 €",""],
+  ["Poires","2 kg","3,00 €",""],
+  ["Raisin","1,5","4,00 €",""]
+ ],
+ "etapes": [
+  {"c":"D2","f":"=B2*C2","v":"7,50 €","fill":{"D3":"#VALEUR!","D4":"6,00 €"},"t":"#VALEUR! apparaît quand une formule reçoit du texte là où elle attend un nombre."},
+  {"c":"B3","mark":"B3","t":"Le coupable : « 2 kg ». Avec l'unité, ce n'est plus un nombre mais du texte, aligné à gauche."},
+  {"c":"B3","f":"2","set":{"D3":"6,00 €"},"t":"Ne gardez que le nombre dans la cellule : le calcul fonctionne."},
+  {"c":"B1","f":"Poids (kg)","t":"L'unité a sa place dans le titre de la colonne."}
+ ]
+}

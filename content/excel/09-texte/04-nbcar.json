@@ -1,0 +1,22 @@
+{
+ "id": "nbcar",
+ "titre": "NBCAR",
+ "niveau": 1,
+ "resume": "Compter le nombre de caractères d'un texte.",
+ "motsCles": "nbcar longueur compter caractères texte limite",
+ "syntaxe": "=NBCAR(texte)",
+ "arguments": [
+  ["texte","La cellule à mesurer"],
+  ["Compte","Lettres, chiffres, espaces et ponctuation"]
+ ],
+ "grille": [
+  ["Message","Longueur","Limite de 40"],
+  ["Rendez-vous lundi à 9 h","",""],
+  ["Merci de confirmer votre présence avant vendredi midi","",""]
+ ],
+ "etapes": [
+  {"c":"B2","f":"=NBCAR(A2)","v":"23","fill":{"B3":"53"},"t":"NBCAR compte tous les caractères d'une cellule."},
+  {"c":"B2","mark":"A2","t":"Les espaces et la ponctuation comptent aussi."},
+  {"c":"C2","f":"=SI(B2>40;\"Trop long\";\"OK\")","v":"OK","fill":{"C3":"Trop long"},"t":"Combinée à SI, elle vérifie qu'un texte respecte une limite."}
+ ]
+}

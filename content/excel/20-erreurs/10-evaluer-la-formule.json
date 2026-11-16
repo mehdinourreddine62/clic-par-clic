@@ -1,0 +1,23 @@
+{
+ "id": "evaluer-la-formule",
+ "titre": "Évaluer une formule pas à pas",
+ "niveau": 2,
+ "resume": "Regarder Excel calculer une formule, morceau par morceau.",
+ "motsCles": "évaluer la formule pas à pas comprendre déboguer calcul étapes",
+ "syntaxe": "Formules › Évaluer la formule",
+ "ruban": true,
+ "arguments": [
+  ["Évaluer","Remplace un morceau de la formule par sa valeur"],
+  ["Intérêt","Voir à quelle étape le calcul déraille"]
+ ],
+ "grille": [
+  ["Élève","Note","Résultat"],
+  ["Léa","14","Admis"]
+ ],
+ "etapes": [
+  {"c":"C2","tab":"Formules","btn":"Évaluer la formule","bar":"=SI(B2>=10;\"Admis\";\"Ajourné\")","t":"Pour comprendre une formule compliquée, sélectionnez-la et ouvrez « Évaluer la formule »."},
+  {"c":"C2","bar":"=SI(B2>=10;\"Admis\";\"Ajourné\")","menu":"Évaluer la formule › <b>Évaluer</b>","rule":"=SI(14>=10;\"Admis\";\"Ajourné\")","t":"Chaque clic sur Évaluer remplace un morceau par sa valeur : B2 devient 14."},
+  {"c":"C2","bar":"=SI(B2>=10;\"Admis\";\"Ajourné\")","menu":"Évaluer la formule › <b>Évaluer</b>","rule":"=SI(VRAI;\"Admis\";\"Ajourné\")","t":"Puis le test est calculé : 14 est bien supérieur ou égal à 10, donc VRAI."},
+  {"c":"C2","bar":"=SI(B2>=10;\"Admis\";\"Ajourné\")","menu":"Évaluer la formule › <b>Évaluer</b>","rule":"\"Admis\"","t":"Et enfin le résultat. On voit exactement à quelle étape une formule se trompe."}
+ ]
+}

@@ -1,0 +1,24 @@
+{
+ "id": "erreur-ref",
+ "titre": "Corriger #REF!",
+ "niveau": 2,
+ "resume": "Comprendre ce qui se passe quand on supprime une cellule utilisée.",
+ "motsCles": "#REF! erreur référence supprimée colonne ligne cellule introuvable",
+ "syntaxe": "Ctrl + Z, tout de suite",
+ "arguments": [
+  ["Cause","La formule pointe vers une cellule supprimée"],
+  ["Réflexe","Annuler immédiatement avec Ctrl + Z"],
+  ["Prévention","Vérifier les dépendants avant de supprimer"]
+ ],
+ "grille": [
+  ["Mois","Ventes","Frais","Résultat"],
+  ["Janvier","500","120",""],
+  ["Février","620","150",""]
+ ],
+ "etapes": [
+  {"c":"D2","f":"=B2-C2","v":"380","fill":{"D3":"470"},"t":"La colonne Résultat soustrait les frais des ventes."},
+  {"c":"C1","sel":"col:C","menu":"Clic droit sur la lettre de la colonne C › <b>Supprimer</b>","spot":"cols","t":"Supprimons la colonne Frais, que la formule utilise."},
+  {"c":"C2","bar":"=B2-#REF!","set":{"C1":"Résultat","C2":"#REF!","C3":"#REF!","D1":"","D2":"","D3":""},"mark":"C2 C3","t":"#REF! : la formule pointe vers une cellule qui n'existe plus."},
+  {"c":"D2","keys":"Ctrl + Z","set":{"C1":"Frais","C2":"120","C3":"150","D1":"Résultat","D2":"380","D3":"470"},"t":"Annulez tout de suite avec Ctrl + Z. Avant de supprimer, vérifiez qu'aucune formule n'en dépend."}
+ ]
+}

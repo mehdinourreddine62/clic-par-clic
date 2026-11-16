@@ -1,0 +1,23 @@
+{
+ "id": "joindre-texte",
+ "titre": "JOINDRE.TEXTE",
+ "niveau": 2,
+ "resume": "Assembler une plage de cellules avec un séparateur.",
+ "motsCles": "joindre.texte assembler concaténer séparateur plage textjoin",
+ "syntaxe": "=JOINDRE.TEXTE(séparateur; ignorer_vides; plage)",
+ "arguments": [
+  ["séparateur","Le texte placé entre chaque valeur"],
+  ["ignorer_vides","VRAI pour sauter les cellules vides"],
+  ["plage","Les cellules à assembler"]
+ ],
+ "grille": [
+  ["Prénom","Nom","Ville","Résultat"],
+  ["Marie","Durand","Lille",""],
+  ["Karim","","Lyon",""]
+ ],
+ "etapes": [
+  {"c":"D2","f":"=JOINDRE.TEXTE(\" - \";VRAI;A2:C2)","v":"Marie - Durand - Lille","t":"JOINDRE.TEXTE assemble toute une plage en plaçant le séparateur entre chaque valeur."},
+  {"c":"D2","fill":{"D3":"Karim - Lyon"},"mark":"B3","t":"Avec VRAI, les cellules vides sont ignorées : pas de séparateur en double."},
+  {"c":"D3","f":"=JOINDRE.TEXTE(\" - \";FAUX;A3:C3)","v":"Karim -  - Lyon","t":"Avec FAUX, la cellule vide laisse un trou."}
+ ]
+}
