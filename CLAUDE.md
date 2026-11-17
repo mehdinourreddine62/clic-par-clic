@@ -63,7 +63,7 @@ Pause sur Excel depuis novembre 2026 pour mesurer l'audience. Le site accueille 
 
 Reste à faire, dans l'ordre envisagé :
 1. Analyser Search Console (requêtes, pages indexées) et enrichir en priorité les leçons qui apparaissent.
-2. Éventuellement un compteur de visites respectueux de la vie privée (GoatCounter par exemple ; le propriétaire doit créer le compte).
+2. Compteur de visites : fait le 17 novembre 2026, GoatCounter, compte `clicparclic` (`site.json`), statistiques sur https://clicparclic.goatcounter.com. Le consulter avec le propriétaire avant de décider de la suite (dons, contenus payants : il y pense à long terme, sans publicité de préférence).
 3. Cas pratiques « Facture » (RECHERCHEV, remise, TVA, impression) et « Analyse de ventes » (nettoyage, tableau croisé, segments).
 4. Ajouter les cas pratiques en fin des parcours concernés.
 5. Prototype d'exercices interactifs : environ 10 exercices de formules de base où l'étudiant tape la formule et le site vérifie le résultat.
