@@ -182,5 +182,47 @@
    "keys": "Ctrl + clic",
    "t": "Un Ctrl + clic sur une ligne du sommaire mène directement à la partie correspondante."
   }
+ ],
+ "guide": {
+  "question": "Comment faire un sommaire automatique dans Word ?",
+  "intro": "Le sommaire automatique, ou table des matières, se construit à partir des titres qui utilisent les styles Titre 1, Titre 2 et Titre 3. Il indique la page de chaque partie et se met à jour en un clic quand le document change.",
+  "exemple": {
+   "titre": "Le chemin dans Word",
+   "formule": "Références › Table des matières › Table automatique 1",
+   "explication": "Placez d'abord le curseur à l'endroit voulu, en général sur la page qui suit la page de garde."
+  },
+  "erreurs": [
+   [
+    "Un titre manque dans le sommaire",
+    "Il n'utilise pas de style de titre : appliquez Titre 1 ou Titre 2, puis mettez la table à jour."
+   ],
+   [
+    "Des numéros de page faux",
+    "La table n'a pas été mise à jour après les dernières modifications."
+   ],
+   [
+    "« Aucune entrée de table des matières n'a été trouvée »",
+    "Aucun titre du document n'utilise un style de titre."
+   ]
+  ],
+  "faq": [
+   [
+    "Comment mettre à jour le sommaire ?",
+    "Références › Mettre à jour la table, puis « Mettre à jour toute la table » pour prendre en compte les nouveaux titres."
+   ],
+   [
+    "Comment n'afficher que deux niveaux ?",
+    "Références › Table des matières › Table des matières personnalisée, puis réglez « Afficher les niveaux » sur 2."
+   ],
+   [
+    "Comment supprimer le sommaire ?",
+    "Références › Table des matières › Supprimer la table des matières."
+   ]
+  ]
+ },
+ "voirAussi": [
+  "styles-de-titres",
+  "numeroter-les-titres",
+  "numeroter-les-pages"
  ]
 }

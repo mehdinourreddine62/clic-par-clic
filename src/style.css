@@ -125,11 +125,13 @@ kbd{border:1px solid var(--line);border-bottom-width:2px;padding:0 5px;border-ra
 .dl-r span{color:#555}
 .dl-r b{font-weight:500;min-width:120px;text-align:left;border:1px solid #c8c8c8;border-radius:4px;padding:3px 8px;background:#fff;transition:background .3s}
 .dl-r.hot b{border-color:#2b78d0;box-shadow:0 0 0 2px rgba(43,120,208,.25)}
+.dl-r.dl-more{animation:fadein .35s}
 .dl-r b.pop{animation:wpop 1.4s ease-out}
 .dl-ap{margin-top:4px;border:1px solid #e3e3e3;border-radius:4px;padding:6px 10px;background:#fafafa;color:#0f4761;font-size:12px;line-height:1.5}
 .dl-a2{padding-left:14px}.dl-a3{padding-left:28px}
 .dl-b{display:flex;justify-content:flex-end;gap:8px;padding:8px 14px 12px}
 .dl-b span{border:1px solid #c8c8c8;border-radius:4px;padding:4px 16px;background:#fff}
+.dl-b i{flex:1}
 .dl-b .dl-ok{background:#0f6cbd;border-color:#0f6cbd;color:#fff}
 .dl-b .dl-ok.on{background:#0c5394}
 .lbl{font-size:.78rem;text-transform:uppercase;letter-spacing:.09em;color:var(--muted);font-weight:600;margin:0 0 10px}

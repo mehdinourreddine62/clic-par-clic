@@ -1,5 +1,1 @@
-{
- "parcours": ["excel/debuter","excel/formules-indispensables","excel/test-excel-entretien"],
- "lecons": ["recherchev","si","nb-si","somme-si","pourcentages","creer-un-tableau-croise-dynamique","liste-deroulante","mise-en-forme-conditionnelle"],
- "cas": ["cas-budget-etudiant","cas-suivi-de-notes"]
-}
+{"parcours": ["excel/debuter", "excel/formules-indispensables", "excel/test-excel-entretien"], "lecons": ["recherchev", "si", "sommaire-automatique", "nb-si", "somme-si", "numeroter-les-pages", "pourcentages", "creer-un-tableau-croise-dynamique", "liste-deroulante", "mise-en-forme-conditionnelle"], "cas": ["cas-budget-etudiant", "cas-suivi-de-notes"]}

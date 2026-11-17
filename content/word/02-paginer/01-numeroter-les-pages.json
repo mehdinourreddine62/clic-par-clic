@@ -170,5 +170,43 @@
    "edit": false,
    "t": "Fermez l'en-tête et le pied de page : le texte reprend sa place, et chaque page garde son numéro."
   }
+ ],
+ "guide": {
+  "question": "Comment numéroter les pages dans Word sans la page de garde ?",
+  "intro": "Le numéro de page s'insère une seule fois dans le pied de page et se met à jour tout seul sur chaque page. L'option « Première page différente » le retire de la page de garde, tout en continuant à compter celle-ci.",
+  "exemple": {
+   "titre": "Le chemin dans Word",
+   "formule": "Insertion › Numéro de page › Bas de page",
+   "explication": "Puis, dans l'onglet En-tête et pied de page, cochez « Première page différente »."
+  },
+  "erreurs": [
+   [
+    "Le même numéro sur toutes les pages",
+    "Le chiffre a été tapé à la main : insérez un vrai numéro de page."
+   ],
+   [
+    "Un numéro sur la page de garde",
+    "Cochez « Première page différente » dans l'onglet En-tête et pied de page."
+   ]
+  ],
+  "faq": [
+   [
+    "Comment commencer la numérotation à 1 sur la deuxième page ?",
+    "Insertion › Numéro de page › Format des numéros de page, puis « À partir de » : 0. La page de garde vaut 0 et n'affiche rien."
+   ],
+   [
+    "Comment écrire « Page 2 sur 10 » ?",
+    "Insertion › Numéro de page › Bas de page, puis choisissez un modèle « Page X sur Y »."
+   ],
+   [
+    "Comment revenir au texte ?",
+    "Double-cliquez dans le texte, ou cliquez sur « Fermer l'en-tête et le pied de page »."
+   ]
+  ]
+ },
+ "voirAussi": [
+  "sommaire-automatique",
+  "styles-de-titres",
+  "numeroter-les-titres"
  ]
 }

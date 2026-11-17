@@ -17,7 +17,7 @@
  {
   "id": "word",
   "nom": "Word",
-  "disponible": "apercu",
+  "disponible": true,
   "couleur": "r0",
   "icone": "<path d=\"M6 3h9l4 4v14H6z\"/><path d=\"M14 3v5h5M9 13h7M9 17h7M9 9h3\"/>",
   "accroche": "Mise en forme, styles, sommaire automatique : le rapport et le mémoire sans stress.",
@@ -25,7 +25,7 @@
   "titreHero": "Word, <em>étape par étape.</em>",
   "intro": "Des leçons animées pour réussir la mise en forme d'un rapport de stage, d'un mémoire ou d'un CV : styles, sommaire, numéros de page, tout se voit en direct.",
   "titreSeo": "Apprendre Word gratuitement, en animation",
-  "descSeo": "Cours Word gratuit pour étudiants : des leçons animées pas à pas pour un rapport de stage, un mémoire ou un CV. Styles de titres, sommaire automatique, numérotation des pages.",
+  "descSeo": "Cours Word gratuit pour étudiants : des leçons animées pas à pas pour un rapport de stage, un mémoire ou un CV. Styles de titres, numérotation des titres, sommaire automatique, numéros de page.",
   "exemplesRecherche": "sommaire, numéro de page, styles…"
  }
 ]

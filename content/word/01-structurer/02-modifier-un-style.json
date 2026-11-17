@@ -228,5 +228,43 @@
    "effacerForme": "h3",
    "t": "Clic droit sur « Titre 2 » › « Mettre à jour Titre 2 pour correspondre à la sélection » : tous les titres 2 suivent."
   }
+ ],
+ "guide": {
+  "question": "Comment modifier un style dans Word ?",
+  "intro": "Plutôt que de retoucher chaque titre, modifiez le style : tous les textes qui l'utilisent changent ensemble, dans tout le document. Deux méthodes : « Modifier… » pour régler police, taille et couleur, ou « Mettre à jour pour correspondre à la sélection » pour copier la mise en forme d'un texte.",
+  "exemple": {
+   "titre": "Le chemin dans Word",
+   "formule": "Clic droit sur « Titre 1 » › Modifier…",
+   "explication": "Changez la taille ou la couleur dans la fenêtre « Modifier le style », puis validez avec OK."
+  },
+  "erreurs": [
+   [
+    "Un seul titre a changé",
+    "La mise en forme a été posée à la main : utilisez « Mettre à jour Titre 1 pour correspondre à la sélection »."
+   ],
+   [
+    "Tous les titres changent alors que vous vouliez en modifier un seul",
+    "C'est le principe du style : pour une exception, mettez en forme ce titre à la main."
+   ]
+  ],
+  "faq": [
+   [
+    "La modification vaut-elle pour mes autres documents ?",
+    "Non, seulement pour ce document, sauf si vous cochez « Nouveaux documents basés sur ce modèle » dans la fenêtre « Modifier le style »."
+   ],
+   [
+    "Comment changer la police de tous les titres d'un coup ?",
+    "Conception › Polices : choisissez une paire de polices, elle s'applique à tous les titres et au texte."
+   ],
+   [
+    "Comment revenir à l'apparence d'origine ?",
+    "Annulez avec Ctrl + Z juste après, ou modifiez de nouveau le style."
+   ]
+  ]
+ },
+ "voirAussi": [
+  "styles-de-titres",
+  "numeroter-les-titres",
+  "sommaire-automatique"
  ]
 }

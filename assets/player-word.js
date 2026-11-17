@@ -88,11 +88,11 @@ function showCtx(s,anchor){const m=layer("wctx","wctx",".wword"),c=s.ctx,win=$("
   const r=(anchor||win).getBoundingClientRect(),o=win.getBoundingClientRect();
   m.style.left=Math.max(4,Math.min(r.left-o.left,o.width-m.offsetWidth-4))+"px";m.style.top=(r.bottom-o.top+2)+"px";return m;}
 function hideCtx(){const m=document.getElementById("wctx");if(m)m.hidden=true;}
-function showDlg(d,base){const g=layer("wdlg","wdlg",".wstage");
+function showDlg(d,base,folded){const g=layer("wdlg","wdlg",".wstage"),n=d.lignes.length,pl=d.plus||0;
   const rows=d.lignes.map(([l,v],k)=>{const b=base&&base.lignes.find(x=>x[0]===l);const val=(d.hot||[]).includes(k)&&b?b[1]:v;
-    return`<div class="dl-r" data-r="${k}"><span>${esc(l)}</span><b>${esc(val)}</b></div>`;}).join("");
+    return`<div class="dl-r${folded&&k>=n-pl?" dl-more":""}" data-r="${k}"${folded&&k>=n-pl?" hidden":""}><span>${esc(l)}</span><b>${esc(val)}</b></div>`;}).join("");
   const ap=d.apercu?`<div class="dl-ap">${(base&&base.apercu&&base!==d?base.apercu:d.apercu).map(([l,t])=>`<div class="dl-a${l}">${esc(t)}</div>`).join("")}</div>`:"";
-  g.innerHTML=`<div class="dl-box"><div class="dl-t">${esc(d.titre)}</div><div class="dl-c">${rows}${ap}</div><div class="dl-b"><span class="dl-ok">OK</span><span>Annuler</span></div></div>`;g.hidden=false;return g;}
+  g.innerHTML=`<div class="dl-box"><div class="dl-t">${esc(d.titre)}</div><div class="dl-c">${rows}${ap}</div><div class="dl-b">${pl?`<span class="dl-plus">${folded?"Plus &gt;&gt;":"&lt;&lt; Moins"}</span><i></i>`:""}<span class="dl-ok">OK</span><span>Annuler</span></div></div>`;g.hidden=false;return g;}
 function setRow(d,k){const r=$(`#wdlg .dl-r[data-r="${k}"] b`);if(r){r.textContent=d.lignes[k][1];r.classList.remove("pop");void r.offsetWidth;r.classList.add("pop");}}
 function setApercu(d){const a=$("#wdlg .dl-ap");if(a&&d.apercu)a.innerHTML=d.apercu.map(([l,t])=>`<div class="dl-a${l}">${esc(t)}</div>`).join("");}
 function hideDlg(){const g=document.getElementById("wdlg");if(g)g.hidden=true;}
@@ -173,7 +173,9 @@ async function animate(i){
     const it=m.querySelector(`[data-k="${s.ctx.hot||0}"]`);if(it){cursorTo(it,"center");await wait(560);if(!ok())return;it.classList.add("on");clickFx();await wait(350);if(!ok())return;}
     hideCtx();}
   /* fenêtre de dialogue : chaque réglage, puis OK */
-  if(s.dialog){const d=s.dialog;if(!keep){showDlg(d,null);await wait(500);if(!ok())return;}
+  if(s.dialog){const d=s.dialog;if(!keep){showDlg(d,null,!!d.plus);await wait(500);if(!ok())return;}
+    if(!keep&&d.plus){const b=$("#wdlg .dl-plus");if(b){cursorTo(b,"center");await wait(560);if(!ok())return;clickFx();b.innerHTML="&lt;&lt; Moins";
+      document.querySelectorAll("#wdlg .dl-more").forEach(r=>{r.hidden=false;r.classList.add("hot");});await wait(500);if(!ok())return;}}
     for(const k of d.hot||[]){const r=$(`#wdlg .dl-r[data-r="${k}"]`);if(!r)continue;cursorTo(r.querySelector("b"),"center");await wait(560);if(!ok())return;clickFx();r.classList.add("hot");setRow(d,k);await wait(450);if(!ok())return;}
     if(keep)setApercu(d);
     if(d.ok){const b=$("#wdlg .dl-ok");if(b){await wait(250);cursorTo(b,"center");await wait(560);if(!ok())return;clickFx();b.classList.add("on");await wait(300);if(!ok())return;}hideDlg();}

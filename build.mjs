@@ -195,7 +195,7 @@ function lessonPage(l,i,{sw,lessons,parcours:PARCOURS}){
     <section class="guide">
       <h2>${esc(gd.question||`À quoi sert ${l.titre} ?`)}</h2>
       <p>${esc(gd.intro)}</p>
-      <h3>Exemple</h3>
+      <h3>${esc(gd.exemple.titre||"Exemple")}</h3>
       <p><code class="gx">${esc(gd.exemple.formule)}</code></p>
       <p>${esc(gd.exemple.explication)}</p>
       <h3>Erreurs fréquentes</h3>

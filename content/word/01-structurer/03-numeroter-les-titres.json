@@ -173,7 +173,8 @@
       3,
       "1.1.1. ……"
      ]
-    ]
+    ],
+    "plus": 1
    },
    "t": "Accueil › Liste à plusieurs niveaux › Définir une nouvelle liste, puis cliquez sur « Plus » pour tout afficher."
   },
@@ -342,5 +343,47 @@
    ],
    "t": "Ajoutez une sous-partie en Titre 2 : elle prend le numéro 1), et la suivante devient 2) toute seule."
   }
+ ],
+ "guide": {
+  "question": "Comment numéroter les titres dans Word (I. 1) a)) ?",
+  "intro": "Une liste à plusieurs niveaux reliée aux styles Titre 1, Titre 2 et Titre 3 numérote automatiquement les parties : I., II., puis 1), 2), puis a), b). Si vous ajoutez, déplacez ou supprimez une partie, tous les numéros se recalculent seuls, et le sommaire les reprend.",
+  "exemple": {
+   "titre": "Le chemin dans Word",
+   "formule": "Accueil › Liste à plusieurs niveaux › Définir une nouvelle liste à plusieurs niveaux",
+   "explication": "Cliquez sur « Plus », puis pour chaque niveau choisissez le style de numérotation et liez-le au style de titre correspondant."
+  },
+  "erreurs": [
+   [
+    "Des numéros tapés à la main",
+    "Ils ne se décalent pas quand une partie est ajoutée : supprimez-les et utilisez la liste à plusieurs niveaux."
+   ],
+   [
+    "« I.1) » au lieu de « 1) »",
+    "Le format du niveau 2 reprend le numéro du niveau 1 : effacez-le dans « Format de numérotation »."
+   ],
+   [
+    "Un titre non numéroté",
+    "Il n'utilise pas le style relié à la liste : appliquez-lui Titre 1, Titre 2 ou Titre 3."
+   ]
+  ],
+  "faq": [
+   [
+    "Existe-t-il une liste toute prête ?",
+    "Oui : dans Liste à plusieurs niveaux, la bibliothèque propose des listes déjà reliées aux styles Titre, au format 1, 1.1, 1.1.1."
+   ],
+   [
+    "Les numéros apparaissent-ils dans le sommaire ?",
+    "Oui, après une mise à jour de la table des matières."
+   ],
+   [
+    "Comment numéroter 1.1, 1.2 plutôt que 1), 2) ?",
+    "Gardez le numéro du niveau 1 dans le format du niveau 2 : Word affiche alors 1.1, 1.2."
+   ]
+  ]
+ },
+ "voirAussi": [
+  "styles-de-titres",
+  "modifier-un-style",
+  "sommaire-automatique"
  ]
 }
