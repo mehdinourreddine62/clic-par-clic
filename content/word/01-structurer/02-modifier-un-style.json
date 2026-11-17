@@ -1,0 +1,232 @@
+{
+ "id": "modifier-un-style",
+ "titre": "Modifier un style",
+ "niveau": 1,
+ "resume": "Changer l'apparence de tous les titres en une seule fois.",
+ "motsCles": "word modifier un style titre 1 couleur taille police mettre à jour pour correspondre à la sélection",
+ "syntaxe": "Clic droit sur le style › Modifier…",
+ "titreSeo": "Modifier un style dans Word (Titre 1, Titre 2) : tutoriel animé",
+ "arguments": [
+  [
+   "Modifier…",
+   "Change la police, la taille ou la couleur du style"
+  ],
+  [
+   "Mettre à jour pour correspondre à la sélection",
+   "Le style copie la mise en forme du texte sélectionné"
+  ],
+  [
+   "Effet",
+   "Tous les textes qui utilisent ce style changent ensemble"
+  ]
+ ],
+ "document": {
+  "pages": [
+   [
+    {
+     "id": "ttl",
+     "s": "titre",
+     "txt": "Rapport de stage"
+    },
+    {
+     "id": "sub",
+     "s": "sous",
+     "txt": "Assistante marketing · Société Lumen · juin 2026"
+    },
+    {
+     "id": "aut",
+     "s": "sous",
+     "txt": "Léa Martin · BTS Communication"
+    }
+   ],
+   [
+    {
+     "id": "h1",
+     "s": "titre1",
+     "txt": "Introduction"
+    },
+    {
+     "id": "p1",
+     "txt": "Ce rapport présente les dix semaines de stage effectuées au sein du service marketing de la société Lumen, à Lyon."
+    },
+    {
+     "id": "h2",
+     "s": "titre1",
+     "txt": "Présentation de l'entreprise"
+    },
+    {
+     "id": "p2",
+     "txt": "Lumen conçoit des luminaires pour les bureaux. L'entreprise compte quarante-cinq salariés et vend dans toute l'Europe."
+    },
+    {
+     "id": "h3",
+     "s": "titre2",
+     "txt": "Le service marketing"
+    },
+    {
+     "id": "p3",
+     "txt": "Le service réunit quatre personnes, chargées de la communication, du site internet et des salons professionnels."
+    }
+   ],
+   [
+    {
+     "id": "h4",
+     "s": "titre1",
+     "txt": "Missions réalisées"
+    },
+    {
+     "id": "h4a",
+     "s": "titre2",
+     "txt": "Le salon Bureau Expo"
+    },
+    {
+     "id": "h4b",
+     "s": "titre3",
+     "txt": "La préparation"
+    },
+    {
+     "id": "p4b",
+     "txt": "Commande des supports, réservation du stand et planning de l'équipe."
+    },
+    {
+     "id": "h4c",
+     "s": "titre3",
+     "txt": "Le bilan"
+    },
+    {
+     "id": "p4c",
+     "txt": "Cent vingt contacts ont été recueillis en trois jours de salon."
+    },
+    {
+     "id": "h4d",
+     "s": "titre2",
+     "txt": "Les réseaux sociaux"
+    },
+    {
+     "id": "p4",
+     "txt": "J'ai rédigé et programmé trois publications par semaine sur LinkedIn et Instagram."
+    },
+    {
+     "id": "h5",
+     "s": "titre1",
+     "txt": "Conclusion"
+    },
+    {
+     "id": "p5",
+     "txt": "Ce stage m'a permis de découvrir la gestion d'un événement de bout en bout, de la commande des supports au bilan."
+    }
+   ]
+  ]
+ },
+ "etapes": [
+  {
+   "at": "h1",
+   "t": "Pour changer l'apparence des titres, ne les retouchez pas un par un : modifiez leur style."
+  },
+  {
+   "sel": "h1",
+   "tab": "Accueil",
+   "btn": "Titre 1",
+   "ctx": {
+    "items": [
+     "Mettre à jour Titre 1 pour correspondre à la sélection",
+     "Modifier…",
+     "Renommer…",
+     "Supprimer de la galerie de styles"
+    ],
+    "hot": 1
+   },
+   "dialog": {
+    "titre": "Modifier le style",
+    "lignes": [
+     [
+      "Nom",
+      "Titre 1"
+     ],
+     [
+      "Police",
+      "Aptos Display"
+     ],
+     [
+      "Taille",
+      "20"
+     ],
+     [
+      "Couleur",
+      "Bleu foncé"
+     ]
+    ]
+   },
+   "t": "Faites un clic droit sur « Titre 1 » dans la galerie des styles, puis choisissez « Modifier… »."
+  },
+  {
+   "sel": "h1",
+   "tab": "Accueil",
+   "dialog": {
+    "titre": "Modifier le style",
+    "lignes": [
+     [
+      "Nom",
+      "Titre 1"
+     ],
+     [
+      "Police",
+      "Aptos Display"
+     ],
+     [
+      "Taille",
+      "24"
+     ],
+     [
+      "Couleur",
+      "Vert"
+     ]
+    ],
+    "hot": [
+     2,
+     3
+    ],
+    "ok": true
+   },
+   "modifStyle": {
+    "titre1": {
+     "taille": 24,
+     "couleur": "#1c7a43"
+    }
+   },
+   "t": "Changez la taille et la couleur, puis cliquez sur OK : tous les titres 1 changent en même temps."
+  },
+  {
+   "sel": "h3",
+   "tab": "Accueil",
+   "btn": "Couleur",
+   "forme": {
+    "h3": {
+     "couleur": "#1c7a43"
+    }
+   },
+   "t": "Seconde méthode : mettez un titre 2 en vert à la main. Pour l'instant, les autres titres 2 restent bleus."
+  },
+  {
+   "sel": "h3",
+   "tab": "Accueil",
+   "btn": "Titre 2",
+   "ctx": {
+    "items": [
+     "Mettre à jour Titre 2 pour correspondre à la sélection",
+     "Modifier…",
+     "Renommer…",
+     "Supprimer de la galerie de styles"
+    ],
+    "hot": 0
+   },
+   "modifStyle": {
+    "titre2": {
+     "couleur": "#1c7a43"
+    }
+   },
+   "effacerForme": "h3",
+   "t": "Clic droit sur « Titre 2 » › « Mettre à jour Titre 2 pour correspondre à la sélection » : tous les titres 2 suivent."
+  }
+ ]
+}

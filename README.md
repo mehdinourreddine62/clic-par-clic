@@ -145,7 +145,7 @@ Sont exclues les rubriques Erreurs, Feuilles et noms et Formules dynamiques, ain
 
 ## Leçons Word
 
-Le lecteur `src/player-word.js` affiche des pages. Une leçon Word remplace `grille` par `document` : `{"pages": [[bloc, …], …], "nav": false, "tocAuto": false, "footer": null}`. Un bloc vaut `{"id": "h1", "s": "titre1", "txt": "Introduction"}` ; styles disponibles : `normal`, `titre`, `sous`, `manuel` (gras posé à la main), `titre1`, `titre2`, `toc` (sommaire, calculé à partir des titres).
+Le lecteur `src/player-word.js` affiche des pages. Une leçon Word remplace `grille` par `document` : `{"pages": [[bloc, …], …], "nav": false, "tocAuto": false, "footer": null, "numerotation": null, "styles": {}}`. Un bloc vaut `{"id": "h1", "s": "titre1", "txt": "Introduction"}` ; styles disponibles : `normal`, `titre`, `sous`, `manuel` (gras posé à la main), `titre1`, `titre2`, `titre3`, `toc` (sommaire, calculé à partir des titres). `numerotation` numérote les titres : `{"1": "I.", "2": "1)", "3": "a)"}` (le premier caractère donne le type : `I`, `i`, `1`, `a`, `A`). `styles` change l'apparence de départ d'un style : `{"titre1": {"taille": 24, "couleur": "#1c7a43", "gras": true, "majuscules": true}}` (taille en points).
 
 | Champ d'étape | Effet |
 |---|---|
@@ -158,4 +158,9 @@ Le lecteur `src/player-word.js` affiche des pages. Une leçon Word remplace `gri
 | `nav` | Affiche ou masque le volet de navigation |
 | `footer` | Numéros de page : `{"num": true, "first": true}` (pas de numéro sur la première page) |
 | `edit` | Mode d'édition de l'en-tête et du pied de page |
-| `couleur1` | Nouvelle couleur du style Titre 1 |
+| `couleur1` | Nouvelle couleur du style Titre 1 (raccourci de `modifStyle`) |
+| `modifStyle` | Modifie un style, donc tous ses blocs : `{"titre2": {"couleur": "#1c7a43", "taille": 18}}` |
+| `forme`, `effacerForme` | Mise en forme posée à la main sur un bloc (`{"h3": {"couleur": "…"}}`) ; l'effacer (`"h3"`) |
+| `numerotation` | Applique (ou retire avec `null`) la numérotation des titres |
+| `ctx` | Menu affiché sous le bouton `btn` : `{"items": ["…", "Modifier…"], "hot": 1}` ; le curseur clique sur l'élément `hot` |
+| `dialog` | Fenêtre de dialogue : `{"titre": "…", "lignes": [["Taille", "24"]], "hot": [0], "apercu": [[1, "I. Titre 1"]], "ok": true}`. Le curseur clique sur chaque ligne `hot` (la valeur passe de celle de l'étape précédente à la nouvelle), puis sur OK si `ok`. Sans `ok`, la fenêtre reste ouverte pour l'étape suivante |
