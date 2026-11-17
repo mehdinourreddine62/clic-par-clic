@@ -72,6 +72,10 @@ function head({title,desc,url,root,ld,extra="",noindex=false}){
 ${extra}<script type="application/ld+json">${JSON.stringify(ld).replace(/</g,"\\u003c")}</script>
 ${THEME}
 ${FONTS}
+<link rel="icon" href="${root}assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="${root}assets/favicon-48.png" sizes="48x48" type="image/png">
+<link rel="icon" href="${root}assets/favicon-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="${root}assets/apple-touch-icon.png">
 <link rel="stylesheet" href="${root}assets/app.css">
 </head>
 <body>
@@ -133,7 +137,7 @@ function rootHome(){
   const dispo=LIVE.map(c=>c.sw.nom),liste=dispo.length>1?dispo.slice(0,-1).join(", ")+" et "+dispo.at(-1):dispo[0];
   const title=`${SITE.nom} : apprendre ${liste} gratuitement, en leçons animées`;
   const desc=`Des leçons animées et gratuites pour apprendre ${liste} pas à pas : formules, mise en forme, raccourcis clavier, parcours guidés et fichiers d'exercice.`;
-  const ld={"@context":"https://schema.org","@type":"WebSite",name:SITE.nom,url:SITE.url,inLanguage:"fr",description:desc};
+  const ld={"@context":"https://schema.org","@type":"WebSite",name:SITE.nom,alternateName:["Clic-par-clic","Clic par clic, leçons animées"],url:SITE.url,inLanguage:"fr",description:desc,publisher:{"@type":"Organization",name:SITE.nom,url:SITE.url,logo:`${SITE.url}assets/favicon-192.png`}};
   const verif=SITE.verificationGoogle?`<meta name="google-site-verification" content="${SITE.verificationGoogle}">\n`:"";
   const softs=SOFTS.map(sw=>{const c=LIVE.find(x=>x.sw===sw);
     const inner=`<span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24">${sw.icone}</svg></span><span class="sb"><b>${esc(sw.nom)}</b><span class="sd">${esc(sw.accroche)}</span><small>${c?`${c.lessons.length} leçons${c.parcours.length?` · ${c.parcours.length} parcours guidés`:""}`:"Bientôt disponible"}</small></span>`;
@@ -301,6 +305,8 @@ for(const ctx of CTX){const{sw,lessons,parcours}=ctx;
   lessons.filter(l=>l.hasFile).forEach(l=>{const wb=lessonWorkbook(l,`${SITE.url}${sw.id}/${l.id}/`);fs.mkdirSync(`fichiers/${sw.id}`,{recursive:true});fs.writeFileSync(`fichiers/${sw.id}/${l.id}.xlsx`,buildXlsx({sheets:wb.sheets}));nFiles++;});
 }
 write("assets/app.css",fs.readFileSync("src/style.css","utf8"));
+for(const f of ["favicon.svg","favicon-48.png","favicon-192.png","apple-touch-icon.png"])fs.copyFileSync(`src/${f}`,`assets/${f}`);
+fs.copyFileSync("src/favicon-48.png","favicon.ico");
 for(const f of new Set(["app.js","home.js","root.js",...CTX.map(c=>c.sw.lecteur)]))write(`assets/${f}`,fs.readFileSync(`src/${f}`,"utf8"));
 write("sitemap.xml",`<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map(u=>`  <url><loc>${u}</loc></url>`).join("\n")}\n</urlset>\n`);
 write("404.html",`<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>Page introuvable | ${esc(SITE.nom)}</title><style>body{font:16px system-ui,sans-serif;max-width:32em;margin:18vh auto;padding:0 16px;line-height:1.5}a{color:#147347}</style></head><body><h1>Page introuvable</h1><p>Cette page n'existe pas ou a été déplacée.</p><p><a href="${SITE.url}">Retour à toutes les leçons</a></p></body></html>\n`);

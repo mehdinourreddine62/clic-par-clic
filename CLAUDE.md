@@ -36,7 +36,7 @@ Le `README.md` décrit l'organisation des fichiers et tous les champs d'une leç
 - Parcours guidés : `content/excel/parcours.json`.
 - Lecteur animé : `src/player.js` ; accueil : `src/home.js` ; commun : `src/app.js` ; style : `src/style.css`.
 - Fichiers Excel à télécharger : générés par `src/xlsx.mjs` pour chaque leçon contenant une formule (hors rubriques Erreurs, Feuilles et noms, Formules dynamiques, et LAMBDA). Une fonction absente de la table de traduction FN arrête la génération : ajoute-la.
-- **Ne modifie jamais à la main** `index.html`, `excel/`, `assets/`, `fichiers/`, `sitemap.xml`, `404.html` : ils sont générés.
+- **Ne modifie jamais à la main** `index.html`, `excel/`, `word/`, `assets/`, `fichiers/`, `sitemap.xml`, `404.html`, `favicon.ico` : ils sont générés. L'icône du site vient de `src/favicon.svg` et des PNG de `src/`.
 
 ## Générer, vérifier, publier
 
@@ -54,6 +54,8 @@ Le `README.md` décrit l'organisation des fichiers et tous les champs d'une leç
 - Search Console est configuré sur l'adresse ci-dessus (balise de validation dans `site.json`). Le sitemap est généré automatiquement.
 - Le propriétaire ne veut **pas de nom de domaine payant**.
 - Après un ajout important, rappelle-lui de renvoyer `sitemap.xml` dans Search Console et propose quelques adresses à soumettre via « Inspection de l'URL ».
+
+- **Nom et icône dans Google** : Google affiche « GitHub Pages documentation » et un globe, car il lit le nom et l'icône sur `https://mehdinourreddine62.github.io/`, qui n'existe pas. Fait le 17 novembre 2026 : icône sur toutes les pages, `WebSite` avec `alternateName`. **En attente** : le propriétaire doit créer le dépôt public `mehdinourreddine62.github.io` (vide). Ensuite : l'ajouter à la session (`add_repo`, accès push), y publier une page d'accueil simple « Clic par clic » (même icône, `WebSite` JSON-LD, lien vers `/clic-par-clic/`, sans redirection), activer GitHub Pages. Relance-le s'il ne l'a pas fait.
 
 ## État et suite
 
