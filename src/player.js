@@ -409,7 +409,7 @@ function ui(s,i){
   $("#prev").disabled=i===0;$("#next").disabled=i===n-1;
   $("#progress").innerHTML=cur.s.map((_,k)=>`<button class="seg ${k<i?"done":""} ${k===i?"cur":""}" data-i="${k}" aria-label="Aller à l'étape ${k+1}"></button>`).join("");
   $("#progress").querySelectorAll(".seg").forEach(b=>b.onclick=()=>{playing=false;go(+b.dataset.i,true);});
-  const nl=$("#nextLesson");if(nl)nl.classList.toggle("hl",i===n-1);
+  const nl=$("#nextLesson");if(nl)nl.classList.toggle("hl",i===n-1);const sb=$("#sharebox");if(sb)sb.classList.toggle("hl",i===n-1);
   if(i===n-1)markSeen(cur.id);
   updatePlay();
 }

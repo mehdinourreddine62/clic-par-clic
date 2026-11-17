@@ -536,3 +536,11 @@ table.sheet{border-collapse:collapse;font-size:14px;font-family:var(--f-body);fo
 .wtoast{position:absolute;left:14px;bottom:14px;z-index:6;background:#1f1f1f;color:#fff;font-size:12.5px;padding:8px 12px;border-radius:8px;box-shadow:0 8px 20px -8px rgba(0,0,0,.5);max-width:calc(100% - 28px)}
 .wtoast.in{animation:fadein .35s}
 .rb.on{background:#cce4f7;border-color:#2b78d0}
+.tbtns{display:flex;gap:8px;align-items:center}
+#share svg{width:14px;height:14px;fill:currentColor}
+@media (max-width:480px){#share .tl{display:none}#share{padding:6px 10px}}
+.sharebox{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin:14px 0 6px;padding:10px 14px;border:1px solid var(--line);border-radius:12px;background:var(--surface);font-size:.92rem;color:var(--muted);transition:border-color .3s,box-shadow .3s}
+.sharebox.hl{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft);color:var(--ink)}
+.share-btn{border:0;border-radius:999px;background:var(--accent);color:var(--accent-ink);font-weight:600;padding:7px 16px;font-size:.9rem;cursor:pointer}
+.stoast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,20px);opacity:0;pointer-events:none;background:#1f1f1f;color:#fff;padding:10px 16px;border-radius:10px;font-size:.92rem;z-index:50;transition:opacity .25s,transform .25s;max-width:calc(100% - 32px)}
+.stoast.in{opacity:1;transform:translate(-50%,0)}

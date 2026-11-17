@@ -91,7 +91,7 @@ ${FONTS}
 ${SITE.goatcounter?`<script data-goatcounter="https://${SITE.goatcounter}.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>\n`:""}</head>
 <body>
 <div class="wrap">
-  <div class="topbar"><a class="brand" href="${root||"./"}"><span class="logo" aria-hidden="true"><i></i><i class="on"></i><i></i><i class="on"></i><i class="on"></i><i></i></span>${esc(SITE.nom)}</a><button class="theme" id="theme" type="button"></button></div>
+  <div class="topbar"><a class="brand" href="${root||"./"}"><span class="logo" aria-hidden="true"><i></i><i class="on"></i><i></i><i class="on"></i><i class="on"></i><i></i></span>${esc(SITE.nom)}</a><div class="tbtns"><button class="theme" id="share" type="button" data-share aria-label="Partager cette page"><svg viewBox="0 0 16 16"><path d="M12 10.5a2.4 2.4 0 0 0-1.9.9L6.3 9.3a2.4 2.4 0 0 0 0-1.6l3.8-2.1A2.4 2.4 0 1 0 9.6 4.2L5.8 6.3a2.4 2.4 0 1 0 0 3.4l3.8 2.1a2.4 2.4 0 1 0 2.4-1.3z"/></svg><span class="tl">Partager</span></button><button class="theme" id="theme" type="button"></button></div></div>
 `;}
 
 /* ---------- accueil ---------- */
@@ -252,6 +252,7 @@ function lessonPage(l,i,{sw,lessons,parcours:PARCOURS}){
         <span class="count" id="count"></span>
       </div>
     </div>
+    <div class="sharebox" id="sharebox"><span>Cette leçon vous a aidé ? Partagez-la avec vos camarades.</span><button class="share-btn" type="button" data-share>Partager la leçon</button></div>
     <p class="hint">Clavier : <kbd>←</kbd> <kbd>→</kbd> pour changer d'étape, <kbd>Espace</kbd> pour lancer ou mettre en pause.</p>
     ${l.hasFile?`<a class="dl" href="../../fichiers/${sw.id}/${l.id}.xlsx" download="${l.id}.xlsx"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg><span><b>Télécharger le fichier d'exercice</b><small>Excel · consignes, données de départ et solution</small></span></a>`:""}<div class="pband" id="pband" hidden></div>
     <details class="sx"><summary>Syntaxe <code>${esc(l.syntaxe)}</code></summary><dl>${l.arguments.map(([a,b])=>`<dt>${esc(a)}</dt><dd>${esc(b)}</dd>`).join("")}</dl></details>
