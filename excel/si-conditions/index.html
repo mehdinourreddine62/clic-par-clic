@@ -45,6 +45,7 @@
       </div>
     </div>
     <p class="hint">Clavier : <kbd>←</kbd> <kbd>→</kbd> pour changer d'étape, <kbd>Espace</kbd> pour lancer ou mettre en pause.</p>
+    <div class="pband" id="pband" hidden></div>
     <details class="sx"><summary>Syntaxe <code>=SI.CONDITIONS(test1; valeur1; test2; valeur2; …)</code></summary><dl><dt>test1; valeur1</dt><dd>Le premier cas</dd><dt>test2; valeur2</dt><dd>Le cas suivant, et ainsi de suite</dd><dt>VRAI; valeur</dt><dd>Le dernier cas, pour tout le reste</dd></dl></details>
     <details class="sx"><summary>Résumé écrit des étapes</summary><ol class="steps"><li>Excel lit les tests dans l'ordre et s'arrête au premier qui est vrai.</li><li>Le VRAI final sert de « sinon » pour tous les autres cas.</li></ol></details>
     <section class="guide">
@@ -62,7 +63,7 @@
     <nav class="lnav" aria-label="Leçons voisines"><a href="../si/"><small>← Précédente</small>SI</a><a class="nx" id="nextLesson" href="../et-ou/"><small>Suivante →</small>ET et OU</a></nav>
   </main>
 </div>
-<script type="application/json" id="lesson-data">{"id":"si-conditions","g":[["Élève","Note","Mention"],["Léa","17",""],["Hugo","13",""],["Inès","9",""],["Tom","15",""]],"s":[{"c":"C2","f":"=SI.CONDITIONS(B2>=16;\"Très bien\";B2>=14;\"Bien\";B2>=10;\"Passable\";VRAI;\"Insuffisant\")","v":"Très bien","t":"Excel lit les tests dans l'ordre et s'arrête au premier qui est vrai."},{"c":"C2","fill":{"C3":"Passable","C4":"Insuffisant","C5":"Bien"},"mark":"C4","t":"Le VRAI final sert de « sinon » pour tous les autres cas."}]}</script>
+<script type="application/json" id="lesson-data">{"id":"si-conditions","g":[["Élève","Note","Mention"],["Léa","17",""],["Hugo","13",""],["Inès","9",""],["Tom","15",""]],"s":[{"c":"C2","f":"=SI.CONDITIONS(B2>=16;\"Très bien\";B2>=14;\"Bien\";B2>=10;\"Passable\";VRAI;\"Insuffisant\")","v":"Très bien","t":"Excel lit les tests dans l'ordre et s'arrête au premier qui est vrai."},{"c":"C2","fill":{"C3":"Passable","C4":"Insuffisant","C5":"Bien"},"mark":"C4","t":"Le VRAI final sert de « sinon » pour tous les autres cas."}],"parcours":[{"id":"test-excel-entretien","t":"Préparer un test Excel d'entretien","l":[["references-absolues","Références absolues ($)"],["si","SI"],["si-conditions","SI.CONDITIONS"],["nb-si-ens","NB.SI.ENS"],["somme-si-ens","SOMME.SI.ENS"],["recherchev","RECHERCHEV"],["index-equiv","INDEX + EQUIV"],["sierreur","SIERREUR"],["mettre-sous-forme-de-tableau","Mettre sous forme de tableau"],["trier-sur-plusieurs-colonnes","Trier sur plusieurs colonnes"],["creer-un-tableau-croise-dynamique","Créer un tableau croisé dynamique"],["tcd-lignes-et-colonnes","Lignes et colonnes"],["mise-en-forme-conditionnelle","Mise en forme conditionnelle"],["liste-deroulante","Créer une liste déroulante"],["graphique-combine","Graphique combiné"]]}]}</script>
 <script src="../../assets/app.js"></script>
 <script src="../../assets/player.js"></script>
 </body>

@@ -31,6 +31,12 @@ for(const d of dirs){
   }
 }
 lessons.sort((a,b)=>cats.indexOf(a.cat)-cats.indexOf(b.cat));
+const PARCOURS=fs.existsSync(`content/${LOGICIEL}/parcours.json`)?readJson(`content/${LOGICIEL}/parcours.json`):[];
+PARCOURS.forEach(p=>{
+  if(!/^[a-z0-9-]+$/.test(p.id)||lessons.some(l=>l.id===p.id)||p.id==="parcours")throw new Error(`parcours.json : id invalide « ${p.id} »`);
+  p.items=p.lecons.map(id=>{const l=lessons.find(x=>x.id===id);if(!l)throw new Error(`parcours « ${p.id} » : leçon « ${id} » introuvable`);return l;});
+});
+const PICO='<path d="M5 19c3 0 3-6 7-6s4-6 7-6"/><circle cx="5" cy="19" r="2"/><circle cx="19" cy="7" r="2"/>';
 
 /* ---------- gabarits ---------- */
 const FONTS=`<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap">`;
@@ -88,6 +94,9 @@ ${cats.filter(c=>(c.famille||"Rubriques")===f).map(c=>{const n=lessons.filter(l=
       <div class="chips" id="levels" role="group" aria-label="Filtrer par niveau"><button class="chip" data-v="0" aria-pressed="true">Tous niveaux</button>${[1,2,3].map(n=>`<button class="chip" data-v="${n}" aria-pressed="false">${LV[n]}</button>`).join("")}</div>
     </div>
     <a class="resume" id="resume" href="${LOGICIEL}/${first.id}/"><span><small>Par où commencer ?</small><b>${esc(first.titre)}</b></span><span aria-hidden="true">→</span></a>
+    ${PARCOURS.length?`<section class="routes" id="routes"><h2>Parcours guidés</h2><div class="rgrid">
+${PARCOURS.map(p=>`<a class="route" href="${LOGICIEL}/parcours/${p.id}/" data-ids="${p.lecons.join(" ")}" style="--k:var(--${p.couleur})"><span class="rh"><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24">${PICO}</svg></span><span><b>${esc(p.titre)}</b><small>${esc(p.pour)}</small></span></span><span class="rd">${esc(p.resume)}</span><span class="rf"><span class="rn">${p.items.length} leçons</span><span class="tp"><i></i></span></span></a>`).join("\n")}
+</div></section>`:""}
     <div id="tiles">
 ${tiles}
     </div>
@@ -133,6 +142,8 @@ function lessonPage(l,i){
     <section class="also"><h2>Voir aussi</h2><div class="also-l">${voir.map(x=>`<a href="../${x.id}/"><b>${esc(x.titre)}</b><small>${esc(x.resume)}</small></a>`).join("")}</div></section>`:"";
   const ld={"@context":"https://schema.org","@type":"LearningResource",name:`${l.titre} dans Excel`,description:l.resume,inLanguage:"fr",isAccessibleForFree:true,educationalLevel:LV[l.niveau],learningResourceType:"Leçon animée",url,isPartOf:{"@type":"Course",name:`${SITE.nom} : apprendre Excel en animation`,url:SITE.url}};
   const data={id:l.id,g:l.grille,s:l.etapes};
+  const inP=PARCOURS.filter(p=>p.lecons.includes(l.id)).map(p=>({id:p.id,t:p.titre,l:p.items.map(x=>[x.id,x.titre])}));
+  if(inP.length)data.parcours=inP;
   if(l.ruban)data.rib=1;if(l.sansEnTete)data.nh=1;if(l.largeurs)data.w=l.largeurs;if(l.graphique)data.chart=l.graphique;
   return head({title,desc,url,root:"../../",ld,extra:`<script type="application/ld+json">${JSON.stringify(crumbs).replace(/</g,"\\u003c")}</script>\n`})+`  <main id="lesson">
     <nav class="crumbs" aria-label="Fil d'Ariane"><a href="../../">Accueil</a><span aria-hidden="true">›</span><a href="../../#theme-${c.id}">${esc(c.nom)}</a><span aria-hidden="true">›</span><span>${esc(l.titre)}</span></nav>
@@ -156,6 +167,7 @@ function lessonPage(l,i){
       </div>
     </div>
     <p class="hint">Clavier : <kbd>←</kbd> <kbd>→</kbd> pour changer d'étape, <kbd>Espace</kbd> pour lancer ou mettre en pause.</p>
+    <div class="pband" id="pband" hidden></div>
     <details class="sx"><summary>Syntaxe <code>${esc(l.syntaxe)}</code></summary><dl>${l.arguments.map(([a,b])=>`<dt>${esc(a)}</dt><dd>${esc(b)}</dd>`).join("")}</dl></details>
     <details class="sx"><summary>Résumé écrit des étapes</summary><ol class="steps">${l.etapes.map(s=>`<li>${s.t}</li>`).join("")}</ol></details>${guide}${also}
     <nav class="lnav" aria-label="Leçons voisines">${prev?`<a href="../${prev.id}/"><small>← Précédente</small>${esc(prev.titre)}</a>`:""}${next?`<a class="nx" id="nextLesson" href="../${next.id}/"><small>Suivante →</small>${esc(next.titre)}</a>`:""}</nav>
@@ -168,14 +180,52 @@ function lessonPage(l,i){
 </html>
 `;}
 
+/* ---------- page d'un parcours ---------- */
+function routePage(p){
+  const url=`${SITE.url}${LOGICIEL}/parcours/${p.id}/`;
+  const title=`${p.titre} : parcours Excel en ${p.items.length} leçons animées | ${SITE.nom}`;
+  const desc=`${p.resume} Parcours gratuit de ${p.items.length} leçons animées, à suivre dans l'ordre.`;
+  const ld={"@context":"https://schema.org","@type":"Course",name:p.titre,description:p.resume,inLanguage:"fr",isAccessibleForFree:true,url,provider:{"@type":"Organization",name:SITE.nom,url:SITE.url},
+    hasPart:p.items.map(l=>({"@type":"LearningResource",name:l.titre,url:`${SITE.url}${LOGICIEL}/${l.id}/`}))};
+  return head({title,desc,url,root:"../../../",ld})+`  <main id="route" style="--k:var(--${p.couleur})">
+    <nav class="crumbs" aria-label="Fil d'Ariane"><a href="../../../">Accueil</a><span aria-hidden="true">›</span><a href="../../../#routes">Parcours guidés</a><span aria-hidden="true">›</span><span>${esc(p.titre)}</span></nav>
+    <div class="lhead">
+      <div class="meta"><span class="tag">${`<svg viewBox="0 0 24 24">${PICO}</svg>`}Parcours guidé</span><span>${p.items.length} leçons · ${esc(p.pour)}</span></div>
+      <h1>${esc(p.titre)}</h1>
+      <p>${esc(p.resume)}</p>
+    </div>
+    <div class="rprog"><div class="tp"><i id="rbar"></i></div><span id="rcount">0 sur ${p.items.length} vue</span></div>
+    <a class="resume" id="rgo" href="../../${p.items[0].id}/?parcours=${p.id}"><span><small>Commencer le parcours</small><b>${esc(p.items[0].titre)}</b></span><span aria-hidden="true">→</span></a>
+    <ol class="rlist">
+${p.items.map((l,i)=>`<li data-id="${l.id}"><a href="../../${l.id}/?parcours=${p.id}"><span class="rnum">${i+1}</span><span class="rt"><b>${esc(l.titre)}</b><small>${esc(l.resume)}</small></span><span class="rs">${bars(l.niveau)}</span></a></li>`).join("\n")}
+    </ol>
+  </main>
+</div>
+<script src="../../../assets/app.js"></script>
+<script>
+(function(){
+  const items=[...document.querySelectorAll(".rlist li")],n=items.length;let done=0,next=null;
+  items.forEach(li=>{if(seen.includes(li.dataset.id)){li.classList.add("done");done++;}else if(!next)next=li;});
+  $("#rbar").style.width=done/n*100+"%";
+  $("#rcount").textContent=done===n?"✓ Parcours terminé":done+" sur "+n+" vue"+(done>1?"s":"");
+  const go=$("#rgo");
+  if(!next)go.remove();
+  else if(done){go.href=next.querySelector("a").getAttribute("href");go.querySelector("small").textContent="Continuer le parcours";go.querySelector("b").textContent=next.querySelector("b").textContent;}
+})();
+</script>
+</body>
+</html>
+`;}
+
 /* ---------- écriture ---------- */
 fs.rmSync(LOGICIEL,{recursive:true,force:true});
 fs.rmSync("assets",{recursive:true,force:true});
 write("index.html",home());
 lessons.forEach((l,i)=>write(`${LOGICIEL}/${l.id}/index.html`,lessonPage(l,i)));
+PARCOURS.forEach(p=>write(`${LOGICIEL}/parcours/${p.id}/index.html`,routePage(p)));
 write("assets/app.css",fs.readFileSync("src/style.css","utf8"));
 for(const f of ["app.js","player.js","home.js"])write(`assets/${f}`,fs.readFileSync(`src/${f}`,"utf8"));
-write("sitemap.xml",`<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n  <url><loc>${SITE.url}</loc></url>\n${lessons.map(l=>`  <url><loc>${SITE.url}${LOGICIEL}/${l.id}/</loc></url>`).join("\n")}\n</urlset>\n`);
+write("sitemap.xml",`<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n  <url><loc>${SITE.url}</loc></url>\n${PARCOURS.map(p=>`  <url><loc>${SITE.url}${LOGICIEL}/parcours/${p.id}/</loc></url>\n`).join("")}${lessons.map(l=>`  <url><loc>${SITE.url}${LOGICIEL}/${l.id}/</loc></url>`).join("\n")}\n</urlset>\n`);
 write("404.html",`<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>Page introuvable | ${esc(SITE.nom)}</title><style>body{font:16px system-ui,sans-serif;max-width:32em;margin:18vh auto;padding:0 16px;line-height:1.5}a{color:#147347}</style></head><body><h1>Page introuvable</h1><p>Cette page n'existe pas ou a été déplacée.</p><p><a href="${SITE.url}">Retour à toutes les leçons</a></p></body></html>\n`);
 write(".nojekyll","");
-console.log(`${lessons.length} leçons, ${cats.length} thèmes → site généré`);
+console.log(`${lessons.length} leçons, ${cats.length} thèmes, ${PARCOURS.length} parcours → site généré`);

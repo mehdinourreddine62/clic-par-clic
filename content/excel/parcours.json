@@ -1,0 +1,12 @@
+[
+ {"id":"debuter","titre":"Débuter avec Excel","pour":"Grand débutant","couleur":"k9","resume":"De l'écran d'Excel à vos premières formules : tout ce qu'il faut pour être à l'aise dès le premier jour.",
+  "lecons":["ecran-excel","ruban","saisir-des-donnees","selectionner","copier-coller-annuler","mettre-en-forme","formats-de-nombre","ecrire-une-formule","somme","moyenne-min-max","recopier-une-serie","creer-un-graphique"]},
+ {"id":"formules-indispensables","titre":"Les 15 formules indispensables","pour":"Étudiant qui doit être opérationnel vite","couleur":"r0","resume":"Les formules que l'on retrouve partout, en cours comme en entreprise, dans l'ordre où les apprendre.",
+  "lecons":["somme","moyenne-min-max","arrondi","pourcentages","references-absolues","si","et-ou","nb-si","somme-si","nb-si-ens","somme-si-ens","recherchev","recherchex","sierreur","aujourdhui-datedif"]},
+ {"id":"test-excel-entretien","titre":"Préparer un test Excel d'entretien","pour":"Candidat à un stage ou un emploi","couleur":"r1","resume":"Les manipulations demandées le plus souvent lors des tests Excel en recrutement.",
+  "lecons":["references-absolues","si","si-conditions","nb-si-ens","somme-si-ens","recherchev","index-equiv","sierreur","mettre-sous-forme-de-tableau","trier-sur-plusieurs-colonnes","creer-un-tableau-croise-dynamique","tcd-lignes-et-colonnes","mise-en-forme-conditionnelle","liste-deroulante","graphique-combine"]},
+ {"id":"analyser-des-donnees","titre":"Analyser des données","pour":"Étudiant en gestion, commerce ou sciences","couleur":"r5","resume":"Nettoyer un fichier, le trier, le résumer avec un tableau croisé et présenter le résultat en graphique.",
+  "lecons":["supprimer-les-doublons","supprespace","convertir-texte-en-colonnes","mettre-sous-forme-de-tableau","trier-sur-plusieurs-colonnes","combiner-plusieurs-filtres","creer-un-tableau-croise-dynamique","tcd-somme-nombre-moyenne","tcd-segments","graphique-croise-dynamique","mfc-nuances-de-couleurs","graphique-plusieurs-series"]},
+ {"id":"rapport-et-memoire","titre":"Préparer un rapport ou un mémoire","pour":"Étudiant qui rend un dossier","couleur":"k11","resume":"Des tableaux et des graphiques propres, lisibles et prêts à imprimer ou à coller dans un document.",
+  "lecons":["preparer-ses-donnees","choisir-un-type-de-graphique","elements-d-un-graphique","titre-et-etiquettes","couleurs-du-graphique","regler-les-axes","mettre-en-forme","formats-de-nombre","tenir-sur-une-page","repeter-les-titres"]}
+]

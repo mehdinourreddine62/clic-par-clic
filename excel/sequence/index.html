@@ -45,6 +45,7 @@
       </div>
     </div>
     <p class="hint">Clavier : <kbd>←</kbd> <kbd>→</kbd> pour changer d'étape, <kbd>Espace</kbd> pour lancer ou mettre en pause.</p>
+    <div class="pband" id="pband" hidden></div>
     <details class="sx"><summary>Syntaxe <code>=SEQUENCE(lignes; [colonnes]; [début]; [pas])</code></summary><dl><dt>lignes</dt><dd>Le nombre de lignes à générer</dd><dt>colonnes</dt><dd>Facultatif : le nombre de colonnes</dd><dt>début; pas</dt><dd>Facultatifs : la valeur de départ et l'écart entre deux valeurs</dd><dt>Version</dt><dd>Excel 2021 et Microsoft 365</dd></dl></details>
     <details class="sx"><summary>Résumé écrit des étapes</summary><ol class="steps"><li>SEQUENCE(5) génère les nombres de 1 à 5, qui se propagent vers le bas.</li><li>Avec deux arguments, on obtient un tableau : 3 lignes et 4 colonnes.</li><li>Les deux derniers arguments fixent le départ et le pas : on commence à 10 et on avance de 5.</li><li>Pratique pour numéroter une liste, ou générer des dates : =AUJOURDHUI()+SEQUENCE(7)-1 donne les 7 prochains jours.</li></ol></details>
     <section class="also"><h2>Voir aussi</h2><div class="also-l"><a href="../filtre/"><b>FILTRE</b><small>Extraire les lignes d'un tableau qui respectent une condition.</small></a><a href="../unique-trier/"><b>UNIQUE et TRIER</b><small>Obtenir une liste sans doublons, classée automatiquement.</small></a><a href="../prendre-exclure/"><b>PRENDRE et EXCLURE</b><small>Garder ou retirer les premières ou dernières lignes d'un tableau.</small></a></div></section>

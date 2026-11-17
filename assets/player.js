@@ -523,5 +523,11 @@ addEventListener("resize",placeAll);
   cur=JSON.parse(el.textContent);
   cur.s.forEach((s,i)=>{if(!s.c)s.c=i?cur.s[i-1].c:"A1";});
   lastW="";build(cur);animate(0);
+  const pid=new URLSearchParams(location.search).get("parcours"),P=(cur.parcours||[]).find(x=>x.id===pid);
+  if(P){const i=P.l.findIndex(x=>x[0]===cur.id),nx=P.l[i+1],b=$("#pband");
+    b.innerHTML=`<a class="pb-t" href="../parcours/${P.id}/"><small>Parcours guidé · leçon ${i+1} sur ${P.l.length}</small><b>${esc(P.t)}</b></a>${nx?`<a class="pb-n" href="../${nx[0]}/?parcours=${P.id}"><small>Suivante dans le parcours →</small><b>${esc(nx[1])}</b></a>`:`<a class="pb-n" href="../parcours/${P.id}/"><small>Dernière leçon</small><b>Revenir au parcours</b></a>`}`;
+    b.hidden=false;
+    const nl=$("#nextLesson");if(nl)nl.removeAttribute("id");
+    if(nx){const pn=b.querySelector(".pb-n");pn.id="nextLesson";}}
   document.fonts&&document.fonts.ready.then(placeAll);
 })();

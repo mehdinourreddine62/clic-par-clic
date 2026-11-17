@@ -45,6 +45,7 @@
       </div>
     </div>
     <p class="hint">Clavier : <kbd>←</kbd> <kbd>→</kbd> pour changer d'étape, <kbd>Espace</kbd> pour lancer ou mettre en pause.</p>
+    <div class="pband" id="pband" hidden></div>
     <details class="sx"><summary>Syntaxe <code>=SI(ET(test1; test2); si_vrai; si_faux)</code></summary><dl><dt>ET</dt><dd>Vrai seulement si tous les tests sont vrais</dd><dt>OU</dt><dd>Vrai si au moins un test est vrai</dd></dl></details>
     <details class="sx"><summary>Résumé écrit des étapes</summary><ol class="steps"><li>ET : toutes les conditions doivent être vraies.</li><li>OU : une seule condition vraie suffit.</li></ol></details>
     <section class="guide">
@@ -62,7 +63,7 @@
     <nav class="lnav" aria-label="Leçons voisines"><a href="../si-conditions/"><small>← Précédente</small>SI.CONDITIONS</a><a class="nx" id="nextLesson" href="../sierreur/"><small>Suivante →</small>SIERREUR</a></nav>
   </main>
 </div>
-<script type="application/json" id="lesson-data">{"id":"et-ou","g":[["Candidat","Écrit","Oral","Admis","Rattrapage"],["Léa","14","12","",""],["Hugo","15","8","",""],["Inès","11","10","",""],["Tom","7","9","",""]],"s":[{"c":"D2","f":"=SI(ET(B2>=10;C2>=10);\"Oui\";\"Non\")","v":"Oui","fill":{"D3":"Non","D4":"Oui","D5":"Non"},"t":"ET : toutes les conditions doivent être vraies."},{"c":"E2","f":"=SI(OU(B2>=10;C2>=10);\"Possible\";\"Non\")","v":"Possible","fill":{"E3":"Possible","E4":"Possible","E5":"Non"},"t":"OU : une seule condition vraie suffit."}]}</script>
+<script type="application/json" id="lesson-data">{"id":"et-ou","g":[["Candidat","Écrit","Oral","Admis","Rattrapage"],["Léa","14","12","",""],["Hugo","15","8","",""],["Inès","11","10","",""],["Tom","7","9","",""]],"s":[{"c":"D2","f":"=SI(ET(B2>=10;C2>=10);\"Oui\";\"Non\")","v":"Oui","fill":{"D3":"Non","D4":"Oui","D5":"Non"},"t":"ET : toutes les conditions doivent être vraies."},{"c":"E2","f":"=SI(OU(B2>=10;C2>=10);\"Possible\";\"Non\")","v":"Possible","fill":{"E3":"Possible","E4":"Possible","E5":"Non"},"t":"OU : une seule condition vraie suffit."}],"parcours":[{"id":"formules-indispensables","t":"Les 15 formules indispensables","l":[["somme","SOMME"],["moyenne-min-max","MOYENNE, MIN et MAX"],["arrondi","ARRONDI"],["pourcentages","Pourcentages"],["references-absolues","Références absolues ($)"],["si","SI"],["et-ou","ET et OU"],["nb-si","NB.SI"],["somme-si","SOMME.SI"],["nb-si-ens","NB.SI.ENS"],["somme-si-ens","SOMME.SI.ENS"],["recherchev","RECHERCHEV"],["recherchex","RECHERCHEX"],["sierreur","SIERREUR"],["aujourdhui-datedif","AUJOURDHUI et DATEDIF"]]}]}</script>
 <script src="../../assets/app.js"></script>
 <script src="../../assets/player.js"></script>
 </body>

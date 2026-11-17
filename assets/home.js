@@ -29,6 +29,10 @@
   const next=cards.find(c=>!seen.includes(c.dataset.id)),rs=$("#resume");
   if(!next)rs.remove();
   else if(seen.length){rs.href=next.getAttribute("href");rs.querySelector("small").textContent="Continuer";rs.querySelector("b").textContent=next.querySelector(".cn").textContent;}
+  document.querySelectorAll(".route").forEach(r=>{
+    const ids=r.dataset.ids.split(" "),n=ids.filter(i=>seen.includes(i)).length;
+    if(n){r.classList.add("started");r.querySelector(".tp i").style.width=n/ids.length*100+"%";r.querySelector(".rn").textContent=n===ids.length?"✓ Terminé":n+" sur "+ids.length+" vue"+(n>1?"s":"");}
+  });
   /* filtres */
   const lv=$("#levels");
   lv.querySelectorAll(".chip").forEach(b=>b.onclick=()=>{lvlF=+b.dataset.v;lv.querySelectorAll(".chip").forEach(x=>x.setAttribute("aria-pressed",x===b));apply();});

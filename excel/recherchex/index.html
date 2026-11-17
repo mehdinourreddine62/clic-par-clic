@@ -45,6 +45,7 @@
       </div>
     </div>
     <p class="hint">Clavier : <kbd>←</kbd> <kbd>→</kbd> pour changer d'étape, <kbd>Espace</kbd> pour lancer ou mettre en pause.</p>
+    <div class="pband" id="pband" hidden></div>
     <details class="sx"><summary>Syntaxe <code>=RECHERCHEX(valeur; plage_recherche; plage_résultat; [si_introuvable])</code></summary><dl><dt>valeur</dt><dd>Ce que l'on cherche</dd><dt>plage_recherche</dt><dd>La colonne où chercher</dd><dt>plage_résultat</dt><dd>La colonne à renvoyer, à gauche ou à droite</dd><dt>si_introuvable</dt><dd>Le texte affiché si rien n'est trouvé</dd><dt>Version</dt><dd>Excel 2021 et Microsoft 365</dd></dl></details>
     <details class="sx"><summary>Résumé écrit des étapes</summary><ol class="steps"><li>Où chercher, puis quoi renvoyer. La colonne résultat peut être à gauche.</li><li>Si rien n'est trouvé, le quatrième argument s'affiche à la place de l'erreur.</li></ol></details>
     <section class="guide">
@@ -62,7 +63,7 @@
     <nav class="lnav" aria-label="Leçons voisines"><a href="../recherchev/"><small>← Précédente</small>RECHERCHEV</a><a class="nx" id="nextLesson" href="../index-equiv/"><small>Suivante →</small>INDEX + EQUIV</a></nav>
   </main>
 </div>
-<script type="application/json" id="lesson-data">{"id":"recherchex","g":[["Produit","Réf","Stock","","Réf","Produit"],["Clavier","P01","42","","P04",""],["Souris","P02","130","","",""],["Écran","P03","8","","",""],["Casque","P04","25","","",""]],"s":[{"c":"F2","f":"=RECHERCHEX(E2;B2:B5;A2:A5;\"Introuvable\")","v":"Casque","mark":"B5 A5","t":"Où chercher, puis quoi renvoyer. La colonne résultat peut être à gauche."},{"c":"E2","f":"P07","set":{"F2":"Introuvable"},"mark":"F2","t":"Si rien n'est trouvé, le quatrième argument s'affiche à la place de l'erreur."}]}</script>
+<script type="application/json" id="lesson-data">{"id":"recherchex","g":[["Produit","Réf","Stock","","Réf","Produit"],["Clavier","P01","42","","P04",""],["Souris","P02","130","","",""],["Écran","P03","8","","",""],["Casque","P04","25","","",""]],"s":[{"c":"F2","f":"=RECHERCHEX(E2;B2:B5;A2:A5;\"Introuvable\")","v":"Casque","mark":"B5 A5","t":"Où chercher, puis quoi renvoyer. La colonne résultat peut être à gauche."},{"c":"E2","f":"P07","set":{"F2":"Introuvable"},"mark":"F2","t":"Si rien n'est trouvé, le quatrième argument s'affiche à la place de l'erreur."}],"parcours":[{"id":"formules-indispensables","t":"Les 15 formules indispensables","l":[["somme","SOMME"],["moyenne-min-max","MOYENNE, MIN et MAX"],["arrondi","ARRONDI"],["pourcentages","Pourcentages"],["references-absolues","Références absolues ($)"],["si","SI"],["et-ou","ET et OU"],["nb-si","NB.SI"],["somme-si","SOMME.SI"],["nb-si-ens","NB.SI.ENS"],["somme-si-ens","SOMME.SI.ENS"],["recherchev","RECHERCHEV"],["recherchex","RECHERCHEX"],["sierreur","SIERREUR"],["aujourdhui-datedif","AUJOURDHUI et DATEDIF"]]}]}</script>
 <script src="../../assets/app.js"></script>
 <script src="../../assets/player.js"></script>
 </body>

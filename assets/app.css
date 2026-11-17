@@ -62,6 +62,44 @@ kbd{border:1px solid var(--line);border-bottom-width:2px;padding:0 5px;border-ra
 .resume small{display:block;font-size:.78rem;color:var(--muted);font-weight:500}
 .resume b{font-family:var(--f-display);font-size:1.08rem}
 .resume>span:last-child{font-size:1.3rem;color:var(--accent)}
+.routes{margin-bottom:30px}
+.routes h2{font-size:.78rem;text-transform:uppercase;letter-spacing:.09em;color:var(--muted);font-weight:600;margin:0 0 10px}
+.rgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:10px}
+.route{position:relative;display:flex;flex-direction:column;gap:10px;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px 16px 18px;text-decoration:none;overflow:hidden;min-width:0;transition:transform .15s,border-color .15s}
+.route:hover{border-color:var(--k);transform:translateY(-2px)}
+.rh{display:flex;align-items:center;gap:12px}
+.route .ico{width:42px;height:42px;border-radius:11px}
+.route .ico svg{width:24px;height:24px}
+.rh b{display:block;font-family:var(--f-display);font-weight:800;font-size:1.06rem;line-height:1.2}
+.rh small{font-size:.8rem;color:var(--muted)}
+.rd{font-size:.9rem;color:var(--ink);flex:1}
+.rf .rn{font-size:.8rem;color:var(--muted);font-weight:500}
+.route.started .rn{color:var(--k);font-weight:600}
+.route .tp{position:absolute;left:0;right:0;bottom:0;height:4px}
+.route.started .tp{background:var(--grid)}
+#route .tag{color:var(--k)}
+.rprog{display:flex;align-items:center;gap:12px;margin:4px 0 16px;max-width:440px}
+.rprog .tp{flex:1;height:6px;border-radius:3px;background:var(--grid);overflow:hidden}
+.rprog .tile .tp i,.route .tp i{display:block;height:100%;width:0;background:var(--k);transition:width .5s}
+.rprog span{font-size:.84rem;color:var(--muted);white-space:nowrap}
+.rlist{list-style:none;margin:6px 0 0;padding:0;display:flex;flex-direction:column;gap:8px;max-width:760px}
+.rlist a{display:flex;align-items:center;gap:14px;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:11px 14px;text-decoration:none;min-width:0}
+.rlist a:hover{border-color:var(--k)}
+.rnum{flex:none;width:32px;height:32px;border-radius:50%;display:grid;place-items:center;font-weight:700;font-variant-numeric:tabular-nums;background:var(--head);color:var(--muted)}
+.rlist li.done .rnum{background:var(--k);color:var(--surface)}
+.rlist li.done .rnum{font-size:0}
+.rlist li.done .rnum::after{content:"✓";font-size:.95rem}
+.rt{flex:1;display:flex;flex-direction:column;gap:2px;min-width:0}
+.rt b{font-family:var(--f-mono);font-size:.95rem;color:var(--k)}
+.rt small{font-size:.86rem;color:var(--muted)}
+.rs{flex:none}
+.pband{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:10px;margin-top:14px}
+.pband a{display:flex;flex-direction:column;gap:2px;border:1px solid var(--accent);border-radius:10px;padding:10px 14px;text-decoration:none;background:var(--accent-soft);min-width:0}
+.pband .pb-n{text-align:right}
+.pband small{font-size:.76rem;color:var(--muted)}
+.pband b{font-family:var(--f-display);font-size:1rem}
+@media (max-width:520px){.pband{grid-template-columns:minmax(0,1fr)}.pband .pb-n{text-align:left}}
+#home[data-mode="theme"] #routes,#home[data-mode="search"] #routes{display:none}
 .fam{margin-bottom:26px}
 .fam h2{font-size:.78rem;text-transform:uppercase;letter-spacing:.09em;color:var(--muted);font-weight:600;margin:0 0 10px}
 .tgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(236px,1fr));gap:10px}
@@ -73,7 +111,7 @@ kbd{border:1px solid var(--line);border-bottom-width:2px;padding:0 5px;border-ra
 .tt b{font-family:var(--f-display);font-weight:800;font-size:1.04rem;line-height:1.15;letter-spacing:-.01em}
 .tt small{font-size:.8rem;color:var(--muted)}
 .tile.started .tt small{color:var(--k);font-weight:600}
-.tp{position:absolute;left:0;right:0;bottom:0;height:4px;background:transparent}
+.tile .tp{position:absolute;left:0;right:0;bottom:0;height:4px;background:transparent}
 .tile.started .tp{background:var(--grid)}
 .tp i{display:block;height:100%;width:0;background:var(--k);transition:width .5s}
 #list .back{margin-bottom:18px}
