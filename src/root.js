@@ -13,6 +13,10 @@
   softs.forEach(s=>{const ids=s.dataset.ids.split(" "),n=ids.filter(i=>seen.includes(i)).length;
     if(n){s.classList.add("started");s.querySelector(".tp i").style.width=n/ids.length*100+"%";
       s.querySelector("small").textContent=(n===ids.length?"✓ Tout vu":n+" sur "+ids.length+" leçons vues");}});
+  /* parcours et cas mis en avant, leçons déjà vues */
+  document.querySelectorAll("#feats .route").forEach(r=>{const ids=r.dataset.ids.split(" "),n=ids.filter(i=>seen.includes(i)).length;
+    if(n){r.classList.add("started");r.querySelector(".tp i").style.width=n/ids.length*100+"%";r.querySelector(".rn").textContent=n===ids.length?"✓ Terminé":n+" sur "+ids.length+" vue"+(n>1?"s":"");}});
+  document.querySelectorAll("#feats .card").forEach(c=>{if(seen.includes(c.dataset.id)){const s=c.querySelector(".cf span:last-child");s.className="seen";s.textContent="✓ Vu";}});
   /* continuer : leçon suivante non vue, dans le logiciel de la dernière leçon vue */
   const last=[...seen].reverse().map(id=>cards.find(c=>c.dataset.id===id)).find(Boolean);
   if(last){const sw=last.dataset.sw,next=cards.find(c=>c.dataset.sw===sw&&!seen.includes(c.dataset.id));
@@ -21,7 +25,7 @@
   $("#q").addEventListener("input",e=>{
     const q=norm(e.target.value.trim());let n=0;
     cards.forEach(c=>{c.hidden=!q||!c.dataset.s.includes(q);if(!c.hidden)n++;});
-    $("#results").hidden=!q;$("#softs").hidden=!!q;$("#none").hidden=!q||n>0;
+    $("#results").hidden=!q;$("#softs").hidden=!!q;$("#feats").hidden=!!q;$("#none").hidden=!q||n>0;
     $("#resume").classList.toggle("off",!!q);
   });
 })();

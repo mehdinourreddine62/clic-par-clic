@@ -139,6 +139,17 @@ function rootHome(){
     return c?`<a class="soft" href="${sw.id}/" data-sw="${sw.id}" data-ids="${c.lessons.map(l=>l.id).join(" ")}" style="--k:var(--${sw.couleur})">${inner}<span class="tp" aria-hidden="true"><i></i></span></a>`
             :`<div class="soft soon" aria-disabled="true" style="--k:var(--${sw.couleur})">${inner}</div>`;}).join("\n");
   const results=CTX.map(({sw,lessons})=>lessons.map(l=>`<a class="card" hidden href="${sw.id}/${l.id}/" data-id="${l.id}" data-sw="${sw.id}" data-s="${esc(norm(`${sw.nom} ${l.titre} ${l.resume} ${l.motsCles||""} ${l.cat.nom}`))}"><span class="cn">${esc(l.titre)}</span><span class="cd">${esc(l.resume)}</span><span class="cf"><span class="swt" style="--k:var(--${sw.couleur})">${esc(sw.nom)} · ${esc(l.cat.nom)}</span><span>${l.etapes.length} étapes</span></span></a>`).join("\n")).join("\n");
+  const A=fs.existsSync("content/accueil.json")?readJson("content/accueil.json"):{};
+  const findL=id=>{const l=ALL.find(x=>x.id===id);if(!l)throw new Error(`accueil.json : leçon « ${id} » introuvable`);return l;};
+  const featP=(A.parcours||[]).map(k=>{const[sid,pid]=k.split("/"),c=CTX.find(x=>x.sw.id===sid),p=c&&c.parcours.find(x=>x.id===pid);if(!p)throw new Error(`accueil.json : parcours « ${k} » introuvable`);return[c.sw,p];});
+  const featL=(A.lecons||[]).map(findL),featC=(A.cas||[]).map(findL);
+  const CICO='<rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2M3 13h18"/>';
+  const routeCard=(sw,p)=>`<a class="route" href="${sw.id}/parcours/${p.id}/" data-ids="${p.lecons.join(" ")}" style="--k:var(--${p.couleur})"><span class="rh"><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24">${PICO}</svg></span><span><b>${esc(p.titre)}</b><small>${esc(sw.nom)} · ${esc(p.pour)}</small></span></span><span class="rd">${esc(p.resume)}</span><span class="rf"><span class="rn">${p.items.length} leçons</span><span class="tp"><i></i></span></span></a>`;
+  const lessonCard=l=>`<a class="card" href="${l.sw.id}/${l.id}/" data-id="${l.id}"><span class="cn">${esc(l.titre)}</span><span class="cd">${esc(l.resume)}</span><span class="cf"><span class="swt" style="--k:var(--${l.sw.couleur})">${esc(l.sw.nom)} · ${esc(l.cat.nom)}</span><span>${l.etapes.length} étapes</span></span></a>`;
+  const caseCard=l=>`<a class="route case" href="${l.sw.id}/${l.id}/" data-ids="${l.id}" style="--k:var(--${l.cat.couleur})"><span class="rh"><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24">${CICO}</svg></span><span><b>${esc((t=>t[0].toUpperCase()+t.slice(1))(l.titre.replace(/^Cas pratique : /,"")))}</b><small>${esc(l.sw.nom)} · cas pratique en ${l.etapes.length} étapes</small></span></span><span class="rd">${esc(l.resume)}</span><span class="rf"><span class="rn">${l.hasFile?"Avec fichier Excel à télécharger":"Cas pratique"}</span><span class="tp"><i></i></span></span></a>`;
+  const feat=`${featP.length?`<section class="feat"><h2 class="lbl">Parcours guidés</h2><div class="rgrid">\n${featP.map(([sw,p])=>routeCard(sw,p)).join("\n")}\n</div></section>`:""}
+    ${featL.length?`<section class="feat"><h2 class="lbl">Les leçons les plus consultées</h2><div class="cards">\n${featL.map(lessonCard).join("\n")}\n</div></section>`:""}
+    ${featC.length?`<section class="feat"><h2 class="lbl">Cas pratiques</h2><div class="rgrid">\n${featC.map(caseCard).join("\n")}\n</div></section>`:""}`;
   const themes={};CTX.forEach(({sw,cats})=>cats.forEach(c=>{if(!themes[c.id])themes[c.id]=sw.id;}));
   return head({title,desc,url:SITE.url,root:"",ld,extra:verif})+`  <div id="root">
     <header class="hero">
@@ -150,6 +161,9 @@ function rootHome(){
     <section id="softs"><h2 class="lbl">Choisir un logiciel</h2><div class="sgrid">
 ${softs}
     </div></section>
+    <div id="feats">
+    ${feat}
+    </div>
     <section id="results" hidden><div class="cards">
 ${results}
     </div><p class="empty" id="none" hidden>Aucune leçon ne correspond à votre recherche.</p></section>

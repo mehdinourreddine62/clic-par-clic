@@ -18,6 +18,7 @@ Pages générées : l'accueil général (`/`, choix du logiciel et recherche dan
 
 | Dossier ou fichier | Rôle |
 |---|---|
+| `content/accueil.json` | Ce qui est mis en avant sur l'accueil général : parcours (`logiciel/parcours`), leçons et cas pratiques (identifiants) |
 | `content/logiciels.json` | La liste des logiciels et les textes de leur accueil |
 | `content/excel/` | Les leçons Excel : un dossier par rubrique, un fichier `.json` par leçon |
 | `content/excel/parcours.json` | Les parcours guidés : titre, public, couleur, résumé et liste ordonnée des leçons. Chaque parcours a sa page sous `/excel/parcours/…` |

@@ -80,6 +80,8 @@ a.soft:hover{border-color:var(--k);transform:translateY(-2px)}
 .soft.started .tp{background:var(--grid)}
 .soft .tp i{display:block;height:100%;width:0;background:var(--k);transition:width .5s}
 #results .cards{margin-bottom:10px}
+.feat{margin-bottom:30px}
+.route.case.started .rn{color:var(--k)}
 .swt{color:var(--k);font-weight:600}
 .resume.off{display:none}
 #home .crumbs{margin-bottom:6px}
