@@ -1,0 +1,27 @@
+{
+ "id": "tri-personnalise",
+ "titre": "Trier dans un ordre personnalisé",
+ "niveau": 2,
+ "resume": "Classer selon un ordre logique, et non alphabétique.",
+ "motsCles": "tri personnalisé liste personnalisée ordre priorité haute moyenne basse",
+ "syntaxe": "Trier › Ordre › Liste personnalisée",
+ "ruban": true,
+ "arguments": [
+  ["Liste personnalisée","L'ordre voulu, valeur par valeur"],
+  ["Mémoire","La liste reste disponible pour les prochains tris"]
+ ],
+ "grille": [
+  ["Tâche","Priorité"],
+  ["Rapport","Basse"],
+  ["Devis","Haute"],
+  ["Relance","Moyenne"],
+  ["Facture","Haute"],
+  ["Archivage","Basse"]
+ ],
+ "etapes": [
+  {"c":"B2","tab":"Données","btn":"Trier","set":{"A2":"Rapport","B2":"Basse","A3":"Archivage","B3":"Basse","A4":"Devis","B4":"Haute","A5":"Facture","B5":"Haute","A6":"Relance","B6":"Moyenne"},"t":"Triées de A à Z, les priorités n'ont aucun sens : Basse passe avant Haute."},
+  {"c":"B2","menu":"Trier › Ordre : <b>Liste personnalisée</b>","rule":"Haute, Moyenne, Basse","t":"Dans Trier, choisissez Ordre › Liste personnalisée et tapez l'ordre voulu."},
+  {"c":"B2","tab":"Données","set":{"A2":"Devis","B2":"Haute","A3":"Facture","B3":"Haute","A4":"Relance","B4":"Moyenne","A5":"Rapport","B5":"Basse","A6":"Archivage","B6":"Basse"},"t":"Les tâches sont maintenant classées par importance."},
+  {"c":"B2","tab":"Données","t":"La liste est enregistrée : Excel la proposera pour vos prochains tris, comme les jours et les mois."}
+ ]
+}

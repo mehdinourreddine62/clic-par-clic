@@ -1,0 +1,25 @@
+{
+ "id": "let",
+ "titre": "LET",
+ "niveau": 3,
+ "resume": "Nommer un calcul pour ne l'écrire qu'une fois.",
+ "motsCles": "let variable nommer calcul formule lisible simplifier",
+ "syntaxe": "=LET(nom; valeur; calcul)",
+ "arguments": [
+  ["nom","Le nom donné au calcul intermédiaire"],
+  ["valeur","Le calcul à nommer"],
+  ["calcul","La formule finale, qui utilise le nom"],
+  ["Version","Excel 2021 et Microsoft 365"]
+ ],
+ "grille": [
+  ["Prix HT","TVA","Remise","Prix final"],
+  ["100","20 %","10 %",""],
+  ["80","20 %","10 %",""]
+ ],
+ "etapes": [
+  {"c":"D2","f":"=SI(A2*(1+B2)>100;A2*(1+B2)*(1-C2);A2*(1+B2))","v":"108","t":"Remise de 10 % au-dessus de 100 € TTC. Le prix TTC est calculé trois fois : long et facile à mal recopier."},
+  {"c":"D2","f":"=LET(ttc;A2*(1+B2);SI(ttc>100;ttc*(1-C2);ttc))","v":"108","t":"LET donne un nom au calcul, ici ttc. On l'écrit une fois, on l'utilise autant de fois que nécessaire."},
+  {"c":"D2","fill":{"D3":"96"},"t":"Le résultat est identique, mais la formule se lit presque comme une phrase."},
+  {"c":"D2","t":"On peut nommer plusieurs calculs à la suite. Ces noms n'existent qu'à l'intérieur de la formule."}
+ ]
+}

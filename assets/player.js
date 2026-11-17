@@ -6,7 +6,7 @@ const RIB={
  "Insertion":[["Tableaux",["Tableau croisé dynamique","Tableau"]],["Illustrations",["Images","Formes"]],["Graphiques",["Histogramme","Barres","Courbes","Secteurs","Nuage de points"]],["Sparkline",["Sparkline Courbe","Sparkline Histogramme"]]],
  "Mise en page":[["Mise en page",["Marges","Orientation","Taille","Zone d'impression","Sauts de page","Imprimer les titres"]],["Mise à l'échelle",["Largeur : 1 page","Hauteur : Automatique"]]],
  "Formules":[["Bibliothèque de fonctions",["Insérer une fonction","Somme automatique","Logique","Texte","Date et heure","Recherche"]],["Noms définis",["Gestionnaire de noms","Définir un nom"]],["Vérification des formules",["Repérer les antécédents","Repérer les dépendants","Supprimer les flèches","Afficher les formules","Évaluer la formule"]]],
- "Données":[["Trier et filtrer",["Trier","Filtrer"]],["Outils de données",["Validation des données","Supprimer les doublons","Convertir"]]],
+ "Données":[["Trier et filtrer",["Trier","Filtrer","Effacer"]],["Outils de données",["Validation des données","Supprimer les doublons","Convertir"]]],
  "Révision":[["Vérification",["Orthographe"]],["Commentaires",["Nouveau commentaire"]],["Protéger",["Protéger la feuille"]]],
  "Création de graphique":[["Dispositions",["Ajouter un élément"]],["Styles",["Modifier les couleurs"]],["Données",["Intervertir lignes/colonnes","Sélectionner des données"]],["Type",["Modifier le type de graphique"]],["Emplacement",["Déplacer le graphique"]]],
  "Analyse du tableau croisé":[["Données",["Actualiser","Changer la source de données"]],["Filtrer",["Insérer un segment","Insérer une chronologie"]],["Calculs",["Champs, éléments et jeux"]],["Outils",["Graphique croisé dynamique"]]],

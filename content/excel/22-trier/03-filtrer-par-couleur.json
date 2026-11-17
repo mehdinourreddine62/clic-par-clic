@@ -1,0 +1,27 @@
+{
+ "id": "filtrer-par-couleur",
+ "titre": "Filtrer par couleur",
+ "niveau": 1,
+ "resume": "N'afficher que les lignes surlignées d'une couleur.",
+ "motsCles": "filtrer par couleur trier par couleur surligné remplissage filtre",
+ "syntaxe": "Flèche de filtre › Filtrer par couleur",
+ "ruban": true,
+ "arguments": [
+  ["Filtrer par couleur","Masque les lignes d'une autre couleur"],
+  ["Trier par couleur","Place les lignes colorées en haut, sans rien masquer"]
+ ],
+ "grille": [
+  ["Client","Ville","Montant"],
+  ["Durand","Lille","120"],
+  ["Martin","Lyon","340"],
+  ["Petit","Nantes","210"],
+  ["Simon","Paris","90"],
+  ["Robert","Lille","150"]
+ ],
+ "etapes": [
+  {"c":"A1","tab":"Données","bad":"A3 B3 C3 A5 B5 C5","t":"Certaines lignes ont été colorées à la main : ce sont les clients à relancer."},
+  {"c":"A1","tab":"Données","btn":"Filtrer","set":{"A1":"Client ▾","B1":"Ville ▾","C1":"Montant ▾"},"t":"Activez le filtre : une flèche apparaît sur chaque titre."},
+  {"c":"A1","menu":"Flèche de filtre › Filtrer par couleur › <b>Rouge</b>","hide":[2,4,6],"t":"La flèche propose « Filtrer par couleur » : choisissez le rouge. Seules les lignes colorées restent."},
+  {"c":"A1","tab":"Données","hide":[],"t":"Effacez le filtre pour tout revoir. « Trier par couleur » existe aussi, pour placer ces lignes en haut."}
+ ]
+}

@@ -1,0 +1,27 @@
+{
+ "id": "prendre-exclure",
+ "titre": "PRENDRE et EXCLURE",
+ "niveau": 3,
+ "resume": "Garder ou retirer les premières ou dernières lignes d'un tableau.",
+ "motsCles": "prendre exclure take drop premières lignes top podium tableau dynamique",
+ "syntaxe": "=PRENDRE(tableau; lignes)",
+ "arguments": [
+  ["PRENDRE","Garde des lignes : positif depuis le haut, négatif depuis le bas"],
+  ["EXCLURE","Retire des lignes, avec la même logique"],
+  ["Version","Microsoft 365"]
+ ],
+ "grille": [
+  ["Joueur","Score","","Résultat","","","Exclure",""],
+  ["Léa","82","","","","","",""],
+  ["Hugo","95","","","","","",""],
+  ["Inès","70","","","","","",""],
+  ["Tom","88","","","","","",""],
+  ["Nora","91","","","","","",""]
+ ],
+ "etapes": [
+  {"c":"D2","f":"=PRENDRE(A2:B6;3)","v":"Léa","set":{"E2":"82","D3":"Hugo","E3":"95","D4":"Inès","E4":"70"},"spill":"D2:E4","t":"PRENDRE garde les premières lignes d'un tableau : ici, les 3 premières."},
+  {"c":"D2","f":"=PRENDRE(A2:B6;-2)","v":"Tom","set":{"E2":"88","D3":"Nora","E3":"91","D4":"","E4":""},"spill":"D2:E3","t":"Avec un nombre négatif, il prend les dernières."},
+  {"c":"D2","f":"=PRENDRE(TRIER(A2:B6;2;-1);3)","v":"Hugo","set":{"E2":"95","D3":"Nora","E3":"91","D4":"Tom","E4":"88"},"spill":"D2:E4","t":"Combiné avec TRIER, il donne un podium qui se met à jour tout seul."},
+  {"c":"G2","f":"=EXCLURE(A2:B6;1)","v":"Hugo","set":{"H2":"95","G3":"Inès","H3":"70","G4":"Tom","H4":"88","G5":"Nora","H5":"91"},"spill":"D2:E4 G2:H5","t":"EXCLURE fait l'inverse : il retire des lignes. Ici, la première."}
+ ]
+}

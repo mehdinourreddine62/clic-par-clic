@@ -1,0 +1,29 @@
+{
+ "id": "trier-sur-plusieurs-colonnes",
+ "titre": "Trier sur plusieurs colonnes",
+ "niveau": 2,
+ "resume": "Classer par région, puis par montant à l'intérieur de chaque région.",
+ "motsCles": "trier plusieurs colonnes niveaux tri ordre ajouter un niveau",
+ "syntaxe": "Données › Trier › Ajouter un niveau",
+ "ruban": true,
+ "arguments": [
+  ["Trier par","Le premier critère de classement"],
+  ["Puis par","Le critère utilisé à égalité sur le premier"],
+  ["Ajouter un niveau","Ajoute un critère supplémentaire"]
+ ],
+ "grille": [
+  ["Vendeur","Région","Montant"],
+  ["Alice","Sud","300"],
+  ["Bruno","Nord","450"],
+  ["Chloé","Sud","520"],
+  ["David","Nord","200"],
+  ["Emma","Nord","610"],
+  ["Farid","Sud","150"]
+ ],
+ "etapes": [
+  {"c":"A1","tab":"Données","t":"On veut regrouper les vendeurs par région, puis classer les montants à l'intérieur de chaque région."},
+  {"c":"A1","tab":"Données","btn":"Trier","menu":"Données › Trier › Trier par : <b>Région</b> › de A à Z","t":"Données › Trier ouvre la boîte de tri. Premier niveau : Région, de A à Z."},
+  {"c":"A1","menu":"Trier › Ajouter un niveau › Puis par : <b>Montant</b> › du plus grand au plus petit","t":"« Ajouter un niveau » : puis par Montant, du plus grand au plus petit."},
+  {"c":"A1","tab":"Données","set":{"A2":"Emma","B2":"Nord","C2":"610","A3":"Bruno","B3":"Nord","C3":"450","A4":"David","B4":"Nord","C4":"200","A5":"Chloé","B5":"Sud","C5":"520","A6":"Alice","B6":"Sud","C6":"300","A7":"Farid","B7":"Sud","C7":"150"},"mark":"B2 B3 B4","t":"Les régions sont regroupées, et dans chacune, les montants sont classés."}
+ ]
+}

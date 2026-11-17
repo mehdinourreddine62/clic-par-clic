@@ -1,0 +1,29 @@
+{
+ "id": "filtres-numeriques",
+ "titre": "Filtres numériques",
+ "niveau": 2,
+ "resume": "Filtrer au-dessus d'un seuil, entre deux valeurs ou les meilleurs résultats.",
+ "motsCles": "filtres numériques supérieur à entre 10 premiers top filtre nombres",
+ "syntaxe": "Flèche de filtre › Filtres numériques",
+ "ruban": true,
+ "arguments": [
+  ["Supérieur à","Garde les valeurs au-dessus d'un seuil"],
+  ["Entre","Garde une fourchette"],
+  ["10 premiers","Garde les meilleures valeurs, en nombre réglable"]
+ ],
+ "grille": [
+  ["Produit","Ventes"],
+  ["Stylos","320"],
+  ["Cahiers","210"],
+  ["Classeurs","140"],
+  ["Trousses","260"],
+  ["Gommes","90"],
+  ["Règles","180"]
+ ],
+ "etapes": [
+  {"c":"A1","tab":"Données","btn":"Filtrer","set":{"A1":"Produit ▾","B1":"Ventes ▾"},"t":"Activez le filtre sur le tableau."},
+  {"c":"B1","menu":"Flèche de Ventes › Filtres numériques › <b>Supérieur à…</b>","rule":"200","hide":[4,6,7],"t":"Filtres numériques › Supérieur à… 200 : seules les ventes au-dessus de 200 restent."},
+  {"c":"B1","menu":"Filtres numériques › <b>10 premiers…</b>","rule":"2","hide":[3,4,6,7],"t":"« 10 premiers », réglé sur 2 : les deux meilleures ventes, sans avoir à trier."},
+  {"c":"B1","menu":"Filtres numériques › <b>Entre…</b>","rule":"100 et 250","hide":[2,5,6],"t":"« Entre » garde une fourchette. Les filtres textuels et de dates fonctionnent de la même façon."}
+ ]
+}

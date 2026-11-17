@@ -1,0 +1,29 @@
+{
+ "id": "combiner-plusieurs-filtres",
+ "titre": "Combiner plusieurs filtres",
+ "niveau": 1,
+ "resume": "Filtrer sur deux colonnes à la fois.",
+ "motsCles": "filtres combinés plusieurs colonnes effacer filtre entonnoir",
+ "syntaxe": "Un filtre par colonne, cumulés",
+ "ruban": true,
+ "arguments": [
+  ["Cumul","Chaque filtre réduit le résultat du précédent"],
+  ["Entonnoir","Signale une colonne filtrée"],
+  ["Données › Effacer","Retire tous les filtres d'un coup"]
+ ],
+ "grille": [
+  ["Vendeur","Région","Montant"],
+  ["Alice","Sud","300"],
+  ["Bruno","Nord","450"],
+  ["Chloé","Sud","520"],
+  ["David","Nord","200"],
+  ["Emma","Nord","610"],
+  ["Farid","Sud","150"]
+ ],
+ "etapes": [
+  {"c":"A1","tab":"Données","btn":"Filtrer","set":{"A1":"Vendeur ▾","B1":"Région ▾","C1":"Montant ▾"},"t":"Activez le filtre : chaque colonne peut recevoir son propre filtre."},
+  {"c":"B1","menu":"Flèche de Région › cocher <b>Nord</b> uniquement","hide":[2,4,7],"set":{"B1":"Région ⧩"},"t":"Filtrez la région sur Nord. Un entonnoir remplace la flèche pour signaler la colonne filtrée."},
+  {"c":"C1","menu":"Flèche de Montant › Filtres numériques › <b>Supérieur à…</b>","rule":"300","hide":[2,4,5,7],"set":{"C1":"Montant ⧩"},"t":"Ajoutez un filtre sur le montant : les deux se cumulent. Il ne reste que le Nord au-dessus de 300."},
+  {"c":"A1","tab":"Données","btn":"Effacer","hide":[],"set":{"A1":"Vendeur ▾","B1":"Région ▾","C1":"Montant ▾"},"t":"Données › Effacer retire tous les filtres d'un coup, sans désactiver les flèches."}
+ ]
+}

@@ -1,0 +1,25 @@
+{
+ "id": "assembler-des-plages",
+ "titre": "ASSEMB.V : réunir plusieurs listes",
+ "niveau": 3,
+ "resume": "Empiler plusieurs plages en une seule liste.",
+ "motsCles": "assemb.v assemb.h vstack hstack empiler fusionner listes réunir",
+ "syntaxe": "=ASSEMB.V(plage1; plage2; …)",
+ "arguments": [
+  ["ASSEMB.V","Empile les plages l'une sous l'autre"],
+  ["ASSEMB.H","Les place côte à côte"],
+  ["Version","Microsoft 365"]
+ ],
+ "grille": [
+  ["Équipe A","Points","","Équipe B","Points","","Classement",""],
+  ["Léa","12","","Tom","9","","",""],
+  ["Hugo","15","","Nora","14","","",""],
+  ["","","","Inès","11","","",""]
+ ],
+ "etapes": [
+  {"c":"G2","f":"=ASSEMB.V(A2:B3;D2:E4)","v":"Léa","set":{"H2":"12","G3":"Hugo","H3":"15","G4":"Tom","H4":"9","G5":"Nora","H5":"14","G6":"Inès","H6":"11"},"spill":"G2:H6","t":"ASSEMB.V empile plusieurs plages l'une sous l'autre, en une seule liste."},
+  {"c":"E2","f":"13","set":{"H4":"13"},"mark":"H4","t":"La liste reste liée à ses sources : modifiez un score, il change aussi dans la liste."},
+  {"c":"G2","f":"=TRIER(ASSEMB.V(A2:B3;D2:E4);2;-1)","v":"Hugo","set":{"H2":"15","G3":"Nora","H3":"14","G4":"Tom","H4":"13","G5":"Léa","H5":"12","G6":"Inès","H6":"11"},"t":"Enveloppé dans TRIER, on obtient un classement général des deux équipes."},
+  {"c":"G2","t":"ASSEMB.H fait la même chose côte à côte. Pratique aussi pour réunir des feuilles construites à l'identique."}
+ ]
+}

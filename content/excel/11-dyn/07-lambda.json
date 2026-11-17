@@ -1,0 +1,27 @@
+{
+ "id": "lambda",
+ "titre": "LAMBDA : créer sa propre fonction",
+ "niveau": 3,
+ "resume": "Enregistrer un calcul sous un nom et l'utiliser comme une fonction d'Excel.",
+ "motsCles": "lambda fonction personnalisée gestionnaire de noms créer fonction",
+ "syntaxe": "=LAMBDA(paramètre; calcul)",
+ "ruban": true,
+ "arguments": [
+  ["paramètre","La valeur que la fonction recevra"],
+  ["calcul","Ce que la fonction en fait"],
+  ["Gestionnaire de noms","Là où l'on enregistre la fonction"],
+  ["Version","Microsoft 365"]
+ ],
+ "grille": [
+  ["Prix HT","Prix TTC"],
+  ["100",""],
+  ["250",""],
+  ["40",""]
+ ],
+ "etapes": [
+  {"c":"B2","f":"=LAMBDA(ht;ht*1,2)(A2)","v":"120","t":"LAMBDA crée une fonction : ici, elle ajoute 20 % de TVA. On la teste directement sur A2."},
+  {"c":"B2","tab":"Formules","btn":"Gestionnaire de noms","menu":"Gestionnaire de noms › Nouveau › Nom : <b>TTC</b>","rule":"=LAMBDA(ht;ht*1,2)","t":"Pour la réutiliser, enregistrez-la dans le Gestionnaire de noms, sous le nom TTC."},
+  {"c":"B2","f":"=TTC(A2)","v":"120","fill":{"B3":"300","B4":"48"},"t":"Elle s'utilise ensuite comme n'importe quelle fonction d'Excel, partout dans le classeur."},
+  {"c":"B2","tab":"Formules","t":"Pour changer la règle, modifiez-la une seule fois dans le Gestionnaire de noms : toutes les cellules suivent."}
+ ]
+}
