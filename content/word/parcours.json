@@ -1,0 +1,29 @@
+[
+ {
+  "id": "rediger-un-rapport",
+  "titre": "Rédiger un rapport ou un mémoire",
+  "pour": "Étudiant qui rédige un rapport de stage ou un mémoire",
+  "couleur": "r0",
+  "resume": "Toutes les étapes d'un rapport ou d'un mémoire dans Word, de la mise en forme du texte à l'envoi en PDF, dans l'ordre où vous en aurez besoin.",
+  "lecons": [
+   "ecran-et-ruban-word",
+   "mettre-en-forme-le-texte",
+   "styles-de-titres",
+   "modifier-un-style",
+   "numeroter-les-titres",
+   "marges-et-orientation",
+   "sauts-de-page-et-de-section",
+   "inserer-un-tableau",
+   "inserer-une-image",
+   "legendes-et-table-des-figures",
+   "notes-de-bas-de-page",
+   "bibliographie",
+   "sommaire-automatique",
+   "numeroter-les-pages",
+   "numeroter-a-partir-de-la-page-3",
+   "en-tetes-et-pieds-de-page",
+   "suivi-des-modifications-et-commentaires",
+   "exporter-en-pdf"
+  ]
+ }
+]
