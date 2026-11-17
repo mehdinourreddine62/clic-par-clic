@@ -5,6 +5,47 @@
  "resume": "Retrouver une information dans un tableau à partir d'un code.",
  "motsCles": "vlookup chercher trouver correspondance tableau",
  "syntaxe": "=RECHERCHEV(valeur; tableau; numéro_colonne; FAUX)",
+ "titreSeo": "RECHERCHEV dans Excel : exemple animé et explication simple",
+ "guide": {
+  "intro": "RECHERCHEV (VLOOKUP en anglais) cherche une valeur dans la première colonne d'un tableau et renvoie une information située sur la même ligne. C'est la fonction à utiliser pour retrouver un prix à partir d'une référence, un nom à partir d'un numéro d'étudiant, ou un taux à partir d'une catégorie.",
+  "exemple": {
+   "formule": "=RECHERCHEV(E2;A2:C5;3;FAUX)",
+   "explication": "Cherche la référence tapée en E2 dans la première colonne du tableau A2:C5, puis renvoie la valeur de la 3e colonne (le prix) sur la ligne trouvée. FAUX demande une correspondance exacte."
+  },
+  "erreurs": [
+   [
+    "#N/A",
+    "La valeur cherchée n'existe pas dans la première colonne, ou elle contient un espace en trop. Vérifiez la saisie, ou utilisez SIERREUR pour afficher un message."
+   ],
+   [
+    "Un résultat faux, sans erreur",
+    "Le dernier argument a été oublié ou mis à VRAI : Excel fait alors une recherche approximative. Mettez toujours FAUX."
+   ],
+   [
+    "#REF!",
+    "Le numéro de colonne est plus grand que le nombre de colonnes du tableau."
+   ],
+   [
+    "La formule se décale en la recopiant",
+    "Le tableau n'est pas figé : écrivez $A$2:$C$5."
+   ]
+  ],
+  "faq": [
+   [
+    "Quelle différence entre RECHERCHEV et RECHERCHEX ?",
+    "RECHERCHEX est la version moderne : elle cherche dans n'importe quelle colonne, peut renvoyer une colonne située à gauche, et gère l'absence de résultat sans SIERREUR. Elle n'existe que dans Excel 2021 et Microsoft 365."
+   ],
+   [
+    "Pourquoi RECHERCHEV ne trouve pas une valeur qui existe ?",
+    "Le plus souvent à cause d'un espace invisible, ou d'un nombre enregistré comme texte. Nettoyez la valeur avec SUPPRESPACE, ou retapez-la."
+   ],
+   [
+    "Comment chercher vers la gauche ?",
+    "RECHERCHEV ne le permet pas. Utilisez RECHERCHEX, ou INDEX + EQUIV qui fonctionne dans toutes les versions."
+   ]
+  ]
+ },
+ "voirAussi": ["recherchex","index-equiv","sierreur","erreur-na"],
  "arguments": [
   ["valeur","Ce que l'on cherche"],
   ["tableau","Sa première colonne doit contenir la valeur cherchée"],

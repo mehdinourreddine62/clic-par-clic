@@ -105,15 +105,37 @@ ${sections}
 `;}
 
 /* ---------- page d'une leçon ---------- */
+function cutDesc(t){if(t.length<=158)return t;const c=t.slice(0,158),i=Math.max(c.lastIndexOf(". "),c.lastIndexOf(" : "));return i>80?t.slice(0,i+1).replace(/ :$/,"."):c.slice(0,c.lastIndexOf(" "))+"…";}
 function lessonPage(l,i){
   const c=l.cat,prev=lessons[i-1],next=lessons[i+1],url=`${SITE.url}${LOGICIEL}/${l.id}/`;
-  const title=`${l.titre} – Excel en animation | ${SITE.nom}`;
-  const desc=`${l.resume} Leçon Excel animée en ${l.etapes.length} étapes, niveau ${LV[l.niveau].toLowerCase()}, gratuite.`;
+  const title=l.titreSeo?`${l.titreSeo} | ${SITE.nom}`:`${l.titre} – Excel en animation | ${SITE.nom}`;
+  const gd=l.guide;
+  const desc=gd?cutDesc(gd.intro):`${l.resume} Leçon Excel animée en ${l.etapes.length} étapes, niveau ${LV[l.niveau].toLowerCase()}, gratuite.`;
+  const crumbs={"@context":"https://schema.org","@type":"BreadcrumbList",itemListElement:[
+    {"@type":"ListItem",position:1,name:SITE.nom,item:SITE.url},
+    {"@type":"ListItem",position:2,name:c.nom,item:`${SITE.url}#theme-${c.id}`},
+    {"@type":"ListItem",position:3,name:l.titre,item:url}]};
+  const voir=(l.voirAussi||[]).map(id=>{const x=lessons.find(y=>y.id===id);if(!x)throw new Error(`${l.id} : voirAussi « ${id} » introuvable`);return x;});
+  if(!voir.length)lessons.filter(x=>x.cat===c&&x!==l).slice(0,3).forEach(x=>voir.push(x));
+  const guide=gd?`
+    <section class="guide">
+      <h2>${esc(gd.question||`À quoi sert ${l.titre} ?`)}</h2>
+      <p>${esc(gd.intro)}</p>
+      <h3>Exemple</h3>
+      <p><code class="gx">${esc(gd.exemple.formule)}</code></p>
+      <p>${esc(gd.exemple.explication)}</p>
+      <h3>Erreurs fréquentes</h3>
+      <ul>${gd.erreurs.map(([a,b])=>`<li><b>${esc(a)}</b>${esc(b)}</li>`).join("")}</ul>
+      <h3>Questions fréquentes</h3>
+      ${gd.faq.map(([q,r])=>`<h4>${esc(q)}</h4><p>${esc(r)}</p>`).join("")}
+    </section>`:"";
+  const also=voir.length?`
+    <section class="also"><h2>Voir aussi</h2><div class="also-l">${voir.map(x=>`<a href="../${x.id}/"><b>${esc(x.titre)}</b><small>${esc(x.resume)}</small></a>`).join("")}</div></section>`:"";
   const ld={"@context":"https://schema.org","@type":"LearningResource",name:`${l.titre} dans Excel`,description:l.resume,inLanguage:"fr",isAccessibleForFree:true,educationalLevel:LV[l.niveau],learningResourceType:"Leçon animée",url,isPartOf:{"@type":"Course",name:`${SITE.nom} : apprendre Excel en animation`,url:SITE.url}};
   const data={id:l.id,g:l.grille,s:l.etapes};
   if(l.ruban)data.rib=1;if(l.sansEnTete)data.nh=1;if(l.largeurs)data.w=l.largeurs;if(l.graphique)data.chart=l.graphique;
-  return head({title,desc,url,root:"../../",ld})+`  <main id="lesson">
-    <a class="back" href="../../#theme-${c.id}">← ${esc(c.nom)}</a>
+  return head({title,desc,url,root:"../../",ld,extra:`<script type="application/ld+json">${JSON.stringify(crumbs).replace(/</g,"\\u003c")}</script>\n`})+`  <main id="lesson">
+    <nav class="crumbs" aria-label="Fil d'Ariane"><a href="../../">Accueil</a><span aria-hidden="true">›</span><a href="../../#theme-${c.id}">${esc(c.nom)}</a><span aria-hidden="true">›</span><span>${esc(l.titre)}</span></nav>
     <div class="lhead">
       <div class="meta"><span class="tag" style="--k:var(--${c.couleur})">${ico(c)}${esc(c.nom)}</span><span>${bars(l.niveau)} ${LV[l.niveau]}</span></div>
       <h1>${esc(l.titre)}</h1>
@@ -135,7 +157,7 @@ function lessonPage(l,i){
     </div>
     <p class="hint">Clavier : <kbd>←</kbd> <kbd>→</kbd> pour changer d'étape, <kbd>Espace</kbd> pour lancer ou mettre en pause.</p>
     <details class="sx"><summary>Syntaxe <code>${esc(l.syntaxe)}</code></summary><dl>${l.arguments.map(([a,b])=>`<dt>${esc(a)}</dt><dd>${esc(b)}</dd>`).join("")}</dl></details>
-    <details class="sx"><summary>Résumé écrit des étapes</summary><ol class="steps">${l.etapes.map(s=>`<li>${s.t}</li>`).join("")}</ol></details>
+    <details class="sx"><summary>Résumé écrit des étapes</summary><ol class="steps">${l.etapes.map(s=>`<li>${s.t}</li>`).join("")}</ol></details>${guide}${also}
     <nav class="lnav" aria-label="Leçons voisines">${prev?`<a href="../${prev.id}/"><small>← Précédente</small>${esc(prev.titre)}</a>`:""}${next?`<a class="nx" id="nextLesson" href="../${next.id}/"><small>Suivante →</small>${esc(next.titre)}</a>`:""}</nav>
   </main>
 </div>

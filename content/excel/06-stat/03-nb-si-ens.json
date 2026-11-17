@@ -5,6 +5,35 @@
  "resume": "Compter selon plusieurs conditions à la fois.",
  "motsCles": "compter plusieurs critères conditions countifs",
  "syntaxe": "=NB.SI.ENS(plage1; critère1; plage2; critère2)",
+ "titreSeo": "NB.SI.ENS dans Excel : compter avec plusieurs conditions",
+ "guide": {
+  "intro": "NB.SI.ENS compte les lignes qui respectent plusieurs conditions à la fois, par exemple les ventes d'un vendeur dans une région. Chaque condition s'écrit sous la forme d'un couple plage et critère.",
+  "exemple": {
+   "formule": "=NB.SI.ENS(A2:A6;\"Alice\";B2:B6;\"Nord\")",
+   "explication": "Compte les lignes où la colonne A vaut Alice et où la colonne B vaut Nord."
+  },
+  "erreurs": [
+   [
+    "#VALEUR!",
+    "Les plages n'ont pas la même taille : elles doivent couvrir les mêmes lignes."
+   ],
+   [
+    "Un résultat à 0",
+    "Toutes les conditions doivent être vraies sur la même ligne. Vérifiez qu'une telle ligne existe."
+   ]
+  ],
+  "faq": [
+   [
+    "Comment faire un OU avec NB.SI.ENS ?",
+    "Additionnez deux NB.SI : =NB.SI(B2:B6;\"Nord\")+NB.SI(B2:B6;\"Sud\")."
+   ],
+   [
+    "Peut-on compter entre deux dates ?",
+    "Oui : =NB.SI.ENS(A2:A50;\">=\"&D1;A2:A50;\"<=\"&D2)."
+   ]
+  ]
+ },
+ "voirAussi": ["nb-si","somme-si-ens","et-ou"],
  "arguments": [
   ["plage1; critère1","La première condition"],
   ["plage2; critère2","La deuxième condition, et ainsi de suite"]

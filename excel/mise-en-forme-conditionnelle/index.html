@@ -3,17 +3,18 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Mise en forme conditionnelle – Excel en animation | Clic par clic</title>
-<meta name="description" content="Colorer automatiquement les cellules selon leur valeur. Leçon Excel animée en 3 étapes, niveau intermédiaire, gratuite.">
+<title>Mise en forme conditionnelle dans Excel : colorer selon la valeur | Clic par clic</title>
+<meta name="description" content="La mise en forme conditionnelle colore automatiquement les cellules selon leur valeur : les stocks trop bas en rouge, les meilleures ventes en vert.">
 <link rel="canonical" href="https://mehdinourreddine62.github.io/clic-par-clic/excel/mise-en-forme-conditionnelle/">
 <meta name="robots" content="index,follow">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="Clic par clic">
-<meta property="og:title" content="Mise en forme conditionnelle – Excel en animation | Clic par clic">
-<meta property="og:description" content="Colorer automatiquement les cellules selon leur valeur. Leçon Excel animée en 3 étapes, niveau intermédiaire, gratuite.">
+<meta property="og:title" content="Mise en forme conditionnelle dans Excel : colorer selon la valeur | Clic par clic">
+<meta property="og:description" content="La mise en forme conditionnelle colore automatiquement les cellules selon leur valeur : les stocks trop bas en rouge, les meilleures ventes en vert.">
 <meta property="og:url" content="https://mehdinourreddine62.github.io/clic-par-clic/excel/mise-en-forme-conditionnelle/">
 <meta name="twitter:card" content="summary">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Clic par clic","item":"https://mehdinourreddine62.github.io/clic-par-clic/"},{"@type":"ListItem","position":2,"name":"Mise en forme conditionnelle","item":"https://mehdinourreddine62.github.io/clic-par-clic/#theme-mfc"},{"@type":"ListItem","position":3,"name":"Mise en forme conditionnelle","item":"https://mehdinourreddine62.github.io/clic-par-clic/excel/mise-en-forme-conditionnelle/"}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","name":"Mise en forme conditionnelle dans Excel","description":"Colorer automatiquement les cellules selon leur valeur.","inLanguage":"fr","isAccessibleForFree":true,"educationalLevel":"Intermédiaire","learningResourceType":"Leçon animée","url":"https://mehdinourreddine62.github.io/clic-par-clic/excel/mise-en-forme-conditionnelle/","isPartOf":{"@type":"Course","name":"Clic par clic : apprendre Excel en animation","url":"https://mehdinourreddine62.github.io/clic-par-clic/"}}</script>
 <script>document.documentElement.classList.add("js");try{var t=localStorage.getItem("cpc-theme");if(t==="dark"||t==="light")document.documentElement.dataset.theme=t}catch(e){}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap">
@@ -23,7 +24,7 @@
 <div class="wrap">
   <div class="topbar"><a class="brand" href="../../"><span class="logo" aria-hidden="true"><i></i><i class="on"></i><i></i><i class="on"></i><i class="on"></i><i></i></span>Clic par clic</a><button class="theme" id="theme" type="button"></button></div>
   <main id="lesson">
-    <a class="back" href="../../#theme-mfc">← Mise en forme conditionnelle</a>
+    <nav class="crumbs" aria-label="Fil d'Ariane"><a href="../../">Accueil</a><span aria-hidden="true">›</span><a href="../../#theme-mfc">Mise en forme conditionnelle</a><span aria-hidden="true">›</span><span>Mise en forme conditionnelle</span></nav>
     <div class="lhead">
       <div class="meta"><span class="tag" style="--k:var(--r1)"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18M3 15h18"/><path d="M6.5 12.5h5" stroke-width="3.2"/></svg>Mise en forme conditionnelle</span><span><span class="lvl" title="Intermédiaire" aria-label="Intermédiaire"><i class="on"></i><i class="on"></i><i class=""></i></span> Intermédiaire</span></div>
       <h1>Mise en forme conditionnelle</h1>
@@ -46,6 +47,18 @@
     <p class="hint">Clavier : <kbd>←</kbd> <kbd>→</kbd> pour changer d'étape, <kbd>Espace</kbd> pour lancer ou mettre en pause.</p>
     <details class="sx"><summary>Syntaxe <code>Accueil › Mise en forme conditionnelle</code></summary><dl><dt>Règle simple</dt><dd>Colore les cellules supérieures, inférieures ou égales à une valeur</dd><dt>Règle par formule</dt><dd>Colore quand la formule renvoie VRAI</dd></dl></details>
     <details class="sx"><summary>Résumé écrit des étapes</summary><ol class="steps"><li>Sélectionnez d'abord les cellules à surveiller.</li><li>Les stocks inférieurs à 50 passent en rouge, et la couleur suivra les valeurs.</li><li>Avec une formule, chaque stock est comparé à son propre seuil et toute la ligne se colore.</li></ol></details>
+    <section class="guide">
+      <h2>À quoi sert la mise en forme conditionnelle ?</h2>
+      <p>La mise en forme conditionnelle colore automatiquement les cellules selon leur valeur : les stocks trop bas en rouge, les meilleures ventes en vert. La couleur se met à jour toute seule quand les valeurs changent.</p>
+      <h3>Exemple</h3>
+      <p><code class="gx">Accueil › Mise en forme conditionnelle › Inférieur à…</code></p>
+      <p>Sélectionnez la plage, choisissez « Inférieur à… » et tapez 50 : toutes les valeurs sous 50 se colorent.</p>
+      <h3>Erreurs fréquentes</h3>
+      <ul><li><b>Seule une cellule se colore, pas la ligne</b>Une règle simple ne colore que la cellule testée. Utilisez une règle par formule, avec un $ devant la colonne : =$B2&lt;50.</li><li><b>Les couleurs se sont multipliées</b>Les règles s'accumulent à chaque copie. Faites le tri dans Gérer les règles.</li></ul>
+      <h3>Questions fréquentes</h3>
+      <h4>Comment colorer une ligne entière ?</h4><p>Sélectionnez tout le tableau, puis Nouvelle règle › Utiliser une formule, et écrivez la condition pour la première ligne avec un $ devant la colonne.</p><h4>Comment supprimer une mise en forme conditionnelle ?</h4><p>Mise en forme conditionnelle › Effacer les règles.</p><h4>Comment repérer les doublons ?</h4><p>Règles de mise en surbrillance des cellules › Valeurs en double.</p>
+    </section>
+    <section class="also"><h2>Voir aussi</h2><div class="also-l"><a href="../mfc-doublons/"><b>Repérer les doublons</b><small>Colorer automatiquement les valeurs saisies deux fois.</small></a><a href="../mfc-barres-de-donnees/"><b>Barres de données</b><small>Une barre dans chaque cellule, proportionnelle à sa valeur.</small></a><a href="../mfc-jeux-d-icones/"><b>Jeux d'icônes</b><small>Une flèche ou un feu tricolore à côté de chaque valeur.</small></a></div></section>
     <nav class="lnav" aria-label="Leçons voisines"><a href="../figer-les-volets/"><small>← Précédente</small>Figer lignes et colonnes</a><a class="nx" id="nextLesson" href="../mfc-barres-de-donnees/"><small>Suivante →</small>Barres de données</a></nav>
   </main>
 </div>

@@ -180,6 +180,25 @@ table.sheet{border-collapse:collapse;font-size:14px;font-family:var(--f-body);fo
 .sx dl{margin:0;padding:4px 0 14px;display:grid;grid-template-columns:auto minmax(0,1fr);gap:6px 16px;font-size:.93rem}
 .sx dt{font-family:var(--f-mono);font-size:.84rem;color:var(--accent);font-weight:600}
 .sx dd{margin:0}
+.crumbs{display:flex;flex-wrap:wrap;gap:4px 8px;align-items:center;font-size:.86rem;color:var(--muted);margin-bottom:14px}
+.crumbs a{color:var(--muted);text-decoration:none}
+.crumbs a:hover{color:var(--ink);text-decoration:underline}
+.crumbs>span:last-child{color:var(--ink)}
+.guide{margin-top:26px;max-width:72ch;line-height:1.65}
+.guide h2{font-family:var(--f-display);font-weight:800;font-size:1.45rem;letter-spacing:-.015em;margin:0 0 10px;text-wrap:balance}
+.guide h3{font-family:var(--f-display);font-weight:600;font-size:1.08rem;margin:22px 0 8px}
+.guide h4{font-size:.98rem;margin:14px 0 4px}
+.guide p{margin:0 0 10px}
+.guide ul{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:8px}
+.guide li b{display:block}
+.guide .gx{display:inline-block;max-width:100%;overflow-x:auto;white-space:nowrap;vertical-align:bottom;font-size:.92rem;padding:4px 9px;border:1px solid var(--line);background:var(--surface)}
+.also{margin-top:26px}
+.also h2{font-family:var(--f-display);font-weight:800;font-size:1.2rem;margin:0 0 10px}
+.also-l{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px}
+.also-l a{display:flex;flex-direction:column;gap:3px;border:1px solid var(--line);border-radius:10px;background:var(--surface);padding:11px 14px;text-decoration:none;min-width:0}
+.also-l a:hover{border-color:var(--accent)}
+.also-l b{font-family:var(--f-mono);font-size:.92rem;color:var(--accent)}
+.also-l small{font-size:.86rem;color:var(--muted)}
 .lnav{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:16px}
 .lnav a{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:10px;padding:10px 14px;text-decoration:none;background:var(--surface);min-width:0}
 .lnav a:hover{border-color:var(--accent)}

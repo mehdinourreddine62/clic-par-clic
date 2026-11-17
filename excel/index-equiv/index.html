@@ -3,17 +3,18 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>INDEX + EQUIV – Excel en animation | Clic par clic</title>
-<meta name="description" content="Lire une valeur à l'intersection d'une ligne et d'une colonne. Leçon Excel animée en 4 étapes, niveau avancé, gratuite.">
+<title>INDEX EQUIV dans Excel : rechercher dans un tableau à double entrée | Clic par clic</title>
+<meta name="description" content="INDEX + EQUIV est la combinaison de recherche la plus souple d'Excel. EQUIV trouve la position d'une valeur dans une ligne ou une colonne, et INDEX lit la…">
 <link rel="canonical" href="https://mehdinourreddine62.github.io/clic-par-clic/excel/index-equiv/">
 <meta name="robots" content="index,follow">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="Clic par clic">
-<meta property="og:title" content="INDEX + EQUIV – Excel en animation | Clic par clic">
-<meta property="og:description" content="Lire une valeur à l'intersection d'une ligne et d'une colonne. Leçon Excel animée en 4 étapes, niveau avancé, gratuite.">
+<meta property="og:title" content="INDEX EQUIV dans Excel : rechercher dans un tableau à double entrée | Clic par clic">
+<meta property="og:description" content="INDEX + EQUIV est la combinaison de recherche la plus souple d'Excel. EQUIV trouve la position d'une valeur dans une ligne ou une colonne, et INDEX lit la…">
 <meta property="og:url" content="https://mehdinourreddine62.github.io/clic-par-clic/excel/index-equiv/">
 <meta name="twitter:card" content="summary">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Clic par clic","item":"https://mehdinourreddine62.github.io/clic-par-clic/"},{"@type":"ListItem","position":2,"name":"Recherche","item":"https://mehdinourreddine62.github.io/clic-par-clic/#theme-recherche"},{"@type":"ListItem","position":3,"name":"INDEX + EQUIV","item":"https://mehdinourreddine62.github.io/clic-par-clic/excel/index-equiv/"}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","name":"INDEX + EQUIV dans Excel","description":"Lire une valeur à l'intersection d'une ligne et d'une colonne.","inLanguage":"fr","isAccessibleForFree":true,"educationalLevel":"Avancé","learningResourceType":"Leçon animée","url":"https://mehdinourreddine62.github.io/clic-par-clic/excel/index-equiv/","isPartOf":{"@type":"Course","name":"Clic par clic : apprendre Excel en animation","url":"https://mehdinourreddine62.github.io/clic-par-clic/"}}</script>
 <script>document.documentElement.classList.add("js");try{var t=localStorage.getItem("cpc-theme");if(t==="dark"||t==="light")document.documentElement.dataset.theme=t}catch(e){}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap">
@@ -23,7 +24,7 @@
 <div class="wrap">
   <div class="topbar"><a class="brand" href="../../"><span class="logo" aria-hidden="true"><i></i><i class="on"></i><i></i><i class="on"></i><i class="on"></i><i></i></span>Clic par clic</a><button class="theme" id="theme" type="button"></button></div>
   <main id="lesson">
-    <a class="back" href="../../#theme-recherche">← Recherche</a>
+    <nav class="crumbs" aria-label="Fil d'Ariane"><a href="../../">Accueil</a><span aria-hidden="true">›</span><a href="../../#theme-recherche">Recherche</a><span aria-hidden="true">›</span><span>INDEX + EQUIV</span></nav>
     <div class="lhead">
       <div class="meta"><span class="tag" style="--k:var(--r5)"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l5 5"/></svg>Recherche</span><span><span class="lvl" title="Avancé" aria-label="Avancé"><i class="on"></i><i class="on"></i><i class="on"></i></span> Avancé</span></div>
       <h1>INDEX + EQUIV</h1>
@@ -46,6 +47,18 @@
     <p class="hint">Clavier : <kbd>←</kbd> <kbd>→</kbd> pour changer d'étape, <kbd>Espace</kbd> pour lancer ou mettre en pause.</p>
     <details class="sx"><summary>Syntaxe <code>=INDEX(tableau; EQUIV(…); EQUIV(…))</code></summary><dl><dt>EQUIV(valeur; plage; 0)</dt><dd>La position de la valeur dans la plage</dd><dt>INDEX(tableau; ligne; colonne)</dt><dd>La valeur à cette position</dd></dl></details>
     <details class="sx"><summary>Résumé écrit des étapes</summary><ol class="steps"><li>EQUIV donne la position de Lyon dans la plage : 2.</li><li>Même chose pour le mois : Mars est en position 3.</li><li>INDEX lit la case située à la ligne 2 et à la colonne 3 du tableau.</li><li>Changez la ville : le résultat suit.</li></ol></details>
+    <section class="guide">
+      <h2>À quoi sert INDEX + EQUIV ?</h2>
+      <p>INDEX + EQUIV est la combinaison de recherche la plus souple d'Excel. EQUIV trouve la position d'une valeur dans une ligne ou une colonne, et INDEX lit la cellule à cette position. Elle fonctionne dans toutes les versions, dans toutes les directions, et sur des tableaux à double entrée.</p>
+      <h3>Exemple</h3>
+      <p><code class="gx">=INDEX(B2:D4;EQUIV(G2;A2:A4;0);EQUIV(G3;B1:D1;0))</code></p>
+      <p>EQUIV trouve la ligne de la ville (G2) et la colonne du mois (G3) ; INDEX renvoie la valeur à leur intersection.</p>
+      <h3>Erreurs fréquentes</h3>
+      <ul><li><b>#N/A</b>EQUIV ne trouve pas la valeur. Vérifiez l'orthographe, et le 0 final qui demande une correspondance exacte.</li><li><b>#REF!</b>La position trouvée dépasse la taille du tableau donné à INDEX.</li><li><b>Un résultat décalé</b>Les plages d'EQUIV et d'INDEX ne commencent pas sur la même ligne ou la même colonne.</li></ul>
+      <h3>Questions fréquentes</h3>
+      <h4>Pourquoi utiliser INDEX EQUIV plutôt que RECHERCHEV ?</h4><p>Elle cherche aussi vers la gauche, ne casse pas quand on insère une colonne, et lit un tableau à double entrée.</p><h4>INDEX EQUIV ou RECHERCHEX ?</h4><p>RECHERCHEX est plus simple si tout le monde utilise Microsoft 365. INDEX EQUIV reste la solution qui fonctionne partout.</p>
+    </section>
+    <section class="also"><h2>Voir aussi</h2><div class="also-l"><a href="../recherchev/"><b>RECHERCHEV</b><small>Retrouver une information dans un tableau à partir d'un code.</small></a><a href="../recherchex/"><b>RECHERCHEX</b><small>La version moderne de RECHERCHEV, plus simple et plus souple.</small></a><a href="../erreur-na/"><b>Corriger #N/A</b><small>Comprendre pourquoi une recherche ne trouve rien.</small></a></div></section>
     <nav class="lnav" aria-label="Leçons voisines"><a href="../recherchex/"><small>← Précédente</small>RECHERCHEX</a><a class="nx" id="nextLesson" href="../assembler-texte/"><small>Suivante →</small>Assembler du texte (&amp;)</a></nav>
   </main>
 </div>

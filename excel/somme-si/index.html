@@ -3,17 +3,18 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>SOMME.SI – Excel en animation | Clic par clic</title>
-<meta name="description" content="Additionner uniquement les lignes qui respectent un critère. Leçon Excel animée en 2 étapes, niveau intermédiaire, gratuite.">
+<title>SOMME.SI dans Excel : additionner selon un critère | Clic par clic</title>
+<meta name="description" content="SOMME.SI additionne uniquement les valeurs qui correspondent à un critère : le total d'une catégorie, d'un client ou d'un mois. Elle prend trois arguments ">
 <link rel="canonical" href="https://mehdinourreddine62.github.io/clic-par-clic/excel/somme-si/">
 <meta name="robots" content="index,follow">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="Clic par clic">
-<meta property="og:title" content="SOMME.SI – Excel en animation | Clic par clic">
-<meta property="og:description" content="Additionner uniquement les lignes qui respectent un critère. Leçon Excel animée en 2 étapes, niveau intermédiaire, gratuite.">
+<meta property="og:title" content="SOMME.SI dans Excel : additionner selon un critère | Clic par clic">
+<meta property="og:description" content="SOMME.SI additionne uniquement les valeurs qui correspondent à un critère : le total d'une catégorie, d'un client ou d'un mois. Elle prend trois arguments ">
 <meta property="og:url" content="https://mehdinourreddine62.github.io/clic-par-clic/excel/somme-si/">
 <meta name="twitter:card" content="summary">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Clic par clic","item":"https://mehdinourreddine62.github.io/clic-par-clic/"},{"@type":"ListItem","position":2,"name":"Compter et classer","item":"https://mehdinourreddine62.github.io/clic-par-clic/#theme-stat"},{"@type":"ListItem","position":3,"name":"SOMME.SI","item":"https://mehdinourreddine62.github.io/clic-par-clic/excel/somme-si/"}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","name":"SOMME.SI dans Excel","description":"Additionner uniquement les lignes qui respectent un critère.","inLanguage":"fr","isAccessibleForFree":true,"educationalLevel":"Intermédiaire","learningResourceType":"Leçon animée","url":"https://mehdinourreddine62.github.io/clic-par-clic/excel/somme-si/","isPartOf":{"@type":"Course","name":"Clic par clic : apprendre Excel en animation","url":"https://mehdinourreddine62.github.io/clic-par-clic/"}}</script>
 <script>document.documentElement.classList.add("js");try{var t=localStorage.getItem("cpc-theme");if(t==="dark"||t==="light")document.documentElement.dataset.theme=t}catch(e){}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap">
@@ -23,7 +24,7 @@
 <div class="wrap">
   <div class="topbar"><a class="brand" href="../../"><span class="logo" aria-hidden="true"><i></i><i class="on"></i><i></i><i class="on"></i><i class="on"></i><i></i></span>Clic par clic</a><button class="theme" id="theme" type="button"></button></div>
   <main id="lesson">
-    <a class="back" href="../../#theme-stat">← Compter et classer</a>
+    <nav class="crumbs" aria-label="Fil d'Ariane"><a href="../../">Accueil</a><span aria-hidden="true">›</span><a href="../../#theme-stat">Compter et classer</a><span aria-hidden="true">›</span><span>SOMME.SI</span></nav>
     <div class="lhead">
       <div class="meta"><span class="tag" style="--k:var(--r2)"><svg viewBox="0 0 24 24"><path d="M5 20v-8M12 20V4M19 20v-5M3 20h18"/></svg>Compter et classer</span><span><span class="lvl" title="Intermédiaire" aria-label="Intermédiaire"><i class="on"></i><i class="on"></i><i class=""></i></span> Intermédiaire</span></div>
       <h1>SOMME.SI</h1>
@@ -46,6 +47,18 @@
     <p class="hint">Clavier : <kbd>←</kbd> <kbd>→</kbd> pour changer d'étape, <kbd>Espace</kbd> pour lancer ou mettre en pause.</p>
     <details class="sx"><summary>Syntaxe <code>=SOMME.SI(plage; critère; plage_somme)</code></summary><dl><dt>plage</dt><dd>Où chercher le critère</dd><dt>critère</dt><dd>Ce qu'il faut trouver</dd><dt>plage_somme</dt><dd>Les montants à additionner</dd></dl></details>
     <details class="sx"><summary>Résumé écrit des étapes</summary><ol class="steps"><li>Où chercher, quoi chercher, quoi additionner : trois arguments.</li><li>Recopiez pour obtenir le total de chaque catégorie.</li></ol></details>
+    <section class="guide">
+      <h2>À quoi sert SOMME.SI ?</h2>
+      <p>SOMME.SI additionne uniquement les valeurs qui correspondent à un critère : le total d'une catégorie, d'un client ou d'un mois. Elle prend trois arguments : où chercher, quoi chercher, et quoi additionner.</p>
+      <h3>Exemple</h3>
+      <p><code class="gx">=SOMME.SI($A$2:$A$6;D2;$B$2:$B$6)</code></p>
+      <p>Additionne les montants de B2:B6 sur les lignes où la catégorie, en A2:A6, est égale à D2.</p>
+      <h3>Erreurs fréquentes</h3>
+      <ul><li><b>Un résultat à 0</b>Le troisième argument a été oublié : SOMME.SI additionne alors la plage de critères elle-même.</li><li><b>Un mauvais total en recopiant</b>Les plages ne sont pas figées avec des $.</li><li><b>Des montants ignorés</b>Des nombres enregistrés comme texte ne sont pas additionnés.</li></ul>
+      <h3>Questions fréquentes</h3>
+      <h4>Quelle différence avec SOMME.SI.ENS ?</h4><p>SOMME.SI.ENS accepte plusieurs critères, et la plage à additionner y vient en premier.</p><h4>Comment additionner les valeurs supérieures à 100 ?</h4><p>=SOMME.SI(B2:B20;&quot;&gt;100&quot;) : sans troisième argument, la plage testée est aussi celle qui est additionnée.</p>
+    </section>
+    <section class="also"><h2>Voir aussi</h2><div class="also-l"><a href="../somme-si-ens/"><b>SOMME.SI.ENS</b><small>Additionner selon plusieurs critères.</small></a><a href="../nb-si/"><b>NB.SI</b><small>Compter les cellules qui respectent une condition.</small></a><a href="../moyenne-si/"><b>MOYENNE.SI</b><small>Calculer une moyenne pour un seul groupe.</small></a></div></section>
     <nav class="lnav" aria-label="Leçons voisines"><a href="../nb-si-ens/"><small>← Précédente</small>NB.SI.ENS</a><a class="nx" id="nextLesson" href="../somme-si-ens/"><small>Suivante →</small>SOMME.SI.ENS</a></nav>
   </main>
 </div>

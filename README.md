@@ -43,6 +43,9 @@ L'`id` devient l'adresse de la page (`/excel/ma-fonction/`) : minuscules, chiffr
 | `grille` | Le contenu de départ de la feuille, ligne par ligne |
 | `etapes` | Les étapes de l'animation |
 | `ruban` | `true` pour afficher les boutons du ruban |
+| `titreSeo` | Facultatif : le titre affiché par Google, calqué sur les recherches réelles |
+| `guide` | Facultatif : texte visible sous l'animation (`question`, `intro`, `exemple`, `erreurs`, `faq`) |
+| `voirAussi` | Facultatif : identifiants des leçons proposées en « Voir aussi ». Sinon, trois leçons de la même rubrique |
 | `sansEnTete` | `true` pour ne pas mettre la ligne 1 en gras |
 
 ### Champs d'une étape

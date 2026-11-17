@@ -3,17 +3,18 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Supprimer les doublons – Excel en animation | Clic par clic</title>
-<meta name="description" content="Ne garder qu'un exemplaire de chaque ligne. Leçon Excel animée en 4 étapes, niveau débutant, gratuite.">
+<title>Supprimer les doublons dans Excel en quelques clics | Clic par clic</title>
+<meta name="description" content="La commande Supprimer les doublons retire les lignes répétées d'une liste et ne garde que la première occurrence de chacune.">
 <link rel="canonical" href="https://mehdinourreddine62.github.io/clic-par-clic/excel/supprimer-les-doublons/">
 <meta name="robots" content="index,follow">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="Clic par clic">
-<meta property="og:title" content="Supprimer les doublons – Excel en animation | Clic par clic">
-<meta property="og:description" content="Ne garder qu'un exemplaire de chaque ligne. Leçon Excel animée en 4 étapes, niveau débutant, gratuite.">
+<meta property="og:title" content="Supprimer les doublons dans Excel en quelques clics | Clic par clic">
+<meta property="og:description" content="La commande Supprimer les doublons retire les lignes répétées d'une liste et ne garde que la première occurrence de chacune.">
 <meta property="og:url" content="https://mehdinourreddine62.github.io/clic-par-clic/excel/supprimer-les-doublons/">
 <meta name="twitter:card" content="summary">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Clic par clic","item":"https://mehdinourreddine62.github.io/clic-par-clic/"},{"@type":"ListItem","position":2,"name":"Nettoyer des données","item":"https://mehdinourreddine62.github.io/clic-par-clic/#theme-nettoyer"},{"@type":"ListItem","position":3,"name":"Supprimer les doublons","item":"https://mehdinourreddine62.github.io/clic-par-clic/excel/supprimer-les-doublons/"}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","name":"Supprimer les doublons dans Excel","description":"Ne garder qu'un exemplaire de chaque ligne.","inLanguage":"fr","isAccessibleForFree":true,"educationalLevel":"Débutant","learningResourceType":"Leçon animée","url":"https://mehdinourreddine62.github.io/clic-par-clic/excel/supprimer-les-doublons/","isPartOf":{"@type":"Course","name":"Clic par clic : apprendre Excel en animation","url":"https://mehdinourreddine62.github.io/clic-par-clic/"}}</script>
 <script>document.documentElement.classList.add("js");try{var t=localStorage.getItem("cpc-theme");if(t==="dark"||t==="light")document.documentElement.dataset.theme=t}catch(e){}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap">
@@ -23,7 +24,7 @@
 <div class="wrap">
   <div class="topbar"><a class="brand" href="../../"><span class="logo" aria-hidden="true"><i></i><i class="on"></i><i></i><i class="on"></i><i class="on"></i><i></i></span>Clic par clic</a><button class="theme" id="theme" type="button"></button></div>
   <main id="lesson">
-    <a class="back" href="../../#theme-nettoyer">← Nettoyer des données</a>
+    <nav class="crumbs" aria-label="Fil d'Ariane"><a href="../../">Accueil</a><span aria-hidden="true">›</span><a href="../../#theme-nettoyer">Nettoyer des données</a><span aria-hidden="true">›</span><span>Supprimer les doublons</span></nav>
     <div class="lhead">
       <div class="meta"><span class="tag" style="--k:var(--r5)"><svg viewBox="0 0 24 24"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5L18 18M18 6l-2.5 2.5M8.5 15.5L6 18"/></svg>Nettoyer des données</span><span><span class="lvl" title="Débutant" aria-label="Débutant"><i class="on"></i><i class=""></i><i class=""></i></span> Débutant</span></div>
       <h1>Supprimer les doublons</h1>
@@ -46,6 +47,18 @@
     <p class="hint">Clavier : <kbd>←</kbd> <kbd>→</kbd> pour changer d'étape, <kbd>Espace</kbd> pour lancer ou mettre en pause.</p>
     <details class="sx"><summary>Syntaxe <code>Données › Supprimer les doublons</code></summary><dl><dt>Colonnes cochées</dt><dd>Celles qui servent à comparer les lignes</dd><dt>Résultat</dt><dd>La première occurrence est gardée</dd><dt>Attention</dt><dd>La suppression est définitive</dd></dl></details>
     <details class="sx"><summary>Résumé écrit des étapes</summary><ol class="steps"><li>Cette liste contient des lignes en double : Durand et Martin apparaissent deux fois.</li><li>Cliquez dans la liste, puis Données › Supprimer les doublons.</li><li>Excel ne garde que la première occurrence de chaque ligne et annonce le résultat.</li><li>La suppression est définitive : travaillez sur une copie, ou annulez tout de suite avec Ctrl + Z.</li></ol></details>
+    <section class="guide">
+      <h2>Comment supprimer les doublons ?</h2>
+      <p>La commande Supprimer les doublons retire les lignes répétées d'une liste et ne garde que la première occurrence de chacune. On choisit les colonnes qui servent à comparer les lignes.</p>
+      <h3>Exemple</h3>
+      <p><code class="gx">Données › Supprimer les doublons</code></p>
+      <p>Cochez les colonnes à comparer : deux lignes sont des doublons si elles sont identiques sur toutes les colonnes cochées.</p>
+      <h3>Erreurs fréquentes</h3>
+      <ul><li><b>Des doublons restent</b>Des espaces en trop rendent les valeurs différentes pour Excel. Nettoyez-les d'abord avec SUPPRESPACE.</li><li><b>Des lignes utiles ont disparu</b>Trop peu de colonnes étaient cochées. Annulez tout de suite avec Ctrl + Z.</li></ul>
+      <h3>Questions fréquentes</h3>
+      <h4>Comment repérer les doublons sans les supprimer ?</h4><p>Avec la mise en forme conditionnelle › Valeurs en double.</p><h4>Comment obtenir une liste sans doublons à côté des données ?</h4><p>Avec la fonction UNIQUE, qui laisse les données d'origine intactes.</p>
+    </section>
+    <section class="also"><h2>Voir aussi</h2><div class="also-l"><a href="../mfc-doublons/"><b>Repérer les doublons</b><small>Colorer automatiquement les valeurs saisies deux fois.</small></a><a href="../unique-trier/"><b>UNIQUE et TRIER</b><small>Obtenir une liste sans doublons, classée automatiquement.</small></a><a href="../supprespace/"><b>SUPPRESPACE</b><small>Retirer les espaces en trop qui faussent les recherches.</small></a></div></section>
     <nav class="lnav" aria-label="Leçons voisines"><a href="../combiner-plusieurs-filtres/"><small>← Précédente</small>Combiner plusieurs filtres</a><a class="nx" id="nextLesson" href="../convertir-texte-en-colonnes/"><small>Suivante →</small>Séparer un texte en colonnes</a></nav>
   </main>
 </div>

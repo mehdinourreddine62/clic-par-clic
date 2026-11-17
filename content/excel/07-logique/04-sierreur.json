@@ -5,6 +5,35 @@
  "resume": "Remplacer un message d'erreur par la valeur de son choix.",
  "motsCles": "erreur #div/0! #n/a masquer",
  "syntaxe": "=SIERREUR(calcul; valeur_si_erreur)",
+ "titreSeo": "SIERREUR dans Excel : remplacer #N/A et #DIV/0! par un texte",
+ "guide": {
+  "intro": "SIERREUR remplace un message d'erreur par la valeur de votre choix : un tiret, un zéro ou « Introuvable ». On l'utilise surtout autour de RECHERCHEV et des divisions qui peuvent rencontrer un zéro.",
+  "exemple": {
+   "formule": "=SIERREUR(B2/C2;\"-\")",
+   "explication": "Divise B2 par C2 ; si la division échoue, la cellule affiche un tiret au lieu de #DIV/0!."
+  },
+  "erreurs": [
+   [
+    "Des erreurs cachées par mégarde",
+    "SIERREUR masque toutes les erreurs, y compris une faute de frappe dans la formule. Vérifiez la formule avant de l'envelopper."
+   ],
+   [
+    "Un total faussé",
+    "Remplacer une erreur par du texte peut gêner les calculs suivants. Préférez 0 si la cellule doit être additionnée."
+   ]
+  ],
+  "faq": [
+   [
+    "Quelle différence avec SI.NON.DISP ?",
+    "SI.NON.DISP ne remplace que #N/A et laisse voir les autres erreurs, qui signalent souvent un vrai problème."
+   ],
+   [
+    "Comment laisser la cellule vide en cas d'erreur ?",
+    "Avec deux guillemets collés : =SIERREUR(formule;\"\")."
+   ]
+  ]
+ },
+ "voirAussi": ["erreur-na","erreur-div-0","recherchev"],
  "arguments": [
   ["calcul","La formule qui peut échouer"],
   ["valeur_si_erreur","Ce qui s'affiche à la place de l'erreur"]

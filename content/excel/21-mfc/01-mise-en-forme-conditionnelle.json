@@ -5,6 +5,40 @@
  "resume": "Colorer automatiquement les cellules selon leur valeur.",
  "motsCles": "couleur surbrillance règle colorer format",
  "syntaxe": "Accueil › Mise en forme conditionnelle",
+ "titreSeo": "Mise en forme conditionnelle dans Excel : colorer selon la valeur",
+ "guide": {
+  "question": "À quoi sert la mise en forme conditionnelle ?",
+  "intro": "La mise en forme conditionnelle colore automatiquement les cellules selon leur valeur : les stocks trop bas en rouge, les meilleures ventes en vert. La couleur se met à jour toute seule quand les valeurs changent.",
+  "exemple": {
+   "formule": "Accueil › Mise en forme conditionnelle › Inférieur à…",
+   "explication": "Sélectionnez la plage, choisissez « Inférieur à… » et tapez 50 : toutes les valeurs sous 50 se colorent."
+  },
+  "erreurs": [
+   [
+    "Seule une cellule se colore, pas la ligne",
+    "Une règle simple ne colore que la cellule testée. Utilisez une règle par formule, avec un $ devant la colonne : =$B2<50."
+   ],
+   [
+    "Les couleurs se sont multipliées",
+    "Les règles s'accumulent à chaque copie. Faites le tri dans Gérer les règles."
+   ]
+  ],
+  "faq": [
+   [
+    "Comment colorer une ligne entière ?",
+    "Sélectionnez tout le tableau, puis Nouvelle règle › Utiliser une formule, et écrivez la condition pour la première ligne avec un $ devant la colonne."
+   ],
+   [
+    "Comment supprimer une mise en forme conditionnelle ?",
+    "Mise en forme conditionnelle › Effacer les règles."
+   ],
+   [
+    "Comment repérer les doublons ?",
+    "Règles de mise en surbrillance des cellules › Valeurs en double."
+   ]
+  ]
+ },
+ "voirAussi": ["mfc-doublons","mfc-barres-de-donnees","mfc-jeux-d-icones"],
  "arguments": [
   ["Règle simple","Colore les cellules supérieures, inférieures ou égales à une valeur"],
   ["Règle par formule","Colore quand la formule renvoie VRAI"]

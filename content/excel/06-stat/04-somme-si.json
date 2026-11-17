@@ -5,6 +5,39 @@
  "resume": "Additionner uniquement les lignes qui respectent un critère.",
  "motsCles": "additionner condition critère sumif catégorie",
  "syntaxe": "=SOMME.SI(plage; critère; plage_somme)",
+ "titreSeo": "SOMME.SI dans Excel : additionner selon un critère",
+ "guide": {
+  "intro": "SOMME.SI additionne uniquement les valeurs qui correspondent à un critère : le total d'une catégorie, d'un client ou d'un mois. Elle prend trois arguments : où chercher, quoi chercher, et quoi additionner.",
+  "exemple": {
+   "formule": "=SOMME.SI($A$2:$A$6;D2;$B$2:$B$6)",
+   "explication": "Additionne les montants de B2:B6 sur les lignes où la catégorie, en A2:A6, est égale à D2."
+  },
+  "erreurs": [
+   [
+    "Un résultat à 0",
+    "Le troisième argument a été oublié : SOMME.SI additionne alors la plage de critères elle-même."
+   ],
+   [
+    "Un mauvais total en recopiant",
+    "Les plages ne sont pas figées avec des $."
+   ],
+   [
+    "Des montants ignorés",
+    "Des nombres enregistrés comme texte ne sont pas additionnés."
+   ]
+  ],
+  "faq": [
+   [
+    "Quelle différence avec SOMME.SI.ENS ?",
+    "SOMME.SI.ENS accepte plusieurs critères, et la plage à additionner y vient en premier."
+   ],
+   [
+    "Comment additionner les valeurs supérieures à 100 ?",
+    "=SOMME.SI(B2:B20;\">100\") : sans troisième argument, la plage testée est aussi celle qui est additionnée."
+   ]
+  ]
+ },
+ "voirAussi": ["somme-si-ens","nb-si","moyenne-si"],
  "arguments": [
   ["plage","Où chercher le critère"],
   ["critère","Ce qu'il faut trouver"],

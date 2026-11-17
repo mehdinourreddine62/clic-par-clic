@@ -6,6 +6,36 @@
  "motsCles": "doublons supprimer lignes en double uniques nettoyer liste",
  "syntaxe": "Données › Supprimer les doublons",
  "ruban": true,
+ "titreSeo": "Supprimer les doublons dans Excel en quelques clics",
+ "guide": {
+  "question": "Comment supprimer les doublons ?",
+  "intro": "La commande Supprimer les doublons retire les lignes répétées d'une liste et ne garde que la première occurrence de chacune. On choisit les colonnes qui servent à comparer les lignes.",
+  "exemple": {
+   "formule": "Données › Supprimer les doublons",
+   "explication": "Cochez les colonnes à comparer : deux lignes sont des doublons si elles sont identiques sur toutes les colonnes cochées."
+  },
+  "erreurs": [
+   [
+    "Des doublons restent",
+    "Des espaces en trop rendent les valeurs différentes pour Excel. Nettoyez-les d'abord avec SUPPRESPACE."
+   ],
+   [
+    "Des lignes utiles ont disparu",
+    "Trop peu de colonnes étaient cochées. Annulez tout de suite avec Ctrl + Z."
+   ]
+  ],
+  "faq": [
+   [
+    "Comment repérer les doublons sans les supprimer ?",
+    "Avec la mise en forme conditionnelle › Valeurs en double."
+   ],
+   [
+    "Comment obtenir une liste sans doublons à côté des données ?",
+    "Avec la fonction UNIQUE, qui laisse les données d'origine intactes."
+   ]
+  ]
+ },
+ "voirAussi": ["mfc-doublons","unique-trier","supprespace"],
  "arguments": [
   ["Colonnes cochées","Celles qui servent à comparer les lignes"],
   ["Résultat","La première occurrence est gardée"],

@@ -5,6 +5,39 @@
  "resume": "Gérer plusieurs cas sans imbriquer des SI.",
  "motsCles": "plusieurs cas mention ifs imbriqués",
  "syntaxe": "=SI.CONDITIONS(test1; valeur1; test2; valeur2; …)",
+ "titreSeo": "SI.CONDITIONS dans Excel : plusieurs cas sans SI imbriqués",
+ "guide": {
+  "intro": "SI.CONDITIONS teste plusieurs conditions à la suite et renvoie le résultat de la première qui est vraie. Elle remplace avantageusement les SI imbriqués pour attribuer une mention, une tranche ou une catégorie.",
+  "exemple": {
+   "formule": "=SI.CONDITIONS(B2>=16;\"Très bien\";B2>=14;\"Bien\";B2>=10;\"Passable\";VRAI;\"Insuffisant\")",
+   "explication": "Excel lit les tests dans l'ordre et s'arrête au premier qui est vrai. Le VRAI final sert de « sinon » pour tous les cas restants."
+  },
+  "erreurs": [
+   [
+    "#N/A",
+    "Aucune condition n'est vraie. Ajoutez VRAI suivi d'une valeur en dernier."
+   ],
+   [
+    "Une mauvaise mention",
+    "Les tests sont dans le mauvais ordre : commencez par le plus exigeant (>=16 avant >=10)."
+   ],
+   [
+    "#NOM?",
+    "Votre version d'Excel ne connaît pas SI.CONDITIONS (Excel 2016 ou antérieur)."
+   ]
+  ],
+  "faq": [
+   [
+    "Quelle différence avec des SI imbriqués ?",
+    "Le résultat est le même, mais la formule se lit de gauche à droite, sans parenthèses à compter."
+   ],
+   [
+    "Combien de conditions peut-on mettre ?",
+    "Jusqu'à 127 couples test et valeur."
+   ]
+  ]
+ },
+ "voirAussi": ["si","et-ou","recherchev"],
  "arguments": [
   ["test1; valeur1","Le premier cas"],
   ["test2; valeur2","Le cas suivant, et ainsi de suite"],

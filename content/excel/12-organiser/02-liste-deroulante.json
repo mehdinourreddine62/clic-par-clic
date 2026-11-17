@@ -6,6 +6,44 @@
  "motsCles": "liste déroulante validation des données choix menu saisie",
  "syntaxe": "Données › Validation des données › Liste",
  "ruban": true,
+ "titreSeo": "Créer une liste déroulante dans Excel : tutoriel animé",
+ "guide": {
+  "question": "À quoi sert une liste déroulante ?",
+  "intro": "Une liste déroulante oblige à choisir une valeur parmi des choix prévus : un statut, un service, une ville. Elle évite les fautes de frappe et garantit que tout le monde écrit la même chose. Elle se crée avec la validation des données.",
+  "exemple": {
+   "formule": "Données › Validation des données › Liste",
+   "explication": "Dans Source, tapez les choix séparés par des points-virgules (À faire;En cours;Terminé), ou désignez une plage qui les contient."
+  },
+  "erreurs": [
+   [
+    "Pas de flèche dans la cellule",
+    "La case « Liste déroulante dans la cellule » est décochée dans la validation."
+   ],
+   [
+    "Les nouveaux choix n'apparaissent pas",
+    "La source est une plage fixe. Mettez les choix sous forme de tableau pour qu'elle s'agrandisse."
+   ],
+   [
+    "Une valeur refusée",
+    "C'est le but : seules les valeurs de la liste sont acceptées."
+   ]
+  ],
+  "faq": [
+   [
+    "Comment modifier une liste déroulante ?",
+    "Sélectionnez les cellules et rouvrez Données › Validation des données."
+   ],
+   [
+    "Comment supprimer une liste déroulante ?",
+    "Données › Validation des données › Effacer tout."
+   ],
+   [
+    "Peut-on prendre les choix sur une autre feuille ?",
+    "Oui : indiquez la plage dans Source, par exemple =Listes!$A$2:$A$10."
+   ]
+  ]
+ },
+ "voirAussi": ["liste-deroulante-depuis-une-plage","liste-deroulante-message-d-erreur","mettre-sous-forme-de-tableau"],
  "arguments": [
   ["Autoriser","Choisir « Liste »"],
   ["Source","Les choix, séparés par des points-virgules"]

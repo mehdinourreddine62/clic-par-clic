@@ -5,6 +5,40 @@
  "resume": "Afficher la date du jour et calculer une ancienneté ou un âge.",
  "motsCles": "date jour ancienneté âge écart années mois",
  "syntaxe": "=DATEDIF(début; fin; \"y\")",
+ "titreSeo": "Calculer un âge ou une ancienneté dans Excel avec DATEDIF",
+ "guide": {
+  "question": "Comment calculer un âge ou une ancienneté ?",
+  "intro": "AUJOURDHUI renvoie la date du jour et se met à jour à chaque ouverture du fichier. Associée à DATEDIF, elle calcule un âge ou une ancienneté en années, en mois ou en jours complets.",
+  "exemple": {
+   "formule": "=DATEDIF(B2;AUJOURDHUI();\"y\")",
+   "explication": "Nombre d'années complètes entre la date de B2, naissance ou entrée, et aujourd'hui."
+  },
+  "erreurs": [
+   [
+    "#NOMBRE!",
+    "La date de début est postérieure à la date de fin."
+   ],
+   [
+    "#VALEUR!",
+    "La date est du texte et non une vraie date. Convertissez-la avec DATEVAL."
+   ],
+   [
+    "La fonction n'est pas proposée",
+    "DATEDIF n'apparaît pas pendant la saisie, mais elle fonctionne si on la tape entièrement."
+   ]
+  ],
+  "faq": [
+   [
+    "Comment avoir l'âge en années et en mois ?",
+    "=DATEDIF(B2;AUJOURDHUI();\"y\")&\" ans \"&DATEDIF(B2;AUJOURDHUI();\"ym\")&\" mois\"."
+   ],
+   [
+    "Comment compter les jours entre deux dates ?",
+    "Une simple soustraction suffit : =date_fin-date_début."
+   ]
+  ]
+ },
+ "voirAussi": ["ecart-entre-deux-dates","annee-mois-jour","nb-jours-ouvres"],
  "arguments": [
   ["AUJOURDHUI()","La date du jour"],
   ["\"y\"","Années complètes"],

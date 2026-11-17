@@ -7,6 +7,40 @@
  "syntaxe": "Insertion › Tableau croisé dynamique",
  "ruban": true,
  "largeurs": {"E":26},
+ "titreSeo": "Créer un tableau croisé dynamique dans Excel : tutoriel animé",
+ "guide": {
+  "question": "À quoi sert un tableau croisé dynamique ?",
+  "intro": "Un tableau croisé dynamique résume un grand tableau en quelques clics, sans écrire de formule : total des ventes par région, nombre de commandes par client, moyenne par mois. On choisit simplement les champs à placer en lignes, en colonnes et en valeurs.",
+  "exemple": {
+   "formule": "Insertion › Tableau croisé dynamique",
+   "explication": "Cochez Région pour la placer en lignes, puis Montant pour l'additionner : Excel affiche le total de chaque région."
+  },
+  "erreurs": [
+   [
+    "Les chiffres ne changent pas",
+    "Le tableau croisé ne se met pas à jour tout seul : cliquez sur Actualiser après avoir modifié les données."
+   ],
+   [
+    "« Nombre de » au lieu de « Somme de »",
+    "La colonne contient du texte ou des cellules vides. Corrigez les données, ou changez le calcul par clic droit › Synthétiser les valeurs par."
+   ],
+   [
+    "« Le nom du champ n'est pas valide »",
+    "Une colonne des données n'a pas de titre."
+   ]
+  ],
+  "faq": [
+   [
+    "Faut-il préparer les données ?",
+    "Oui : un bloc continu, une ligne de titres, et aucune ligne de total au milieu."
+   ],
+   [
+    "Les nouvelles lignes sont-elles prises en compte ?",
+    "Seulement si les données sont mises sous forme de tableau (Ctrl + L), ou si vous changez la source de données."
+   ]
+  ]
+ },
+ "voirAussi": ["tcd-lignes-et-colonnes","tcd-actualiser","tcd-segments","mettre-sous-forme-de-tableau"],
  "arguments": [
   ["Champs","Les colonnes de votre tableau"],
   ["Lignes","Ce que l'on veut regrouper"],

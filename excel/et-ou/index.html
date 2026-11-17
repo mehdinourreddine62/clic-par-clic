@@ -3,17 +3,18 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>ET et OU – Excel en animation | Clic par clic</title>
-<meta name="description" content="Combiner plusieurs conditions dans un SI. Leçon Excel animée en 2 étapes, niveau intermédiaire, gratuite.">
+<title>ET et OU dans Excel : combiner plusieurs conditions dans un SI | Clic par clic</title>
+<meta name="description" content="ET renvoie VRAI seulement si toutes les conditions sont vraies ; OU renvoie VRAI dès qu'une seule l'est.">
 <link rel="canonical" href="https://mehdinourreddine62.github.io/clic-par-clic/excel/et-ou/">
 <meta name="robots" content="index,follow">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="Clic par clic">
-<meta property="og:title" content="ET et OU – Excel en animation | Clic par clic">
-<meta property="og:description" content="Combiner plusieurs conditions dans un SI. Leçon Excel animée en 2 étapes, niveau intermédiaire, gratuite.">
+<meta property="og:title" content="ET et OU dans Excel : combiner plusieurs conditions dans un SI | Clic par clic">
+<meta property="og:description" content="ET renvoie VRAI seulement si toutes les conditions sont vraies ; OU renvoie VRAI dès qu'une seule l'est.">
 <meta property="og:url" content="https://mehdinourreddine62.github.io/clic-par-clic/excel/et-ou/">
 <meta name="twitter:card" content="summary">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Clic par clic","item":"https://mehdinourreddine62.github.io/clic-par-clic/"},{"@type":"ListItem","position":2,"name":"Logique","item":"https://mehdinourreddine62.github.io/clic-par-clic/#theme-logique"},{"@type":"ListItem","position":3,"name":"ET et OU","item":"https://mehdinourreddine62.github.io/clic-par-clic/excel/et-ou/"}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","name":"ET et OU dans Excel","description":"Combiner plusieurs conditions dans un SI.","inLanguage":"fr","isAccessibleForFree":true,"educationalLevel":"Intermédiaire","learningResourceType":"Leçon animée","url":"https://mehdinourreddine62.github.io/clic-par-clic/excel/et-ou/","isPartOf":{"@type":"Course","name":"Clic par clic : apprendre Excel en animation","url":"https://mehdinourreddine62.github.io/clic-par-clic/"}}</script>
 <script>document.documentElement.classList.add("js");try{var t=localStorage.getItem("cpc-theme");if(t==="dark"||t==="light")document.documentElement.dataset.theme=t}catch(e){}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap">
@@ -23,7 +24,7 @@
 <div class="wrap">
   <div class="topbar"><a class="brand" href="../../"><span class="logo" aria-hidden="true"><i></i><i class="on"></i><i></i><i class="on"></i><i class="on"></i><i></i></span>Clic par clic</a><button class="theme" id="theme" type="button"></button></div>
   <main id="lesson">
-    <a class="back" href="../../#theme-logique">← Logique</a>
+    <nav class="crumbs" aria-label="Fil d'Ariane"><a href="../../">Accueil</a><span aria-hidden="true">›</span><a href="../../#theme-logique">Logique</a><span aria-hidden="true">›</span><span>ET et OU</span></nav>
     <div class="lhead">
       <div class="meta"><span class="tag" style="--k:var(--r4)"><svg viewBox="0 0 24 24"><path d="M12 3v6M12 9l-6 5v7M12 9l6 5v7"/></svg>Logique</span><span><span class="lvl" title="Intermédiaire" aria-label="Intermédiaire"><i class="on"></i><i class="on"></i><i class=""></i></span> Intermédiaire</span></div>
       <h1>ET et OU</h1>
@@ -46,6 +47,18 @@
     <p class="hint">Clavier : <kbd>←</kbd> <kbd>→</kbd> pour changer d'étape, <kbd>Espace</kbd> pour lancer ou mettre en pause.</p>
     <details class="sx"><summary>Syntaxe <code>=SI(ET(test1; test2); si_vrai; si_faux)</code></summary><dl><dt>ET</dt><dd>Vrai seulement si tous les tests sont vrais</dd><dt>OU</dt><dd>Vrai si au moins un test est vrai</dd></dl></details>
     <details class="sx"><summary>Résumé écrit des étapes</summary><ol class="steps"><li>ET : toutes les conditions doivent être vraies.</li><li>OU : une seule condition vraie suffit.</li></ol></details>
+    <section class="guide">
+      <h2>À quoi servent ET et OU ?</h2>
+      <p>ET renvoie VRAI seulement si toutes les conditions sont vraies ; OU renvoie VRAI dès qu'une seule l'est. Placées dans le test d'un SI, elles permettent par exemple d'exiger 10 à l'écrit et à l'oral, ou d'accepter l'un des deux.</p>
+      <h3>Exemple</h3>
+      <p><code class="gx">=SI(ET(B2&gt;=10;C2&gt;=10);&quot;Oui&quot;;&quot;Non&quot;)</code></p>
+      <p>Affiche Oui seulement si l'écrit (B2) et l'oral (C2) atteignent tous les deux 10.</p>
+      <h3>Erreurs fréquentes</h3>
+      <ul><li><b>Point-virgule oublié</b>Les conditions de ET et de OU se séparent par des points-virgules.</li><li><b>Confondre ET et OU</b>Demandez-vous si toutes les conditions sont nécessaires (ET) ou si une seule suffit (OU).</li></ul>
+      <h3>Questions fréquentes</h3>
+      <h4>Peut-on mélanger ET et OU ?</h4><p>Oui, en les imbriquant : =SI(ET(A2=&quot;Nord&quot;;OU(B2&gt;100;C2=&quot;VIP&quot;));&quot;Oui&quot;;&quot;Non&quot;).</p><h4>Combien de conditions accepte ET ?</h4><p>Jusqu'à 255.</p>
+    </section>
+    <section class="also"><h2>Voir aussi</h2><div class="also-l"><a href="../si/"><b>SI</b><small>Afficher un résultat différent selon une condition.</small></a><a href="../si-conditions/"><b>SI.CONDITIONS</b><small>Gérer plusieurs cas sans imbriquer des SI.</small></a><a href="../nb-si-ens/"><b>NB.SI.ENS</b><small>Compter selon plusieurs conditions à la fois.</small></a></div></section>
     <nav class="lnav" aria-label="Leçons voisines"><a href="../si-conditions/"><small>← Précédente</small>SI.CONDITIONS</a><a class="nx" id="nextLesson" href="../sierreur/"><small>Suivante →</small>SIERREUR</a></nav>
   </main>
 </div>

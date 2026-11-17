@@ -3,17 +3,18 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>NB.SI.ENS – Excel en animation | Clic par clic</title>
-<meta name="description" content="Compter selon plusieurs conditions à la fois. Leçon Excel animée en 2 étapes, niveau intermédiaire, gratuite.">
+<title>NB.SI.ENS dans Excel : compter avec plusieurs conditions | Clic par clic</title>
+<meta name="description" content="NB.SI.ENS compte les lignes qui respectent plusieurs conditions à la fois, par exemple les ventes d'un vendeur dans une région.">
 <link rel="canonical" href="https://mehdinourreddine62.github.io/clic-par-clic/excel/nb-si-ens/">
 <meta name="robots" content="index,follow">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="Clic par clic">
-<meta property="og:title" content="NB.SI.ENS – Excel en animation | Clic par clic">
-<meta property="og:description" content="Compter selon plusieurs conditions à la fois. Leçon Excel animée en 2 étapes, niveau intermédiaire, gratuite.">
+<meta property="og:title" content="NB.SI.ENS dans Excel : compter avec plusieurs conditions | Clic par clic">
+<meta property="og:description" content="NB.SI.ENS compte les lignes qui respectent plusieurs conditions à la fois, par exemple les ventes d'un vendeur dans une région.">
 <meta property="og:url" content="https://mehdinourreddine62.github.io/clic-par-clic/excel/nb-si-ens/">
 <meta name="twitter:card" content="summary">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Clic par clic","item":"https://mehdinourreddine62.github.io/clic-par-clic/"},{"@type":"ListItem","position":2,"name":"Compter et classer","item":"https://mehdinourreddine62.github.io/clic-par-clic/#theme-stat"},{"@type":"ListItem","position":3,"name":"NB.SI.ENS","item":"https://mehdinourreddine62.github.io/clic-par-clic/excel/nb-si-ens/"}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","name":"NB.SI.ENS dans Excel","description":"Compter selon plusieurs conditions à la fois.","inLanguage":"fr","isAccessibleForFree":true,"educationalLevel":"Intermédiaire","learningResourceType":"Leçon animée","url":"https://mehdinourreddine62.github.io/clic-par-clic/excel/nb-si-ens/","isPartOf":{"@type":"Course","name":"Clic par clic : apprendre Excel en animation","url":"https://mehdinourreddine62.github.io/clic-par-clic/"}}</script>
 <script>document.documentElement.classList.add("js");try{var t=localStorage.getItem("cpc-theme");if(t==="dark"||t==="light")document.documentElement.dataset.theme=t}catch(e){}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap">
@@ -23,7 +24,7 @@
 <div class="wrap">
   <div class="topbar"><a class="brand" href="../../"><span class="logo" aria-hidden="true"><i></i><i class="on"></i><i></i><i class="on"></i><i class="on"></i><i></i></span>Clic par clic</a><button class="theme" id="theme" type="button"></button></div>
   <main id="lesson">
-    <a class="back" href="../../#theme-stat">← Compter et classer</a>
+    <nav class="crumbs" aria-label="Fil d'Ariane"><a href="../../">Accueil</a><span aria-hidden="true">›</span><a href="../../#theme-stat">Compter et classer</a><span aria-hidden="true">›</span><span>NB.SI.ENS</span></nav>
     <div class="lhead">
       <div class="meta"><span class="tag" style="--k:var(--r2)"><svg viewBox="0 0 24 24"><path d="M5 20v-8M12 20V4M19 20v-5M3 20h18"/></svg>Compter et classer</span><span><span class="lvl" title="Intermédiaire" aria-label="Intermédiaire"><i class="on"></i><i class="on"></i><i class=""></i></span> Intermédiaire</span></div>
       <h1>NB.SI.ENS</h1>
@@ -46,6 +47,18 @@
     <p class="hint">Clavier : <kbd>←</kbd> <kbd>→</kbd> pour changer d'étape, <kbd>Espace</kbd> pour lancer ou mettre en pause.</p>
     <details class="sx"><summary>Syntaxe <code>=NB.SI.ENS(plage1; critère1; plage2; critère2)</code></summary><dl><dt>plage1; critère1</dt><dd>La première condition</dd><dt>plage2; critère2</dt><dd>La deuxième condition, et ainsi de suite</dd></dl></details>
     <details class="sx"><summary>Résumé écrit des étapes</summary><ol class="steps"><li>Chaque couple plage + critère ajoute une condition. Toutes doivent être vraies.</li><li>Le critère peut être une comparaison : ici, les ventes d'Alice d'au moins 200.</li></ol></details>
+    <section class="guide">
+      <h2>À quoi sert NB.SI.ENS ?</h2>
+      <p>NB.SI.ENS compte les lignes qui respectent plusieurs conditions à la fois, par exemple les ventes d'un vendeur dans une région. Chaque condition s'écrit sous la forme d'un couple plage et critère.</p>
+      <h3>Exemple</h3>
+      <p><code class="gx">=NB.SI.ENS(A2:A6;&quot;Alice&quot;;B2:B6;&quot;Nord&quot;)</code></p>
+      <p>Compte les lignes où la colonne A vaut Alice et où la colonne B vaut Nord.</p>
+      <h3>Erreurs fréquentes</h3>
+      <ul><li><b>#VALEUR!</b>Les plages n'ont pas la même taille : elles doivent couvrir les mêmes lignes.</li><li><b>Un résultat à 0</b>Toutes les conditions doivent être vraies sur la même ligne. Vérifiez qu'une telle ligne existe.</li></ul>
+      <h3>Questions fréquentes</h3>
+      <h4>Comment faire un OU avec NB.SI.ENS ?</h4><p>Additionnez deux NB.SI : =NB.SI(B2:B6;&quot;Nord&quot;)+NB.SI(B2:B6;&quot;Sud&quot;).</p><h4>Peut-on compter entre deux dates ?</h4><p>Oui : =NB.SI.ENS(A2:A50;&quot;&gt;=&quot;&amp;D1;A2:A50;&quot;&lt;=&quot;&amp;D2).</p>
+    </section>
+    <section class="also"><h2>Voir aussi</h2><div class="also-l"><a href="../nb-si/"><b>NB.SI</b><small>Compter les cellules qui respectent une condition.</small></a><a href="../somme-si-ens/"><b>SOMME.SI.ENS</b><small>Additionner selon plusieurs critères.</small></a><a href="../et-ou/"><b>ET et OU</b><small>Combiner plusieurs conditions dans un SI.</small></a></div></section>
     <nav class="lnav" aria-label="Leçons voisines"><a href="../nb-si/"><small>← Précédente</small>NB.SI</a><a class="nx" id="nextLesson" href="../somme-si/"><small>Suivante →</small>SOMME.SI</a></nav>
   </main>
 </div>

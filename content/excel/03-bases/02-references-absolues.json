@@ -5,6 +5,40 @@
  "resume": "Empêcher une référence de bouger quand on recopie.",
  "motsCles": "dollar f4 figer relative absolue mixte recopie",
  "syntaxe": "$E$2",
+ "titreSeo": "Le $ dans une formule Excel : figer une cellule avec les références absolues",
+ "guide": {
+  "question": "À quoi sert le $ dans une formule ?",
+  "intro": "Quand on recopie une formule, Excel décale ses références : B2 devient B3, puis B4. Le symbole $ empêche ce décalage : $E$2 désigne toujours la même cellule. C'est indispensable pour un taux, un total ou un paramètre écrit une seule fois.",
+  "exemple": {
+   "formule": "=B2*(1+$E$2)",
+   "explication": "B2 se décale à chaque ligne, mais $E$2, le taux de TVA, reste fixe."
+  },
+  "erreurs": [
+   [
+    "Des résultats faux en recopiant",
+    "Le $ a été oublié : la référence glisse vers une cellule vide plus bas."
+   ],
+   [
+    "Un $ mal placé",
+    "$E2 fige seulement la colonne, E$2 seulement la ligne."
+   ]
+  ],
+  "faq": [
+   [
+    "Comment mettre les $ rapidement ?",
+    "Placez le curseur sur la référence et appuyez sur F4. Chaque appui passe à la forme suivante."
+   ],
+   [
+    "Que veut dire $A1 ?",
+    "C'est une référence mixte : la colonne A est figée, la ligne reste libre."
+   ],
+   [
+    "Existe-t-il une alternative au $ ?",
+    "Oui : nommer la cellule, par exemple TauxTVA, puis utiliser ce nom dans la formule."
+   ]
+  ]
+ },
+ "voirAussi": ["nommer-une-cellule","ecrire-une-formule","pourcentages"],
  "arguments": [
   ["E2","Relative : elle glisse quand on recopie"],
   ["$E$2","Absolue : elle ne bouge jamais"],

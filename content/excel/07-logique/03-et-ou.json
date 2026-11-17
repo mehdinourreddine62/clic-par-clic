@@ -5,6 +5,36 @@
  "resume": "Combiner plusieurs conditions dans un SI.",
  "motsCles": "plusieurs conditions and or si",
  "syntaxe": "=SI(ET(test1; test2); si_vrai; si_faux)",
+ "titreSeo": "ET et OU dans Excel : combiner plusieurs conditions dans un SI",
+ "guide": {
+  "question": "À quoi servent ET et OU ?",
+  "intro": "ET renvoie VRAI seulement si toutes les conditions sont vraies ; OU renvoie VRAI dès qu'une seule l'est. Placées dans le test d'un SI, elles permettent par exemple d'exiger 10 à l'écrit et à l'oral, ou d'accepter l'un des deux.",
+  "exemple": {
+   "formule": "=SI(ET(B2>=10;C2>=10);\"Oui\";\"Non\")",
+   "explication": "Affiche Oui seulement si l'écrit (B2) et l'oral (C2) atteignent tous les deux 10."
+  },
+  "erreurs": [
+   [
+    "Point-virgule oublié",
+    "Les conditions de ET et de OU se séparent par des points-virgules."
+   ],
+   [
+    "Confondre ET et OU",
+    "Demandez-vous si toutes les conditions sont nécessaires (ET) ou si une seule suffit (OU)."
+   ]
+  ],
+  "faq": [
+   [
+    "Peut-on mélanger ET et OU ?",
+    "Oui, en les imbriquant : =SI(ET(A2=\"Nord\";OU(B2>100;C2=\"VIP\"));\"Oui\";\"Non\")."
+   ],
+   [
+    "Combien de conditions accepte ET ?",
+    "Jusqu'à 255."
+   ]
+  ]
+ },
+ "voirAussi": ["si","si-conditions","nb-si-ens"],
  "arguments": [
   ["ET","Vrai seulement si tous les tests sont vrais"],
   ["OU","Vrai si au moins un test est vrai"]

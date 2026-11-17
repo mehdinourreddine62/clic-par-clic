@@ -5,6 +5,44 @@
  "resume": "Calculer une évolution et une part du total.",
  "motsCles": "pourcentage évolution variation part proportion taux",
  "syntaxe": "=(nouveau-ancien)/ancien",
+ "titreSeo": "Calculer un pourcentage dans Excel : évolution et part du total",
+ "guide": {
+  "question": "Comment calculer un pourcentage ?",
+  "intro": "Excel n'a pas de fonction « pourcentage » : on calcule avec une division, puis on applique le format %. Les deux calculs les plus courants sont l'évolution entre deux valeurs et la part d'une valeur dans un total.",
+  "exemple": {
+   "formule": "=(C2-B2)/B2",
+   "explication": "Évolution : la différence entre la nouvelle et l'ancienne valeur, divisée par l'ancienne. De 400 à 500, on obtient 25 %."
+  },
+  "erreurs": [
+   [
+    "0,25 au lieu de 25 %",
+    "La cellule n'est pas au format %. Cliquez sur le bouton % de l'onglet Accueil."
+   ],
+   [
+    "2 500 % au lieu de 25 %",
+    "La formule multiplie par 100, alors que le format % le fait déjà."
+   ],
+   [
+    "#DIV/0!",
+    "L'ancienne valeur vaut 0 : une évolution depuis zéro n'a pas de sens."
+   ]
+  ],
+  "faq": [
+   [
+    "Comment calculer la part d'un total ?",
+    "Divisez la valeur par le total, figé avec des $ : =C2/$C$5."
+   ],
+   [
+    "Comment ajouter 20 % à un prix ?",
+    "=prix*(1+20%), ou =prix*1,2."
+   ],
+   [
+    "Comment retirer 20 % d'un prix ?",
+    "=prix*(1-20%). Attention : pour passer du TTC au HT, il faut diviser par 1,2."
+   ]
+  ]
+ },
+ "voirAussi": ["calculer-une-remise","tva-ht-et-ttc","references-absolues"],
  "arguments": [
   ["Évolution","(nouvelle valeur − ancienne) ÷ ancienne"],
   ["Part du total","valeur ÷ total"],

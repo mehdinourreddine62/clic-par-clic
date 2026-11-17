@@ -5,6 +5,40 @@
  "resume": "Coller plusieurs textes dans une seule cellule.",
  "motsCles": "concat concaténer esperluette majuscule joindre",
  "syntaxe": "=A2&\" \"&B2",
+ "titreSeo": "Concaténer dans Excel : assembler prénom et nom avec &",
+ "guide": {
+  "question": "Comment assembler du texte ?",
+  "intro": "Pour coller plusieurs textes dans une seule cellule, Excel utilise le symbole & ou la fonction CONCAT. C'est ainsi qu'on assemble un prénom et un nom, une adresse complète ou un identifiant.",
+  "exemple": {
+   "formule": "=A2&\" \"&B2",
+   "explication": "Colle le prénom (A2), un espace, puis le nom (B2) : Marie Durand."
+  },
+  "erreurs": [
+   [
+    "Des mots collés",
+    "L'espace a été oublié : ajoutez \" \" entre les deux morceaux."
+   ],
+   [
+    "Une date transformée en nombre",
+    "Une date assemblée à du texte s'affiche comme un nombre. Utilisez TEXTE(date;\"jj/mm/aaaa\")."
+   ]
+  ],
+  "faq": [
+   [
+    "Quelle différence entre & et CONCAT ?",
+    "Aucune pour le résultat. CONCAT accepte en plus une plage entière."
+   ],
+   [
+    "Comment assembler une plage avec un séparateur ?",
+    "Avec JOINDRE.TEXTE : =JOINDRE.TEXTE(\" - \";VRAI;A2:C2)."
+   ],
+   [
+    "Et CONCATENER ?",
+    "C'est l'ancienne version de CONCAT, toujours disponible."
+   ]
+  ]
+ },
+ "voirAussi": ["joindre-texte","gauche-droite-stxt","majuscule-minuscule-nompropre"],
  "arguments": [
   ["&","Colle deux textes"],
   ["\" \"","Un espace, écrit entre guillemets"],

@@ -3,17 +3,18 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Créer une liste déroulante – Excel en animation | Clic par clic</title>
-<meta name="description" content="Faire choisir une valeur dans une liste, sans faute de frappe. Leçon Excel animée en 5 étapes, niveau débutant, gratuite.">
+<title>Créer une liste déroulante dans Excel : tutoriel animé | Clic par clic</title>
+<meta name="description" content="Une liste déroulante oblige à choisir une valeur parmi des choix prévus : un statut, un service, une ville.">
 <link rel="canonical" href="https://mehdinourreddine62.github.io/clic-par-clic/excel/liste-deroulante/">
 <meta name="robots" content="index,follow">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="Clic par clic">
-<meta property="og:title" content="Créer une liste déroulante – Excel en animation | Clic par clic">
-<meta property="og:description" content="Faire choisir une valeur dans une liste, sans faute de frappe. Leçon Excel animée en 5 étapes, niveau débutant, gratuite.">
+<meta property="og:title" content="Créer une liste déroulante dans Excel : tutoriel animé | Clic par clic">
+<meta property="og:description" content="Une liste déroulante oblige à choisir une valeur parmi des choix prévus : un statut, un service, une ville.">
 <meta property="og:url" content="https://mehdinourreddine62.github.io/clic-par-clic/excel/liste-deroulante/">
 <meta name="twitter:card" content="summary">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Clic par clic","item":"https://mehdinourreddine62.github.io/clic-par-clic/"},{"@type":"ListItem","position":2,"name":"Organiser ses données","item":"https://mehdinourreddine62.github.io/clic-par-clic/#theme-organiser"},{"@type":"ListItem","position":3,"name":"Créer une liste déroulante","item":"https://mehdinourreddine62.github.io/clic-par-clic/excel/liste-deroulante/"}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","name":"Créer une liste déroulante dans Excel","description":"Faire choisir une valeur dans une liste, sans faute de frappe.","inLanguage":"fr","isAccessibleForFree":true,"educationalLevel":"Débutant","learningResourceType":"Leçon animée","url":"https://mehdinourreddine62.github.io/clic-par-clic/excel/liste-deroulante/","isPartOf":{"@type":"Course","name":"Clic par clic : apprendre Excel en animation","url":"https://mehdinourreddine62.github.io/clic-par-clic/"}}</script>
 <script>document.documentElement.classList.add("js");try{var t=localStorage.getItem("cpc-theme");if(t==="dark"||t==="light")document.documentElement.dataset.theme=t}catch(e){}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap">
@@ -23,7 +24,7 @@
 <div class="wrap">
   <div class="topbar"><a class="brand" href="../../"><span class="logo" aria-hidden="true"><i></i><i class="on"></i><i></i><i class="on"></i><i class="on"></i><i></i></span>Clic par clic</a><button class="theme" id="theme" type="button"></button></div>
   <main id="lesson">
-    <a class="back" href="../../#theme-organiser">← Organiser ses données</a>
+    <nav class="crumbs" aria-label="Fil d'Ariane"><a href="../../">Accueil</a><span aria-hidden="true">›</span><a href="../../#theme-organiser">Organiser ses données</a><span aria-hidden="true">›</span><span>Créer une liste déroulante</span></nav>
     <div class="lhead">
       <div class="meta"><span class="tag" style="--k:var(--k12)"><svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h10M4 18h13"/><path d="M18 10l3 3-3 3"/></svg>Organiser ses données</span><span><span class="lvl" title="Débutant" aria-label="Débutant"><i class="on"></i><i class=""></i><i class=""></i></span> Débutant</span></div>
       <h1>Créer une liste déroulante</h1>
@@ -46,6 +47,18 @@
     <p class="hint">Clavier : <kbd>←</kbd> <kbd>→</kbd> pour changer d'étape, <kbd>Espace</kbd> pour lancer ou mettre en pause.</p>
     <details class="sx"><summary>Syntaxe <code>Données › Validation des données › Liste</code></summary><dl><dt>Autoriser</dt><dd>Choisir « Liste »</dd><dt>Source</dt><dd>Les choix, séparés par des points-virgules</dd></dl></details>
     <details class="sx"><summary>Résumé écrit des étapes</summary><ol class="steps"><li>Sélectionnez les cellules à contrôler, puis ouvrez « Validation des données ».</li><li>Choisissez « Liste » et tapez les choix, séparés par des points-virgules.</li><li>Une flèche apparaît dans la cellule : un clic ouvre la liste.</li><li>Choisissez une valeur : plus de faute de frappe, tout le monde écrit la même chose.</li><li>La liste fonctionne dans toutes les cellules sélectionnées au départ.</li></ol></details>
+    <section class="guide">
+      <h2>À quoi sert une liste déroulante ?</h2>
+      <p>Une liste déroulante oblige à choisir une valeur parmi des choix prévus : un statut, un service, une ville. Elle évite les fautes de frappe et garantit que tout le monde écrit la même chose. Elle se crée avec la validation des données.</p>
+      <h3>Exemple</h3>
+      <p><code class="gx">Données › Validation des données › Liste</code></p>
+      <p>Dans Source, tapez les choix séparés par des points-virgules (À faire;En cours;Terminé), ou désignez une plage qui les contient.</p>
+      <h3>Erreurs fréquentes</h3>
+      <ul><li><b>Pas de flèche dans la cellule</b>La case « Liste déroulante dans la cellule » est décochée dans la validation.</li><li><b>Les nouveaux choix n'apparaissent pas</b>La source est une plage fixe. Mettez les choix sous forme de tableau pour qu'elle s'agrandisse.</li><li><b>Une valeur refusée</b>C'est le but : seules les valeurs de la liste sont acceptées.</li></ul>
+      <h3>Questions fréquentes</h3>
+      <h4>Comment modifier une liste déroulante ?</h4><p>Sélectionnez les cellules et rouvrez Données › Validation des données.</p><h4>Comment supprimer une liste déroulante ?</h4><p>Données › Validation des données › Effacer tout.</p><h4>Peut-on prendre les choix sur une autre feuille ?</h4><p>Oui : indiquez la plage dans Source, par exemple =Listes!$A$2:$A$10.</p>
+    </section>
+    <section class="also"><h2>Voir aussi</h2><div class="also-l"><a href="../liste-deroulante-depuis-une-plage/"><b>Liste déroulante depuis une plage</b><small>Une liste qui se met à jour quand ses choix changent.</small></a><a href="../liste-deroulante-message-d-erreur/"><b>Liste déroulante : messages</b><small>Bloquer les mauvaises saisies et guider la personne qui remplit.</small></a><a href="../mettre-sous-forme-de-tableau/"><b>Mettre sous forme de tableau</b><small>Un vrai tableau : mise en forme, filtres et total automatiques.</small></a></div></section>
     <nav class="lnav" aria-label="Leçons voisines"><a href="../mettre-sous-forme-de-tableau/"><small>← Précédente</small>Mettre sous forme de tableau</a><a class="nx" id="nextLesson" href="../liste-deroulante-depuis-une-plage/"><small>Suivante →</small>Liste déroulante depuis une plage</a></nav>
   </main>
 </div>

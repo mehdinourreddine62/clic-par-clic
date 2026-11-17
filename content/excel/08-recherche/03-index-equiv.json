@@ -5,6 +5,39 @@
  "resume": "Lire une valeur à l'intersection d'une ligne et d'une colonne.",
  "motsCles": "index match equiv position double entrée tableau",
  "syntaxe": "=INDEX(tableau; EQUIV(…); EQUIV(…))",
+ "titreSeo": "INDEX EQUIV dans Excel : rechercher dans un tableau à double entrée",
+ "guide": {
+  "intro": "INDEX + EQUIV est la combinaison de recherche la plus souple d'Excel. EQUIV trouve la position d'une valeur dans une ligne ou une colonne, et INDEX lit la cellule à cette position. Elle fonctionne dans toutes les versions, dans toutes les directions, et sur des tableaux à double entrée.",
+  "exemple": {
+   "formule": "=INDEX(B2:D4;EQUIV(G2;A2:A4;0);EQUIV(G3;B1:D1;0))",
+   "explication": "EQUIV trouve la ligne de la ville (G2) et la colonne du mois (G3) ; INDEX renvoie la valeur à leur intersection."
+  },
+  "erreurs": [
+   [
+    "#N/A",
+    "EQUIV ne trouve pas la valeur. Vérifiez l'orthographe, et le 0 final qui demande une correspondance exacte."
+   ],
+   [
+    "#REF!",
+    "La position trouvée dépasse la taille du tableau donné à INDEX."
+   ],
+   [
+    "Un résultat décalé",
+    "Les plages d'EQUIV et d'INDEX ne commencent pas sur la même ligne ou la même colonne."
+   ]
+  ],
+  "faq": [
+   [
+    "Pourquoi utiliser INDEX EQUIV plutôt que RECHERCHEV ?",
+    "Elle cherche aussi vers la gauche, ne casse pas quand on insère une colonne, et lit un tableau à double entrée."
+   ],
+   [
+    "INDEX EQUIV ou RECHERCHEX ?",
+    "RECHERCHEX est plus simple si tout le monde utilise Microsoft 365. INDEX EQUIV reste la solution qui fonctionne partout."
+   ]
+  ]
+ },
+ "voirAussi": ["recherchev","recherchex","erreur-na"],
  "arguments": [
   ["EQUIV(valeur; plage; 0)","La position de la valeur dans la plage"],
   ["INDEX(tableau; ligne; colonne)","La valeur à cette position"]

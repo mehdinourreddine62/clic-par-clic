@@ -5,6 +5,43 @@
  "resume": "Afficher un résultat différent selon une condition.",
  "motsCles": "condition test alors sinon if",
  "syntaxe": "=SI(test; si_vrai; si_faux)",
+ "titreSeo": "Fonction SI dans Excel : exemple animé pas à pas",
+ "guide": {
+  "intro": "La fonction SI affiche un résultat différent selon qu'une condition est remplie ou non : « Admis » si la note atteint 10, « Ajourné » sinon. C'est la fonction logique de base d'Excel, et la porte d'entrée vers ET, OU et SI.CONDITIONS.",
+  "exemple": {
+   "formule": "=SI(B2>=10;\"Admis\";\"Ajourné\")",
+   "explication": "Si la note en B2 est supérieure ou égale à 10, la cellule affiche Admis ; sinon, elle affiche Ajourné."
+  },
+  "erreurs": [
+   [
+    "#NOM?",
+    "Le texte n'est pas entre guillemets : écrivez \"Admis\" et non Admis."
+   ],
+   [
+    "Un résultat toujours faux",
+    "L'opérateur est inversé, ou la cellule testée contient du texte qui ressemble à un nombre."
+   ],
+   [
+    "Trop de SI imbriqués",
+    "Au-delà de deux ou trois cas, la formule devient illisible : passez à SI.CONDITIONS."
+   ]
+  ],
+  "faq": [
+   [
+    "Comment écrire « différent de » dans un SI ?",
+    "Avec <> : =SI(A2<>\"Payé\";\"À relancer\";\"\")."
+   ],
+   [
+    "Comment tester deux conditions à la fois ?",
+    "Placez ET ou OU dans le test : =SI(ET(B2>=10;C2>=10);\"Oui\";\"Non\")."
+   ],
+   [
+    "Comment laisser la cellule vide ?",
+    "Écrivez deux guillemets collés à la place du texte : =SI(B2=\"\";\"\";B2*2)."
+   ]
+  ]
+ },
+ "voirAussi": ["si-conditions","et-ou","sierreur","nb-si"],
  "arguments": [
   ["test","Une comparaison, par exemple B2>=10"],
   ["si_vrai","Ce qui s'affiche si le test est vrai"],

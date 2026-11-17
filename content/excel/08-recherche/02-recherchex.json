@@ -5,6 +5,43 @@
  "resume": "La version moderne de RECHERCHEV, plus simple et plus souple.",
  "motsCles": "xlookup chercher trouver correspondance",
  "syntaxe": "=RECHERCHEX(valeur; plage_recherche; plage_résultat; [si_introuvable])",
+ "titreSeo": "RECHERCHEX dans Excel : la recherche moderne, exemple animé",
+ "guide": {
+  "intro": "RECHERCHEX (XLOOKUP en anglais) remplace RECHERCHEV dans Excel 2021 et Microsoft 365. On lui indique séparément la colonne où chercher et la colonne à renvoyer : elle peut donc renvoyer une information située à gauche, et afficher un texte de votre choix quand rien n'est trouvé.",
+  "exemple": {
+   "formule": "=RECHERCHEX(E2;B2:B5;A2:A5;\"Introuvable\")",
+   "explication": "Cherche la référence de E2 dans B2:B5 et renvoie le produit situé sur la même ligne dans A2:A5. Si la référence n'existe pas, la cellule affiche « Introuvable »."
+  },
+  "erreurs": [
+   [
+    "#NOM?",
+    "Votre version d'Excel ne connaît pas RECHERCHEX (Excel 2019 ou antérieur). Utilisez RECHERCHEV ou INDEX + EQUIV."
+   ],
+   [
+    "#VALEUR!",
+    "La plage de recherche et la plage de résultat n'ont pas la même taille. Elles doivent commencer et finir sur les mêmes lignes."
+   ],
+   [
+    "#N/A",
+    "Rien n'a été trouvé et le 4e argument est vide. Ajoutez un texte comme \"Introuvable\"."
+   ]
+  ],
+  "faq": [
+   [
+    "RECHERCHEX fonctionne-t-elle dans toutes les versions d'Excel ?",
+    "Non : seulement dans Excel 2021, Excel 2024 et Microsoft 365. Un fichier qui l'utilise affiche une erreur dans une version plus ancienne."
+   ],
+   [
+    "Peut-on renvoyer plusieurs colonnes d'un coup ?",
+    "Oui : si la plage de résultat couvre plusieurs colonnes, RECHERCHEX renvoie toute la ligne, qui se propage dans les cellules voisines."
+   ],
+   [
+    "Faut-il trier les données ?",
+    "Non. La correspondance exacte est le mode par défaut et ne demande aucun tri."
+   ]
+  ]
+ },
+ "voirAussi": ["recherchev","index-equiv","filtre","sierreur"],
  "arguments": [
   ["valeur","Ce que l'on cherche"],
   ["plage_recherche","La colonne où chercher"],

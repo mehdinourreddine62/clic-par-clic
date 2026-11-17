@@ -6,6 +6,40 @@
  "motsCles": "figer volets colonne ligne bloquer défiler libérer",
  "syntaxe": "Cliquer sur B2, puis Affichage › Figer les volets",
  "ruban": true,
+ "titreSeo": "Figer les volets dans Excel : bloquer lignes et colonnes",
+ "guide": {
+  "question": "À quoi sert figer les volets ?",
+  "intro": "Figer les volets garde des lignes et des colonnes visibles pendant qu'on fait défiler un grand tableau : les titres restent en haut, les noms restent à gauche. Tout ce qui se trouve au-dessus et à gauche de la cellule sélectionnée est bloqué.",
+  "exemple": {
+   "formule": "Cliquer sur B2 › Affichage › Figer les volets",
+   "explication": "La ligne 1 et la colonne A restent visibles, quel que soit le défilement."
+  },
+  "erreurs": [
+   [
+    "Trop de lignes figées",
+    "La cellule sélectionnée était trop bas. Libérez les volets, cliquez sur la bonne cellule et recommencez."
+   ],
+   [
+    "Le menu ne réagit pas",
+    "Une cellule est en cours de modification. Appuyez d'abord sur Entrée ou Échap."
+   ]
+  ],
+  "faq": [
+   [
+    "Comment figer seulement la première ligne ?",
+    "Affichage › Figer les volets › Figer la ligne supérieure."
+   ],
+   [
+    "Comment annuler ?",
+    "Affichage › Figer les volets › Libérer les volets."
+   ],
+   [
+    "Les titres figés s'impriment-ils sur chaque page ?",
+    "Non : pour cela, utilisez Mise en page › Imprimer les titres."
+   ]
+  ]
+ },
+ "voirAussi": ["figer-la-ligne-de-titres","repeter-les-titres","mettre-sous-forme-de-tableau"],
  "arguments": [
   ["Cellule choisie","Tout ce qui est au-dessus et à gauche est figé"],
   ["Figer la première colonne","Bloque seulement la colonne A"],

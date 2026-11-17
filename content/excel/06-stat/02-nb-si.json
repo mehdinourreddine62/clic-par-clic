@@ -5,6 +5,43 @@
  "resume": "Compter les cellules qui respectent une condition.",
  "motsCles": "compter nombre critère condition countif",
  "syntaxe": "=NB.SI(plage; critère)",
+ "titreSeo": "NB.SI dans Excel : compter les cellules selon un critère",
+ "guide": {
+  "intro": "NB.SI compte les cellules d'une plage qui respectent une condition : le nombre de commandes livrées, d'élèves admis, de ventes supérieures à 100. C'est l'équivalent de COUNTIF en anglais.",
+  "exemple": {
+   "formule": "=NB.SI($B$2:$B$7;\"Livré\")",
+   "explication": "Compte les cellules de B2 à B7 égales à Livré. Les majuscules et les minuscules ne sont pas distinguées."
+  },
+  "erreurs": [
+   [
+    "Un résultat à 0",
+    "Un espace en trop dans les données, ou un critère mal orthographié."
+   ],
+   [
+    "Une comparaison sans guillemets",
+    "Un critère comme >100 s'écrit entre guillemets : \">100\"."
+   ],
+   [
+    "Un critère placé dans une cellule",
+    "Pour associer un opérateur et une cellule, collez-les avec & : \">\"&D2."
+   ]
+  ],
+  "faq": [
+   [
+    "Comment compter les cellules non vides ?",
+    "Avec =NB.SI(A2:A20;\"<>\"), ou plus simplement avec NBVAL."
+   ],
+   [
+    "Comment compter les textes qui contiennent un mot ?",
+    "Avec des astérisques : =NB.SI(A2:A20;\"*cours*\")."
+   ],
+   [
+    "Comment compter avec plusieurs conditions ?",
+    "Avec NB.SI.ENS."
+   ]
+  ]
+ },
+ "voirAussi": ["nb-si-ens","somme-si","nb-nbval-nb-vide"],
  "arguments": [
   ["plage","Les cellules à examiner"],
   ["critère","Un texte, un nombre, une cellule ou une comparaison comme \">100\""]

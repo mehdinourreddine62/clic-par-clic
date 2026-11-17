@@ -5,6 +5,35 @@
  "resume": "Additionner selon plusieurs critères.",
  "motsCles": "additionner plusieurs conditions critères sumifs",
  "syntaxe": "=SOMME.SI.ENS(plage_somme; plage1; critère1; …)",
+ "titreSeo": "SOMME.SI.ENS dans Excel : additionner avec plusieurs critères",
+ "guide": {
+  "intro": "SOMME.SI.ENS additionne les valeurs qui respectent plusieurs conditions à la fois : les ventes d'une vendeuse dans une région, les dépenses d'un service sur un mois. La plage à additionner vient toujours en premier, suivie des couples plage et critère.",
+  "exemple": {
+   "formule": "=SOMME.SI.ENS(C2:C6;A2:A6;E2;B2:B6;F2)",
+   "explication": "Additionne les montants de C2:C6 sur les lignes où le vendeur vaut E2 et où la région vaut F2."
+  },
+  "erreurs": [
+   [
+    "#VALEUR!",
+    "Les plages n'ont pas toutes la même taille."
+   ],
+   [
+    "Des arguments dans le désordre",
+    "Contrairement à SOMME.SI, la plage à additionner est le premier argument."
+   ]
+  ],
+  "faq": [
+   [
+    "Peut-on additionner entre deux dates ?",
+    "Oui : =SOMME.SI.ENS(C2:C50;A2:A50;\">=\"&F1;A2:A50;\"<=\"&F2)."
+   ],
+   [
+    "Combien de critères peut-on mettre ?",
+    "Jusqu'à 127 couples plage et critère."
+   ]
+  ]
+ },
+ "voirAussi": ["somme-si","nb-si-ens","creer-un-tableau-croise-dynamique"],
  "arguments": [
   ["plage_somme","Les montants à additionner, toujours en premier"],
   ["plage1; critère1","La première condition"],

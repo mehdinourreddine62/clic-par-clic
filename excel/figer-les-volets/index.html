@@ -3,17 +3,18 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Figer lignes et colonnes – Excel en animation | Clic par clic</title>
-<meta name="description" content="Bloquer à la fois les titres et la première colonne. Leçon Excel animée en 4 étapes, niveau intermédiaire, gratuite.">
+<title>Figer les volets dans Excel : bloquer lignes et colonnes | Clic par clic</title>
+<meta name="description" content="Figer les volets garde des lignes et des colonnes visibles pendant qu'on fait défiler un grand tableau ">
 <link rel="canonical" href="https://mehdinourreddine62.github.io/clic-par-clic/excel/figer-les-volets/">
 <meta name="robots" content="index,follow">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="Clic par clic">
-<meta property="og:title" content="Figer lignes et colonnes – Excel en animation | Clic par clic">
-<meta property="og:description" content="Bloquer à la fois les titres et la première colonne. Leçon Excel animée en 4 étapes, niveau intermédiaire, gratuite.">
+<meta property="og:title" content="Figer les volets dans Excel : bloquer lignes et colonnes | Clic par clic">
+<meta property="og:description" content="Figer les volets garde des lignes et des colonnes visibles pendant qu'on fait défiler un grand tableau ">
 <meta property="og:url" content="https://mehdinourreddine62.github.io/clic-par-clic/excel/figer-les-volets/">
 <meta name="twitter:card" content="summary">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Clic par clic","item":"https://mehdinourreddine62.github.io/clic-par-clic/"},{"@type":"ListItem","position":2,"name":"Organiser ses données","item":"https://mehdinourreddine62.github.io/clic-par-clic/#theme-organiser"},{"@type":"ListItem","position":3,"name":"Figer lignes et colonnes","item":"https://mehdinourreddine62.github.io/clic-par-clic/excel/figer-les-volets/"}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","name":"Figer lignes et colonnes dans Excel","description":"Bloquer à la fois les titres et la première colonne.","inLanguage":"fr","isAccessibleForFree":true,"educationalLevel":"Intermédiaire","learningResourceType":"Leçon animée","url":"https://mehdinourreddine62.github.io/clic-par-clic/excel/figer-les-volets/","isPartOf":{"@type":"Course","name":"Clic par clic : apprendre Excel en animation","url":"https://mehdinourreddine62.github.io/clic-par-clic/"}}</script>
 <script>document.documentElement.classList.add("js");try{var t=localStorage.getItem("cpc-theme");if(t==="dark"||t==="light")document.documentElement.dataset.theme=t}catch(e){}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap">
@@ -23,7 +24,7 @@
 <div class="wrap">
   <div class="topbar"><a class="brand" href="../../"><span class="logo" aria-hidden="true"><i></i><i class="on"></i><i></i><i class="on"></i><i class="on"></i><i></i></span>Clic par clic</a><button class="theme" id="theme" type="button"></button></div>
   <main id="lesson">
-    <a class="back" href="../../#theme-organiser">← Organiser ses données</a>
+    <nav class="crumbs" aria-label="Fil d'Ariane"><a href="../../">Accueil</a><span aria-hidden="true">›</span><a href="../../#theme-organiser">Organiser ses données</a><span aria-hidden="true">›</span><span>Figer lignes et colonnes</span></nav>
     <div class="lhead">
       <div class="meta"><span class="tag" style="--k:var(--k12)"><svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h10M4 18h13"/><path d="M18 10l3 3-3 3"/></svg>Organiser ses données</span><span><span class="lvl" title="Intermédiaire" aria-label="Intermédiaire"><i class="on"></i><i class="on"></i><i class=""></i></span> Intermédiaire</span></div>
       <h1>Figer lignes et colonnes</h1>
@@ -46,6 +47,18 @@
     <p class="hint">Clavier : <kbd>←</kbd> <kbd>→</kbd> pour changer d'étape, <kbd>Espace</kbd> pour lancer ou mettre en pause.</p>
     <details class="sx"><summary>Syntaxe <code>Cliquer sur B2, puis Affichage › Figer les volets</code></summary><dl><dt>Cellule choisie</dt><dd>Tout ce qui est au-dessus et à gauche est figé</dd><dt>Figer la première colonne</dt><dd>Bloque seulement la colonne A</dd><dt>Libérer les volets</dt><dd>Annule le blocage</dd></dl></details>
     <details class="sx"><summary>Résumé écrit des étapes</summary><ol class="steps"><li>Pour figer à la fois les titres et la première colonne, cliquez d'abord sur la cellule B2.</li><li>Figer les volets bloque tout ce qui se trouve au-dessus et à gauche de la cellule choisie.</li><li>Faites défiler vers le bas et vers la droite : les noms et les mois restent visibles.</li><li>« Libérer les volets » remet la feuille dans son état normal.</li></ol></details>
+    <section class="guide">
+      <h2>À quoi sert figer les volets ?</h2>
+      <p>Figer les volets garde des lignes et des colonnes visibles pendant qu'on fait défiler un grand tableau : les titres restent en haut, les noms restent à gauche. Tout ce qui se trouve au-dessus et à gauche de la cellule sélectionnée est bloqué.</p>
+      <h3>Exemple</h3>
+      <p><code class="gx">Cliquer sur B2 › Affichage › Figer les volets</code></p>
+      <p>La ligne 1 et la colonne A restent visibles, quel que soit le défilement.</p>
+      <h3>Erreurs fréquentes</h3>
+      <ul><li><b>Trop de lignes figées</b>La cellule sélectionnée était trop bas. Libérez les volets, cliquez sur la bonne cellule et recommencez.</li><li><b>Le menu ne réagit pas</b>Une cellule est en cours de modification. Appuyez d'abord sur Entrée ou Échap.</li></ul>
+      <h3>Questions fréquentes</h3>
+      <h4>Comment figer seulement la première ligne ?</h4><p>Affichage › Figer les volets › Figer la ligne supérieure.</p><h4>Comment annuler ?</h4><p>Affichage › Figer les volets › Libérer les volets.</p><h4>Les titres figés s'impriment-ils sur chaque page ?</h4><p>Non : pour cela, utilisez Mise en page › Imprimer les titres.</p>
+    </section>
+    <section class="also"><h2>Voir aussi</h2><div class="also-l"><a href="../figer-la-ligne-de-titres/"><b>Figer la ligne de titres</b><small>Garder les titres visibles en faisant défiler un long tableau.</small></a><a href="../repeter-les-titres/"><b>Répéter les titres sur chaque page</b><small>Garder la ligne de titres en haut de toutes les pages imprimées.</small></a><a href="../mettre-sous-forme-de-tableau/"><b>Mettre sous forme de tableau</b><small>Un vrai tableau : mise en forme, filtres et total automatiques.</small></a></div></section>
     <nav class="lnav" aria-label="Leçons voisines"><a href="../figer-la-ligne-de-titres/"><small>← Précédente</small>Figer la ligne de titres</a><a class="nx" id="nextLesson" href="../mise-en-forme-conditionnelle/"><small>Suivante →</small>Mise en forme conditionnelle</a></nav>
   </main>
 </div>
