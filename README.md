@@ -173,3 +173,8 @@ Le lecteur `src/player-word.js` affiche des pages. Une leçon Word remplace `gri
 | `numerotation` | Applique (ou retire avec `null`) la numérotation des titres |
 | `ctx` | Menu affiché sous le bouton `btn` : `{"items": ["…", "Modifier…"], "hot": 1}` ; le curseur clique sur l'élément `hot` |
 | `dialog` | Fenêtre de dialogue : `{"titre": "…", "lignes": [["Taille", "24"]], "hot": [0], "apercu": [[1, "I. Titre 1"]], "ok": true}`. Le curseur clique sur chaque ligne `hot` (la valeur passe de celle de l'étape précédente, ou de la troisième valeur de la ligne, à la nouvelle) ; `plus` : nombre de dernières lignes cachées derrière le bouton « Plus », puis sur OK si `ok`. Sans `ok`, la fenêtre reste ouverte pour l'étape suivante |
+
+## Compteur de visites
+
+`site.json` peut contenir `"goatcounter": "<code>"`, le code du compte GoatCounter (gratuit, sans cookies, donc sans bandeau de consentement). Chaque page générée charge alors le compteur. Sans ce champ, aucun compteur. Les statistiques se consultent sur `https://<code>.goatcounter.com`.
+

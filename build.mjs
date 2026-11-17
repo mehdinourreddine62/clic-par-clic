@@ -77,7 +77,7 @@ ${FONTS}
 <link rel="icon" href="${root}assets/favicon-192.png" sizes="192x192" type="image/png">
 <link rel="apple-touch-icon" href="${root}assets/apple-touch-icon.png">
 <link rel="stylesheet" href="${root}assets/app.css">
-</head>
+${SITE.goatcounter?`<script data-goatcounter="https://${SITE.goatcounter}.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>\n`:""}</head>
 <body>
 <div class="wrap">
   <div class="topbar"><a class="brand" href="${root||"./"}"><span class="logo" aria-hidden="true"><i></i><i class="on"></i><i></i><i class="on"></i><i class="on"></i><i></i></span>${esc(SITE.nom)}</a><button class="theme" id="theme" type="button"></button></div>
