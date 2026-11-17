@@ -66,7 +66,7 @@ function renderDoc(st,s,prev){
 function ribbon(s,press){
   const rb=$("#ribbon"),pn=$("#ribpanel"),tab=s.tab||"Accueil";
   if(s.menu)rb.innerHTML=`<span class="tab cur">${esc(tab)}</span><span class="path">${s.menu}${s.rule?` &nbsp;<code>${esc(s.rule)}</code>`:""}</span>`;
-  else{const tabs=W_TABS.includes(tab)?W_TABS:[...W_TABS,tab];rb.innerHTML=tabs.map(t=>`<span class="tab${t===tab?" cur":""}">${t}</span>`).join("");rb.scrollLeft=W_TABS.includes(tab)?0:rb.scrollWidth;}
+  else{const tabs=W_TABS.includes(tab)?W_TABS:[...W_TABS,tab];rb.innerHTML=tabs.map(t=>`<span class="tab${t===tab?" cur":""}">${t}</span>`).join("");const ct=rb.querySelector(".tab.cur");if(ct)reveal(ct);}
   pn.hidden=false;
   if(pn.dataset.tab!==tab){pn.dataset.tab=tab;pn.scrollLeft=0;
     pn.innerHTML=(W_RIB[tab]||[]).map(([g,bs])=>`<div class="rg"><div class="rbs">${bs.map(b=>`<span class="rb${g==="Styles"?" wsty wsty-"+b.replace(/ /g,""):""}" data-b="${esc(b)}">${esc(b)}</span>`).join("")}</div><small>${esc(g)}</small></div>`).join("");}
@@ -74,12 +74,26 @@ function ribbon(s,press){
     if(hot){const br=b.getBoundingClientRect(),pr=pn.getBoundingClientRect();if(br.right>pr.right-8)pn.scrollLeft+=br.right-pr.right+24;else if(br.left<pr.left+8)pn.scrollLeft-=pr.left-br.left+24;if(press){void b.offsetWidth;b.classList.add("press");}}});
 }
 function keysFx(s){const k=$("#keys");if(s.keys){k.innerHTML=s.keys.split(" + ").map(x=>`<kbd>${esc(x)}</kbd>`).join(" + ");k.hidden=false;k.classList.remove("in");void k.offsetWidth;k.classList.add("in");}else k.hidden=true;}
-function cursorTo(el){
-  const c=$("#wcursor"),st=$(".wstage");if(!el||!c)return false;
-  el.scrollIntoView({block:"nearest",inline:"nearest",behavior:reduce?"auto":"smooth"});
-  const r=el.getBoundingClientRect(),o=st.getBoundingClientRect();
-  c.style.left=Math.min(r.left-o.left+Math.min(r.width*.35,90),o.width-20)+"px";c.style.top=r.top-o.top+r.height*.55+"px";return true;
+/* ---------- curseur : position calculée après défilement, dans le repère de la fenêtre ---------- */
+function reveal(el){
+  const box=["#wdoc","#ribbon","#ribpanel"].map(q=>$(q)).find(b=>b&&b.contains(el));if(!box)return;
+  const r=el.getBoundingClientRect(),d=box.getBoundingClientRect(),m=box.id==="wdoc"?16:8;
+  if(r.left<d.left+m)box.scrollLeft-=d.left+m-r.left;
+  else if(r.right>d.right-m)box.scrollLeft+=r.right-d.right+m;
+  if(box.id==="wdoc"){
+    if(r.top<d.top+40)box.scrollTop-=d.top+40-r.top;
+    else if(r.bottom>d.bottom-40)box.scrollTop+=r.bottom-d.bottom+40;
+  }
 }
+function cursorTo(el,where){
+  const c=$("#wcursor"),win=$(".wword");if(!el||!c)return false;
+  reveal(el);
+  const r=el.getBoundingClientRect(),o=win.getBoundingClientRect();
+  const x=where==="center"?r.left+r.width/2:r.left+Math.min(r.width*.3,60);
+  c.style.left=Math.max(4,Math.min(x-o.left,o.width-24))+"px";c.style.top=Math.max(4,Math.min(r.top-o.top+r.height*.6,o.height-28))+"px";return true;
+}
+const tabEl=t=>[...document.querySelectorAll("#ribbon .tab")].find(x=>x.textContent===t);
+const btnEl=b=>[...document.querySelectorAll("#ribpanel .rb")].find(x=>x.dataset.b===b);
 const targetEl=s=>{const id=s.at||ls(s.sel)[0];if(id==="footer")return $(`.wfoot[data-f="${s.page||2}"]`);return id?$(`[data-b="${id}"]`):null;};
 function clickFx(){const c=$("#wcursor");c.classList.remove("click");void c.offsetWidth;c.classList.add("click");}
 
@@ -98,24 +112,29 @@ function ui(s,i){
 function showStatic(i){
   token++;running=false;idx=i;const s=cur.s[i];
   renderDoc(stateAt(i),s,null);ribbon(s,false);keysFx(s);ui(s,i);$("#wcursor").classList.remove("on");
-  const el=targetEl(s);if(el)el.scrollIntoView({block:"nearest",inline:"nearest"});
+  const el=targetEl(s);if(el)reveal(el);
 }
 async function animate(i){
   if(reduce){showStatic(i);if(playing){const run=token;await wait(3200);if(run!==token)return;if(i<cur.s.length-1)animate(i+1);else{playing=false;updatePlay();}}return;}
   const run=++token,s=cur.s[i],ok=()=>run===token,prev=i>0?stateAt(i-1):null,fin=stateAt(i);
+  const prevTab=i>0?(cur.s[i-1].tab||"Accueil"):"Accueil",tab=s.tab||"Accueil";
   running=true;idx=i;
-  renderDoc(prev||fin,i>0?{sel:""}:s,null);ribbon({tab:i>0?(cur.s[i-1].tab||"Accueil"):s.tab},false);keysFx({});ui(s,i);
+  renderDoc(prev||fin,i>0?{sel:""}:s,null);ribbon({tab:prevTab},false);keysFx({});ui(s,i);
   const cu=$("#wcursor");cu.classList.add("on");
   await wait(80);if(!ok())return;
+  /* 1. le curseur va sur le texte et le sélectionne */
   const el=targetEl(s);
-  if(el){cursorTo(el);await wait(520);if(!ok())return;clickFx();
-    ls(s.sel).forEach(id=>{const b=$(`[data-b="${id}"]`);if(b)b.classList.add("wsel");});await wait(380);if(!ok())return;}
-  if(s.tab||s.menu){ribbon(s,false);await wait(450);if(!ok())return;}
-  if(s.btn){ribbon(s,true);await wait(650);if(!ok())return;}
+  if(el){cursorTo(el);await wait(560);if(!ok())return;clickFx();
+    ls(s.sel).forEach(id=>{const b=$(`[data-b="${id}"]`);if(b)b.classList.add("wsel");});await wait(500);if(!ok())return;}
+  /* 2. il clique sur l'onglet, puis sur le bouton du ruban */
+  if(tab!==prevTab&&!s.menu){const t=tabEl(tab);if(t){cursorTo(t,"center");await wait(520);if(!ok())return;clickFx();}}
+  if(s.menu||tab!==prevTab){ribbon(s,false);await wait(380);if(!ok())return;}
+  if(s.btn){const b=btnEl(s.btn);if(b){cursorTo(b,"center");await wait(520);if(!ok())return;clickFx();}ribbon(s,true);await wait(450);if(!ok())return;}
   if(s.keys){keysFx(s);await wait(500);if(!ok())return;}
+  /* 3. le document change, le changement est surligné */
   renderDoc(fin,s,prev);ribbon(s,false);keysFx(s);
-  const el2=targetEl(s);if(el2)cursorTo(el2);
-  await wait(450);if(!ok())return;
+  const el2=targetEl(s);if(el2&&!s.btn){cursorTo(el2);}else if(el2)reveal(el2);
+  await wait(900);if(!ok())return;
   cu.classList.remove("on");running=false;updatePlay();
   if(playing){
     const words=s.t.replace(/<[^>]+>/g,"").split(/\s+/).length;
