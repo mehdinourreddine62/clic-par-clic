@@ -1,0 +1,299 @@
+{
+ "id": "sauts-de-page-et-de-section",
+ "titre": "Sauts de page et de section",
+ "niveau": 1,
+ "resume": "Commencer une partie sur une nouvelle page, sans lignes vides.",
+ "motsCles": "word saut de page saut de section nouvelle page ctrl entrée lignes vides page suivante afficher tout marques",
+ "syntaxe": "Insertion › Saut de page (Ctrl + Entrée)",
+ "titreSeo": "Saut de page et saut de section dans Word : tutoriel animé",
+ "arguments": [
+  [
+   "Saut de page",
+   "Fait commencer la suite sur une nouvelle page"
+  ],
+  [
+   "Saut de section",
+   "Saut de page qui permet aussi une autre numérotation, une autre orientation ou d'autres marges"
+  ],
+  [
+   "Afficher tout (¶)",
+   "Montre les sauts et les lignes vides"
+  ]
+ ],
+ "document": {
+  "numerotation": {
+   "1": "I.",
+   "2": "1)",
+   "3": "a)"
+  },
+  "footer": {
+   "num": true,
+   "first": true
+  },
+  "pages": [
+   [
+    {
+     "id": "ttl",
+     "s": "titre",
+     "txt": "Rapport de stage"
+    },
+    {
+     "id": "sub",
+     "s": "sous",
+     "txt": "Assistante marketing · Société Lumen · juin 2026"
+    },
+    {
+     "id": "aut",
+     "s": "sous",
+     "txt": "Léa Martin · BTS Communication"
+    }
+   ],
+   [
+    {
+     "id": "h1",
+     "s": "titre1",
+     "txt": "Introduction"
+    },
+    {
+     "id": "p1",
+     "txt": "Ce rapport présente les dix semaines de stage effectuées au sein du service marketing de la société Lumen, à Lyon."
+    },
+    {
+     "id": "h2",
+     "s": "titre1",
+     "txt": "Présentation de l'entreprise"
+    },
+    {
+     "id": "p2",
+     "txt": "Lumen conçoit des luminaires pour les bureaux. L'entreprise compte quarante-cinq salariés et vend dans toute l'Europe."
+    },
+    {
+     "id": "h3",
+     "s": "titre2",
+     "txt": "Le service marketing"
+    },
+    {
+     "id": "p3",
+     "txt": "Le service réunit quatre personnes, chargées de la communication, du site internet et des salons professionnels."
+    }
+   ],
+   [
+    {
+     "id": "h4",
+     "s": "titre1",
+     "txt": "Missions réalisées"
+    },
+    {
+     "id": "h4a",
+     "s": "titre2",
+     "txt": "Le salon Bureau Expo"
+    },
+    {
+     "id": "h4b",
+     "s": "titre3",
+     "txt": "La préparation"
+    },
+    {
+     "id": "p4b",
+     "txt": "Commande des supports, réservation du stand et planning de l'équipe."
+    },
+    {
+     "id": "h4c",
+     "s": "titre3",
+     "txt": "Le bilan"
+    },
+    {
+     "id": "p4c",
+     "txt": "Cent vingt contacts ont été recueillis en trois jours de salon."
+    },
+    {
+     "id": "h4d",
+     "s": "titre2",
+     "txt": "Les réseaux sociaux"
+    },
+    {
+     "id": "p4",
+     "txt": "J'ai rédigé et programmé trois publications par semaine sur LinkedIn et Instagram."
+    },
+    {
+     "id": "v1",
+     "s": "vide"
+    },
+    {
+     "id": "v2",
+     "s": "vide"
+    },
+    {
+     "id": "v3",
+     "s": "vide"
+    },
+    {
+     "id": "v4",
+     "s": "vide"
+    },
+    {
+     "id": "v5",
+     "s": "vide"
+    },
+    {
+     "id": "v6",
+     "s": "vide"
+    }
+   ],
+   [
+    {
+     "id": "h5",
+     "s": "titre1",
+     "txt": "Conclusion"
+    },
+    {
+     "id": "p5",
+     "txt": "Ce stage m'a permis de découvrir la gestion d'un événement de bout en bout, de la commande des supports au bilan."
+    }
+   ]
+  ]
+ },
+ "etapes": [
+  {
+   "at": "v3",
+   "tab": "Accueil",
+   "btn": "Afficher tout",
+   "marques": true,
+   "t": "Affichez les marques (¶) : la Conclusion a été poussée sur la page suivante avec des lignes vides.",
+   "voir": "h5"
+  },
+  {
+   "sel": "p4x",
+   "add": [
+    {
+     "after": "p4",
+     "block": {
+      "id": "p4x",
+      "txt": "J'ai aussi mesuré l'audience de chaque publication."
+     }
+    }
+   ],
+   "move": [
+    {
+     "id": "v5",
+     "before": "h5"
+    },
+    {
+     "id": "v6",
+     "before": "h5"
+    }
+   ],
+   "t": "Ajoutez une phrase plus haut : les lignes vides glissent, et la Conclusion n'est plus en haut de sa page.",
+   "voir": "h5"
+  },
+  {
+   "sel": "v1 v2 v3 v4 v5 v6",
+   "keys": "Suppr",
+   "remove": "v1 v2 v3 v4 v5 v6",
+   "move": [
+    {
+     "id": "h5",
+     "page": 3
+    },
+    {
+     "id": "p5",
+     "page": 3
+    }
+   ],
+   "t": "Sélectionnez ces lignes vides et supprimez-les : la Conclusion remonte sur la page 3.",
+   "voir": "h5"
+  },
+  {
+   "at": "p4x",
+   "tab": "Insertion",
+   "btn": "Saut de page",
+   "add": [
+    {
+     "after": "p4x",
+     "block": {
+      "id": "sp",
+      "s": "saut",
+      "txt": "Saut de page"
+     }
+    }
+   ],
+   "move": [
+    {
+     "id": "h5",
+     "page": 4
+    },
+    {
+     "id": "p5",
+     "page": 4
+    }
+   ],
+   "t": "Cliquez à la fin du texte, puis Insertion › Saut de page : la Conclusion commence en haut d'une nouvelle page.",
+   "voir": "h5"
+  },
+  {
+   "sel": "p4y",
+   "tab": "Accueil",
+   "add": [
+    {
+     "after": "p4b",
+     "block": {
+      "id": "p4y",
+      "txt": "Le budget du salon était de 12 000 euros."
+     }
+    }
+   ],
+   "t": "Ajoutez du texte plus haut : cette fois, la Conclusion reste en haut de sa page.",
+   "voir": "h5"
+  },
+  {
+   "at": "sp",
+   "keys": "Ctrl + Entrée",
+   "t": "Raccourci : Ctrl + Entrée insère un saut de page à l'endroit du curseur."
+  },
+  {
+   "at": "sp",
+   "tab": "Mise en page",
+   "btn": "Sauts de page",
+   "menu": "Mise en page › Sauts de page › <b>Sauts de section</b> › Page suivante",
+   "t": "Le saut de section (Page suivante) sert quand la suite doit avoir une autre numérotation ou une autre orientation."
+  }
+ ],
+ "guide": {
+  "question": "Comment faire un saut de page dans Word ?",
+  "intro": "Un saut de page fait commencer la suite du texte en haut d'une nouvelle page, quoi qu'il arrive au-dessus. C'est la bonne méthode pour placer chaque grande partie sur sa page, au lieu d'appuyer plusieurs fois sur Entrée. Le saut de section fait la même chose, et permet en plus de changer la numérotation, l'orientation ou les marges de la suite.",
+  "exemple": {
+   "titre": "Le chemin dans Word",
+   "formule": "Insertion › Saut de page",
+   "explication": "Ou, plus vite : Ctrl + Entrée à l'endroit du curseur."
+  },
+  "erreurs": [
+   [
+    "Des titres qui descendent au milieu des pages",
+    "Ils ont été poussés avec des lignes vides : supprimez-les et insérez un saut de page."
+   ],
+   [
+    "Une page blanche en trop",
+    "Un saut de page en double : affichez les marques (¶), sélectionnez le saut inutile et supprimez-le."
+   ]
+  ],
+  "faq": [
+   [
+    "Comment voir les sauts de page ?",
+    "Accueil › Afficher tout (¶), ou Ctrl + Maj + 8."
+   ],
+   [
+    "Comment supprimer un saut de page ?",
+    "Affichez les marques (¶), sélectionnez la ligne « Saut de page » et appuyez sur Suppr."
+   ],
+   [
+    "Quelle différence avec un saut de section ?",
+    "Le saut de section crée une nouvelle partie, qui peut avoir ses propres numéros de page, son orientation ou ses marges."
+   ]
+  ]
+ },
+ "voirAussi": [
+  "numeroter-a-partir-de-la-page-3",
+  "marges-et-orientation",
+  "numeroter-les-pages"
+ ]
+}

@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Mettre une seule page en paysage dans Word, et régler les marges | Clic par clic</title>
+<meta name="description" content="L'orientation s'applique à une section entière. Pour une seule page en paysage, il faut donc des sauts de section avant et après. Le plus simple ">
+<link rel="canonical" href="https://mehdinourreddine62.github.io/clic-par-clic/word/marges-et-orientation/">
+<meta name="robots" content="index,follow">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="Clic par clic">
+<meta property="og:title" content="Mettre une seule page en paysage dans Word, et régler les marges | Clic par clic">
+<meta property="og:description" content="L'orientation s'applique à une section entière. Pour une seule page en paysage, il faut donc des sauts de section avant et après. Le plus simple ">
+<meta property="og:url" content="https://mehdinourreddine62.github.io/clic-par-clic/word/marges-et-orientation/">
+<meta name="twitter:card" content="summary">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Clic par clic","item":"https://mehdinourreddine62.github.io/clic-par-clic/"},{"@type":"ListItem","position":2,"name":"Word","item":"https://mehdinourreddine62.github.io/clic-par-clic/word/"},{"@type":"ListItem","position":3,"name":"Pages, en-têtes et pieds de page","item":"https://mehdinourreddine62.github.io/clic-par-clic/word/#theme-paginer"},{"@type":"ListItem","position":4,"name":"Marges et orientation","item":"https://mehdinourreddine62.github.io/clic-par-clic/word/marges-et-orientation/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","name":"Marges et orientation dans Word","description":"Régler les marges, et mettre une seule page en paysage.","inLanguage":"fr","isAccessibleForFree":true,"educationalLevel":"Intermédiaire","learningResourceType":"Leçon animée","url":"https://mehdinourreddine62.github.io/clic-par-clic/word/marges-et-orientation/","isPartOf":{"@type":"Course","name":"Clic par clic : apprendre Word en animation","url":"https://mehdinourreddine62.github.io/clic-par-clic/word/"}}</script>
+<script>document.documentElement.classList.add("js");try{var t=localStorage.getItem("cpc-theme");if(t==="dark"||t==="light")document.documentElement.dataset.theme=t}catch(e){}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="../../assets/app.css">
+</head>
+<body>
+<div class="wrap">
+  <div class="topbar"><a class="brand" href="../../"><span class="logo" aria-hidden="true"><i></i><i class="on"></i><i></i><i class="on"></i><i class="on"></i><i></i></span>Clic par clic</a><button class="theme" id="theme" type="button"></button></div>
+  <main id="lesson">
+    <nav class="crumbs" aria-label="Fil d'Ariane"><a href="../../">Accueil</a><span aria-hidden="true">›</span><a href="../">Word</a><span aria-hidden="true">›</span><a href="../#theme-paginer">Pages, en-têtes et pieds de page</a><span aria-hidden="true">›</span><span>Marges et orientation</span></nav>
+    <div class="lhead">
+      <div class="meta"><span class="tag" style="--k:var(--k8)"><svg viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 17h6"/></svg>Pages, en-têtes et pieds de page</span><span><span class="lvl" title="Intermédiaire" aria-label="Intermédiaire"><i class="on"></i><i class="on"></i><i class=""></i></span> Intermédiaire</span></div>
+      <h1>Marges et orientation</h1>
+      <p>Régler les marges, et mettre une seule page en paysage.</p>
+    </div>
+    <div class="win wword">
+      <div id="ribwrap"><div class="ribbon" id="ribbon"></div><div class="ribpanel" id="ribpanel" hidden></div></div>
+      <div class="wstage"><aside class="wnav" id="wnav" hidden></aside><div class="wdoc" id="wdoc"></div><div class="keys" id="keys" hidden></div></div>
+      <div class="wstatus" id="wstatus"></div><div class="cursor" id="wcursor"><svg viewBox="0 0 20 24"><path d="M2 1.5v17l4.6-4.2 3 7 2.9-1.2-3-6.9h6.3z"/></svg></div>
+      <p class="cap" id="text" aria-live="polite">Ce planning est trop large pour une page en portrait : ses colonnes sont écrasées.</p>
+      <div class="bar">
+        <button class="ic" id="prev" aria-label="Étape précédente"><svg viewBox="0 0 16 16"><path d="M10.5 2 4 8l6.5 6 1.2-1.3L6.6 8l5.1-4.7z"/></svg></button>
+        <button class="ic play" id="play" aria-label="Lecture"></button>
+        <button class="ic" id="next" aria-label="Étape suivante"><svg viewBox="0 0 16 16"><path d="M5.5 2 12 8l-6.5 6-1.2-1.3L9.4 8 4.3 3.3z"/></svg></button>
+        <div class="progress" id="progress"></div>
+        <span class="count" id="count"></span>
+      </div>
+    </div>
+    <p class="hint">Clavier : <kbd>←</kbd> <kbd>→</kbd> pour changer d'étape, <kbd>Espace</kbd> pour lancer ou mettre en pause.</p>
+    <div class="pband" id="pband" hidden></div>
+    <details class="sx"><summary>Syntaxe <code>Mise en page › Marges › Marges personnalisées</code></summary><dl><dt>Marges</dt><dd>Espace blanc autour du texte (2,5 cm par défaut)</dd><dt>Orientation</dt><dd>Portrait (vertical) ou paysage (horizontal)</dd><dt>Appliquer à : Texte sélectionné</dt><dd>Word ajoute les sauts de section nécessaires</dd></dl></details>
+    <details class="sx"><summary>Résumé écrit des étapes</summary><ol class="steps"><li>Ce planning est trop large pour une page en portrait : ses colonnes sont écrasées.</li><li>Mise en page › Marges › Marges personnalisées : réglez les marges demandées, par exemple 3 cm à gauche.</li><li>Sélectionnez le tableau, ouvrez de nouveau la mise en page, choisissez Paysage et « Texte sélectionné ».</li><li>Seul le tableau passe sur une page en paysage, avec des colonnes lisibles ; la suite reste en portrait.</li><li>Affichez les marques (¶) : Word a ajouté un saut de section avant et après le tableau.</li></ol></details>
+    <section class="guide">
+      <h2>Comment mettre une seule page en paysage dans Word ?</h2>
+      <p>L'orientation s'applique à une section entière. Pour une seule page en paysage, il faut donc des sauts de section avant et après. Le plus simple : sélectionnez le contenu de la page, puis dans Marges personnalisées, choisissez Paysage et « Appliquer à : Texte sélectionné ». Word ajoute lui-même les sauts de section.</p>
+      <h3>Le chemin dans Word</h3>
+      <p><code class="gx">Mise en page › Marges › Marges personnalisées</code></p>
+      <p>Onglet Marges : choisissez Paysage, puis « Appliquer à : Texte sélectionné ».</p>
+      <h3>Erreurs fréquentes</h3>
+      <ul><li><b>Tout le document passe en paysage</b>« Appliquer à » était réglé sur « À tout le document » : annulez avec Ctrl + Z et sélectionnez d'abord le contenu.</li><li><b>Les numéros de page recommencent après la page en paysage</b>Dans le pied de page qui suit, choisissez « Continuer la section précédente » dans Format des numéros de page.</li></ul>
+      <h3>Questions fréquentes</h3>
+      <h4>Quelles marges pour un rapport ou un mémoire ?</h4><p>Souvent 2,5 cm partout, parfois 3 cm à gauche pour la reliure : suivez les consignes de votre établissement.</p><h4>Comment tout passer en paysage ?</h4><p>Mise en page › Orientation › Paysage.</p><h4>Comment voir les sauts de section ajoutés ?</h4><p>Accueil › Afficher tout (¶).</p>
+    </section>
+    <section class="also"><h2>Voir aussi</h2><div class="also-l"><a href="../sauts-de-page-et-de-section/"><b>Sauts de page et de section</b><small>Commencer une partie sur une nouvelle page, sans lignes vides.</small></a><a href="../numeroter-a-partir-de-la-page-3/"><b>Numéroter à partir de la page 3</b><small>Pas de numéro sur la page de garde ni le sommaire, puis 1 sur l'introduction.</small></a><a href="../en-tetes-et-pieds-de-page/"><b>En-têtes et pieds de page</b><small>Répéter le titre, la date et votre nom en haut et en bas de chaque page.</small></a></div></section>
+    <nav class="lnav" aria-label="Leçons voisines"><a href="../en-tetes-et-pieds-de-page/"><small>← Précédente</small>En-têtes et pieds de page</a></nav>
+  </main>
+</div>
+<script type="application/json" id="lesson-data">{"id":"marges-et-orientation","doc":{"numerotation":{"1":"I.","2":"1)","3":"a)"},"footer":{"num":true,"first":true},"pages":[[{"id":"ttl","s":"titre","txt":"Rapport de stage"},{"id":"sub","s":"sous","txt":"Assistante marketing · Société Lumen · juin 2026"},{"id":"aut","s":"sous","txt":"Léa Martin · BTS Communication"}],[{"id":"h1","s":"titre1","txt":"Introduction"},{"id":"p1","txt":"Ce rapport présente les dix semaines de stage effectuées au sein du service marketing de la société Lumen, à Lyon."},{"id":"h2","s":"titre1","txt":"Présentation de l'entreprise"},{"id":"p2","txt":"Lumen conçoit des luminaires pour les bureaux. L'entreprise compte quarante-cinq salariés et vend dans toute l'Europe."},{"id":"h3","s":"titre2","txt":"Le service marketing"},{"id":"p3","txt":"Le service réunit quatre personnes, chargées de la communication, du site internet et des salons professionnels."}],[{"id":"h4","s":"titre1","txt":"Missions réalisées"},{"id":"h4a","s":"titre2","txt":"Le salon Bureau Expo"},{"id":"h4b","s":"titre3","txt":"La préparation"},{"id":"p4b","txt":"Commande des supports, réservation du stand et planning de l'équipe."},{"id":"tblc","txt":"Le planning de l'équipe pendant la semaine du salon :"},{"id":"tbl","s":"tableau","lignes":[["Tâche","Lundi 9","Mardi 10","Mercredi 11","Jeudi 12","Vendredi 13","Responsable"],["Montage du stand","8 h - 18 h","","","","","Paul Girard"],["Accueil des visiteurs","","9 h - 18 h","9 h - 18 h","9 h - 17 h","","Léa Martin"],["Démonstrations","","10 h - 12 h","14 h - 16 h","10 h - 12 h","","Inès Roche"],["Démontage","","","","17 h - 20 h","8 h - 12 h","Paul Girard"]]},{"id":"h4c","s":"titre3","txt":"Le bilan"},{"id":"p4c","txt":"Cent vingt contacts ont été recueillis en trois jours de salon."}],[{"id":"h4d","s":"titre2","txt":"Les réseaux sociaux"},{"id":"p4","txt":"J'ai rédigé et programmé trois publications par semaine sur LinkedIn et Instagram."},{"id":"h5","s":"titre1","txt":"Conclusion"},{"id":"p5","txt":"Ce stage m'a permis de découvrir la gestion d'un événement de bout en bout, de la commande des supports au bilan."}]]},"s":[{"at":"tbl","t":"Ce planning est trop large pour une page en portrait : ses colonnes sont écrasées."},{"at":"p1","tab":"Mise en page","btn":"Marges","ctx":{"items":["Normales","Étroites","Modérées","Larges","Marges personnalisées…"],"hot":4},"dialog":{"titre":"Mise en page","lignes":[["Haut","2,5 cm"],["Bas","2,5 cm"],["Gauche","3 cm","2,5 cm"],["Droite","2,5 cm"],["Appliquer à","À tout le document"]],"hot":[2],"ok":true},"marges":{"gauche":3},"t":"Mise en page › Marges › Marges personnalisées : réglez les marges demandées, par exemple 3 cm à gauche."},{"sel":"tbl","tab":"Mise en page","btn":"Marges","ctx":{"items":["Normales","Étroites","Modérées","Larges","Marges personnalisées…"],"hot":4},"dialog":{"titre":"Mise en page","lignes":[["Orientation","Paysage","Portrait"],["Appliquer à","Texte sélectionné","À tout le document"]],"hot":[0,1],"ok":true},"insererPage":[4,5],"move":[{"id":"tbl","page":4},{"id":"h4c","page":5},{"id":"p4c","page":5},{"id":"h4d","page":5},{"id":"p4","page":5},{"id":"h5","page":5},{"id":"p5","page":5}],"orient":{"tbl":"paysage"},"add":[{"after":"tblc","block":{"id":"s1","s":"saut","txt":"Saut de section (page suivante)"}}],"t":"Sélectionnez le tableau, ouvrez de nouveau la mise en page, choisissez Paysage et « Texte sélectionné »."},{"at":"tbl","t":"Seul le tableau passe sur une page en paysage, avec des colonnes lisibles ; la suite reste en portrait.","voir":"h4c"},{"at":"s1","tab":"Accueil","btn":"Afficher tout","marques":true,"add":[{"after":"tbl","block":{"id":"s2","s":"saut","txt":"Saut de section (page suivante)"}}],"t":"Affichez les marques (¶) : Word a ajouté un saut de section avant et après le tableau."}]}</script>
+<script src="../../assets/app.js"></script>
+<script src="../../assets/player-word.js"></script>
+</body>
+</html>

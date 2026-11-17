@@ -1,0 +1,239 @@
+{
+ "id": "en-tetes-et-pieds-de-page",
+ "titre": "En-têtes et pieds de page",
+ "niveau": 1,
+ "resume": "Répéter le titre, la date et votre nom en haut et en bas de chaque page.",
+ "motsCles": "word en-tête pied de page modifier date nom auteur titre répéter chaque page double clic",
+ "syntaxe": "Double-clic dans la marge du haut ou du bas",
+ "titreSeo": "En-tête et pied de page dans Word : tutoriel animé",
+ "arguments": [
+  [
+   "En-tête",
+   "Zone en haut de chaque page"
+  ],
+  [
+   "Pied de page",
+   "Zone en bas de chaque page, souvent avec le numéro"
+  ],
+  [
+   "Date et heure",
+   "Insère la date du jour"
+  ],
+  [
+   "Fermer l'en-tête et le pied de page",
+   "Revient au texte"
+  ]
+ ],
+ "document": {
+  "numerotation": {
+   "1": "I.",
+   "2": "1)",
+   "3": "a)"
+  },
+  "footer": {
+   "num": true,
+   "first": true
+  },
+  "pages": [
+   [
+    {
+     "id": "ttl",
+     "s": "titre",
+     "txt": "Rapport de stage"
+    },
+    {
+     "id": "sub",
+     "s": "sous",
+     "txt": "Assistante marketing · Société Lumen · juin 2026"
+    },
+    {
+     "id": "aut",
+     "s": "sous",
+     "txt": "Léa Martin · BTS Communication"
+    }
+   ],
+   [
+    {
+     "id": "h1",
+     "s": "titre1",
+     "txt": "Introduction"
+    },
+    {
+     "id": "p1",
+     "txt": "Ce rapport présente les dix semaines de stage effectuées au sein du service marketing de la société Lumen, à Lyon."
+    },
+    {
+     "id": "h2",
+     "s": "titre1",
+     "txt": "Présentation de l'entreprise"
+    },
+    {
+     "id": "p2",
+     "txt": "Lumen conçoit des luminaires pour les bureaux. L'entreprise compte quarante-cinq salariés et vend dans toute l'Europe."
+    },
+    {
+     "id": "h3",
+     "s": "titre2",
+     "txt": "Le service marketing"
+    },
+    {
+     "id": "p3",
+     "txt": "Le service réunit quatre personnes, chargées de la communication, du site internet et des salons professionnels."
+    }
+   ],
+   [
+    {
+     "id": "h4",
+     "s": "titre1",
+     "txt": "Missions réalisées"
+    },
+    {
+     "id": "h4a",
+     "s": "titre2",
+     "txt": "Le salon Bureau Expo"
+    },
+    {
+     "id": "h4b",
+     "s": "titre3",
+     "txt": "La préparation"
+    },
+    {
+     "id": "p4b",
+     "txt": "Commande des supports, réservation du stand et planning de l'équipe."
+    },
+    {
+     "id": "h4c",
+     "s": "titre3",
+     "txt": "Le bilan"
+    },
+    {
+     "id": "p4c",
+     "txt": "Cent vingt contacts ont été recueillis en trois jours de salon."
+    },
+    {
+     "id": "h4d",
+     "s": "titre2",
+     "txt": "Les réseaux sociaux"
+    },
+    {
+     "id": "p4",
+     "txt": "J'ai rédigé et programmé trois publications par semaine sur LinkedIn et Instagram."
+    },
+    {
+     "id": "h5",
+     "s": "titre1",
+     "txt": "Conclusion"
+    },
+    {
+     "id": "p5",
+     "txt": "Ce stage m'a permis de découvrir la gestion d'un événement de bout en bout, de la commande des supports au bilan."
+    }
+   ]
+  ]
+ },
+ "etapes": [
+  {
+   "at": "p1",
+   "t": "L'en-tête et le pied de page se répètent en haut et en bas de chaque page : titre, auteur, numéro de page."
+  },
+  {
+   "at": "header",
+   "page": 2,
+   "tab": "En-tête et pied de page",
+   "edit": true,
+   "t": "Double-cliquez dans la marge du haut : l'en-tête s'ouvre, et le texte du document passe au second plan."
+  },
+  {
+   "at": "header",
+   "page": 2,
+   "tab": "En-tête et pied de page",
+   "entete": {
+    "txt": "Rapport de stage · Société Lumen"
+   },
+   "t": "Tapez le titre du rapport : il s'affiche sur toutes les pages, sauf la page de garde."
+  },
+  {
+   "at": "header",
+   "page": 2,
+   "tab": "En-tête et pied de page",
+   "btn": "Date et heure",
+   "dialog": {
+    "titre": "Date et heure",
+    "lignes": [
+     [
+      "Formats disponibles",
+      "17 novembre 2026",
+      "17/11/2026"
+     ],
+     [
+      "Mettre à jour automatiquement",
+      "Non"
+     ]
+    ],
+    "hot": [
+     0
+    ],
+    "ok": true
+   },
+   "entete": {
+    "droite": "17 novembre 2026"
+   },
+   "t": "Appuyez deux fois sur Tab pour aller à droite, puis Date et heure : choisissez un format et validez."
+  },
+  {
+   "at": "footer",
+   "page": 2,
+   "tab": "En-tête et pied de page",
+   "btn": "Atteindre le pied de page",
+   "footer": {
+    "txt": "Léa Martin · BTS Communication"
+   },
+   "t": "Atteindre le pied de page, puis tapez votre nom : le numéro de page reste au centre."
+  },
+  {
+   "at": "p1",
+   "tab": "En-tête et pied de page",
+   "btn": "Fermer l'en-tête et le pied de page",
+   "edit": false,
+   "t": "Fermez l'en-tête et le pied de page : ils se répètent sur chaque page, sans gêner le texte."
+  }
+ ],
+ "guide": {
+  "question": "Comment faire un en-tête et un pied de page dans Word ?",
+  "intro": "L'en-tête et le pied de page sont les marges du haut et du bas de chaque page. Ce que vous y écrivez une fois se répète sur toutes les pages : titre du rapport, nom de l'auteur, date, numéro de page. Un double-clic dans la marge suffit pour les ouvrir.",
+  "exemple": {
+   "titre": "Le chemin dans Word",
+   "formule": "Insertion › En-tête › Modifier l'en-tête",
+   "explication": "Ou double-cliquez directement dans la marge du haut. Fermez avec « Fermer l'en-tête et le pied de page », ou un double-clic dans le texte."
+  },
+  "erreurs": [
+   [
+    "L'en-tête apparaît sur la page de garde",
+    "Cochez « Première page différente » dans l'onglet En-tête et pied de page."
+   ],
+   [
+    "Changer l'en-tête d'une page change toutes les autres",
+    "C'est normal : pour un en-tête différent par partie, il faut un saut de section et désactiver « Lier au précédent »."
+   ]
+  ],
+  "faq": [
+   [
+    "Comment mettre un texte à gauche et un autre à droite ?",
+    "L'en-tête contient des taquets : appuyez sur Tab pour passer au centre, puis à droite."
+   ],
+   [
+    "Comment supprimer un en-tête ?",
+    "Insertion › En-tête › Supprimer l'en-tête."
+   ],
+   [
+    "Comment ajouter un logo ?",
+    "Dans l'en-tête ouvert, cliquez sur Images et choisissez le fichier du logo."
+   ]
+  ]
+ },
+ "voirAussi": [
+  "numeroter-les-pages",
+  "numeroter-a-partir-de-la-page-3",
+  "marges-et-orientation"
+ ]
+}

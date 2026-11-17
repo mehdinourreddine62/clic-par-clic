@@ -1,0 +1,304 @@
+{
+ "id": "numeroter-a-partir-de-la-page-3",
+ "titre": "Numéroter à partir de la page 3",
+ "niveau": 2,
+ "resume": "Pas de numéro sur la page de garde ni le sommaire, puis 1 sur l'introduction.",
+ "motsCles": "word numéroter à partir de la page 3 commencer la numérotation page 2 section lier au précédent format des numéros de page sommaire",
+ "syntaxe": "Saut de section › Lier au précédent › Format des numéros de page",
+ "titreSeo": "Numéroter à partir de la page 3 dans Word : tutoriel animé",
+ "arguments": [
+  [
+   "Saut de section (page suivante)",
+   "Coupe le document en deux parties indépendantes"
+  ],
+  [
+   "Lier au précédent",
+   "Désactivé, la section a son propre pied de page"
+  ],
+  [
+   "Format des numéros de page",
+   "« À partir de : 1 » recommence la numérotation"
+  ]
+ ],
+ "document": {
+  "tocAuto": true,
+  "numerotation": {
+   "1": "I.",
+   "2": "1)",
+   "3": "a)"
+  },
+  "footer": {
+   "num": true,
+   "first": true
+  },
+  "pages": [
+   [
+    {
+     "id": "ttl",
+     "s": "titre",
+     "txt": "Rapport de stage"
+    },
+    {
+     "id": "sub",
+     "s": "sous",
+     "txt": "Assistante marketing · Société Lumen · juin 2026"
+    },
+    {
+     "id": "aut",
+     "s": "sous",
+     "txt": "Léa Martin · BTS Communication"
+    }
+   ],
+   [
+    {
+     "id": "toc",
+     "s": "toc"
+    },
+    {
+     "id": "sp",
+     "s": "saut",
+     "txt": "Saut de page"
+    }
+   ],
+   [
+    {
+     "id": "h1",
+     "s": "titre1",
+     "txt": "Introduction"
+    },
+    {
+     "id": "p1",
+     "txt": "Ce rapport présente les dix semaines de stage effectuées au sein du service marketing de la société Lumen, à Lyon."
+    },
+    {
+     "id": "h2",
+     "s": "titre1",
+     "txt": "Présentation de l'entreprise"
+    },
+    {
+     "id": "p2",
+     "txt": "Lumen conçoit des luminaires pour les bureaux. L'entreprise compte quarante-cinq salariés et vend dans toute l'Europe."
+    },
+    {
+     "id": "h3",
+     "s": "titre2",
+     "txt": "Le service marketing"
+    },
+    {
+     "id": "p3",
+     "txt": "Le service réunit quatre personnes, chargées de la communication, du site internet et des salons professionnels."
+    }
+   ],
+   [
+    {
+     "id": "h4",
+     "s": "titre1",
+     "txt": "Missions réalisées"
+    },
+    {
+     "id": "h4a",
+     "s": "titre2",
+     "txt": "Le salon Bureau Expo"
+    },
+    {
+     "id": "h4b",
+     "s": "titre3",
+     "txt": "La préparation"
+    },
+    {
+     "id": "p4b",
+     "txt": "Commande des supports, réservation du stand et planning de l'équipe."
+    },
+    {
+     "id": "h4c",
+     "s": "titre3",
+     "txt": "Le bilan"
+    },
+    {
+     "id": "p4c",
+     "txt": "Cent vingt contacts ont été recueillis en trois jours de salon."
+    },
+    {
+     "id": "h4d",
+     "s": "titre2",
+     "txt": "Les réseaux sociaux"
+    },
+    {
+     "id": "p4",
+     "txt": "J'ai rédigé et programmé trois publications par semaine sur LinkedIn et Instagram."
+    },
+    {
+     "id": "h5",
+     "s": "titre1",
+     "txt": "Conclusion"
+    },
+    {
+     "id": "p5",
+     "txt": "Ce stage m'a permis de découvrir la gestion d'un événement de bout en bout, de la commande des supports au bilan."
+    }
+   ]
+  ]
+ },
+ "etapes": [
+  {
+   "at": "footer",
+   "page": 2,
+   "t": "Le sommaire porte le numéro 2 : vous voulez des pages sans numéro jusqu'à l'introduction, qui commencera à 1."
+  },
+  {
+   "at": "sp",
+   "tab": "Accueil",
+   "btn": "Afficher tout",
+   "marques": true,
+   "t": "Accueil › Afficher tout (¶) : les marques cachées apparaissent, dont le saut de page après le sommaire."
+  },
+  {
+   "sel": "sp",
+   "tab": "Mise en page",
+   "btn": "Sauts de page",
+   "ctx": {
+    "items": [
+     "Page",
+     "Colonne",
+     "Habillage du texte",
+     "Page suivante",
+     "Continu",
+     "Page paire",
+     "Page impaire"
+    ],
+    "hot": 3
+   },
+   "texte": {
+    "sp": "Saut de section (page suivante)"
+   },
+   "section": {
+    "page": 3
+   },
+   "t": "Sélectionnez ce saut, puis Mise en page › Sauts de page › Page suivante : il devient un saut de section."
+  },
+  {
+   "at": "footer",
+   "page": 3,
+   "tab": "En-tête et pied de page",
+   "edit": true,
+   "t": "Double-cliquez dans le pied de page de l'introduction : il est en section 2, « Identique au précédent »."
+  },
+  {
+   "at": "footer",
+   "page": 3,
+   "tab": "En-tête et pied de page",
+   "btn": "Lier au précédent",
+   "section": {
+    "page": 3,
+    "lien": false
+   },
+   "t": "Cliquez sur « Lier au précédent » pour le désactiver : la section 2 a maintenant son propre pied de page."
+  },
+  {
+   "at": "footer",
+   "page": 2,
+   "tab": "En-tête et pied de page",
+   "keys": "Suppr",
+   "footer": {
+    "num": false
+   },
+   "t": "Sur la page du sommaire, sélectionnez le numéro et supprimez-le : les pages 1 et 2 n'ont plus de numéro."
+  },
+  {
+   "at": "footer",
+   "page": 3,
+   "tab": "En-tête et pied de page",
+   "btn": "Numéro de page",
+   "ctx": {
+    "items": [
+     "Haut de page",
+     "Bas de page",
+     "Marges de la page",
+     "Position actuelle",
+     "Format des numéros de page…",
+     "Supprimer les numéros de page"
+    ],
+    "hot": 4
+   },
+   "dialog": {
+    "titre": "Format des numéros de page",
+    "lignes": [
+     [
+      "Format des nombres",
+      "1, 2, 3…"
+     ],
+     [
+      "Numérotation des pages",
+      "À partir de : 1",
+      "Continuer la section précédente"
+     ]
+    ],
+    "hot": [
+     1
+    ],
+    "ok": true
+   },
+   "section": {
+    "page": 3,
+    "debut": 1
+   },
+   "t": "Numéro de page › Format des numéros de page : choisissez « À partir de : 1 », puis OK."
+  },
+  {
+   "at": "p1",
+   "tab": "En-tête et pied de page",
+   "btn": "Fermer l'en-tête et le pied de page",
+   "edit": false,
+   "t": "Fermez l'en-tête et le pied de page : l'introduction porte le numéro 1, la page suivante le 2."
+  },
+  {
+   "at": "toc",
+   "tab": "Références",
+   "btn": "Mettre à jour la table",
+   "tocUpdate": true,
+   "t": "Mettez enfin le sommaire à jour : il reprend les nouveaux numéros de page."
+  }
+ ],
+ "guide": {
+  "question": "Comment numéroter à partir de la page 3 dans Word ?",
+  "intro": "Pour que la page de garde et le sommaire n'aient pas de numéro, et que l'introduction commence à 1, il faut couper le document en deux sections. La seconde section reçoit son propre pied de page, détaché du précédent, et une numérotation qui repart de 1.",
+  "exemple": {
+   "titre": "Le chemin dans Word",
+   "formule": "Mise en page › Sauts de page › Page suivante",
+   "explication": "Puis, dans le pied de page de la section 2 : désactivez « Lier au précédent » et choisissez « À partir de : 1 » dans Format des numéros de page."
+  },
+  "erreurs": [
+   [
+    "Les numéros disparaissent partout",
+    "« Lier au précédent » était encore actif : désactivez-le avant de supprimer les numéros de la première section."
+   ],
+   [
+    "L'introduction affiche 3 au lieu de 1",
+    "Dans Format des numéros de page, choisissez « À partir de : 1 »."
+   ],
+   [
+    "Une page blanche apparaît",
+    "Un saut de page et un saut de section se suivent : affichez les marques (¶) et supprimez le saut de page en trop."
+   ]
+  ],
+  "faq": [
+   [
+    "Je veux le numéro 3 sur la page 3, pas 1 : que faire ?",
+    "Gardez « Continuer la section précédente » dans Format des numéros de page : la numérotation suit les pages."
+   ],
+   [
+    "Comment voir les sauts de section ?",
+    "Accueil › Afficher tout (¶) : les sauts apparaissent en pointillés, avec leur type."
+   ],
+   [
+    "Le sommaire indique encore les anciens numéros, pourquoi ?",
+    "Il faut le mettre à jour : Références › Mettre à jour la table."
+   ]
+  ]
+ },
+ "voirAussi": [
+  "numeroter-les-pages",
+  "sauts-de-page-et-de-section",
+  "sommaire-automatique"
+ ]
+}
