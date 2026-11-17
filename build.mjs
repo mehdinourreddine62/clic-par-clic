@@ -132,12 +132,14 @@ ${sections}
 
 /* ---------- accueil général ---------- */
 const jsonld=o=>`<script type="application/ld+json">${JSON.stringify(o).replace(/</g,"\\u003c")}</script>\n`;
-function rootHome(){
+function rootHome(racine=false){
+  /* racine : copie de l'accueil publiée à l'adresse principale du compte, pour que Google y lise le nom et l'icône du site */
+  const ROOT=new URL(SITE.url).origin+"/",home=racine?ROOT:SITE.url;
   const LIVE=CTX.filter(c=>c.sw.disponible===true);
   const dispo=LIVE.map(c=>c.sw.nom),liste=dispo.length>1?dispo.slice(0,-1).join(", ")+" et "+dispo.at(-1):dispo[0];
-  const title=`${SITE.nom} : apprendre ${liste} gratuitement, en leçons animées`;
+  const title=racine?`${SITE.nom} : leçons animées gratuites pour ${liste}`:`${SITE.nom} : apprendre ${liste} gratuitement, en leçons animées`;
   const desc=`Des leçons animées et gratuites pour apprendre ${liste} pas à pas : formules, mise en forme, raccourcis clavier, parcours guidés et fichiers d'exercice.`;
-  const ld={"@context":"https://schema.org","@type":"WebSite",name:SITE.nom,alternateName:["Clic-par-clic","Clic par clic, leçons animées"],url:SITE.url,inLanguage:"fr",description:desc,publisher:{"@type":"Organization",name:SITE.nom,url:SITE.url,logo:`${SITE.url}assets/favicon-192.png`}};
+  const ld={"@context":"https://schema.org","@type":"WebSite",name:SITE.nom,alternateName:["Clic-par-clic","Clic par clic, leçons animées"],url:home,inLanguage:"fr",description:desc,publisher:{"@type":"Organization",name:SITE.nom,url:SITE.url,logo:`${SITE.url}assets/favicon-192.png`}};
   const verif=SITE.verificationGoogle?`<meta name="google-site-verification" content="${SITE.verificationGoogle}">\n`:"";
   const softs=SOFTS.map(sw=>{const c=LIVE.find(x=>x.sw===sw);
     const inner=`<span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24">${sw.icone}</svg></span><span class="sb"><b>${esc(sw.nom)}</b><span class="sd">${esc(sw.accroche)}</span><small>${c?`${c.lessons.length} leçons${c.parcours.length?` · ${c.parcours.length} parcours guidés`:""}`:"Bientôt disponible"}</small></span>`;
@@ -156,7 +158,7 @@ function rootHome(){
     ${featL.length?`<section class="feat"><h2 class="lbl">Les leçons les plus consultées</h2><div class="cards">\n${featL.map(lessonCard).join("\n")}\n</div></section>`:""}
     ${featC.length?`<section class="feat"><h2 class="lbl">Cas pratiques</h2><div class="rgrid">\n${featC.map(caseCard).join("\n")}\n</div></section>`:""}`;
   const themes={};LIVE.forEach(({sw,cats})=>cats.forEach(c=>{if(!themes[c.id])themes[c.id]=sw.id;}));
-  return head({title,desc,url:SITE.url,root:"",ld,extra:verif})+`  <div id="root">
+  return head({title,desc,url:home,root:"",ld,extra:(racine?`<base href="${SITE.url}">\n`:"")+verif})+`  <div id="root">
     <header class="hero">
       <h1>Vos logiciels, <em>étape par étape.</em></h1>
       <p>Des leçons animées et gratuites : on voit le geste, puis on le refait. Choisissez un logiciel, ou cherchez directement ce qui vous bloque.</p>
@@ -295,6 +297,11 @@ for(const sw of SOFTS)fs.rmSync(sw.id,{recursive:true,force:true});
 fs.rmSync("assets",{recursive:true,force:true});
 fs.rmSync("fichiers",{recursive:true,force:true});
 write("index.html",rootHome());
+write("racine/index.html",rootHome(true));
+for(const f of ["favicon.svg","favicon-48.png","favicon-192.png","apple-touch-icon.png"])fs.copyFileSync(`src/${f}`,`racine/${f}`);
+fs.copyFileSync("src/favicon-48.png","racine/favicon.ico");
+write("racine/robots.txt",`User-agent: *\nAllow: /\n\nSitemap: ${SITE.url}sitemap.xml\n`);
+write("racine/.nojekyll","");
 let nFiles=0;const urls=[SITE.url];
 for(const ctx of CTX){const{sw,lessons,parcours}=ctx;
   const live=sw.disponible===true;

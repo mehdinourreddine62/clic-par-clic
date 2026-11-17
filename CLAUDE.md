@@ -36,7 +36,7 @@ Le `README.md` décrit l'organisation des fichiers et tous les champs d'une leç
 - Parcours guidés : `content/excel/parcours.json`.
 - Lecteur animé : `src/player.js` ; accueil : `src/home.js` ; commun : `src/app.js` ; style : `src/style.css`.
 - Fichiers Excel à télécharger : générés par `src/xlsx.mjs` pour chaque leçon contenant une formule (hors rubriques Erreurs, Feuilles et noms, Formules dynamiques, et LAMBDA). Une fonction absente de la table de traduction FN arrête la génération : ajoute-la.
-- **Ne modifie jamais à la main** `index.html`, `excel/`, `word/`, `assets/`, `fichiers/`, `sitemap.xml`, `404.html`, `favicon.ico` : ils sont générés. L'icône du site vient de `src/favicon.svg` et des PNG de `src/`.
+- **Ne modifie jamais à la main** `index.html`, `excel/`, `word/`, `assets/`, `fichiers/`, `sitemap.xml`, `404.html`, `favicon.ico`, `racine/` : ils sont générés. L'icône du site vient de `src/favicon.svg` et des PNG de `src/`.
 
 ## Générer, vérifier, publier
 
@@ -55,7 +55,7 @@ Le `README.md` décrit l'organisation des fichiers et tous les champs d'une leç
 - Le propriétaire ne veut **pas de nom de domaine payant**.
 - Après un ajout important, rappelle-lui de renvoyer `sitemap.xml` dans Search Console et propose quelques adresses à soumettre via « Inspection de l'URL ».
 
-- **Nom et icône dans Google** : Google lit le nom du site et l'icône sur `https://mehdinourreddine62.github.io/`. Depuis le 17 novembre 2026, cette page existe : dépôt séparé `mehdinourreddine62/mehdinourreddine62.github.io` (page d'accueil simple « Clic par clic », même icône, `WebSite` JSON-LD, liens vers `/clic-par-clic/`, `robots.txt` qui indique le sitemap). Si l'icône ou les logiciels changent, mets aussi à jour cette page. Google met plusieurs semaines à afficher le nouveau nom et la nouvelle icône.
+- **Nom et icône dans Google** : Google lit le nom du site et l'icône sur `https://mehdinourreddine62.github.io/`. Cette page vient du dépôt séparé `mehdinourreddine62/mehdinourreddine62.github.io` (propriété Search Console validée le 17 novembre 2026). Son contenu est généré ici dans `racine/` : copie de l'accueil, avec `<base>` vers `/clic-par-clic/`, une adresse canonique propre et un `robots.txt` qui indique le sitemap. Le workflow le recopie dans l'autre dépôt si le secret `RACINE_TOKEN` existe (jeton GitHub à accès limité à ce dépôt, droit « Contents : lecture et écriture »). Sans ce secret, l'étape est ignorée : il faut alors copier `racine/` à la main dans l'autre dépôt.
 
 ## État et suite
 
