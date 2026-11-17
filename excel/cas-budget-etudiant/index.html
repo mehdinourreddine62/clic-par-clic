@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Faire son budget étudiant sur Excel : cas pratique animé pas à pas | Clic par clic</title>
+<meta name="description" content="Construire un budget complet : totaux, écarts, couleurs et graphique. Leçon Excel animée en 10 étapes, niveau débutant, gratuite.">
+<link rel="canonical" href="https://mehdinourreddine62.github.io/clic-par-clic/excel/cas-budget-etudiant/">
+<meta name="robots" content="index,follow">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="Clic par clic">
+<meta property="og:title" content="Faire son budget étudiant sur Excel : cas pratique animé pas à pas | Clic par clic">
+<meta property="og:description" content="Construire un budget complet : totaux, écarts, couleurs et graphique. Leçon Excel animée en 10 étapes, niveau débutant, gratuite.">
+<meta property="og:url" content="https://mehdinourreddine62.github.io/clic-par-clic/excel/cas-budget-etudiant/">
+<meta name="twitter:card" content="summary">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Clic par clic","item":"https://mehdinourreddine62.github.io/clic-par-clic/"},{"@type":"ListItem","position":2,"name":"Cas pratiques","item":"https://mehdinourreddine62.github.io/clic-par-clic/#theme-cas"},{"@type":"ListItem","position":3,"name":"Cas pratique : budget mensuel d'étudiant","item":"https://mehdinourreddine62.github.io/clic-par-clic/excel/cas-budget-etudiant/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","name":"Cas pratique : budget mensuel d'étudiant dans Excel","description":"Construire un budget complet : totaux, écarts, couleurs et graphique.","inLanguage":"fr","isAccessibleForFree":true,"educationalLevel":"Débutant","learningResourceType":"Leçon animée","url":"https://mehdinourreddine62.github.io/clic-par-clic/excel/cas-budget-etudiant/","isPartOf":{"@type":"Course","name":"Clic par clic : apprendre Excel en animation","url":"https://mehdinourreddine62.github.io/clic-par-clic/"}}</script>
+<script>document.documentElement.classList.add("js");try{var t=localStorage.getItem("cpc-theme");if(t==="dark"||t==="light")document.documentElement.dataset.theme=t}catch(e){}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="../../assets/app.css">
+</head>
+<body>
+<div class="wrap">
+  <div class="topbar"><a class="brand" href="../../"><span class="logo" aria-hidden="true"><i></i><i class="on"></i><i></i><i class="on"></i><i class="on"></i><i></i></span>Clic par clic</a><button class="theme" id="theme" type="button"></button></div>
+  <main id="lesson">
+    <nav class="crumbs" aria-label="Fil d'Ariane"><a href="../../">Accueil</a><span aria-hidden="true">›</span><a href="../../#theme-cas">Cas pratiques</a><span aria-hidden="true">›</span><span>Cas pratique : budget mensuel d'étudiant</span></nav>
+    <div class="lhead">
+      <div class="meta"><span class="tag" style="--k:var(--r3)"><svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2M3 13h18"/></svg>Cas pratiques</span><span><span class="lvl" title="Débutant" aria-label="Débutant"><i class="on"></i><i class=""></i><i class=""></i></span> Débutant</span></div>
+      <h1>Cas pratique : budget mensuel d'étudiant</h1>
+      <p>Construire un budget complet : totaux, écarts, couleurs et graphique.</p>
+    </div>
+    <div class="win">
+      <div id="ribwrap"><div class="ribbon" id="ribbon"></div><div class="ribpanel" id="ribpanel" hidden></div></div>
+      <div class="fbar"><div class="namebox" id="namebox"></div><div class="fx">fx</div><div class="formula" id="formula"></div></div>
+      <div class="stage"><div class="sheetwrap" id="sheetwrap"><div class="sheetinner"><table class="sheet" id="sheet"></table><div class="ov" id="ov"></div></div></div><aside class="pivot" id="pivot" hidden></aside><div class="keys" id="keys" hidden></div><div class="msg" id="msg" hidden></div><div class="preview" id="preview" hidden></div></div>
+      <div class="tabs" id="tabs"></div>
+      <p class="cap" id="text" aria-live="polite">Un budget en colonnes : ce qui était prévu, ce qui a été dépensé, puis l'écart. Les montants du mois sont déjà saisis.</p>
+      <div class="bar">
+        <button class="ic" id="prev" aria-label="Étape précédente"><svg viewBox="0 0 16 16"><path d="M10.5 2 4 8l6.5 6 1.2-1.3L6.6 8l5.1-4.7z"/></svg></button>
+        <button class="ic play" id="play" aria-label="Lecture"></button>
+        <button class="ic" id="next" aria-label="Étape suivante"><svg viewBox="0 0 16 16"><path d="M5.5 2 12 8l-6.5 6-1.2-1.3L9.4 8 4.3 3.3z"/></svg></button>
+        <div class="progress" id="progress"></div>
+        <span class="count" id="count"></span>
+      </div>
+    </div>
+    <p class="hint">Clavier : <kbd>←</kbd> <kbd>→</kbd> pour changer d'étape, <kbd>Espace</kbd> pour lancer ou mettre en pause.</p>
+    <a class="dl" href="../../fichiers/excel/cas-budget-etudiant.xlsx" download="cas-budget-etudiant.xlsx"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg><span><b>Télécharger le fichier d'exercice</b><small>Excel · consignes, données de départ et solution</small></span></a><div class="pband" id="pband" hidden></div>
+    <details class="sx"><summary>Syntaxe <code>SOMME · écart · % du total · SI · graphique</code></summary><dl><dt>Notions utilisées</dt><dd>SOMME, recopie, écart, références absolues, pourcentages, SI, mise en forme conditionnelle, graphique en secteurs</dd><dt>Durée</dt><dd>Environ 15 minutes en refaisant le fichier</dd></dl></details>
+    <details class="sx"><summary>Résumé écrit des étapes</summary><ol class="steps"><li>Un budget en colonnes : ce qui était prévu, ce qui a été dépensé, puis l'écart. Les montants du mois sont déjà saisis.</li><li>Commencez par les totaux : SOMME additionne le prévu.</li><li>Recopiez vers la droite pour le réel : 888 €, plus que prévu.</li><li>L'écart, c'est le réel moins le prévu. Positif : vous avez dépensé plus que prévu.</li><li>Une mise en forme conditionnelle colore en rouge les postes qui dépassent.</li><li>La part de chaque poste dans le total, avec le total figé par des $, au format %.</li><li>Ce qu'il reste à la fin du mois : les revenus moins les dépenses réelles.</li><li>Un SI affiche un message clair selon le reste.</li><li>Sélectionnez les postes, puis le réel avec Ctrl, et Insertion › Secteurs : la répartition saute aux yeux.</li><li>Tout est relié : corrigez une dépense, et totaux, écarts, couleurs et graphique suivent.</li></ol></details>
+    <section class="also"><h2>Voir aussi</h2><div class="also-l"><a href="../cas-suivi-de-notes/"><b>Cas pratique : suivi de notes</b><small>Moyennes pondérées, mentions, classement et statistiques d'une classe.</small></a></div></section>
+    <nav class="lnav" aria-label="Leçons voisines"><a href="../lambda/"><small>← Précédente</small>LAMBDA : créer sa propre fonction</a><a class="nx" id="nextLesson" href="../cas-suivi-de-notes/"><small>Suivante →</small>Cas pratique : suivi de notes</a></nav>
+  </main>
+</div>
+<script type="application/json" id="lesson-data">{"id":"cas-budget-etudiant","g":[["Poste","Prévu","Réel","Écart","Part du total","","Revenus","900,00 €"],["Loyer","450,00 €","450,00 €","","","","Reste",""],["Courses","200,00 €","235,00 €","","","","Statut",""],["Transport","40,00 €","38,00 €","","","","",""],["Téléphone","20,00 €","20,00 €","","","","",""],["Loisirs","60,00 €","95,00 €","","","","",""],["Épargne","80,00 €","50,00 €","","","","",""],["Total","","","","","","",""]],"s":[{"c":"A1","tab":"Accueil","t":"Un budget en colonnes : ce qui était prévu, ce qui a été dépensé, puis l'écart. Les montants du mois sont déjà saisis."},{"c":"B8","f":"=SOMME(B2:B7)","v":"850,00 €","t":"Commencez par les totaux : SOMME additionne le prévu."},{"c":"B8","fill":{"C8":"888,00 €"},"t":"Recopiez vers la droite pour le réel : 888 €, plus que prévu."},{"c":"D2","f":"=C2-B2","v":"0,00 €","fill":{"D3":"35,00 €","D4":"-2,00 €","D5":"0,00 €","D6":"35,00 €","D7":"-30,00 €","D8":"38,00 €"},"t":"L'écart, c'est le réel moins le prévu. Positif : vous avez dépensé plus que prévu."},{"c":"D2","sel":"D2:D7","drag":1,"menu":"Mise en forme conditionnelle › Règles de mise en surbrillance › \u003cb>Supérieur à…\u003c/b>","rule":"0","bad":"D3 D6","t":"Une mise en forme conditionnelle colore en rouge les postes qui dépassent."},{"c":"E2","f":"=C2/$C$8","v":"51 %","fill":{"E3":"26 %","E4":"4 %","E5":"2 %","E6":"11 %","E7":"6 %"},"t":"La part de chaque poste dans le total, avec le total figé par des $, au format %."},{"c":"H2","f":"=H1-C8","v":"12,00 €","t":"Ce qu'il reste à la fin du mois : les revenus moins les dépenses réelles."},{"c":"H3","f":"=SI(H2>=0;\"Budget tenu\";\"Dépassement\")","v":"Budget tenu","t":"Un SI affiche un message clair selon le reste."},{"c":"A1","sel":"A1:A7","sel2":"C1:C7","keys":"Ctrl","tab":"Insertion","btn":"Secteurs","chart":1,"t":"Sélectionnez les postes, puis le réel avec Ctrl, et Insertion › Secteurs : la répartition saute aux yeux."},{"c":"C3","f":"200,00 €","tab":"Accueil","set":{"C8":"853,00 €","D3":"0,00 €","D8":"3,00 €","E2":"53 %","E3":"23 %","E4":"4 %","E5":"2 %","E6":"11 %","E7":"6 %","H2":"47,00 €"},"unbad":"D3","t":"Tout est relié : corrigez une dépense, et totaux, écarts, couleurs et graphique suivent."}],"rib":1,"chart":{"type":"pie","labels":"A2:A7","series":["C2:C7"],"title":"Où va mon argent ?","legend":true,"dlabels":true,"at":"G6:J16"}}</script>
+<script src="../../assets/app.js"></script>
+<script src="../../assets/player.js"></script>
+</body>
+</html>
