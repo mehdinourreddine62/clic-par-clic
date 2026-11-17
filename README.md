@@ -145,7 +145,7 @@ Sont exclues les rubriques Erreurs, Feuilles et noms et Formules dynamiques, ain
 
 ## Leçons Word
 
-Le lecteur `src/player-word.js` affiche des pages. Une leçon Word remplace `grille` par `document` : `{"pages": [[bloc, …], …], "nav": false, "tocAuto": false, "footer": null, "entete": null, "marques": false, "marges": {}, "sections": [], "numerotation": null, "styles": {}}`. Un bloc vaut `{"id": "h1", "s": "titre1", "txt": "Introduction"}` ; styles disponibles : `normal`, `titre`, `sous`, `manuel` (gras posé à la main), `titre1`, `titre2`, `titre3`, `toc` (sommaire, calculé à partir des titres), `vide` (ligne vide, ¶ si les marques sont affichées), `saut` (saut de page ou de section, visible seulement avec les marques ; libellé dans `txt`), `tableau` (lignes dans `lignes`, la première sert d'en-tête). Une page dont un bloc porte `"orient": "paysage"` s'affiche en paysage ; une page vide disparaît. `numerotation` numérote les titres : `{"1": "I.", "2": "1)", "3": "a)"}` (le premier caractère donne le type : `I`, `i`, `1`, `a`, `A`). `styles` change l'apparence de départ d'un style : `{"titre1": {"taille": 24, "couleur": "#1c7a43", "gras": true, "majuscules": true}}` (taille en points).
+Le lecteur `src/player-word.js` affiche des pages. Une leçon Word remplace `grille` par `document` : `{"pages": [[bloc, …], …], "nav": false, "tocAuto": false, "footer": null, "entete": null, "marques": false, "marges": {}, "sections": [], "numerotation": null, "styles": {}}`. Un bloc vaut `{"id": "h1", "s": "titre1", "txt": "Introduction"}` ; styles disponibles : `normal`, `titre`, `sous`, `manuel` (gras posé à la main), `titre1`, `titre2`, `titre3`, `toc` (sommaire, calculé à partir des titres), `vide` (ligne vide, ¶ si les marques sont affichées), `saut` (saut de page ou de section, visible seulement avec les marques ; libellé dans `txt`), `tableau` (lignes dans `lignes`, la première sert d'en-tête ; `tstyle` : `grille`, `accent`, `fonce` ; `ajuste` : ajusté au contenu), `image` (`img` : `stand`, `graphique` ou `plan`, dessins définis dans `IMG` du lecteur ; `largeur` en % ; `habillage` : `aligne` ou `carre`), `legende` (numérotée « Figure n : » automatiquement), `tof` (table des figures), `biblio` (bibliographie construite à partir des sources). Un paragraphe peut porter des notes et des citations dans `ins` : `{"t": "note", "id": "n1", "apres": "mot", "txt": "…"}` ou `{"t": "cit", "id": "c1", "src": "kotler", "apres": "mot"}`, placées après le mot `apres` ; les notes sont numérotées dans l'ordre du document. Une page dont un bloc porte `"orient": "paysage"` s'affiche en paysage ; une page vide disparaît. `numerotation` numérote les titres : `{"1": "I.", "2": "1)", "3": "a)"}` (le premier caractère donne le type : `I`, `i`, `1`, `a`, `A`). `styles` change l'apparence de départ d'un style : `{"titre1": {"taille": 24, "couleur": "#1c7a43", "gras": true, "majuscules": true}}` (taille en points).
 
 | Champ d'étape | Effet |
 |---|---|
@@ -165,6 +165,13 @@ Le lecteur `src/player-word.js` affiche des pages. Une leçon Word remplace `gri
 | `texte` | Change le texte d'un bloc : `{"sp": "Saut de section (page suivante)"}` |
 | `remove`, `move`, `insererPage`, `orient` | Supprime des blocs ; déplace un bloc (`{"id": "h5", "before": "x"}` ou `{"id": "h5", "page": 4}`) ; insère des pages vides (`[4, 5]`) ; oriente la page d'un bloc (`{"tbl": "paysage"}`) |
 | `marges` | Marges en centimètres : `{"gauche": 3}` |
+| `props`, `lignes` | Change des propriétés d'un bloc (`{"img": {"largeur": 45}}`) ; remplace les lignes d'un tableau |
+| `insAjout`, `insSuppr` | Ajoute une note ou une citation (`[{"bloc": "p4c", "t": "note", …}]`) ; en retire une par son `id` |
+| `sources` | Ajoute des sources : `{"kotler": {"court": "(Kotler, 2019)", "long": "Kotler, P. (2019)…"}}` (aussi dans `document.sources`) |
+| `tofUpdate` | Met à jour la table des figures (`show: "tof"` l'insère) |
+| `grille` | Avec `btn: "Tableau"`, anime la grille d'insertion : `[colonnes, lignes]` |
+| `poignee` | Anime le redimensionnement d'une image par sa poignée d'angle |
+| `groupe` | Groupe du ruban du bouton `btn`, quand deux boutons portent le même nom |
 | `voir` | Bloc à garder visible à l'écran en plus de la cible (page voisine) |
 | `at: "header"` | Avec `page`, vise un en-tête |
 | `couleur1` | Nouvelle couleur du style Titre 1 (raccourci de `modifStyle`) |

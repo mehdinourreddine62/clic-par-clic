@@ -1,0 +1,264 @@
+{
+ "id": "inserer-une-image",
+ "titre": "Insérer une image",
+ "niveau": 1,
+ "resume": "Insérer une photo, la redimensionner et choisir comment le texte l'entoure.",
+ "motsCles": "word insérer une image photo redimensionner habillage du texte carré haut et bas déplacer image",
+ "syntaxe": "Insertion › Images › Cet appareil",
+ "titreSeo": "Insérer une image dans Word et gérer l'habillage du texte",
+ "arguments": [
+  [
+   "Insertion › Images",
+   "Insère une image depuis votre ordinateur"
+  ],
+  [
+   "Poignée d'angle",
+   "Redimensionne sans déformer"
+  ],
+  [
+   "Habillage du texte",
+   "Comment le texte se place autour de l'image"
+  ]
+ ],
+ "document": {
+  "numerotation": {
+   "1": "I.",
+   "2": "1)",
+   "3": "a)"
+  },
+  "footer": {
+   "num": true,
+   "first": true
+  },
+  "pages": [
+   [
+    {
+     "id": "ttl",
+     "s": "titre",
+     "txt": "Rapport de stage"
+    },
+    {
+     "id": "sub",
+     "s": "sous",
+     "txt": "Assistante marketing · Société Lumen · juin 2026"
+    },
+    {
+     "id": "aut",
+     "s": "sous",
+     "txt": "Léa Martin · BTS Communication"
+    }
+   ],
+   [
+    {
+     "id": "h1",
+     "s": "titre1",
+     "txt": "Introduction"
+    },
+    {
+     "id": "p1",
+     "txt": "Ce rapport présente les dix semaines de stage effectuées au sein du service marketing de la société Lumen, à Lyon."
+    },
+    {
+     "id": "h2",
+     "s": "titre1",
+     "txt": "Présentation de l'entreprise"
+    },
+    {
+     "id": "p2",
+     "txt": "Lumen conçoit des luminaires pour les bureaux. L'entreprise compte quarante-cinq salariés et vend dans toute l'Europe."
+    },
+    {
+     "id": "h3",
+     "s": "titre2",
+     "txt": "Le service marketing"
+    },
+    {
+     "id": "p3",
+     "txt": "Le service réunit quatre personnes, chargées de la communication, du site internet et des salons professionnels."
+    }
+   ],
+   [
+    {
+     "id": "h4",
+     "s": "titre1",
+     "txt": "Missions réalisées"
+    },
+    {
+     "id": "h4a",
+     "s": "titre2",
+     "txt": "Le salon Bureau Expo"
+    },
+    {
+     "id": "h4b",
+     "s": "titre3",
+     "txt": "La préparation"
+    },
+    {
+     "id": "p4b",
+     "txt": "Commande des supports, réservation du stand et planning de l'équipe."
+    },
+    {
+     "id": "pI",
+     "txt": "Le stand de 24 m² accueillait les visiteurs, une zone de démonstration et un petit salon pour recevoir les clients. Les lampes de la nouvelle collection étaient installées au-dessus du comptoir d'accueil, pour être vues de loin."
+    },
+    {
+     "id": "h4c",
+     "s": "titre3",
+     "txt": "Le bilan"
+    },
+    {
+     "id": "p4c",
+     "txt": "Cent vingt contacts ont été recueillis en trois jours de salon."
+    }
+   ]
+  ]
+ },
+ "etapes": [
+  {
+   "at": "pI",
+   "t": "Une photo du stand rendra ce passage plus vivant : cliquez au début du paragraphe."
+  },
+  {
+   "at": "pI",
+   "tab": "Insertion",
+   "btn": "Images",
+   "ctx": {
+    "items": [
+     "Cet appareil…",
+     "Images en stock…",
+     "Images en ligne…"
+    ],
+    "hot": 0
+   },
+   "dialog": {
+    "titre": "Insérer une image",
+    "lignes": [
+     [
+      "Dossier",
+      "Images › Stage"
+     ],
+     [
+      "Fichier",
+      "stand-bureau-expo.jpg",
+      "(aucun)"
+     ]
+    ],
+    "hot": [
+     1
+    ],
+    "ok": true
+   },
+   "add": [
+    {
+     "after": "p4b",
+     "block": {
+      "id": "img",
+      "s": "image",
+      "img": "stand",
+      "largeur": 80
+     }
+    }
+   ],
+   "t": "Insertion › Images › Cet appareil : choisissez la photo, elle s'insère en grand, sur sa propre ligne."
+  },
+  {
+   "sel": "img",
+   "poignee": true,
+   "props": {
+    "img": {
+     "largeur": 55
+    }
+   },
+   "t": "Cliquez sur l'image, puis tirez une poignée d'angle vers l'intérieur : elle rétrécit sans se déformer.",
+   "tab": "Insertion"
+  },
+  {
+   "sel": "img",
+   "tab": "Format de l'image",
+   "btn": "Habillage du texte",
+   "ctx": {
+    "items": [
+     "Aligné sur le texte",
+     "Carré",
+     "Rapproché",
+     "Haut et bas",
+     "Derrière le texte",
+     "Devant le texte"
+    ],
+    "hot": 1
+   },
+   "props": {
+    "img": {
+     "habillage": "carre",
+     "largeur": 45
+    }
+   },
+   "t": "Format de l'image › Habillage du texte › Carré : le texte s'écoule à côté de l'image."
+  },
+  {
+   "sel": "img",
+   "tab": "Format de l'image",
+   "btn": "Habillage du texte",
+   "ctx": {
+    "items": [
+     "Aligné sur le texte",
+     "Carré",
+     "Rapproché",
+     "Haut et bas",
+     "Derrière le texte",
+     "Devant le texte"
+    ],
+    "hot": 3
+   },
+   "props": {
+    "img": {
+     "habillage": "aligne",
+     "largeur": 55
+    }
+   },
+   "t": "Pour un rapport, « Haut et bas » est souvent plus sûr : l'image reste seule sur sa ligne et ne bouge pas."
+  }
+ ],
+ "guide": {
+  "question": "Comment insérer une image dans Word ?",
+  "intro": "Une image s'insère à l'endroit du curseur, depuis l'onglet Insertion. On la redimensionne avec les poignées d'angle, puis on choisit l'habillage du texte : la façon dont le texte se place autour d'elle. Pour un rapport ou un mémoire, une image seule sur sa ligne, avec une légende, reste le choix le plus simple.",
+  "exemple": {
+   "titre": "Le chemin dans Word",
+   "formule": "Insertion › Images › Cet appareil",
+   "explication": "Puis Format de l'image › Habillage du texte pour choisir Carré, Haut et bas…"
+  },
+  "erreurs": [
+   [
+    "Une image déformée",
+    "Elle a été étirée par une poignée du milieu : utilisez une poignée d'angle."
+   ],
+   [
+    "Une image impossible à déplacer",
+    "Elle est « Alignée sur le texte » : changez l'habillage, ou coupez-la et collez-la ailleurs."
+   ],
+   [
+    "Une image qui saute de page",
+    "Choisissez l'habillage « Haut et bas » ou « Aligné sur le texte »."
+   ]
+  ],
+  "faq": [
+   [
+    "Comment centrer une image ?",
+    "Avec l'habillage « Aligné sur le texte », cliquez dessus puis Accueil › Centrer."
+   ],
+   [
+    "Comment rogner une image ?",
+    "Format de l'image › Rogner, puis tirez les bords noirs vers l'intérieur."
+   ],
+   [
+    "Comment ajouter une légende ?",
+    "Clic droit sur l'image › Insérer une légende : Word numérote les figures automatiquement."
+   ]
+  ]
+ },
+ "voirAussi": [
+  "legendes-et-table-des-figures",
+  "inserer-un-tableau",
+  "marges-et-orientation"
+ ]
+}

@@ -1,0 +1,333 @@
+{
+ "id": "bibliographie",
+ "titre": "Citations et bibliographie",
+ "niveau": 2,
+ "resume": "Citer ses sources dans le texte et générer la bibliographie automatiquement.",
+ "motsCles": "word bibliographie citation source APA insérer une citation ajouter une source références mémoire",
+ "syntaxe": "Références › Insérer une citation › Ajouter une nouvelle source",
+ "titreSeo": "Faire une bibliographie automatique dans Word (APA) : tutoriel animé",
+ "arguments": [
+  [
+   "Style",
+   "La norme de présentation : APA, Chicago, IEEE…"
+  ],
+  [
+   "Insérer une citation",
+   "Ajoute une source et la cite dans le texte"
+  ],
+  [
+   "Bibliographie",
+   "Construit la liste des sources citées"
+  ]
+ ],
+ "document": {
+  "numerotation": {
+   "1": "I.",
+   "2": "1)",
+   "3": "a)"
+  },
+  "footer": {
+   "num": true,
+   "first": true
+  },
+  "pages": [
+   [
+    {
+     "id": "ttl",
+     "s": "titre",
+     "txt": "Rapport de stage"
+    },
+    {
+     "id": "sub",
+     "s": "sous",
+     "txt": "Assistante marketing · Société Lumen · juin 2026"
+    },
+    {
+     "id": "aut",
+     "s": "sous",
+     "txt": "Léa Martin · BTS Communication"
+    }
+   ],
+   [
+    {
+     "id": "h1",
+     "s": "titre1",
+     "txt": "Introduction"
+    },
+    {
+     "id": "p1",
+     "txt": "Ce rapport présente les dix semaines de stage effectuées au sein du service marketing de la société Lumen, à Lyon."
+    },
+    {
+     "id": "h2",
+     "s": "titre1",
+     "txt": "Présentation de l'entreprise"
+    },
+    {
+     "id": "p2",
+     "txt": "Lumen conçoit des luminaires pour les bureaux. L'entreprise compte quarante-cinq salariés et vend dans toute l'Europe."
+    },
+    {
+     "id": "h3",
+     "s": "titre2",
+     "txt": "Le service marketing"
+    },
+    {
+     "id": "p3",
+     "txt": "Le service réunit quatre personnes, chargées de la communication, du site internet et des salons professionnels."
+    }
+   ],
+   [
+    {
+     "id": "h4",
+     "s": "titre1",
+     "txt": "Missions réalisées"
+    },
+    {
+     "id": "h4a",
+     "s": "titre2",
+     "txt": "Le salon Bureau Expo"
+    },
+    {
+     "id": "h4b",
+     "s": "titre3",
+     "txt": "La préparation"
+    },
+    {
+     "id": "p4b",
+     "txt": "Commande des supports, réservation du stand et planning de l'équipe."
+    },
+    {
+     "id": "h4c",
+     "s": "titre3",
+     "txt": "Le bilan"
+    },
+    {
+     "id": "p4c",
+     "txt": "Cent vingt contacts ont été recueillis en trois jours de salon."
+    },
+    {
+     "id": "h5",
+     "s": "titre1",
+     "txt": "Conclusion"
+    },
+    {
+     "id": "p5",
+     "txt": "Ce stage m'a permis de découvrir la gestion d'un événement de bout en bout, de la commande des supports au bilan."
+    }
+   ],
+   [
+    {
+     "id": "bib",
+     "s": "biblio",
+     "hide": true
+    }
+   ]
+  ]
+ },
+ "etapes": [
+  {
+   "at": "p3",
+   "t": "Toute idée empruntée doit être citée : Word mémorise vos sources et construit la bibliographie seul."
+  },
+  {
+   "at": "p3",
+   "tab": "Références",
+   "btn": "Style",
+   "ctx": {
+    "items": [
+     "APA",
+     "Chicago",
+     "IEEE",
+     "MLA"
+    ],
+    "hot": 0
+   },
+   "t": "Références › Style : choisissez la norme demandée par votre école, par exemple APA."
+  },
+  {
+   "at": "p3",
+   "tab": "Références",
+   "btn": "Insérer une citation",
+   "ctx": {
+    "items": [
+     "Ajouter une nouvelle source…",
+     "Ajouter un nouvel espace réservé…"
+    ],
+    "hot": 0
+   },
+   "dialog": {
+    "titre": "Créer la source",
+    "lignes": [
+     [
+      "Type de source",
+      "Livre"
+     ],
+     [
+      "Auteur",
+      "Kotler ; Keller ; Manceau",
+      ""
+     ],
+     [
+      "Titre",
+      "Marketing management",
+      ""
+     ],
+     [
+      "Année",
+      "2019",
+      ""
+     ],
+     [
+      "Éditeur",
+      "Pearson",
+      ""
+     ]
+    ],
+    "hot": [
+     1,
+     2,
+     3,
+     4
+    ],
+    "ok": true
+   },
+   "sources": {
+    "kotler": {
+     "court": "(Kotler, Keller, & Manceau, 2019)",
+     "long": "Kotler, P., Keller, K., & Manceau, D. (2019). Marketing management. Pearson."
+    }
+   },
+   "insAjout": [
+    {
+     "bloc": "p3",
+     "t": "cit",
+     "id": "c1",
+     "src": "kotler",
+     "apres": "professionnels"
+    }
+   ],
+   "t": "Insérer une citation › Ajouter une nouvelle source : remplissez la fiche, puis OK. La citation s'insère."
+  },
+  {
+   "at": "p2",
+   "tab": "Références",
+   "btn": "Insérer une citation",
+   "ctx": {
+    "items": [
+     "Ajouter une nouvelle source…",
+     "Ajouter un nouvel espace réservé…"
+    ],
+    "hot": 0
+   },
+   "dialog": {
+    "titre": "Créer la source",
+    "lignes": [
+     [
+      "Type de source",
+      "Site web",
+      "Livre"
+     ],
+     [
+      "Auteur",
+      "Lumen",
+      ""
+     ],
+     [
+      "Nom de la page web",
+      "Nos luminaires de bureau",
+      ""
+     ],
+     [
+      "Année",
+      "2026",
+      ""
+     ],
+     [
+      "Adresse",
+      "www.lumen.example",
+      ""
+     ]
+    ],
+    "hot": [
+     0,
+     1,
+     2,
+     3,
+     4
+    ],
+    "ok": true
+   },
+   "sources": {
+    "lumen": {
+     "court": "(Lumen, 2026)",
+     "long": "Lumen. (2026). Nos luminaires de bureau. www.lumen.example"
+    }
+   },
+   "insAjout": [
+    {
+     "bloc": "p2",
+     "t": "cit",
+     "id": "c2",
+     "src": "lumen",
+     "apres": "bureaux"
+    }
+   ],
+   "t": "Ajoutez une seconde source, ici un site web : Word la garde en mémoire pour la citer de nouveau."
+  },
+  {
+   "at": "bib",
+   "tab": "Références",
+   "btn": "Bibliographie",
+   "ctx": {
+    "items": [
+     "Bibliographie",
+     "Références",
+     "Ouvrages cités",
+     "Insérer la bibliographie"
+    ],
+    "hot": 0
+   },
+   "show": "bib",
+   "t": "Sur la dernière page, Références › Bibliographie : la liste des sources se construit, classée par auteur."
+  }
+ ],
+ "guide": {
+  "question": "Comment faire une bibliographie automatique dans Word ?",
+  "intro": "Word gère vos sources : chaque livre, article ou site web est saisi une fois dans une fiche, puis cité dans le texte en un clic. La bibliographie se construit ensuite automatiquement, triée et présentée selon la norme choisie : APA, Chicago, IEEE ou MLA.",
+  "exemple": {
+   "titre": "Le chemin dans Word",
+   "formule": "Références › Insérer une citation › Ajouter une nouvelle source",
+   "explication": "Puis, en fin de document : Références › Bibliographie."
+  },
+  "erreurs": [
+   [
+    "Une source absente de la bibliographie",
+    "Elle a été tapée à la main au lieu d'être insérée comme citation."
+   ],
+   [
+    "Une présentation qui ne correspond pas aux consignes",
+    "Changez la norme dans Références › Style : citations et bibliographie s'adaptent ensemble."
+   ]
+  ],
+  "faq": [
+   [
+    "Comment citer de nouveau une source ?",
+    "Références › Insérer une citation : elle apparaît dans la liste, cliquez dessus."
+   ],
+   [
+    "Comment corriger une source ?",
+    "Références › Gérer les sources, sélectionnez-la puis Modifier."
+   ],
+   [
+    "La bibliographie ne montre pas une nouvelle source, pourquoi ?",
+    "Cliquez dedans puis sur « Mettre à jour les citations et la bibliographie »."
+   ]
+  ]
+ },
+ "voirAussi": [
+  "notes-de-bas-de-page",
+  "sommaire-automatique",
+  "legendes-et-table-des-figures"
+ ]
+}

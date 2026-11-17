@@ -1,0 +1,288 @@
+{
+ "id": "legendes-et-table-des-figures",
+ "titre": "Légendes et table des figures",
+ "niveau": 2,
+ "resume": "Numéroter les figures automatiquement et en faire la liste.",
+ "motsCles": "word légende figure numérotation automatique table des figures table des illustrations insérer une légende mettre à jour",
+ "syntaxe": "Références › Insérer une légende",
+ "titreSeo": "Légendes et table des figures dans Word : tutoriel animé",
+ "arguments": [
+  [
+   "Insérer une légende",
+   "Ajoute « Figure 1 : … » sous l'image, numéroté automatiquement"
+  ],
+  [
+   "Table des illustrations",
+   "Liste les figures avec leur page"
+  ],
+  [
+   "Mettre à jour la table",
+   "Prend en compte les figures ajoutées"
+  ]
+ ],
+ "document": {
+  "numerotation": {
+   "1": "I.",
+   "2": "1)",
+   "3": "a)"
+  },
+  "footer": {
+   "num": true,
+   "first": true
+  },
+  "pages": [
+   [
+    {
+     "id": "ttl",
+     "s": "titre",
+     "txt": "Rapport de stage"
+    },
+    {
+     "id": "sub",
+     "s": "sous",
+     "txt": "Assistante marketing · Société Lumen · juin 2026"
+    },
+    {
+     "id": "aut",
+     "s": "sous",
+     "txt": "Léa Martin · BTS Communication"
+    }
+   ],
+   [
+    {
+     "id": "tof",
+     "s": "tof",
+     "hide": true
+    }
+   ],
+   [
+    {
+     "id": "h4",
+     "s": "titre1",
+     "txt": "Missions réalisées"
+    },
+    {
+     "id": "h4a",
+     "s": "titre2",
+     "txt": "Le salon Bureau Expo"
+    },
+    {
+     "id": "p4b",
+     "txt": "Commande des supports, réservation du stand et planning de l'équipe."
+    },
+    {
+     "id": "img1",
+     "s": "image",
+     "img": "stand",
+     "largeur": 52
+    }
+   ],
+   [
+    {
+     "id": "h4c",
+     "s": "titre3",
+     "txt": "Le bilan"
+    },
+    {
+     "id": "p4c",
+     "txt": "Cent vingt contacts ont été recueillis en trois jours de salon."
+    },
+    {
+     "id": "img2",
+     "s": "image",
+     "img": "graphique",
+     "largeur": 58
+    }
+   ],
+   [
+    {
+     "id": "h5",
+     "s": "titre1",
+     "txt": "Conclusion"
+    },
+    {
+     "id": "p5",
+     "txt": "Ce stage m'a permis de découvrir la gestion d'un événement de bout en bout, de la commande des supports au bilan."
+    }
+   ]
+  ]
+ },
+ "etapes": [
+  {
+   "at": "img1",
+   "t": "Dans un rapport, chaque image ou graphique porte un numéro et une légende : Word s'en charge."
+  },
+  {
+   "sel": "img1",
+   "tab": "Références",
+   "btn": "Insérer une légende",
+   "dialog": {
+    "titre": "Légende",
+    "lignes": [
+     [
+      "Légende",
+      "Figure 1 : Le stand Lumen",
+      "Figure 1"
+     ],
+     [
+      "Étiquette",
+      "Figure"
+     ],
+     [
+      "Position",
+      "Au-dessous de la sélection"
+     ]
+    ],
+    "hot": [
+     0
+    ],
+    "ok": true
+   },
+   "add": [
+    {
+     "after": "img1",
+     "block": {
+      "id": "cap1",
+      "s": "legende",
+      "txt": "Le stand Lumen au salon Bureau Expo"
+     }
+    }
+   ],
+   "t": "Cliquez sur l'image, puis Références › Insérer une légende : tapez le texte après « Figure 1 »."
+  },
+  {
+   "sel": "img2",
+   "tab": "Références",
+   "btn": "Insérer une légende",
+   "dialog": {
+    "titre": "Légende",
+    "lignes": [
+     [
+      "Légende",
+      "Figure 2 : Contacts par jour",
+      "Figure 2"
+     ],
+     [
+      "Étiquette",
+      "Figure"
+     ],
+     [
+      "Position",
+      "Au-dessous de la sélection"
+     ]
+    ],
+    "hot": [
+     0
+    ],
+    "ok": true
+   },
+   "add": [
+    {
+     "after": "img2",
+     "block": {
+      "id": "cap2",
+      "s": "legende",
+      "txt": "Contacts recueillis par jour de salon"
+     }
+    }
+   ],
+   "t": "Faites de même pour le graphique : Word lui donne le numéro 2."
+  },
+  {
+   "at": "tof",
+   "tab": "Références",
+   "btn": "Table des illustrations",
+   "dialog": {
+    "titre": "Table des illustrations",
+    "lignes": [
+     [
+      "Étiquette de légende",
+      "Figure"
+     ],
+     [
+      "Numéros de page",
+      "Aligner à droite"
+     ]
+    ],
+    "ok": true
+   },
+   "show": "tof",
+   "t": "Sur la page prévue, Références › Table des illustrations : la liste des figures s'insère, avec leurs pages."
+  },
+  {
+   "sel": "cap0",
+   "voir": "img1",
+   "add": [
+    {
+     "after": "h4a",
+     "block": {
+      "id": "img0",
+      "s": "image",
+      "img": "plan",
+      "largeur": 52
+     }
+    },
+    {
+     "after": "img0",
+     "block": {
+      "id": "cap0",
+      "s": "legende",
+      "txt": "Plan du stand"
+     }
+    }
+   ],
+   "t": "Ajoutez une image légendée plus haut : elle devient la figure 1, et les suivantes se renumérotent seules.",
+   "tab": "Références"
+  },
+  {
+   "at": "tof",
+   "tab": "Références",
+   "btn": "Mettre à jour la table",
+   "groupe": "Légendes",
+   "tofUpdate": true,
+   "t": "Mettez la table à jour : elle reprend les trois figures, avec leurs nouveaux numéros."
+  }
+ ],
+ "guide": {
+  "question": "Comment faire une table des figures dans Word ?",
+  "intro": "Une légende insérée par Word (« Figure 1 : … ») est numérotée automatiquement : ajoutez ou déplacez une image, les numéros suivent. La table des figures, appelée table des illustrations dans Word, liste ensuite toutes ces légendes avec leur page, comme un sommaire.",
+  "exemple": {
+   "titre": "Le chemin dans Word",
+   "formule": "Références › Insérer une légende",
+   "explication": "Puis, sur la page prévue : Références › Table des illustrations."
+  },
+  "erreurs": [
+   [
+    "Des numéros tapés à la main",
+    "Ils ne se décalent pas quand une figure est ajoutée : utilisez Insérer une légende."
+   ],
+   [
+    "Une figure absente de la table",
+    "Sa légende n'a pas été insérée par Word, ou la table n'a pas été mise à jour."
+   ],
+   [
+    "Des tableaux mélangés aux figures",
+    "Choisissez l'étiquette « Tableau » pour leurs légendes : Word fait deux listes séparées."
+   ]
+  ],
+  "faq": [
+   [
+    "Comment mettre la légende au-dessus d'un tableau ?",
+    "Dans la fenêtre Légende, choisissez la position « Au-dessus de la sélection »."
+   ],
+   [
+    "Comment mettre à jour la table des figures ?",
+    "Cliquez dedans, puis Références › Mettre à jour la table, dans le groupe Légendes."
+   ],
+   [
+    "Comment changer l'apparence des légendes ?",
+    "Modifiez le style « Légende » : toutes les légendes changent ensemble."
+   ]
+  ]
+ },
+ "voirAussi": [
+  "inserer-une-image",
+  "inserer-un-tableau",
+  "sommaire-automatique"
+ ]
+}
