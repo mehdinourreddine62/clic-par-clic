@@ -14,7 +14,8 @@ const strip=s=>s.replace(/<[^>]+>/g,"").replace(/&amp;/g,"&").replace(/&lt;/g,"<
 const readJson=f=>JSON.parse(fs.readFileSync(f,"utf8"));
 /* Numéro de version des fichiers CSS et JS : le navigateur recharge la nouvelle version après chaque publication */
 const VER={};const ver=n=>VER[n]??=(()=>{const src=n==="app.css"?"src/style.css":`src/${n}`;return fs.existsSync(src)?crypto.createHash("sha1").update(fs.readFileSync(src)).digest("hex").slice(0,8):"0";})();
-const write=(f,s)=>{fs.mkdirSync(path.dirname(f),{recursive:true});if(f.endsWith(".html"))s=s.replace(/assets\/([\w-]+\.(?:css|js))"/g,(m,n)=>`assets/${n}?v=${ver(n)}"`);fs.writeFileSync(f,s);};
+const write=(f,s)=>{fs.mkdirSync(path.dirname(f),{recursive:true});if(f.endsWith(".html")){s=s.replace(/assets\/([\w-]+\.(?:css|js))"/g,(m,n)=>`assets/${n}?v=${ver(n)}"`);
+    if(f!=="404.html")s=s.replace("</body>",`<footer class="sfoot"><a href="${SITE.url}mentions-legales/">Mentions légales et confidentialité</a><span>Site indépendant, non affilié à Microsoft.</span></footer>\n</body>`);}fs.writeFileSync(f,s);};
 const bars=n=>`<span class="lvl" title="${LV[n]}" aria-label="${LV[n]}">${[1,2,3].map(k=>`<i class="${k<=n?"on":""}"></i>`).join("")}</span>`;
 const kbd=x=>x.split(" + ").map(k=>`<kbd>${esc(k)}</kbd>`).join(" + ");
 const ico=c=>`<svg viewBox="0 0 24 24">${c.icone}</svg>`;
@@ -336,6 +337,36 @@ for(const u of urls){const f=u.slice(SITE.url.length)+"index.html",h=fs.existsSy
   NEWD[u]=DATES[u]&&DATES[u].h===h?DATES[u]:{h,d:today};}
 write("dates.json",JSON.stringify(NEWD,null,0).replace(/},/g,"},\n")+"\n");
 write("sitemap.xml",`<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map(u=>`  <url><loc>${u}</loc><lastmod>${NEWD[u].d}</lastmod></url>`).join("\n")}\n</urlset>\n`);
+/* ---------- mentions légales ---------- */
+{const C="https://github.com/mehdinourreddine62/clic-par-clic/issues";
+write("mentions-legales/index.html",head({title:`Mentions légales | ${SITE.nom}`,desc:`Mentions légales et politique de confidentialité du site ${SITE.nom} : éditeur, hébergeur, données personnelles, mesure d'audience sans cookie.`,url:`${SITE.url}mentions-legales/`,root:"../",ld:{"@context":"https://schema.org","@type":"WebPage",name:"Mentions légales",url:`${SITE.url}mentions-legales/`}})+`  <main class="legal">
+    <nav class="crumbs" aria-label="Fil d'Ariane"><a href="../">Accueil</a><span>›</span><span>Mentions légales</span></nav>
+    <h1>Mentions légales et confidentialité</h1>
+    <h2>Éditeur du site</h2>
+    <p>${esc(SITE.nom)} est un site personnel et non professionnel, édité par un particulier qui a choisi de ne pas rendre public son nom, comme le permet l'article 6 de la loi n° 2004-575 du 21 juin 2004 pour la confiance dans l'économie numérique. Ses coordonnées ont été communiquées à l'hébergeur.</p>
+    <p>Contact : en ouvrant un message sur la page <a href="${C}">${C.replace("https://","")}</a> (compte GitHub gratuit nécessaire).</p>
+    <h2>Hébergement</h2>
+    <p>GitHub Pages, service de GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, États-Unis — <a href="https://github.com">github.com</a>.</p>
+    <h2>Contenus et marques</h2>
+    <p>Les leçons, animations et textes sont proposés gratuitement, à titre pédagogique. Vous pouvez partager librement les liens vers ce site ; toute reproduction des contenus doit citer ${esc(SITE.nom)} et rester non commerciale.</p>
+    <p>Microsoft, Excel, Word et Microsoft 365 sont des marques de Microsoft Corporation. ${esc(SITE.nom)} est un site indépendant, ni affilié à Microsoft, ni approuvé par Microsoft. Les écrans présentés sont des reconstitutions simplifiées.</p>
+    <p>Malgré le soin apporté aux leçons, une erreur reste possible : n'hésitez pas à la signaler par le contact ci-dessus.</p>
+    <h2>Données personnelles</h2>
+    <ul>
+      <li>Le site ne demande aucune inscription, ne contient aucun formulaire et ne collecte ni nom, ni adresse e-mail.</li>
+      <li>Aucun cookie publicitaire ni de suivi n'est utilisé.</li>
+      <li>Mesure d'audience : le site utilise <a href="https://www.goatcounter.com">GoatCounter</a>, un outil sans cookie qui ne conserve que des statistiques anonymes et globales (pages vues, site de provenance, pays, type d'appareil et de navigateur). Il ne permet pas de suivre un visiteur d'une page à l'autre ni de l'identifier.</li>
+      <li>Votre progression (leçons vues) et votre choix de mode sombre sont enregistrés uniquement dans votre navigateur, sur votre appareil. Ils ne sont jamais envoyés au site ; vous pouvez les effacer en supprimant les données de navigation.</li>
+      <li>Comme pour tout site, l'hébergeur GitHub reçoit techniquement l'adresse IP des visiteurs pour afficher les pages. Les polices de caractères sont chargées depuis Google Fonts : votre navigateur contacte alors les serveurs de Google.</li>
+    </ul>
+    <p>Pour toute question sur ces données, utilisez le contact ci-dessus. Vous pouvez aussi vous adresser à la <a href="https://www.cnil.fr">CNIL</a>.</p>
+    <p class="maj">Dernière mise à jour : 17 novembre 2026.</p>
+  </main>
+</div>
+<script src="../assets/app.js"></script>
+</body>
+</html>
+`);}
 write("404.html",`<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>Page introuvable | ${esc(SITE.nom)}</title><style>body{font:16px system-ui,sans-serif;max-width:32em;margin:18vh auto;padding:0 16px;line-height:1.5}a{color:#147347}</style></head><body><h1>Page introuvable</h1><p>Cette page n'existe pas ou a été déplacée.</p><p><a href="${SITE.url}">Retour à toutes les leçons</a></p></body></html>\n`);
 write(".nojekyll","");
 console.log(CTX.map(c=>`${c.sw.nom}${c.sw.disponible===true?"":" (aperçu)"} : ${c.lessons.length} leçons, ${c.cats.length} rubriques, ${c.parcours.length} parcours`).join(" · ")+` · ${nFiles} fichiers Excel → site généré`);

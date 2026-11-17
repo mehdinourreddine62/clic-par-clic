@@ -36,7 +36,7 @@ Le `README.md` décrit l'organisation des fichiers et tous les champs d'une leç
 - Parcours guidés : `content/excel/parcours.json`.
 - Lecteur animé : `src/player.js` ; accueil : `src/home.js` ; commun : `src/app.js` ; style : `src/style.css`.
 - Fichiers Excel à télécharger : générés par `src/xlsx.mjs` pour chaque leçon contenant une formule (hors rubriques Erreurs, Feuilles et noms, Formules dynamiques, et LAMBDA). Une fonction absente de la table de traduction FN arrête la génération : ajoute-la.
-- **Ne modifie jamais à la main** `index.html`, `excel/`, `word/`, `assets/`, `fichiers/`, `sitemap.xml`, `404.html`, `favicon.ico`, `racine/`, `dates.json` : ils sont générés. `dates.json` garde l'empreinte de chaque page pour dater le sitemap (`lastmod`) : une page modifiée prend la date du jour. L'icône du site vient de `src/favicon.svg` et des PNG de `src/`.
+- **Ne modifie jamais à la main** `index.html`, `excel/`, `word/`, `assets/`, `fichiers/`, `sitemap.xml`, `404.html`, `favicon.ico`, `racine/`, `dates.json`, `mentions-legales/` : ils sont générés. `dates.json` garde l'empreinte de chaque page pour dater le sitemap (`lastmod`) : une page modifiée prend la date du jour. L'icône du site vient de `src/favicon.svg` et des PNG de `src/`.
 
 ## Générer, vérifier, publier
 
@@ -57,6 +57,7 @@ Le `README.md` décrit l'organisation des fichiers et tous les champs d'une leç
 - Images de partage : `src/og/og-<logiciel>.png` et `og-site.png` (1200 × 630), dessinées en HTML puis capturées avec Playwright. Pour un nouveau logiciel, ajoute son image.
 - Search Console est configuré sur l'adresse ci-dessus (balise de validation dans `site.json`). Le sitemap est généré automatiquement.
 - Le propriétaire ne veut **pas de nom de domaine payant**.
+- Mentions légales : page générée par build.mjs (`/mentions-legales/`), liée dans le pied de chaque page. Éditeur anonyme (choix du propriétaire, site non professionnel), contact par les issues GitHub du dépôt, hébergeur GitHub, GoatCounter sans cookie, Google Fonts signalé. À mettre à jour si le site change (publicité, formulaire, nouveau service tiers) ; héberger les polices localement supprimerait l'appel à Google.
 - Après un ajout important, rappelle-lui de renvoyer `sitemap.xml` dans Search Console et propose quelques adresses à soumettre via « Inspection de l'URL ».
 
 - **Nom et icône dans Google** : Google lit le nom du site et l'icône sur `https://mehdinourreddine62.github.io/`. Cette page vient du dépôt séparé `mehdinourreddine62/mehdinourreddine62.github.io` (propriété Search Console validée le 17 novembre 2026). Son contenu est généré ici dans `racine/` : copie de l'accueil, avec `<base>` vers `/clic-par-clic/`, une adresse canonique propre et un `robots.txt` qui indique le sitemap. Ce dépôt-là a son propre workflow (`.github/workflows/accueil.yml`) qui recopie chaque jour vers 6 h (heure de Paris), sans clé, le dossier `racine/` de clic-par-clic, qui est public. On peut aussi le lancer à la main (onglet Actions). Attention : GitHub suspend les tâches programmées d'un dépôt resté 60 jours sans activité ; il envoie alors un courriel, et il suffit de réactiver le workflow.
