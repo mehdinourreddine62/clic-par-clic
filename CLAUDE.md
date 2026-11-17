@@ -28,7 +28,10 @@ Le `README.md` décrit l'organisation des fichiers et tous les champs d'une leç
 
 ## Organisation
 
-- Rubriques : `content/excel/categories.json` (nom, couleur, icône, famille affichée sur l'accueil).
+- **Plusieurs logiciels** : `content/logiciels.json` les déclare (voir le README). L'accueil général (`/`) est neutre, sans nom de logiciel limitant : il propose le choix du logiciel et une recherche globale. Chaque logiciel a son accueil (`/excel/`, `/word/`…).
+- **Ne change jamais les adresses existantes** : `/excel/<id>/` doit rester stable. Les anciens liens de l'accueil (`#theme-…`, `#routes`, `#<id>`) sont redirigés par `src/root.js` vers `/excel/`.
+
+- Rubriques Excel : `content/excel/categories.json` (nom, couleur, icône, famille affichée sur l'accueil).
 - Leçons : `content/excel/<NN-rubrique>/<NN-id>.json`. L'`id` devient l'adresse `/excel/<id>/` et ne doit jamais changer une fois publié (référencement, liens partagés).
 - Parcours guidés : `content/excel/parcours.json`.
 - Lecteur animé : `src/player.js` ; accueil : `src/home.js` ; commun : `src/app.js` ; style : `src/style.css`.
@@ -54,7 +57,7 @@ Le `README.md` décrit l'organisation des fichiers et tous les champs d'une leç
 
 ## État et suite
 
-Pause sur Excel depuis novembre 2026 pour mesurer l'audience. Le site compte 168 leçons, 23 rubriques, 5 parcours, 2 cas pratiques et 64 fichiers Excel.
+Pause sur Excel depuis novembre 2026 pour mesurer l'audience. Le site accueille désormais plusieurs logiciels ; Word est le prochain. Le site compte 168 leçons, 23 rubriques, 5 parcours, 2 cas pratiques et 64 fichiers Excel.
 
 Reste à faire, dans l'ordre envisagé :
 1. Analyser Search Console (requêtes, pages indexées) et enrichir en priorité les leçons qui apparaissent.
@@ -62,4 +65,4 @@ Reste à faire, dans l'ordre envisagé :
 3. Cas pratiques « Facture » (RECHERCHEV, remise, TVA, impression) et « Analyse de ventes » (nettoyage, tableau croisé, segments).
 4. Ajouter les cas pratiques en fin des parcours concernés.
 5. Prototype d'exercices interactifs : environ 10 exercices de formules de base où l'étudiant tape la formule et le site vérifie le résultat.
-6. Plus tard : d'autres logiciels. Word d'abord, sous `/word/`, avec un nouveau lecteur qui imite une page, en commençant par un prototype de 3 leçons orienté rapport et mémoire (styles de titres, sommaire automatique, numérotation des pages). Le nom « Clic par clic » a été choisi pour convenir à tous les logiciels.
+6. **Word, en cours (priorité du propriétaire, pour ses étudiants)** : déjà déclaré dans `content/logiciels.json` avec `disponible: false`. À faire : un lecteur `src/player-word.js` qui imite une page Word, un prototype de 3 leçons (styles de titres, sommaire automatique, numérotation des pages) à faire valider, puis les autres leçons orientées rapport et mémoire, et un parcours « Rédiger un rapport ou un mémoire ». Le nom « Clic par clic » a été choisi pour convenir à tous les logiciels.

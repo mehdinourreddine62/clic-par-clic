@@ -3,18 +3,30 @@
 Leçons animées pour apprendre Excel, publiées avec GitHub Pages :
 https://mehdinourreddine62.github.io/clic-par-clic/
 
+## Plusieurs logiciels
+
+Le site accueille plusieurs logiciels, déclarés dans `content/logiciels.json` :
+- `id` : le dossier de contenu (`content/<id>/`) et l'adresse (`/<id>/`) ;
+- `disponible` : `false` affiche le logiciel sur l'accueil général avec la mention « Bientôt disponible », sans page ;
+- `lecteur` : le script d'animation utilisé par ses leçons, dans `src/` (`player.js` imite un tableur) ;
+- `fichiers` : `true` pour générer des fichiers Excel à télécharger ;
+- textes de son accueil : `accroche`, `titreHero`, `intro`, `titreSeo`, `descSeo`, `exemplesRecherche`.
+
+Pages générées : l'accueil général (`/`, choix du logiciel et recherche dans toutes les leçons), l'accueil de chaque logiciel (`/<id>/`, rubriques et parcours), puis les leçons (`/<id>/<leçon>/`) et les parcours (`/<id>/parcours/<parcours>/`). Les identifiants de leçon doivent être uniques sur tout le site.
+
 ## Organisation
 
 | Dossier ou fichier | Rôle |
 |---|---|
-| `content/excel/` | Les leçons : un dossier par thème, un fichier `.json` par leçon |
+| `content/logiciels.json` | La liste des logiciels et les textes de leur accueil |
+| `content/excel/` | Les leçons Excel : un dossier par rubrique, un fichier `.json` par leçon |
 | `content/excel/parcours.json` | Les parcours guidés : titre, public, couleur, résumé et liste ordonnée des leçons. Chaque parcours a sa page sous `/excel/parcours/…` |
 | `content/excel/categories.json` | Les rubriques : nom, couleur, icône, famille (le groupe affiché sur l'accueil) et ordre d'affichage |
-| `src/` | Le style (`style.css`) et les scripts (`app.js`, `player.js`, `home.js`) |
+| `src/` | Le style (`style.css`) et les scripts : `app.js` (commun), `root.js` (accueil général), `home.js` (accueil d'un logiciel), `player.js` (lecteur tableur) |
 | `site.json` | Adresse du site, nom, balise de validation Google |
 | `build.mjs` | Le script qui génère le site |
 | `src/xlsx.mjs` | Génère les fichiers Excel à télécharger : traduction des formules en anglais, consignes, exercice, solution |
-| `index.html`, `excel/`, `assets/`, `fichiers/`, `sitemap.xml`, `404.html` | **Pages générées : ne pas modifier à la main** |
+| `index.html`, `excel/` (et un dossier par logiciel), `assets/`, `fichiers/`, `sitemap.xml`, `404.html` | **Pages générées : ne pas modifier à la main** |
 
 ## Générer le site
 
@@ -113,9 +125,12 @@ Une leçon avec graphique déclare un champ `graphique` (réglages de départ), 
 
 Dans une étape, `"chart": 1` affiche le graphique et `"chart": {"type": "line"}` change un réglage. Sur téléphone, le graphique se place automatiquement sous le tableau.
 
-## Ajouter un autre logiciel plus tard
+## Ajouter un logiciel
 
-Les leçons Excel sont publiées sous `/excel/…`. Un futur logiciel aura son propre dossier `content/word/` et ses pages sous `/word/…`. Le lecteur animé actuel (`src/player.js`) imite une feuille de calcul : un autre logiciel demandera son propre lecteur.
+1. Ajoutez une entrée dans `content/logiciels.json`, avec `disponible: false` tant qu'il n'a pas de leçons.
+2. Créez `content/<id>/categories.json` et les dossiers de leçons.
+3. Écrivez son lecteur dans `src/` s'il ne ressemble pas à un tableur, et indiquez-le dans `lecteur`.
+4. Passez `disponible` à `true` : l'accueil général, son accueil, le sitemap et la recherche le prennent en compte.
 
 ## Fichiers à télécharger
 
