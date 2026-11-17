@@ -55,7 +55,7 @@ Le `README.md` décrit l'organisation des fichiers et tous les champs d'une leç
 - Le propriétaire ne veut **pas de nom de domaine payant**.
 - Après un ajout important, rappelle-lui de renvoyer `sitemap.xml` dans Search Console et propose quelques adresses à soumettre via « Inspection de l'URL ».
 
-- **Nom et icône dans Google** : Google affiche « GitHub Pages documentation » et un globe, car il lit le nom et l'icône sur `https://mehdinourreddine62.github.io/`, qui n'existe pas. Fait le 17 novembre 2026 : icône sur toutes les pages, `WebSite` avec `alternateName`. **En attente** : le propriétaire doit créer le dépôt public `mehdinourreddine62.github.io` (vide). Ensuite : l'ajouter à la session (`add_repo`, accès push), y publier une page d'accueil simple « Clic par clic » (même icône, `WebSite` JSON-LD, lien vers `/clic-par-clic/`, sans redirection), activer GitHub Pages. Relance-le s'il ne l'a pas fait.
+- **Nom et icône dans Google** : Google lit le nom du site et l'icône sur `https://mehdinourreddine62.github.io/`. Depuis le 17 novembre 2026, cette page existe : dépôt séparé `mehdinourreddine62/mehdinourreddine62.github.io` (page d'accueil simple « Clic par clic », même icône, `WebSite` JSON-LD, liens vers `/clic-par-clic/`, `robots.txt` qui indique le sitemap). Si l'icône ou les logiciels changent, mets aussi à jour cette page. Google met plusieurs semaines à afficher le nouveau nom et la nouvelle icône.
 
 ## État et suite
 
