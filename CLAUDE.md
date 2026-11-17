@@ -1,0 +1,65 @@
+# Clic par clic
+
+Site gratuit de leçons Excel animées, pour des étudiants. Publié avec GitHub Pages :
+https://mehdinourreddine62.github.io/clic-par-clic/
+
+Le `README.md` décrit l'organisation des fichiers et tous les champs d'une leçon. Lis-le avant de modifier quoi que ce soit.
+
+## Le propriétaire
+
+- Il crée le site pour ses étudiants, avec l'ambition de le faire connaître plus largement.
+- Il préfère des réponses directes, claires et factuelles, en français, sans fioritures.
+- En cas de doute sur ce qu'il veut, pose-lui la question avant de te lancer.
+- Avant une série de leçons, propose-lui d'abord la liste ; il répond oui ou non par élément.
+
+## Le public
+
+- Des étudiants, tous sur **Excel Microsoft 365 ou la dernière version**, en français, sur Windows. Les fonctions récentes (RECHERCHEX, SI.CONDITIONS, LET…) sont donc utilisables.
+- Lire beaucoup de consignes les démotive : l'animation doit porter l'explication.
+
+## Règles de rédaction des leçons
+
+- **Une seule phrase courte par étape** (environ 125 caractères au plus), sans abréviation, au vouvoiement.
+- Noms de fonctions et de menus **en français**, séparateur `;`, virgule décimale.
+- Des données réalistes et cohérentes ; les résultats affichés doivent être exacts (calcule-les).
+- Montrer le geste : `drag`, `btn`, `keys`, `fill`, `mark` plutôt que du texte.
+- Pas de nombre de leçons écrit en dur dans les textes de l'accueil : il évolue.
+- Les 20 leçons les plus recherchées ont un `titreSeo`, un `guide` (texte visible pour Google) et des `voirAussi`. Fais de même pour toute leçon qui vise une recherche fréquente.
+
+## Organisation
+
+- Rubriques : `content/excel/categories.json` (nom, couleur, icône, famille affichée sur l'accueil).
+- Leçons : `content/excel/<NN-rubrique>/<NN-id>.json`. L'`id` devient l'adresse `/excel/<id>/` et ne doit jamais changer une fois publié (référencement, liens partagés).
+- Parcours guidés : `content/excel/parcours.json`.
+- Lecteur animé : `src/player.js` ; accueil : `src/home.js` ; commun : `src/app.js` ; style : `src/style.css`.
+- Fichiers Excel à télécharger : générés par `src/xlsx.mjs` pour chaque leçon contenant une formule (hors rubriques Erreurs, Feuilles et noms, Formules dynamiques, et LAMBDA). Une fonction absente de la table de traduction FN arrête la génération : ajoute-la.
+- **Ne modifie jamais à la main** `index.html`, `excel/`, `assets/`, `fichiers/`, `sitemap.xml`, `404.html` : ils sont générés.
+
+## Générer, vérifier, publier
+
+1. `node build.mjs` (Node 18 ou plus, aucune dépendance).
+2. Vérifie avec Playwright (préinstallé) en ouvrant les pages en `file://…/excel/<id>/index.html` :
+   - appelle `showStatic(i)` pour chaque étape, sans erreur JavaScript ;
+   - regarde des captures de chaque nouvelle étape, sur ordinateur (1280 px) et téléphone (400 px), sans débordement horizontal ;
+   - pour une page ouverte avec `?parcours=…`, utilise le chemin complet `…/index.html?parcours=…`.
+3. Pour les fichiers Excel : LibreOffice est souvent installé. Convertis la feuille Solution en CSV et compare les résultats aux valeurs de la leçon. Écarts connus et normaux : AUJOURDHUI et MAINTENANT, RECHERCHEX et TEXTE.AVANT/APRES inconnus de LibreOffice 24.2, codes de format français (`jjjj`) lus en anglais.
+4. Publie sur `main` : un workflow GitHub régénère le site puis GitHub Pages le déploie. Vérifie que les deux exécutions réussissent (`gh run list --repo mehdinourreddine62/clic-par-clic`).
+5. Rends compte simplement : ce qui a été ajouté, ce qui a été vérifié et comment, ce qui n'a pas pu l'être.
+
+## Référencement
+
+- Search Console est configuré sur l'adresse ci-dessus (balise de validation dans `site.json`). Le sitemap est généré automatiquement.
+- Le propriétaire ne veut **pas de nom de domaine payant**.
+- Après un ajout important, rappelle-lui de renvoyer `sitemap.xml` dans Search Console et propose quelques adresses à soumettre via « Inspection de l'URL ».
+
+## État et suite
+
+Pause sur Excel depuis novembre 2026 pour mesurer l'audience. Le site compte 168 leçons, 23 rubriques, 5 parcours, 2 cas pratiques et 64 fichiers Excel.
+
+Reste à faire, dans l'ordre envisagé :
+1. Analyser Search Console (requêtes, pages indexées) et enrichir en priorité les leçons qui apparaissent.
+2. Éventuellement un compteur de visites respectueux de la vie privée (GoatCounter par exemple ; le propriétaire doit créer le compte).
+3. Cas pratiques « Facture » (RECHERCHEV, remise, TVA, impression) et « Analyse de ventes » (nettoyage, tableau croisé, segments).
+4. Ajouter les cas pratiques en fin des parcours concernés.
+5. Prototype d'exercices interactifs : environ 10 exercices de formules de base où l'étudiant tape la formule et le site vérifie le résultat.
+6. Plus tard : d'autres logiciels. Word d'abord, sous `/word/`, avec un nouveau lecteur qui imite une page, en commençant par un prototype de 3 leçons orienté rapport et mémoire (styles de titres, sommaire automatique, numérotation des pages). Le nom « Clic par clic » a été choisi pour convenir à tous les logiciels.
