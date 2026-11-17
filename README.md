@@ -13,7 +13,8 @@ https://mehdinourreddine62.github.io/clic-par-clic/
 | `src/` | Le style (`style.css`) et les scripts (`app.js`, `player.js`, `home.js`) |
 | `site.json` | Adresse du site, nom, balise de validation Google |
 | `build.mjs` | Le script qui génère le site |
-| `index.html`, `excel/`, `assets/`, `sitemap.xml`, `404.html` | **Pages générées : ne pas modifier à la main** |
+| `src/xlsx.mjs` | Génère les fichiers Excel à télécharger : traduction des formules en anglais, consignes, exercice, solution |
+| `index.html`, `excel/`, `assets/`, `fichiers/`, `sitemap.xml`, `404.html` | **Pages générées : ne pas modifier à la main** |
 
 ## Générer le site
 
@@ -115,3 +116,12 @@ Dans une étape, `"chart": 1` affiche le graphique et `"chart": {"type": "line"}
 ## Ajouter un autre logiciel plus tard
 
 Les leçons Excel sont publiées sous `/excel/…`. Un futur logiciel aura son propre dossier `content/word/` et ses pages sous `/word/…`. Le lecteur animé actuel (`src/player.js`) imite une feuille de calcul : un autre logiciel demandera son propre lecteur.
+
+## Fichiers à télécharger
+
+Chaque leçon qui contient au moins une formule reçoit un fichier `fichiers/excel/<id>.xlsx`, avec trois feuilles :
+- **Consignes** : la cellule, la fonction à utiliser, le résultat attendu et un indice ;
+- **Exercice** : les données de départ (`grille`) ;
+- **Solution** : les mêmes données avec les formules, recopies comprises.
+
+Sont exclues les rubriques Erreurs, Feuilles et noms et Formules dynamiques, ainsi que LAMBDA. Une fonction absente de la table de traduction de `src/xlsx.mjs` arrête la génération avec un message : il suffit de l'y ajouter.

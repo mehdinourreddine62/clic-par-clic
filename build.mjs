@@ -2,6 +2,7 @@
 // Entrées : content/ (leçons), src/ (style et scripts), site.json. Sorties : index.html, excel/, assets/, sitemap.xml, 404.html
 import fs from "node:fs";
 import path from "node:path";
+import {lessonWorkbook,buildXlsx} from "./src/xlsx.mjs";
 
 const SITE=JSON.parse(fs.readFileSync("site.json","utf8"));
 const LV={1:"Débutant",2:"Intermédiaire",3:"Avancé"};
@@ -36,6 +37,8 @@ PARCOURS.forEach(p=>{
   if(!/^[a-z0-9-]+$/.test(p.id)||lessons.some(l=>l.id===p.id)||p.id==="parcours")throw new Error(`parcours.json : id invalide « ${p.id} »`);
   p.items=p.lecons.map(id=>{const l=lessons.find(x=>x.id===id);if(!l)throw new Error(`parcours « ${p.id} » : leçon « ${id} » introuvable`);return l;});
 });
+const NO_FILE=new Set(["erreurs","feuilles","dyn"]);
+lessons.forEach(l=>{l.hasFile=!NO_FILE.has(l.cat.id)&&l.id!=="lambda"&&!l.etapes.some(s=>s.spill)&&l.etapes.some(s=>s.f&&s.f[0]==="=");});
 const PICO='<path d="M5 19c3 0 3-6 7-6s4-6 7-6"/><circle cx="5" cy="19" r="2"/><circle cx="19" cy="7" r="2"/>';
 
 /* ---------- gabarits ---------- */
@@ -167,7 +170,7 @@ function lessonPage(l,i){
       </div>
     </div>
     <p class="hint">Clavier : <kbd>←</kbd> <kbd>→</kbd> pour changer d'étape, <kbd>Espace</kbd> pour lancer ou mettre en pause.</p>
-    <div class="pband" id="pband" hidden></div>
+    ${l.hasFile?`<a class="dl" href="../../fichiers/${LOGICIEL}/${l.id}.xlsx" download="${l.id}.xlsx"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg><span><b>Télécharger le fichier d'exercice</b><small>Excel · consignes, données de départ et solution</small></span></a>`:""}<div class="pband" id="pband" hidden></div>
     <details class="sx"><summary>Syntaxe <code>${esc(l.syntaxe)}</code></summary><dl>${l.arguments.map(([a,b])=>`<dt>${esc(a)}</dt><dd>${esc(b)}</dd>`).join("")}</dl></details>
     <details class="sx"><summary>Résumé écrit des étapes</summary><ol class="steps">${l.etapes.map(s=>`<li>${s.t}</li>`).join("")}</ol></details>${guide}${also}
     <nav class="lnav" aria-label="Leçons voisines">${prev?`<a href="../${prev.id}/"><small>← Précédente</small>${esc(prev.titre)}</a>`:""}${next?`<a class="nx" id="nextLesson" href="../${next.id}/"><small>Suivante →</small>${esc(next.titre)}</a>`:""}</nav>
@@ -220,12 +223,15 @@ ${p.items.map((l,i)=>`<li data-id="${l.id}"><a href="../../${l.id}/?parcours=${p
 /* ---------- écriture ---------- */
 fs.rmSync(LOGICIEL,{recursive:true,force:true});
 fs.rmSync("assets",{recursive:true,force:true});
+fs.rmSync("fichiers",{recursive:true,force:true});
 write("index.html",home());
 lessons.forEach((l,i)=>write(`${LOGICIEL}/${l.id}/index.html`,lessonPage(l,i)));
 PARCOURS.forEach(p=>write(`${LOGICIEL}/parcours/${p.id}/index.html`,routePage(p)));
+let nFiles=0;
+lessons.filter(l=>l.hasFile).forEach(l=>{const wb=lessonWorkbook(l,`${SITE.url}${LOGICIEL}/${l.id}/`);fs.mkdirSync(`fichiers/${LOGICIEL}`,{recursive:true});fs.writeFileSync(`fichiers/${LOGICIEL}/${l.id}.xlsx`,buildXlsx({sheets:wb.sheets}));nFiles++;});
 write("assets/app.css",fs.readFileSync("src/style.css","utf8"));
 for(const f of ["app.js","player.js","home.js"])write(`assets/${f}`,fs.readFileSync(`src/${f}`,"utf8"));
 write("sitemap.xml",`<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n  <url><loc>${SITE.url}</loc></url>\n${PARCOURS.map(p=>`  <url><loc>${SITE.url}${LOGICIEL}/parcours/${p.id}/</loc></url>\n`).join("")}${lessons.map(l=>`  <url><loc>${SITE.url}${LOGICIEL}/${l.id}/</loc></url>`).join("\n")}\n</urlset>\n`);
 write("404.html",`<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>Page introuvable | ${esc(SITE.nom)}</title><style>body{font:16px system-ui,sans-serif;max-width:32em;margin:18vh auto;padding:0 16px;line-height:1.5}a{color:#147347}</style></head><body><h1>Page introuvable</h1><p>Cette page n'existe pas ou a été déplacée.</p><p><a href="${SITE.url}">Retour à toutes les leçons</a></p></body></html>\n`);
 write(".nojekyll","");
-console.log(`${lessons.length} leçons, ${cats.length} thèmes, ${PARCOURS.length} parcours → site généré`);
+console.log(`${lessons.length} leçons, ${cats.length} thèmes, ${PARCOURS.length} parcours, ${nFiles} fichiers Excel → site généré`);
