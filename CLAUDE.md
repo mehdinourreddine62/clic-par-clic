@@ -36,7 +36,7 @@ Le `README.md` décrit l'organisation des fichiers et tous les champs d'une leç
 - Parcours guidés : `content/excel/parcours.json`.
 - Lecteur animé : `src/player.js` ; accueil : `src/home.js` ; commun : `src/app.js` ; style : `src/style.css`.
 - Fichiers Excel à télécharger : générés par `src/xlsx.mjs` pour chaque leçon contenant une formule (hors rubriques Erreurs, Feuilles et noms, Formules dynamiques, et LAMBDA). Une fonction absente de la table de traduction FN arrête la génération : ajoute-la.
-- **Ne modifie jamais à la main** `index.html`, `excel/`, `word/`, `assets/`, `fichiers/`, `sitemap.xml`, `404.html`, `favicon.ico`, `racine/` : ils sont générés. L'icône du site vient de `src/favicon.svg` et des PNG de `src/`.
+- **Ne modifie jamais à la main** `index.html`, `excel/`, `word/`, `assets/`, `fichiers/`, `sitemap.xml`, `404.html`, `favicon.ico`, `racine/`, `dates.json` : ils sont générés. `dates.json` garde l'empreinte de chaque page pour dater le sitemap (`lastmod`) : une page modifiée prend la date du jour. L'icône du site vient de `src/favicon.svg` et des PNG de `src/`.
 
 ## Générer, vérifier, publier
 
@@ -51,6 +51,8 @@ Le `README.md` décrit l'organisation des fichiers et tous les champs d'une leç
 
 ## Référencement
 
+- Titres : `fitTitle` (build.mjs) les ramène à 60 caractères au plus ; garde les `titreSeo` courts.
+- Images de partage : `src/og/og-<logiciel>.png` et `og-site.png` (1200 × 630), dessinées en HTML puis capturées avec Playwright. Pour un nouveau logiciel, ajoute son image.
 - Search Console est configuré sur l'adresse ci-dessus (balise de validation dans `site.json`). Le sitemap est généré automatiquement.
 - Le propriétaire ne veut **pas de nom de domaine payant**.
 - Après un ajout important, rappelle-lui de renvoyer `sitemap.xml` dans Search Console et propose quelques adresses à soumettre via « Inspection de l'URL ».

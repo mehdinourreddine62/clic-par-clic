@@ -1,6 +1,7 @@
 // Génère le site : node build.mjs
 // Entrées : content/logiciels.json, content/<logiciel>/ (leçons), src/ (style et scripts), site.json.
 // Sorties : index.html, <logiciel>/, assets/, fichiers/, sitemap.xml, 404.html
+import crypto from "node:crypto";
 import fs from "node:fs";
 import path from "node:path";
 import {lessonWorkbook,buildXlsx} from "./src/xlsx.mjs";
@@ -52,7 +53,14 @@ const PICO='<path d="M5 19c3 0 3-6 7-6s4-6 7-6"/><circle cx="5" cy="19" r="2"/><
 /* ---------- gabarits ---------- */
 const FONTS=`<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap">`;
 const THEME=`<script>document.documentElement.classList.add("js");try{var t=localStorage.getItem("cpc-theme");if(t==="dark"||t==="light")document.documentElement.dataset.theme=t}catch(e){}</script>`;
-function head({title,desc,url,root,ld,extra="",noindex=false}){
+/* Titre de 60 caractères au plus : au-delà, Google le coupe. On raccourcit pas à pas, sans changer l'adresse. */
+function fitTitle(full){const sfx=` | ${SITE.nom}`,ok=x=>x.length<=60;let b=full.endsWith(sfx)?full.slice(0,-sfx.length):full;
+  const steps=[x=>x,x=>x.replace(/ – (\S+) en animation$/," dans $1"),x=>x.replace(/ en \d+ leçons animées$/,""),
+    x=>x.replace(/( :|,)? (tutoriel animé( pour débutant)?|exemple animé pas à pas|expliqués en animation|en animation|cas pratique animé( pas à pas)?)$/,"")];
+  for(const f of steps){b=f(b);if(ok(b+sfx))return b+sfx;}
+  if(ok(b))return b;const i=b.lastIndexOf(" : ");if(i>=20)b=b.slice(0,i);return ok(b+sfx)?b+sfx:b;}
+function ogImage(url){const m=SOFTS.find(x=>url.startsWith(SITE.url+x.id+"/"));return`${SITE.url}assets/${m&&fs.existsSync(`src/og/og-${m.id}.png`)?`og-${m.id}.png`:"og-site.png"}`;}
+function head({title,desc,url,root,ld,extra="",noindex=false}){title=fitTitle(title);
   return `<!doctype html>
 <html lang="fr">
 <head>
@@ -68,7 +76,10 @@ function head({title,desc,url,root,ld,extra="",noindex=false}){
 <meta property="og:title" content="${esc(title)}">
 <meta property="og:description" content="${esc(desc)}">
 <meta property="og:url" content="${url}">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="${ogImage(url)}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
 ${extra}<script type="application/ld+json">${JSON.stringify(ld).replace(/</g,"\\u003c")}</script>
 ${THEME}
 ${FONTS}
@@ -137,7 +148,7 @@ function rootHome(racine=false){
   const ROOT=new URL(SITE.url).origin+"/",home=racine?ROOT:SITE.url;
   const LIVE=CTX.filter(c=>c.sw.disponible===true);
   const dispo=LIVE.map(c=>c.sw.nom),liste=dispo.length>1?dispo.slice(0,-1).join(", ")+" et "+dispo.at(-1):dispo[0];
-  const title=racine?`${SITE.nom} : leçons animées gratuites pour ${liste}`:`${SITE.nom} : apprendre ${liste} gratuitement, en leçons animées`;
+  const title=racine?`${SITE.nom} : leçons animées gratuites pour ${liste}`:`${SITE.nom} : ${liste} en leçons animées gratuites`;
   const desc=`Des leçons animées et gratuites pour apprendre ${liste} pas à pas : formules, mise en forme, raccourcis clavier, parcours guidés et fichiers d'exercice.`;
   const ld={"@context":"https://schema.org","@type":"WebSite",name:SITE.nom,alternateName:["Clic-par-clic","Clic par clic, leçons animées"],url:home,inLanguage:"fr",description:desc,publisher:{"@type":"Organization",name:SITE.nom,url:SITE.url,logo:`${SITE.url}assets/favicon-192.png`}};
   const verif=SITE.verificationGoogle?`<meta name="google-site-verification" content="${SITE.verificationGoogle}">\n`:"";
@@ -313,9 +324,15 @@ for(const ctx of CTX){const{sw,lessons,parcours}=ctx;
 }
 write("assets/app.css",fs.readFileSync("src/style.css","utf8"));
 for(const f of ["favicon.svg","favicon-48.png","favicon-192.png","apple-touch-icon.png"])fs.copyFileSync(`src/${f}`,`assets/${f}`);
+for(const f of fs.readdirSync("src/og"))fs.copyFileSync(`src/og/${f}`,`assets/${f}`);
 fs.copyFileSync("src/favicon-48.png","favicon.ico");
 for(const f of new Set(["app.js","home.js","root.js",...CTX.map(c=>c.sw.lecteur)]))write(`assets/${f}`,fs.readFileSync(`src/${f}`,"utf8"));
-write("sitemap.xml",`<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map(u=>`  <url><loc>${u}</loc></url>`).join("\n")}\n</urlset>\n`);
+/* Date de dernière modification de chaque page : empreinte du HTML gardée dans dates.json (fichier généré) */
+const DATES=fs.existsSync("dates.json")?readJson("dates.json"):{},today=new Date().toISOString().slice(0,10),NEWD={};
+for(const u of urls){const f=u.slice(SITE.url.length)+"index.html",h=fs.existsSync(f)?crypto.createHash("sha1").update(fs.readFileSync(f)).digest("hex").slice(0,16):"";
+  NEWD[u]=DATES[u]&&DATES[u].h===h?DATES[u]:{h,d:today};}
+write("dates.json",JSON.stringify(NEWD,null,0).replace(/},/g,"},\n")+"\n");
+write("sitemap.xml",`<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map(u=>`  <url><loc>${u}</loc><lastmod>${NEWD[u].d}</lastmod></url>`).join("\n")}\n</urlset>\n`);
 write("404.html",`<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>Page introuvable | ${esc(SITE.nom)}</title><style>body{font:16px system-ui,sans-serif;max-width:32em;margin:18vh auto;padding:0 16px;line-height:1.5}a{color:#147347}</style></head><body><h1>Page introuvable</h1><p>Cette page n'existe pas ou a été déplacée.</p><p><a href="${SITE.url}">Retour à toutes les leçons</a></p></body></html>\n`);
 write(".nojekyll","");
 console.log(CTX.map(c=>`${c.sw.nom}${c.sw.disponible===true?"":" (aperçu)"} : ${c.lessons.length} leçons, ${c.cats.length} rubriques, ${c.parcours.length} parcours`).join(" · ")+` · ${nFiles} fichiers Excel → site généré`);
