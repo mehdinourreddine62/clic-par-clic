@@ -52,7 +52,7 @@ const PICO='<path d="M5 19c3 0 3-6 7-6s4-6 7-6"/><circle cx="5" cy="19" r="2"/><
 /* ---------- gabarits ---------- */
 const FONTS=`<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap">`;
 const THEME=`<script>document.documentElement.classList.add("js");try{var t=localStorage.getItem("cpc-theme");if(t==="dark"||t==="light")document.documentElement.dataset.theme=t}catch(e){}</script>`;
-function head({title,desc,url,root,ld,extra=""}){
+function head({title,desc,url,root,ld,extra="",noindex=false}){
   return `<!doctype html>
 <html lang="fr">
 <head>
@@ -61,7 +61,7 @@ function head({title,desc,url,root,ld,extra=""}){
 <title>${esc(title)}</title>
 <meta name="description" content="${esc(desc)}">
 <link rel="canonical" href="${url}">
-<meta name="robots" content="index,follow">
+<meta name="robots" content="${noindex?"noindex,nofollow":"index,follow"}">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="${esc(SITE.nom)}">
@@ -92,11 +92,11 @@ function softHome({sw,cats,lessons,parcours:PARCOURS}){
     return `<section class="sec" id="theme-${c.id}" style="--k:var(--${c.couleur})"><h2><span class="ico" aria-hidden="true">${ico(c)}</span><span class="st">${esc(c.nom)}<small>${g.length} leçon${g.length>1?"s":""}</small></span></h2><div class="cards">\n${cards}\n</div></section>`;
   }).join("\n");
   const fams=[...new Set(cats.map(c=>c.famille||"Rubriques"))];
-  const tiles=fams.map(f=>`<section class="fam"><h2>${esc(f)}</h2><div class="tgrid">
+  const tiles=fams.filter(f=>cats.some(c=>(c.famille||"Rubriques")===f&&lessons.some(l=>l.cat===c))).map(f=>`<section class="fam"><h2>${esc(f)}</h2><div class="tgrid">
 ${cats.filter(c=>(c.famille||"Rubriques")===f).map(c=>{const n=lessons.filter(l=>l.cat===c).length;return n?`<a class="tile" href="#theme-${c.id}" data-c="${c.id}" data-n="${n}" style="--k:var(--${c.couleur})"><span class="ico" aria-hidden="true">${ico(c)}</span><span class="tt"><b>${esc(c.nom)}</b><small>${n} leçon${n>1?"s":""}</small></span><span class="tp" aria-hidden="true"><i></i></span></a>`:"";}).join("\n")}
 </div></section>`).join("\n");
   const first=lessons[0];
-  return head({title,desc,url,root:"../",ld,extra:jsonld(crumbs)})+`  <div id="home">
+  return head({title,desc,url,root:"../",ld,extra:jsonld(crumbs),noindex:sw.disponible!==true})+`  <div id="home">
     <nav class="crumbs" aria-label="Fil d'Ariane"><a href="../">Accueil</a><span aria-hidden="true">›</span><span>${esc(sw.nom)}</span></nav>
     <header class="hero">
       <h1>${sw.titreHero}</h1>
@@ -129,16 +129,17 @@ ${sections}
 /* ---------- accueil général ---------- */
 const jsonld=o=>`<script type="application/ld+json">${JSON.stringify(o).replace(/</g,"\\u003c")}</script>\n`;
 function rootHome(){
-  const dispo=CTX.map(c=>c.sw.nom),liste=dispo.length>1?dispo.slice(0,-1).join(", ")+" et "+dispo.at(-1):dispo[0];
+  const LIVE=CTX.filter(c=>c.sw.disponible===true);
+  const dispo=LIVE.map(c=>c.sw.nom),liste=dispo.length>1?dispo.slice(0,-1).join(", ")+" et "+dispo.at(-1):dispo[0];
   const title=`${SITE.nom} : apprendre ${liste} gratuitement, en leçons animées`;
   const desc=`Des leçons animées et gratuites pour apprendre ${liste} pas à pas : formules, mise en forme, raccourcis clavier, parcours guidés et fichiers d'exercice.`;
   const ld={"@context":"https://schema.org","@type":"WebSite",name:SITE.nom,url:SITE.url,inLanguage:"fr",description:desc};
   const verif=SITE.verificationGoogle?`<meta name="google-site-verification" content="${SITE.verificationGoogle}">\n`:"";
-  const softs=SOFTS.map(sw=>{const c=CTX.find(x=>x.sw===sw);
+  const softs=SOFTS.map(sw=>{const c=LIVE.find(x=>x.sw===sw);
     const inner=`<span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24">${sw.icone}</svg></span><span class="sb"><b>${esc(sw.nom)}</b><span class="sd">${esc(sw.accroche)}</span><small>${c?`${c.lessons.length} leçons${c.parcours.length?` · ${c.parcours.length} parcours guidés`:""}`:"Bientôt disponible"}</small></span>`;
     return c?`<a class="soft" href="${sw.id}/" data-sw="${sw.id}" data-ids="${c.lessons.map(l=>l.id).join(" ")}" style="--k:var(--${sw.couleur})">${inner}<span class="tp" aria-hidden="true"><i></i></span></a>`
             :`<div class="soft soon" aria-disabled="true" style="--k:var(--${sw.couleur})">${inner}</div>`;}).join("\n");
-  const results=CTX.map(({sw,lessons})=>lessons.map(l=>`<a class="card" hidden href="${sw.id}/${l.id}/" data-id="${l.id}" data-sw="${sw.id}" data-s="${esc(norm(`${sw.nom} ${l.titre} ${l.resume} ${l.motsCles||""} ${l.cat.nom}`))}"><span class="cn">${esc(l.titre)}</span><span class="cd">${esc(l.resume)}</span><span class="cf"><span class="swt" style="--k:var(--${sw.couleur})">${esc(sw.nom)} · ${esc(l.cat.nom)}</span><span>${l.etapes.length} étapes</span></span></a>`).join("\n")).join("\n");
+  const results=LIVE.map(({sw,lessons})=>lessons.map(l=>`<a class="card" hidden href="${sw.id}/${l.id}/" data-id="${l.id}" data-sw="${sw.id}" data-s="${esc(norm(`${sw.nom} ${l.titre} ${l.resume} ${l.motsCles||""} ${l.cat.nom}`))}"><span class="cn">${esc(l.titre)}</span><span class="cd">${esc(l.resume)}</span><span class="cf"><span class="swt" style="--k:var(--${sw.couleur})">${esc(sw.nom)} · ${esc(l.cat.nom)}</span><span>${l.etapes.length} étapes</span></span></a>`).join("\n")).join("\n");
   const A=fs.existsSync("content/accueil.json")?readJson("content/accueil.json"):{};
   const findL=id=>{const l=ALL.find(x=>x.id===id);if(!l)throw new Error(`accueil.json : leçon « ${id} » introuvable`);return l;};
   const featP=(A.parcours||[]).map(k=>{const[sid,pid]=k.split("/"),c=CTX.find(x=>x.sw.id===sid),p=c&&c.parcours.find(x=>x.id===pid);if(!p)throw new Error(`accueil.json : parcours « ${k} » introuvable`);return[c.sw,p];});
@@ -150,14 +151,14 @@ function rootHome(){
   const feat=`${featP.length?`<section class="feat"><h2 class="lbl">Parcours guidés</h2><div class="rgrid">\n${featP.map(([sw,p])=>routeCard(sw,p)).join("\n")}\n</div></section>`:""}
     ${featL.length?`<section class="feat"><h2 class="lbl">Les leçons les plus consultées</h2><div class="cards">\n${featL.map(lessonCard).join("\n")}\n</div></section>`:""}
     ${featC.length?`<section class="feat"><h2 class="lbl">Cas pratiques</h2><div class="rgrid">\n${featC.map(caseCard).join("\n")}\n</div></section>`:""}`;
-  const themes={};CTX.forEach(({sw,cats})=>cats.forEach(c=>{if(!themes[c.id])themes[c.id]=sw.id;}));
+  const themes={};LIVE.forEach(({sw,cats})=>cats.forEach(c=>{if(!themes[c.id])themes[c.id]=sw.id;}));
   return head({title,desc,url:SITE.url,root:"",ld,extra:verif})+`  <div id="root">
     <header class="hero">
       <h1>Vos logiciels, <em>étape par étape.</em></h1>
       <p>Des leçons animées et gratuites : on voit le geste, puis on le refait. Choisissez un logiciel, ou cherchez directement ce qui vous bloque.</p>
     </header>
     <div class="tools"><input id="q" type="search" placeholder="Rechercher une leçon dans tous les logiciels…" aria-label="Rechercher une leçon"></div>
-    <a class="resume" id="resume" href="${CTX[0].sw.id}/" hidden><span><small>Continuer</small><b></b></span><span aria-hidden="true">→</span></a>
+    <a class="resume" id="resume" href="${LIVE[0].sw.id}/" hidden><span><small>Continuer</small><b></b></span><span aria-hidden="true">→</span></a>
     <section id="softs"><h2 class="lbl">Choisir un logiciel</h2><div class="sgrid">
 ${softs}
     </div></section>
@@ -205,22 +206,26 @@ function lessonPage(l,i,{sw,lessons,parcours:PARCOURS}){
   const also=voir.length?`
     <section class="also"><h2>Voir aussi</h2><div class="also-l">${voir.map(x=>`<a href="../${x.id}/"><b>${esc(x.titre)}</b><small>${esc(x.resume)}</small></a>`).join("")}</div></section>`:"";
   const ld={"@context":"https://schema.org","@type":"LearningResource",name:`${l.titre} dans ${sw.nom}`,description:l.resume,inLanguage:"fr",isAccessibleForFree:true,educationalLevel:LV[l.niveau],learningResourceType:"Leçon animée",url,isPartOf:{"@type":"Course",name:`${SITE.nom} : apprendre ${sw.nom} en animation`,url:hub}};
-  const data={id:l.id,g:l.grille,s:l.etapes};
+  const isWord=sw.lecteur==="player-word.js";
+  const data=isWord?{id:l.id,doc:l.document,s:l.etapes}:{id:l.id,g:l.grille,s:l.etapes};
   const inP=PARCOURS.filter(p=>p.lecons.includes(l.id)).map(p=>({id:p.id,t:p.titre,l:p.items.map(x=>[x.id,x.titre])}));
   if(inP.length)data.parcours=inP;
   if(l.ruban)data.rib=1;if(l.sansEnTete)data.nh=1;if(l.largeurs)data.w=l.largeurs;if(l.graphique)data.chart=l.graphique;
-  return head({title,desc,url,root:"../../",ld,extra:`<script type="application/ld+json">${JSON.stringify(crumbs).replace(/</g,"\\u003c")}</script>\n`})+`  <main id="lesson">
+  return head({title,desc,url,root:"../../",ld,extra:`<script type="application/ld+json">${JSON.stringify(crumbs).replace(/</g,"\\u003c")}</script>\n`,noindex:sw.disponible!==true})+`  <main id="lesson">
     <nav class="crumbs" aria-label="Fil d'Ariane"><a href="../../">Accueil</a><span aria-hidden="true">›</span><a href="../">${esc(sw.nom)}</a><span aria-hidden="true">›</span><a href="../#theme-${c.id}">${esc(c.nom)}</a><span aria-hidden="true">›</span><span>${esc(l.titre)}</span></nav>
     <div class="lhead">
       <div class="meta"><span class="tag" style="--k:var(--${c.couleur})">${ico(c)}${esc(c.nom)}</span><span>${bars(l.niveau)} ${LV[l.niveau]}</span></div>
       <h1>${esc(l.titre)}</h1>
       <p>${esc(l.resume)}</p>
     </div>
-    <div class="win${l.etapes.some(e=>e.pivot)?" haspv":""}">
+    ${isWord?`<div class="win wword">
+      <div id="ribwrap"><div class="ribbon" id="ribbon"></div><div class="ribpanel" id="ribpanel" hidden></div></div>
+      <div class="wstage"><aside class="wnav" id="wnav" hidden></aside><div class="wdoc" id="wdoc"></div><div class="keys" id="keys" hidden></div><div class="cursor" id="wcursor"><svg viewBox="0 0 20 24"><path d="M2 1.5v17l4.6-4.2 3 7 2.9-1.2-3-6.9h6.3z"/></svg></div></div>
+      <div class="wstatus" id="wstatus"></div>`:`<div class="win${l.etapes.some(e=>e.pivot)?" haspv":""}">
       <div id="ribwrap"><div class="ribbon" id="ribbon"></div><div class="ribpanel" id="ribpanel" hidden></div></div>
       <div class="fbar"><div class="namebox" id="namebox"></div><div class="fx">fx</div><div class="formula" id="formula"></div></div>
       <div class="stage"><div class="sheetwrap" id="sheetwrap"><div class="sheetinner"><table class="sheet" id="sheet"></table><div class="ov" id="ov"></div></div></div><aside class="pivot" id="pivot" hidden></aside><div class="keys" id="keys" hidden></div><div class="msg" id="msg" hidden></div><div class="preview" id="preview" hidden></div></div>
-      <div class="tabs" id="tabs"></div>
+      <div class="tabs" id="tabs"></div>`}
       <p class="cap" id="text" aria-live="polite">${l.etapes[0].t}</p>
       <div class="bar">
         <button class="ic" id="prev" aria-label="Étape précédente"><svg viewBox="0 0 16 16"><path d="M10.5 2 4 8l6.5 6 1.2-1.3L6.6 8l5.1-4.7z"/></svg></button>
@@ -251,7 +256,7 @@ function routePage(p,{sw}){
   const desc=`${p.resume} Parcours gratuit de ${p.items.length} leçons animées, à suivre dans l'ordre.`;
   const ld={"@context":"https://schema.org","@type":"Course",name:p.titre,description:p.resume,inLanguage:"fr",isAccessibleForFree:true,url,provider:{"@type":"Organization",name:SITE.nom,url:SITE.url},
     hasPart:p.items.map(l=>({"@type":"LearningResource",name:l.titre,url:`${SITE.url}${sw.id}/${l.id}/`}))};
-  return head({title,desc,url,root:"../../../",ld})+`  <main id="route" style="--k:var(--${p.couleur})">
+  return head({title,desc,url,root:"../../../",ld,noindex:sw.disponible!==true})+`  <main id="route" style="--k:var(--${p.couleur})">
     <nav class="crumbs" aria-label="Fil d'Ariane"><a href="../../../">Accueil</a><span aria-hidden="true">›</span><a href="../../">${esc(sw.nom)}</a><span aria-hidden="true">›</span><a href="../../#routes">Parcours guidés</a><span aria-hidden="true">›</span><span>${esc(p.titre)}</span></nav>
     <div class="lhead">
       <div class="meta"><span class="tag">${`<svg viewBox="0 0 24 24">${PICO}</svg>`}Parcours guidé</span><span>${p.items.length} leçons · ${esc(p.pour)}</span></div>
@@ -288,10 +293,11 @@ fs.rmSync("fichiers",{recursive:true,force:true});
 write("index.html",rootHome());
 let nFiles=0;const urls=[SITE.url];
 for(const ctx of CTX){const{sw,lessons,parcours}=ctx;
-  write(`${sw.id}/index.html`,softHome(ctx));urls.push(`${SITE.url}${sw.id}/`);
+  const live=sw.disponible===true;
+  write(`${sw.id}/index.html`,softHome(ctx));if(live)urls.push(`${SITE.url}${sw.id}/`);
   lessons.forEach((l,i)=>write(`${sw.id}/${l.id}/index.html`,lessonPage(l,i,ctx)));
-  parcours.forEach(p=>{write(`${sw.id}/parcours/${p.id}/index.html`,routePage(p,ctx));urls.push(`${SITE.url}${sw.id}/parcours/${p.id}/`);});
-  lessons.forEach(l=>urls.push(`${SITE.url}${sw.id}/${l.id}/`));
+  parcours.forEach(p=>{write(`${sw.id}/parcours/${p.id}/index.html`,routePage(p,ctx));if(live)urls.push(`${SITE.url}${sw.id}/parcours/${p.id}/`);});
+  if(live)lessons.forEach(l=>urls.push(`${SITE.url}${sw.id}/${l.id}/`));
   lessons.filter(l=>l.hasFile).forEach(l=>{const wb=lessonWorkbook(l,`${SITE.url}${sw.id}/${l.id}/`);fs.mkdirSync(`fichiers/${sw.id}`,{recursive:true});fs.writeFileSync(`fichiers/${sw.id}/${l.id}.xlsx`,buildXlsx({sheets:wb.sheets}));nFiles++;});
 }
 write("assets/app.css",fs.readFileSync("src/style.css","utf8"));
@@ -299,4 +305,4 @@ for(const f of new Set(["app.js","home.js","root.js",...CTX.map(c=>c.sw.lecteur)
 write("sitemap.xml",`<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map(u=>`  <url><loc>${u}</loc></url>`).join("\n")}\n</urlset>\n`);
 write("404.html",`<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>Page introuvable | ${esc(SITE.nom)}</title><style>body{font:16px system-ui,sans-serif;max-width:32em;margin:18vh auto;padding:0 16px;line-height:1.5}a{color:#147347}</style></head><body><h1>Page introuvable</h1><p>Cette page n'existe pas ou a été déplacée.</p><p><a href="${SITE.url}">Retour à toutes les leçons</a></p></body></html>\n`);
 write(".nojekyll","");
-console.log(CTX.map(c=>`${c.sw.nom} : ${c.lessons.length} leçons, ${c.cats.length} rubriques, ${c.parcours.length} parcours`).join(" · ")+` · ${nFiles} fichiers Excel → site généré`);
+console.log(CTX.map(c=>`${c.sw.nom}${c.sw.disponible===true?"":" (aperçu)"} : ${c.lessons.length} leçons, ${c.cats.length} rubriques, ${c.parcours.length} parcours`).join(" · ")+` · ${nFiles} fichiers Excel → site généré`);

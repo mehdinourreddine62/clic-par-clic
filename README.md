@@ -8,6 +8,7 @@ https://mehdinourreddine62.github.io/clic-par-clic/
 Le site accueille plusieurs logiciels, déclarés dans `content/logiciels.json` :
 - `id` : le dossier de contenu (`content/<id>/`) et l'adresse (`/<id>/`) ;
 - `disponible` : `false` affiche le logiciel sur l'accueil général avec la mention « Bientôt disponible », sans page ;
+  `"apercu"` génère ses pages pour les relire en ligne, sans lien depuis l'accueil, sans indexation (`noindex`) et hors du sitemap ;
 - `lecteur` : le script d'animation utilisé par ses leçons, dans `src/` (`player.js` imite un tableur) ;
 - `fichiers` : `true` pour générer des fichiers Excel à télécharger ;
 - textes de son accueil : `accroche`, `titreHero`, `intro`, `titreSeo`, `descSeo`, `exemplesRecherche`.
@@ -141,3 +142,20 @@ Chaque leçon qui contient au moins une formule reçoit un fichier `fichiers/exc
 - **Solution** : les mêmes données avec les formules, recopies comprises.
 
 Sont exclues les rubriques Erreurs, Feuilles et noms et Formules dynamiques, ainsi que LAMBDA. Une fonction absente de la table de traduction de `src/xlsx.mjs` arrête la génération avec un message : il suffit de l'y ajouter.
+
+## Leçons Word
+
+Le lecteur `src/player-word.js` affiche des pages. Une leçon Word remplace `grille` par `document` : `{"pages": [[bloc, …], …], "nav": false, "tocAuto": false, "footer": null}`. Un bloc vaut `{"id": "h1", "s": "titre1", "txt": "Introduction"}` ; styles disponibles : `normal`, `titre`, `sous`, `manuel` (gras posé à la main), `titre1`, `titre2`, `toc` (sommaire, calculé à partir des titres).
+
+| Champ d'étape | Effet |
+|---|---|
+| `at`, `sel` | Bloc visé par le curseur ; blocs sélectionnés (`"h2 h4"`). `at: "footer"` avec `page` vise un pied de page |
+| `tab`, `btn`, `menu`, `rule`, `keys` | Comme pour Excel, avec le ruban de Word |
+| `style` | Change le style de blocs : `{"h1": "titre1"}` |
+| `add` | Insère des blocs : `[{"after": "p4", "block": {…}}]` |
+| `show` | Affiche des blocs masqués (`"toc"` construit le sommaire) |
+| `tocUpdate` | Met à jour le sommaire (sinon il reste figé, comme dans Word) |
+| `nav` | Affiche ou masque le volet de navigation |
+| `footer` | Numéros de page : `{"num": true, "first": true}` (pas de numéro sur la première page) |
+| `edit` | Mode d'édition de l'en-tête et du pied de page |
+| `couleur1` | Nouvelle couleur du style Titre 1 |

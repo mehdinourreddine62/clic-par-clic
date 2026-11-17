@@ -1,0 +1,16 @@
+[
+ {
+  "id": "structurer",
+  "nom": "Structurer un long document",
+  "couleur": "r0",
+  "famille": "Rédiger un rapport ou un mémoire",
+  "icone": "<path d=\"M4 6h16M4 12h10M4 18h13\"/><circle cx=\"20\" cy=\"12\" r=\"1.5\"/>"
+ },
+ {
+  "id": "paginer",
+  "nom": "Pages, en-têtes et pieds de page",
+  "couleur": "k8",
+  "famille": "Rédiger un rapport ou un mémoire",
+  "icone": "<rect x=\"5\" y=\"3\" width=\"14\" height=\"18\" rx=\"2\"/><path d=\"M9 17h6\"/>"
+ }
+]
