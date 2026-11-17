@@ -46,11 +46,12 @@ themeBtn();
 /* ---------- partager : menu du téléphone, ou lien copié sur ordinateur ---------- */
 function shareToast(t){let e=document.getElementById("stoast");if(!e){e=document.createElement("div");e.id="stoast";e.className="stoast";e.setAttribute("role","status");document.body.appendChild(e);}
   e.textContent=t;e.classList.remove("in");void e.offsetWidth;e.classList.add("in");clearTimeout(e._t);e._t=setTimeout(()=>e.classList.remove("in"),2600);}
-async function sharePage(){
+async function sharePage(ev){const btn=ev&&ev.currentTarget;
   const c=document.querySelector('link[rel="canonical"]'),url=c?c.href:location.href,title=document.title.replace(/ \| [^|]+$/,"");
   try{if(window.goatcounter&&goatcounter.count)goatcounter.count({path:"partage"+new URL(url).pathname,title:"Partage : "+title,event:true});}catch(e){}
   if(navigator.share&&matchMedia("(pointer: coarse)").matches){try{await navigator.share({title,url});}catch(e){}return;}
-  try{await navigator.clipboard.writeText(url);shareToast("Lien copié : collez-le où vous voulez");}
-  catch(e){const t=document.createElement("textarea");t.value=url;document.body.appendChild(t);t.select();let ok=false;try{ok=document.execCommand("copy");}catch(_){}t.remove();shareToast(ok?"Lien copié : collez-le où vous voulez":url);}
+  const done=()=>{if(!btn)return;const l=btn.querySelector(".tl")||btn;if(!btn._t0)btn._t0=l.textContent;l.textContent="Lien copié ✓";btn.classList.add("copied");clearTimeout(btn._tt);btn._tt=setTimeout(()=>{l.textContent=btn._t0;btn.classList.remove("copied");},2200);};
+  try{await navigator.clipboard.writeText(url);done();shareToast("Lien copié : collez-le où vous voulez");}
+  catch(e){const t=document.createElement("textarea");t.value=url;document.body.appendChild(t);t.select();let ok=false;try{ok=document.execCommand("copy");}catch(_){}t.remove();if(ok)done();shareToast(ok?"Lien copié : collez-le où vous voulez":url);}
 }
 document.querySelectorAll("[data-share]").forEach(b=>b.addEventListener("click",sharePage));

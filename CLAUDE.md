@@ -53,6 +53,7 @@ Le `README.md` décrit l'organisation des fichiers et tous les champs d'une leç
 
 - Titres : `fitTitle` (build.mjs) les ramène à 60 caractères au plus ; garde les `titreSeo` courts.
 - Bouton « Partager » (en haut de chaque page, et sous chaque leçon, mis en évidence à la dernière étape) : menu de partage du téléphone, sinon lien copié ; chaque partage est compté dans GoatCounter comme événement `partage/…`.
+- Les pages appellent `assets/*.css|js?v=<empreinte>` (fonction `write` de build.mjs) : le navigateur recharge les scripts après chaque publication.
 - Images de partage : `src/og/og-<logiciel>.png` et `og-site.png` (1200 × 630), dessinées en HTML puis capturées avec Playwright. Pour un nouveau logiciel, ajoute son image.
 - Search Console est configuré sur l'adresse ci-dessus (balise de validation dans `site.json`). Le sitemap est généré automatiquement.
 - Le propriétaire ne veut **pas de nom de domaine payant**.

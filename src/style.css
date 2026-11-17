@@ -544,3 +544,5 @@ table.sheet{border-collapse:collapse;font-size:14px;font-family:var(--f-body);fo
 .share-btn{border:0;border-radius:999px;background:var(--accent);color:var(--accent-ink);font-weight:600;padding:7px 16px;font-size:.9rem;cursor:pointer}
 .stoast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,20px);opacity:0;pointer-events:none;background:#1f1f1f;color:#fff;padding:10px 16px;border-radius:10px;font-size:.92rem;z-index:50;transition:opacity .25s,transform .25s;max-width:calc(100% - 32px)}
 .stoast.in{opacity:1;transform:translate(-50%,0)}
+.copied{border-color:var(--accent)!important;color:var(--accent)}
+.share-btn.copied{background:var(--accent-soft);color:var(--ink)}

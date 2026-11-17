@@ -12,7 +12,9 @@ const esc=s=>String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"
 const norm=s=>s.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"");
 const strip=s=>s.replace(/<[^>]+>/g,"").replace(/&amp;/g,"&").replace(/&lt;/g,"<").replace(/&gt;/g,">").replace(/&nbsp;/g," ");
 const readJson=f=>JSON.parse(fs.readFileSync(f,"utf8"));
-const write=(f,s)=>{fs.mkdirSync(path.dirname(f),{recursive:true});fs.writeFileSync(f,s);};
+/* Numéro de version des fichiers CSS et JS : le navigateur recharge la nouvelle version après chaque publication */
+const VER={};const ver=n=>VER[n]??=(()=>{const src=n==="app.css"?"src/style.css":`src/${n}`;return fs.existsSync(src)?crypto.createHash("sha1").update(fs.readFileSync(src)).digest("hex").slice(0,8):"0";})();
+const write=(f,s)=>{fs.mkdirSync(path.dirname(f),{recursive:true});if(f.endsWith(".html"))s=s.replace(/assets\/([\w-]+\.(?:css|js))"/g,(m,n)=>`assets/${n}?v=${ver(n)}"`);fs.writeFileSync(f,s);};
 const bars=n=>`<span class="lvl" title="${LV[n]}" aria-label="${LV[n]}">${[1,2,3].map(k=>`<i class="${k<=n?"on":""}"></i>`).join("")}</span>`;
 const kbd=x=>x.split(" + ").map(k=>`<kbd>${esc(k)}</kbd>`).join(" + ");
 const ico=c=>`<svg viewBox="0 0 24 24">${c.icone}</svg>`;
