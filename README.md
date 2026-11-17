@@ -172,6 +172,14 @@ Le lecteur `src/player-word.js` affiche des pages. Une leçon Word remplace `gri
 | `grille` | Avec `btn: "Tableau"`, anime la grille d'insertion : `[colonnes, lignes]` |
 | `poignee` | Anime le redimensionnement d'une image par sa poignée d'angle |
 | `groupe` | Groupe du ruban du bouton `btn`, quand deux boutons portent le même nom |
+| `spot` | Met en évidence une zone : `onglets`, `ruban`, `doc`, `statut`, `nav`, `groupe:Police`, `onglet:Fichier` |
+| `mot` | Avec `at`, sélectionne un mot ou une expression dans le paragraphe |
+| `insAjout` (suite) | Aussi `{"t": "fmt", "mot": "…", "gras": true}` (`italique`, `souligne`, `faute`), `{"t": "rempl", "mot": "ancien", "par": "nouveau"}` (suivi des modifications), `{"t": "com", "mot": "…", "auteur": "…", "txt": "…"}` (commentaire dans la marge) |
+| `forme` (suite) | Aussi `police`, `align` (`justify`, `center`), `interligne` (1,5 → `1.5`), `italique` |
+| `accepter`, `suivi` | Accepte toutes les modifications suivies ; état du bouton Suivi des modifications |
+| `ensuite` | Bloc sur lequel la souris clique après le bouton (pinceau, par exemple) |
+| `pdf`, `toast` | Affiche le document comme un PDF ouvert (`document.pdfNom`) ; petite notification |
+| `dialog.okLabel` | Texte du bouton de validation (« Publier »…) |
 | `voir` | Bloc à garder visible à l'écran en plus de la cible (page voisine) |
 | `at: "header"` | Avec `page`, vise un en-tête |
 | `couleur1` | Nouvelle couleur du style Titre 1 (raccourci de `modifStyle`) |

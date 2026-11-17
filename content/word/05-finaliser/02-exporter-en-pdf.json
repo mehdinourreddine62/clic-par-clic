@@ -1,0 +1,256 @@
+{
+ "id": "exporter-en-pdf",
+ "titre": "Exporter en PDF",
+ "niveau": 1,
+ "resume": "Transformer le document en PDF pour l'envoyer ou l'imprimer sans surprise.",
+ "motsCles": "word exporter en pdf enregistrer en pdf convertir pdf signets envoyer rapport mémoire",
+ "syntaxe": "Fichier › Exporter › Créer un document PDF/XPS",
+ "titreSeo": "Enregistrer un document Word en PDF : tutoriel animé",
+ "arguments": [
+  [
+   "Exporter",
+   "Crée un PDF à partir du document"
+  ],
+  [
+   "Signets",
+   "Le PDF reprend le plan du document"
+  ],
+  [
+   "Enregistrer sous",
+   "Autre méthode : choisir le type PDF"
+  ]
+ ],
+ "document": {
+  "tocAuto": true,
+  "numerotation": {
+   "1": "I.",
+   "2": "1)",
+   "3": "a)"
+  },
+  "footer": {
+   "num": true,
+   "first": true
+  },
+  "pdfNom": "Rapport de stage - Léa Martin.pdf",
+  "pages": [
+   [
+    {
+     "id": "ttl",
+     "s": "titre",
+     "txt": "Rapport de stage"
+    },
+    {
+     "id": "sub",
+     "s": "sous",
+     "txt": "Assistante marketing · Société Lumen · juin 2026"
+    },
+    {
+     "id": "aut",
+     "s": "sous",
+     "txt": "Léa Martin · BTS Communication"
+    }
+   ],
+   [
+    {
+     "id": "toc",
+     "s": "toc"
+    }
+   ],
+   [
+    {
+     "id": "h1",
+     "s": "titre1",
+     "txt": "Introduction"
+    },
+    {
+     "id": "p1",
+     "txt": "Ce rapport présente les dix semaines de stage effectuées au sein du service marketing de la société Lumen, à Lyon."
+    },
+    {
+     "id": "h2",
+     "s": "titre1",
+     "txt": "Présentation de l'entreprise"
+    },
+    {
+     "id": "p2",
+     "txt": "Lumen conçoit des luminaires pour les bureaux. L'entreprise compte quarante-cinq salariés et vend dans toute l'Europe."
+    },
+    {
+     "id": "h3",
+     "s": "titre2",
+     "txt": "Le service marketing"
+    },
+    {
+     "id": "p3",
+     "txt": "Le service réunit quatre personnes, chargées de la communication, du site internet et des salons professionnels."
+    }
+   ],
+   [
+    {
+     "id": "h4",
+     "s": "titre1",
+     "txt": "Missions réalisées"
+    },
+    {
+     "id": "h4a",
+     "s": "titre2",
+     "txt": "Le salon Bureau Expo"
+    },
+    {
+     "id": "p4b",
+     "txt": "Commande des supports, réservation du stand et planning de l'équipe."
+    },
+    {
+     "id": "h5",
+     "s": "titre1",
+     "txt": "Conclusion"
+    },
+    {
+     "id": "p5",
+     "txt": "Ce stage m'a permis de découvrir la gestion d'un événement de bout en bout, de la commande des supports au bilan."
+    }
+   ]
+  ]
+ },
+ "etapes": [
+  {
+   "at": "ttl",
+   "t": "Pour envoyer votre rapport, exportez-le en PDF : il s'affichera à l'identique sur tous les ordinateurs."
+  },
+  {
+   "tab": "Fichier",
+   "btn": "Exporter",
+   "ctx": {
+    "items": [
+     "Créer un document PDF/XPS",
+     "Modifier le type de fichier"
+    ],
+    "hot": 0
+   },
+   "dialog": {
+    "titre": "Publier au format PDF ou XPS",
+    "lignes": [
+     [
+      "Nom de fichier",
+      "Rapport de stage - Léa Martin",
+      "Rapport de stage"
+     ],
+     [
+      "Type",
+      "PDF"
+     ],
+     [
+      "Optimiser pour",
+      "Standard"
+     ],
+     [
+      "Signets",
+      "À partir des titres",
+      "Aucun"
+     ],
+     [
+      "Ouvrir après publication",
+      "Oui",
+      "Non"
+     ]
+    ],
+    "hot": [
+     0
+    ],
+    "okLabel": "Publier"
+   },
+   "t": "Fichier › Exporter › Créer un document PDF/XPS, puis donnez au fichier un nom clair."
+  },
+  {
+   "tab": "Fichier",
+   "dialog": {
+    "titre": "Publier au format PDF ou XPS",
+    "lignes": [
+     [
+      "Nom de fichier",
+      "Rapport de stage - Léa Martin",
+      "Rapport de stage"
+     ],
+     [
+      "Type",
+      "PDF"
+     ],
+     [
+      "Optimiser pour",
+      "Standard"
+     ],
+     [
+      "Signets",
+      "À partir des titres",
+      "Aucun"
+     ],
+     [
+      "Ouvrir après publication",
+      "Oui",
+      "Non"
+     ]
+    ],
+    "hot": [
+     3,
+     4
+    ],
+    "ok": true,
+    "okLabel": "Publier"
+   },
+   "pdf": true,
+   "toast": "Rapport de stage - Léa Martin.pdf a été publié",
+   "t": "Dans Options, cochez « Créer des signets à l'aide des titres », puis cliquez sur Publier."
+  },
+  {
+   "at": "toc",
+   "tab": "Fichier",
+   "pdf": true,
+   "t": "Le PDF s'ouvre : vérifiez le sommaire, les numéros de page et les images avant de l'envoyer."
+  },
+  {
+   "tab": "Fichier",
+   "btn": "Enregistrer sous",
+   "pdf": false,
+   "menu": "Fichier › Enregistrer sous › Type : <b>PDF (*.pdf)</b>",
+   "t": "Autre méthode : Fichier › Enregistrer sous, puis choisissez « PDF » dans la liste des types."
+  }
+ ],
+ "guide": {
+  "question": "Comment enregistrer un document Word en PDF ?",
+  "intro": "Un PDF garde exactement la mise en page de votre document : polices, images, numéros de page, quel que soit l'ordinateur qui l'ouvre. C'est le format à privilégier pour envoyer un rapport ou un mémoire. Word le crée directement, sans logiciel supplémentaire.",
+  "exemple": {
+   "titre": "Le chemin dans Word",
+   "formule": "Fichier › Exporter › Créer un document PDF/XPS",
+   "explication": "Ou Fichier › Enregistrer sous, puis le type « PDF »."
+  },
+  "erreurs": [
+   [
+    "Des marques de révision dans le PDF",
+    "Acceptez toutes les modifications et supprimez les commentaires avant d'exporter."
+   ],
+   [
+    "Un sommaire avec de faux numéros",
+    "Mettez la table des matières à jour juste avant d'exporter."
+   ]
+  ],
+  "faq": [
+   [
+    "Le PDF peut-il être modifié ensuite ?",
+    "Pas facilement : gardez toujours votre fichier Word pour les corrections."
+   ],
+   [
+    "Comment exporter seulement quelques pages ?",
+    "Dans la fenêtre de publication, cliquez sur Options et choisissez les pages."
+   ],
+   [
+    "Comment rendre le PDF plus léger ?",
+    "Choisissez « Taille minimale (publication en ligne) » dans « Optimiser pour »."
+   ]
+  ]
+ },
+ "voirAussi": [
+  "suivi-des-modifications-et-commentaires",
+  "sommaire-automatique",
+  "numeroter-les-pages"
+ ]
+}

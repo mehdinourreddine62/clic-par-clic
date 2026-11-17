@@ -2,12 +2,12 @@
 const W_TABS=["Fichier","Accueil","Insertion","Conception","Mise en page","Références","Révision","Affichage"];
 const W_RIB={
  "Fichier":[["Fichier",["Enregistrer sous","Exporter","Imprimer"]]],
- "Accueil":[["Presse-papiers",["Coller","Couper","Copier"]],["Police",["G","I","S","Taille","Couleur"]],["Paragraphe",["Puces","Numérotation","Liste à plusieurs niveaux","Aligner","Afficher tout"]],["Styles",["Normal","Titre","Titre 1","Titre 2","Titre 3"]]],
+ "Accueil":[["Presse-papiers",["Coller","Couper","Copier","Reproduire la mise en forme"]],["Police",["Police","Taille","G","I","S","Couleur"]],["Paragraphe",["Puces","Numérotation","Liste à plusieurs niveaux","Aligner à gauche","Centrer","Justifier","Interligne","Afficher tout"]],["Styles",["Normal","Titre","Titre 1","Titre 2","Titre 3"]]],
  "Insertion":[["Pages",["Page de garde","Saut de page"]],["Tableaux",["Tableau"]],["Illustrations",["Images","Formes","Graphique"]],["En-tête et pied de page",["En-tête","Pied de page","Numéro de page"]]],
  "Conception":[["Mise en forme du document",["Thèmes","Couleurs","Polices"]]],
  "Mise en page":[["Mise en page",["Marges","Orientation","Taille","Sauts de page"]]],
  "Références":[["Table des matières",["Table des matières","Mettre à jour la table"]],["Notes de bas de page",["Insérer une note de bas de page"]],["Citations et bibliographie",["Insérer une citation","Gérer les sources","Style","Bibliographie"]],["Légendes",["Insérer une légende","Table des illustrations","Mettre à jour la table"]]],
- "Révision":[["Suivi",["Suivi des modifications"]],["Commentaires",["Nouveau commentaire"]]],
+ "Révision":[["Vérification",["Grammaire et orthographe"]],["Commentaires",["Nouveau commentaire","Supprimer","Afficher les commentaires"]],["Suivi",["Suivi des modifications","Marques simples"]],["Modifications",["Accepter","Refuser","Précédente","Suivante"]]],
  "Affichage":[["Affichage",["Page","Lecture"]],["Afficher",["Volet de navigation","Règle"]],["Zoom",["Zoom","Plusieurs pages"]]],
  "Création de tableau":[["Options de style de tableau",["Ligne d'en-tête","Lignes à bandes","Première colonne"]],["Styles de tableau",["Grille du tableau","Grille 4 - Accentuation 1","Grille 5 Foncé - Accentuation 1"]],["Bordures",["Trame de fond","Bordures"]]],
  "Disposition":[["Lignes et colonnes",["Supprimer","Insérer au-dessus","Insérer en dessous","Insérer à gauche","Insérer à droite"]],["Taille de cellule",["Ajustement automatique"]],["Alignement",["Centrer"]],["Données",["Répéter les lignes d'en-tête","Trier"]]],
@@ -17,7 +17,7 @@ const W_RIB={
 const HEAD={titre1:1,titre2:2,titre3:3};
 /* apparence par défaut des styles (taille en points, comme dans Word) */
 const DEFS={titre1:{taille:20,couleur:"#0f4761"},titre2:{taille:16,couleur:"#0f4761"},titre3:{taille:14,couleur:"#0f4761"}};
-let cur=null,idx=0,playing=false,running=false,token=0,curDefs=clone0(DEFS);
+let cur=null,idx=0,playing=false,running=false,token=0,curDefs=clone0(DEFS),curSuivi=false;
 function clone0(o){return JSON.parse(JSON.stringify(o));}
 const reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
 const clone=clone0;
@@ -34,11 +34,16 @@ function findBlock(st,id){for(let pi=0;pi<st.pages.length;pi++){const i=st.pages
 function figures(st){const o=[];let n=0;st.pages.forEach((pg,pi)=>pg.forEach(b=>{if(!b.hide&&b.s==="legende"){n++;o.push({id:b.id,n,txt:b.txt,page:pageNo(st,pi+1)});}}));return o;}
 function insPos(b,it){const i=(b.txt||"").indexOf(it.apres);return i<0?(b.txt||"").length:i+it.apres.length;}
 function noteNums(st){const m=new Map();let n=0;st.pages.forEach(pg=>pg.forEach(b=>{if(b.hide||!b.ins)return;b.ins.filter(x=>x.t==="note").sort((x,y)=>insPos(b,x)-insPos(b,y)).forEach(x=>m.set(x.id,++n));}));return m;}
-function richText(st,b,nn){const t=b.txt||"",ins=(b.ins||[]).map(x=>({...x,p:insPos(b,x)})).sort((x,y)=>x.p-y.p);let o="",k=0;
-  ins.forEach(x=>{o+=esc(t.slice(k,x.p));k=x.p;
-    if(x.t==="note")o+=`<sup class="wref" data-n="${x.id}">${nn.get(x.id)}</sup>`;
-    else if(x.t==="cit"){const src=st.sources[x.src];o+=` <span class="wcit" data-n="${x.id}">${esc(src?src.court:"(source)")}</span>`;}});
-  return o+esc(t.slice(k));}
+function richText(st,b,nn,mot){const t=b.txt||"",L=t.length,op=[...Array(L+1)].map(()=>[]),cl=[...Array(L+1)].map(()=>[]),at=[...Array(L+1)].map(()=>[]);
+  const range=(m,o,c)=>{const i=t.indexOf(m);if(i<0||!m)return;op[i].push(o);cl[i+m.length].unshift(c);};
+  (b.ins||[]).forEach(x=>{
+    if(x.t==="note")at[insPos(b,x)].push(`<sup class="wref" data-n="${x.id}">${nn.get(x.id)}</sup>`);
+    else if(x.t==="cit"){const src=st.sources[x.src];at[insPos(b,x)].push(` <span class="wcit" data-n="${x.id}">${esc(src?src.court:"(source)")}</span>`);}
+    else if(x.t==="fmt"){const c=[x.gras?"wfb":"",x.italique?"wfi":"",x.souligne?"wfu":"",x.faute?"wfaute":""].join(" ");range(x.mot,`<span class="${c}" data-n="${x.id}">`,"</span>");}
+    else if(x.t==="rempl"){range(x.mot,`<del class="wdel" data-n="${x.id}">`,`</del><ins class="wins">${esc(x.par)}</ins>`);}
+    else if(x.t==="com"){range(x.mot,`<span class="wcomh" data-n="${x.id}">`,"</span>");}});
+  if(mot)range(mot,'<span class="wselm">',"</span>");
+  let o="";for(let i=0;i<=L;i++){o+=cl[i].join("")+at[i].join("")+op[i].join("");if(i<L)o+=esc(t[i]);}return o;}
 /* ---------- sections : numéros de page, « Lier au précédent », « À partir de » ---------- */
 function secOf(st,p){let k=0;st.secs.forEach((x,j)=>{if(x.page<=p)k=j;});return k;}
 function secNum(st,k){while(k>0&&st.secs[k].lien!==false)k--;return k===0?!!(st.footer&&st.footer.num):!!st.secs[k].num;}
@@ -46,7 +51,7 @@ function pageNo(st,p){const k=secOf(st,p),x=st.secs[k];if(k>0&&x.debut)return x.
 function showNum(st,p){const k=secOf(st,p);return secNum(st,k)&&!(k===0&&p===1&&st.footer&&st.footer.first);}
 function stateAt(i){
   const d=cur.doc,st={pages:clone(d.pages),nav:!!d.nav,footer:d.footer?clone(d.footer):null,header:d.entete?clone(d.entete):null,edit:false,marques:!!d.marques,
-    marges:{haut:2.5,bas:2.5,gauche:2.5,droite:2.5,...(d.marges||{})},secs:[{page:1},...clone(d.sections||[])],defs:clone(DEFS),num:d.numerotation?clone(d.numerotation):null,toc:null,tof:null,sources:clone(d.sources||{})};
+    marges:{haut:2.5,bas:2.5,gauche:2.5,droite:2.5,...(d.marges||{})},secs:[{page:1},...clone(d.sections||[])],defs:clone(DEFS),num:d.numerotation?clone(d.numerotation):null,toc:null,tof:null,sources:clone(d.sources||{}),suivi:false,pdf:false,mot:null};
   for(const[k,v]of Object.entries(d.styles||{}))st.defs[k]={...st.defs[k],...v};
   if(d.tocAuto)st.toc=headings(st);
   if(d.tofAuto)st.tof=figures(st);
@@ -64,6 +69,9 @@ function stateAt(i){
     (s.insAjout||[]).forEach(a=>{const f=findBlock(st,a.bloc);if(f){f.b.ins=f.b.ins||[];const{bloc,...it}=a;f.b.ins.push(clone(it));}});
     ls(s.insSuppr).forEach(id=>st.pages.flat().forEach(b=>{if(b.ins)b.ins=b.ins.filter(x=>x.id!==id);}));
     for(const[id,v]of Object.entries(s.sources||{}))st.sources[id]=clone(v);
+    if(s.accepter)st.pages.flat().forEach(b=>{if(!b.ins)return;b.ins.filter(x=>x.t==="rempl").forEach(x=>{b.txt=b.txt.replace(x.mot,x.par);});b.ins=b.ins.filter(x=>x.t!=="rempl");});
+    if(s.suivi!==undefined)st.suivi=!!s.suivi;
+    if(s.pdf!==undefined)st.pdf=!!s.pdf;
     for(const[id,o]of Object.entries(s.orient||{})){const f=findBlock(st,id);if(f)f.b.orient=o;}
     ls(s.show).forEach(id=>{const f=findBlock(st,id);if(f)f.b.hide=false;});
     for(const[id,v]of Object.entries(s.forme||{})){const f=findBlock(st,id);if(f)f.b.forme={...(f.b.forme||{}),...v};}
@@ -84,6 +92,7 @@ function stateAt(i){
     if(ls(s.show).includes("toc")||s.tocUpdate)st.toc=headings(st);
     if(ls(s.show).includes("tof")||s.tofUpdate)st.tof=figures(st);
   }
+  const L=cur.s[i];st.mot=L&&L.mot?[L.at||ls(L.sel)[0],L.mot]:null;
   return st;
 }
 
@@ -92,7 +101,8 @@ function foot(st,p){const f=st.footer||{},first=f.first&&p===1;return`<span clas
 function head(st,p){const h=st.header||{},first=st.footer&&st.footer.first&&p===1;return first?"":`<span class="wf-l">${esc(h.txt||"")}</span><span class="wf-r">${esc(h.droite||"")}</span>`;}
 const PX=.95; /* points de Word → pixels de la page affichée */
 function look(st,b){const f={...(st.defs[b.s]||{}),...(b.forme||{})};let r="";
-  if(f.taille)r+=`font-size:${(f.taille*PX).toFixed(1)}px;`;if(f.couleur)r+=`color:${f.couleur};`;if(f.gras)r+="font-weight:700;";if(f.majuscules)r+="text-transform:uppercase;";return r;}
+  if(f.taille)r+=`font-size:${(f.taille*PX).toFixed(1)}px;`;if(f.couleur)r+=`color:${f.couleur};`;if(f.gras)r+="font-weight:700;";if(f.majuscules)r+="text-transform:uppercase;";
+  if(f.italique)r+="font-style:italic;";if(f.align)r+=`text-align:${f.align};`;if(f.interligne)r+=`line-height:${(1.5*f.interligne/1.15).toFixed(2)};`;if(f.police)r+=`font-family:'${f.police}',serif;`;return r;}
 function numMap(st){const m=new Map();headings(st).forEach(h=>{if(h.num)m.set(h.id,h.num);});return m;}
 const IMG={
  stand:'<svg viewBox="0 0 320 200"><rect width="320" height="200" fill="#dfe6ee"/><rect y="150" width="320" height="50" fill="#b9c3cc"/><rect x="40" y="40" width="240" height="115" fill="#fff" stroke="#9aa7b3"/><rect x="40" y="40" width="240" height="26" fill="#0f4761"/><text x="160" y="59" fill="#fff" font-size="15" font-family="Arial" text-anchor="middle" font-weight="700">LUMEN</text><g stroke="#3a4650" stroke-width="2"><path d="M90 66v30M160 66v22M230 66v30"/></g><g fill="#f2c14e"><path d="M78 96h24l-6 14h-12z"/><path d="M148 88h24l-6 14h-12z"/><path d="M218 96h24l-6 14h-12z"/></g><rect x="110" y="118" width="100" height="37" fill="#cfd8e0"/><circle cx="70" cy="140" r="9" fill="#8a6d5a"/><rect x="62" y="149" width="16" height="30" rx="5" fill="#2f5d8a"/><circle cx="255" cy="138" r="9" fill="#d1a17c"/><rect x="247" y="147" width="16" height="32" rx="5" fill="#a03d3d"/></svg>',
@@ -111,28 +121,34 @@ function blockHtml(st,b,nm,nn){const C=`class="wb w-${b.s||"normal"} %C%" data-b
   if(b.s==="image")return`<div ${C} style="${b.habillage==="carre"?`float:right;width:${b.largeur||50}%;margin:2px 0 4px 10px`:`text-align:center`}"><div class="wimg" style="width:${b.habillage==="carre"?100:(b.largeur||100)}%">${IMG[b.img]||""}</div></div>`;
   if(b.s==="legende"){const f=figures(st).find(x=>x.id===b.id);return`<p ${C}>Figure ${f?f.n:"?"} : ${esc(b.txt||"")}${st.marques?'<span class="wpil">¶</span>':""}</p>`;}
   const n=nm.get(b.id);
-  return`<p ${C} style="${look(st,b)}">${n?`<span class="wnum">${n}</span>`:""}${b.ins?richText(st,b,nn):esc(b.txt||"")}${st.marques?'<span class="wpil">¶</span>':""}</p>`;}
+  return`<p ${C} style="${look(st,b)}">${n?`<span class="wnum">${n}</span>`:""}${b.ins||st.mot&&st.mot[0]===b.id?richText(st,b,nn,st.mot&&st.mot[0]===b.id?st.mot[1]:null):esc(b.txt||"")}${st.marques?'<span class="wpil">¶</span>':""}</p>`;}
 function renderDoc(st,s,prev){
   const sel=new Set(ls(s.sel)),nm=numMap(st),nn=noteNums(st);
   const pm=prev&&numMap(prev),pn=prev&&noteNums(prev);
   const pages=st.pages.map((pg,pi)=>{
     const vis=pg.filter(b=>!b.hide);let body="";
-    const one=b=>{const h=blockHtml(st,b,nm,nn),o=prev&&findBlock(prev,b.id),ph=o?blockHtml(prev,o.b,pm,pn):null;
-      const cls=[];if(sel.has(b.id))cls.push("wsel");if(prev&&h!==ph)cls.push("pop");return h.replace("%C%",cls.join(" "));};
+    const one=b=>{const h=blockHtml(st,b,nm,nn),o=prev&&findBlock(prev,b.id);
+      let pop=false;if(prev){const m1=st.mot,m2=prev.mot;st.mot=prev.mot=null;pop=!o||blockHtml(st,b,nm,nn)!==blockHtml(prev,o.b,pm,pn);st.mot=m1;prev.mot=m2;}
+      const cls=[];if(sel.has(b.id))cls.push("wsel");if(pop)cls.push("pop");return h.replace("%C%",cls.join(" "));};
     for(let k=0;k<vis.length;k++){const b=vis[k];
       if(b.s==="image"&&b.habillage==="carre"&&vis[k+1]){body+=`<div class="wwrap">${one(b)}${one(vis[k+1])}</div>`;k++;}
       else body+=one(b);}
     const notes=vis.flatMap(b=>(b.ins||[]).filter(x=>x.t==="note")).sort((x,y)=>nn.get(x.id)-nn.get(y.id));
     if(notes.length){const pt=prev?new Set(prev.pages.flat().flatMap(b=>(b.ins||[]).filter(x=>x.t==="note").map(x=>x.id+"|"+pn.get(x.id)+"|"+x.txt))):null;
       body+=`<div class="wnotes">${notes.map(x=>`<div class="wnote${pt&&!pt.has(x.id+"|"+nn.get(x.id)+"|"+x.txt)?" pop":""}" data-nt="${x.id}"><sup>${nn.get(x.id)}</sup> ${esc(x.txt||"")}</div>`).join("")}</div>`;}
+    const coms=vis.flatMap(b=>(b.ins||[]).filter(x=>x.t==="com"));
+    const pc=prev?new Set(prev.pages.flat().flatMap(b=>(b.ins||[]).filter(x=>x.t==="com").map(x=>x.id))):null;
+    const comHtml=coms.length?`<div class="wcoms">${coms.map(x=>`<div class="wcom${pc&&!pc.has(x.id)?" pop":""}" data-nt="${x.id}"><b>${esc(x.auteur||"")}</b>${esc(x.txt||"")}</div>`).join("")}</div>`:"";
     const p=pi+1,land=pg.some(b=>b.orient==="paysage");
     const fh=foot(st,p),pfh=prev&&prev.pages.length>=p?foot(prev,p):fh,hh=head(st,p),phh=prev&&prev.pages.length>=p?head(prev,p):hh;
     const m=st.marges,ins=`${(m.haut*20).toFixed(0)}px ${(m.droite*19.2).toFixed(0)}px ${(m.bas*21.6).toFixed(0)}px ${(m.gauche*19.2).toFixed(0)}px`;
     const mpop=prev&&JSON.stringify(prev.marges)!==JSON.stringify(m)?" pop":"";
     const k=secOf(st,p),many=st.secs.length>1,sn=many?` -Section ${k+1}-`:"",same=k>0&&st.secs[k].lien!==false&&st.secs[k].page===p?'<em>Identique au précédent</em>':"";
-    return`<div class="wpage${st.edit?" wedit":""}${land?" wland":""}" data-p="${p}"><div class="whead${hh!==phh?" pop":""}" data-h="${p}">${st.edit?`<small class="wtag">En-tête${sn}</small>`:""}${hh}</div><div class="wbody${mpop}" style="inset:${ins}">${body}</div><div class="wfoot${fh!==pfh?" pop":""}" data-f="${p}">${st.edit?`<small class="wtag">Pied de page${sn}</small>${same}`:""}${fh}</div></div>`;
+    return`<div class="wpage${st.edit?" wedit":""}${land?" wland":""}${coms.length?" wcomp":""}" data-p="${p}">${comHtml}<div class="whead${hh!==phh?" pop":""}" data-h="${p}">${st.edit?`<small class="wtag">En-tête${sn}</small>`:""}${hh}</div><div class="wbody${mpop}" style="inset:${ins}">${body}</div><div class="wfoot${fh!==pfh?" pop":""}" data-f="${p}">${st.edit?`<small class="wtag">Pied de page${sn}</small>${same}`:""}${fh}</div></div>`;
   }).join("");
-  const doc=$("#wdoc");doc.innerHTML=`<div class="wpages">${pages}</div>`;
+  const doc=$("#wdoc");doc.innerHTML=`${st.pdf?`<div class="wpdfbar"><b>PDF</b>${esc(cur.doc.pdfNom||"Document.pdf")}<span>Page 1 sur ${st.pages.length}</span></div>`:""}<div class="wpages">${pages}</div>`;doc.classList.toggle("wpdf",!!st.pdf);
+  curSuivi=!!st.suivi;
+  const ts=$(".wstage");let to=document.getElementById("wtoast");if(s.toast){if(!to){to=document.createElement("div");to.id="wtoast";to.className="wtoast";ts.appendChild(to);}to.textContent=s.toast;to.hidden=false;to.classList.remove("in");void to.offsetWidth;to.classList.add("in");}else if(to)to.hidden=true;
   curDefs=st.defs;
   const nav=$("#wnav");
   if(st.nav){nav.hidden=false;const hs=headings(st),cs=ls(s.sel);
@@ -159,7 +175,7 @@ function showDlg(d,base,folded){const g=layer("wdlg","wdlg",".wstage"),n=d.ligne
   const rows=d.lignes.map(([l,v],k)=>{const ob=base&&base.lignes,b=ob&&ob.find(x=>x[0]===l),old=d.lignes[k][2];const val=base&&(d.hot||[]).includes(k)&&!folded?(b?b[1]:old!==undefined?old:v):v;
     return`<div class="dl-r${folded&&k>=n-pl?" dl-more":""}" data-r="${k}"${folded&&k>=n-pl?" hidden":""}><span>${esc(l)}</span><b>${esc(val)}</b></div>`;}).join("");
   const ap=d.apercu?`<div class="dl-ap">${(base&&base.apercu?base.apercu:d.apercu).map(([l,t])=>`<div class="dl-a${l}">${esc(t)}</div>`).join("")}</div>`:"";
-  g.innerHTML=`<div class="dl-box"><div class="dl-t">${esc(d.titre)}</div><div class="dl-c">${rows}${ap}</div><div class="dl-b">${pl?`<span class="dl-plus">${folded?"Plus &gt;&gt;":"&lt;&lt; Moins"}</span><i></i>`:""}<span class="dl-ok">OK</span><span>Annuler</span></div></div>`;g.hidden=false;return g;}
+  g.innerHTML=`<div class="dl-box"><div class="dl-t">${esc(d.titre)}</div><div class="dl-c">${rows}${ap}</div><div class="dl-b">${pl?`<span class="dl-plus">${folded?"Plus &gt;&gt;":"&lt;&lt; Moins"}</span><i></i>`:""}<span class="dl-ok">${esc(d.okLabel||"OK")}</span><span>Annuler</span></div></div>`;g.hidden=false;return g;}
 function setRow(d,k){const r=$(`#wdlg .dl-r[data-r="${k}"] b`);if(r){r.textContent=d.lignes[k][1];r.classList.remove("pop");void r.offsetWidth;r.classList.add("pop");}}
 function setApercu(d){const a=$("#wdlg .dl-ap");if(a&&d.apercu)a.innerHTML=d.apercu.map(([l,t])=>`<div class="dl-a${l}">${esc(t)}</div>`).join("");}
 function hideDlg(){const g=document.getElementById("wdlg");if(g)g.hidden=true;}
@@ -171,8 +187,9 @@ function ribbon(s,press){
   if(pn.dataset.tab!==tab){pn.dataset.tab=tab;pn.scrollLeft=0;
     pn.innerHTML=(W_RIB[tab]||[]).map(([g,bs])=>`<div class="rg" data-g="${esc(g)}"><div class="rbs">${bs.map(b=>`<span class="rb${g==="Styles"?" wsty wsty-"+b.replace(/ /g,""):""}" data-b="${esc(b)}">${esc(b)}</span>`).join("")}</div><small>${esc(g)}</small></div>`).join("");}
   pn.querySelectorAll(".wsty").forEach(b=>{const k=b.dataset.b.replace(/ /g,"").toLowerCase(),d=curDefs[k];if(d&&d.couleur)b.style.color=d.couleur;});
+  pn.querySelectorAll('.rb[data-b="Suivi des modifications"]').forEach(b=>b.classList.toggle("on",curSuivi));
   pn.querySelectorAll(".rb").forEach(b=>{const hot=!!s.btn&&b===btnEl(s.btn,s.groupe);b.classList.toggle("hot",hot);b.classList.remove("press");
-    if(hot){const br=b.getBoundingClientRect(),pr=pn.getBoundingClientRect();if(br.right>pr.right-8)pn.scrollLeft+=br.right-pr.right+24;else if(br.left<pr.left+8)pn.scrollLeft-=pr.left-br.left+24;if(press){void b.offsetWidth;b.classList.add("press");}}});
+    if(hot){const br=b.getBoundingClientRect(),pr=pn.getBoundingClientRect();if(press){}else if(br.right>pr.right-4)pn.scrollLeft+=br.right-pr.right+8;else if(br.left<pr.left+4)pn.scrollLeft-=pr.left-br.left+8;if(press){void b.offsetWidth;b.classList.add("press");}}});
 }
 function keysFx(s){const k=$("#keys");if(s.keys){k.innerHTML=s.keys.split(" + ").map(x=>`<kbd>${esc(x)}</kbd>`).join(" + ");k.hidden=false;k.classList.remove("in");void k.offsetWidth;k.classList.add("in");}else k.hidden=true;}
 /* ---------- curseur : position calculée après défilement, dans le repère de la fenêtre ---------- */
@@ -214,8 +231,11 @@ function showStatic(i){
   token++;running=false;idx=i;const s=cur.s[i];
   renderDoc(stateAt(i),s,null);ribbon(s,false);keysFx(s);ui(s,i);$("#wcursor").classList.remove("on");
   hideCtx();if(s.dialog&&!s.dialog.ok){showDlg(s.dialog);(s.dialog.hot||[]).forEach(k=>{const r=$(`#wdlg .dl-r[data-r="${k}"]`);if(r)r.classList.add("hot");});}else hideDlg();
-  voirFx(s);const el=targetEl(s);if(el)reveal(el);
+  voirFx(s);const el=targetEl(s);if(el)reveal(el);spotFx(s);
 }
+function spotEl(k){if(!k)return null;if(k==="onglets")return $("#ribbon");if(k==="ruban")return $("#ribpanel");if(k==="doc")return $("#wdoc");if(k==="statut")return $("#wstatus");if(k==="nav")return $("#wnav");
+  if(k.startsWith("groupe:"))return $(`#ribpanel .rg[data-g="${k.slice(7)}"]`);if(k.startsWith("onglet:"))return tabEl(k.slice(7));return null;}
+function spotFx(s){document.querySelectorAll(".wspot").forEach(e=>e.classList.remove("wspot"));const e=spotEl(s.spot);if(e){if(e.closest("#ribpanel")||e.closest("#ribbon"))reveal(e);e.classList.add("wspot");}return e;}
 function voirFx(s){if(s.voir){const v=$(`[data-b="${s.voir}"]`)||$(`[data-nt="${s.voir}"]`);if(v)reveal(v);}}
 async function animate(i){
   if(reduce){showStatic(i);if(playing){const run=token;await wait(3200);if(run!==token)return;if(i<cur.s.length-1)animate(i+1);else{playing=false;updatePlay();}}return;}
@@ -254,9 +274,11 @@ async function animate(i){
     if(keep)setApercu(d);
     if(d.ok){const b=$("#wdlg .dl-ok");if(b){await wait(250);cursorTo(b,"center");await wait(560);if(!ok())return;clickFx();b.classList.add("on");await wait(300);if(!ok())return;}hideDlg();}
   }
+  if(s.ensuite){const e=$(`[data-b="${s.ensuite}"]`);if(e){cursorTo(e);await wait(600);if(!ok())return;clickFx();await wait(300);if(!ok())return;}}
   /* 3. le document change, le changement est surligné */
   renderDoc(fin,s,prev);ribbon(s,false);keysFx(s);
   if(s.dialog&&!s.dialog.ok){(s.dialog.hot||[]).forEach(k=>{const r=$(`#wdlg .dl-r[data-r="${k}"]`);if(r)r.classList.add("hot");});}
+  {const sp=spotFx(s);if(sp&&!targetEl(s)&&!s.btn){cursorTo(sp,"center");}}
   const el2=targetEl(s);if(el2&&!s.btn&&!s.dialog){cursorTo(el2);}else if(el2)reveal(el2);
   await wait(900);if(!ok())return;
   cu.classList.remove("on");running=false;updatePlay();

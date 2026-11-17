@@ -514,3 +514,25 @@ table.sheet{border-collapse:collapse;font-size:14px;font-family:var(--f-body);fo
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 .steps{margin:0;padding:4px 0 14px 22px;display:flex;flex-direction:column;gap:6px;font-size:.95rem}
 .foot{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);font-size:.84rem;color:var(--muted)}
+.wspot{outline:3px solid #f2a900!important;outline-offset:-3px;border-radius:6px;animation:wspot 1.4s ease-in-out infinite alternate;position:relative;z-index:2}
+@keyframes wspot{from{box-shadow:0 0 0 0 rgba(242,169,0,.0)}to{box-shadow:0 0 0 5px rgba(242,169,0,.35)}}
+.wfb{font-weight:700}.wfi{font-style:italic}.wfu{text-decoration:underline}
+.wfaute{text-decoration:underline wavy #d13438;text-decoration-skip-ink:none;text-underline-offset:2px}
+.wselm{background:rgba(0,120,215,.32);border-radius:2px}
+.wdel{color:#b0306f;text-decoration:line-through}
+.wins{color:#b0306f;text-decoration:underline}
+.wcomh{background:#fde3b5;border-bottom:1.5px solid #e8a33a}
+.wpage.wcomp{width:520px}
+.wpage.wcomp .wbody{right:168px!important}
+.wpage.wcomp .wfoot,.wpage.wcomp .whead{right:160px}
+.wcoms{position:absolute;right:8px;top:60px;width:140px;display:flex;flex-direction:column;gap:8px;z-index:1}
+.wcom{background:#fff;border:1px solid #e3c08a;border-left:3px solid #e8a33a;border-radius:4px;padding:5px 7px;font-size:9px;line-height:1.35;box-shadow:0 2px 6px -3px rgba(0,0,0,.3)}
+.wcom b{display:block;font-size:9px;color:#8a5a12;margin-bottom:2px}
+.wcom.pop{animation:wpop 1.6s ease-out}
+.wdoc.wpdf{background:#525659}
+.wpdfbar{position:sticky;left:0;top:-22px;margin:-22px -20px 18px;display:flex;align-items:center;gap:10px;padding:7px 12px;background:#323639;color:#eee;font-size:12px;z-index:3}
+.wpdfbar b{background:#d13438;color:#fff;font-size:10px;padding:1px 5px;border-radius:3px}
+.wpdfbar span{margin-left:auto;color:#bbb}
+.wtoast{position:absolute;left:14px;bottom:14px;z-index:6;background:#1f1f1f;color:#fff;font-size:12.5px;padding:8px 12px;border-radius:8px;box-shadow:0 8px 20px -8px rgba(0,0,0,.5);max-width:calc(100% - 28px)}
+.wtoast.in{animation:fadein .35s}
+.rb.on{background:#cce4f7;border-color:#2b78d0}

@@ -1,0 +1,233 @@
+{
+ "id": "raccourcis-clavier-word",
+ "titre": "Raccourcis clavier de Word",
+ "niveau": 1,
+ "resume": "Les raccourcis les plus utiles pour gagner du temps.",
+ "motsCles": "word raccourcis clavier ctrl a ctrl g ctrl z ctrl s ctrl entrée f7 ctrl alt 1 gagner du temps",
+ "syntaxe": "Ctrl + touche",
+ "titreSeo": "Les raccourcis clavier Word les plus utiles, en animation",
+ "arguments": [
+  [
+   "Ctrl + A",
+   "Tout sélectionner"
+  ],
+  [
+   "Ctrl + G / I / U",
+   "Gras, italique, souligné"
+  ],
+  [
+   "Ctrl + Z / Y",
+   "Annuler, rétablir"
+  ],
+  [
+   "Ctrl + Alt + 1",
+   "Style Titre 1"
+  ],
+  [
+   "F7",
+   "Vérifier l'orthographe"
+  ],
+  [
+   "Ctrl + Entrée",
+   "Saut de page"
+  ],
+  [
+   "Ctrl + S",
+   "Enregistrer"
+  ]
+ ],
+ "document": {
+  "numerotation": {
+   "1": "I.",
+   "2": "1)",
+   "3": "a)"
+  },
+  "footer": {
+   "num": true
+  },
+  "pages": [
+   [
+    {
+     "id": "h1",
+     "s": "manuel",
+     "txt": "Introduction"
+    },
+    {
+     "id": "p1",
+     "txt": "Ce rapport présente les dix semaines de stage effectuées au sein du service marketing de la société Lumen, à Lyon."
+    },
+    {
+     "id": "h2",
+     "s": "titre1",
+     "txt": "Présentation de l'entreprise"
+    },
+    {
+     "id": "p2",
+     "txt": "Lumen conçoit des luminaires pour les bureaux. L'entreprise compte quarante-cinq salariés et vend dans toute l'Europe."
+    },
+    {
+     "id": "h3",
+     "s": "titre2",
+     "txt": "Le service marketing"
+    },
+    {
+     "id": "p3",
+     "txt": "Le service réunit quatre personnes, chargées de la communication, du site internet et des salons profesionnels.",
+     "ins": [
+      {
+       "t": "fmt",
+       "id": "fa",
+       "mot": "profesionnels",
+       "faute": true
+      }
+     ]
+    }
+   ],
+   [
+    {
+     "id": "h4",
+     "s": "titre1",
+     "txt": "Missions réalisées"
+    },
+    {
+     "id": "h4a",
+     "s": "titre2",
+     "txt": "Le salon Bureau Expo"
+    },
+    {
+     "id": "p4b",
+     "txt": "Commande des supports, réservation du stand et planning de l'équipe."
+    },
+    {
+     "id": "h5",
+     "s": "titre1",
+     "txt": "Conclusion"
+    },
+    {
+     "id": "p5",
+     "txt": "Ce stage m'a permis de découvrir la gestion d'un événement de bout en bout, de la commande des supports au bilan."
+    }
+   ]
+  ]
+ },
+ "etapes": [
+  {
+   "at": "p1",
+   "t": "Quelques raccourcis font gagner beaucoup de temps : voici les plus utiles, un par un."
+  },
+  {
+   "sel": "h1 p1 h2 p2 h3 p3",
+   "keys": "Ctrl + A",
+   "t": "Ctrl + A sélectionne tout le texte du document."
+  },
+  {
+   "at": "p1",
+   "mot": "dix semaines",
+   "keys": "Ctrl + G",
+   "insAjout": [
+    {
+     "bloc": "p1",
+     "t": "fmt",
+     "id": "f1",
+     "mot": "dix semaines",
+     "gras": true
+    }
+   ],
+   "t": "Ctrl + G met la sélection en gras ; Ctrl + I en italique, Ctrl + U la souligne."
+  },
+  {
+   "at": "p1",
+   "keys": "Ctrl + Z",
+   "insSuppr": "f1",
+   "t": "Ctrl + Z annule la dernière action ; Ctrl + Y la rétablit."
+  },
+  {
+   "at": "h1",
+   "keys": "Ctrl + Alt + 1",
+   "style": {
+    "h1": "titre1"
+   },
+   "t": "Ctrl + Alt + 1 applique le style Titre 1 ; Ctrl + Alt + 2, le style Titre 2."
+  },
+  {
+   "at": "p3",
+   "keys": "F7",
+   "texte": {
+    "p3": "Le service réunit quatre personnes, chargées de la communication, du site internet et des salons professionnels."
+   },
+   "insSuppr": "fa",
+   "t": "F7 lance la vérification de l'orthographe : le mot souligné en rouge est corrigé."
+  },
+  {
+   "at": "p1",
+   "keys": "Ctrl + Entrée",
+   "insererPage": [
+    2
+   ],
+   "move": [
+    {
+     "id": "h2",
+     "page": 2
+    },
+    {
+     "id": "p2",
+     "page": 2
+    },
+    {
+     "id": "h3",
+     "page": 2
+    },
+    {
+     "id": "p3",
+     "page": 2
+    }
+   ],
+   "voir": "h2",
+   "t": "Ctrl + Entrée insère un saut de page : la suite commence sur une nouvelle page."
+  },
+  {
+   "at": "p1",
+   "keys": "Ctrl + S",
+   "toast": "Document enregistré",
+   "t": "Ctrl + S enregistre le document : prenez l'habitude d'appuyer souvent."
+  }
+ ],
+ "guide": {
+  "question": "Quels sont les raccourcis clavier Word les plus utiles ?",
+  "intro": "Les raccourcis évitent d'aller chercher les boutons dans le ruban. Les plus utiles pour un rapport : Ctrl + A pour tout sélectionner, Ctrl + G, I et U pour le gras, l'italique et le souligné, Ctrl + Z pour annuler, Ctrl + S pour enregistrer, Ctrl + Entrée pour un saut de page et F7 pour l'orthographe.",
+  "exemple": {
+   "titre": "À retenir",
+   "formule": "Ctrl + S",
+   "explication": "Enregistrez souvent : un rapport perdu à la veille du rendu, c'est des heures de travail."
+  },
+  "erreurs": [
+   [
+    "Ctrl + B ne met pas en gras",
+    "Dans Word en français, le gras est Ctrl + G (G comme gras)."
+   ],
+   [
+    "Ctrl + Z a annulé trop de choses",
+    "Ctrl + Y rétablit ce qui vient d'être annulé."
+   ]
+  ],
+  "faq": [
+   [
+    "Comment rechercher un mot ?",
+    "Ctrl + F ouvre la recherche dans le volet de navigation."
+   ],
+   [
+    "Comment remplacer un mot partout ?",
+    "Ctrl + H ouvre la fenêtre Rechercher et remplacer."
+   ],
+   [
+    "Comment changer la casse (majuscules, minuscules) ?",
+    "Sélectionnez le texte et appuyez sur Maj + F3, plusieurs fois si besoin."
+   ]
+  ]
+ },
+ "voirAussi": [
+  "mettre-en-forme-le-texte",
+  "ecran-et-ruban-word",
+  "sauts-de-page-et-de-section"
+ ]
+}

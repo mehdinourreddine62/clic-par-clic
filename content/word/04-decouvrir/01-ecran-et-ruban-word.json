@@ -1,0 +1,186 @@
+{
+ "id": "ecran-et-ruban-word",
+ "titre": "L'écran et le ruban de Word",
+ "niveau": 1,
+ "resume": "Se repérer dans Word : onglets, ruban, groupes, page, barre d'état.",
+ "motsCles": "word découvrir écran ruban onglets accueil insertion barre d'état débutant interface volet de navigation",
+ "syntaxe": "Onglet › Groupe › Bouton",
+ "titreSeo": "Découvrir l'écran et le ruban de Word : tutoriel animé pour débutant",
+ "arguments": [
+  [
+   "Onglets",
+   "Accueil, Insertion, Mise en page… en haut de la fenêtre"
+  ],
+  [
+   "Ruban",
+   "Les boutons de l'onglet choisi, rangés par groupes"
+  ],
+  [
+   "Page",
+   "La zone où l'on écrit"
+  ],
+  [
+   "Barre d'état",
+   "Page en cours, nombre de mots, langue"
+  ]
+ ],
+ "document": {
+  "numerotation": {
+   "1": "I.",
+   "2": "1)",
+   "3": "a)"
+  },
+  "footer": {
+   "num": true,
+   "first": true
+  },
+  "pages": [
+   [
+    {
+     "id": "ttl",
+     "s": "titre",
+     "txt": "Rapport de stage"
+    },
+    {
+     "id": "sub",
+     "s": "sous",
+     "txt": "Assistante marketing · Société Lumen · juin 2026"
+    },
+    {
+     "id": "aut",
+     "s": "sous",
+     "txt": "Léa Martin · BTS Communication"
+    }
+   ],
+   [
+    {
+     "id": "h1",
+     "s": "titre1",
+     "txt": "Introduction"
+    },
+    {
+     "id": "p1",
+     "txt": "Ce rapport présente les dix semaines de stage effectuées au sein du service marketing de la société Lumen, à Lyon."
+    },
+    {
+     "id": "h2",
+     "s": "titre1",
+     "txt": "Présentation de l'entreprise"
+    },
+    {
+     "id": "p2",
+     "txt": "Lumen conçoit des luminaires pour les bureaux. L'entreprise compte quarante-cinq salariés et vend dans toute l'Europe."
+    },
+    {
+     "id": "h3",
+     "s": "titre2",
+     "txt": "Le service marketing"
+    },
+    {
+     "id": "p3",
+     "txt": "Le service réunit quatre personnes, chargées de la communication, du site internet et des salons professionnels."
+    }
+   ],
+   [
+    {
+     "id": "h4",
+     "s": "titre1",
+     "txt": "Missions réalisées"
+    },
+    {
+     "id": "h4a",
+     "s": "titre2",
+     "txt": "Le salon Bureau Expo"
+    },
+    {
+     "id": "p4b",
+     "txt": "Commande des supports, réservation du stand et planning de l'équipe."
+    },
+    {
+     "id": "h5",
+     "s": "titre1",
+     "txt": "Conclusion"
+    },
+    {
+     "id": "p5",
+     "txt": "Ce stage m'a permis de découvrir la gestion d'un événement de bout en bout, de la commande des supports au bilan."
+    }
+   ]
+  ]
+ },
+ "etapes": [
+  {
+   "spot": "doc",
+   "t": "Voici Word : au centre, la page sur laquelle vous écrivez, telle qu'elle sera imprimée."
+  },
+  {
+   "spot": "onglets",
+   "t": "En haut, les onglets : Accueil, Insertion, Mise en page… chacun regroupe un type de commandes."
+  },
+  {
+   "tab": "Insertion",
+   "spot": "ruban",
+   "t": "Cliquez sur un onglet : le ruban affiche ses boutons, ici ceux de l'onglet Insertion."
+  },
+  {
+   "tab": "Accueil",
+   "spot": "groupe:Police",
+   "t": "Les boutons sont rangés par groupes, nommés en bas du ruban : Police, Paragraphe, Styles…"
+  },
+  {
+   "tab": "Accueil",
+   "spot": "statut",
+   "t": "En bas, la barre d'état indique la page en cours, le nombre de mots et la langue."
+  },
+  {
+   "tab": "Affichage",
+   "btn": "Volet de navigation",
+   "nav": true,
+   "spot": "nav",
+   "t": "Affichage › Volet de navigation : le plan du document s'affiche à gauche, un clic mène à la partie."
+  },
+  {
+   "tab": "Fichier",
+   "spot": "ruban",
+   "t": "L'onglet Fichier regroupe ce qui concerne le document entier : enregistrer, exporter en PDF, imprimer."
+  }
+ ],
+ "guide": {
+  "question": "Comment se repérer dans l'écran de Word ?",
+  "intro": "Word se compose d'une page blanche au centre, d'onglets en haut (Accueil, Insertion, Mise en page, Références…) et, sous les onglets, du ruban qui affiche les boutons de l'onglet choisi. Les boutons sont rangés par groupes, dont le nom figure en bas du ruban. En bas de la fenêtre, la barre d'état donne la page en cours et le nombre de mots.",
+  "exemple": {
+   "titre": "À retenir",
+   "formule": "Onglet › Groupe › Bouton",
+   "explication": "Les chemins des leçons se lisent ainsi : Accueil › Styles › Titre 1, par exemple."
+  },
+  "erreurs": [
+   [
+    "Le ruban a disparu",
+    "Il est réduit : double-cliquez sur un onglet pour le réafficher."
+   ],
+   [
+    "Un onglet inconnu apparaît",
+    "C'est un onglet contextuel : Disposition pour un tableau, Format de l'image pour une image. Il s'affiche quand l'objet est sélectionné."
+   ]
+  ],
+  "faq": [
+   [
+    "Comment zoomer sur la page ?",
+    "Avec le curseur de zoom en bas à droite, ou Ctrl + molette de la souris."
+   ],
+   [
+    "Comment voir le nombre de mots ?",
+    "Il s'affiche dans la barre d'état ; un clic dessus donne le détail."
+   ],
+   [
+    "Où sont Enregistrer et Imprimer ?",
+    "Dans l'onglet Fichier."
+   ]
+  ]
+ },
+ "voirAussi": [
+  "mettre-en-forme-le-texte",
+  "raccourcis-clavier-word",
+  "styles-de-titres"
+ ]
+}
