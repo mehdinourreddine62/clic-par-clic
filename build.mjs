@@ -22,7 +22,7 @@ const ico=c=>`<svg viewBox="0 0 24 24">${c.icone}</svg>`;
 
 /* ---------- lecture du contenu ---------- */
 const SOFTS=readJson("content/logiciels.json");
-const RESERVED=new Set(["assets","fichiers","parcours","index"]);
+const RESERVED=new Set(["assets","fichiers","parcours","index","exercices"]);
 function loadSoft(sw){
   const base=`content/${sw.id}`;
   const cats=readJson(`${base}/categories.json`);
@@ -47,7 +47,15 @@ function loadSoft(sw){
   const NO_FILE=new Set(["erreurs","feuilles","dyn"]);
   lessons.forEach(l=>{l.hasFile=!!sw.fichiers&&!NO_FILE.has(l.cat.id)&&l.id!=="lambda"&&!l.etapes.some(s=>s.spill)&&l.etapes.some(s=>s.f&&s.f[0]==="=");});
   ALL.push(...lessons);
-  return{sw,cats,lessons,parcours};
+  /* exercices interactifs (facultatifs) */
+  const exercices=fs.existsSync(`${base}/exercices.json`)?readJson(`${base}/exercices.json`):[];
+  exercices.forEach(x=>{
+    if(!/^[a-z0-9-]+$/.test(x.id)||RESERVED.has(x.id)||lessons.some(l=>l.id===x.id))throw new Error(`exercices.json : id invalide ou déjà utilisé « ${x.id} »`);
+    x.l=lessons.find(l=>l.id===x.lecon);if(!x.l)throw new Error(`exercice « ${x.id} » : leçon « ${x.lecon} » introuvable`);
+    if(!x.solution||x.solution[0]!=="=")throw new Error(`exercice « ${x.id} » : solution manquante`);
+    (x.l.exos=x.l.exos||[]).push(x);
+  });
+  return{sw,cats,lessons,parcours,exercices};
 }
 const ALL=[];
 const CTX=SOFTS.filter(sw=>sw.disponible).map(loadSoft);
@@ -128,6 +136,7 @@ ${cats.filter(c=>(c.famille||"Rubriques")===f).map(c=>{const n=lessons.filter(l=
     ${PARCOURS.length?`<section class="routes" id="routes"><h2>Parcours guidés</h2><div class="rgrid">
 ${PARCOURS.map(p=>`<a class="route" href="parcours/${p.id}/" data-ids="${p.lecons.join(" ")}" style="--k:var(--${p.couleur})"><span class="rh"><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24">${PICO}</svg></span><span><b>${esc(p.titre)}</b><small>${esc(p.pour)}</small></span></span><span class="rd">${esc(p.resume)}</span><span class="rf"><span class="rn">${p.items.length} leçons</span><span class="tp"><i></i></span></span></a>`).join("\n")}
 </div></section>`:""}
+    ${(EXOS[sw.id]||[]).length?`<a class="xhub" href="exercices/"><span class="xlk-i" aria-hidden="true">✎</span><span><small>Exercices interactifs</small><b>S'entraîner : tapez la formule, le site corrige</b></span><span aria-hidden="true">→</span></a>`:""}
     <div id="tiles">
 ${tiles}
     </div>
@@ -255,6 +264,7 @@ function lessonPage(l,i,{sw,lessons,parcours:PARCOURS}){
         <span class="count" id="count"></span>
       </div>
     </div>
+    ${(l.exos||[]).map(x=>`<a class="xlink" href="../${x.id}/"><span class="xlk-i" aria-hidden="true">✎</span><span><small>Entraînez-vous</small><b>Exercice : ${esc(x.titre)}</b></span><span aria-hidden="true">→</span></a>`).join("")}
     <div class="sharebox" id="sharebox"><span class="avis" id="avis"><span class="aq">Cette leçon vous a aidé ?</span><button type="button" data-avis="oui">Oui</button><button type="button" data-avis="non">Non</button></span><button class="share-btn" type="button" data-share>Partager la leçon</button></div>
     <p class="hint">Clavier : <kbd>←</kbd> <kbd>→</kbd> pour changer d'étape, <kbd>Espace</kbd> pour lancer ou mettre en pause.</p>
     ${l.hasFile?`<a class="dl" href="../../fichiers/${sw.id}/${l.id}.xlsx" download="${l.id}.xlsx"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg><span><b>Télécharger le fichier d'exercice</b><small>Excel · consignes, données de départ et solution</small></span></a>`:""}<div class="pband" id="pband" hidden></div>
@@ -271,6 +281,59 @@ function lessonPage(l,i,{sw,lessons,parcours:PARCOURS}){
 `;}
 
 /* ---------- page d'un parcours ---------- */
+/* ---------- exercices interactifs ---------- */
+const EXOS={};
+function exoTable(x){const w=Math.max(...x.grille.map(r=>r.length)),cols=[...Array(w)].map((_,i)=>String.fromCharCode(65+i));
+  const all=[x.cible,...(x.recopie||[])];
+  return `<table class="xsheet"><thead><tr><th></th>${cols.map(c=>`<th>${c}</th>`).join("")}</tr></thead><tbody>${x.grille.map((r,ri)=>`<tr><th>${ri+1}</th>${cols.map((c,ci)=>{const k=c+(ri+1),v=r[ci]??"",num=/^-?[\d\s\u00a0,]+(€|%)?$/.test(String(v).trim())&&v!=="";
+    return `<td data-k="${k}" class="${[num?"xn":"",k===x.cible?"xtarget":"",all.indexOf(k)>0?"xrec":"",ri===0?"xhead":""].join(" ").trim()}">${k===x.cible?"?":esc(v)}</td>`;}).join("")}</tr>`).join("")}</tbody></table>`;}
+function exercisePage(x,i,list,{sw}){
+  const url=`${SITE.url}${sw.id}/${x.id}/`,next=list[i+1];
+  const title=`Exercice ${sw.nom} corrigé – ${x.titre} | ${SITE.nom}`;
+  const desc=`${x.consigne} Exercice interactif et gratuit : tapez la formule, le site la corrige.`;
+  const ld={"@context":"https://schema.org","@type":"LearningResource",name:`Exercice : ${x.titre}`,description:x.resume,inLanguage:"fr",isAccessibleForFree:true,learningResourceType:"Exercice interactif",url,educationalLevel:"Débutant",teaches:x.l.titre};
+  const keys=["=",";","$",":","(",")","\"","*","/","+","-",">","<","⌫"];
+  return head({title,desc,url,root:"../../",ld,noindex:sw.disponible!==true})+`  <main class="xpage">
+    <nav class="crumbs" aria-label="Fil d'Ariane"><a href="../../">Accueil</a><span aria-hidden="true">›</span><a href="../">${esc(sw.nom)}</a><span aria-hidden="true">›</span><a href="../exercices/">Exercices</a><span aria-hidden="true">›</span><span>${esc(x.titre)}</span></nav>
+    <div class="lhead"><div class="meta"><span class="tag">✎ Exercice ${i+1} sur ${list.length}</span></div><h1>${esc(x.titre)}</h1></div>
+    <p class="xcons">${esc(x.consigne)}</p>
+    <div class="xwin">
+      <div class="xbar"><span class="xname">${x.cible}</span><span class="xfx">fx</span><input id="xin" type="text" inputmode="text" autocomplete="off" autocapitalize="characters" spellcheck="false" aria-label="Votre formule" placeholder="Tapez votre formule, puis Entrée"></div>
+      <div class="xkeys">${keys.map(k=>`<button type="button" data-k="${esc(k)}" aria-label="${k==="⌫"?"Effacer":"Insérer "+esc(k)}">${esc(k)}</button>`).join("")}</div>
+      <div class="xsheetwrap">${exoTable(x)}</div>
+    </div>
+    <p class="xtip">Astuce : cliquez sur une cellule, ou faites glisser sur une plage, pour l'insérer dans la formule.</p>
+    <div class="xact"><button type="button" id="xok" class="share-btn">Valider</button><button type="button" id="xhint" class="xbtn">Indice</button><button type="button" id="xsol" class="xbtn" hidden>Voir la solution</button></div>
+    <div id="xmsg" class="xmsg" role="status" aria-live="polite"></div>
+    <div id="xnext" class="xnextw" hidden>${next?`<a class="resume" href="../${next.id}/"><span><small>Exercice suivant</small><b>${esc(next.titre)}</b></span><span aria-hidden="true">→</span></a>`:`<a class="resume" href="../exercices/"><span><small>Dernier exercice</small><b>Revenir à la liste des exercices</b></span><span aria-hidden="true">→</span></a>`}</div>
+    <details class="sx" id="xcorr"><summary>Corrigé</summary><p><code class="gx">${esc(x.solution)}</code></p><p>${esc(x.explication)}</p></details>
+    <a class="xlink" href="../${x.l.id}/"><span class="xlk-i" aria-hidden="true">▶</span><span><small>Besoin d'aide ?</small><b>Revoir la leçon animée : ${esc(x.l.titre)}</b></span><span aria-hidden="true">→</span></a>
+  </main>
+</div>
+<script type="application/json" id="ex-data">${JSON.stringify({id:x.id,titre:x.titre,grille:x.grille,cible:x.cible,recopie:x.recopie||[],solution:x.solution,format:x.format||"",indice:x.indice,bravo:x.bravo,fonction:x.fonction,dollar:!!x.dollar,exige:x.exige,exigeMsg:x.exigeMsg}).replace(/</g,"\\u003c")}</script>
+<script src="../../assets/app.js"></script>
+<script src="../../assets/exercices.js"></script>
+</body>
+</html>
+`;}
+function exercisesIndex(list,{sw}){
+  const url=`${SITE.url}${sw.id}/exercices/`;
+  const title=`Exercices ${sw.nom} corrigés et interactifs | ${SITE.nom}`;
+  const desc=`Des exercices ${sw.nom} gratuits et interactifs : tapez la formule, le site la corrige et vous aide. SOMME, MOYENNE, SI, NB.SI, RECHERCHEV…`;
+  const ld={"@context":"https://schema.org","@type":"ItemList",name:`Exercices ${sw.nom}`,url,itemListElement:list.map((x,i)=>({"@type":"ListItem",position:i+1,url:`${SITE.url}${sw.id}/${x.id}/`,name:x.titre}))};
+  return head({title,desc,url,root:"../../",ld,noindex:sw.disponible!==true})+`  <main class="xpage">
+    <nav class="crumbs" aria-label="Fil d'Ariane"><a href="../../">Accueil</a><span aria-hidden="true">›</span><a href="../">${esc(sw.nom)}</a><span aria-hidden="true">›</span><span>Exercices</span></nav>
+    <div class="lhead"><h1>S'entraîner sur ${esc(sw.nom)}</h1><p>Tapez vous-même la formule : le site la calcule, vous dit si elle est juste et vous aide si besoin. Aucun compte n'est nécessaire.</p></div>
+    <ol class="rlist xlist">
+${list.map((x,i)=>`<li data-id="${x.id}"><a href="../${x.id}/"><span class="rnum">${i+1}</span><span class="rt"><b>${esc(x.titre)}</b><small>${esc(x.resume)}</small></span><span class="xdone" aria-hidden="true"></span></a></li>`).join("\n")}
+    </ol>
+  </main>
+</div>
+<script src="../../assets/app.js"></script>
+<script>try{const d=JSON.parse(localStorage.getItem("cpc-ex")||"[]");document.querySelectorAll(".xlist li").forEach(li=>{if(d.includes(li.dataset.id))li.classList.add("done");});}catch(e){}</script>
+</body>
+</html>
+`;}
 function routePage(p,{sw}){
   const url=`${SITE.url}${sw.id}/parcours/${p.id}/`;
   const title=`${p.titre} : parcours ${sw.nom} en ${p.items.length} leçons animées | ${SITE.nom}`;
@@ -318,10 +381,14 @@ fs.copyFileSync("src/favicon-48.png","racine/favicon.ico");
 write("racine/robots.txt",`User-agent: *\nAllow: /\n\nSitemap: ${SITE.url}sitemap.xml\n`);
 write("racine/.nojekyll","");
 let nFiles=0;const urls=[SITE.url];
+for(const c of CTX)EXOS[c.sw.id]=c.exercices||[];
 for(const ctx of CTX){const{sw,lessons,parcours}=ctx;
   const live=sw.disponible===true;
   write(`${sw.id}/index.html`,softHome(ctx));if(live)urls.push(`${SITE.url}${sw.id}/`);
   lessons.forEach((l,i)=>write(`${sw.id}/${l.id}/index.html`,lessonPage(l,i,ctx)));
+  const exos=ctx.exercices||[];
+  if(exos.length){write(`${sw.id}/exercices/index.html`,exercisesIndex(exos,ctx));if(live)urls.push(`${SITE.url}${sw.id}/exercices/`);
+    exos.forEach((x,i)=>{write(`${sw.id}/${x.id}/index.html`,exercisePage(x,i,exos,ctx));if(live)urls.push(`${SITE.url}${sw.id}/${x.id}/`);});}
   parcours.forEach(p=>{write(`${sw.id}/parcours/${p.id}/index.html`,routePage(p,ctx));if(live)urls.push(`${SITE.url}${sw.id}/parcours/${p.id}/`);});
   if(live)lessons.forEach(l=>urls.push(`${SITE.url}${sw.id}/${l.id}/`));
   lessons.filter(l=>l.hasFile).forEach(l=>{const wb=lessonWorkbook(l,`${SITE.url}${sw.id}/${l.id}/`);fs.mkdirSync(`fichiers/${sw.id}`,{recursive:true});fs.writeFileSync(`fichiers/${sw.id}/${l.id}.xlsx`,buildXlsx({sheets:wb.sheets}));nFiles++;});
@@ -331,7 +398,7 @@ for(const f of ["favicon.svg","favicon-48.png","favicon-192.png","apple-touch-ic
 for(const f of fs.readdirSync("src/og"))fs.copyFileSync(`src/og/${f}`,`assets/${f}`);
 fs.mkdirSync("assets/fonts",{recursive:true});for(const f of fs.readdirSync("src/fonts"))fs.copyFileSync(`src/fonts/${f}`,`assets/fonts/${f}`);
 fs.copyFileSync("src/favicon-48.png","favicon.ico");
-for(const f of new Set(["app.js","home.js","root.js",...CTX.map(c=>c.sw.lecteur)]))write(`assets/${f}`,fs.readFileSync(`src/${f}`,"utf8"));
+for(const f of new Set(["app.js","home.js","root.js","exercices.js",...CTX.map(c=>c.sw.lecteur)]))write(`assets/${f}`,fs.readFileSync(`src/${f}`,"utf8"));
 /* Date de dernière modification de chaque page : empreinte du HTML gardée dans dates.json (fichier généré) */
 const DATES=fs.existsSync("dates.json")?readJson("dates.json"):{},today=new Date().toISOString().slice(0,10),NEWD={};
 for(const u of urls){const f=u.slice(SITE.url.length)+"index.html",h=fs.existsSync(f)?crypto.createHash("sha1").update(fs.readFileSync(f)).digest("hex").slice(0,16):"";

@@ -575,3 +575,51 @@ table.sheet{border-collapse:collapse;font-size:14px;font-family:var(--f-body);fo
 .avis button:hover{border-color:var(--accent)}
 .avis.fait .aq{color:var(--accent);font-weight:600}
 .guide p,.guide li,.guide h4{overflow-wrap:anywhere}
+/* ---------- exercices interactifs ---------- */
+.xpage .lhead h1{margin-bottom:6px}
+.xcons{font-size:1.08rem;font-weight:500;margin:4px 0 14px;padding:12px 16px;border-left:4px solid var(--accent);background:var(--accent-soft);border-radius:0 10px 10px 0}
+.xwin{border:1px solid var(--line);border-radius:14px;background:var(--surface);overflow:hidden}
+.xbar{display:flex;align-items:center;border-bottom:1px solid var(--line)}
+.xname{flex:none;width:58px;padding:10px;font-family:var(--f-mono);font-size:.85rem;color:var(--muted);border-right:1px solid var(--line);text-align:center}
+.xfx{flex:none;padding:0 10px;font-style:italic;color:var(--muted);font-family:Georgia,serif}
+#xin{flex:1;min-width:0;border:0;outline:0;background:transparent;color:var(--ink);font-family:var(--f-mono);font-size:1rem;padding:11px 10px}
+.xbar:focus-within{box-shadow:inset 0 -2px 0 var(--accent)}
+.xkeys{display:flex;flex-wrap:wrap;gap:5px;padding:7px 8px;border-bottom:1px solid var(--line);background:var(--head)}
+.xkeys button{min-width:34px;height:32px;border:1px solid var(--line);border-radius:7px;background:var(--surface);color:var(--ink);font-family:var(--f-mono);font-size:.95rem;cursor:pointer}
+.xkeys button:active{background:var(--accent-soft)}
+.xsheetwrap{overflow-x:auto}
+.xsheet{border-collapse:collapse;font-size:.9rem;user-select:none;touch-action:none}
+.xsheet thead th:first-child,.xsheet tbody th{width:34px;min-width:34px}
+.xsheet th{background:var(--head);color:var(--muted);font-weight:500;font-size:.75rem;padding:4px 8px;border:1px solid var(--line);text-align:center}
+.xsheet td{border:1px solid var(--line);padding:6px 10px;white-space:nowrap;min-width:92px;cursor:cell;transition:background .2s}
+.xsheet td.xn{text-align:right}
+.xsheet td.xhead{font-weight:600}
+.xsheet td.xtarget{outline:2px solid var(--accent);outline-offset:-2px;text-align:center;font-weight:700;color:var(--accent)}
+.xsheet td.xrec{background:repeating-linear-gradient(135deg,transparent 0 6px,var(--accent-soft) 6px 8px)}
+.xsheet td.xpick{background:rgba(43,120,208,.18)}
+.xsheet td.xok{background:#d8f1df;color:#11592f;text-align:right;outline:0;font-weight:600}
+.xsheet td.xko{background:#fde0dc;color:#9b2318;text-align:right}
+:root[data-theme="dark"] .xsheet td.xok{background:#1f4a30;color:#c9f2d6}
+:root[data-theme="dark"] .xsheet td.xko{background:#4d2420;color:#ffd6d0}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .xsheet td.xok{background:#1f4a30;color:#c9f2d6}:root:not([data-theme="light"]) .xsheet td.xko{background:#4d2420;color:#ffd6d0}}
+.xtip{font-size:.85rem;color:var(--muted);margin:8px 2px 14px}
+.xact{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.xact .share-btn{padding:9px 22px;font-size:1rem}
+.xbtn{border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:999px;padding:8px 16px;font-size:.92rem;cursor:pointer}
+.xmsg{margin:14px 0;min-height:1px;border-radius:12px;font-size:.98rem;line-height:1.5}
+.xmsg.good,.xmsg.bad,.xmsg.hint{padding:12px 16px}
+.xmsg.good{background:#d8f1df;color:#11592f}
+.xmsg.bad{background:#fde0dc;color:#9b2318}
+.xmsg.hint{background:var(--accent-soft);color:var(--ink)}
+:root[data-theme="dark"] .xmsg.good{background:#1f4a30;color:#c9f2d6}
+:root[data-theme="dark"] .xmsg.bad{background:#4d2420;color:#ffd6d0}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .xmsg.good{background:#1f4a30;color:#c9f2d6}:root:not([data-theme="light"]) .xmsg.bad{background:#4d2420;color:#ffd6d0}}
+.xnextw{margin:6px 0 18px}
+.xlink,.xhub{display:flex;align-items:center;gap:12px;margin:14px 0;padding:12px 16px;border:1px solid var(--line);border-radius:12px;background:var(--surface);text-decoration:none;color:var(--ink)}
+.xlink:hover,.xhub:hover{border-color:var(--accent)}
+.xlink small,.xhub small{display:block;font-size:.78rem;color:var(--muted)}
+.xlink>span:last-child,.xhub>span:last-child{margin-left:auto;color:var(--accent);font-size:1.2rem}
+.xlk-i{flex:none;width:34px;height:34px;border-radius:10px;background:var(--accent-soft);color:var(--accent);display:grid;place-items:center;font-size:1.05rem}
+.xhub{margin:0 0 26px;border-color:var(--accent)}
+.xlist .xdone{width:22px;height:22px;border-radius:50%;border:2px solid var(--line);flex:none}
+.xlist li.done .xdone{background:var(--accent);border-color:var(--accent);box-shadow:inset 0 0 0 4px var(--surface)}

@@ -193,3 +193,9 @@ Le lecteur `src/player-word.js` affiche des pages. Une leçon Word remplace `gri
 
 `site.json` peut contenir `"goatcounter": "<code>"`, le code du compte GoatCounter (gratuit, sans cookies, donc sans bandeau de consentement). Chaque page générée charge alors le compteur. Sans ce champ, aucun compteur. Les statistiques se consultent sur `https://<code>.goatcounter.com`.
 
+## Exercices interactifs
+
+`content/<logiciel>/exercices.json` liste les exercices, dans l'ordre. Chaque exercice génère `/<logiciel>/<id>/` (l'id commence par `exercice-`), et la page `/<logiciel>/exercices/` les regroupe. Champs : `id`, `titre`, `resume`, `lecon` (leçon liée, qui affiche « Entraînez-vous »), `consigne`, `grille`, `cible` (cellule où taper la formule), `recopie` (cellules où la formule est recopiée pour vérification), `solution` (formule de référence : les résultats attendus sont calculés à partir d'elle), `format` (`€`, `%`, `0,00` ou rien), `indice`, `bravo`, `explication` (corrigé visible), `fonction`, `dollar` (conseiller les $ si la recopie échoue), `exige` et `exigeMsg` (motif obligatoire dans la formule, par exemple `F\\$2`).
+
+Le moteur `src/exercices.js` calcule les formules en français. Fonctions connues : SOMME, MOYENNE, MIN, MAX, NB, NBVAL, ABS, ARRONDI, SI, ET, OU, NB.SI, SOMME.SI, MOYENNE.SI, RECHERCHEV. Pour un exercice avec une autre fonction, ajoute-la dans `FN` et dans `call`. Chaque réussite est comptée dans GoatCounter (`exercice-reussi/<id>`) et mémorisée dans le navigateur (`cpc-ex`).
+

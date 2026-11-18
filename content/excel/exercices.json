@@ -1,0 +1,510 @@
+[
+ {
+  "id": "exercice-prix-quantite",
+  "titre": "Prix × quantité",
+  "fonction": "=B2*C2",
+  "lecon": "ecrire-une-formule",
+  "resume": "Écrire sa première formule : multiplier deux cellules, puis la recopier.",
+  "consigne": "En D2, calculez le total de la ligne : le prix multiplié par la quantité.",
+  "grille": [
+   [
+    "Produit",
+    "Prix",
+    "Quantité",
+    "Total"
+   ],
+   [
+    "Stylo",
+    "1,20 €",
+    "10",
+    ""
+   ],
+   [
+    "Cahier",
+    "3,50 €",
+    "4",
+    ""
+   ],
+   [
+    "Classeur",
+    "5,90 €",
+    "2",
+    ""
+   ],
+   [
+    "Agenda",
+    "12,00 €",
+    "1",
+    ""
+   ]
+  ],
+  "cible": "D2",
+  "recopie": [
+   "D3",
+   "D4",
+   "D5"
+  ],
+  "solution": "=B2*C2",
+  "format": "€",
+  "indice": "Une formule commence par =. Ici, on multiplie la cellule du prix, B2, par celle de la quantité, C2 : le signe de la multiplication est *.",
+  "bravo": "La formule a été recopiée sur les autres lignes : chacune utilise ses propres cellules.",
+  "explication": "=B2*C2 multiplie le prix par la quantité. En recopiant vers le bas, Excel adapte les références : B3*C3, B4*C4…"
+ },
+ {
+  "id": "exercice-somme",
+  "titre": "SOMME : total des ventes",
+  "fonction": "SOMME",
+  "lecon": "somme",
+  "resume": "Additionner une colonne de ventes avec la fonction SOMME.",
+  "consigne": "En B7, calculez le total des ventes de janvier à mai.",
+  "grille": [
+   [
+    "Mois",
+    "Ventes"
+   ],
+   [
+    "Janvier",
+    "1 250 €"
+   ],
+   [
+    "Février",
+    "980 €"
+   ],
+   [
+    "Mars",
+    "1 420 €"
+   ],
+   [
+    "Avril",
+    "1 100 €"
+   ],
+   [
+    "Mai",
+    "1 310 €"
+   ],
+   [
+    "Total",
+    ""
+   ]
+  ],
+  "cible": "B7",
+  "solution": "=SOMME(B2:B6)",
+  "format": "€",
+  "indice": "Utilisez la fonction SOMME, avec la plage des ventes entre parenthèses : de B2 jusqu'à B6, notée B2:B6.",
+  "bravo": "SOMME additionne toute la plage : pratique quand la liste est longue.",
+  "explication": "=SOMME(B2:B6) additionne les cinq mois. Les deux-points signifient « de B2 jusqu'à B6 »."
+ },
+ {
+  "id": "exercice-moyenne",
+  "titre": "MOYENNE : moyenne d'une classe",
+  "fonction": "MOYENNE",
+  "lecon": "moyenne-min-max",
+  "resume": "Calculer la moyenne des notes d'une classe avec MOYENNE.",
+  "consigne": "En B8, calculez la moyenne des six notes de la classe.",
+  "grille": [
+   [
+    "Élève",
+    "Note"
+   ],
+   [
+    "Léa",
+    "14"
+   ],
+   [
+    "Hugo",
+    "9,5"
+   ],
+   [
+    "Inès",
+    "16"
+   ],
+   [
+    "Tom",
+    "11"
+   ],
+   [
+    "Sarah",
+    "12,5"
+   ],
+   [
+    "Yanis",
+    "8"
+   ],
+   [
+    "Moyenne",
+    ""
+   ]
+  ],
+  "cible": "B8",
+  "solution": "=MOYENNE(B2:B7)",
+  "format": "0,00",
+  "indice": "La fonction MOYENNE s'écrit comme SOMME : =MOYENNE(, puis la plage des notes, de B2 à B7.",
+  "bravo": "MOYENNE additionne les notes et divise par leur nombre, ici 6.",
+  "explication": "=MOYENNE(B2:B7) donne 11,83 : la somme des notes, 71, divisée par 6."
+ },
+ {
+  "id": "exercice-max",
+  "titre": "MAX : la meilleure note",
+  "fonction": "MAX",
+  "lecon": "moyenne-min-max",
+  "resume": "Trouver la plus grande valeur d'une liste avec MAX.",
+  "consigne": "En B7, affichez la meilleure note de la classe.",
+  "grille": [
+   [
+    "Élève",
+    "Note"
+   ],
+   [
+    "Emma",
+    "13"
+   ],
+   [
+    "Noah",
+    "15,5"
+   ],
+   [
+    "Jade",
+    "17"
+   ],
+   [
+    "Lucas",
+    "10"
+   ],
+   [
+    "Chloé",
+    "12"
+   ],
+   [
+    "Meilleure note",
+    ""
+   ]
+  ],
+  "cible": "B7",
+  "solution": "=MAX(B2:B6)",
+  "format": "",
+  "indice": "La plus grande valeur s'obtient avec la fonction MAX, appliquée à la plage des notes.",
+  "bravo": "MAX renvoie la plus grande valeur ; MIN, la plus petite.",
+  "explication": "=MAX(B2:B6) renvoie 17, la note de Jade. Avec MIN, on obtiendrait 10."
+ },
+ {
+  "id": "exercice-part-du-total",
+  "titre": "Part du total en % ($)",
+  "fonction": "=B2/$B$6",
+  "lecon": "references-absolues",
+  "resume": "Calculer la part de chaque dépense dans le total, avec une référence figée par des $.",
+  "consigne": "En C2, calculez la part du loyer dans le total. Votre formule doit rester juste une fois recopiée jusqu'en C5.",
+  "grille": [
+   [
+    "Poste",
+    "Dépense",
+    "Part"
+   ],
+   [
+    "Loyer",
+    "450 €",
+    ""
+   ],
+   [
+    "Courses",
+    "235 €",
+    ""
+   ],
+   [
+    "Transport",
+    "38 €",
+    ""
+   ],
+   [
+    "Loisirs",
+    "95 €",
+    ""
+   ],
+   [
+    "Total",
+    "818 €",
+    ""
+   ]
+  ],
+  "cible": "C2",
+  "recopie": [
+   "C3",
+   "C4",
+   "C5"
+  ],
+  "solution": "=B2/$B$6",
+  "format": "%",
+  "indice": "La part, c'est la dépense divisée par le total. Le total est toujours en B6 : figez-le avec des $, $B$6, pour qu'il ne bouge pas à la recopie.",
+  "bravo": "Grâce aux $, toutes les lignes divisent par le même total.",
+  "explication": "=B2/$B$6 divise le loyer par le total. Sans les $, la formule recopiée deviendrait B3/B7, une cellule vide : #DIV/0!.",
+  "dollar": true,
+  "exige": "\\$",
+  "exigeMsg": "l'exercice demande d'utiliser la cellule du total, B6, figée avec des $ : tapez $B$6 plutôt que le nombre."
+ },
+ {
+  "id": "exercice-si",
+  "titre": "SI : Admis ou Ajourné",
+  "fonction": "SI",
+  "lecon": "si",
+  "resume": "Afficher « Admis » ou « Ajourné » selon la moyenne, avec la fonction SI.",
+  "consigne": "En C2, affichez « Admis » si la moyenne est d'au moins 10, sinon « Ajourné ». Recopiez jusqu'en C6.",
+  "grille": [
+   [
+    "Élève",
+    "Moyenne",
+    "Résultat"
+   ],
+   [
+    "Léa",
+    "12,5",
+    ""
+   ],
+   [
+    "Hugo",
+    "8,75",
+    ""
+   ],
+   [
+    "Inès",
+    "15",
+    ""
+   ],
+   [
+    "Tom",
+    "10",
+    ""
+   ],
+   [
+    "Sarah",
+    "9,5",
+    ""
+   ]
+  ],
+  "cible": "C2",
+  "recopie": [
+   "C3",
+   "C4",
+   "C5",
+   "C6"
+  ],
+  "solution": "=SI(B2>=10;\"Admis\";\"Ajourné\")",
+  "format": "",
+  "indice": "SI a trois parties séparées par ; : le test (B2>=10), ce qui s'affiche si c'est vrai, puis si c'est faux. Les textes s'écrivent entre guillemets.",
+  "bravo": "Tom, avec exactement 10, est bien admis : le test >= inclut l'égalité.",
+  "explication": "=SI(B2>=10;\"Admis\";\"Ajourné\") teste la moyenne. Avec > au lieu de >=, Tom serait ajourné à tort."
+ },
+ {
+  "id": "exercice-nb-si",
+  "titre": "NB.SI : compter les admis",
+  "fonction": "NB.SI",
+  "lecon": "nb-si",
+  "resume": "Compter les cellules qui contiennent « Admis » avec NB.SI.",
+  "consigne": "En C8, comptez le nombre d'élèves admis.",
+  "grille": [
+   [
+    "Élève",
+    "Moyenne",
+    "Résultat"
+   ],
+   [
+    "Léa",
+    "12,5",
+    "Admis"
+   ],
+   [
+    "Hugo",
+    "8,75",
+    "Ajourné"
+   ],
+   [
+    "Inès",
+    "15",
+    "Admis"
+   ],
+   [
+    "Tom",
+    "10",
+    "Admis"
+   ],
+   [
+    "Sarah",
+    "9,5",
+    "Ajourné"
+   ],
+   [
+    "",
+    "",
+    ""
+   ],
+   [
+    "",
+    "Nombre d'admis",
+    ""
+   ]
+  ],
+  "cible": "C8",
+  "solution": "=NB.SI(C2:C6;\"Admis\")",
+  "format": "",
+  "indice": "NB.SI a deux parties : la plage où chercher, C2:C6, puis ce qu'il faut compter, \"Admis\", entre guillemets.",
+  "bravo": "3 élèves sur 5 sont admis.",
+  "explication": "=NB.SI(C2:C6;\"Admis\") compte les cellules égales à « Admis ». Autre possibilité : =NB.SI(B2:B6;\">=10\")."
+ },
+ {
+  "id": "exercice-somme-si",
+  "titre": "SOMME.SI : ventes d'un vendeur",
+  "fonction": "SOMME.SI",
+  "lecon": "somme-si",
+  "resume": "Additionner seulement les ventes d'un vendeur avec SOMME.SI.",
+  "consigne": "En F2, calculez le total des ventes du vendeur indiqué en E2.",
+  "grille": [
+   [
+    "Vendeur",
+    "Montant",
+    "",
+    "",
+    "Vendeur",
+    "Total"
+   ],
+   [
+    "Alice",
+    "120",
+    "",
+    "",
+    "Alice",
+    ""
+   ],
+   [
+    "Bruno",
+    "80"
+   ],
+   [
+    "Alice",
+    "60"
+   ],
+   [
+    "Chloé",
+    "150"
+   ],
+   [
+    "Bruno",
+    "90"
+   ],
+   [
+    "Alice",
+    "70"
+   ]
+  ],
+  "cible": "F2",
+  "solution": "=SOMME.SI(A2:A7;E2;B2:B7)",
+  "format": "",
+  "indice": "SOMME.SI a trois parties : où chercher le vendeur (A2:A7), le vendeur cherché (E2), puis les montants à additionner (B2:B7).",
+  "bravo": "Alice a vendu 120 + 60 + 70 = 250.",
+  "explication": "=SOMME.SI(A2:A7;E2;B2:B7) additionne les montants des lignes où le vendeur est Alice. Changez E2 : le total suit."
+ },
+ {
+  "id": "exercice-recherchev",
+  "titre": "RECHERCHEV : retrouver un prix",
+  "fonction": "RECHERCHEV",
+  "lecon": "recherchev",
+  "resume": "Retrouver le prix d'un produit à partir de son code avec RECHERCHEV.",
+  "consigne": "En F2, affichez le prix du produit dont le code est en E2.",
+  "grille": [
+   [
+    "Code",
+    "Produit",
+    "Prix",
+    "",
+    "Code",
+    "Prix"
+   ],
+   [
+    "P01",
+    "Lampe de bureau",
+    "89 €",
+    "",
+    "P03",
+    ""
+   ],
+   [
+    "P02",
+    "Suspension",
+    "189 €"
+   ],
+   [
+    "P03",
+    "Lampadaire",
+    "149 €"
+   ],
+   [
+    "P04",
+    "Ampoule LED",
+    "6,50 €"
+   ],
+   [
+    "P05",
+    "Applique murale",
+    "59 €"
+   ]
+  ],
+  "cible": "F2",
+  "solution": "=RECHERCHEV(E2;A2:C6;3;FAUX)",
+  "format": "€",
+  "indice": "RECHERCHEV(valeur cherchée ; tableau ; numéro de colonne ; FAUX). Le prix est dans la 3e colonne du tableau A2:C6.",
+  "bravo": "Le code P03 correspond au lampadaire, à 149 €.",
+  "explication": "=RECHERCHEV(E2;A2:C6;3;FAUX) cherche P03 dans la première colonne du tableau et renvoie la 3e colonne. FAUX exige le code exact."
+ },
+ {
+  "id": "exercice-prix-ttc-arrondi",
+  "titre": "Prix TTC arrondi au centime",
+  "fonction": "ARRONDI",
+  "lecon": "arrondi",
+  "resume": "Calculer un prix TTC à partir du HT et l'arrondir au centime avec ARRONDI.",
+  "consigne": "En C2, calculez le prix TTC arrondi au centime, avec le taux de TVA de F2. Recopiez jusqu'en C5.",
+  "grille": [
+   [
+    "Produit",
+    "Prix HT",
+    "Prix TTC",
+    "",
+    "",
+    "TVA"
+   ],
+   [
+    "Carnet",
+    "12,49 €",
+    "",
+    "",
+    "",
+    "20 %"
+   ],
+   [
+    "Surligneurs",
+    "7,99 €",
+    ""
+   ],
+   [
+    "Trousse",
+    "23,15 €",
+    ""
+   ],
+   [
+    "Gomme",
+    "4,05 €",
+    ""
+   ]
+  ],
+  "cible": "C2",
+  "recopie": [
+   "C3",
+   "C4",
+   "C5"
+  ],
+  "solution": "=ARRONDI(B2*(1+$F$2);2)",
+  "format": "€",
+  "indice": "Le prix TTC, c'est le HT multiplié par (1 + le taux), figé avec $F$2. Entourez le tout avec ARRONDI(…;2) pour garder deux décimales.",
+  "bravo": "12,49 € HT donnent 14,988 €, arrondis à 14,99 € TTC.",
+  "explication": "=ARRONDI(B2*(1+$F$2);2) calcule le TTC puis l'arrondit à 2 décimales. Les $ gardent le taux fixe pendant la recopie.",
+  "dollar": true,
+  "exige": "F\\$2",
+  "exigeMsg": "l'exercice demande d'utiliser le taux de la cellule F2, figé avec des $ : $F$2."
+ }
+]
