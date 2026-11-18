@@ -6,18 +6,104 @@
  "motsCles": "majuscule minuscule nompropre casse capitale texte uniformiser",
  "syntaxe": "=NOMPROPRE(texte)",
  "arguments": [
-  ["MAJUSCULE","Tout en capitales"],
-  ["MINUSCULE","Tout en minuscules"],
-  ["NOMPROPRE","Une capitale au début de chaque mot"]
+  [
+   "MAJUSCULE",
+   "Tout en capitales"
+  ],
+  [
+   "MINUSCULE",
+   "Tout en minuscules"
+  ],
+  [
+   "NOMPROPRE",
+   "Une capitale au début de chaque mot"
+  ]
  ],
  "grille": [
-  ["Nom saisi","MAJUSCULE","MINUSCULE","NOMPROPRE"],
-  ["marie DURAND","","",""],
-  ["KARIM benali","","",""]
+  [
+   "Nom saisi",
+   "MAJUSCULE",
+   "MINUSCULE",
+   "NOMPROPRE"
+  ],
+  [
+   "marie DURAND",
+   "",
+   "",
+   ""
+  ],
+  [
+   "KARIM benali",
+   "",
+   "",
+   ""
+  ]
  ],
  "etapes": [
-  {"c":"B2","f":"=MAJUSCULE(A2)","v":"MARIE DURAND","fill":{"B3":"KARIM BENALI"},"t":"MAJUSCULE met tout le texte en capitales."},
-  {"c":"C2","f":"=MINUSCULE(A2)","v":"marie durand","fill":{"C3":"karim benali"},"t":"MINUSCULE fait l'inverse."},
-  {"c":"D2","f":"=NOMPROPRE(A2)","v":"Marie Durand","fill":{"D3":"Karim Benali"},"t":"NOMPROPRE met une capitale au début de chaque mot : idéal pour des noms."}
+  {
+   "c": "B2",
+   "f": "=MAJUSCULE(A2)",
+   "v": "MARIE DURAND",
+   "fill": {
+    "B3": "KARIM BENALI"
+   },
+   "t": "MAJUSCULE met tout le texte en capitales."
+  },
+  {
+   "c": "C2",
+   "f": "=MINUSCULE(A2)",
+   "v": "marie durand",
+   "fill": {
+    "C3": "karim benali"
+   },
+   "t": "MINUSCULE fait l'inverse."
+  },
+  {
+   "c": "D2",
+   "f": "=NOMPROPRE(A2)",
+   "v": "Marie Durand",
+   "fill": {
+    "D3": "Karim Benali"
+   },
+   "t": "NOMPROPRE met une capitale au début de chaque mot : idéal pour des noms."
+  }
+ ],
+ "titreSeo": "MAJUSCULE, MINUSCULE, NOMPROPRE dans Excel",
+ "guide": {
+  "question": "Comment mettre en majuscules ou en minuscules dans Excel ?",
+  "intro": "MAJUSCULE met tout un texte en capitales, MINUSCULE fait l'inverse, et NOMPROPRE met une capitale au début de chaque mot. Ces fonctions servent à harmoniser une liste de noms saisis n'importe comment : « karim BENALI » devient « Karim Benali ».",
+  "exemple": {
+   "formule": "=NOMPROPRE(A2)",
+   "explication": "« karim BENALI » devient « Karim Benali ». =MAJUSCULE(A2) donne « KARIM BENALI »."
+  },
+  "erreurs": [
+   [
+    "Garder la colonne d'origine",
+    "Le résultat dépend d'elle : copiez puis collez les valeurs avant de la supprimer."
+   ],
+   [
+    "NOMPROPRE et les noms composés",
+    "« de la fontaine » devient « De La Fontaine » : vérifiez les particules."
+   ]
+  ],
+  "faq": [
+   [
+    "Existe-t-il un raccourci comme dans Word ?",
+    "Non : dans Excel, Maj + F3 ouvre l'insertion de fonction. Utilisez ces fonctions ou le remplissage instantané."
+   ],
+   [
+    "Comment mettre seulement la première lettre en majuscule ?",
+    "=MAJUSCULE(GAUCHE(A2;1))&MINUSCULE(STXT(A2;2;100))."
+   ],
+   [
+    "Comment nettoyer aussi les espaces ?",
+    "Combinez : =NOMPROPRE(SUPPRESPACE(A2))."
+   ]
+  ]
+ },
+ "voirAussi": [
+  "supprespace",
+  "remplissage-instantane",
+  "gauche-droite-stxt"
  ]
 }

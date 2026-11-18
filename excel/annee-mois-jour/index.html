@@ -3,15 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>ANNEE, MOIS et JOUR – Excel en animation | Clic par clic</title>
-<meta name="description" content="Extraire l'année, le mois ou le jour d'une date. Leçon Excel animée en 3 étapes, niveau débutant, gratuite.">
+<title>ANNEE, MOIS et JOUR : extraire d'une date | Clic par clic</title>
+<meta name="description" content="ANNEE, MOIS et JOUR extraient chacune une partie d'une date : l'année sur 4 chiffres, le numéro du mois de 1 à 12, et le jour du mois.">
 <link rel="canonical" href="https://mehdinourreddine62.github.io/clic-par-clic/excel/annee-mois-jour/">
 <meta name="robots" content="index,follow">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="Clic par clic">
-<meta property="og:title" content="ANNEE, MOIS et JOUR – Excel en animation | Clic par clic">
-<meta property="og:description" content="Extraire l'année, le mois ou le jour d'une date. Leçon Excel animée en 3 étapes, niveau débutant, gratuite.">
+<meta property="og:title" content="ANNEE, MOIS et JOUR : extraire d'une date | Clic par clic">
+<meta property="og:description" content="ANNEE, MOIS et JOUR extraient chacune une partie d'une date : l'année sur 4 chiffres, le numéro du mois de 1 à 12, et le jour du mois.">
 <meta property="og:url" content="https://mehdinourreddine62.github.io/clic-par-clic/excel/annee-mois-jour/">
 <meta property="og:image" content="https://mehdinourreddine62.github.io/clic-par-clic/assets/og-excel.png">
 <meta property="og:image:width" content="1200">
@@ -25,7 +25,7 @@
 <link rel="icon" href="../../assets/favicon-48.png" sizes="48x48" type="image/png">
 <link rel="icon" href="../../assets/favicon-192.png" sizes="192x192" type="image/png">
 <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
-<link rel="stylesheet" href="../../assets/app.css?v=40716ac4">
+<link rel="stylesheet" href="../../assets/app.css?v=245069ea">
 <script data-goatcounter="https://clicparclic.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </head>
 <body>
@@ -57,7 +57,18 @@
     <a class="dl" href="../../fichiers/excel/annee-mois-jour.xlsx" download="annee-mois-jour.xlsx"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg><span><b>Télécharger le fichier d'exercice</b><small>Excel · consignes, données de départ et solution</small></span></a><div class="pband" id="pband" hidden></div>
     <details class="sx"><summary>Syntaxe <code>=ANNEE(date)</code></summary><dl><dt>ANNEE</dt><dd>L'année, sur 4 chiffres</dd><dt>MOIS</dt><dd>Le numéro du mois, de 1 à 12</dd><dt>JOUR</dt><dd>Le jour du mois, de 1 à 31</dd></dl></details>
     <details class="sx"><summary>Résumé écrit des étapes</summary><ol class="steps"><li>ANNEE extrait l'année d'une date.</li><li>MOIS renvoie le numéro du mois, de 1 à 12.</li><li>JOUR renvoie le jour du mois.</li></ol></details>
-    <section class="also"><h2>Voir aussi</h2><div class="also-l"><a href="../aujourdhui-datedif/"><b>AUJOURDHUI et DATEDIF</b><small>Afficher la date du jour et calculer une ancienneté ou un âge.</small></a><a href="../date/"><b>DATE</b><small>Construire une date à partir d'une année, d'un mois et d'un jour.</small></a><a href="../ecart-entre-deux-dates/"><b>Écart entre deux dates</b><small>Compter le nombre de jours entre deux dates.</small></a></div></section>
+    <section class="guide">
+      <h2>Comment extraire l'année, le mois ou le jour d'une date dans Excel ?</h2>
+      <p>ANNEE, MOIS et JOUR extraient chacune une partie d'une date : l'année sur 4 chiffres, le numéro du mois de 1 à 12, et le jour du mois. Elles servent à regrouper des ventes par mois, à trier des anniversaires ou à reconstruire une date avec la fonction DATE.</p>
+      <h3>Exemple</h3>
+      <p><code class="gx">=MOIS(A2)</code></p>
+      <p>Pour le 25/12/2025 : MOIS renvoie 12, ANNEE 2025 et JOUR 25.</p>
+      <h3>Erreurs fréquentes</h3>
+      <ul><li><b>Un résultat comme 01/01/1900</b>La cellule est au format Date : repassez-la au format Standard.</li><li><b>#VALEUR!</b>La date est un texte et non une vraie date : convertissez-la avec DATEVAL.</li></ul>
+      <h3>Questions fréquentes</h3>
+      <h4>Comment obtenir le nom du mois ?</h4><p>=TEXTE(A2;&quot;mmmm&quot;) donne « décembre ».</p><h4>Comment calculer un âge ?</h4><p>Avec DATEDIF, plutôt qu'en soustrayant les années.</p><h4>Comment obtenir la date du premier jour du mois ?</h4><p>=DATE(ANNEE(A2);MOIS(A2);1).</p>
+    </section>
+    <section class="also"><h2>Voir aussi</h2><div class="also-l"><a href="../date/"><b>DATE</b><small>Construire une date à partir d'une année, d'un mois et d'un jour.</small></a><a href="../texte/"><b>TEXTE</b><small>Afficher une date dans le format de son choix.</small></a><a href="../aujourdhui-datedif/"><b>AUJOURDHUI et DATEDIF</b><small>Afficher la date du jour et calculer une ancienneté ou un âge.</small></a></div></section>
     <nav class="lnav" aria-label="Leçons voisines"><a href="../aujourdhui-datedif/"><small>← Précédente</small>AUJOURDHUI et DATEDIF</a><a class="nx" id="nextLesson" href="../date/"><small>Suivante →</small>DATE</a></nav>
   </main>
 </div>

@@ -8,21 +8,133 @@
  "ruban": true,
  "sansEnTete": true,
  "arguments": [
-  ["Ctrl + L","Le raccourci"],
-  ["Lignes à bandes","Une ligne sur deux colorée"],
-  ["Ligne Total","Un total calculé tout seul"],
-  ["Extension","Le tableau s'agrandit quand on ajoute une ligne"]
+  [
+   "Ctrl + L",
+   "Le raccourci"
+  ],
+  [
+   "Lignes à bandes",
+   "Une ligne sur deux colorée"
+  ],
+  [
+   "Ligne Total",
+   "Un total calculé tout seul"
+  ],
+  [
+   "Extension",
+   "Le tableau s'agrandit quand on ajoute une ligne"
+  ]
  ],
  "grille": [
-  ["Produit","Prix","Stock"],
-  ["Stylo","1,20 €","40"],
-  ["Cahier","3,50 €","25"],
-  ["Classeur","5,90 €","12"]
+  [
+   "Produit",
+   "Prix",
+   "Stock"
+  ],
+  [
+   "Stylo",
+   "1,20 €",
+   "40"
+  ],
+  [
+   "Cahier",
+   "3,50 €",
+   "25"
+  ],
+  [
+   "Classeur",
+   "5,90 €",
+   "12"
+  ]
  ],
  "etapes": [
-  {"c":"A1","sel":"A1:C4","drag":1,"tab":"Accueil","btn":"Mettre sous forme de tableau","keys":"Ctrl + L","fmt":{"A1:C1":"h","A3:C3":"z"},"set":{"A1":"Produit ▾","B1":"Prix ▾","C1":"Stock ▾"},"t":"Cliquez dans vos données, puis « Mettre sous forme de tableau » : couleurs et flèches de filtre arrivent d'un coup."},
-  {"c":"A5","f":"Trousse","tab":"Accueil","set":{"B5":"4,20 €","C5":"18"},"fmt":{"A5:C5":"z"},"t":"Tapez juste en dessous : le tableau s'agrandit tout seul et garde sa mise en forme."},
-  {"c":"A6","tab":"Création de tableau","btn":"Ligne Total","set":{"A6":"Total","C6":"95"},"fmt":{"A6:C6":"b"},"t":"Cochez « Ligne Total » pour ajouter un total, calculé automatiquement."},
-  {"c":"C6","tab":"Création de tableau","bar":"=SOUS.TOTAL(109;[Stock])","t":"Les formules utilisent le nom des colonnes : elles restent lisibles et suivent le tableau."}
+  {
+   "c": "A1",
+   "sel": "A1:C4",
+   "drag": 1,
+   "tab": "Accueil",
+   "btn": "Mettre sous forme de tableau",
+   "keys": "Ctrl + L",
+   "fmt": {
+    "A1:C1": "h",
+    "A3:C3": "z"
+   },
+   "set": {
+    "A1": "Produit ▾",
+    "B1": "Prix ▾",
+    "C1": "Stock ▾"
+   },
+   "t": "Cliquez dans vos données, puis « Mettre sous forme de tableau » : couleurs et flèches de filtre arrivent d'un coup."
+  },
+  {
+   "c": "A5",
+   "f": "Trousse",
+   "tab": "Accueil",
+   "set": {
+    "B5": "4,20 €",
+    "C5": "18"
+   },
+   "fmt": {
+    "A5:C5": "z"
+   },
+   "t": "Tapez juste en dessous : le tableau s'agrandit tout seul et garde sa mise en forme."
+  },
+  {
+   "c": "A6",
+   "tab": "Création de tableau",
+   "btn": "Ligne Total",
+   "set": {
+    "A6": "Total",
+    "C6": "95"
+   },
+   "fmt": {
+    "A6:C6": "b"
+   },
+   "t": "Cochez « Ligne Total » pour ajouter un total, calculé automatiquement."
+  },
+  {
+   "c": "C6",
+   "tab": "Création de tableau",
+   "bar": "=SOUS.TOTAL(109;[Stock])",
+   "t": "Les formules utilisent le nom des colonnes : elles restent lisibles et suivent le tableau."
+  }
+ ],
+ "titreSeo": "Mettre sous forme de tableau dans Excel (Ctrl + L)",
+ "guide": {
+  "question": "Comment mettre sous forme de tableau dans Excel ?",
+  "intro": "« Mettre sous forme de tableau » transforme une simple plage en vrai tableau Excel : couleurs alternées, flèches de filtre, ligne de total et extension automatique quand on ajoute une ligne. Les formules utilisent alors le nom des colonnes, plus lisible que des références.",
+  "exemple": {
+   "formule": "Accueil › Mettre sous forme de tableau (Ctrl + L)",
+   "explication": "Cliquez dans les données, choisissez un style et vérifiez que « Mon tableau comporte des en-têtes » est coché."
+  },
+  "erreurs": [
+   [
+    "Les titres deviennent « Colonne1 »",
+    "La case « Mon tableau comporte des en-têtes » n'était pas cochée."
+   ],
+   [
+    "Une ligne vide coupe le tableau",
+    "Supprimez les lignes vides avant de créer le tableau."
+   ]
+  ],
+  "faq": [
+   [
+    "Comment ajouter un total ?",
+    "Onglet Création de tableau › cochez Ligne Total, puis choisissez Somme, Moyenne…"
+   ],
+   [
+    "Comment revenir à une plage normale ?",
+    "Création de tableau › Convertir en plage : la mise en forme reste."
+   ],
+   [
+    "Pourquoi utiliser un tableau ?",
+    "Les graphiques, tableaux croisés et formules suivent automatiquement les nouvelles lignes."
+   ]
+  ]
+ },
+ "voirAussi": [
+  "trier-et-filtrer",
+  "creer-un-tableau-croise-dynamique",
+  "mettre-en-forme"
  ]
 }

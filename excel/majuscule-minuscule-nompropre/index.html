@@ -3,15 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>MAJUSCULE, MINUSCULE et NOMPROPRE dans Excel | Clic par clic</title>
-<meta name="description" content="Uniformiser la casse de noms saisis n'importe comment. Leçon Excel animée en 3 étapes, niveau débutant, gratuite.">
+<title>MAJUSCULE, MINUSCULE, NOMPROPRE dans Excel | Clic par clic</title>
+<meta name="description" content="MAJUSCULE met tout un texte en capitales, MINUSCULE fait l'inverse, et NOMPROPRE met une capitale au début de chaque mot.">
 <link rel="canonical" href="https://mehdinourreddine62.github.io/clic-par-clic/excel/majuscule-minuscule-nompropre/">
 <meta name="robots" content="index,follow">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="Clic par clic">
-<meta property="og:title" content="MAJUSCULE, MINUSCULE et NOMPROPRE dans Excel | Clic par clic">
-<meta property="og:description" content="Uniformiser la casse de noms saisis n'importe comment. Leçon Excel animée en 3 étapes, niveau débutant, gratuite.">
+<meta property="og:title" content="MAJUSCULE, MINUSCULE, NOMPROPRE dans Excel | Clic par clic">
+<meta property="og:description" content="MAJUSCULE met tout un texte en capitales, MINUSCULE fait l'inverse, et NOMPROPRE met une capitale au début de chaque mot.">
 <meta property="og:url" content="https://mehdinourreddine62.github.io/clic-par-clic/excel/majuscule-minuscule-nompropre/">
 <meta property="og:image" content="https://mehdinourreddine62.github.io/clic-par-clic/assets/og-excel.png">
 <meta property="og:image:width" content="1200">
@@ -25,7 +25,7 @@
 <link rel="icon" href="../../assets/favicon-48.png" sizes="48x48" type="image/png">
 <link rel="icon" href="../../assets/favicon-192.png" sizes="192x192" type="image/png">
 <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
-<link rel="stylesheet" href="../../assets/app.css?v=40716ac4">
+<link rel="stylesheet" href="../../assets/app.css?v=245069ea">
 <script data-goatcounter="https://clicparclic.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </head>
 <body>
@@ -57,7 +57,18 @@
     <a class="dl" href="../../fichiers/excel/majuscule-minuscule-nompropre.xlsx" download="majuscule-minuscule-nompropre.xlsx"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg><span><b>Télécharger le fichier d'exercice</b><small>Excel · consignes, données de départ et solution</small></span></a><div class="pband" id="pband" hidden></div>
     <details class="sx"><summary>Syntaxe <code>=NOMPROPRE(texte)</code></summary><dl><dt>MAJUSCULE</dt><dd>Tout en capitales</dd><dt>MINUSCULE</dt><dd>Tout en minuscules</dd><dt>NOMPROPRE</dt><dd>Une capitale au début de chaque mot</dd></dl></details>
     <details class="sx"><summary>Résumé écrit des étapes</summary><ol class="steps"><li>MAJUSCULE met tout le texte en capitales.</li><li>MINUSCULE fait l'inverse.</li><li>NOMPROPRE met une capitale au début de chaque mot : idéal pour des noms.</li></ol></details>
-    <section class="also"><h2>Voir aussi</h2><div class="also-l"><a href="../assembler-texte/"><b>Assembler du texte (&amp;)</b><small>Coller plusieurs textes dans une seule cellule.</small></a><a href="../gauche-droite-stxt/"><b>GAUCHE, DROITE et STXT</b><small>Extraire le début, la fin ou le milieu d'un texte.</small></a><a href="../nbcar/"><b>NBCAR</b><small>Compter le nombre de caractères d'un texte.</small></a></div></section>
+    <section class="guide">
+      <h2>Comment mettre en majuscules ou en minuscules dans Excel ?</h2>
+      <p>MAJUSCULE met tout un texte en capitales, MINUSCULE fait l'inverse, et NOMPROPRE met une capitale au début de chaque mot. Ces fonctions servent à harmoniser une liste de noms saisis n'importe comment : « karim BENALI » devient « Karim Benali ».</p>
+      <h3>Exemple</h3>
+      <p><code class="gx">=NOMPROPRE(A2)</code></p>
+      <p>« karim BENALI » devient « Karim Benali ». =MAJUSCULE(A2) donne « KARIM BENALI ».</p>
+      <h3>Erreurs fréquentes</h3>
+      <ul><li><b>Garder la colonne d'origine</b>Le résultat dépend d'elle : copiez puis collez les valeurs avant de la supprimer.</li><li><b>NOMPROPRE et les noms composés</b>« de la fontaine » devient « De La Fontaine » : vérifiez les particules.</li></ul>
+      <h3>Questions fréquentes</h3>
+      <h4>Existe-t-il un raccourci comme dans Word ?</h4><p>Non : dans Excel, Maj + F3 ouvre l'insertion de fonction. Utilisez ces fonctions ou le remplissage instantané.</p><h4>Comment mettre seulement la première lettre en majuscule ?</h4><p>=MAJUSCULE(GAUCHE(A2;1))&amp;MINUSCULE(STXT(A2;2;100)).</p><h4>Comment nettoyer aussi les espaces ?</h4><p>Combinez : =NOMPROPRE(SUPPRESPACE(A2)).</p>
+    </section>
+    <section class="also"><h2>Voir aussi</h2><div class="also-l"><a href="../supprespace/"><b>SUPPRESPACE</b><small>Retirer les espaces en trop qui faussent les recherches.</small></a><a href="../remplissage-instantane/"><b>Remplissage instantané</b><small>Montrer un exemple et laisser Excel faire le reste.</small></a><a href="../gauche-droite-stxt/"><b>GAUCHE, DROITE et STXT</b><small>Extraire le début, la fin ou le milieu d'un texte.</small></a></div></section>
     <nav class="lnav" aria-label="Leçons voisines"><a href="../gauche-droite-stxt/"><small>← Précédente</small>GAUCHE, DROITE et STXT</a><a class="nx" id="nextLesson" href="../nbcar/"><small>Suivante →</small>NBCAR</a></nav>
   </main>
 </div>

@@ -4,14 +4,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>ARRONDI.SUP et ARRONDI.INF dans Excel | Clic par clic</title>
-<meta name="description" content="Arrondir toujours vers le haut, ou toujours vers le bas. Leçon Excel animée en 2 étapes, niveau débutant, gratuite.">
+<meta name="description" content="ARRONDI.SUP arrondit toujours vers le haut et ARRONDI.INF toujours vers le bas, quelle que soit la décimale.">
 <link rel="canonical" href="https://mehdinourreddine62.github.io/clic-par-clic/excel/arrondi-sup-inf/">
 <meta name="robots" content="index,follow">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="Clic par clic">
 <meta property="og:title" content="ARRONDI.SUP et ARRONDI.INF dans Excel | Clic par clic">
-<meta property="og:description" content="Arrondir toujours vers le haut, ou toujours vers le bas. Leçon Excel animée en 2 étapes, niveau débutant, gratuite.">
+<meta property="og:description" content="ARRONDI.SUP arrondit toujours vers le haut et ARRONDI.INF toujours vers le bas, quelle que soit la décimale.">
 <meta property="og:url" content="https://mehdinourreddine62.github.io/clic-par-clic/excel/arrondi-sup-inf/">
 <meta property="og:image" content="https://mehdinourreddine62.github.io/clic-par-clic/assets/og-excel.png">
 <meta property="og:image:width" content="1200">
@@ -25,7 +25,7 @@
 <link rel="icon" href="../../assets/favicon-48.png" sizes="48x48" type="image/png">
 <link rel="icon" href="../../assets/favicon-192.png" sizes="192x192" type="image/png">
 <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
-<link rel="stylesheet" href="../../assets/app.css?v=40716ac4">
+<link rel="stylesheet" href="../../assets/app.css?v=245069ea">
 <script data-goatcounter="https://clicparclic.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </head>
 <body>
@@ -57,7 +57,18 @@
     <a class="dl" href="../../fichiers/excel/arrondi-sup-inf.xlsx" download="arrondi-sup-inf.xlsx"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg><span><b>Télécharger le fichier d'exercice</b><small>Excel · consignes, données de départ et solution</small></span></a><div class="pband" id="pband" hidden></div>
     <details class="sx"><summary>Syntaxe <code>=ARRONDI.SUP(nombre; décimales)</code></summary><dl><dt>ARRONDI.SUP</dt><dd>Toujours vers le haut</dd><dt>ARRONDI.INF</dt><dd>Toujours vers le bas</dd><dt>décimales</dt><dd>Comme pour ARRONDI</dd></dl></details>
     <details class="sx"><summary>Résumé écrit des étapes</summary><ol class="steps"><li>ARRONDI.SUP arrondit toujours vers le haut, même pour 12,31.</li><li>ARRONDI.INF arrondit toujours vers le bas, même pour 7,89.</li></ol></details>
-    <section class="also"><h2>Voir aussi</h2><div class="also-l"><a href="../somme/"><b>SOMME</b><small>Additionner une plage de cellules.</small></a><a href="../produit/"><b>PRODUIT</b><small>Multiplier toutes les valeurs d'une plage.</small></a><a href="../sommeprod/"><b>SOMMEPROD</b><small>Multiplier deux colonnes ligne par ligne, puis tout additionner.</small></a></div></section>
+    <section class="guide">
+      <h2>Comment arrondir toujours au-dessus ou en dessous dans Excel ?</h2>
+      <p>ARRONDI.SUP arrondit toujours vers le haut et ARRONDI.INF toujours vers le bas, quelle que soit la décimale. C'est utile pour un nombre de cartons, de bus ou de places : 12,1 cartons nécessitent 13 cartons. Le second argument fixe le nombre de décimales, comme pour ARRONDI.</p>
+      <h3>Exemple</h3>
+      <p><code class="gx">=ARRONDI.SUP(A2/B2;0)</code></p>
+      <p>130 articles à 10 par carton : 13 cartons. 131 articles : 14 cartons, et non 13.</p>
+      <h3>Erreurs fréquentes</h3>
+      <ul><li><b>Utiliser ARRONDI pour un nombre de cartons</b>ARRONDI donnerait 13 pour 13,1 cartons : il en manquerait un. Utilisez ARRONDI.SUP.</li><li><b>Confondre ARRONDI.INF et ENT avec des négatifs</b>Pour -7,5, ARRONDI.INF donne -7 et ENT donne -8.</li></ul>
+      <h3>Questions fréquentes</h3>
+      <h4>Comment arrondir au multiple de 5 supérieur ?</h4><p>Utilisez PLAFOND : =PLAFOND(A2;5).</p><h4>Comment arrondir à la dizaine supérieure ?</h4><p>=ARRONDI.SUP(A2;-1).</p><h4>Quelle différence avec ARRONDI ?</h4><p>ARRONDI suit la règle du 5 ; ARRONDI.SUP et ARRONDI.INF vont toujours dans le même sens.</p>
+    </section>
+    <section class="also"><h2>Voir aussi</h2><div class="also-l"><a href="../arrondi/"><b>ARRONDI</b><small>Garder le nombre de décimales voulu.</small></a><a href="../ent-tronque/"><b>ENT et TRONQUE</b><small>Garder uniquement la partie entière d'un nombre.</small></a><a href="../mod/"><b>MOD</b><small>Le reste d'une division : utile pour repérer les nombres pairs.</small></a></div></section>
     <nav class="lnav" aria-label="Leçons voisines"><a href="../arrondi/"><small>← Précédente</small>ARRONDI</a><a class="nx" id="nextLesson" href="../ent-tronque/"><small>Suivante →</small>ENT et TRONQUE</a></nav>
   </main>
 </div>

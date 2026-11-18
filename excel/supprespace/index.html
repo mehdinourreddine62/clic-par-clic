@@ -3,15 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>SUPPRESPACE – Excel en animation | Clic par clic</title>
-<meta name="description" content="Retirer les espaces en trop qui faussent les recherches. Leçon Excel animée en 4 étapes, niveau intermédiaire, gratuite.">
+<title>SUPPRESPACE dans Excel : supprimer les espaces</title>
+<meta name="description" content="SUPPRESPACE retire les espaces au début et à la fin d'un texte, et réduit les espaces doubles à un seul.">
 <link rel="canonical" href="https://mehdinourreddine62.github.io/clic-par-clic/excel/supprespace/">
 <meta name="robots" content="index,follow">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="Clic par clic">
-<meta property="og:title" content="SUPPRESPACE – Excel en animation | Clic par clic">
-<meta property="og:description" content="Retirer les espaces en trop qui faussent les recherches. Leçon Excel animée en 4 étapes, niveau intermédiaire, gratuite.">
+<meta property="og:title" content="SUPPRESPACE dans Excel : supprimer les espaces">
+<meta property="og:description" content="SUPPRESPACE retire les espaces au début et à la fin d'un texte, et réduit les espaces doubles à un seul.">
 <meta property="og:url" content="https://mehdinourreddine62.github.io/clic-par-clic/excel/supprespace/">
 <meta property="og:image" content="https://mehdinourreddine62.github.io/clic-par-clic/assets/og-excel.png">
 <meta property="og:image:width" content="1200">
@@ -25,7 +25,7 @@
 <link rel="icon" href="../../assets/favicon-48.png" sizes="48x48" type="image/png">
 <link rel="icon" href="../../assets/favicon-192.png" sizes="192x192" type="image/png">
 <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
-<link rel="stylesheet" href="../../assets/app.css?v=40716ac4">
+<link rel="stylesheet" href="../../assets/app.css?v=245069ea">
 <script data-goatcounter="https://clicparclic.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </head>
 <body>
@@ -57,7 +57,18 @@
     <a class="dl" href="../../fichiers/excel/supprespace.xlsx" download="supprespace.xlsx"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg><span><b>Télécharger le fichier d'exercice</b><small>Excel · consignes, données de départ et solution</small></span></a><div class="pband" id="pband" hidden></div>
     <details class="sx"><summary>Syntaxe <code>=SUPPRESPACE(texte)</code></summary><dl><dt>texte</dt><dd>La cellule à nettoyer</dd><dt>Effet</dt><dd>Retire les espaces au début, à la fin, et les espaces doubles</dd></dl></details>
     <details class="sx"><summary>Résumé écrit des étapes</summary><ol class="steps"><li>Des espaces en trop se cachent dans les données copiées. Ils font échouer les recherches.</li><li>SUPPRESPACE retire les espaces du début, de la fin, et les doubles espaces.</li><li>NBCAR compte les caractères : 8 dans la cellule d'origine.</li><li>Et 6 après nettoyage : les deux espaces invisibles ont disparu.</li></ol></details>
-    <section class="also"><h2>Voir aussi</h2><div class="also-l"><a href="../supprimer-les-doublons/"><b>Supprimer les doublons</b><small>Ne garder qu'un exemplaire de chaque ligne.</small></a><a href="../convertir-texte-en-colonnes/"><b>Séparer un texte en colonnes</b><small>Répartir des données collées dans une seule colonne.</small></a><a href="../remplissage-instantane/"><b>Remplissage instantané</b><small>Montrer un exemple et laisser Excel faire le reste.</small></a></div></section>
+    <section class="guide">
+      <h2>Comment supprimer les espaces en trop dans Excel ?</h2>
+      <p>SUPPRESPACE retire les espaces au début et à la fin d'un texte, et réduit les espaces doubles à un seul. Ces espaces invisibles, fréquents dans les données copiées d'un site ou d'un logiciel, font échouer les recherches comme RECHERCHEV et faussent les comptages.</p>
+      <h3>Exemple</h3>
+      <p><code class="gx">=SUPPRESPACE(A2)</code></p>
+      <p>« Martin  » (8 caractères avec les espaces) devient « Martin » (6 caractères).</p>
+      <h3>Erreurs fréquentes</h3>
+      <ul><li><b>Un espace qui résiste</b>C'est souvent un espace insécable venu du web : =SUBSTITUE(A2;CAR(160);&quot;&quot;).</li><li><b>Supprimer les espaces entre deux mots</b>SUPPRESPACE garde un espace entre les mots ; pour tout retirer, utilisez SUBSTITUE(A2;&quot; &quot;;&quot;&quot;).</li></ul>
+      <h3>Questions fréquentes</h3>
+      <h4>Comment voir s'il reste des espaces ?</h4><p>Comparez la longueur avec NBCAR avant et après.</p><h4>Comment remplacer les données d'origine ?</h4><p>Copiez la colonne nettoyée, puis collez les valeurs à la place.</p><h4>Pourquoi ma RECHERCHEV renvoie #N/A ?</h4><p>Souvent à cause d'un espace en trop : nettoyez avec SUPPRESPACE.</p>
+    </section>
+    <section class="also"><h2>Voir aussi</h2><div class="also-l"><a href="../erreur-na/"><b>Corriger #N/A</b><small>Comprendre pourquoi une recherche ne trouve rien.</small></a><a href="../nbcar/"><b>NBCAR</b><small>Compter le nombre de caractères d'un texte.</small></a><a href="../substitue/"><b>SUBSTITUE</b><small>Remplacer un morceau de texte par un autre, avec une formule.</small></a></div></section>
     <nav class="lnav" aria-label="Leçons voisines"><a href="../remplissage-instantane/"><small>← Précédente</small>Remplissage instantané</a><a class="nx" id="nextLesson" href="../rechercher-et-remplacer/"><small>Suivante →</small>Rechercher et remplacer</a></nav>
   </main>
 </div>

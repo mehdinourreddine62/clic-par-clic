@@ -3,15 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>SOUS.TOTAL – Excel en animation | Clic par clic</title>
-<meta name="description" content="Un total qui ne compte que les lignes visibles après un filtre. Leçon Excel animée en 2 étapes, niveau intermédiaire, gratuite.">
+<title>SOUS.TOTAL dans Excel : total des lignes filtrées</title>
+<meta name="description" content="SOUS.TOTAL calcule un total, une moyenne ou un nombre en ne gardant que les lignes visibles ">
 <link rel="canonical" href="https://mehdinourreddine62.github.io/clic-par-clic/excel/sous-total/">
 <meta name="robots" content="index,follow">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="Clic par clic">
-<meta property="og:title" content="SOUS.TOTAL – Excel en animation | Clic par clic">
-<meta property="og:description" content="Un total qui ne compte que les lignes visibles après un filtre. Leçon Excel animée en 2 étapes, niveau intermédiaire, gratuite.">
+<meta property="og:title" content="SOUS.TOTAL dans Excel : total des lignes filtrées">
+<meta property="og:description" content="SOUS.TOTAL calcule un total, une moyenne ou un nombre en ne gardant que les lignes visibles ">
 <meta property="og:url" content="https://mehdinourreddine62.github.io/clic-par-clic/excel/sous-total/">
 <meta property="og:image" content="https://mehdinourreddine62.github.io/clic-par-clic/assets/og-excel.png">
 <meta property="og:image:width" content="1200">
@@ -25,7 +25,7 @@
 <link rel="icon" href="../../assets/favicon-48.png" sizes="48x48" type="image/png">
 <link rel="icon" href="../../assets/favicon-192.png" sizes="192x192" type="image/png">
 <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
-<link rel="stylesheet" href="../../assets/app.css?v=40716ac4">
+<link rel="stylesheet" href="../../assets/app.css?v=245069ea">
 <script data-goatcounter="https://clicparclic.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </head>
 <body>
@@ -57,7 +57,18 @@
     <a class="dl" href="../../fichiers/excel/sous-total.xlsx" download="sous-total.xlsx"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg><span><b>Télécharger le fichier d'exercice</b><small>Excel · consignes, données de départ et solution</small></span></a><div class="pband" id="pband" hidden></div>
     <details class="sx"><summary>Syntaxe <code>=SOUS.TOTAL(9; plage)</code></summary><dl><dt>9</dt><dd>Somme. 1 pour la moyenne, 2 pour compter, 4 pour le maximum</dd><dt>plage</dt><dd>Les cellules à totaliser</dd></dl></details>
     <details class="sx"><summary>Résumé écrit des étapes</summary><ol class="steps"><li>Le 9 signifie « somme ». Pour l'instant, le résultat est le même qu'avec SOMME.</li><li>Filtrez sur Paris : seules les lignes visibles sont comptées. SOMME serait restée à 1 400.</li></ol></details>
-    <section class="also"><h2>Voir aussi</h2><div class="also-l"><a href="../somme/"><b>SOMME</b><small>Additionner une plage de cellules.</small></a><a href="../produit/"><b>PRODUIT</b><small>Multiplier toutes les valeurs d'une plage.</small></a><a href="../sommeprod/"><b>SOMMEPROD</b><small>Multiplier deux colonnes ligne par ligne, puis tout additionner.</small></a></div></section>
+    <section class="guide">
+      <h2>Comment faire un total qui tient compte du filtre dans Excel ?</h2>
+      <p>SOUS.TOTAL calcule un total, une moyenne ou un nombre en ne gardant que les lignes visibles : quand vous filtrez le tableau, le résultat suit le filtre, alors que SOMME continue d'additionner tout. Le premier argument choisit le calcul : 9 pour la somme.</p>
+      <h3>Exemple</h3>
+      <p><code class="gx">=SOUS.TOTAL(9;B2:B20)</code></p>
+      <p>Somme des seules lignes affichées. Codes : 1 moyenne, 2 nombre, 4 maximum, 5 minimum, 9 somme.</p>
+      <h3>Erreurs fréquentes</h3>
+      <ul><li><b>Le total ne change pas quand on filtre</b>La formule utilise SOMME : remplacez-la par SOUS.TOTAL(9;…).</li><li><b>Les lignes masquées à la main sont comptées</b>Utilisez 109 au lieu de 9 pour ignorer aussi les lignes masquées manuellement.</li></ul>
+      <h3>Questions fréquentes</h3>
+      <h4>Pourquoi la ligne Total d'un tableau utilise SOUS.TOTAL ?</h4><p>Pour suivre les filtres du tableau automatiquement.</p><h4>Quelle différence avec AGREGAT ?</h4><p>AGREGAT fait la même chose et peut aussi ignorer les erreurs.</p><h4>Les SOUS.TOTAL se comptent-ils deux fois ?</h4><p>Non : un SOUS.TOTAL ignore les autres SOUS.TOTAL de sa plage.</p>
+    </section>
+    <section class="also"><h2>Voir aussi</h2><div class="also-l"><a href="../somme/"><b>SOMME</b><small>Additionner une plage de cellules.</small></a><a href="../trier-et-filtrer/"><b>Trier et filtrer</b><small>Classer une liste et n'afficher que certaines lignes.</small></a><a href="../mettre-sous-forme-de-tableau/"><b>Mettre sous forme de tableau</b><small>Un vrai tableau : mise en forme, filtres et total automatiques.</small></a></div></section>
     <nav class="lnav" aria-label="Leçons voisines"><a href="../puissance-racine/"><small>← Précédente</small>PUISSANCE et RACINE</a><a class="nx" id="nextLesson" href="../calculer-une-remise/"><small>Suivante →</small>Calculer une remise</a></nav>
   </main>
 </div>

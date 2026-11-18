@@ -6,18 +6,109 @@
  "motsCles": "jour semaine lundi week-end weekday",
  "syntaxe": "=JOURSEM(date; 2)",
  "arguments": [
-  ["date","La date à analyser"],
-  ["2","La semaine commence le lundi : lundi = 1, dimanche = 7"]
+  [
+   "date",
+   "La date à analyser"
+  ],
+  [
+   "2",
+   "La semaine commence le lundi : lundi = 1, dimanche = 7"
+  ]
  ],
  "grille": [
-  ["Date","Numéro","Jour","Type"],
-  ["13/11/2026","","",""],
-  ["14/11/2026","","",""],
-  ["16/11/2026","","",""]
+  [
+   "Date",
+   "Numéro",
+   "Jour",
+   "Type"
+  ],
+  [
+   "13/11/2026",
+   "",
+   "",
+   ""
+  ],
+  [
+   "14/11/2026",
+   "",
+   "",
+   ""
+  ],
+  [
+   "16/11/2026",
+   "",
+   "",
+   ""
+  ]
  ],
  "etapes": [
-  {"c":"B2","f":"=JOURSEM(A2;2)","v":"5","fill":{"B3":"6","B4":"1"},"t":"Avec le 2, la semaine commence le lundi : lundi = 1, dimanche = 7."},
-  {"c":"C2","f":"=TEXTE(A2;\"jjjj\")","v":"vendredi","fill":{"C3":"samedi","C4":"lundi"},"t":"Pour obtenir le nom du jour, utilisez TEXTE avec le format « jjjj »."},
-  {"c":"D2","f":"=SI(JOURSEM(A2;2)>5;\"Week-end\";\"Semaine\")","v":"Semaine","fill":{"D3":"Week-end","D4":"Semaine"},"t":"Au-delà de 5, c'est le week-end."}
+  {
+   "c": "B2",
+   "f": "=JOURSEM(A2;2)",
+   "v": "5",
+   "fill": {
+    "B3": "6",
+    "B4": "1"
+   },
+   "t": "Avec le 2, la semaine commence le lundi : lundi = 1, dimanche = 7."
+  },
+  {
+   "c": "C2",
+   "f": "=TEXTE(A2;\"jjjj\")",
+   "v": "vendredi",
+   "fill": {
+    "C3": "samedi",
+    "C4": "lundi"
+   },
+   "t": "Pour obtenir le nom du jour, utilisez TEXTE avec le format « jjjj »."
+  },
+  {
+   "c": "D2",
+   "f": "=SI(JOURSEM(A2;2)>5;\"Week-end\";\"Semaine\")",
+   "v": "Semaine",
+   "fill": {
+    "D3": "Week-end",
+    "D4": "Semaine"
+   },
+   "t": "Au-delà de 5, c'est le week-end."
+  }
+ ],
+ "titreSeo": "JOURSEM dans Excel : trouver le jour de la semaine",
+ "guide": {
+  "question": "Comment trouver le jour de la semaine d'une date dans Excel ?",
+  "intro": "JOURSEM renvoie le numéro du jour de la semaine d'une date. Avec 2 en second argument, la semaine commence le lundi : lundi vaut 1 et dimanche 7. Un résultat supérieur à 5 signale donc un week-end. Pour obtenir le nom du jour en lettres, utilisez TEXTE.",
+  "exemple": {
+   "formule": "=JOURSEM(A2;2)",
+   "explication": "Pour un samedi, renvoie 6. =SI(JOURSEM(A2;2)>5;\"Week-end\";\"Semaine\") classe chaque date."
+  },
+  "erreurs": [
+   [
+    "Oublier le 2",
+    "Sans lui, la semaine commence le dimanche : dimanche vaut 1 et lundi 2."
+   ],
+   [
+    "Un résultat qui ressemble à une date",
+    "Mettez la cellule au format Standard."
+   ]
+  ],
+  "faq": [
+   [
+    "Comment afficher « lundi » plutôt qu'un numéro ?",
+    "=TEXTE(A2;\"jjjj\")."
+   ],
+   [
+    "Comment colorer les week-ends ?",
+    "Mise en forme conditionnelle avec la formule =JOURSEM($A2;2)>5."
+   ],
+   [
+    "Comment compter les jours ouvrés ?",
+    "Utilisez NB.JOURS.OUVRES."
+   ]
+  ]
+ },
+ "voirAussi": [
+  "texte",
+  "nb-jours-ouvres",
+  "date"
  ]
 }

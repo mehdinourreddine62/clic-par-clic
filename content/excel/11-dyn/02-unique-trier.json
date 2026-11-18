@@ -6,23 +6,140 @@
  "motsCles": "doublons unique sort trier liste distincte propagation",
  "syntaxe": "=TRIER(UNIQUE(plage))",
  "arguments": [
-  ["UNIQUE","Supprime les doublons"],
-  ["TRIER","Classe les valeurs par ordre croissant"],
-  ["C2#","Toute la liste propagée à partir de C2"],
-  ["Version","Excel 2021 et Microsoft 365"]
+  [
+   "UNIQUE",
+   "Supprime les doublons"
+  ],
+  [
+   "TRIER",
+   "Classe les valeurs par ordre croissant"
+  ],
+  [
+   "C2#",
+   "Toute la liste propagée à partir de C2"
+  ],
+  [
+   "Version",
+   "Excel 2021 et Microsoft 365"
+  ]
  ],
  "grille": [
-  ["Client","","Clients","Commandes"],
-  ["Dupont","","",""],
-  ["Martin","","",""],
-  ["Dupont","","",""],
-  ["Leroy","","",""],
-  ["Martin","","",""],
-  ["Bernard","","",""]
+  [
+   "Client",
+   "",
+   "Clients",
+   "Commandes"
+  ],
+  [
+   "Dupont",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Martin",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Dupont",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Leroy",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Martin",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Bernard",
+   "",
+   "",
+   ""
+  ]
  ],
  "etapes": [
-  {"c":"C2","f":"=UNIQUE(A2:A7)","v":"Dupont","set":{"C3":"Martin","C4":"Leroy","C5":"Bernard"},"spill":"C2:C5","t":"UNIQUE renvoie chaque client une seule fois."},
-  {"c":"C2","f":"=TRIER(UNIQUE(A2:A7))","v":"Bernard","set":{"C3":"Dupont","C4":"Leroy","C5":"Martin"},"t":"TRIER classe la liste par ordre alphabétique."},
-  {"c":"D2","f":"=NB.SI(A2:A7;C2#)","v":"1","set":{"D3":"2","D4":"1","D5":"2"},"spill":"C2:C5 D2:D5","t":"C2# désigne toute la liste propagée : une seule formule compte les commandes de chaque client."}
+  {
+   "c": "C2",
+   "f": "=UNIQUE(A2:A7)",
+   "v": "Dupont",
+   "set": {
+    "C3": "Martin",
+    "C4": "Leroy",
+    "C5": "Bernard"
+   },
+   "spill": "C2:C5",
+   "t": "UNIQUE renvoie chaque client une seule fois."
+  },
+  {
+   "c": "C2",
+   "f": "=TRIER(UNIQUE(A2:A7))",
+   "v": "Bernard",
+   "set": {
+    "C3": "Dupont",
+    "C4": "Leroy",
+    "C5": "Martin"
+   },
+   "t": "TRIER classe la liste par ordre alphabétique."
+  },
+  {
+   "c": "D2",
+   "f": "=NB.SI(A2:A7;C2#)",
+   "v": "1",
+   "set": {
+    "D3": "2",
+    "D4": "1",
+    "D5": "2"
+   },
+   "spill": "C2:C5 D2:D5",
+   "t": "C2# désigne toute la liste propagée : une seule formule compte les commandes de chaque client."
+  }
+ ],
+ "titreSeo": "UNIQUE et TRIER dans Excel : liste sans doublons",
+ "guide": {
+  "question": "Comment obtenir une liste sans doublons triée dans Excel ?",
+  "intro": "UNIQUE renvoie chaque valeur d'une liste une seule fois, et TRIER la classe par ordre croissant. Combinées, =TRIER(UNIQUE(A2:A50)) donnent en une formule la liste triée des clients, des villes ou des produits, qui se met à jour toute seule quand la liste change.",
+  "exemple": {
+   "formule": "=TRIER(UNIQUE(A2:A50))",
+   "explication": "La liste de tous les clients, chacun une fois, par ordre alphabétique."
+  },
+  "erreurs": [
+   [
+    "#PROPAGATION!",
+    "Les cellules sous la formule doivent être vides."
+   ],
+   [
+    "Des doublons qui restent",
+    "Les valeurs diffèrent d'un espace ou d'une faute : nettoyez avec SUPPRESPACE."
+   ]
+  ],
+  "faq": [
+   [
+    "Comment désigner toute la liste obtenue ?",
+    "Ajoutez # après la cellule de la formule : C2# désigne tout le résultat."
+   ],
+   [
+    "Comment trier par ordre décroissant ?",
+    "=TRIER(UNIQUE(A2:A50);;-1)."
+   ],
+   [
+    "Comment supprimer les doublons sans formule ?",
+    "Données › Supprimer les doublons, sur une copie des données."
+   ]
+  ]
+ },
+ "voirAussi": [
+  "filtre",
+  "mfc-doublons",
+  "nb-si"
  ]
 }

@@ -3,15 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Formats de nombre – Excel en animation | Clic par clic</title>
-<meta name="description" content="Afficher des euros, des pourcentages et des milliers lisibles. Leçon Excel animée en 4 étapes, niveau débutant, gratuite.">
+<title>Formats de nombre dans Excel : €, % et dates | Clic par clic</title>
+<meta name="description" content="Le format de nombre change l'apparence d'une valeur sans modifier la valeur elle-même : 0,15 peut s'afficher 15 %, 1249,5 devenir 1 249,50 €.">
 <link rel="canonical" href="https://mehdinourreddine62.github.io/clic-par-clic/excel/formats-de-nombre/">
 <meta name="robots" content="index,follow">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="Clic par clic">
-<meta property="og:title" content="Formats de nombre – Excel en animation | Clic par clic">
-<meta property="og:description" content="Afficher des euros, des pourcentages et des milliers lisibles. Leçon Excel animée en 4 étapes, niveau débutant, gratuite.">
+<meta property="og:title" content="Formats de nombre dans Excel : €, % et dates | Clic par clic">
+<meta property="og:description" content="Le format de nombre change l'apparence d'une valeur sans modifier la valeur elle-même : 0,15 peut s'afficher 15 %, 1249,5 devenir 1 249,50 €.">
 <meta property="og:url" content="https://mehdinourreddine62.github.io/clic-par-clic/excel/formats-de-nombre/">
 <meta property="og:image" content="https://mehdinourreddine62.github.io/clic-par-clic/assets/og-excel.png">
 <meta property="og:image:width" content="1200">
@@ -25,7 +25,7 @@
 <link rel="icon" href="../../assets/favicon-48.png" sizes="48x48" type="image/png">
 <link rel="icon" href="../../assets/favicon-192.png" sizes="192x192" type="image/png">
 <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
-<link rel="stylesheet" href="../../assets/app.css?v=40716ac4">
+<link rel="stylesheet" href="../../assets/app.css?v=245069ea">
 <script data-goatcounter="https://clicparclic.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </head>
 <body>
@@ -57,7 +57,18 @@
     <div class="pband" id="pband" hidden></div>
     <details class="sx"><summary>Syntaxe <code>Accueil › groupe Nombre</code></summary><dl><dt>€</dt><dd>Format monétaire, avec deux décimales</dd><dt>%</dt><dd>Pourcentage</dd><dt>000</dt><dd>Séparateur de milliers</dd></dl></details>
     <details class="sx"><summary>Résumé écrit des étapes</summary><ol class="steps"><li>Le bouton monétaire ajoute le symbole € et deux décimales.</li><li>Le bouton % affiche 0,15 sous la forme 15 %.</li><li>Le séparateur de milliers rend les grands nombres plus lisibles.</li><li>Le format change seulement l'affichage : la barre de formule montre toujours la vraie valeur.</li></ol></details>
-    <section class="also"><h2>Voir aussi</h2><div class="also-l"><a href="../ecran-excel/"><b>L'écran d'Excel</b><small>Repérer les zones principales de la fenêtre.</small></a><a href="../ruban/"><b>Le ruban et ses onglets</b><small>Savoir dans quel onglet trouver chaque commande.</small></a><a href="../saisir-des-donnees/"><b>Saisir et modifier des données</b><small>Écrire dans une cellule, valider, corriger, effacer.</small></a></div></section>
+    <section class="guide">
+      <h2>Comment changer le format des nombres dans Excel ?</h2>
+      <p>Le format de nombre change l'apparence d'une valeur sans modifier la valeur elle-même : 0,15 peut s'afficher 15 %, 1249,5 devenir 1 249,50 €. Les boutons du groupe Nombre, dans l'onglet Accueil, donnent les formats monétaire, pourcentage et séparateur de milliers.</p>
+      <h3>Exemple</h3>
+      <p><code class="gx">Accueil › Nombre › Format monétaire</code></p>
+      <p>1249,5 s'affiche 1 249,50 € ; la barre de formule garde 1249,5.</p>
+      <h3>Erreurs fréquentes</h3>
+      <ul><li><b>Un pourcentage qui affiche 1500 %</b>La cellule contenait 15 au lieu de 0,15 : tapez 15 % directement, ou 0,15.</li><li><b>Des ##### dans la cellule</b>La colonne est trop étroite pour le nombre formaté : élargissez-la.</li></ul>
+      <h3>Questions fréquentes</h3>
+      <h4>Comment afficher plus de décimales ?</h4><p>Boutons « Ajouter une décimale » et « Réduire les décimales » du groupe Nombre.</p><h4>Comment créer un format personnalisé ?</h4><p>Clic droit › Format de cellule › Personnalisée, par exemple 0&quot; kg&quot;.</p><h4>Un nombre reste aligné à gauche, pourquoi ?</h4><p>Il est stocké comme texte : convertissez-le en nombre.</p>
+    </section>
+    <section class="also"><h2>Voir aussi</h2><div class="also-l"><a href="../ecrire-une-formule/"><b>Écrire une formule</b><small>Faire un calcul entre deux cellules.</small></a><a href="../pourcentages/"><b>Pourcentages</b><small>Calculer une évolution et une part du total.</small></a><a href="../texte/"><b>TEXTE</b><small>Afficher une date dans le format de son choix.</small></a></div></section>
     <nav class="lnav" aria-label="Leçons voisines"><a href="../mettre-en-forme/"><small>← Précédente</small>Mettre en forme un tableau</a><a class="nx" id="nextLesson" href="../colonnes-et-lignes/"><small>Suivante →</small>Colonnes et lignes</a></nav>
   </main>
 </div>

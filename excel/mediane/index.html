@@ -3,15 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>MEDIANE – Excel en animation | Clic par clic</title>
-<meta name="description" content="La valeur du milieu, moins sensible aux valeurs extrêmes que la moyenne. Leçon Excel animée en 2 étapes, niveau intermédiaire, gratuite.">
+<title>MEDIANE dans Excel : la valeur du milieu | Clic par clic</title>
+<meta name="description" content="La médiane est la valeur du milieu d'une série : autant de valeurs au-dessus qu'en dessous.">
 <link rel="canonical" href="https://mehdinourreddine62.github.io/clic-par-clic/excel/mediane/">
 <meta name="robots" content="index,follow">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="Clic par clic">
-<meta property="og:title" content="MEDIANE – Excel en animation | Clic par clic">
-<meta property="og:description" content="La valeur du milieu, moins sensible aux valeurs extrêmes que la moyenne. Leçon Excel animée en 2 étapes, niveau intermédiaire, gratuite.">
+<meta property="og:title" content="MEDIANE dans Excel : la valeur du milieu | Clic par clic">
+<meta property="og:description" content="La médiane est la valeur du milieu d'une série : autant de valeurs au-dessus qu'en dessous.">
 <meta property="og:url" content="https://mehdinourreddine62.github.io/clic-par-clic/excel/mediane/">
 <meta property="og:image" content="https://mehdinourreddine62.github.io/clic-par-clic/assets/og-excel.png">
 <meta property="og:image:width" content="1200">
@@ -25,7 +25,7 @@
 <link rel="icon" href="../../assets/favicon-48.png" sizes="48x48" type="image/png">
 <link rel="icon" href="../../assets/favicon-192.png" sizes="192x192" type="image/png">
 <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
-<link rel="stylesheet" href="../../assets/app.css?v=40716ac4">
+<link rel="stylesheet" href="../../assets/app.css?v=245069ea">
 <script data-goatcounter="https://clicparclic.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </head>
 <body>
@@ -57,7 +57,18 @@
     <a class="dl" href="../../fichiers/excel/mediane.xlsx" download="mediane.xlsx"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg><span><b>Télécharger le fichier d'exercice</b><small>Excel · consignes, données de départ et solution</small></span></a><div class="pband" id="pband" hidden></div>
     <details class="sx"><summary>Syntaxe <code>=MEDIANE(plage)</code></summary><dl><dt>plage</dt><dd>Les valeurs à analyser</dd></dl></details>
     <details class="sx"><summary>Résumé écrit des étapes</summary><ol class="steps"><li>Un seul très gros salaire tire la moyenne vers le haut.</li><li>La médiane est la valeur du milieu : autant de salaires au-dessus qu'en dessous.</li></ol></details>
-    <section class="also"><h2>Voir aussi</h2><div class="also-l"><a href="../nb-nbval-nb-vide/"><b>NB, NBVAL et NB.VIDE</b><small>Compter les nombres, les cellules remplies ou les cellules vides.</small></a><a href="../nb-si/"><b>NB.SI</b><small>Compter les cellules qui respectent une condition.</small></a><a href="../nb-si-ens/"><b>NB.SI.ENS</b><small>Compter selon plusieurs conditions à la fois.</small></a></div></section>
+    <section class="guide">
+      <h2>Comment calculer une médiane dans Excel ?</h2>
+      <p>La médiane est la valeur du milieu d'une série : autant de valeurs au-dessus qu'en dessous. Contrairement à la moyenne, elle n'est pas tirée vers le haut par une valeur extrême, comme un salaire très élevé. Dans Excel, elle se calcule avec MEDIANE.</p>
+      <h3>Exemple</h3>
+      <p><code class="gx">=MEDIANE(B2:B8)</code></p>
+      <p>Sur 7 salaires, renvoie le 4e une fois classés. Sur un nombre pair, la moyenne des deux du milieu.</p>
+      <h3>Erreurs fréquentes</h3>
+      <ul><li><b>Comparer médiane et moyenne sans regarder les extrêmes</b>Un grand écart entre les deux signale une valeur très éloignée des autres.</li><li><b>Des cellules vides comptées comme 0</b>Elles sont ignorées ; seul un vrai 0 est pris en compte.</li></ul>
+      <h3>Questions fréquentes</h3>
+      <h4>Faut-il trier les données ?</h4><p>Non, MEDIANE fait le tri elle-même.</p><h4>Comment obtenir les quartiles ?</h4><p>Utilisez QUARTILE.INCLUS avec 1 ou 3.</p><h4>Quand préférer la médiane ?</h4><p>Pour des salaires, des prix ou des durées, où quelques valeurs extrêmes faussent la moyenne.</p>
+    </section>
+    <section class="also"><h2>Voir aussi</h2><div class="also-l"><a href="../moyenne-min-max/"><b>MOYENNE, MIN et MAX</b><small>La moyenne, la plus petite et la plus grande valeur.</small></a><a href="../grande-valeur-petite-valeur/"><b>GRANDE.VALEUR et PETITE.VALEUR</b><small>Trouver la 2e, la 3e… plus grande ou plus petite valeur.</small></a><a href="../rang/"><b>RANG</b><small>Donner le classement de chaque valeur.</small></a></div></section>
     <nav class="lnav" aria-label="Leçons voisines"><a href="../max-si-ens-min-si-ens/"><small>← Précédente</small>MAX.SI.ENS et MIN.SI.ENS</a><a class="nx" id="nextLesson" href="../grande-valeur-petite-valeur/"><small>Suivante →</small>GRANDE.VALEUR et PETITE.VALEUR</a></nav>
   </main>
 </div>

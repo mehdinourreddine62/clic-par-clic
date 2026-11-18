@@ -6,20 +6,109 @@
  "motsCles": "remplissage instantané ctrl e flash fill extraire prénom nom exemple",
  "syntaxe": "Ctrl + E",
  "arguments": [
-  ["Exemple","Tapez vous-même le premier résultat"],
-  ["Ctrl + E","Excel devine la logique et remplit la colonne"],
-  ["Limite","Le résultat est fixe : il ne se met pas à jour"]
+  [
+   "Exemple",
+   "Tapez vous-même le premier résultat"
+  ],
+  [
+   "Ctrl + E",
+   "Excel devine la logique et remplit la colonne"
+  ],
+  [
+   "Limite",
+   "Le résultat est fixe : il ne se met pas à jour"
+  ]
  ],
  "grille": [
-  ["Nom complet","Prénom","Nom"],
-  ["Marie Durand","",""],
-  ["Karim Benali","",""],
-  ["Julie Martin","",""]
+  [
+   "Nom complet",
+   "Prénom",
+   "Nom"
+  ],
+  [
+   "Marie Durand",
+   "",
+   ""
+  ],
+  [
+   "Karim Benali",
+   "",
+   ""
+  ],
+  [
+   "Julie Martin",
+   "",
+   ""
+  ]
  ],
  "etapes": [
-  {"c":"B2","f":"Marie","t":"Tapez vous-même le premier résultat attendu."},
-  {"c":"B3","kb":1,"keys":"Ctrl + E","set":{"B3":"Karim","B4":"Julie"},"t":"Appuyez sur Ctrl + E : Excel comprend la logique et remplit le reste."},
-  {"c":"C2","f":"DURAND","t":"Autre exemple : le nom, en majuscules."},
-  {"c":"C3","kb":1,"keys":"Ctrl + E","set":{"C3":"BENALI","C4":"MARTIN"},"t":"Ctrl + E à nouveau. Vérifiez toujours : ce sont des valeurs fixes, pas des formules."}
+  {
+   "c": "B2",
+   "f": "Marie",
+   "t": "Tapez vous-même le premier résultat attendu."
+  },
+  {
+   "c": "B3",
+   "kb": 1,
+   "keys": "Ctrl + E",
+   "set": {
+    "B3": "Karim",
+    "B4": "Julie"
+   },
+   "t": "Appuyez sur Ctrl + E : Excel comprend la logique et remplit le reste."
+  },
+  {
+   "c": "C2",
+   "f": "DURAND",
+   "t": "Autre exemple : le nom, en majuscules."
+  },
+  {
+   "c": "C3",
+   "kb": 1,
+   "keys": "Ctrl + E",
+   "set": {
+    "C3": "BENALI",
+    "C4": "MARTIN"
+   },
+   "t": "Ctrl + E à nouveau. Vérifiez toujours : ce sont des valeurs fixes, pas des formules."
+  }
+ ],
+ "titreSeo": "Remplissage instantané dans Excel (Ctrl + E)",
+ "guide": {
+  "question": "Comment utiliser le remplissage instantané dans Excel ?",
+  "intro": "Le remplissage instantané devine la logique à partir d'un exemple : tapez le premier résultat attendu, comme le prénom extrait d'un nom complet, puis appuyez sur Ctrl + E. Excel remplit toute la colonne. Le résultat est fixe : il ne se met pas à jour si les données changent.",
+  "exemple": {
+   "formule": "Ctrl + E",
+   "explication": "Tapez « Karim » à côté de « Karim Benali », puis Ctrl + E : chaque ligne reçoit son prénom."
+  },
+  "erreurs": [
+   [
+    "Un résultat faux sur certaines lignes",
+    "L'exemple était ambigu : corrigez une ligne de plus et relancez Ctrl + E."
+   ],
+   [
+    "Le résultat ne suit pas les modifications",
+    "C'est normal : ce sont des valeurs fixes. Utilisez une formule si les données changent."
+   ]
+  ],
+  "faq": [
+   [
+    "Ctrl + E ne fait rien, pourquoi ?",
+    "La colonne doit être juste à côté des données, et l'option doit être active : Fichier › Options › Options avancées › Remplissage instantané automatique."
+   ],
+   [
+    "Que peut-il faire ?",
+    "Extraire, assembler, changer la casse, reformater un numéro de téléphone…"
+   ],
+   [
+    "Où est le bouton ?",
+    "Données › Remplissage instantané."
+   ]
+  ]
+ },
+ "voirAussi": [
+  "convertir-texte-en-colonnes",
+  "gauche-droite-stxt",
+  "majuscule-minuscule-nompropre"
  ]
 }

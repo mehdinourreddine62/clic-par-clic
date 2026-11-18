@@ -574,3 +574,4 @@ table.sheet{border-collapse:collapse;font-size:14px;font-family:var(--f-body);fo
 .avis button{border:1px solid var(--line);background:var(--bg);color:var(--ink);border-radius:999px;padding:5px 14px;font-size:.88rem;cursor:pointer}
 .avis button:hover{border-color:var(--accent)}
 .avis.fait .aq{color:var(--accent);font-weight:600}
+.guide p,.guide li,.guide h4{overflow-wrap:anywhere}

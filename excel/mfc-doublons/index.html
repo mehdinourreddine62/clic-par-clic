@@ -3,15 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Repérer les doublons – Excel en animation | Clic par clic</title>
-<meta name="description" content="Colorer automatiquement les valeurs saisies deux fois. Leçon Excel animée en 4 étapes, niveau débutant, gratuite.">
+<title>Repérer les doublons dans Excel en couleur | Clic par clic</title>
+<meta name="description" content="La mise en forme conditionnelle colore automatiquement toutes les valeurs qui apparaissent plusieurs fois dans une liste ">
 <link rel="canonical" href="https://mehdinourreddine62.github.io/clic-par-clic/excel/mfc-doublons/">
 <meta name="robots" content="index,follow">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="Clic par clic">
-<meta property="og:title" content="Repérer les doublons – Excel en animation | Clic par clic">
-<meta property="og:description" content="Colorer automatiquement les valeurs saisies deux fois. Leçon Excel animée en 4 étapes, niveau débutant, gratuite.">
+<meta property="og:title" content="Repérer les doublons dans Excel en couleur | Clic par clic">
+<meta property="og:description" content="La mise en forme conditionnelle colore automatiquement toutes les valeurs qui apparaissent plusieurs fois dans une liste ">
 <meta property="og:url" content="https://mehdinourreddine62.github.io/clic-par-clic/excel/mfc-doublons/">
 <meta property="og:image" content="https://mehdinourreddine62.github.io/clic-par-clic/assets/og-excel.png">
 <meta property="og:image:width" content="1200">
@@ -25,7 +25,7 @@
 <link rel="icon" href="../../assets/favicon-48.png" sizes="48x48" type="image/png">
 <link rel="icon" href="../../assets/favicon-192.png" sizes="192x192" type="image/png">
 <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
-<link rel="stylesheet" href="../../assets/app.css?v=40716ac4">
+<link rel="stylesheet" href="../../assets/app.css?v=245069ea">
 <script data-goatcounter="https://clicparclic.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </head>
 <body>
@@ -57,7 +57,18 @@
     <div class="pband" id="pband" hidden></div>
     <details class="sx"><summary>Syntaxe <code>Règles de mise en surbrillance › Valeurs en double</code></summary><dl><dt>Valeurs en double</dt><dd>Colore toutes les cellules qui se répètent</dd><dt>En direct</dt><dd>La couleur disparaît dès que le doublon est corrigé</dd></dl></details>
     <details class="sx"><summary>Résumé écrit des étapes</summary><ol class="steps"><li>Sélectionnez la liste, puis ouvrez Mise en forme conditionnelle.</li><li>Valeurs en double : toutes les cellules qui se répètent passent en rouge.</li><li>Corrigez une saisie : la couleur disparaît d'elle-même.</li><li>Pour supprimer les doublons plutôt que les repérer, utilisez Données › Supprimer les doublons.</li></ol></details>
-    <section class="also"><h2>Voir aussi</h2><div class="also-l"><a href="../mise-en-forme-conditionnelle/"><b>Mise en forme conditionnelle</b><small>Colorer automatiquement les cellules selon leur valeur.</small></a><a href="../mfc-barres-de-donnees/"><b>Barres de données</b><small>Une barre dans chaque cellule, proportionnelle à sa valeur.</small></a><a href="../mfc-nuances-de-couleurs/"><b>Nuances de couleurs</b><small>Transformer un tableau de chiffres en carte de chaleur.</small></a></div></section>
+    <section class="guide">
+      <h2>Comment repérer les doublons dans Excel ?</h2>
+      <p>La mise en forme conditionnelle colore automatiquement toutes les valeurs qui apparaissent plusieurs fois dans une liste : des noms, des numéros ou des codes saisis en double. La couleur disparaît d'elle-même dès que le doublon est corrigé.</p>
+      <h3>Exemple</h3>
+      <p><code class="gx">Accueil › Mise en forme conditionnelle › Règles de mise en surbrillance › Valeurs en double</code></p>
+      <p>Sélectionnez la colonne d'abord, puis choisissez la couleur.</p>
+      <h3>Erreurs fréquentes</h3>
+      <ul><li><b>Des doublons non repérés</b>Les valeurs diffèrent d'un espace : nettoyez avec SUPPRESPACE.</li><li><b>Toute la feuille devient rouge</b>La règle s'applique à une sélection trop large : sélectionnez seulement la colonne concernée.</li></ul>
+      <h3>Questions fréquentes</h3>
+      <h4>Comment supprimer les doublons ?</h4><p>Données › Supprimer les doublons, de préférence sur une copie.</p><h4>Comment compter les doublons ?</h4><p>Avec NB.SI : =NB.SI(A:A;A2)&gt;1 indique si la valeur se répète.</p><h4>Comment retirer la couleur ?</h4><p>Mise en forme conditionnelle › Effacer les règles.</p>
+    </section>
+    <section class="also"><h2>Voir aussi</h2><div class="also-l"><a href="../mise-en-forme-conditionnelle/"><b>Mise en forme conditionnelle</b><small>Colorer automatiquement les cellules selon leur valeur.</small></a><a href="../unique-trier/"><b>UNIQUE et TRIER</b><small>Obtenir une liste sans doublons, classée automatiquement.</small></a><a href="../nb-si/"><b>NB.SI</b><small>Compter les cellules qui respectent une condition.</small></a></div></section>
     <nav class="lnav" aria-label="Leçons voisines"><a href="../mfc-jeux-d-icones/"><small>← Précédente</small>Jeux d'icônes</a><a class="nx" id="nextLesson" href="../mfc-valeurs-les-plus-elevees/"><small>Suivante →</small>Les plus hautes valeurs</a></nav>
   </main>
 </div>

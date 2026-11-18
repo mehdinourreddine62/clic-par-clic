@@ -3,15 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Écrire une formule – Excel en animation | Clic par clic</title>
-<meta name="description" content="Faire un calcul entre deux cellules. Leçon Excel animée en 3 étapes, niveau débutant, gratuite.">
+<title>Écrire une formule dans Excel pour débuter | Clic par clic</title>
+<meta name="description" content="Une formule commence toujours par le signe =, suivi d'un calcul qui utilise des références de cellules : =B2*C2 multiplie le prix par la quantité.">
 <link rel="canonical" href="https://mehdinourreddine62.github.io/clic-par-clic/excel/ecrire-une-formule/">
 <meta name="robots" content="index,follow">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="Clic par clic">
-<meta property="og:title" content="Écrire une formule – Excel en animation | Clic par clic">
-<meta property="og:description" content="Faire un calcul entre deux cellules. Leçon Excel animée en 3 étapes, niveau débutant, gratuite.">
+<meta property="og:title" content="Écrire une formule dans Excel pour débuter | Clic par clic">
+<meta property="og:description" content="Une formule commence toujours par le signe =, suivi d'un calcul qui utilise des références de cellules : =B2*C2 multiplie le prix par la quantité.">
 <meta property="og:url" content="https://mehdinourreddine62.github.io/clic-par-clic/excel/ecrire-une-formule/">
 <meta property="og:image" content="https://mehdinourreddine62.github.io/clic-par-clic/assets/og-excel.png">
 <meta property="og:image:width" content="1200">
@@ -25,7 +25,7 @@
 <link rel="icon" href="../../assets/favicon-48.png" sizes="48x48" type="image/png">
 <link rel="icon" href="../../assets/favicon-192.png" sizes="192x192" type="image/png">
 <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
-<link rel="stylesheet" href="../../assets/app.css?v=40716ac4">
+<link rel="stylesheet" href="../../assets/app.css?v=245069ea">
 <script data-goatcounter="https://clicparclic.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </head>
 <body>
@@ -57,7 +57,18 @@
     <a class="dl" href="../../fichiers/excel/ecrire-une-formule.xlsx" download="ecrire-une-formule.xlsx"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg><span><b>Télécharger le fichier d'exercice</b><small>Excel · consignes, données de départ et solution</small></span></a><div class="pband" id="pband" hidden></div>
     <details class="sx"><summary>Syntaxe <code>=B2*C2</code></summary><dl><dt>=</dt><dd>Le début de toute formule</dd><dt>+ - * /</dt><dd>Addition, soustraction, multiplication, division</dd><dt>( )</dt><dd>Priorité dans le calcul</dd></dl></details>
     <details class="sx"><summary>Résumé écrit des étapes</summary><ol class="steps"><li>Une formule commence toujours par le signe =. Ici, on multiplie le prix par la quantité.</li><li>Tirez la poignée vers le bas : la formule s'adapte à chaque ligne.</li><li>Changez une quantité : le total se recalcule tout seul.</li></ol></details>
-    <section class="also"><h2>Voir aussi</h2><div class="also-l"><a href="../references-absolues/"><b>Références absolues ($)</b><small>Empêcher une référence de bouger quand on recopie.</small></a><a href="../pourcentages/"><b>Pourcentages</b><small>Calculer une évolution et une part du total.</small></a><a href="../somme-cumulee/"><b>Somme cumulée</b><small>Un total qui progresse ligne après ligne.</small></a></div></section>
+    <section class="guide">
+      <h2>Comment écrire une formule dans Excel ?</h2>
+      <p>Une formule commence toujours par le signe =, suivi d'un calcul qui utilise des références de cellules : =B2*C2 multiplie le prix par la quantité. Excel recalcule le résultat dès qu'une valeur change, et la formule s'adapte à chaque ligne quand on la recopie.</p>
+      <h3>Exemple</h3>
+      <p><code class="gx">=B2*C2</code></p>
+      <p>Prix en B2, quantité en C2. Opérateurs : + pour additionner, - pour soustraire, * pour multiplier, / pour diviser.</p>
+      <h3>Erreurs fréquentes</h3>
+      <ul><li><b>La formule s'affiche au lieu du résultat</b>Le signe = manque, ou la cellule est au format Texte : passez-la en Standard et retapez la formule.</li><li><b>Un résultat faux avec plusieurs opérations</b>La multiplication passe avant l'addition : ajoutez des parenthèses, par exemple =(B2+C2)*D2.</li></ul>
+      <h3>Questions fréquentes</h3>
+      <h4>Comment recopier une formule ?</h4><p>Tirez la poignée en bas à droite de la cellule, ou double-cliquez dessus.</p><h4>Comment modifier une formule ?</h4><p>Double-cliquez sur la cellule, ou appuyez sur F2.</p><h4>Pourquoi utiliser des références plutôt que des nombres ?</h4><p>Pour que le résultat se mette à jour tout seul quand une donnée change.</p>
+    </section>
+    <section class="also"><h2>Voir aussi</h2><div class="also-l"><a href="../somme/"><b>SOMME</b><small>Additionner une plage de cellules.</small></a><a href="../references-absolues/"><b>Références absolues ($)</b><small>Empêcher une référence de bouger quand on recopie.</small></a><a href="../recopier-une-serie/"><b>Recopier une série</b><small>Faire écrire à Excel une suite de nombres, de jours ou de dates.</small></a></div></section>
     <nav class="lnav" aria-label="Leçons voisines"><a href="../raccourcis-classeur/"><small>← Précédente</small>Gérer le classeur</a><a class="nx" id="nextLesson" href="../references-absolues/"><small>Suivante →</small>Références absolues ($)</a></nav>
   </main>
 </div>

@@ -6,17 +6,112 @@
  "motsCles": "recopie incrémentée série suite nombres jours mois dates poignée",
  "syntaxe": "Tirer la poignée de recopie",
  "arguments": [
-  ["Deux nombres","Donnent le pas de la suite"],
-  ["Un jour, un mois, une date","Une seule cellule suffit"]
+  [
+   "Deux nombres",
+   "Donnent le pas de la suite"
+  ],
+  [
+   "Un jour, un mois, une date",
+   "Une seule cellule suffit"
+  ]
  ],
  "grille": [
-  ["Numéro","Jour","Mois","Date"]
+  [
+   "Numéro",
+   "Jour",
+   "Mois",
+   "Date"
+  ]
  ],
  "etapes": [
-  {"c":"A2","f":"1","set":{"A3":"2"},"t":"Tapez 1 et 2 : deux valeurs suffisent pour donner le rythme."},
-  {"c":"A2","sel":"A2:A3","fill":{"A4":"3","A5":"4","A6":"5"},"t":"Sélectionnez les deux cellules et tirez la poignée : Excel continue la suite."},
-  {"c":"B2","f":"Lundi","fill":{"B3":"Mardi","B4":"Mercredi","B5":"Jeudi","B6":"Vendredi"},"t":"Avec un jour, une seule cellule suffit."},
-  {"c":"C2","f":"Janvier","fill":{"C3":"Février","C4":"Mars","C5":"Avril","C6":"Mai"},"t":"Les mois se suivent de la même façon."},
-  {"c":"D2","f":"01/01/2026","fill":{"D3":"02/01/2026","D4":"03/01/2026","D5":"04/01/2026","D6":"05/01/2026"},"t":"Une date avance d'un jour à chaque cellule."}
+  {
+   "c": "A2",
+   "f": "1",
+   "set": {
+    "A3": "2"
+   },
+   "t": "Tapez 1 et 2 : deux valeurs suffisent pour donner le rythme."
+  },
+  {
+   "c": "A2",
+   "sel": "A2:A3",
+   "fill": {
+    "A4": "3",
+    "A5": "4",
+    "A6": "5"
+   },
+   "t": "Sélectionnez les deux cellules et tirez la poignée : Excel continue la suite."
+  },
+  {
+   "c": "B2",
+   "f": "Lundi",
+   "fill": {
+    "B3": "Mardi",
+    "B4": "Mercredi",
+    "B5": "Jeudi",
+    "B6": "Vendredi"
+   },
+   "t": "Avec un jour, une seule cellule suffit."
+  },
+  {
+   "c": "C2",
+   "f": "Janvier",
+   "fill": {
+    "C3": "Février",
+    "C4": "Mars",
+    "C5": "Avril",
+    "C6": "Mai"
+   },
+   "t": "Les mois se suivent de la même façon."
+  },
+  {
+   "c": "D2",
+   "f": "01/01/2026",
+   "fill": {
+    "D3": "02/01/2026",
+    "D4": "03/01/2026",
+    "D5": "04/01/2026",
+    "D6": "05/01/2026"
+   },
+   "t": "Une date avance d'un jour à chaque cellule."
+  }
+ ],
+ "titreSeo": "Recopier une série dans Excel : poignée de recopie",
+ "guide": {
+  "question": "Comment faire une suite de nombres ou de dates dans Excel ?",
+  "intro": "La poignée de recopie, le petit carré en bas à droite d'une cellule, prolonge une série : 1, 2, 3…, lundi, mardi…, janvier, février…, ou une suite de dates. Pour des nombres, tapez les deux premières valeurs : elles donnent le pas de la suite.",
+  "exemple": {
+   "formule": "Tapez 1 et 2, sélectionnez-les, tirez la poignée",
+   "explication": "Excel continue 3, 4, 5… Avec 5 et 10, il continue 15, 20…"
+  },
+  "erreurs": [
+   [
+    "Excel répète 1, 1, 1",
+    "Une seule valeur était sélectionnée : tapez les deux premières valeurs, ou maintenez Ctrl en tirant."
+   ],
+   [
+    "La recopie copie au lieu d'incrémenter",
+    "Cliquez sur le bouton d'options qui apparaît à la fin et choisissez « Incrémenter une série »."
+   ]
+  ],
+  "faq": [
+   [
+    "Comment recopier jusqu'en bas du tableau ?",
+    "Double-cliquez sur la poignée : Excel s'arrête à la dernière ligne remplie de la colonne voisine."
+   ],
+   [
+    "Comment ne garder que les jours ouvrés ?",
+    "Après une recopie de dates, options de recopie › Incrémenter les jours ouvrés."
+   ],
+   [
+    "Comment créer une série personnalisée ?",
+    "Fichier › Options › Options avancées › Modifier les listes personnalisées."
+   ]
+  ]
+ },
+ "voirAussi": [
+  "options-de-recopie",
+  "ecrire-une-formule",
+  "remplissage-instantane"
  ]
 }

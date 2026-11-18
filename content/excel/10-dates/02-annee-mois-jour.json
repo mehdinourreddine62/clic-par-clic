@@ -6,19 +6,113 @@
  "motsCles": "extraire année mois jour date year month day",
  "syntaxe": "=ANNEE(date)",
  "arguments": [
-  ["ANNEE","L'année, sur 4 chiffres"],
-  ["MOIS","Le numéro du mois, de 1 à 12"],
-  ["JOUR","Le jour du mois, de 1 à 31"]
+  [
+   "ANNEE",
+   "L'année, sur 4 chiffres"
+  ],
+  [
+   "MOIS",
+   "Le numéro du mois, de 1 à 12"
+  ],
+  [
+   "JOUR",
+   "Le jour du mois, de 1 à 31"
+  ]
  ],
  "grille": [
-  ["Date","Année","Mois","Jour"],
-  ["14/07/2026","","",""],
-  ["25/12/2025","","",""],
-  ["01/03/2024","","",""]
+  [
+   "Date",
+   "Année",
+   "Mois",
+   "Jour"
+  ],
+  [
+   "14/07/2026",
+   "",
+   "",
+   ""
+  ],
+  [
+   "25/12/2025",
+   "",
+   "",
+   ""
+  ],
+  [
+   "01/03/2024",
+   "",
+   "",
+   ""
+  ]
  ],
  "etapes": [
-  {"c":"B2","f":"=ANNEE(A2)","v":"2026","fill":{"B3":"2025","B4":"2024"},"t":"ANNEE extrait l'année d'une date."},
-  {"c":"C2","f":"=MOIS(A2)","v":"7","fill":{"C3":"12","C4":"3"},"t":"MOIS renvoie le numéro du mois, de 1 à 12."},
-  {"c":"D2","f":"=JOUR(A2)","v":"14","fill":{"D3":"25","D4":"1"},"t":"JOUR renvoie le jour du mois."}
+  {
+   "c": "B2",
+   "f": "=ANNEE(A2)",
+   "v": "2026",
+   "fill": {
+    "B3": "2025",
+    "B4": "2024"
+   },
+   "t": "ANNEE extrait l'année d'une date."
+  },
+  {
+   "c": "C2",
+   "f": "=MOIS(A2)",
+   "v": "7",
+   "fill": {
+    "C3": "12",
+    "C4": "3"
+   },
+   "t": "MOIS renvoie le numéro du mois, de 1 à 12."
+  },
+  {
+   "c": "D2",
+   "f": "=JOUR(A2)",
+   "v": "14",
+   "fill": {
+    "D3": "25",
+    "D4": "1"
+   },
+   "t": "JOUR renvoie le jour du mois."
+  }
+ ],
+ "titreSeo": "ANNEE, MOIS et JOUR : extraire d'une date",
+ "guide": {
+  "question": "Comment extraire l'année, le mois ou le jour d'une date dans Excel ?",
+  "intro": "ANNEE, MOIS et JOUR extraient chacune une partie d'une date : l'année sur 4 chiffres, le numéro du mois de 1 à 12, et le jour du mois. Elles servent à regrouper des ventes par mois, à trier des anniversaires ou à reconstruire une date avec la fonction DATE.",
+  "exemple": {
+   "formule": "=MOIS(A2)",
+   "explication": "Pour le 25/12/2025 : MOIS renvoie 12, ANNEE 2025 et JOUR 25."
+  },
+  "erreurs": [
+   [
+    "Un résultat comme 01/01/1900",
+    "La cellule est au format Date : repassez-la au format Standard."
+   ],
+   [
+    "#VALEUR!",
+    "La date est un texte et non une vraie date : convertissez-la avec DATEVAL."
+   ]
+  ],
+  "faq": [
+   [
+    "Comment obtenir le nom du mois ?",
+    "=TEXTE(A2;\"mmmm\") donne « décembre »."
+   ],
+   [
+    "Comment calculer un âge ?",
+    "Avec DATEDIF, plutôt qu'en soustrayant les années."
+   ],
+   [
+    "Comment obtenir la date du premier jour du mois ?",
+    "=DATE(ANNEE(A2);MOIS(A2);1)."
+   ]
+  ]
+ },
+ "voirAussi": [
+  "date",
+  "texte",
+  "aujourdhui-datedif"
  ]
 }

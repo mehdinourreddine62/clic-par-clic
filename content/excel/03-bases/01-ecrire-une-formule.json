@@ -6,19 +6,106 @@
  "motsCles": "égal opérateur addition multiplication poignée recopie calcul",
  "syntaxe": "=B2*C2",
  "arguments": [
-  ["=","Le début de toute formule"],
-  ["+ - * /","Addition, soustraction, multiplication, division"],
-  ["( )","Priorité dans le calcul"]
+  [
+   "=",
+   "Le début de toute formule"
+  ],
+  [
+   "+ - * /",
+   "Addition, soustraction, multiplication, division"
+  ],
+  [
+   "( )",
+   "Priorité dans le calcul"
+  ]
  ],
  "grille": [
-  ["Article","Prix unitaire","Quantité","Total"],
-  ["Stylo","1,20 €","10",""],
-  ["Cahier","3,50 €","4",""],
-  ["Classeur","5,90 €","2",""]
+  [
+   "Article",
+   "Prix unitaire",
+   "Quantité",
+   "Total"
+  ],
+  [
+   "Stylo",
+   "1,20 €",
+   "10",
+   ""
+  ],
+  [
+   "Cahier",
+   "3,50 €",
+   "4",
+   ""
+  ],
+  [
+   "Classeur",
+   "5,90 €",
+   "2",
+   ""
+  ]
  ],
  "etapes": [
-  {"c":"D2","f":"=B2*C2","v":"12,00 €","t":"Une formule commence toujours par le signe =. Ici, on multiplie le prix par la quantité."},
-  {"c":"D2","fill":{"D3":"14,00 €","D4":"11,80 €"},"t":"Tirez la poignée vers le bas : la formule s'adapte à chaque ligne."},
-  {"c":"C2","f":"12","set":{"D2":"14,40 €"},"mark":"D2","t":"Changez une quantité : le total se recalcule tout seul."}
+  {
+   "c": "D2",
+   "f": "=B2*C2",
+   "v": "12,00 €",
+   "t": "Une formule commence toujours par le signe =. Ici, on multiplie le prix par la quantité."
+  },
+  {
+   "c": "D2",
+   "fill": {
+    "D3": "14,00 €",
+    "D4": "11,80 €"
+   },
+   "t": "Tirez la poignée vers le bas : la formule s'adapte à chaque ligne."
+  },
+  {
+   "c": "C2",
+   "f": "12",
+   "set": {
+    "D2": "14,40 €"
+   },
+   "mark": "D2",
+   "t": "Changez une quantité : le total se recalcule tout seul."
+  }
+ ],
+ "titreSeo": "Écrire une formule dans Excel pour débuter",
+ "guide": {
+  "question": "Comment écrire une formule dans Excel ?",
+  "intro": "Une formule commence toujours par le signe =, suivi d'un calcul qui utilise des références de cellules : =B2*C2 multiplie le prix par la quantité. Excel recalcule le résultat dès qu'une valeur change, et la formule s'adapte à chaque ligne quand on la recopie.",
+  "exemple": {
+   "formule": "=B2*C2",
+   "explication": "Prix en B2, quantité en C2. Opérateurs : + pour additionner, - pour soustraire, * pour multiplier, / pour diviser."
+  },
+  "erreurs": [
+   [
+    "La formule s'affiche au lieu du résultat",
+    "Le signe = manque, ou la cellule est au format Texte : passez-la en Standard et retapez la formule."
+   ],
+   [
+    "Un résultat faux avec plusieurs opérations",
+    "La multiplication passe avant l'addition : ajoutez des parenthèses, par exemple =(B2+C2)*D2."
+   ]
+  ],
+  "faq": [
+   [
+    "Comment recopier une formule ?",
+    "Tirez la poignée en bas à droite de la cellule, ou double-cliquez dessus."
+   ],
+   [
+    "Comment modifier une formule ?",
+    "Double-cliquez sur la cellule, ou appuyez sur F2."
+   ],
+   [
+    "Pourquoi utiliser des références plutôt que des nombres ?",
+    "Pour que le résultat se mette à jour tout seul quand une donnée change."
+   ]
+  ]
+ },
+ "voirAussi": [
+  "somme",
+  "references-absolues",
+  "recopier-une-serie"
  ]
 }

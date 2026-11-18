@@ -6,22 +6,111 @@
  "motsCles": "rechercher remplacer ctrl f ctrl h corriger texte partout",
  "syntaxe": "Ctrl + H",
  "arguments": [
-  ["Ctrl + F","Rechercher"],
-  ["Ctrl + H","Remplacer"],
-  ["Remplacer tout","Corrige toutes les cellules concernées"]
+  [
+   "Ctrl + F",
+   "Rechercher"
+  ],
+  [
+   "Ctrl + H",
+   "Remplacer"
+  ],
+  [
+   "Remplacer tout",
+   "Corrige toutes les cellules concernées"
+  ]
  ],
  "grille": [
-  ["Client","Ville"],
-  ["Durand","St-Étienne"],
-  ["Martin","Lyon"],
-  ["Petit","St-Étienne"],
-  ["Simon","Paris"],
-  ["Robert","St-Étienne"]
+  [
+   "Client",
+   "Ville"
+  ],
+  [
+   "Durand",
+   "St-Étienne"
+  ],
+  [
+   "Martin",
+   "Lyon"
+  ],
+  [
+   "Petit",
+   "St-Étienne"
+  ],
+  [
+   "Simon",
+   "Paris"
+  ],
+  [
+   "Robert",
+   "St-Étienne"
+  ]
  ],
  "etapes": [
-  {"c":"B2","kb":1,"keys":"Ctrl + F","mark":"B2 B4 B6","t":"Ctrl + F recherche un texte dans toute la feuille."},
-  {"c":"B2","menu":"Rechercher et remplacer › Rechercher : <b>St-</b> › Remplacer par : <b>Saint-</b>","keys":"Ctrl + H","t":"Ctrl + H ouvre Remplacer : indiquez l'ancien texte et le nouveau."},
-  {"c":"B2","set":{"B2":"Saint-Étienne","B4":"Saint-Étienne","B6":"Saint-Étienne"},"msg":"Nous avons effectué 3 remplacements.","t":"« Remplacer tout » corrige toutes les cellules d'un coup."},
-  {"c":"B1","sel":"col:B","t":"Sélectionnez d'abord une colonne pour limiter le remplacement à cette zone."}
+  {
+   "c": "B2",
+   "kb": 1,
+   "keys": "Ctrl + F",
+   "mark": "B2 B4 B6",
+   "t": "Ctrl + F recherche un texte dans toute la feuille."
+  },
+  {
+   "c": "B2",
+   "menu": "Rechercher et remplacer › Rechercher : <b>St-</b> › Remplacer par : <b>Saint-</b>",
+   "keys": "Ctrl + H",
+   "t": "Ctrl + H ouvre Remplacer : indiquez l'ancien texte et le nouveau."
+  },
+  {
+   "c": "B2",
+   "set": {
+    "B2": "Saint-Étienne",
+    "B4": "Saint-Étienne",
+    "B6": "Saint-Étienne"
+   },
+   "msg": "Nous avons effectué 3 remplacements.",
+   "t": "« Remplacer tout » corrige toutes les cellules d'un coup."
+  },
+  {
+   "c": "B1",
+   "sel": "col:B",
+   "t": "Sélectionnez d'abord une colonne pour limiter le remplacement à cette zone."
+  }
+ ],
+ "titreSeo": "Rechercher et remplacer dans Excel (Ctrl + H)",
+ "guide": {
+  "question": "Comment rechercher et remplacer dans Excel ?",
+  "intro": "Ctrl + F recherche un texte ou un nombre dans la feuille ; Ctrl + H le remplace par un autre. « Remplacer tout » corrige toutes les cellules d'un coup, par exemple « St- » en « Saint- ». Sélectionnez d'abord une colonne pour limiter le remplacement à cette zone.",
+  "exemple": {
+   "formule": "Ctrl + H › Rechercher : St- › Remplacer par : Saint-",
+   "explication": "Puis « Remplacer tout » : Excel indique le nombre de remplacements effectués."
+  },
+  "erreurs": [
+   [
+    "Des remplacements non voulus",
+    "« Remplacer tout » change aussi les mots qui contiennent le texte : cochez « Totalité du contenu de la cellule » dans Options."
+   ],
+   [
+    "Rien n'est trouvé",
+    "La recherche est limitée à la sélection, ou l'option « Respecter la casse » est cochée."
+   ]
+  ],
+  "faq": [
+   [
+    "Comment chercher dans tout le classeur ?",
+    "Options › Dans : Classeur."
+   ],
+   [
+    "Comment annuler un « Remplacer tout » ?",
+    "Ctrl + Z juste après."
+   ],
+   [
+    "Peut-on remplacer dans les formules ?",
+    "Oui, avec Options › Regarder dans : Formules."
+   ]
+  ]
+ },
+ "voirAussi": [
+  "supprespace",
+  "substitue",
+  "trier-et-filtrer"
  ]
 }

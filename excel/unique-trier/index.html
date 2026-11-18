@@ -3,15 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>UNIQUE et TRIER – Excel en animation | Clic par clic</title>
-<meta name="description" content="Obtenir une liste sans doublons, classée automatiquement. Leçon Excel animée en 3 étapes, niveau avancé, gratuite.">
+<title>UNIQUE et TRIER dans Excel : liste sans doublons</title>
+<meta name="description" content="UNIQUE renvoie chaque valeur d'une liste une seule fois, et TRIER la classe par ordre croissant.">
 <link rel="canonical" href="https://mehdinourreddine62.github.io/clic-par-clic/excel/unique-trier/">
 <meta name="robots" content="index,follow">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="Clic par clic">
-<meta property="og:title" content="UNIQUE et TRIER – Excel en animation | Clic par clic">
-<meta property="og:description" content="Obtenir une liste sans doublons, classée automatiquement. Leçon Excel animée en 3 étapes, niveau avancé, gratuite.">
+<meta property="og:title" content="UNIQUE et TRIER dans Excel : liste sans doublons">
+<meta property="og:description" content="UNIQUE renvoie chaque valeur d'une liste une seule fois, et TRIER la classe par ordre croissant.">
 <meta property="og:url" content="https://mehdinourreddine62.github.io/clic-par-clic/excel/unique-trier/">
 <meta property="og:image" content="https://mehdinourreddine62.github.io/clic-par-clic/assets/og-excel.png">
 <meta property="og:image:width" content="1200">
@@ -25,7 +25,7 @@
 <link rel="icon" href="../../assets/favicon-48.png" sizes="48x48" type="image/png">
 <link rel="icon" href="../../assets/favicon-192.png" sizes="192x192" type="image/png">
 <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
-<link rel="stylesheet" href="../../assets/app.css?v=40716ac4">
+<link rel="stylesheet" href="../../assets/app.css?v=245069ea">
 <script data-goatcounter="https://clicparclic.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </head>
 <body>
@@ -57,7 +57,18 @@
     <div class="pband" id="pband" hidden></div>
     <details class="sx"><summary>Syntaxe <code>=TRIER(UNIQUE(plage))</code></summary><dl><dt>UNIQUE</dt><dd>Supprime les doublons</dd><dt>TRIER</dt><dd>Classe les valeurs par ordre croissant</dd><dt>C2#</dt><dd>Toute la liste propagée à partir de C2</dd><dt>Version</dt><dd>Excel 2021 et Microsoft 365</dd></dl></details>
     <details class="sx"><summary>Résumé écrit des étapes</summary><ol class="steps"><li>UNIQUE renvoie chaque client une seule fois.</li><li>TRIER classe la liste par ordre alphabétique.</li><li>C2# désigne toute la liste propagée : une seule formule compte les commandes de chaque client.</li></ol></details>
-    <section class="also"><h2>Voir aussi</h2><div class="also-l"><a href="../filtre/"><b>FILTRE</b><small>Extraire les lignes d'un tableau qui respectent une condition.</small></a><a href="../sequence/"><b>SEQUENCE</b><small>Générer automatiquement une suite de nombres.</small></a><a href="../prendre-exclure/"><b>PRENDRE et EXCLURE</b><small>Garder ou retirer les premières ou dernières lignes d'un tableau.</small></a></div></section>
+    <section class="guide">
+      <h2>Comment obtenir une liste sans doublons triée dans Excel ?</h2>
+      <p>UNIQUE renvoie chaque valeur d'une liste une seule fois, et TRIER la classe par ordre croissant. Combinées, =TRIER(UNIQUE(A2:A50)) donnent en une formule la liste triée des clients, des villes ou des produits, qui se met à jour toute seule quand la liste change.</p>
+      <h3>Exemple</h3>
+      <p><code class="gx">=TRIER(UNIQUE(A2:A50))</code></p>
+      <p>La liste de tous les clients, chacun une fois, par ordre alphabétique.</p>
+      <h3>Erreurs fréquentes</h3>
+      <ul><li><b>#PROPAGATION!</b>Les cellules sous la formule doivent être vides.</li><li><b>Des doublons qui restent</b>Les valeurs diffèrent d'un espace ou d'une faute : nettoyez avec SUPPRESPACE.</li></ul>
+      <h3>Questions fréquentes</h3>
+      <h4>Comment désigner toute la liste obtenue ?</h4><p>Ajoutez # après la cellule de la formule : C2# désigne tout le résultat.</p><h4>Comment trier par ordre décroissant ?</h4><p>=TRIER(UNIQUE(A2:A50);;-1).</p><h4>Comment supprimer les doublons sans formule ?</h4><p>Données › Supprimer les doublons, sur une copie des données.</p>
+    </section>
+    <section class="also"><h2>Voir aussi</h2><div class="also-l"><a href="../filtre/"><b>FILTRE</b><small>Extraire les lignes d'un tableau qui respectent une condition.</small></a><a href="../mfc-doublons/"><b>Repérer les doublons</b><small>Colorer automatiquement les valeurs saisies deux fois.</small></a><a href="../nb-si/"><b>NB.SI</b><small>Compter les cellules qui respectent une condition.</small></a></div></section>
     <nav class="lnav" aria-label="Leçons voisines"><a href="../filtre/"><small>← Précédente</small>FILTRE</a><a class="nx" id="nextLesson" href="../sequence/"><small>Suivante →</small>SEQUENCE</a></nav>
   </main>
 </div>

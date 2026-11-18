@@ -24,7 +24,7 @@ Le `README.md` décrit l'organisation des fichiers et tous les champs d'une leç
 - Des données réalistes et cohérentes ; les résultats affichés doivent être exacts (calcule-les).
 - Montrer le geste : `drag`, `btn`, `keys`, `fill`, `mark` plutôt que du texte.
 - Pas de nombre de leçons écrit en dur dans les textes de l'accueil : il évolue.
-- Les 20 leçons les plus recherchées ont un `titreSeo`, un `guide` (texte visible pour Google) et des `voirAussi`. Fais de même pour toute leçon qui vise une recherche fréquente.
+- Les leçons les plus recherchées (40 Excel au 18 novembre 2026, et toutes les leçons Word) ont un `titreSeo`, un `guide` (texte visible pour Google) et des `voirAussi`. Fais de même pour toute leçon qui vise une recherche fréquente.
 
 ## Organisation
 
@@ -59,7 +59,7 @@ Le `README.md` décrit l'organisation des fichiers et tous les champs d'une leç
 - Images de partage : `src/og/og-<logiciel>.png` et `og-site.png` (1200 × 630), dessinées en HTML puis capturées avec Playwright. Pour un nouveau logiciel, ajoute son image.
 - Search Console est configuré sur l'adresse ci-dessus (balise de validation dans `site.json`). Le sitemap est généré automatiquement.
 - Le propriétaire ne veut **pas de nom de domaine payant**.
-- Mentions légales : page générée par build.mjs (`/mentions-legales/`), liée dans le pied de chaque page. Éditeur anonyme (choix du propriétaire, site non professionnel), contact par les issues GitHub du dépôt, hébergeur GitHub, GoatCounter sans cookie, Google Fonts signalé. À mettre à jour si le site change (publicité, formulaire, nouveau service tiers) ; héberger les polices localement supprimerait l'appel à Google.
+- Mentions légales : page générée par build.mjs (`/mentions-legales/`), liée dans le pied de chaque page. Éditeur anonyme (choix du propriétaire, site non professionnel), contact par les issues GitHub du dépôt, hébergeur GitHub, GoatCounter sans cookie, polices hébergées sur le site. À mettre à jour si le site change (publicité, formulaire, nouveau service tiers).
 - Après un ajout important, rappelle-lui de renvoyer `sitemap.xml` dans Search Console et propose quelques adresses à soumettre via « Inspection de l'URL ».
 
 - **Nom et icône dans Google** : Google lit le nom du site et l'icône sur `https://mehdinourreddine62.github.io/`. Cette page vient du dépôt séparé `mehdinourreddine62/mehdinourreddine62.github.io` (propriété Search Console validée le 17 novembre 2026). Son contenu est généré ici dans `racine/` : copie de l'accueil, avec `<base>` vers `/clic-par-clic/`, une adresse canonique propre et un `robots.txt` qui indique le sitemap. Ce dépôt-là a son propre workflow (`.github/workflows/accueil.yml`) qui recopie chaque jour vers 6 h (heure de Paris), sans clé, le dossier `racine/` de clic-par-clic, qui est public. On peut aussi le lancer à la main (onglet Actions). Attention : GitHub suspend les tâches programmées d'un dépôt resté 60 jours sans activité ; il envoie alors un courriel, et il suffit de réactiver le workflow.

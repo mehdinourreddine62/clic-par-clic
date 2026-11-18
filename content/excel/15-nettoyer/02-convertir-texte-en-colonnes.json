@@ -7,19 +7,114 @@
  "syntaxe": "Données › Convertir",
  "ruban": true,
  "arguments": [
-  ["Délimité","Les valeurs sont séparées par un caractère"],
-  ["Séparateur","Point-virgule, virgule, tabulation ou espace"]
+  [
+   "Délimité",
+   "Les valeurs sont séparées par un caractère"
+  ],
+  [
+   "Séparateur",
+   "Point-virgule, virgule, tabulation ou espace"
+  ]
  ],
  "grille": [
-  ["Import","",""],
-  ["Durand;Lille;120","",""],
-  ["Martin;Lyon;340","",""],
-  ["Petit;Nantes;210","",""]
+  [
+   "Import",
+   "",
+   ""
+  ],
+  [
+   "Durand;Lille;120",
+   "",
+   ""
+  ],
+  [
+   "Martin;Lyon;340",
+   "",
+   ""
+  ],
+  [
+   "Petit;Nantes;210",
+   "",
+   ""
+  ]
  ],
  "etapes": [
-  {"c":"A2","tab":"Données","mark":"A2 A3 A4","t":"Un fichier importé arrive souvent avec tout dans la même colonne."},
-  {"c":"A2","sel":"A2:A4","drag":1,"tab":"Données","btn":"Convertir","t":"Sélectionnez la colonne, puis Données › Convertir."},
-  {"c":"A2","sel":"A2:A4","menu":"Convertir › Délimité › Séparateur : <b>Point-virgule</b>","t":"Indiquez le caractère qui sépare les valeurs : ici, le point-virgule."},
-  {"c":"A2","tab":"Données","set":{"A1":"Client","B1":"Ville","C1":"Montant","A2":"Durand","B2":"Lille","C2":"120","A3":"Martin","B3":"Lyon","C3":"340","A4":"Petit","B4":"Nantes","C4":"210"},"t":"Chaque valeur prend sa colonne, et les nombres redeviennent de vrais nombres."}
+  {
+   "c": "A2",
+   "tab": "Données",
+   "mark": "A2 A3 A4",
+   "t": "Un fichier importé arrive souvent avec tout dans la même colonne."
+  },
+  {
+   "c": "A2",
+   "sel": "A2:A4",
+   "drag": 1,
+   "tab": "Données",
+   "btn": "Convertir",
+   "t": "Sélectionnez la colonne, puis Données › Convertir."
+  },
+  {
+   "c": "A2",
+   "sel": "A2:A4",
+   "menu": "Convertir › Délimité › Séparateur : <b>Point-virgule</b>",
+   "t": "Indiquez le caractère qui sépare les valeurs : ici, le point-virgule."
+  },
+  {
+   "c": "A2",
+   "tab": "Données",
+   "set": {
+    "A1": "Client",
+    "B1": "Ville",
+    "C1": "Montant",
+    "A2": "Durand",
+    "B2": "Lille",
+    "C2": "120",
+    "A3": "Martin",
+    "B3": "Lyon",
+    "C3": "340",
+    "A4": "Petit",
+    "B4": "Nantes",
+    "C4": "210"
+   },
+   "t": "Chaque valeur prend sa colonne, et les nombres redeviennent de vrais nombres."
+  }
+ ],
+ "titreSeo": "Séparer une colonne en plusieurs dans Excel",
+ "guide": {
+  "question": "Comment séparer le contenu d'une cellule en plusieurs colonnes dans Excel ?",
+  "intro": "Quand un fichier importé arrive avec toutes les données dans une seule colonne, séparées par un point-virgule, une virgule ou un espace, Données › Convertir les répartit dans plusieurs colonnes. Les nombres redeviennent de vrais nombres, utilisables dans les calculs.",
+  "exemple": {
+   "formule": "Données › Convertir › Délimité › Point-virgule",
+   "explication": "« Durand;Lille;120 » devient trois colonnes : Durand, Lille et 120."
+  },
+  "erreurs": [
+   [
+    "Des données écrasées à droite",
+    "Les colonnes voisines doivent être vides : insérez des colonnes avant de convertir."
+   ],
+   [
+    "Des codes qui perdent leurs zéros",
+    "Choisissez le format Texte pour cette colonne à la dernière étape de l'assistant."
+   ]
+  ],
+  "faq": [
+   [
+    "Comment séparer un prénom et un nom ?",
+    "Choisissez l'espace comme séparateur, ou utilisez le remplissage instantané (Ctrl + E)."
+   ],
+   [
+    "Existe-t-il une formule ?",
+    "Oui, FRACTIONNER.TEXTE dans Microsoft 365, ou TEXTE.AVANT et TEXTE.APRES."
+   ],
+   [
+    "Comment ouvrir un fichier CSV correctement ?",
+    "Données › À partir d'un fichier texte/CSV, puis choisissez le séparateur."
+   ]
+  ]
+ },
+ "voirAussi": [
+  "remplissage-instantane",
+  "texte-avant-texte-apres",
+  "supprespace"
  ]
 }

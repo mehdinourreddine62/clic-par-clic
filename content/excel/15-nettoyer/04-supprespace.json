@@ -6,19 +6,107 @@
  "motsCles": "supprespace espaces en trop nettoyer texte trim nbcar",
  "syntaxe": "=SUPPRESPACE(texte)",
  "arguments": [
-  ["texte","La cellule à nettoyer"],
-  ["Effet","Retire les espaces au début, à la fin, et les espaces doubles"]
+  [
+   "texte",
+   "La cellule à nettoyer"
+  ],
+  [
+   "Effet",
+   "Retire les espaces au début, à la fin, et les espaces doubles"
+  ]
  ],
  "grille": [
-  ["Nom","Nettoyé","Avant","Après"],
-  ["  Durand","","",""],
-  ["Martin  ","","",""],
-  ["Petit   Louis","","",""]
+  [
+   "Nom",
+   "Nettoyé",
+   "Avant",
+   "Après"
+  ],
+  [
+   "  Durand",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Martin  ",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Petit   Louis",
+   "",
+   "",
+   ""
+  ]
  ],
  "etapes": [
-  {"c":"A2","mark":"A2 A4","t":"Des espaces en trop se cachent dans les données copiées. Ils font échouer les recherches."},
-  {"c":"B2","f":"=SUPPRESPACE(A2)","v":"Durand","fill":{"B3":"Martin","B4":"Petit Louis"},"t":"SUPPRESPACE retire les espaces du début, de la fin, et les doubles espaces."},
-  {"c":"C2","f":"=NBCAR(A2)","v":"8","t":"NBCAR compte les caractères : 8 dans la cellule d'origine."},
-  {"c":"D2","f":"=NBCAR(B2)","v":"6","mark":"C2 D2","t":"Et 6 après nettoyage : les deux espaces invisibles ont disparu."}
+  {
+   "c": "A2",
+   "mark": "A2 A4",
+   "t": "Des espaces en trop se cachent dans les données copiées. Ils font échouer les recherches."
+  },
+  {
+   "c": "B2",
+   "f": "=SUPPRESPACE(A2)",
+   "v": "Durand",
+   "fill": {
+    "B3": "Martin",
+    "B4": "Petit Louis"
+   },
+   "t": "SUPPRESPACE retire les espaces du début, de la fin, et les doubles espaces."
+  },
+  {
+   "c": "C2",
+   "f": "=NBCAR(A2)",
+   "v": "8",
+   "t": "NBCAR compte les caractères : 8 dans la cellule d'origine."
+  },
+  {
+   "c": "D2",
+   "f": "=NBCAR(B2)",
+   "v": "6",
+   "mark": "C2 D2",
+   "t": "Et 6 après nettoyage : les deux espaces invisibles ont disparu."
+  }
+ ],
+ "titreSeo": "SUPPRESPACE dans Excel : supprimer les espaces",
+ "guide": {
+  "question": "Comment supprimer les espaces en trop dans Excel ?",
+  "intro": "SUPPRESPACE retire les espaces au début et à la fin d'un texte, et réduit les espaces doubles à un seul. Ces espaces invisibles, fréquents dans les données copiées d'un site ou d'un logiciel, font échouer les recherches comme RECHERCHEV et faussent les comptages.",
+  "exemple": {
+   "formule": "=SUPPRESPACE(A2)",
+   "explication": "« Martin  » (8 caractères avec les espaces) devient « Martin » (6 caractères)."
+  },
+  "erreurs": [
+   [
+    "Un espace qui résiste",
+    "C'est souvent un espace insécable venu du web : =SUBSTITUE(A2;CAR(160);\"\")."
+   ],
+   [
+    "Supprimer les espaces entre deux mots",
+    "SUPPRESPACE garde un espace entre les mots ; pour tout retirer, utilisez SUBSTITUE(A2;\" \";\"\")."
+   ]
+  ],
+  "faq": [
+   [
+    "Comment voir s'il reste des espaces ?",
+    "Comparez la longueur avec NBCAR avant et après."
+   ],
+   [
+    "Comment remplacer les données d'origine ?",
+    "Copiez la colonne nettoyée, puis collez les valeurs à la place."
+   ],
+   [
+    "Pourquoi ma RECHERCHEV renvoie #N/A ?",
+    "Souvent à cause d'un espace en trop : nettoyez avec SUPPRESPACE."
+   ]
+  ]
+ },
+ "voirAussi": [
+  "erreur-na",
+  "nbcar",
+  "substitue"
  ]
 }

@@ -8,21 +8,125 @@
  "ruban": true,
  "sansEnTete": true,
  "arguments": [
-  ["G","Gras"],
-  ["Remplissage","Couleur de fond"],
-  ["Alignement","Gauche, centre, droite"],
-  ["Bordures","Traits visibles à l'impression"]
+  [
+   "G",
+   "Gras"
+  ],
+  [
+   "Remplissage",
+   "Couleur de fond"
+  ],
+  [
+   "Alignement",
+   "Gauche, centre, droite"
+  ],
+  [
+   "Bordures",
+   "Traits visibles à l'impression"
+  ]
  ],
  "grille": [
-  ["Produit","Prix","Stock"],
-  ["Stylo","1,20 €","40"],
-  ["Cahier","3,50 €","25"],
-  ["Classeur","5,90 €","12"]
+  [
+   "Produit",
+   "Prix",
+   "Stock"
+  ],
+  [
+   "Stylo",
+   "1,20 €",
+   "40"
+  ],
+  [
+   "Cahier",
+   "3,50 €",
+   "25"
+  ],
+  [
+   "Classeur",
+   "5,90 €",
+   "12"
+  ]
  ],
  "etapes": [
-  {"c":"A1","sel":"A1:C1","drag":1,"tab":"Accueil","btn":"G","fmt":{"A1:C1":"b"},"t":"Sélectionnez les titres, puis cliquez sur G pour les mettre en gras."},
-  {"c":"A1","sel":"A1:C1","tab":"Accueil","btn":"Remplissage","fmt":{"A1:C1":"f"},"t":"Le pot de peinture colore le fond des cellules."},
-  {"c":"A1","sel":"A1:C1","tab":"Accueil","btn":"Centrer","fmt":{"A1:C1":"c"},"t":"Les boutons d'alignement placent le contenu à gauche, au centre ou à droite."},
-  {"c":"A1","sel":"A1:C4","drag":1,"tab":"Accueil","btn":"Bordures","fmt":{"A1:C4":"d"},"t":"Sélectionnez tout le tableau et ajoutez des bordures : elles seront visibles à l'impression."}
+  {
+   "c": "A1",
+   "sel": "A1:C1",
+   "drag": 1,
+   "tab": "Accueil",
+   "btn": "G",
+   "fmt": {
+    "A1:C1": "b"
+   },
+   "t": "Sélectionnez les titres, puis cliquez sur G pour les mettre en gras."
+  },
+  {
+   "c": "A1",
+   "sel": "A1:C1",
+   "tab": "Accueil",
+   "btn": "Remplissage",
+   "fmt": {
+    "A1:C1": "f"
+   },
+   "t": "Le pot de peinture colore le fond des cellules."
+  },
+  {
+   "c": "A1",
+   "sel": "A1:C1",
+   "tab": "Accueil",
+   "btn": "Centrer",
+   "fmt": {
+    "A1:C1": "c"
+   },
+   "t": "Les boutons d'alignement placent le contenu à gauche, au centre ou à droite."
+  },
+  {
+   "c": "A1",
+   "sel": "A1:C4",
+   "drag": 1,
+   "tab": "Accueil",
+   "btn": "Bordures",
+   "fmt": {
+    "A1:C4": "d"
+   },
+   "t": "Sélectionnez tout le tableau et ajoutez des bordures : elles seront visibles à l'impression."
+  }
+ ],
+ "titreSeo": "Mettre en forme un tableau Excel : couleurs, bordures",
+ "guide": {
+  "question": "Comment mettre en forme un tableau dans Excel ?",
+  "intro": "Un tableau lisible se met en forme en quelques clics dans l'onglet Accueil : titres en gras, couleur de fond, alignement et bordures. Les bordures sont importantes : sans elles, le quadrillage gris de l'écran ne s'imprime pas.",
+  "exemple": {
+   "formule": "Accueil › Police › Bordures › Toutes les bordures",
+   "explication": "Sélectionnez tout le tableau d'abord : chaque cellule reçoit son cadre."
+  },
+  "erreurs": [
+   [
+    "Un tableau imprimé sans aucun trait",
+    "Le quadrillage de l'écran ne s'imprime pas : ajoutez des bordures."
+   ],
+   [
+    "Une mise en forme à refaire sur chaque ligne ajoutée",
+    "Utilisez plutôt « Mettre sous forme de tableau », qui s'étend tout seul."
+   ]
+  ],
+  "faq": [
+   [
+    "Comment copier une mise en forme ?",
+    "Avec le pinceau « Reproduire la mise en forme »."
+   ],
+   [
+    "Comment centrer un titre sur plusieurs colonnes ?",
+    "Sélectionnez les cellules, puis Fusionner et centrer, ou mieux Format de cellule › Alignement › Centré sur plusieurs colonnes."
+   ],
+   [
+    "Comment effacer toute la mise en forme ?",
+    "Accueil › Effacer › Effacer les formats."
+   ]
+  ]
+ },
+ "voirAussi": [
+  "mettre-sous-forme-de-tableau",
+  "reproduire-la-mise-en-forme",
+  "formats-de-nombre"
  ]
 }

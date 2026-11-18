@@ -3,15 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>FILTRE – Excel en animation | Clic par clic</title>
-<meta name="description" content="Extraire les lignes d'un tableau qui respectent une condition. Leçon Excel animée en 3 étapes, niveau avancé, gratuite.">
+<title>FILTRE dans Excel : extraire des lignes | Clic par clic</title>
+<meta name="description" content="FILTRE extrait automatiquement les lignes d'un tableau qui respectent une condition : les employés d'un service, les ventes d'un mois.">
 <link rel="canonical" href="https://mehdinourreddine62.github.io/clic-par-clic/excel/filtre/">
 <meta name="robots" content="index,follow">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="Clic par clic">
-<meta property="og:title" content="FILTRE – Excel en animation | Clic par clic">
-<meta property="og:description" content="Extraire les lignes d'un tableau qui respectent une condition. Leçon Excel animée en 3 étapes, niveau avancé, gratuite.">
+<meta property="og:title" content="FILTRE dans Excel : extraire des lignes | Clic par clic">
+<meta property="og:description" content="FILTRE extrait automatiquement les lignes d'un tableau qui respectent une condition : les employés d'un service, les ventes d'un mois.">
 <meta property="og:url" content="https://mehdinourreddine62.github.io/clic-par-clic/excel/filtre/">
 <meta property="og:image" content="https://mehdinourreddine62.github.io/clic-par-clic/assets/og-excel.png">
 <meta property="og:image:width" content="1200">
@@ -25,7 +25,7 @@
 <link rel="icon" href="../../assets/favicon-48.png" sizes="48x48" type="image/png">
 <link rel="icon" href="../../assets/favicon-192.png" sizes="192x192" type="image/png">
 <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
-<link rel="stylesheet" href="../../assets/app.css?v=40716ac4">
+<link rel="stylesheet" href="../../assets/app.css?v=245069ea">
 <script data-goatcounter="https://clicparclic.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </head>
 <body>
@@ -57,7 +57,18 @@
     <div class="pband" id="pband" hidden></div>
     <details class="sx"><summary>Syntaxe <code>=FILTRE(tableau; condition; [si_vide])</code></summary><dl><dt>tableau</dt><dd>Les lignes à filtrer</dd><dt>condition</dt><dd>Le test appliqué à chaque ligne</dd><dt>si_vide</dt><dd>Le texte affiché si aucune ligne ne correspond</dd><dt>Version</dt><dd>Excel 2021 et Microsoft 365</dd></dl></details>
     <details class="sx"><summary>Résumé écrit des étapes</summary><ol class="steps"><li>Une seule formule en E3 : le résultat se propage dans les cellules voisines.</li><li>Changez le critère : la liste se met à jour.</li><li>Pour combiner deux conditions, multipliez-les, chacune entre parenthèses.</li></ol></details>
-    <section class="also"><h2>Voir aussi</h2><div class="also-l"><a href="../unique-trier/"><b>UNIQUE et TRIER</b><small>Obtenir une liste sans doublons, classée automatiquement.</small></a><a href="../sequence/"><b>SEQUENCE</b><small>Générer automatiquement une suite de nombres.</small></a><a href="../prendre-exclure/"><b>PRENDRE et EXCLURE</b><small>Garder ou retirer les premières ou dernières lignes d'un tableau.</small></a></div></section>
+    <section class="guide">
+      <h2>Comment utiliser la fonction FILTRE dans Excel ?</h2>
+      <p>FILTRE extrait automatiquement les lignes d'un tableau qui respectent une condition : les employés d'un service, les ventes d'un mois. Une seule formule suffit, le résultat se propage dans les cellules voisines et se met à jour dès que les données ou le critère changent.</p>
+      <h3>Exemple</h3>
+      <p><code class="gx">=FILTRE(A2:C20;B2:B20=&quot;Ventes&quot;;&quot;Aucun&quot;)</code></p>
+      <p>Renvoie toutes les lignes du service Ventes, ou « Aucun » s'il n'y en a pas.</p>
+      <h3>Erreurs fréquentes</h3>
+      <ul><li><b>#PROPAGATION!</b>Des cellules sous la formule ne sont pas vides : libérez la place.</li><li><b>#CALC!</b>Aucune ligne ne correspond : ajoutez le troisième argument, par exemple &quot;Aucun&quot;.</li></ul>
+      <h3>Questions fréquentes</h3>
+      <h4>Comment combiner deux conditions ?</h4><p>Multipliez-les pour ET : (B2:B20=&quot;Ventes&quot;)*(C2:C20&gt;3000) ; additionnez-les pour OU.</p><h4>Comment trier le résultat ?</h4><p>Entourez avec TRIER : =TRIER(FILTRE(…)).</p><h4>Dans quelle version d'Excel ?</h4><p>Microsoft 365 et Excel 2021 ou plus récent.</p>
+    </section>
+    <section class="also"><h2>Voir aussi</h2><div class="also-l"><a href="../unique-trier/"><b>UNIQUE et TRIER</b><small>Obtenir une liste sans doublons, classée automatiquement.</small></a><a href="../trier-et-filtrer/"><b>Trier et filtrer</b><small>Classer une liste et n'afficher que certaines lignes.</small></a><a href="../erreur-propagation/"><b>Corriger #PROPAGATION!</b><small>Libérer la place dont une formule dynamique a besoin.</small></a></div></section>
     <nav class="lnav" aria-label="Leçons voisines"><a href="../tcd-trier/"><small>← Précédente</small>Trier un tableau croisé</a><a class="nx" id="nextLesson" href="../unique-trier/"><small>Suivante →</small>UNIQUE et TRIER</a></nav>
   </main>
 </div>

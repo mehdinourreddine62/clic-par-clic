@@ -7,21 +7,165 @@
  "syntaxe": "Mise en page › Largeur : 1 page",
  "ruban": true,
  "arguments": [
-  ["Orientation","Portrait ou paysage"],
-  ["Largeur : 1 page","Réduit le tableau pour qu'il tienne en largeur"],
-  ["Hauteur : Automatique","Laisse le tableau continuer sur plusieurs pages"]
+  [
+   "Orientation",
+   "Portrait ou paysage"
+  ],
+  [
+   "Largeur : 1 page",
+   "Réduit le tableau pour qu'il tienne en largeur"
+  ],
+  [
+   "Hauteur : Automatique",
+   "Laisse le tableau continuer sur plusieurs pages"
+  ]
  ],
  "grille": [
-  ["Client","Janv","Févr","Mars","Avr","Mai","Juin","Juil"],
-  ["Durand","120","135","90","160","140","150","170"],
-  ["Martin","340","300","320","280","360","310","330"],
-  ["Bernard","90","110","95","130","100","120","105"],
-  ["Petit","210","190","230","250","220","240","260"]
+  [
+   "Client",
+   "Janv",
+   "Févr",
+   "Mars",
+   "Avr",
+   "Mai",
+   "Juin",
+   "Juil"
+  ],
+  [
+   "Durand",
+   "120",
+   "135",
+   "90",
+   "160",
+   "140",
+   "150",
+   "170"
+  ],
+  [
+   "Martin",
+   "340",
+   "300",
+   "320",
+   "280",
+   "360",
+   "310",
+   "330"
+  ],
+  [
+   "Bernard",
+   "90",
+   "110",
+   "95",
+   "130",
+   "100",
+   "120",
+   "105"
+  ],
+  [
+   "Petit",
+   "210",
+   "190",
+   "230",
+   "250",
+   "220",
+   "240",
+   "260"
+  ]
  ],
  "etapes": [
-  {"c":"A1","tab":"Mise en page","keys":"Ctrl + P","preview":{"pages":[[5,6,0],[3,6,0]]},"t":"Le tableau est trop large : les dernières colonnes partent sur une deuxième page."},
-  {"c":"A1","tab":"Mise en page","btn":"Orientation","preview":{"pages":[[8,6,0]],"land":1},"t":"Première solution : Orientation › Paysage, pour gagner en largeur."},
-  {"c":"A1","tab":"Mise en page","btn":"Largeur : 1 page","preview":{"pages":[[8,6,0]]},"t":"Seconde solution : régler la largeur sur « 1 page ». Excel réduit le tableau pour qu'il tienne."},
-  {"c":"A1","tab":"Mise en page","t":"Regardez toujours l'aperçu avant d'imprimer : trop réduit, le texte devient illisible."}
+  {
+   "c": "A1",
+   "tab": "Mise en page",
+   "keys": "Ctrl + P",
+   "preview": {
+    "pages": [
+     [
+      5,
+      6,
+      0
+     ],
+     [
+      3,
+      6,
+      0
+     ]
+    ]
+   },
+   "t": "Le tableau est trop large : les dernières colonnes partent sur une deuxième page."
+  },
+  {
+   "c": "A1",
+   "tab": "Mise en page",
+   "btn": "Orientation",
+   "preview": {
+    "pages": [
+     [
+      8,
+      6,
+      0
+     ]
+    ],
+    "land": 1
+   },
+   "t": "Première solution : Orientation › Paysage, pour gagner en largeur."
+  },
+  {
+   "c": "A1",
+   "tab": "Mise en page",
+   "btn": "Largeur : 1 page",
+   "preview": {
+    "pages": [
+     [
+      8,
+      6,
+      0
+     ]
+    ]
+   },
+   "t": "Seconde solution : régler la largeur sur « 1 page ». Excel réduit le tableau pour qu'il tienne."
+  },
+  {
+   "c": "A1",
+   "tab": "Mise en page",
+   "t": "Regardez toujours l'aperçu avant d'imprimer : trop réduit, le texte devient illisible."
+  }
+ ],
+ "titreSeo": "Imprimer un tableau Excel sur une seule page",
+ "guide": {
+  "question": "Comment faire tenir un tableau Excel sur une page à l'impression ?",
+  "intro": "Quand un tableau est trop large, les dernières colonnes partent sur une seconde page. Deux solutions : passer en orientation paysage, ou régler la largeur sur « 1 page » dans l'onglet Mise en page, pour qu'Excel réduise le tableau juste assez. Vérifiez toujours l'aperçu avant d'imprimer.",
+  "exemple": {
+   "formule": "Mise en page › Largeur : 1 page",
+   "explication": "Laissez la hauteur sur Automatique : le tableau peut continuer sur plusieurs pages, mais tient en largeur."
+  },
+  "erreurs": [
+   [
+    "Un texte minuscule à l'impression",
+    "Le tableau est trop réduit : passez en paysage ou masquez des colonnes inutiles."
+   ],
+   [
+    "Une page vide imprimée en plus",
+    "Une cellule lointaine contient une mise en forme : définissez une zone d'impression."
+   ]
+  ],
+  "faq": [
+   [
+    "Où voir l'aperçu ?",
+    "Fichier › Imprimer, ou Ctrl + P."
+   ],
+   [
+    "Existe-t-il une option à l'impression ?",
+    "Oui : dans Ctrl + P, « Ajuster la feuille à une page » ou « Ajuster toutes les colonnes à une page »."
+   ],
+   [
+    "Comment répéter la ligne de titres sur chaque page ?",
+    "Mise en page › Imprimer les titres › Lignes à répéter en haut."
+   ]
+  ]
+ },
+ "voirAussi": [
+  "zone-d-impression",
+  "repeter-les-titres",
+  "sauts-de-page"
  ]
 }

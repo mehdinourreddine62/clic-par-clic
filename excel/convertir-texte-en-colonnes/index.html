@@ -3,15 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Séparer un texte en colonnes dans Excel | Clic par clic</title>
-<meta name="description" content="Répartir des données collées dans une seule colonne. Leçon Excel animée en 4 étapes, niveau intermédiaire, gratuite.">
+<title>Séparer une colonne en plusieurs dans Excel | Clic par clic</title>
+<meta name="description" content="Quand un fichier importé arrive avec toutes les données dans une seule colonne, séparées par un point-virgule, une virgule ou un espace, Données › Convertir…">
 <link rel="canonical" href="https://mehdinourreddine62.github.io/clic-par-clic/excel/convertir-texte-en-colonnes/">
 <meta name="robots" content="index,follow">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="Clic par clic">
-<meta property="og:title" content="Séparer un texte en colonnes dans Excel | Clic par clic">
-<meta property="og:description" content="Répartir des données collées dans une seule colonne. Leçon Excel animée en 4 étapes, niveau intermédiaire, gratuite.">
+<meta property="og:title" content="Séparer une colonne en plusieurs dans Excel | Clic par clic">
+<meta property="og:description" content="Quand un fichier importé arrive avec toutes les données dans une seule colonne, séparées par un point-virgule, une virgule ou un espace, Données › Convertir…">
 <meta property="og:url" content="https://mehdinourreddine62.github.io/clic-par-clic/excel/convertir-texte-en-colonnes/">
 <meta property="og:image" content="https://mehdinourreddine62.github.io/clic-par-clic/assets/og-excel.png">
 <meta property="og:image:width" content="1200">
@@ -25,7 +25,7 @@
 <link rel="icon" href="../../assets/favicon-48.png" sizes="48x48" type="image/png">
 <link rel="icon" href="../../assets/favicon-192.png" sizes="192x192" type="image/png">
 <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
-<link rel="stylesheet" href="../../assets/app.css?v=40716ac4">
+<link rel="stylesheet" href="../../assets/app.css?v=245069ea">
 <script data-goatcounter="https://clicparclic.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </head>
 <body>
@@ -57,7 +57,18 @@
     <div class="pband" id="pband" hidden></div>
     <details class="sx"><summary>Syntaxe <code>Données › Convertir</code></summary><dl><dt>Délimité</dt><dd>Les valeurs sont séparées par un caractère</dd><dt>Séparateur</dt><dd>Point-virgule, virgule, tabulation ou espace</dd></dl></details>
     <details class="sx"><summary>Résumé écrit des étapes</summary><ol class="steps"><li>Un fichier importé arrive souvent avec tout dans la même colonne.</li><li>Sélectionnez la colonne, puis Données › Convertir.</li><li>Indiquez le caractère qui sépare les valeurs : ici, le point-virgule.</li><li>Chaque valeur prend sa colonne, et les nombres redeviennent de vrais nombres.</li></ol></details>
-    <section class="also"><h2>Voir aussi</h2><div class="also-l"><a href="../supprimer-les-doublons/"><b>Supprimer les doublons</b><small>Ne garder qu'un exemplaire de chaque ligne.</small></a><a href="../remplissage-instantane/"><b>Remplissage instantané</b><small>Montrer un exemple et laisser Excel faire le reste.</small></a><a href="../supprespace/"><b>SUPPRESPACE</b><small>Retirer les espaces en trop qui faussent les recherches.</small></a></div></section>
+    <section class="guide">
+      <h2>Comment séparer le contenu d'une cellule en plusieurs colonnes dans Excel ?</h2>
+      <p>Quand un fichier importé arrive avec toutes les données dans une seule colonne, séparées par un point-virgule, une virgule ou un espace, Données › Convertir les répartit dans plusieurs colonnes. Les nombres redeviennent de vrais nombres, utilisables dans les calculs.</p>
+      <h3>Exemple</h3>
+      <p><code class="gx">Données › Convertir › Délimité › Point-virgule</code></p>
+      <p>« Durand;Lille;120 » devient trois colonnes : Durand, Lille et 120.</p>
+      <h3>Erreurs fréquentes</h3>
+      <ul><li><b>Des données écrasées à droite</b>Les colonnes voisines doivent être vides : insérez des colonnes avant de convertir.</li><li><b>Des codes qui perdent leurs zéros</b>Choisissez le format Texte pour cette colonne à la dernière étape de l'assistant.</li></ul>
+      <h3>Questions fréquentes</h3>
+      <h4>Comment séparer un prénom et un nom ?</h4><p>Choisissez l'espace comme séparateur, ou utilisez le remplissage instantané (Ctrl + E).</p><h4>Existe-t-il une formule ?</h4><p>Oui, FRACTIONNER.TEXTE dans Microsoft 365, ou TEXTE.AVANT et TEXTE.APRES.</p><h4>Comment ouvrir un fichier CSV correctement ?</h4><p>Données › À partir d'un fichier texte/CSV, puis choisissez le séparateur.</p>
+    </section>
+    <section class="also"><h2>Voir aussi</h2><div class="also-l"><a href="../remplissage-instantane/"><b>Remplissage instantané</b><small>Montrer un exemple et laisser Excel faire le reste.</small></a><a href="../texte-avant-texte-apres/"><b>TEXTE.AVANT et TEXTE.APRES</b><small>Extraire ce qui se trouve avant ou après un caractère.</small></a><a href="../supprespace/"><b>SUPPRESPACE</b><small>Retirer les espaces en trop qui faussent les recherches.</small></a></div></section>
     <nav class="lnav" aria-label="Leçons voisines"><a href="../supprimer-les-doublons/"><small>← Précédente</small>Supprimer les doublons</a><a class="nx" id="nextLesson" href="../remplissage-instantane/"><small>Suivante →</small>Remplissage instantané</a></nav>
   </main>
 </div>
