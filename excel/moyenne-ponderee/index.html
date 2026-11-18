@@ -3,15 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Moyenne pondérée – Excel en animation | Clic par clic</title>
-<meta name="description" content="Calculer une moyenne avec des coefficients. Leçon Excel animée en 3 étapes, niveau intermédiaire, gratuite.">
+<title>Moyenne pondérée dans Excel avec coefficients</title>
+<meta name="description" content="Une moyenne pondérée tient compte des coefficients : chaque note est multipliée par son coefficient, puis le total est divisé par la somme des coefficients.">
 <link rel="canonical" href="https://mehdinourreddine62.github.io/clic-par-clic/excel/moyenne-ponderee/">
 <meta name="robots" content="index,follow">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="Clic par clic">
-<meta property="og:title" content="Moyenne pondérée – Excel en animation | Clic par clic">
-<meta property="og:description" content="Calculer une moyenne avec des coefficients. Leçon Excel animée en 3 étapes, niveau intermédiaire, gratuite.">
+<meta property="og:title" content="Moyenne pondérée dans Excel avec coefficients">
+<meta property="og:description" content="Une moyenne pondérée tient compte des coefficients : chaque note est multipliée par son coefficient, puis le total est divisé par la somme des coefficients.">
 <meta property="og:url" content="https://mehdinourreddine62.github.io/clic-par-clic/excel/moyenne-ponderee/">
 <meta property="og:image" content="https://mehdinourreddine62.github.io/clic-par-clic/assets/og-excel.png">
 <meta property="og:image:width" content="1200">
@@ -57,7 +57,18 @@
     <a class="dl" href="../../fichiers/excel/moyenne-ponderee.xlsx" download="moyenne-ponderee.xlsx"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg><span><b>Télécharger le fichier d'exercice</b><small>Excel · consignes, données de départ et solution</small></span></a><div class="pband" id="pband" hidden></div>
     <details class="sx"><summary>Syntaxe <code>=SOMMEPROD(notes; coefficients)/SOMME(coefficients)</code></summary><dl><dt>SOMMEPROD</dt><dd>Chaque note multipliée par son coefficient, puis le tout additionné</dd><dt>SOMME</dt><dd>La somme des coefficients</dd></dl></details>
     <details class="sx"><summary>Résumé écrit des étapes</summary><ol class="steps"><li>La moyenne simple traite toutes les notes de la même façon : 12.</li><li>La moyenne pondérée multiplie chaque note par son coefficient, puis divise par la somme des coefficients.</li><li>Le français, coefficient 3, pèse le plus : il tire la moyenne vers le haut.</li></ol></details>
-    <section class="also"><h2>Voir aussi</h2><div class="also-l"><a href="../calculer-une-remise/"><b>Calculer une remise</b><small>Appliquer un pourcentage de réduction à un prix.</small></a><a href="../tva-ht-et-ttc/"><b>TVA : passer du HT au TTC</b><small>Ajouter la TVA, et la retirer sans se tromper.</small></a><a href="../marge-et-taux-de-marge/"><b>Marge, taux de marge et taux de marque</b><small>Trois calculs proches, qu'il ne faut pas confondre.</small></a></div></section>
+    <section class="guide">
+      <h2>Comment calculer une moyenne avec coefficients dans Excel ?</h2>
+      <p>Une moyenne pondérée tient compte des coefficients : chaque note est multipliée par son coefficient, puis le total est divisé par la somme des coefficients. Dans Excel, SOMMEPROD fait les multiplications et l'addition en une seule fois.</p>
+      <h3>Exemple</h3>
+      <p><code class="gx">=SOMMEPROD(B2:B5;C2:C5)/SOMME(C2:C5)</code></p>
+      <p>Notes en B, coefficients en C. Les deux plages doivent avoir la même taille.</p>
+      <h3>Erreurs fréquentes</h3>
+      <ul><li><b>Diviser par le nombre de notes</b>Il faut diviser par la somme des coefficients, pas par le nombre de matières.</li><li><b>#VALEUR!</b>Les deux plages n'ont pas la même taille dans SOMMEPROD.</li></ul>
+      <h3>Questions fréquentes</h3>
+      <h4>Pourquoi ma moyenne diffère de la moyenne simple ?</h4><p>Les matières à fort coefficient pèsent davantage : c'est le principe.</p><h4>Comment arrondir le résultat ?</h4><p>Entourez la formule avec ARRONDI(…;2).</p><h4>Et si une note manque ?</h4><p>Laissez-la vide et mettez aussi son coefficient à 0, sinon elle compte comme un 0.</p>
+    </section>
+    <section class="also"><h2>Voir aussi</h2><div class="also-l"><a href="../sommeprod/"><b>SOMMEPROD</b><small>Multiplier deux colonnes ligne par ligne, puis tout additionner.</small></a><a href="../moyenne-min-max/"><b>MOYENNE, MIN et MAX</b><small>La moyenne, la plus petite et la plus grande valeur.</small></a><a href="../arrondi/"><b>ARRONDI</b><small>Garder le nombre de décimales voulu.</small></a></div></section>
     <nav class="lnav" aria-label="Leçons voisines"><a href="../vpm/"><small>← Précédente</small>VPM : calculer une mensualité</a><a class="nx" id="nextLesson" href="../nb-nbval-nb-vide/"><small>Suivante →</small>NB, NBVAL et NB.VIDE</a></nav>
   </main>
 </div>

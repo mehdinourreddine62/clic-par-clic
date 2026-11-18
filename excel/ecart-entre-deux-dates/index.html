@@ -3,15 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Écart entre deux dates – Excel en animation | Clic par clic</title>
-<meta name="description" content="Compter le nombre de jours entre deux dates. Leçon Excel animée en 3 étapes, niveau débutant, gratuite.">
+<title>Calculer le nombre de jours entre deux dates | Clic par clic</title>
+<meta name="description" content="Pour Excel, une date est un nombre de jours. Une simple soustraction, date de fin moins date de début, donne donc le nombre de jours qui les séparent.">
 <link rel="canonical" href="https://mehdinourreddine62.github.io/clic-par-clic/excel/ecart-entre-deux-dates/">
 <meta name="robots" content="index,follow">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="Clic par clic">
-<meta property="og:title" content="Écart entre deux dates – Excel en animation | Clic par clic">
-<meta property="og:description" content="Compter le nombre de jours entre deux dates. Leçon Excel animée en 3 étapes, niveau débutant, gratuite.">
+<meta property="og:title" content="Calculer le nombre de jours entre deux dates | Clic par clic">
+<meta property="og:description" content="Pour Excel, une date est un nombre de jours. Une simple soustraction, date de fin moins date de début, donne donc le nombre de jours qui les séparent.">
 <meta property="og:url" content="https://mehdinourreddine62.github.io/clic-par-clic/excel/ecart-entre-deux-dates/">
 <meta property="og:image" content="https://mehdinourreddine62.github.io/clic-par-clic/assets/og-excel.png">
 <meta property="og:image:width" content="1200">
@@ -57,7 +57,18 @@
     <a class="dl" href="../../fichiers/excel/ecart-entre-deux-dates.xlsx" download="ecart-entre-deux-dates.xlsx"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg><span><b>Télécharger le fichier d'exercice</b><small>Excel · consignes, données de départ et solution</small></span></a><div class="pband" id="pband" hidden></div>
     <details class="sx"><summary>Syntaxe <code>=fin-début</code></summary><dl><dt>fin − début</dt><dd>Une soustraction suffit</dd><dt>JOURS(fin; début)</dt><dd>La même chose sous forme de fonction</dd></dl></details>
     <details class="sx"><summary>Résumé écrit des étapes</summary><ol class="steps"><li>Pour Excel, une date est un nombre de jours : une soustraction donne l'écart.</li><li>JOURS fait le même calcul. Attention : la date de fin vient en premier.</li><li>Si le résultat s'affiche comme une date, repassez la cellule au format Standard.</li></ol></details>
-    <section class="also"><h2>Voir aussi</h2><div class="also-l"><a href="../aujourdhui-datedif/"><b>AUJOURDHUI et DATEDIF</b><small>Afficher la date du jour et calculer une ancienneté ou un âge.</small></a><a href="../annee-mois-jour/"><b>ANNEE, MOIS et JOUR</b><small>Extraire l'année, le mois ou le jour d'une date.</small></a><a href="../date/"><b>DATE</b><small>Construire une date à partir d'une année, d'un mois et d'un jour.</small></a></div></section>
+    <section class="guide">
+      <h2>Comment calculer le nombre de jours entre deux dates dans Excel ?</h2>
+      <p>Pour Excel, une date est un nombre de jours. Une simple soustraction, date de fin moins date de début, donne donc le nombre de jours qui les séparent. La fonction JOURS fait le même calcul. Pour un écart en mois ou en années, utilisez DATEDIF.</p>
+      <h3>Exemple</h3>
+      <p><code class="gx">=B2-A2</code></p>
+      <p>Du 01/03 au 22/03 : 21 jours. Équivalent : =JOURS(B2;A2), date de fin en premier.</p>
+      <h3>Erreurs fréquentes</h3>
+      <ul><li><b>Le résultat s'affiche comme une date</b>La cellule a pris le format Date : repassez-la au format Standard.</li><li><b>Un résultat négatif</b>Les dates sont inversées : la date de fin vient en premier.</li></ul>
+      <h3>Questions fréquentes</h3>
+      <h4>Comment compter seulement les jours ouvrés ?</h4><p>Utilisez NB.JOURS.OUVRES, qui retire les week-ends et les jours fériés.</p><h4>Comment calculer un âge ?</h4><p>Utilisez DATEDIF avec &quot;Y&quot; : =DATEDIF(naissance;AUJOURDHUI();&quot;Y&quot;).</p><h4>Faut-il compter le premier jour ?</h4><p>La soustraction ne le compte pas : ajoutez 1 si les deux jours doivent être inclus.</p>
+    </section>
+    <section class="also"><h2>Voir aussi</h2><div class="also-l"><a href="../nb-jours-ouvres/"><b>NB.JOURS.OUVRES</b><small>Compter les jours travaillés entre deux dates.</small></a><a href="../aujourdhui-datedif/"><b>AUJOURDHUI et DATEDIF</b><small>Afficher la date du jour et calculer une ancienneté ou un âge.</small></a><a href="../date/"><b>DATE</b><small>Construire une date à partir d'une année, d'un mois et d'un jour.</small></a></div></section>
     <nav class="lnav" aria-label="Leçons voisines"><a href="../date/"><small>← Précédente</small>DATE</a><a class="nx" id="nextLesson" href="../joursem/"><small>Suivante →</small>JOURSEM</a></nav>
   </main>
 </div>

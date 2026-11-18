@@ -6,15 +6,82 @@
  "motsCles": "jours ouvrés travaillés week-end férié networkdays",
  "syntaxe": "=NB.JOURS.OUVRES(début; fin; [fériés])",
  "arguments": [
-  ["début; fin","Les deux dates, comprises dans le calcul"],
-  ["fériés","Les jours fériés à retirer"]
+  [
+   "début; fin",
+   "Les deux dates, comprises dans le calcul"
+  ],
+  [
+   "fériés",
+   "Les jours fériés à retirer"
+  ]
  ],
  "grille": [
-  ["Début","Fin","Jours ouvrés","","Jour férié"],
-  ["02/11/2026","13/11/2026","","","11/11/2026"]
+  [
+   "Début",
+   "Fin",
+   "Jours ouvrés",
+   "",
+   "Jour férié"
+  ],
+  [
+   "02/11/2026",
+   "13/11/2026",
+   "",
+   "",
+   "11/11/2026"
+  ]
  ],
  "etapes": [
-  {"c":"C2","f":"=NB.JOURS.OUVRES(A2;B2)","v":"10","t":"Du lundi au vendredi uniquement : les week-ends ne sont pas comptés."},
-  {"c":"C2","f":"=NB.JOURS.OUVRES(A2;B2;E2)","v":"9","mark":"E2","t":"Ajoutez les jours fériés en troisième argument : le 11 novembre est retiré."}
+  {
+   "c": "C2",
+   "f": "=NB.JOURS.OUVRES(A2;B2)",
+   "v": "10",
+   "t": "Du lundi au vendredi uniquement : les week-ends ne sont pas comptés."
+  },
+  {
+   "c": "C2",
+   "f": "=NB.JOURS.OUVRES(A2;B2;E2)",
+   "v": "9",
+   "mark": "E2",
+   "t": "Ajoutez les jours fériés en troisième argument : le 11 novembre est retiré."
+  }
+ ],
+ "titreSeo": "NB.JOURS.OUVRES : compter les jours ouvrés",
+ "guide": {
+  "question": "Comment compter les jours ouvrés entre deux dates dans Excel ?",
+  "intro": "NB.JOURS.OUVRES compte les jours du lundi au vendredi entre deux dates, toutes deux incluses. On peut lui donner en troisième argument la liste des jours fériés à retirer. C'est la fonction idéale pour la durée d'un stage, d'un projet ou d'un délai de livraison.",
+  "exemple": {
+   "formule": "=NB.JOURS.OUVRES(A2;B2;F2:F12)",
+   "explication": "Jours ouvrés entre A2 et B2, sans les jours fériés listés en F2:F12."
+  },
+  "erreurs": [
+   [
+    "Un jour férié encore compté",
+    "Il n'est pas dans la liste des fériés, ou il est saisi comme du texte et non comme une date."
+   ],
+   [
+    "#VALEUR!",
+    "Une des deux dates n'est pas reconnue comme une date."
+   ]
+  ],
+  "faq": [
+   [
+    "Et si le week-end n'est pas samedi et dimanche ?",
+    "Utilisez NB.JOURS.OUVRES.INTL, qui permet de choisir les jours de repos."
+   ],
+   [
+    "Comment trouver la date après 10 jours ouvrés ?",
+    "Utilisez SERIE.JOUR.OUVRE."
+   ],
+   [
+    "Les deux dates sont-elles comptées ?",
+    "Oui, la date de début et la date de fin sont incluses."
+   ]
+  ]
+ },
+ "voirAussi": [
+  "serie-jour-ouvre",
+  "ecart-entre-deux-dates",
+  "joursem"
  ]
 }

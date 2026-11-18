@@ -6,17 +6,96 @@
  "motsCles": "tva ht ttc hors taxe toutes taxes taux prix calcul",
  "syntaxe": "=HT*(1+taux) · =TTC/(1+taux)",
  "arguments": [
-  ["HT vers TTC","Multiplier par 1 + taux"],
-  ["TTC vers HT","Diviser par 1 + taux"],
-  ["Piège","Ne jamais retirer 20 % du TTC"]
+  [
+   "HT vers TTC",
+   "Multiplier par 1 + taux"
+  ],
+  [
+   "TTC vers HT",
+   "Diviser par 1 + taux"
+  ],
+  [
+   "Piège",
+   "Ne jamais retirer 20 % du TTC"
+  ]
  ],
  "grille": [
-  ["Prix HT","Prix TTC","","Prix TTC","Prix HT","","Taux"],
-  ["100,00 €","","","60,00 €","","","20 %"]
+  [
+   "Prix HT",
+   "Prix TTC",
+   "",
+   "Prix TTC",
+   "Prix HT",
+   "",
+   "Taux"
+  ],
+  [
+   "100,00 €",
+   "",
+   "",
+   "60,00 €",
+   "",
+   "",
+   "20 %"
+  ]
  ],
  "etapes": [
-  {"c":"B2","f":"=A2*(1+$G$2)","v":"120,00 €","t":"Du hors taxe au TTC : on multiplie par 1 + le taux."},
-  {"c":"E2","f":"=D2/(1+$G$2)","v":"50,00 €","t":"Du TTC au hors taxe : on divise par 1 + le taux."},
-  {"c":"E3","f":"=D2*(1-$G$2)","v":"48,00 €","mark":"E3","t":"L'erreur classique : retirer 20 % du TTC donne 48. C'est faux, le bon prix HT est 50."}
+  {
+   "c": "B2",
+   "f": "=A2*(1+$G$2)",
+   "v": "120,00 €",
+   "t": "Du hors taxe au TTC : on multiplie par 1 + le taux."
+  },
+  {
+   "c": "E2",
+   "f": "=D2/(1+$G$2)",
+   "v": "50,00 €",
+   "t": "Du TTC au hors taxe : on divise par 1 + le taux."
+  },
+  {
+   "c": "E3",
+   "f": "=D2*(1-$G$2)",
+   "v": "48,00 €",
+   "mark": "E3",
+   "t": "L'erreur classique : retirer 20 % du TTC donne 48. C'est faux, le bon prix HT est 50."
+  }
+ ],
+ "titreSeo": "Calculer la TVA dans Excel : HT et TTC",
+ "guide": {
+  "question": "Comment passer du HT au TTC dans Excel ?",
+  "intro": "Pour passer d'un prix hors taxe au prix TTC, on multiplie par 1 + le taux de TVA : 1,2 pour 20 %. Pour retrouver le HT à partir du TTC, on divise par 1 + le taux. Retirer 20 % d'un prix TTC est l'erreur classique : le résultat est faux.",
+  "exemple": {
+   "formule": "=B2*(1+$E$1)",
+   "explication": "Prix HT en B2, taux de 20 % en E1 : 50 € HT donnent 60 € TTC. Inverse : =C2/(1+$E$1)."
+  },
+  "erreurs": [
+   [
+    "Retirer 20 % du TTC",
+    "60 € moins 20 % donne 48 €, alors que le bon prix HT est 50 €."
+   ],
+   [
+    "Un taux de 20 au lieu de 20 %",
+    "Saisissez 20 % ou 0,2, sinon le prix est multiplié par 21."
+   ]
+  ],
+  "faq": [
+   [
+    "Comment calculer le montant de la TVA ?",
+    "TTC moins HT, ou HT multiplié par le taux."
+   ],
+   [
+    "Pourquoi mettre le taux dans une cellule ?",
+    "Pour le changer une seule fois (5,5 %, 10 %, 20 %) ; figez-le avec des $."
+   ],
+   [
+    "Comment arrondir aux centimes ?",
+    "Entourez la formule avec ARRONDI(…;2)."
+   ]
+  ]
+ },
+ "voirAussi": [
+  "calculer-une-remise",
+  "pourcentages",
+  "references-absolues"
  ]
 }

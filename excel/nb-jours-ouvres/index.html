@@ -3,15 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>NB.JOURS.OUVRES – Excel en animation | Clic par clic</title>
-<meta name="description" content="Compter les jours travaillés entre deux dates. Leçon Excel animée en 2 étapes, niveau intermédiaire, gratuite.">
+<title>NB.JOURS.OUVRES : compter les jours ouvrés | Clic par clic</title>
+<meta name="description" content="NB.JOURS.OUVRES compte les jours du lundi au vendredi entre deux dates, toutes deux incluses.">
 <link rel="canonical" href="https://mehdinourreddine62.github.io/clic-par-clic/excel/nb-jours-ouvres/">
 <meta name="robots" content="index,follow">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="Clic par clic">
-<meta property="og:title" content="NB.JOURS.OUVRES – Excel en animation | Clic par clic">
-<meta property="og:description" content="Compter les jours travaillés entre deux dates. Leçon Excel animée en 2 étapes, niveau intermédiaire, gratuite.">
+<meta property="og:title" content="NB.JOURS.OUVRES : compter les jours ouvrés | Clic par clic">
+<meta property="og:description" content="NB.JOURS.OUVRES compte les jours du lundi au vendredi entre deux dates, toutes deux incluses.">
 <meta property="og:url" content="https://mehdinourreddine62.github.io/clic-par-clic/excel/nb-jours-ouvres/">
 <meta property="og:image" content="https://mehdinourreddine62.github.io/clic-par-clic/assets/og-excel.png">
 <meta property="og:image:width" content="1200">
@@ -57,7 +57,18 @@
     <a class="dl" href="../../fichiers/excel/nb-jours-ouvres.xlsx" download="nb-jours-ouvres.xlsx"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg><span><b>Télécharger le fichier d'exercice</b><small>Excel · consignes, données de départ et solution</small></span></a><div class="pband" id="pband" hidden></div>
     <details class="sx"><summary>Syntaxe <code>=NB.JOURS.OUVRES(début; fin; [fériés])</code></summary><dl><dt>début; fin</dt><dd>Les deux dates, comprises dans le calcul</dd><dt>fériés</dt><dd>Les jours fériés à retirer</dd></dl></details>
     <details class="sx"><summary>Résumé écrit des étapes</summary><ol class="steps"><li>Du lundi au vendredi uniquement : les week-ends ne sont pas comptés.</li><li>Ajoutez les jours fériés en troisième argument : le 11 novembre est retiré.</li></ol></details>
-    <section class="also"><h2>Voir aussi</h2><div class="also-l"><a href="../aujourdhui-datedif/"><b>AUJOURDHUI et DATEDIF</b><small>Afficher la date du jour et calculer une ancienneté ou un âge.</small></a><a href="../annee-mois-jour/"><b>ANNEE, MOIS et JOUR</b><small>Extraire l'année, le mois ou le jour d'une date.</small></a><a href="../date/"><b>DATE</b><small>Construire une date à partir d'une année, d'un mois et d'un jour.</small></a></div></section>
+    <section class="guide">
+      <h2>Comment compter les jours ouvrés entre deux dates dans Excel ?</h2>
+      <p>NB.JOURS.OUVRES compte les jours du lundi au vendredi entre deux dates, toutes deux incluses. On peut lui donner en troisième argument la liste des jours fériés à retirer. C'est la fonction idéale pour la durée d'un stage, d'un projet ou d'un délai de livraison.</p>
+      <h3>Exemple</h3>
+      <p><code class="gx">=NB.JOURS.OUVRES(A2;B2;F2:F12)</code></p>
+      <p>Jours ouvrés entre A2 et B2, sans les jours fériés listés en F2:F12.</p>
+      <h3>Erreurs fréquentes</h3>
+      <ul><li><b>Un jour férié encore compté</b>Il n'est pas dans la liste des fériés, ou il est saisi comme du texte et non comme une date.</li><li><b>#VALEUR!</b>Une des deux dates n'est pas reconnue comme une date.</li></ul>
+      <h3>Questions fréquentes</h3>
+      <h4>Et si le week-end n'est pas samedi et dimanche ?</h4><p>Utilisez NB.JOURS.OUVRES.INTL, qui permet de choisir les jours de repos.</p><h4>Comment trouver la date après 10 jours ouvrés ?</h4><p>Utilisez SERIE.JOUR.OUVRE.</p><h4>Les deux dates sont-elles comptées ?</h4><p>Oui, la date de début et la date de fin sont incluses.</p>
+    </section>
+    <section class="also"><h2>Voir aussi</h2><div class="also-l"><a href="../serie-jour-ouvre/"><b>SERIE.JOUR.OUVRE</b><small>Trouver la date après un certain nombre de jours travaillés.</small></a><a href="../ecart-entre-deux-dates/"><b>Écart entre deux dates</b><small>Compter le nombre de jours entre deux dates.</small></a><a href="../joursem/"><b>JOURSEM</b><small>Savoir quel jour de la semaine tombe une date.</small></a></div></section>
     <nav class="lnav" aria-label="Leçons voisines"><a href="../mois-decaler/"><small>← Précédente</small>MOIS.DECALER</a><a class="nx" id="nextLesson" href="../serie-jour-ouvre/"><small>Suivante →</small>SERIE.JOUR.OUVRE</a></nav>
   </main>
 </div>

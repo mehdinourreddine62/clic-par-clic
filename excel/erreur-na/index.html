@@ -3,15 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Corriger #N/A – Excel en animation | Clic par clic</title>
-<meta name="description" content="Comprendre pourquoi une recherche ne trouve rien. Leçon Excel animée en 5 étapes, niveau intermédiaire, gratuite.">
+<title>#N/A dans Excel : causes et solutions | Clic par clic</title>
+<meta name="description" content="#N/A signifie « non disponible » : une recherche (RECHERCHEV, RECHERCHEX, EQUIV) n'a pas trouvé la valeur demandée.">
 <link rel="canonical" href="https://mehdinourreddine62.github.io/clic-par-clic/excel/erreur-na/">
 <meta name="robots" content="index,follow">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="Clic par clic">
-<meta property="og:title" content="Corriger #N/A – Excel en animation | Clic par clic">
-<meta property="og:description" content="Comprendre pourquoi une recherche ne trouve rien. Leçon Excel animée en 5 étapes, niveau intermédiaire, gratuite.">
+<meta property="og:title" content="#N/A dans Excel : causes et solutions | Clic par clic">
+<meta property="og:description" content="#N/A signifie « non disponible » : une recherche (RECHERCHEV, RECHERCHEX, EQUIV) n'a pas trouvé la valeur demandée.">
 <meta property="og:url" content="https://mehdinourreddine62.github.io/clic-par-clic/excel/erreur-na/">
 <meta property="og:image" content="https://mehdinourreddine62.github.io/clic-par-clic/assets/og-excel.png">
 <meta property="og:image:width" content="1200">
@@ -57,7 +57,18 @@
     <div class="pband" id="pband" hidden></div>
     <details class="sx"><summary>Syntaxe <code>=SI.NON.DISP(recherche; &quot;Inconnu&quot;)</code></summary><dl><dt>Cause 1</dt><dd>La valeur cherchée n'existe pas dans la liste</dd><dt>Cause 2</dt><dd>Un espace en trop, ou un nombre stocké comme texte</dd><dt>SI.NON.DISP</dt><dd>Remplace #N/A par le texte de votre choix</dd></dl></details>
     <details class="sx"><summary>Résumé écrit des étapes</summary><ol class="steps"><li>#N/A signifie « non disponible » : la valeur cherchée est introuvable.</li><li>Première cause : la valeur n'existe vraiment pas. P05 n'est pas dans la liste.</li><li>Seconde cause, plus sournoise : un espace invisible après P02. Pour Excel, ce n'est plus le même texte.</li><li>Retapez la valeur, ou nettoyez-la avec SUPPRESPACE : la recherche aboutit.</li><li>Pour les vraies absences, SI.NON.DISP remplace #N/A par le texte de votre choix.</li></ol></details>
-    <section class="also"><h2>Voir aussi</h2><div class="also-l"><a href="../erreur-div-0/"><b>Corriger #DIV/0!</b><small>Comprendre et supprimer l'erreur de division par zéro.</small></a><a href="../erreur-valeur/"><b>Corriger #VALEUR!</b><small>Repérer le texte qui empêche un calcul.</small></a><a href="../erreur-ref/"><b>Corriger #REF!</b><small>Comprendre ce qui se passe quand on supprime une cellule utilisée.</small></a></div></section>
+    <section class="guide">
+      <h2>Comment corriger l'erreur #N/A dans Excel ?</h2>
+      <p>#N/A signifie « non disponible » : une recherche (RECHERCHEV, RECHERCHEX, EQUIV) n'a pas trouvé la valeur demandée. Soit la valeur n'existe vraiment pas dans la liste, soit elle est écrite autrement, souvent à cause d'un espace invisible ou d'un nombre stocké comme texte.</p>
+      <h3>Exemple</h3>
+      <p><code class="gx">=SI.NON.DISP(RECHERCHEV(A2;Produits;2;FAUX);&quot;Inconnu&quot;)</code></p>
+      <p>Affiche « Inconnu » au lieu de #N/A quand le code est absent de la liste.</p>
+      <h3>Erreurs fréquentes</h3>
+      <ul><li><b>Un espace après le code</b>Pour Excel, « P02 » et « P02 » suivi d'un espace sont différents : nettoyez avec SUPPRESPACE.</li><li><b>Un nombre stocké comme texte</b>123 et &quot;123&quot; ne correspondent pas : convertissez la colonne en nombres.</li></ul>
+      <h3>Questions fréquentes</h3>
+      <h4>Quelle différence entre SI.NON.DISP et SIERREUR ?</h4><p>SI.NON.DISP ne remplace que #N/A ; SIERREUR masque toutes les erreurs.</p><h4>Et avec RECHERCHEX ?</h4><p>Elle a son propre argument « si non trouvé » : =RECHERCHEX(A2;Codes;Noms;&quot;Inconnu&quot;).</p><h4>Pourquoi #N/A alors que la valeur est visible ?</h4><p>Elle diffère d'un caractère : espace, majuscule accentuée, ou texte et nombre.</p>
+    </section>
+    <section class="also"><h2>Voir aussi</h2><div class="also-l"><a href="../recherchev/"><b>RECHERCHEV</b><small>Retrouver une information dans un tableau à partir d'un code.</small></a><a href="../recherchex/"><b>RECHERCHEX</b><small>La version moderne de RECHERCHEV, plus simple et plus souple.</small></a><a href="../supprespace/"><b>SUPPRESPACE</b><small>Retirer les espaces en trop qui faussent les recherches.</small></a></div></section>
     <nav class="lnav" aria-label="Leçons voisines"><a href="../erreur-div-0/"><small>← Précédente</small>Corriger #DIV/0!</a><a class="nx" id="nextLesson" href="../erreur-valeur/"><small>Suivante →</small>Corriger #VALEUR!</a></nav>
   </main>
 </div>

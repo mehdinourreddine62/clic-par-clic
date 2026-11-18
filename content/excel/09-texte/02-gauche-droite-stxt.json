@@ -6,19 +6,113 @@
  "motsCles": "extraire caractères texte left right mid code",
  "syntaxe": "=GAUCHE(texte; nombre)",
  "arguments": [
-  ["GAUCHE(texte; nombre)","Les premiers caractères"],
-  ["DROITE(texte; nombre)","Les derniers caractères"],
-  ["STXT(texte; début; nombre)","Des caractères au milieu"]
+  [
+   "GAUCHE(texte; nombre)",
+   "Les premiers caractères"
+  ],
+  [
+   "DROITE(texte; nombre)",
+   "Les derniers caractères"
+  ],
+  [
+   "STXT(texte; début; nombre)",
+   "Des caractères au milieu"
+  ]
  ],
  "grille": [
-  ["Code","Pays","Zone","Numéro"],
-  ["FR-75-0012","","",""],
-  ["FR-69-0458","","",""],
-  ["BE-10-0931","","",""]
+  [
+   "Code",
+   "Pays",
+   "Zone",
+   "Numéro"
+  ],
+  [
+   "FR-75-0012",
+   "",
+   "",
+   ""
+  ],
+  [
+   "FR-69-0458",
+   "",
+   "",
+   ""
+  ],
+  [
+   "BE-10-0931",
+   "",
+   "",
+   ""
+  ]
  ],
  "etapes": [
-  {"c":"B2","f":"=GAUCHE(A2;2)","v":"FR","fill":{"B3":"FR","B4":"BE"},"t":"GAUCHE prend les 2 premiers caractères."},
-  {"c":"C2","f":"=STXT(A2;4;2)","v":"'75","fill":{"C3":"'69","C4":"'10"},"t":"STXT part du 4e caractère et en prend 2."},
-  {"c":"D2","f":"=DROITE(A2;4)","v":"'0012","fill":{"D3":"'0458","D4":"'0931"},"t":"DROITE prend les 4 derniers. Le résultat est du texte : les zéros sont conservés."}
+  {
+   "c": "B2",
+   "f": "=GAUCHE(A2;2)",
+   "v": "FR",
+   "fill": {
+    "B3": "FR",
+    "B4": "BE"
+   },
+   "t": "GAUCHE prend les 2 premiers caractères."
+  },
+  {
+   "c": "C2",
+   "f": "=STXT(A2;4;2)",
+   "v": "'75",
+   "fill": {
+    "C3": "'69",
+    "C4": "'10"
+   },
+   "t": "STXT part du 4e caractère et en prend 2."
+  },
+  {
+   "c": "D2",
+   "f": "=DROITE(A2;4)",
+   "v": "'0012",
+   "fill": {
+    "D3": "'0458",
+    "D4": "'0931"
+   },
+   "t": "DROITE prend les 4 derniers. Le résultat est du texte : les zéros sont conservés."
+  }
+ ],
+ "titreSeo": "GAUCHE, DROITE, STXT : extraire du texte",
+ "guide": {
+  "question": "Comment extraire une partie d'un texte dans Excel ?",
+  "intro": "GAUCHE prend les premiers caractères d'un texte, DROITE les derniers, et STXT ceux du milieu à partir d'une position. Ces fonctions servent à découper un code, une référence ou un numéro : préfixe pays, département, fin de numéro.",
+  "exemple": {
+   "formule": "=STXT(A2;4;2)",
+   "explication": "Dans « FR-69-0458 », STXT part du 4e caractère et en prend 2 : « 69 »."
+  },
+  "erreurs": [
+   [
+    "Le résultat ne se calcule pas",
+    "C'est du texte : ajoutez +0 ou utilisez CNUM pour en faire un nombre."
+   ],
+   [
+    "Des longueurs différentes d'une ligne à l'autre",
+    "Repérez un séparateur avec CHERCHE, ou utilisez TEXTE.AVANT et TEXTE.APRES."
+   ]
+  ],
+  "faq": [
+   [
+    "Comment connaître la longueur d'un texte ?",
+    "Utilisez NBCAR."
+   ],
+   [
+    "Existe-t-il plus simple sans formule ?",
+    "Le remplissage instantané (Ctrl + E) devine le découpage à partir d'un exemple."
+   ],
+   [
+    "Comment couper autour d'un tiret ?",
+    "TEXTE.AVANT et TEXTE.APRES coupent directement avant ou après un séparateur."
+   ]
+  ]
+ },
+ "voirAussi": [
+  "texte-avant-texte-apres",
+  "nbcar",
+  "cherche"
  ]
 }

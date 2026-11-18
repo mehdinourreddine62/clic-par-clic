@@ -6,17 +6,92 @@
  "motsCles": "différence jours durée soustraction days",
  "syntaxe": "=fin-début",
  "arguments": [
-  ["fin − début","Une soustraction suffit"],
-  ["JOURS(fin; début)","La même chose sous forme de fonction"]
+  [
+   "fin − début",
+   "Une soustraction suffit"
+  ],
+  [
+   "JOURS(fin; début)",
+   "La même chose sous forme de fonction"
+  ]
  ],
  "grille": [
-  ["Début","Fin","Jours"],
-  ["01/11/2026","13/11/2026",""],
-  ["15/12/2026","05/01/2027",""]
+  [
+   "Début",
+   "Fin",
+   "Jours"
+  ],
+  [
+   "01/11/2026",
+   "13/11/2026",
+   ""
+  ],
+  [
+   "15/12/2026",
+   "05/01/2027",
+   ""
+  ]
  ],
  "etapes": [
-  {"c":"C2","f":"=B2-A2","v":"12","fill":{"C3":"21"},"t":"Pour Excel, une date est un nombre de jours : une soustraction donne l'écart."},
-  {"c":"C2","f":"=JOURS(B2;A2)","v":"12","fill":{"C3":"21"},"t":"JOURS fait le même calcul. Attention : la date de fin vient en premier."},
-  {"c":"C2","t":"Si le résultat s'affiche comme une date, repassez la cellule au format Standard."}
+  {
+   "c": "C2",
+   "f": "=B2-A2",
+   "v": "12",
+   "fill": {
+    "C3": "21"
+   },
+   "t": "Pour Excel, une date est un nombre de jours : une soustraction donne l'écart."
+  },
+  {
+   "c": "C2",
+   "f": "=JOURS(B2;A2)",
+   "v": "12",
+   "fill": {
+    "C3": "21"
+   },
+   "t": "JOURS fait le même calcul. Attention : la date de fin vient en premier."
+  },
+  {
+   "c": "C2",
+   "t": "Si le résultat s'affiche comme une date, repassez la cellule au format Standard."
+  }
+ ],
+ "titreSeo": "Calculer le nombre de jours entre deux dates",
+ "guide": {
+  "question": "Comment calculer le nombre de jours entre deux dates dans Excel ?",
+  "intro": "Pour Excel, une date est un nombre de jours. Une simple soustraction, date de fin moins date de début, donne donc le nombre de jours qui les séparent. La fonction JOURS fait le même calcul. Pour un écart en mois ou en années, utilisez DATEDIF.",
+  "exemple": {
+   "formule": "=B2-A2",
+   "explication": "Du 01/03 au 22/03 : 21 jours. Équivalent : =JOURS(B2;A2), date de fin en premier."
+  },
+  "erreurs": [
+   [
+    "Le résultat s'affiche comme une date",
+    "La cellule a pris le format Date : repassez-la au format Standard."
+   ],
+   [
+    "Un résultat négatif",
+    "Les dates sont inversées : la date de fin vient en premier."
+   ]
+  ],
+  "faq": [
+   [
+    "Comment compter seulement les jours ouvrés ?",
+    "Utilisez NB.JOURS.OUVRES, qui retire les week-ends et les jours fériés."
+   ],
+   [
+    "Comment calculer un âge ?",
+    "Utilisez DATEDIF avec \"Y\" : =DATEDIF(naissance;AUJOURDHUI();\"Y\")."
+   ],
+   [
+    "Faut-il compter le premier jour ?",
+    "La soustraction ne le compte pas : ajoutez 1 si les deux jours doivent être inclus."
+   ]
+  ]
+ },
+ "voirAussi": [
+  "nb-jours-ouvres",
+  "aujourdhui-datedif",
+  "date"
  ]
 }

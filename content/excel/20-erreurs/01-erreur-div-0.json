@@ -6,20 +6,116 @@
  "motsCles": "#DIV/0! erreur division par zéro vide corriger si",
  "syntaxe": "=SI(C2=0;\"\";B2/C2)",
  "arguments": [
-  ["Cause","Le diviseur est vide ou vaut 0"],
-  ["Solution 1","Compléter la donnée manquante"],
-  ["Solution 2","Tester le diviseur avec SI"]
+  [
+   "Cause",
+   "Le diviseur est vide ou vaut 0"
+  ],
+  [
+   "Solution 1",
+   "Compléter la donnée manquante"
+  ],
+  [
+   "Solution 2",
+   "Tester le diviseur avec SI"
+  ]
  ],
  "grille": [
-  ["Vendeur","Ventes","Objectif","Atteint"],
-  ["Alice","900","1 000",""],
-  ["Bruno","400","",""],
-  ["Chloé","660","600",""]
+  [
+   "Vendeur",
+   "Ventes",
+   "Objectif",
+   "Atteint"
+  ],
+  [
+   "Alice",
+   "900",
+   "1 000",
+   ""
+  ],
+  [
+   "Bruno",
+   "400",
+   "",
+   ""
+  ],
+  [
+   "Chloé",
+   "660",
+   "600",
+   ""
+  ]
  ],
  "etapes": [
-  {"c":"D2","f":"=B2/C2","v":"90 %","fill":{"D3":"#DIV/0!","D4":"110 %"},"t":"#DIV/0! signifie « division par zéro »."},
-  {"c":"C3","mark":"C3","t":"La cause est toujours la même : le diviseur est vide ou vaut 0. Ici, Bruno n'a pas d'objectif."},
-  {"c":"C3","f":"500","set":{"D3":"80 %"},"t":"Première solution : compléter la donnée manquante."},
-  {"c":"D2","f":"=SI(C2=0;\"\";B2/C2)","v":"90 %","fill":{"D3":"80 %","D4":"110 %"},"t":"Seconde solution : tester le diviseur avec SI, pour laisser la cellule vide tant qu'il manque."}
+  {
+   "c": "D2",
+   "f": "=B2/C2",
+   "v": "90 %",
+   "fill": {
+    "D3": "#DIV/0!",
+    "D4": "110 %"
+   },
+   "t": "#DIV/0! signifie « division par zéro »."
+  },
+  {
+   "c": "C3",
+   "mark": "C3",
+   "t": "La cause est toujours la même : le diviseur est vide ou vaut 0. Ici, Bruno n'a pas d'objectif."
+  },
+  {
+   "c": "C3",
+   "f": "500",
+   "set": {
+    "D3": "80 %"
+   },
+   "t": "Première solution : compléter la donnée manquante."
+  },
+  {
+   "c": "D2",
+   "f": "=SI(C2=0;\"\";B2/C2)",
+   "v": "90 %",
+   "fill": {
+    "D3": "80 %",
+    "D4": "110 %"
+   },
+   "t": "Seconde solution : tester le diviseur avec SI, pour laisser la cellule vide tant qu'il manque."
+  }
+ ],
+ "titreSeo": "#DIV/0! dans Excel : comprendre et corriger",
+ "guide": {
+  "question": "Comment corriger l'erreur #DIV/0! dans Excel ?",
+  "intro": "#DIV/0! signifie « division par zéro » : la formule divise par une cellule vide ou égale à 0. Deux solutions : compléter la donnée manquante, ou tester le diviseur avec SI pour laisser la cellule vide tant qu'il manque une valeur.",
+  "exemple": {
+   "formule": "=SI(C2=0;\"\";B2/C2)",
+   "explication": "Si l'objectif en C2 est vide ou nul, la cellule reste vide ; sinon, le calcul se fait."
+  },
+  "erreurs": [
+   [
+    "Masquer toutes les erreurs avec SIERREUR",
+    "SIERREUR cache aussi les vraies erreurs : préférez tester le diviseur avec SI."
+   ],
+   [
+    "Une MOYENNE en #DIV/0!",
+    "La plage ne contient aucun nombre."
+   ]
+  ],
+  "faq": [
+   [
+    "Pourquoi la cellule paraît non vide ?",
+    "Elle contient peut-être un espace ou du texte : effacez-la."
+   ],
+   [
+    "Comment afficher 0 au lieu de rien ?",
+    "Remplacez \"\" par 0 dans la formule SI."
+   ],
+   [
+    "Et avec SIERREUR ?",
+    "=SIERREUR(B2/C2;\"\") fonctionne aussi, mais masque toutes les erreurs."
+   ]
+  ]
+ },
+ "voirAussi": [
+  "erreur-na",
+  "sierreur",
+  "si"
  ]
 }

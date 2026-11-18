@@ -6,21 +6,121 @@
  "motsCles": "#N/A erreur recherchev introuvable non disponible espace si.non.disp",
  "syntaxe": "=SI.NON.DISP(recherche; \"Inconnu\")",
  "arguments": [
-  ["Cause 1","La valeur cherchée n'existe pas dans la liste"],
-  ["Cause 2","Un espace en trop, ou un nombre stocké comme texte"],
-  ["SI.NON.DISP","Remplace #N/A par le texte de votre choix"]
+  [
+   "Cause 1",
+   "La valeur cherchée n'existe pas dans la liste"
+  ],
+  [
+   "Cause 2",
+   "Un espace en trop, ou un nombre stocké comme texte"
+  ],
+  [
+   "SI.NON.DISP",
+   "Remplace #N/A par le texte de votre choix"
+  ]
  ],
  "grille": [
-  ["Réf","Produit","","Réf cherchée","Produit"],
-  ["P01","Clavier","","P03",""],
-  ["P02","Souris","","P05",""],
-  ["P03","Écran","","P02 ",""]
+  [
+   "Réf",
+   "Produit",
+   "",
+   "Réf cherchée",
+   "Produit"
+  ],
+  [
+   "P01",
+   "Clavier",
+   "",
+   "P03",
+   ""
+  ],
+  [
+   "P02",
+   "Souris",
+   "",
+   "P05",
+   ""
+  ],
+  [
+   "P03",
+   "Écran",
+   "",
+   "P02 ",
+   ""
+  ]
  ],
  "etapes": [
-  {"c":"E2","f":"=RECHERCHEV(D2;$A$2:$B$4;2;FAUX)","v":"Écran","fill":{"E3":"#N/A","E4":"#N/A"},"t":"#N/A signifie « non disponible » : la valeur cherchée est introuvable."},
-  {"c":"D3","mark":"D3","t":"Première cause : la valeur n'existe vraiment pas. P05 n'est pas dans la liste."},
-  {"c":"D4","mark":"D4","t":"Seconde cause, plus sournoise : un espace invisible après P02. Pour Excel, ce n'est plus le même texte."},
-  {"c":"D4","f":"P02","set":{"E4":"Souris"},"t":"Retapez la valeur, ou nettoyez-la avec SUPPRESPACE : la recherche aboutit."},
-  {"c":"E3","f":"=SI.NON.DISP(RECHERCHEV(D3;$A$2:$B$4;2;FAUX);\"Inconnu\")","v":"Inconnu","t":"Pour les vraies absences, SI.NON.DISP remplace #N/A par le texte de votre choix."}
+  {
+   "c": "E2",
+   "f": "=RECHERCHEV(D2;$A$2:$B$4;2;FAUX)",
+   "v": "Écran",
+   "fill": {
+    "E3": "#N/A",
+    "E4": "#N/A"
+   },
+   "t": "#N/A signifie « non disponible » : la valeur cherchée est introuvable."
+  },
+  {
+   "c": "D3",
+   "mark": "D3",
+   "t": "Première cause : la valeur n'existe vraiment pas. P05 n'est pas dans la liste."
+  },
+  {
+   "c": "D4",
+   "mark": "D4",
+   "t": "Seconde cause, plus sournoise : un espace invisible après P02. Pour Excel, ce n'est plus le même texte."
+  },
+  {
+   "c": "D4",
+   "f": "P02",
+   "set": {
+    "E4": "Souris"
+   },
+   "t": "Retapez la valeur, ou nettoyez-la avec SUPPRESPACE : la recherche aboutit."
+  },
+  {
+   "c": "E3",
+   "f": "=SI.NON.DISP(RECHERCHEV(D3;$A$2:$B$4;2;FAUX);\"Inconnu\")",
+   "v": "Inconnu",
+   "t": "Pour les vraies absences, SI.NON.DISP remplace #N/A par le texte de votre choix."
+  }
+ ],
+ "titreSeo": "#N/A dans Excel : causes et solutions",
+ "guide": {
+  "question": "Comment corriger l'erreur #N/A dans Excel ?",
+  "intro": "#N/A signifie « non disponible » : une recherche (RECHERCHEV, RECHERCHEX, EQUIV) n'a pas trouvé la valeur demandée. Soit la valeur n'existe vraiment pas dans la liste, soit elle est écrite autrement, souvent à cause d'un espace invisible ou d'un nombre stocké comme texte.",
+  "exemple": {
+   "formule": "=SI.NON.DISP(RECHERCHEV(A2;Produits;2;FAUX);\"Inconnu\")",
+   "explication": "Affiche « Inconnu » au lieu de #N/A quand le code est absent de la liste."
+  },
+  "erreurs": [
+   [
+    "Un espace après le code",
+    "Pour Excel, « P02 » et « P02 » suivi d'un espace sont différents : nettoyez avec SUPPRESPACE."
+   ],
+   [
+    "Un nombre stocké comme texte",
+    "123 et \"123\" ne correspondent pas : convertissez la colonne en nombres."
+   ]
+  ],
+  "faq": [
+   [
+    "Quelle différence entre SI.NON.DISP et SIERREUR ?",
+    "SI.NON.DISP ne remplace que #N/A ; SIERREUR masque toutes les erreurs."
+   ],
+   [
+    "Et avec RECHERCHEX ?",
+    "Elle a son propre argument « si non trouvé » : =RECHERCHEX(A2;Codes;Noms;\"Inconnu\")."
+   ],
+   [
+    "Pourquoi #N/A alors que la valeur est visible ?",
+    "Elle diffère d'un caractère : espace, majuscule accentuée, ou texte et nombre."
+   ]
+  ]
+ },
+ "voirAussi": [
+  "recherchev",
+  "recherchex",
+  "supprespace"
  ]
 }

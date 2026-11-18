@@ -6,22 +6,109 @@
  "motsCles": "graphique histogramme courbe secteurs insertion barres créer",
  "syntaxe": "Insertion › Graphiques",
  "ruban": true,
- "graphique": {"type":"col","labels":"A2:A5","series":["B2:B5"],"title":"Ventes","at":"D2:H8"},
+ "graphique": {
+  "type": "col",
+  "labels": "A2:A5",
+  "series": [
+   "B2:B5"
+  ],
+  "title": "Ventes",
+  "at": "D2:H8"
+ },
  "arguments": [
-  ["Histogramme","Comparer des valeurs"],
-  ["Courbes","Suivre une évolution dans le temps"],
-  ["Secteurs","Montrer une répartition"]
+  [
+   "Histogramme",
+   "Comparer des valeurs"
+  ],
+  [
+   "Courbes",
+   "Suivre une évolution dans le temps"
+  ],
+  [
+   "Secteurs",
+   "Montrer une répartition"
+  ]
  ],
  "grille": [
-  ["Mois","Ventes"],
-  ["Janvier","120"],
-  ["Février","90"],
-  ["Mars","150"],
-  ["Avril","110"]
+  [
+   "Mois",
+   "Ventes"
+  ],
+  [
+   "Janvier",
+   "120"
+  ],
+  [
+   "Février",
+   "90"
+  ],
+  [
+   "Mars",
+   "150"
+  ],
+  [
+   "Avril",
+   "110"
+  ]
  ],
  "etapes": [
-  {"c":"A1","sel":"A1:B5","drag":1,"t":"Sélectionnez les données, titres compris."},
-  {"c":"A1","sel":"A1:B5","tab":"Insertion","btn":"Histogramme","chart":1,"t":"Dans l'onglet Insertion, choisissez un type de graphique : il apparaît sur la feuille."},
-  {"c":"B3","f":"200","tab":"Insertion","t":"Le graphique reste lié aux données : modifiez une valeur, la barre suit."}
+  {
+   "c": "A1",
+   "sel": "A1:B5",
+   "drag": 1,
+   "t": "Sélectionnez les données, titres compris."
+  },
+  {
+   "c": "A1",
+   "sel": "A1:B5",
+   "tab": "Insertion",
+   "btn": "Histogramme",
+   "chart": 1,
+   "t": "Dans l'onglet Insertion, choisissez un type de graphique : il apparaît sur la feuille."
+  },
+  {
+   "c": "B3",
+   "f": "200",
+   "tab": "Insertion",
+   "t": "Le graphique reste lié aux données : modifiez une valeur, la barre suit."
+  }
+ ],
+ "titreSeo": "Créer un graphique dans Excel facilement",
+ "guide": {
+  "question": "Comment faire un graphique dans Excel ?",
+  "intro": "Pour créer un graphique, sélectionnez vos données avec leurs titres, puis choisissez un type dans l'onglet Insertion : histogramme pour comparer, courbe pour une évolution, secteurs pour une répartition. Le graphique reste lié aux données : il se met à jour quand une valeur change.",
+  "exemple": {
+   "formule": "Insertion › Graphiques › Histogramme",
+   "explication": "Sélectionnez d'abord A1:B6, titres compris : ils deviennent les légendes et les étiquettes."
+  },
+  "erreurs": [
+   [
+    "Les titres apparaissent comme des valeurs",
+    "Une colonne de titres contient des nombres (des années, par exemple) : mettez-les en texte ou sélectionnez-les à part."
+   ],
+   [
+    "Un graphique illisible",
+    "Trop de données ou un mauvais type : un secteur ne doit pas dépasser 5 ou 6 parts."
+   ]
+  ],
+  "faq": [
+   [
+    "Comment ajouter un titre ?",
+    "Cliquez sur le graphique, puis sur le bouton + à sa droite, et cochez Titre du graphique."
+   ],
+   [
+    "Comment changer le type de graphique ?",
+    "Clic droit sur le graphique › Modifier le type de graphique."
+   ],
+   [
+    "Existe-t-il un raccourci ?",
+    "Alt + F1 crée un graphique sur la feuille à partir des données sélectionnées."
+   ]
+  ]
+ },
+ "voirAussi": [
+  "choisir-un-type-de-graphique",
+  "titre-et-etiquettes",
+  "histogramme"
  ]
 }

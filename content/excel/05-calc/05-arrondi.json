@@ -6,18 +6,109 @@
  "motsCles": "décimales arrondir entier centimes",
  "syntaxe": "=ARRONDI(nombre; décimales)",
  "arguments": [
-  ["nombre","La valeur à arrondir"],
-  ["décimales","2 pour les centimes, 0 pour un entier, -1 pour la dizaine"]
+  [
+   "nombre",
+   "La valeur à arrondir"
+  ],
+  [
+   "décimales",
+   "2 pour les centimes, 0 pour un entier, -1 pour la dizaine"
+  ]
  ],
  "grille": [
-  ["Valeur","2 décimales","Entier","Dizaine"],
-  ["12,3456","","",""],
-  ["7,891","","",""],
-  ["105,5","","",""]
+  [
+   "Valeur",
+   "2 décimales",
+   "Entier",
+   "Dizaine"
+  ],
+  [
+   "12,3456",
+   "",
+   "",
+   ""
+  ],
+  [
+   "7,891",
+   "",
+   "",
+   ""
+  ],
+  [
+   "105,5",
+   "",
+   "",
+   ""
+  ]
  ],
  "etapes": [
-  {"c":"B2","f":"=ARRONDI(A2;2)","v":"12,35","fill":{"B3":"7,89","B4":"105,5"},"t":"Le 2 indique le nombre de décimales à garder."},
-  {"c":"C2","f":"=ARRONDI(A2;0)","v":"12","fill":{"C3":"8","C4":"106"},"t":"Avec 0, on obtient un entier. À partir de 0,5, Excel arrondit vers le haut."},
-  {"c":"D2","f":"=ARRONDI(A2;-1)","v":"10","fill":{"D3":"10","D4":"110"},"t":"Un nombre négatif arrondit à la dizaine (-1) ou à la centaine (-2)."}
+  {
+   "c": "B2",
+   "f": "=ARRONDI(A2;2)",
+   "v": "12,35",
+   "fill": {
+    "B3": "7,89",
+    "B4": "105,5"
+   },
+   "t": "Le 2 indique le nombre de décimales à garder."
+  },
+  {
+   "c": "C2",
+   "f": "=ARRONDI(A2;0)",
+   "v": "12",
+   "fill": {
+    "C3": "8",
+    "C4": "106"
+   },
+   "t": "Avec 0, on obtient un entier. À partir de 0,5, Excel arrondit vers le haut."
+  },
+  {
+   "c": "D2",
+   "f": "=ARRONDI(A2;-1)",
+   "v": "10",
+   "fill": {
+    "D3": "10",
+    "D4": "110"
+   },
+   "t": "Un nombre négatif arrondit à la dizaine (-1) ou à la centaine (-2)."
+  }
+ ],
+ "titreSeo": "ARRONDI dans Excel : arrondir à 2 décimales",
+ "guide": {
+  "question": "Comment arrondir un nombre dans Excel ?",
+  "intro": "ARRONDI arrondit un nombre au nombre de décimales choisi : 2 pour les centimes, 0 pour un entier, -1 pour la dizaine. À partir de 5, Excel arrondit vers le haut. Contrairement au format de cellule, ARRONDI change vraiment la valeur utilisée dans les calculs.",
+  "exemple": {
+   "formule": "=ARRONDI(B2;2)",
+   "explication": "7,8865 devient 7,89. Avec 0 décimale : 8. Avec -1 : 10."
+  },
+  "erreurs": [
+   [
+    "Des totaux qui ne tombent pas juste",
+    "Le format n'affiche que 2 décimales mais les calculs utilisent toutes les décimales : arrondissez avec ARRONDI."
+   ],
+   [
+    "Vouloir toujours arrondir vers le haut",
+    "ARRONDI suit la règle du 5 : utilisez ARRONDI.SUP pour arrondir toujours au-dessus."
+   ]
+  ],
+  "faq": [
+   [
+    "Quelle différence avec le bouton « Réduire les décimales » ?",
+    "Le bouton change seulement l'affichage ; ARRONDI change la valeur."
+   ],
+   [
+    "Comment arrondir à 0,5 près ?",
+    "Utilisez ARRONDI.AU.MULTIPLE : =ARRONDI.AU.MULTIPLE(B2;0,5)."
+   ],
+   [
+    "Comment garder la partie entière sans arrondir ?",
+    "Utilisez ENT ou TRONQUE."
+   ]
+  ]
+ },
+ "voirAussi": [
+  "arrondi-sup-inf",
+  "ent-tronque",
+  "moyenne-min-max"
  ]
 }

@@ -3,15 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>RANG – Excel en animation | Clic par clic</title>
-<meta name="description" content="Donner le classement de chaque valeur. Leçon Excel animée en 2 étapes, niveau intermédiaire, gratuite.">
+<title>RANG dans Excel : classer des valeurs | Clic par clic</title>
+<meta name="description" content="RANG donne la position d'une valeur dans une liste : 1 pour la plus grande, puis 2, 3… Avec 1 en troisième argument, le classement se fait du plus petit au…">
 <link rel="canonical" href="https://mehdinourreddine62.github.io/clic-par-clic/excel/rang/">
 <meta name="robots" content="index,follow">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="Clic par clic">
-<meta property="og:title" content="RANG – Excel en animation | Clic par clic">
-<meta property="og:description" content="Donner le classement de chaque valeur. Leçon Excel animée en 2 étapes, niveau intermédiaire, gratuite.">
+<meta property="og:title" content="RANG dans Excel : classer des valeurs | Clic par clic">
+<meta property="og:description" content="RANG donne la position d'une valeur dans une liste : 1 pour la plus grande, puis 2, 3… Avec 1 en troisième argument, le classement se fait du plus petit au…">
 <meta property="og:url" content="https://mehdinourreddine62.github.io/clic-par-clic/excel/rang/">
 <meta property="og:image" content="https://mehdinourreddine62.github.io/clic-par-clic/assets/og-excel.png">
 <meta property="og:image:width" content="1200">
@@ -57,7 +57,18 @@
     <a class="dl" href="../../fichiers/excel/rang.xlsx" download="rang.xlsx"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg><span><b>Télécharger le fichier d'exercice</b><small>Excel · consignes, données de départ et solution</small></span></a><div class="pband" id="pband" hidden></div>
     <details class="sx"><summary>Syntaxe <code>=RANG(nombre; plage; [ordre])</code></summary><dl><dt>nombre</dt><dd>La valeur à classer</dd><dt>plage</dt><dd>Toutes les valeurs, figées avec des $</dd><dt>ordre</dt><dd>Rien pour un classement du plus grand au plus petit, 1 pour l'inverse</dd></dl></details>
     <details class="sx"><summary>Résumé écrit des étapes</summary><ol class="steps"><li>RANG donne la position de chaque score. Le plus grand obtient le rang 1.</li><li>Ajoutez 1 en troisième argument pour classer du plus petit au plus grand.</li></ol></details>
-    <section class="also"><h2>Voir aussi</h2><div class="also-l"><a href="../nb-nbval-nb-vide/"><b>NB, NBVAL et NB.VIDE</b><small>Compter les nombres, les cellules remplies ou les cellules vides.</small></a><a href="../nb-si/"><b>NB.SI</b><small>Compter les cellules qui respectent une condition.</small></a><a href="../nb-si-ens/"><b>NB.SI.ENS</b><small>Compter selon plusieurs conditions à la fois.</small></a></div></section>
+    <section class="guide">
+      <h2>Comment faire un classement dans Excel avec RANG ?</h2>
+      <p>RANG donne la position d'une valeur dans une liste : 1 pour la plus grande, puis 2, 3… Avec 1 en troisième argument, le classement se fait du plus petit au plus grand, pratique pour un chronomètre. La plage doit être figée avec des $ pour recopier la formule.</p>
+      <h3>Exemple</h3>
+      <p><code class="gx">=RANG(B2;$B$2:$B$6)</code></p>
+      <p>Classe le score de B2 parmi tous les scores ; le meilleur obtient 1.</p>
+      <h3>Erreurs fréquentes</h3>
+      <ul><li><b>Des rangs en double ou faux en recopiant</b>La plage n'est pas figée : écrivez $B$2:$B$6.</li><li><b>Deux ex aequo ont le même rang</b>C'est normal : Excel leur donne le même rang et saute le suivant.</li></ul>
+      <h3>Questions fréquentes</h3>
+      <h4>Quelle différence avec RANG.EQ ?</h4><p>Aucune dans le résultat : RANG.EQ est le nom récent de la même fonction.</p><h4>Comment trier selon le classement ?</h4><p>Utilisez Données › Trier, ou la fonction TRIER.</p><h4>Comment obtenir le meilleur score ?</h4><p>Utilisez MAX, ou GRANDE.VALEUR pour le 2e, le 3e…</p>
+    </section>
+    <section class="also"><h2>Voir aussi</h2><div class="also-l"><a href="../grande-valeur-petite-valeur/"><b>GRANDE.VALEUR et PETITE.VALEUR</b><small>Trouver la 2e, la 3e… plus grande ou plus petite valeur.</small></a><a href="../moyenne-min-max/"><b>MOYENNE, MIN et MAX</b><small>La moyenne, la plus petite et la plus grande valeur.</small></a><a href="../references-absolues/"><b>Références absolues ($)</b><small>Empêcher une référence de bouger quand on recopie.</small></a></div></section>
     <nav class="lnav" aria-label="Leçons voisines"><a href="../grande-valeur-petite-valeur/"><small>← Précédente</small>GRANDE.VALEUR et PETITE.VALEUR</a><a class="nx" id="nextLesson" href="../si/"><small>Suivante →</small>SI</a></nav>
   </main>
 </div>

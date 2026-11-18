@@ -6,20 +6,102 @@
  "motsCles": "moyenne pondérée coefficient notes sommeprod bulletin",
  "syntaxe": "=SOMMEPROD(notes; coefficients)/SOMME(coefficients)",
  "arguments": [
-  ["SOMMEPROD","Chaque note multipliée par son coefficient, puis le tout additionné"],
-  ["SOMME","La somme des coefficients"]
+  [
+   "SOMMEPROD",
+   "Chaque note multipliée par son coefficient, puis le tout additionné"
+  ],
+  [
+   "SOMME",
+   "La somme des coefficients"
+  ]
  ],
  "grille": [
-  ["Matière","Note","Coefficient"],
-  ["Maths","12","2"],
-  ["Français","15","3"],
-  ["Sport","9","1"],
-  ["Moyenne simple","",""],
-  ["Moyenne pondérée","",""]
+  [
+   "Matière",
+   "Note",
+   "Coefficient"
+  ],
+  [
+   "Maths",
+   "12",
+   "2"
+  ],
+  [
+   "Français",
+   "15",
+   "3"
+  ],
+  [
+   "Sport",
+   "9",
+   "1"
+  ],
+  [
+   "Moyenne simple",
+   "",
+   ""
+  ],
+  [
+   "Moyenne pondérée",
+   "",
+   ""
+  ]
  ],
  "etapes": [
-  {"c":"B5","f":"=MOYENNE(B2:B4)","v":"12","t":"La moyenne simple traite toutes les notes de la même façon : 12."},
-  {"c":"B6","f":"=SOMMEPROD(B2:B4;C2:C4)/SOMME(C2:C4)","v":"13","t":"La moyenne pondérée multiplie chaque note par son coefficient, puis divise par la somme des coefficients."},
-  {"c":"B6","mark":"B3 C3","t":"Le français, coefficient 3, pèse le plus : il tire la moyenne vers le haut."}
+  {
+   "c": "B5",
+   "f": "=MOYENNE(B2:B4)",
+   "v": "12",
+   "t": "La moyenne simple traite toutes les notes de la même façon : 12."
+  },
+  {
+   "c": "B6",
+   "f": "=SOMMEPROD(B2:B4;C2:C4)/SOMME(C2:C4)",
+   "v": "13",
+   "t": "La moyenne pondérée multiplie chaque note par son coefficient, puis divise par la somme des coefficients."
+  },
+  {
+   "c": "B6",
+   "mark": "B3 C3",
+   "t": "Le français, coefficient 3, pèse le plus : il tire la moyenne vers le haut."
+  }
+ ],
+ "titreSeo": "Moyenne pondérée dans Excel avec coefficients",
+ "guide": {
+  "question": "Comment calculer une moyenne avec coefficients dans Excel ?",
+  "intro": "Une moyenne pondérée tient compte des coefficients : chaque note est multipliée par son coefficient, puis le total est divisé par la somme des coefficients. Dans Excel, SOMMEPROD fait les multiplications et l'addition en une seule fois.",
+  "exemple": {
+   "formule": "=SOMMEPROD(B2:B5;C2:C5)/SOMME(C2:C5)",
+   "explication": "Notes en B, coefficients en C. Les deux plages doivent avoir la même taille."
+  },
+  "erreurs": [
+   [
+    "Diviser par le nombre de notes",
+    "Il faut diviser par la somme des coefficients, pas par le nombre de matières."
+   ],
+   [
+    "#VALEUR!",
+    "Les deux plages n'ont pas la même taille dans SOMMEPROD."
+   ]
+  ],
+  "faq": [
+   [
+    "Pourquoi ma moyenne diffère de la moyenne simple ?",
+    "Les matières à fort coefficient pèsent davantage : c'est le principe."
+   ],
+   [
+    "Comment arrondir le résultat ?",
+    "Entourez la formule avec ARRONDI(…;2)."
+   ],
+   [
+    "Et si une note manque ?",
+    "Laissez-la vide et mettez aussi son coefficient à 0, sinon elle compte comme un 0."
+   ]
+  ]
+ },
+ "voirAussi": [
+  "sommeprod",
+  "moyenne-min-max",
+  "arrondi"
  ]
 }

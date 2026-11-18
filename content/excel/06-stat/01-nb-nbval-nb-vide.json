@@ -6,21 +6,122 @@
  "motsCles": "compter nombre cellules vides remplies count",
  "syntaxe": "=NB(plage)",
  "arguments": [
-  ["NB","Compte les cellules contenant un nombre"],
-  ["NBVAL","Compte toutes les cellules remplies"],
-  ["NB.VIDE","Compte les cellules vides"]
+  [
+   "NB",
+   "Compte les cellules contenant un nombre"
+  ],
+  [
+   "NBVAL",
+   "Compte toutes les cellules remplies"
+  ],
+  [
+   "NB.VIDE",
+   "Compte les cellules vides"
+  ]
  ],
  "grille": [
-  ["Élève","Note","","Fonction","Résultat"],
-  ["Léa","14","","NB",""],
-  ["Hugo","Absent","","NBVAL",""],
-  ["Inès","17","","NB.VIDE",""],
-  ["Tom","","","",""],
-  ["Nora","12","","",""]
+  [
+   "Élève",
+   "Note",
+   "",
+   "Fonction",
+   "Résultat"
+  ],
+  [
+   "Léa",
+   "14",
+   "",
+   "NB",
+   ""
+  ],
+  [
+   "Hugo",
+   "Absent",
+   "",
+   "NBVAL",
+   ""
+  ],
+  [
+   "Inès",
+   "17",
+   "",
+   "NB.VIDE",
+   ""
+  ],
+  [
+   "Tom",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Nora",
+   "12",
+   "",
+   "",
+   ""
+  ]
  ],
  "etapes": [
-  {"c":"E2","f":"=NB(B2:B6)","v":"3","mark":"B2 B4 B6","t":"NB compte uniquement les cellules qui contiennent un nombre."},
-  {"c":"E3","f":"=NBVAL(B2:B6)","v":"4","mark":"B2 B3 B4 B6","t":"NBVAL compte toutes les cellules remplies, texte compris."},
-  {"c":"E4","f":"=NB.VIDE(B2:B6)","v":"1","mark":"B5","t":"NB.VIDE compte les cellules vides."}
+  {
+   "c": "E2",
+   "f": "=NB(B2:B6)",
+   "v": "3",
+   "mark": "B2 B4 B6",
+   "t": "NB compte uniquement les cellules qui contiennent un nombre."
+  },
+  {
+   "c": "E3",
+   "f": "=NBVAL(B2:B6)",
+   "v": "4",
+   "mark": "B2 B3 B4 B6",
+   "t": "NBVAL compte toutes les cellules remplies, texte compris."
+  },
+  {
+   "c": "E4",
+   "f": "=NB.VIDE(B2:B6)",
+   "v": "1",
+   "mark": "B5",
+   "t": "NB.VIDE compte les cellules vides."
+  }
+ ],
+ "titreSeo": "NB, NBVAL et NB.VIDE : compter les cellules",
+ "guide": {
+  "question": "Comment compter les cellules dans Excel ?",
+  "intro": "Excel propose trois fonctions pour compter : NB compte les cellules qui contiennent un nombre, NBVAL toutes les cellules remplies (texte compris), et NB.VIDE les cellules vides. Elles servent par exemple à compter des élèves, des réponses ou des oublis.",
+  "exemple": {
+   "formule": "=NBVAL(A2:A31)",
+   "explication": "Compte les noms saisis dans la liste. =NB.VIDE(C2:C31) compte les notes manquantes."
+  },
+  "erreurs": [
+   [
+    "NB renvoie 0 sur une liste de noms",
+    "NB ne compte que les nombres : utilisez NBVAL pour du texte."
+   ],
+   [
+    "NBVAL compte des cellules qui semblent vides",
+    "Elles contiennent un espace ou une formule qui renvoie \"\" : nettoyez-les."
+   ]
+  ],
+  "faq": [
+   [
+    "Comment compter selon un critère ?",
+    "Utilisez NB.SI, par exemple pour compter les « Oui »."
+   ],
+   [
+    "Comment compter selon plusieurs critères ?",
+    "Utilisez NB.SI.ENS."
+   ],
+   [
+    "Comment compter sans formule ?",
+    "Sélectionnez les cellules : le nombre s'affiche dans la barre d'état."
+   ]
+  ]
+ },
+ "voirAussi": [
+  "nb-si",
+  "nb-si-ens",
+  "somme"
  ]
 }

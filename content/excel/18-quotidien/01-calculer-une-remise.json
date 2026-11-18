@@ -6,18 +6,107 @@
  "motsCles": "remise réduction pourcentage solde prix promotion rabais",
  "syntaxe": "=prix*(1-remise)",
  "arguments": [
-  ["1 − remise","La part du prix qui reste à payer"],
-  ["Économie","Prix de départ moins prix remisé"]
+  [
+   "1 − remise",
+   "La part du prix qui reste à payer"
+  ],
+  [
+   "Économie",
+   "Prix de départ moins prix remisé"
+  ]
  ],
  "grille": [
-  ["Article","Prix","Remise","Prix remisé","Économie"],
-  ["Veste","80,00 €","25 %","",""],
-  ["Jean","60,00 €","10 %","",""],
-  ["Pull","45,00 €","30 %","",""]
+  [
+   "Article",
+   "Prix",
+   "Remise",
+   "Prix remisé",
+   "Économie"
+  ],
+  [
+   "Veste",
+   "80,00 €",
+   "25 %",
+   "",
+   ""
+  ],
+  [
+   "Jean",
+   "60,00 €",
+   "10 %",
+   "",
+   ""
+  ],
+  [
+   "Pull",
+   "45,00 €",
+   "30 %",
+   "",
+   ""
+  ]
  ],
  "etapes": [
-  {"c":"D2","f":"=B2*(1-C2)","v":"60,00 €","t":"Prix remisé = prix × (1 − remise). Avec 25 % de remise, on paie 75 % du prix."},
-  {"c":"D2","fill":{"D3":"54,00 €","D4":"31,50 €"},"t":"La même formule s'applique à chaque ligne, quel que soit le taux."},
-  {"c":"E2","f":"=B2-D2","v":"20,00 €","fill":{"E3":"6,00 €","E4":"13,50 €"},"t":"L'économie réalisée : le prix de départ moins le prix remisé."}
+  {
+   "c": "D2",
+   "f": "=B2*(1-C2)",
+   "v": "60,00 €",
+   "t": "Prix remisé = prix × (1 − remise). Avec 25 % de remise, on paie 75 % du prix."
+  },
+  {
+   "c": "D2",
+   "fill": {
+    "D3": "54,00 €",
+    "D4": "31,50 €"
+   },
+   "t": "La même formule s'applique à chaque ligne, quel que soit le taux."
+  },
+  {
+   "c": "E2",
+   "f": "=B2-D2",
+   "v": "20,00 €",
+   "fill": {
+    "E3": "6,00 €",
+    "E4": "13,50 €"
+   },
+   "t": "L'économie réalisée : le prix de départ moins le prix remisé."
+  }
+ ],
+ "titreSeo": "Calculer une remise en pourcentage dans Excel",
+ "guide": {
+  "question": "Comment calculer un prix après remise dans Excel ?",
+  "intro": "Pour appliquer une remise, on multiplie le prix par 1 moins le taux de remise : avec 25 % de remise, on paie 75 % du prix. L'économie réalisée est le prix de départ moins le prix remisé. La même formule fonctionne quel que soit le taux de chaque ligne.",
+  "exemple": {
+   "formule": "=B2*(1-C2)",
+   "explication": "60 € avec 10 % de remise : 54 €. Économie : =B2-D2, soit 6 €."
+  },
+  "erreurs": [
+   [
+    "Soustraire le pourcentage directement",
+    "=B2-C2 retire 0,1 € au lieu de 10 % : multipliez par (1-C2)."
+   ],
+   [
+    "Additionner deux remises",
+    "10 % puis 20 % ne font pas 30 % : appliquez-les l'une après l'autre."
+   ]
+  ],
+  "faq": [
+   [
+    "Comment retrouver le taux de remise ?",
+    "=1-prix remisé/prix de départ, au format pourcentage."
+   ],
+   [
+    "Comment retrouver le prix avant remise ?",
+    "Divisez le prix remisé par (1-taux)."
+   ],
+   [
+    "Où saisir le taux ?",
+    "Dans une cellule au format pourcentage, par exemple 10 %."
+   ]
+  ]
+ },
+ "voirAussi": [
+  "tva-ht-et-ttc",
+  "pourcentages",
+  "marge-et-taux-de-marge"
  ]
 }

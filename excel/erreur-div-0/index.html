@@ -3,15 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Corriger #DIV/0! – Excel en animation | Clic par clic</title>
-<meta name="description" content="Comprendre et supprimer l'erreur de division par zéro. Leçon Excel animée en 4 étapes, niveau débutant, gratuite.">
+<title>#DIV/0! dans Excel : comprendre et corriger | Clic par clic</title>
+<meta name="description" content="#DIV/0! signifie « division par zéro » : la formule divise par une cellule vide ou égale à 0. Deux solutions ">
 <link rel="canonical" href="https://mehdinourreddine62.github.io/clic-par-clic/excel/erreur-div-0/">
 <meta name="robots" content="index,follow">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="Clic par clic">
-<meta property="og:title" content="Corriger #DIV/0! – Excel en animation | Clic par clic">
-<meta property="og:description" content="Comprendre et supprimer l'erreur de division par zéro. Leçon Excel animée en 4 étapes, niveau débutant, gratuite.">
+<meta property="og:title" content="#DIV/0! dans Excel : comprendre et corriger | Clic par clic">
+<meta property="og:description" content="#DIV/0! signifie « division par zéro » : la formule divise par une cellule vide ou égale à 0. Deux solutions ">
 <meta property="og:url" content="https://mehdinourreddine62.github.io/clic-par-clic/excel/erreur-div-0/">
 <meta property="og:image" content="https://mehdinourreddine62.github.io/clic-par-clic/assets/og-excel.png">
 <meta property="og:image:width" content="1200">
@@ -57,7 +57,18 @@
     <div class="pband" id="pband" hidden></div>
     <details class="sx"><summary>Syntaxe <code>=SI(C2=0;&quot;&quot;;B2/C2)</code></summary><dl><dt>Cause</dt><dd>Le diviseur est vide ou vaut 0</dd><dt>Solution 1</dt><dd>Compléter la donnée manquante</dd><dt>Solution 2</dt><dd>Tester le diviseur avec SI</dd></dl></details>
     <details class="sx"><summary>Résumé écrit des étapes</summary><ol class="steps"><li>#DIV/0! signifie « division par zéro ».</li><li>La cause est toujours la même : le diviseur est vide ou vaut 0. Ici, Bruno n'a pas d'objectif.</li><li>Première solution : compléter la donnée manquante.</li><li>Seconde solution : tester le diviseur avec SI, pour laisser la cellule vide tant qu'il manque.</li></ol></details>
-    <section class="also"><h2>Voir aussi</h2><div class="also-l"><a href="../erreur-na/"><b>Corriger #N/A</b><small>Comprendre pourquoi une recherche ne trouve rien.</small></a><a href="../erreur-valeur/"><b>Corriger #VALEUR!</b><small>Repérer le texte qui empêche un calcul.</small></a><a href="../erreur-ref/"><b>Corriger #REF!</b><small>Comprendre ce qui se passe quand on supprime une cellule utilisée.</small></a></div></section>
+    <section class="guide">
+      <h2>Comment corriger l'erreur #DIV/0! dans Excel ?</h2>
+      <p>#DIV/0! signifie « division par zéro » : la formule divise par une cellule vide ou égale à 0. Deux solutions : compléter la donnée manquante, ou tester le diviseur avec SI pour laisser la cellule vide tant qu'il manque une valeur.</p>
+      <h3>Exemple</h3>
+      <p><code class="gx">=SI(C2=0;&quot;&quot;;B2/C2)</code></p>
+      <p>Si l'objectif en C2 est vide ou nul, la cellule reste vide ; sinon, le calcul se fait.</p>
+      <h3>Erreurs fréquentes</h3>
+      <ul><li><b>Masquer toutes les erreurs avec SIERREUR</b>SIERREUR cache aussi les vraies erreurs : préférez tester le diviseur avec SI.</li><li><b>Une MOYENNE en #DIV/0!</b>La plage ne contient aucun nombre.</li></ul>
+      <h3>Questions fréquentes</h3>
+      <h4>Pourquoi la cellule paraît non vide ?</h4><p>Elle contient peut-être un espace ou du texte : effacez-la.</p><h4>Comment afficher 0 au lieu de rien ?</h4><p>Remplacez &quot;&quot; par 0 dans la formule SI.</p><h4>Et avec SIERREUR ?</h4><p>=SIERREUR(B2/C2;&quot;&quot;) fonctionne aussi, mais masque toutes les erreurs.</p>
+    </section>
+    <section class="also"><h2>Voir aussi</h2><div class="also-l"><a href="../erreur-na/"><b>Corriger #N/A</b><small>Comprendre pourquoi une recherche ne trouve rien.</small></a><a href="../sierreur/"><b>SIERREUR</b><small>Remplacer un message d'erreur par la valeur de son choix.</small></a><a href="../si/"><b>SI</b><small>Afficher un résultat différent selon une condition.</small></a></div></section>
     <nav class="lnav" aria-label="Leçons voisines"><a href="../nommer-une-cellule/"><small>← Précédente</small>Nommer une cellule</a><a class="nx" id="nextLesson" href="../erreur-na/"><small>Suivante →</small>Corriger #N/A</a></nav>
   </main>
 </div>

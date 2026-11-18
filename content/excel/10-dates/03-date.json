@@ -6,18 +6,98 @@
  "motsCles": "construire assembler date année mois jour",
  "syntaxe": "=DATE(année; mois; jour)",
  "arguments": [
-  ["année","Sur 4 chiffres"],
-  ["mois","De 1 à 12. Au-delà, Excel passe à l'année suivante"],
-  ["jour","Le jour du mois"]
+  [
+   "année",
+   "Sur 4 chiffres"
+  ],
+  [
+   "mois",
+   "De 1 à 12. Au-delà, Excel passe à l'année suivante"
+  ],
+  [
+   "jour",
+   "Le jour du mois"
+  ]
  ],
  "grille": [
-  ["Année","Mois","Jour","Date"],
-  ["2026","7","14",""],
-  ["2025","12","25",""],
-  ["2026","13","1",""]
+  [
+   "Année",
+   "Mois",
+   "Jour",
+   "Date"
+  ],
+  [
+   "2026",
+   "7",
+   "14",
+   ""
+  ],
+  [
+   "2025",
+   "12",
+   "25",
+   ""
+  ],
+  [
+   "2026",
+   "13",
+   "1",
+   ""
+  ]
  ],
  "etapes": [
-  {"c":"D2","f":"=DATE(A2;B2;C2)","v":"14/07/2026","fill":{"D3":"25/12/2025","D4":"01/01/2027"},"t":"DATE assemble trois nombres en une vraie date."},
-  {"c":"D4","mark":"B4","t":"Un mois 13 ? Excel passe automatiquement à janvier de l'année suivante."}
+  {
+   "c": "D2",
+   "f": "=DATE(A2;B2;C2)",
+   "v": "14/07/2026",
+   "fill": {
+    "D3": "25/12/2025",
+    "D4": "01/01/2027"
+   },
+   "t": "DATE assemble trois nombres en une vraie date."
+  },
+  {
+   "c": "D4",
+   "mark": "B4",
+   "t": "Un mois 13 ? Excel passe automatiquement à janvier de l'année suivante."
+  }
+ ],
+ "titreSeo": "DATE dans Excel : créer une date",
+ "guide": {
+  "question": "Comment utiliser la fonction DATE dans Excel ?",
+  "intro": "DATE assemble une année, un mois et un jour en une vraie date, utilisable dans les calculs. Elle est utile quand ces trois éléments sont dans des colonnes séparées, ou pour calculer une échéance : un mois 13 passe automatiquement à janvier de l'année suivante.",
+  "exemple": {
+   "formule": "=DATE(A2;B2;C2)",
+   "explication": "Année en A, mois en B, jour en C : 2025, 12 et 25 donnent 25/12/2025."
+  },
+  "erreurs": [
+   [
+    "Un nombre comme 46016 au lieu d'une date",
+    "La cellule est au format Standard : choisissez le format Date courte."
+   ],
+   [
+    "Une année sur 2 chiffres",
+    "Écrivez l'année sur 4 chiffres, sinon Excel peut se tromper de siècle."
+   ]
+  ],
+  "faq": [
+   [
+    "Comment ajouter un mois à une date ?",
+    "Utilisez MOIS.DECALER, qui gère aussi les fins de mois."
+   ],
+   [
+    "Comment extraire l'année d'une date ?",
+    "Utilisez ANNEE ; de même MOIS et JOUR."
+   ],
+   [
+    "Comment obtenir la date du jour ?",
+    "Utilisez AUJOURDHUI(), qui se met à jour chaque jour."
+   ]
+  ]
+ },
+ "voirAussi": [
+  "annee-mois-jour",
+  "ecart-entre-deux-dates",
+  "aujourdhui-datedif"
  ]
 }

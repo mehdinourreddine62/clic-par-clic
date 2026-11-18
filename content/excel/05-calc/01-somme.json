@@ -6,22 +6,103 @@
  "motsCles": "addition total plage autosomme additionner",
  "syntaxe": "=SOMME(plage1; [plage2]; …)",
  "arguments": [
-  ["plage1","Les cellules à additionner, par exemple B2:B6"],
-  ["plage2…","D'autres plages, séparées par un point-virgule"]
+  [
+   "plage1",
+   "Les cellules à additionner, par exemple B2:B6"
+  ],
+  [
+   "plage2…",
+   "D'autres plages, séparées par un point-virgule"
+  ]
  ],
  "grille": [
-  ["Mois","Ventes"],
-  ["Janvier","1 200"],
-  ["Février","950"],
-  ["Mars","1 430"],
-  ["Avril","1 100"],
-  ["Mai","1 320"],
-  ["Total",""],
-  ["Sans mars",""]
+  [
+   "Mois",
+   "Ventes"
+  ],
+  [
+   "Janvier",
+   "1 200"
+  ],
+  [
+   "Février",
+   "950"
+  ],
+  [
+   "Mars",
+   "1 430"
+  ],
+  [
+   "Avril",
+   "1 100"
+  ],
+  [
+   "Mai",
+   "1 320"
+  ],
+  [
+   "Total",
+   ""
+  ],
+  [
+   "Sans mars",
+   ""
+  ]
  ],
  "etapes": [
-  {"c":"B7","f":"=SOMME(B2:B6)","v":"6 000","t":"SOMME additionne toute la plage, de B2 jusqu'à B6."},
-  {"c":"B8","f":"=SOMME(B2:B3;B5:B6)","v":"4 570","t":"Plusieurs plages ? Séparez-les par un point-virgule."},
-  {"c":"B7","t":"Raccourci : <kbd>Alt</kbd> + <kbd>=</kbd> écrit la SOMME à votre place."}
+  {
+   "c": "B7",
+   "f": "=SOMME(B2:B6)",
+   "v": "6 000",
+   "t": "SOMME additionne toute la plage, de B2 jusqu'à B6."
+  },
+  {
+   "c": "B8",
+   "f": "=SOMME(B2:B3;B5:B6)",
+   "v": "4 570",
+   "t": "Plusieurs plages ? Séparez-les par un point-virgule."
+  },
+  {
+   "c": "B7",
+   "t": "Raccourci : <kbd>Alt</kbd> + <kbd>=</kbd> écrit la SOMME à votre place."
+  }
+ ],
+ "titreSeo": "SOMME dans Excel : additionner une colonne",
+ "guide": {
+  "question": "Comment additionner dans Excel avec SOMME ?",
+  "intro": "SOMME additionne toutes les valeurs d'une plage de cellules, par exemple une colonne de montants. C'est la fonction la plus utilisée d'Excel : elle se recalcule seule dès qu'une valeur change, et ignore les cellules vides ou contenant du texte.",
+  "exemple": {
+   "formule": "=SOMME(B2:B6)",
+   "explication": "Additionne les cinq valeurs de B2 à B6. Pour deux plages séparées : =SOMME(B2:B6;D2:D6)."
+  },
+  "erreurs": [
+   [
+    "Le total ne bouge pas quand on ajoute une ligne",
+    "La nouvelle ligne est hors de la plage : élargissez-la, ou mettez les données sous forme de tableau."
+   ],
+   [
+    "Un nombre n'est pas compté",
+    "Il est stocké comme texte (souvent aligné à gauche) : convertissez-le en nombre."
+   ]
+  ],
+  "faq": [
+   [
+    "Existe-t-il un raccourci ?",
+    "Oui : sélectionnez la cellule sous la colonne et appuyez sur Alt + =, Excel écrit la SOMME pour vous."
+   ],
+   [
+    "Comment voir une somme sans formule ?",
+    "Sélectionnez les cellules : la somme s'affiche dans la barre d'état, en bas de la fenêtre."
+   ],
+   [
+    "Comment additionner selon un critère ?",
+    "Utilisez SOMME.SI, par exemple pour additionner les ventes d'un seul vendeur."
+   ]
+  ]
+ },
+ "voirAussi": [
+  "somme-si",
+  "moyenne-min-max",
+  "somme-cumulee"
  ]
 }

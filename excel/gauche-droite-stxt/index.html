@@ -3,15 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>GAUCHE, DROITE et STXT – Excel en animation | Clic par clic</title>
-<meta name="description" content="Extraire le début, la fin ou le milieu d'un texte. Leçon Excel animée en 3 étapes, niveau intermédiaire, gratuite.">
+<title>GAUCHE, DROITE, STXT : extraire du texte | Clic par clic</title>
+<meta name="description" content="GAUCHE prend les premiers caractères d'un texte, DROITE les derniers, et STXT ceux du milieu à partir d'une position.">
 <link rel="canonical" href="https://mehdinourreddine62.github.io/clic-par-clic/excel/gauche-droite-stxt/">
 <meta name="robots" content="index,follow">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="Clic par clic">
-<meta property="og:title" content="GAUCHE, DROITE et STXT – Excel en animation | Clic par clic">
-<meta property="og:description" content="Extraire le début, la fin ou le milieu d'un texte. Leçon Excel animée en 3 étapes, niveau intermédiaire, gratuite.">
+<meta property="og:title" content="GAUCHE, DROITE, STXT : extraire du texte | Clic par clic">
+<meta property="og:description" content="GAUCHE prend les premiers caractères d'un texte, DROITE les derniers, et STXT ceux du milieu à partir d'une position.">
 <meta property="og:url" content="https://mehdinourreddine62.github.io/clic-par-clic/excel/gauche-droite-stxt/">
 <meta property="og:image" content="https://mehdinourreddine62.github.io/clic-par-clic/assets/og-excel.png">
 <meta property="og:image:width" content="1200">
@@ -57,7 +57,18 @@
     <a class="dl" href="../../fichiers/excel/gauche-droite-stxt.xlsx" download="gauche-droite-stxt.xlsx"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg><span><b>Télécharger le fichier d'exercice</b><small>Excel · consignes, données de départ et solution</small></span></a><div class="pband" id="pband" hidden></div>
     <details class="sx"><summary>Syntaxe <code>=GAUCHE(texte; nombre)</code></summary><dl><dt>GAUCHE(texte; nombre)</dt><dd>Les premiers caractères</dd><dt>DROITE(texte; nombre)</dt><dd>Les derniers caractères</dd><dt>STXT(texte; début; nombre)</dt><dd>Des caractères au milieu</dd></dl></details>
     <details class="sx"><summary>Résumé écrit des étapes</summary><ol class="steps"><li>GAUCHE prend les 2 premiers caractères.</li><li>STXT part du 4e caractère et en prend 2.</li><li>DROITE prend les 4 derniers. Le résultat est du texte : les zéros sont conservés.</li></ol></details>
-    <section class="also"><h2>Voir aussi</h2><div class="also-l"><a href="../assembler-texte/"><b>Assembler du texte (&amp;)</b><small>Coller plusieurs textes dans une seule cellule.</small></a><a href="../majuscule-minuscule-nompropre/"><b>MAJUSCULE, MINUSCULE et NOMPROPRE</b><small>Uniformiser la casse de noms saisis n'importe comment.</small></a><a href="../nbcar/"><b>NBCAR</b><small>Compter le nombre de caractères d'un texte.</small></a></div></section>
+    <section class="guide">
+      <h2>Comment extraire une partie d'un texte dans Excel ?</h2>
+      <p>GAUCHE prend les premiers caractères d'un texte, DROITE les derniers, et STXT ceux du milieu à partir d'une position. Ces fonctions servent à découper un code, une référence ou un numéro : préfixe pays, département, fin de numéro.</p>
+      <h3>Exemple</h3>
+      <p><code class="gx">=STXT(A2;4;2)</code></p>
+      <p>Dans « FR-69-0458 », STXT part du 4e caractère et en prend 2 : « 69 ».</p>
+      <h3>Erreurs fréquentes</h3>
+      <ul><li><b>Le résultat ne se calcule pas</b>C'est du texte : ajoutez +0 ou utilisez CNUM pour en faire un nombre.</li><li><b>Des longueurs différentes d'une ligne à l'autre</b>Repérez un séparateur avec CHERCHE, ou utilisez TEXTE.AVANT et TEXTE.APRES.</li></ul>
+      <h3>Questions fréquentes</h3>
+      <h4>Comment connaître la longueur d'un texte ?</h4><p>Utilisez NBCAR.</p><h4>Existe-t-il plus simple sans formule ?</h4><p>Le remplissage instantané (Ctrl + E) devine le découpage à partir d'un exemple.</p><h4>Comment couper autour d'un tiret ?</h4><p>TEXTE.AVANT et TEXTE.APRES coupent directement avant ou après un séparateur.</p>
+    </section>
+    <section class="also"><h2>Voir aussi</h2><div class="also-l"><a href="../texte-avant-texte-apres/"><b>TEXTE.AVANT et TEXTE.APRES</b><small>Extraire ce qui se trouve avant ou après un caractère.</small></a><a href="../nbcar/"><b>NBCAR</b><small>Compter le nombre de caractères d'un texte.</small></a><a href="../cherche/"><b>CHERCHE</b><small>Trouver la position d'un caractère dans un texte.</small></a></div></section>
     <nav class="lnav" aria-label="Leçons voisines"><a href="../assembler-texte/"><small>← Précédente</small>Assembler du texte (&amp;)</a><a class="nx" id="nextLesson" href="../majuscule-minuscule-nompropre/"><small>Suivante →</small>MAJUSCULE, MINUSCULE et NOMPROPRE</a></nav>
   </main>
 </div>

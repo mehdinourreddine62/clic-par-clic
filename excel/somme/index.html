@@ -3,15 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>SOMME – Excel en animation | Clic par clic</title>
-<meta name="description" content="Additionner une plage de cellules. Leçon Excel animée en 3 étapes, niveau débutant, gratuite.">
+<title>SOMME dans Excel : additionner une colonne | Clic par clic</title>
+<meta name="description" content="SOMME additionne toutes les valeurs d'une plage de cellules, par exemple une colonne de montants. C'est la fonction la plus utilisée d'Excel ">
 <link rel="canonical" href="https://mehdinourreddine62.github.io/clic-par-clic/excel/somme/">
 <meta name="robots" content="index,follow">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="Clic par clic">
-<meta property="og:title" content="SOMME – Excel en animation | Clic par clic">
-<meta property="og:description" content="Additionner une plage de cellules. Leçon Excel animée en 3 étapes, niveau débutant, gratuite.">
+<meta property="og:title" content="SOMME dans Excel : additionner une colonne | Clic par clic">
+<meta property="og:description" content="SOMME additionne toutes les valeurs d'une plage de cellules, par exemple une colonne de montants. C'est la fonction la plus utilisée d'Excel ">
 <meta property="og:url" content="https://mehdinourreddine62.github.io/clic-par-clic/excel/somme/">
 <meta property="og:image" content="https://mehdinourreddine62.github.io/clic-par-clic/assets/og-excel.png">
 <meta property="og:image:width" content="1200">
@@ -57,7 +57,18 @@
     <a class="dl" href="../../fichiers/excel/somme.xlsx" download="somme.xlsx"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg><span><b>Télécharger le fichier d'exercice</b><small>Excel · consignes, données de départ et solution</small></span></a><div class="pband" id="pband" hidden></div>
     <details class="sx"><summary>Syntaxe <code>=SOMME(plage1; [plage2]; …)</code></summary><dl><dt>plage1</dt><dd>Les cellules à additionner, par exemple B2:B6</dd><dt>plage2…</dt><dd>D'autres plages, séparées par un point-virgule</dd></dl></details>
     <details class="sx"><summary>Résumé écrit des étapes</summary><ol class="steps"><li>SOMME additionne toute la plage, de B2 jusqu'à B6.</li><li>Plusieurs plages ? Séparez-les par un point-virgule.</li><li>Raccourci : <kbd>Alt</kbd> + <kbd>=</kbd> écrit la SOMME à votre place.</li></ol></details>
-    <section class="also"><h2>Voir aussi</h2><div class="also-l"><a href="../produit/"><b>PRODUIT</b><small>Multiplier toutes les valeurs d'une plage.</small></a><a href="../sommeprod/"><b>SOMMEPROD</b><small>Multiplier deux colonnes ligne par ligne, puis tout additionner.</small></a><a href="../moyenne-min-max/"><b>MOYENNE, MIN et MAX</b><small>La moyenne, la plus petite et la plus grande valeur.</small></a></div></section>
+    <section class="guide">
+      <h2>Comment additionner dans Excel avec SOMME ?</h2>
+      <p>SOMME additionne toutes les valeurs d'une plage de cellules, par exemple une colonne de montants. C'est la fonction la plus utilisée d'Excel : elle se recalcule seule dès qu'une valeur change, et ignore les cellules vides ou contenant du texte.</p>
+      <h3>Exemple</h3>
+      <p><code class="gx">=SOMME(B2:B6)</code></p>
+      <p>Additionne les cinq valeurs de B2 à B6. Pour deux plages séparées : =SOMME(B2:B6;D2:D6).</p>
+      <h3>Erreurs fréquentes</h3>
+      <ul><li><b>Le total ne bouge pas quand on ajoute une ligne</b>La nouvelle ligne est hors de la plage : élargissez-la, ou mettez les données sous forme de tableau.</li><li><b>Un nombre n'est pas compté</b>Il est stocké comme texte (souvent aligné à gauche) : convertissez-le en nombre.</li></ul>
+      <h3>Questions fréquentes</h3>
+      <h4>Existe-t-il un raccourci ?</h4><p>Oui : sélectionnez la cellule sous la colonne et appuyez sur Alt + =, Excel écrit la SOMME pour vous.</p><h4>Comment voir une somme sans formule ?</h4><p>Sélectionnez les cellules : la somme s'affiche dans la barre d'état, en bas de la fenêtre.</p><h4>Comment additionner selon un critère ?</h4><p>Utilisez SOMME.SI, par exemple pour additionner les ventes d'un seul vendeur.</p>
+    </section>
+    <section class="also"><h2>Voir aussi</h2><div class="also-l"><a href="../somme-si/"><b>SOMME.SI</b><small>Additionner uniquement les lignes qui respectent un critère.</small></a><a href="../moyenne-min-max/"><b>MOYENNE, MIN et MAX</b><small>La moyenne, la plus petite et la plus grande valeur.</small></a><a href="../somme-cumulee/"><b>Somme cumulée</b><small>Un total qui progresse ligne après ligne.</small></a></div></section>
     <nav class="lnav" aria-label="Leçons voisines"><a href="../travailler-a-plusieurs/"><small>← Précédente</small>Travailler à plusieurs</a><a class="nx" id="nextLesson" href="../produit/"><small>Suivante →</small>PRODUIT</a></nav>
   </main>
 </div>

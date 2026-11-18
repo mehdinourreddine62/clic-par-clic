@@ -3,15 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Calculer une remise – Excel en animation | Clic par clic</title>
-<meta name="description" content="Appliquer un pourcentage de réduction à un prix. Leçon Excel animée en 3 étapes, niveau débutant, gratuite.">
+<title>Calculer une remise en pourcentage dans Excel</title>
+<meta name="description" content="Pour appliquer une remise, on multiplie le prix par 1 moins le taux de remise : avec 25 % de remise, on paie 75 % du prix.">
 <link rel="canonical" href="https://mehdinourreddine62.github.io/clic-par-clic/excel/calculer-une-remise/">
 <meta name="robots" content="index,follow">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="Clic par clic">
-<meta property="og:title" content="Calculer une remise – Excel en animation | Clic par clic">
-<meta property="og:description" content="Appliquer un pourcentage de réduction à un prix. Leçon Excel animée en 3 étapes, niveau débutant, gratuite.">
+<meta property="og:title" content="Calculer une remise en pourcentage dans Excel">
+<meta property="og:description" content="Pour appliquer une remise, on multiplie le prix par 1 moins le taux de remise : avec 25 % de remise, on paie 75 % du prix.">
 <meta property="og:url" content="https://mehdinourreddine62.github.io/clic-par-clic/excel/calculer-une-remise/">
 <meta property="og:image" content="https://mehdinourreddine62.github.io/clic-par-clic/assets/og-excel.png">
 <meta property="og:image:width" content="1200">
@@ -57,7 +57,18 @@
     <a class="dl" href="../../fichiers/excel/calculer-une-remise.xlsx" download="calculer-une-remise.xlsx"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg><span><b>Télécharger le fichier d'exercice</b><small>Excel · consignes, données de départ et solution</small></span></a><div class="pband" id="pband" hidden></div>
     <details class="sx"><summary>Syntaxe <code>=prix*(1-remise)</code></summary><dl><dt>1 − remise</dt><dd>La part du prix qui reste à payer</dd><dt>Économie</dt><dd>Prix de départ moins prix remisé</dd></dl></details>
     <details class="sx"><summary>Résumé écrit des étapes</summary><ol class="steps"><li>Prix remisé = prix × (1 − remise). Avec 25 % de remise, on paie 75 % du prix.</li><li>La même formule s'applique à chaque ligne, quel que soit le taux.</li><li>L'économie réalisée : le prix de départ moins le prix remisé.</li></ol></details>
-    <section class="also"><h2>Voir aussi</h2><div class="also-l"><a href="../tva-ht-et-ttc/"><b>TVA : passer du HT au TTC</b><small>Ajouter la TVA, et la retirer sans se tromper.</small></a><a href="../marge-et-taux-de-marge/"><b>Marge, taux de marge et taux de marque</b><small>Trois calculs proches, qu'il ne faut pas confondre.</small></a><a href="../interets-composes/"><b>Intérêts composés</b><small>Calculer ce que devient un capital placé plusieurs années.</small></a></div></section>
+    <section class="guide">
+      <h2>Comment calculer un prix après remise dans Excel ?</h2>
+      <p>Pour appliquer une remise, on multiplie le prix par 1 moins le taux de remise : avec 25 % de remise, on paie 75 % du prix. L'économie réalisée est le prix de départ moins le prix remisé. La même formule fonctionne quel que soit le taux de chaque ligne.</p>
+      <h3>Exemple</h3>
+      <p><code class="gx">=B2*(1-C2)</code></p>
+      <p>60 € avec 10 % de remise : 54 €. Économie : =B2-D2, soit 6 €.</p>
+      <h3>Erreurs fréquentes</h3>
+      <ul><li><b>Soustraire le pourcentage directement</b>=B2-C2 retire 0,1 € au lieu de 10 % : multipliez par (1-C2).</li><li><b>Additionner deux remises</b>10 % puis 20 % ne font pas 30 % : appliquez-les l'une après l'autre.</li></ul>
+      <h3>Questions fréquentes</h3>
+      <h4>Comment retrouver le taux de remise ?</h4><p>=1-prix remisé/prix de départ, au format pourcentage.</p><h4>Comment retrouver le prix avant remise ?</h4><p>Divisez le prix remisé par (1-taux).</p><h4>Où saisir le taux ?</h4><p>Dans une cellule au format pourcentage, par exemple 10 %.</p>
+    </section>
+    <section class="also"><h2>Voir aussi</h2><div class="also-l"><a href="../tva-ht-et-ttc/"><b>TVA : passer du HT au TTC</b><small>Ajouter la TVA, et la retirer sans se tromper.</small></a><a href="../pourcentages/"><b>Pourcentages</b><small>Calculer une évolution et une part du total.</small></a><a href="../marge-et-taux-de-marge/"><b>Marge, taux de marge et taux de marque</b><small>Trois calculs proches, qu'il ne faut pas confondre.</small></a></div></section>
     <nav class="lnav" aria-label="Leçons voisines"><a href="../sous-total/"><small>← Précédente</small>SOUS.TOTAL</a><a class="nx" id="nextLesson" href="../tva-ht-et-ttc/"><small>Suivante →</small>TVA : passer du HT au TTC</a></nav>
   </main>
 </div>

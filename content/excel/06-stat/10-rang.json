@@ -6,20 +6,113 @@
  "motsCles": "classement position rank podium",
  "syntaxe": "=RANG(nombre; plage; [ordre])",
  "arguments": [
-  ["nombre","La valeur à classer"],
-  ["plage","Toutes les valeurs, figées avec des $"],
-  ["ordre","Rien pour un classement du plus grand au plus petit, 1 pour l'inverse"]
+  [
+   "nombre",
+   "La valeur à classer"
+  ],
+  [
+   "plage",
+   "Toutes les valeurs, figées avec des $"
+  ],
+  [
+   "ordre",
+   "Rien pour un classement du plus grand au plus petit, 1 pour l'inverse"
+  ]
  ],
  "grille": [
-  ["Joueur","Score","Rang"],
-  ["Léa","82",""],
-  ["Hugo","95",""],
-  ["Inès","70",""],
-  ["Tom","88",""],
-  ["Nora","91",""]
+  [
+   "Joueur",
+   "Score",
+   "Rang"
+  ],
+  [
+   "Léa",
+   "82",
+   ""
+  ],
+  [
+   "Hugo",
+   "95",
+   ""
+  ],
+  [
+   "Inès",
+   "70",
+   ""
+  ],
+  [
+   "Tom",
+   "88",
+   ""
+  ],
+  [
+   "Nora",
+   "91",
+   ""
+  ]
  ],
  "etapes": [
-  {"c":"C2","f":"=RANG(B2;$B$2:$B$6)","v":"4","fill":{"C3":"1","C4":"5","C5":"3","C6":"2"},"t":"RANG donne la position de chaque score. Le plus grand obtient le rang 1."},
-  {"c":"C2","f":"=RANG(B2;$B$2:$B$6;1)","v":"2","fill":{"C3":"5","C4":"1","C5":"3","C6":"4"},"t":"Ajoutez 1 en troisième argument pour classer du plus petit au plus grand."}
+  {
+   "c": "C2",
+   "f": "=RANG(B2;$B$2:$B$6)",
+   "v": "4",
+   "fill": {
+    "C3": "1",
+    "C4": "5",
+    "C5": "3",
+    "C6": "2"
+   },
+   "t": "RANG donne la position de chaque score. Le plus grand obtient le rang 1."
+  },
+  {
+   "c": "C2",
+   "f": "=RANG(B2;$B$2:$B$6;1)",
+   "v": "2",
+   "fill": {
+    "C3": "5",
+    "C4": "1",
+    "C5": "3",
+    "C6": "4"
+   },
+   "t": "Ajoutez 1 en troisième argument pour classer du plus petit au plus grand."
+  }
+ ],
+ "titreSeo": "RANG dans Excel : classer des valeurs",
+ "guide": {
+  "question": "Comment faire un classement dans Excel avec RANG ?",
+  "intro": "RANG donne la position d'une valeur dans une liste : 1 pour la plus grande, puis 2, 3… Avec 1 en troisième argument, le classement se fait du plus petit au plus grand, pratique pour un chronomètre. La plage doit être figée avec des $ pour recopier la formule.",
+  "exemple": {
+   "formule": "=RANG(B2;$B$2:$B$6)",
+   "explication": "Classe le score de B2 parmi tous les scores ; le meilleur obtient 1."
+  },
+  "erreurs": [
+   [
+    "Des rangs en double ou faux en recopiant",
+    "La plage n'est pas figée : écrivez $B$2:$B$6."
+   ],
+   [
+    "Deux ex aequo ont le même rang",
+    "C'est normal : Excel leur donne le même rang et saute le suivant."
+   ]
+  ],
+  "faq": [
+   [
+    "Quelle différence avec RANG.EQ ?",
+    "Aucune dans le résultat : RANG.EQ est le nom récent de la même fonction."
+   ],
+   [
+    "Comment trier selon le classement ?",
+    "Utilisez Données › Trier, ou la fonction TRIER."
+   ],
+   [
+    "Comment obtenir le meilleur score ?",
+    "Utilisez MAX, ou GRANDE.VALEUR pour le 2e, le 3e…"
+   ]
+  ]
+ },
+ "voirAussi": [
+  "grande-valeur-petite-valeur",
+  "moyenne-min-max",
+  "references-absolues"
  ]
 }

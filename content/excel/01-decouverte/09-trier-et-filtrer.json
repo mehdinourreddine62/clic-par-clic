@@ -7,20 +7,126 @@
  "syntaxe": "Données › Trier · Données › Filtrer",
  "ruban": true,
  "arguments": [
-  ["Trier","Réorganise les lignes entières"],
-  ["Filtrer","Masque les lignes qui ne correspondent pas, sans les supprimer"]
+  [
+   "Trier",
+   "Réorganise les lignes entières"
+  ],
+  [
+   "Filtrer",
+   "Masque les lignes qui ne correspondent pas, sans les supprimer"
+  ]
  ],
  "grille": [
-  ["Produit","Catégorie","Prix"],
-  ["Stylo","Écriture","1,20 €"],
-  ["Classeur","Rangement","5,90 €"],
-  ["Crayon","Écriture","0,80 €"],
-  ["Chemise","Rangement","2,10 €"]
+  [
+   "Produit",
+   "Catégorie",
+   "Prix"
+  ],
+  [
+   "Stylo",
+   "Écriture",
+   "1,20 €"
+  ],
+  [
+   "Classeur",
+   "Rangement",
+   "5,90 €"
+  ],
+  [
+   "Crayon",
+   "Écriture",
+   "0,80 €"
+  ],
+  [
+   "Chemise",
+   "Rangement",
+   "2,10 €"
+  ]
  ],
  "etapes": [
-  {"c":"C2","tab":"Données","btn":"Trier","set":{"A2":"Crayon","B2":"Écriture","C2":"0,80 €","A3":"Stylo","B3":"Écriture","C3":"1,20 €","A4":"Chemise","B4":"Rangement","C4":"2,10 €","A5":"Classeur","B5":"Rangement","C5":"5,90 €"},"t":"Cliquez dans la colonne Prix, puis sur Trier : les lignes entières se réorganisent, du moins cher au plus cher."},
-  {"c":"A1","tab":"Données","btn":"Filtrer","set":{"A1":"Produit ▾","B1":"Catégorie ▾","C1":"Prix ▾"},"t":"Le bouton Filtrer ajoute une flèche à côté de chaque titre."},
-  {"c":"B1","tab":"Données","hide":[4,5],"t":"Cliquez sur la flèche et cochez « Écriture » : les autres lignes sont masquées, pas supprimées."},
-  {"c":"B1","tab":"Données","hide":[],"t":"Effacez le filtre pour tout retrouver."}
+  {
+   "c": "C2",
+   "tab": "Données",
+   "btn": "Trier",
+   "set": {
+    "A2": "Crayon",
+    "B2": "Écriture",
+    "C2": "0,80 €",
+    "A3": "Stylo",
+    "B3": "Écriture",
+    "C3": "1,20 €",
+    "A4": "Chemise",
+    "B4": "Rangement",
+    "C4": "2,10 €",
+    "A5": "Classeur",
+    "B5": "Rangement",
+    "C5": "5,90 €"
+   },
+   "t": "Cliquez dans la colonne Prix, puis sur Trier : les lignes entières se réorganisent, du moins cher au plus cher."
+  },
+  {
+   "c": "A1",
+   "tab": "Données",
+   "btn": "Filtrer",
+   "set": {
+    "A1": "Produit ▾",
+    "B1": "Catégorie ▾",
+    "C1": "Prix ▾"
+   },
+   "t": "Le bouton Filtrer ajoute une flèche à côté de chaque titre."
+  },
+  {
+   "c": "B1",
+   "tab": "Données",
+   "hide": [
+    4,
+    5
+   ],
+   "t": "Cliquez sur la flèche et cochez « Écriture » : les autres lignes sont masquées, pas supprimées."
+  },
+  {
+   "c": "B1",
+   "tab": "Données",
+   "hide": [],
+   "t": "Effacez le filtre pour tout retrouver."
+  }
+ ],
+ "titreSeo": "Trier et filtrer un tableau dans Excel",
+ "guide": {
+  "question": "Comment trier et filtrer un tableau dans Excel ?",
+  "intro": "Trier réorganise les lignes entières d'un tableau, par exemple du moins cher au plus cher. Filtrer masque temporairement les lignes qui ne correspondent pas à un choix, sans les supprimer. Les deux commandes se trouvent dans l'onglet Données.",
+  "exemple": {
+   "formule": "Données › Trier · Données › Filtrer",
+   "explication": "Cliquez dans une cellule du tableau avant : Excel détecte tout le tableau."
+  },
+  "erreurs": [
+   [
+    "Une seule colonne triée, les lignes mélangées",
+    "Seule la colonne était sélectionnée : cliquez dans une seule cellule, puis triez."
+   ],
+   [
+    "Des lignes semblent disparues",
+    "Un filtre est actif : Données › Effacer pour tout réafficher."
+   ]
+  ],
+  "faq": [
+   [
+    "Comment trier sur plusieurs colonnes ?",
+    "Données › Trier, puis « Ajouter un niveau » : par catégorie, puis par prix."
+   ],
+   [
+    "Comment voir qu'un filtre est actif ?",
+    "La flèche de la colonne filtrée affiche un entonnoir, et les numéros de ligne passent en bleu."
+   ],
+   [
+    "Quel raccourci pour filtrer ?",
+    "Ctrl + Maj + L active ou retire les filtres."
+   ]
+  ]
+ },
+ "voirAussi": [
+  "trier-sur-plusieurs-colonnes",
+  "filtres-numeriques",
+  "mettre-sous-forme-de-tableau"
  ]
 }

@@ -3,15 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Coller uniquement les valeurs dans Excel | Clic par clic</title>
-<meta name="description" content="Coller un résultat sans emporter la formule. Leçon Excel animée en 4 étapes, niveau débutant, gratuite.">
+<title>Coller les valeurs sans formule dans Excel | Clic par clic</title>
+<meta name="description" content="Un copier-coller normal copie la formule, qui s'adapte à son nouvel emplacement et peut renvoyer une erreur.">
 <link rel="canonical" href="https://mehdinourreddine62.github.io/clic-par-clic/excel/coller-les-valeurs/">
 <meta name="robots" content="index,follow">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="Clic par clic">
-<meta property="og:title" content="Coller uniquement les valeurs dans Excel | Clic par clic">
-<meta property="og:description" content="Coller un résultat sans emporter la formule. Leçon Excel animée en 4 étapes, niveau débutant, gratuite.">
+<meta property="og:title" content="Coller les valeurs sans formule dans Excel | Clic par clic">
+<meta property="og:description" content="Un copier-coller normal copie la formule, qui s'adapte à son nouvel emplacement et peut renvoyer une erreur.">
 <meta property="og:url" content="https://mehdinourreddine62.github.io/clic-par-clic/excel/coller-les-valeurs/">
 <meta property="og:image" content="https://mehdinourreddine62.github.io/clic-par-clic/assets/og-excel.png">
 <meta property="og:image:width" content="1200">
@@ -57,7 +57,18 @@
     <div class="pband" id="pband" hidden></div>
     <details class="sx"><summary>Syntaxe <code>Clic droit › Collage spécial › Valeurs</code></summary><dl><dt>Collage normal</dt><dd>Copie la formule, qui s'adapte à son nouvel emplacement</dd><dt>Valeurs</dt><dd>Ne colle que le résultat affiché</dd><dt>Ctrl + Alt + V</dt><dd>Ouvre le collage spécial</dd></dl></details>
     <details class="sx"><summary>Résumé écrit des étapes</summary><ol class="steps"><li>La cellule C2 affiche 120, mais elle contient une formule.</li><li>Copiez les trois résultats.</li><li>Un collage normal copie la formule. Déplacée, elle ne retrouve plus ses cellules : erreur.</li><li>Clic droit, Collage spécial, Valeurs : seuls les résultats sont collés, sans formule.</li></ol></details>
-    <section class="also"><h2>Voir aussi</h2><div class="also-l"><a href="../transposer/"><b>Transposer un tableau</b><small>Transformer des lignes en colonnes, et inversement.</small></a><a href="../reproduire-la-mise-en-forme/"><b>Reproduire la mise en forme</b><small>Copier l'apparence d'un tableau sur un autre, en un geste.</small></a><a href="../recopier-une-serie/"><b>Recopier une série</b><small>Faire écrire à Excel une suite de nombres, de jours ou de dates.</small></a></div></section>
+    <section class="guide">
+      <h2>Comment coller uniquement les valeurs dans Excel ?</h2>
+      <p>Un copier-coller normal copie la formule, qui s'adapte à son nouvel emplacement et peut renvoyer une erreur. Le collage spécial « Valeurs » ne colle que le résultat affiché, sans formule. Indispensable pour figer des résultats ou envoyer un tableau sans calculs.</p>
+      <h3>Exemple</h3>
+      <p><code class="gx">Clic droit › Options de collage › Valeurs</code></p>
+      <p>Ou Ctrl + Alt + V, puis Valeurs et OK.</p>
+      <h3>Erreurs fréquentes</h3>
+      <ul><li><b>#REF! après un collage</b>La formule collée ne retrouve plus ses cellules : collez les valeurs.</li><li><b>Le format a disparu</b>Collez « Valeurs et format des nombres » pour garder les dates et les pourcentages.</li></ul>
+      <h3>Questions fréquentes</h3>
+      <h4>Comment remplacer des formules par leurs résultats ?</h4><p>Copiez les cellules, puis collez les valeurs au même endroit.</p><h4>Les valeurs collées se mettent-elles à jour ?</h4><p>Non : elles sont figées, c'est le but.</p><h4>Comment coller en échangeant lignes et colonnes ?</h4><p>Collage spécial › Transposé.</p>
+    </section>
+    <section class="also"><h2>Voir aussi</h2><div class="also-l"><a href="../transposer/"><b>Transposer un tableau</b><small>Transformer des lignes en colonnes, et inversement.</small></a><a href="../copier-coller-annuler/"><b>Copier, coller, annuler</b><small>Les raccourcis clavier à connaître dès le premier jour.</small></a><a href="../erreur-ref/"><b>Corriger #REF!</b><small>Comprendre ce qui se passe quand on supprime une cellule utilisée.</small></a></div></section>
     <nav class="lnav" aria-label="Leçons voisines"><a href="../somme-cumulee/"><small>← Précédente</small>Somme cumulée</a><a class="nx" id="nextLesson" href="../transposer/"><small>Suivante →</small>Transposer un tableau</a></nav>
   </main>
 </div>

@@ -3,15 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>NB, NBVAL et NB.VIDE – Excel en animation | Clic par clic</title>
-<meta name="description" content="Compter les nombres, les cellules remplies ou les cellules vides. Leçon Excel animée en 3 étapes, niveau débutant, gratuite.">
+<title>NB, NBVAL et NB.VIDE : compter les cellules | Clic par clic</title>
+<meta name="description" content="Excel propose trois fonctions pour compter : NB compte les cellules qui contiennent un nombre, NBVAL toutes les cellules remplies (texte compris), et NB.VIDE…">
 <link rel="canonical" href="https://mehdinourreddine62.github.io/clic-par-clic/excel/nb-nbval-nb-vide/">
 <meta name="robots" content="index,follow">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="Clic par clic">
-<meta property="og:title" content="NB, NBVAL et NB.VIDE – Excel en animation | Clic par clic">
-<meta property="og:description" content="Compter les nombres, les cellules remplies ou les cellules vides. Leçon Excel animée en 3 étapes, niveau débutant, gratuite.">
+<meta property="og:title" content="NB, NBVAL et NB.VIDE : compter les cellules | Clic par clic">
+<meta property="og:description" content="Excel propose trois fonctions pour compter : NB compte les cellules qui contiennent un nombre, NBVAL toutes les cellules remplies (texte compris), et NB.VIDE…">
 <meta property="og:url" content="https://mehdinourreddine62.github.io/clic-par-clic/excel/nb-nbval-nb-vide/">
 <meta property="og:image" content="https://mehdinourreddine62.github.io/clic-par-clic/assets/og-excel.png">
 <meta property="og:image:width" content="1200">
@@ -57,7 +57,18 @@
     <a class="dl" href="../../fichiers/excel/nb-nbval-nb-vide.xlsx" download="nb-nbval-nb-vide.xlsx"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg><span><b>Télécharger le fichier d'exercice</b><small>Excel · consignes, données de départ et solution</small></span></a><div class="pband" id="pband" hidden></div>
     <details class="sx"><summary>Syntaxe <code>=NB(plage)</code></summary><dl><dt>NB</dt><dd>Compte les cellules contenant un nombre</dd><dt>NBVAL</dt><dd>Compte toutes les cellules remplies</dd><dt>NB.VIDE</dt><dd>Compte les cellules vides</dd></dl></details>
     <details class="sx"><summary>Résumé écrit des étapes</summary><ol class="steps"><li>NB compte uniquement les cellules qui contiennent un nombre.</li><li>NBVAL compte toutes les cellules remplies, texte compris.</li><li>NB.VIDE compte les cellules vides.</li></ol></details>
-    <section class="also"><h2>Voir aussi</h2><div class="also-l"><a href="../nb-si/"><b>NB.SI</b><small>Compter les cellules qui respectent une condition.</small></a><a href="../nb-si-ens/"><b>NB.SI.ENS</b><small>Compter selon plusieurs conditions à la fois.</small></a><a href="../somme-si/"><b>SOMME.SI</b><small>Additionner uniquement les lignes qui respectent un critère.</small></a></div></section>
+    <section class="guide">
+      <h2>Comment compter les cellules dans Excel ?</h2>
+      <p>Excel propose trois fonctions pour compter : NB compte les cellules qui contiennent un nombre, NBVAL toutes les cellules remplies (texte compris), et NB.VIDE les cellules vides. Elles servent par exemple à compter des élèves, des réponses ou des oublis.</p>
+      <h3>Exemple</h3>
+      <p><code class="gx">=NBVAL(A2:A31)</code></p>
+      <p>Compte les noms saisis dans la liste. =NB.VIDE(C2:C31) compte les notes manquantes.</p>
+      <h3>Erreurs fréquentes</h3>
+      <ul><li><b>NB renvoie 0 sur une liste de noms</b>NB ne compte que les nombres : utilisez NBVAL pour du texte.</li><li><b>NBVAL compte des cellules qui semblent vides</b>Elles contiennent un espace ou une formule qui renvoie &quot;&quot; : nettoyez-les.</li></ul>
+      <h3>Questions fréquentes</h3>
+      <h4>Comment compter selon un critère ?</h4><p>Utilisez NB.SI, par exemple pour compter les « Oui ».</p><h4>Comment compter selon plusieurs critères ?</h4><p>Utilisez NB.SI.ENS.</p><h4>Comment compter sans formule ?</h4><p>Sélectionnez les cellules : le nombre s'affiche dans la barre d'état.</p>
+    </section>
+    <section class="also"><h2>Voir aussi</h2><div class="also-l"><a href="../nb-si/"><b>NB.SI</b><small>Compter les cellules qui respectent une condition.</small></a><a href="../nb-si-ens/"><b>NB.SI.ENS</b><small>Compter selon plusieurs conditions à la fois.</small></a><a href="../somme/"><b>SOMME</b><small>Additionner une plage de cellules.</small></a></div></section>
     <nav class="lnav" aria-label="Leçons voisines"><a href="../moyenne-ponderee/"><small>← Précédente</small>Moyenne pondérée</a><a class="nx" id="nextLesson" href="../nb-si/"><small>Suivante →</small>NB.SI</a></nav>
   </main>
 </div>
