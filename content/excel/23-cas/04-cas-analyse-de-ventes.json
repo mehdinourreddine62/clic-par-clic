@@ -1,0 +1,341 @@
+{
+ "id": "cas-analyse-de-ventes",
+ "titre": "Cas pratique : analyse de ventes",
+ "niveau": 2,
+ "resume": "Nettoyer des données, puis les analyser avec un tableau croisé et un segment.",
+ "motsCles": "cas pratique analyse des ventes excel nettoyer données tableau croisé dynamique segment supprespace nompropre",
+ "syntaxe": "NOMPROPRE · SUPPRESPACE · tableau croisé dynamique · segment",
+ "ruban": true,
+ "titreSeo": "Analyser des ventes sur Excel : cas pratique animé",
+ "largeurs": {
+  "F": 110
+ },
+ "arguments": [
+  [
+   "Notions utilisées",
+   "SUPPRESPACE, NOMPROPRE, collage des valeurs, mettre sous forme de tableau, tableau croisé dynamique, segment"
+  ],
+  [
+   "Durée",
+   "Environ 15 minutes en refaisant le fichier"
+  ]
+ ],
+ "grille": [
+  [
+   "Vendeur",
+   "Région",
+   "Produit",
+   "Montant"
+  ],
+  [
+   "  alice",
+   "Nord",
+   "Stylos",
+   "120"
+  ],
+  [
+   "BRUNO ",
+   "Sud",
+   "Cahiers",
+   "80"
+  ],
+  [
+   "Alice",
+   "Sud",
+   "Stylos",
+   "60"
+  ],
+  [
+   "chloé",
+   "Nord",
+   "Cahiers",
+   "150"
+  ],
+  [
+   "bruno",
+   "Nord",
+   "Stylos",
+   "90"
+  ],
+  [
+   "Chloé  ",
+   "Sud",
+   "Stylos",
+   "110"
+  ],
+  [
+   "alice ",
+   "Nord",
+   "Cahiers",
+   "70"
+  ],
+  [
+   "Bruno",
+   "Sud",
+   "Stylos",
+   "40"
+  ]
+ ],
+ "etapes": [
+  {
+   "c": "A2",
+   "mark": "A2 A3 A5 A6 A7 A8",
+   "t": "Des ventes exportées d'un logiciel : les noms sont mal saisis, avec des espaces et des majuscules au hasard."
+  },
+  {
+   "c": "E2",
+   "f": "=NOMPROPRE(SUPPRESPACE(A2))",
+   "v": "Alice",
+   "fill": {
+    "E3": "Bruno",
+    "E4": "Alice",
+    "E5": "Chloé",
+    "E6": "Bruno",
+    "E7": "Chloé",
+    "E8": "Alice",
+    "E9": "Bruno"
+   },
+   "t": "SUPPRESPACE retire les espaces, NOMPROPRE remet une seule majuscule : chaque nom est propre."
+  },
+  {
+   "c": "A2",
+   "sel": "E2:E9",
+   "drag": 1,
+   "copy": "E2:E9",
+   "set": {
+    "A2": "Alice",
+    "A3": "Bruno",
+    "A4": "Alice",
+    "A5": "Chloé",
+    "A6": "Bruno",
+    "A7": "Chloé",
+    "A8": "Alice",
+    "A9": "Bruno",
+    "E2": "",
+    "E3": "",
+    "E4": "",
+    "E5": "",
+    "E6": "",
+    "E7": "",
+    "E8": "",
+    "E9": ""
+   },
+   "menu": "Copier › clic droit sur A2 › Collage spécial › <b>Valeurs</b>",
+   "t": "Copiez les noms nettoyés, collez seulement les valeurs sur la colonne A, puis effacez la colonne d'aide."
+  },
+  {
+   "c": "A1",
+   "tab": "Accueil",
+   "btn": "Mettre sous forme de tableau",
+   "keys": "Ctrl + L",
+   "fmt": {
+    "A1:D1": "h",
+    "A3:D3": "z",
+    "A5:D5": "z",
+    "A7:D7": "z",
+    "A9:D9": "z"
+   },
+   "t": "Ctrl + L met les données sous forme de tableau : il suivra les futures ventes.",
+   "copy": ""
+  },
+  {
+   "c": "A1",
+   "sel": "A1:D9",
+   "drag": 1,
+   "tab": "Insertion",
+   "btn": "Tableau croisé dynamique",
+   "t": "Insertion › Tableau croisé dynamique, à placer sur la même feuille, en F1."
+  },
+  {
+   "c": "F1",
+   "tab": "Analyse du tableau croisé",
+   "pivot": {
+    "fields": [
+     "Vendeur",
+     "Région",
+     "Produit",
+     "Montant"
+    ],
+    "filt": [],
+    "cols": [],
+    "rows": [
+     "Vendeur"
+    ],
+    "vals": [
+     "Somme de Montant"
+    ],
+    "pick": "Montant"
+   },
+   "set": {
+    "F1": "Étiquettes de lignes",
+    "G1": "Somme de Montant",
+    "F2": "Alice",
+    "G2": "250",
+    "F3": "Bruno",
+    "G3": "210",
+    "F4": "Chloé",
+    "G4": "260",
+    "F5": "Total général",
+    "G5": "720"
+   },
+   "fmt": {
+    "F1:G1": "h",
+    "F5:G5": "b"
+   },
+   "t": "Vendeur en Lignes, Montant en Valeurs : le total de chaque vendeur, et un seul Alice."
+  },
+  {
+   "c": "G1",
+   "tab": "Analyse du tableau croisé",
+   "pivot": {
+    "fields": [
+     "Vendeur",
+     "Région",
+     "Produit",
+     "Montant"
+    ],
+    "filt": [],
+    "cols": [
+     "Région"
+    ],
+    "rows": [
+     "Vendeur"
+    ],
+    "vals": [
+     "Somme de Montant"
+    ],
+    "pick": "Région"
+   },
+   "set": {
+    "F1": "Somme de Montant",
+    "G1": "Nord",
+    "H1": "Sud",
+    "I1": "Total général",
+    "F2": "Alice",
+    "G2": "190",
+    "H2": "60",
+    "I2": "250",
+    "F3": "Bruno",
+    "G3": "90",
+    "H3": "120",
+    "I3": "210",
+    "F4": "Chloé",
+    "G4": "150",
+    "H4": "110",
+    "I4": "260",
+    "F5": "Total général",
+    "G5": "430",
+    "H5": "290",
+    "I5": "720"
+   },
+   "fmt": {
+    "F1:I1": "h",
+    "F5:I5": "b"
+   },
+   "t": "Ajoutez Région en Colonnes : les ventes se croisent par vendeur et par région."
+  },
+  {
+   "c": "F1",
+   "tab": "Analyse du tableau croisé",
+   "btn": "Insérer un segment",
+   "slicer": {
+    "at": "F7:G10",
+    "title": "Produit",
+    "items": [
+     "Cahiers",
+     "Stylos"
+    ],
+    "on": [
+     0,
+     1
+    ]
+   },
+   "t": "Insérer un segment sur Produit : un panneau de boutons pour filtrer d'un clic."
+  },
+  {
+   "c": "I5",
+   "tab": "Analyse du tableau croisé",
+   "slicer": {
+    "at": "F7:G10",
+    "title": "Produit",
+    "items": [
+     "Cahiers",
+     "Stylos"
+    ],
+    "on": [
+     1
+    ]
+   },
+   "set": {
+    "G2": "120",
+    "H2": "60",
+    "I2": "180",
+    "G3": "90",
+    "H3": "40",
+    "I3": "130",
+    "G4": "",
+    "H4": "110",
+    "I4": "110",
+    "G5": "210",
+    "H5": "210",
+    "I5": "420"
+   },
+   "mark": "I5",
+   "t": "Cliquez sur Stylos : 420 € de stylos, dont 180 € vendus par Alice."
+  },
+  {
+   "c": "G4",
+   "tab": "Analyse du tableau croisé",
+   "slicer": {
+    "at": "F7:G10",
+    "title": "Produit",
+    "items": [
+     "Cahiers",
+     "Stylos"
+    ],
+    "on": [
+     1
+    ]
+   },
+   "mark": "G4",
+   "t": "Une case vide est aussi une information : Chloé n'a vendu aucun stylo dans le Nord."
+  }
+ ],
+ "guide": {
+  "question": "Comment analyser des ventes sur Excel ?",
+  "intro": "Analyser des ventes se fait en deux temps. D'abord nettoyer les données, souvent mal saisies ou exportées d'un logiciel : espaces en trop, majuscules au hasard. Ensuite les résumer avec un tableau croisé dynamique, sans écrire de formule, puis filtrer d'un clic avec un segment.",
+  "exemple": {
+   "formule": "=NOMPROPRE(SUPPRESPACE(A2))",
+   "explication": "« BRUNO  » devient « Bruno » : sans ce nettoyage, le tableau croisé compterait trois vendeurs différents pour la même personne."
+  },
+  "erreurs": [
+   [
+    "Le même vendeur sur plusieurs lignes du tableau croisé",
+    "Les noms diffèrent d'un espace ou d'une majuscule : nettoyez-les avant d'analyser."
+   ],
+   [
+    "Le tableau croisé ne montre pas les nouvelles ventes",
+    "Actualisez-le, et mettez les données sous forme de tableau pour qu'il suive les ajouts."
+   ]
+  ],
+  "faq": [
+   [
+    "Pourquoi coller les valeurs après le nettoyage ?",
+    "Pour supprimer la colonne d'aide sans perdre les noms nettoyés."
+   ],
+   [
+    "Comment voir des pourcentages plutôt que des montants ?",
+    "Clic droit sur une valeur › Afficher les valeurs › % du total général."
+   ],
+   [
+    "Comment ajouter un graphique ?",
+    "Analyse du tableau croisé › Graphique croisé dynamique : il suit les filtres et les segments."
+   ]
+  ]
+ },
+ "voirAussi": [
+  "creer-un-tableau-croise-dynamique",
+  "tcd-segments",
+  "supprespace"
+ ]
+}

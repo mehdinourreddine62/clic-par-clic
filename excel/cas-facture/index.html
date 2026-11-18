@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Faire une facture sur Excel | Clic par clic</title>
+<meta name="description" content="Une facture Excel bien construite ne demande de saisir que les codes produits et les quantités ">
+<link rel="canonical" href="https://mehdinourreddine62.github.io/clic-par-clic/excel/cas-facture/">
+<meta name="robots" content="index,follow">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="Clic par clic">
+<meta property="og:title" content="Faire une facture sur Excel | Clic par clic">
+<meta property="og:description" content="Une facture Excel bien construite ne demande de saisir que les codes produits et les quantités ">
+<meta property="og:url" content="https://mehdinourreddine62.github.io/clic-par-clic/excel/cas-facture/">
+<meta property="og:image" content="https://mehdinourreddine62.github.io/clic-par-clic/assets/og-excel.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Clic par clic","item":"https://mehdinourreddine62.github.io/clic-par-clic/"},{"@type":"ListItem","position":2,"name":"Excel","item":"https://mehdinourreddine62.github.io/clic-par-clic/excel/"},{"@type":"ListItem","position":3,"name":"Cas pratiques","item":"https://mehdinourreddine62.github.io/clic-par-clic/excel/#theme-cas"},{"@type":"ListItem","position":4,"name":"Cas pratique : facture","item":"https://mehdinourreddine62.github.io/clic-par-clic/excel/cas-facture/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","name":"Cas pratique : facture dans Excel","description":"Construire une facture complète : RECHERCHEV, remise, TVA et impression.","inLanguage":"fr","isAccessibleForFree":true,"educationalLevel":"Intermédiaire","learningResourceType":"Leçon animée","url":"https://mehdinourreddine62.github.io/clic-par-clic/excel/cas-facture/","isPartOf":{"@type":"Course","name":"Clic par clic : apprendre Excel en animation","url":"https://mehdinourreddine62.github.io/clic-par-clic/excel/"}}</script>
+<script>document.documentElement.classList.add("js");try{var t=localStorage.getItem("cpc-theme");if(t==="dark"||t==="light")document.documentElement.dataset.theme=t}catch(e){}</script>
+
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-48.png" sizes="48x48" type="image/png">
+<link rel="icon" href="../../assets/favicon-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="stylesheet" href="../../assets/app.css?v=245069ea">
+<script data-goatcounter="https://clicparclic.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</head>
+<body>
+<div class="wrap">
+  <div class="topbar"><a class="brand" href="../../"><span class="logo" aria-hidden="true"><i></i><i class="on"></i><i></i><i class="on"></i><i class="on"></i><i></i></span>Clic par clic</a><div class="tbtns"><button class="theme" id="share" type="button" data-share aria-label="Partager cette page"><svg viewBox="0 0 16 16"><path d="M12 10.5a2.4 2.4 0 0 0-1.9.9L6.3 9.3a2.4 2.4 0 0 0 0-1.6l3.8-2.1A2.4 2.4 0 1 0 9.6 4.2L5.8 6.3a2.4 2.4 0 1 0 0 3.4l3.8 2.1a2.4 2.4 0 1 0 2.4-1.3z"/></svg><span class="tl">Partager</span></button><button class="theme" id="theme" type="button"></button></div></div>
+  <main id="lesson">
+    <nav class="crumbs" aria-label="Fil d'Ariane"><a href="../../">Accueil</a><span aria-hidden="true">›</span><a href="../">Excel</a><span aria-hidden="true">›</span><a href="../#theme-cas">Cas pratiques</a><span aria-hidden="true">›</span><span>Cas pratique : facture</span></nav>
+    <div class="lhead">
+      <div class="meta"><span class="tag" style="--k:var(--r3)"><svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2M3 13h18"/></svg>Cas pratiques</span><span><span class="lvl" title="Intermédiaire" aria-label="Intermédiaire"><i class="on"></i><i class="on"></i><i class=""></i></span> Intermédiaire</span></div>
+      <h1>Cas pratique : facture</h1>
+      <p>Construire une facture complète : RECHERCHEV, remise, TVA et impression.</p>
+    </div>
+    <div class="win">
+      <div id="ribwrap"><div class="ribbon" id="ribbon"></div><div class="ribpanel" id="ribpanel" hidden></div></div>
+      <div class="fbar"><div class="namebox" id="namebox"></div><div class="fx">fx</div><div class="formula" id="formula"></div></div>
+      <div class="stage"><div class="sheetwrap" id="sheetwrap"><div class="sheetinner"><table class="sheet" id="sheet"></table><div class="ov" id="ov"></div></div></div><aside class="pivot" id="pivot" hidden></aside><div class="keys" id="keys" hidden></div><div class="msg" id="msg" hidden></div><div class="preview" id="preview" hidden></div></div>
+      <div class="tabs" id="tabs"></div>
+      <p class="cap" id="text" aria-live="polite">Une facture : seuls les codes et les quantités sont saisis. Le tarif, à droite, fournit le reste.</p>
+      <div class="bar">
+        <button class="ic" id="prev" aria-label="Étape précédente"><svg viewBox="0 0 16 16"><path d="M10.5 2 4 8l6.5 6 1.2-1.3L6.6 8l5.1-4.7z"/></svg></button>
+        <button class="ic play" id="play" aria-label="Lecture"></button>
+        <button class="ic" id="next" aria-label="Étape suivante"><svg viewBox="0 0 16 16"><path d="M5.5 2 12 8l-6.5 6-1.2-1.3L9.4 8 4.3 3.3z"/></svg></button>
+        <div class="progress" id="progress"></div>
+        <span class="count" id="count"></span>
+      </div>
+    </div>
+    <div class="sharebox" id="sharebox"><span class="avis" id="avis"><span class="aq">Cette leçon vous a aidé ?</span><button type="button" data-avis="oui">Oui</button><button type="button" data-avis="non">Non</button></span><button class="share-btn" type="button" data-share>Partager la leçon</button></div>
+    <p class="hint">Clavier : <kbd>←</kbd> <kbd>→</kbd> pour changer d'étape, <kbd>Espace</kbd> pour lancer ou mettre en pause.</p>
+    <a class="dl" href="../../fichiers/excel/cas-facture.xlsx" download="cas-facture.xlsx"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg><span><b>Télécharger le fichier d'exercice</b><small>Excel · consignes, données de départ et solution</small></span></a><div class="pband" id="pband" hidden></div>
+    <details class="sx"><summary>Syntaxe <code>RECHERCHEV · SOMME · SI · TVA · zone d'impression</code></summary><dl><dt>Notions utilisées</dt><dd>RECHERCHEV, références absolues, SOMME, SI, pourcentages, TVA, zone d'impression, mise en page</dd><dt>Durée</dt><dd>Environ 15 minutes en refaisant le fichier</dd></dl></details>
+    <details class="sx"><summary>Résumé écrit des étapes</summary><ol class="steps"><li>Une facture : seuls les codes et les quantités sont saisis. Le tarif, à droite, fournit le reste.</li><li>RECHERCHEV va chercher la désignation de chaque code dans le tarif, figé avec des $.</li><li>Même formule pour le prix : seul le numéro de colonne change, 3 au lieu de 2.</li><li>Le total de chaque ligne : le prix unitaire multiplié par la quantité.</li><li>SOMME additionne les lignes : 769 € hors taxe.</li><li>Une remise de 10 % à partir de 500 € : SI ne l'applique que si le seuil est atteint.</li><li>Le net hors taxe : le total moins la remise.</li><li>La TVA à 20 % se calcule sur le net hors taxe.</li><li>Le total TTC : le net hors taxe plus la TVA. C'est la somme à payer.</li><li>Sélectionnez la facture, puis Zone d'impression › Définir : le tarif ne sera pas imprimé.</li><li>L'aperçu ne montre que la facture, sur une seule page.</li><li>Tout est relié : changez une quantité, et remise, TVA et total TTC se recalculent.</li></ol></details>
+    <section class="guide">
+      <h2>Comment faire une facture sur Excel ?</h2>
+      <p>Une facture Excel bien construite ne demande de saisir que les codes produits et les quantités : RECHERCHEV va chercher la désignation et le prix dans un tarif, puis des formules simples calculent les totaux, la remise, la TVA et le total TTC. Tout se recalcule dès qu'une quantité change.</p>
+      <h3>Exemple</h3>
+      <p><code class="gx">=RECHERCHEV(A2;$H$2:$J$6;3;FAUX)</code></p>
+      <p>Cherche le code de A2 dans le tarif et renvoie la 3e colonne, le prix. Les $ figent le tarif pour la recopie.</p>
+      <h3>Erreurs fréquentes</h3>
+      <ul><li><b>#N/A dans la désignation</b>Le code n'existe pas dans le tarif, ou il contient un espace en trop.</li><li><b>Une TVA calculée avant la remise</b>Appliquez la remise d'abord : la TVA porte sur le net hors taxe.</li><li><b>Le tarif imprimé avec la facture</b>Définissez une zone d'impression limitée à la facture.</li></ul>
+      <h3>Questions fréquentes</h3>
+      <h4>Comment mettre le tarif sur une autre feuille ?</h4><p>Écrivez la plage avec le nom de la feuille, par exemple Tarif!$A$2:$C$6, ou nommez-la.</p><h4>Comment éviter #N/A sur les lignes vides ?</h4><p>Entourez avec SI.NON.DISP(…;&quot;&quot;) ou testez si le code est vide.</p><h4>Faut-il arrondir la TVA ?</h4><p>Pour une facture, oui : =ARRONDI(E9*C10;2).</p>
+    </section>
+    <section class="also"><h2>Voir aussi</h2><div class="also-l"><a href="../recherchev/"><b>RECHERCHEV</b><small>Retrouver une information dans un tableau à partir d'un code.</small></a><a href="../tva-ht-et-ttc/"><b>TVA : passer du HT au TTC</b><small>Ajouter la TVA, et la retirer sans se tromper.</small></a><a href="../calculer-une-remise/"><b>Calculer une remise</b><small>Appliquer un pourcentage de réduction à un prix.</small></a></div></section>
+    <nav class="lnav" aria-label="Leçons voisines"><a href="../cas-suivi-de-notes/"><small>← Précédente</small>Cas pratique : suivi de notes</a><a class="nx" id="nextLesson" href="../cas-analyse-de-ventes/"><small>Suivante →</small>Cas pratique : analyse de ventes</a></nav>
+  </main>
+</div>
+<script type="application/json" id="lesson-data">{"id":"cas-facture","g":[["Code","Désignation","Prix unitaire","Quantité","Total HT","","","Code","Produit","Prix"],["P02","","","2","","","","P01","Lampe de bureau","89,00 €"],["P04","","","10","","","","P02","Suspension","189,00 €"],["P01","","","3","","","","P03","Lampadaire","149,00 €"],["P05","","","1","","","","P04","Ampoule LED","6,50 €"],["","","","","","","","P05","Applique murale","59,00 €"],["","","","Total HT","","","","","",""],["","","10 %","Remise","","","","","",""],["","","","Net HT","","","","","",""],["","","20 %","TVA","","","","","",""],["","","","Total TTC","","","","","",""]],"s":[{"c":"A2","mark":"H2 H3 H4 H5 H6","t":"Une facture : seuls les codes et les quantités sont saisis. Le tarif, à droite, fournit le reste."},{"c":"B2","f":"=RECHERCHEV(A2;$H$2:$J$6;2;FAUX)","v":"Suspension","fill":{"B3":"Ampoule LED","B4":"Lampe de bureau","B5":"Applique murale"},"t":"RECHERCHEV va chercher la désignation de chaque code dans le tarif, figé avec des $."},{"c":"C2","f":"=RECHERCHEV(A2;$H$2:$J$6;3;FAUX)","v":"189,00 €","fill":{"C3":"6,50 €","C4":"89,00 €","C5":"59,00 €"},"t":"Même formule pour le prix : seul le numéro de colonne change, 3 au lieu de 2."},{"c":"E2","f":"=C2*D2","v":"378,00 €","fill":{"E3":"65,00 €","E4":"267,00 €","E5":"59,00 €"},"t":"Le total de chaque ligne : le prix unitaire multiplié par la quantité."},{"c":"E7","f":"=SOMME(E2:E5)","v":"769,00 €","t":"SOMME additionne les lignes : 769 € hors taxe."},{"c":"E8","f":"=SI(E7>=500;E7*C8;0)","v":"76,90 €","t":"Une remise de 10 % à partir de 500 € : SI ne l'applique que si le seuil est atteint."},{"c":"E9","f":"=E7-E8","v":"692,10 €","t":"Le net hors taxe : le total moins la remise."},{"c":"E10","f":"=E9*C10","v":"138,42 €","t":"La TVA à 20 % se calcule sur le net hors taxe."},{"c":"E11","f":"=E9+E10","v":"830,52 €","fmt":{"D11:E11":"b"},"t":"Le total TTC : le net hors taxe plus la TVA. C'est la somme à payer."},{"c":"A1","sel":"A1:E11","drag":1,"tab":"Mise en page","btn":"Zone d'impression","copy":"A1:E11","t":"Sélectionnez la facture, puis Zone d'impression › Définir : le tarif ne sera pas imprimé."},{"c":"A1","tab":"Mise en page","keys":"Ctrl + P","preview":{"pages":[[5,11,0]]},"t":"L'aperçu ne montre que la facture, sur une seule page."},{"c":"D3","f":"20","tab":"Accueil","set":{"E3":"130,00 €","E7":"834,00 €","E8":"83,40 €","E9":"750,60 €","E10":"150,12 €","E11":"900,72 €"},"t":"Tout est relié : changez une quantité, et remise, TVA et total TTC se recalculent."}],"parcours":[{"id":"formules-indispensables","t":"Les 15 formules indispensables","l":[["somme","SOMME"],["moyenne-min-max","MOYENNE, MIN et MAX"],["arrondi","ARRONDI"],["pourcentages","Pourcentages"],["references-absolues","Références absolues ($)"],["si","SI"],["et-ou","ET et OU"],["nb-si","NB.SI"],["somme-si","SOMME.SI"],["nb-si-ens","NB.SI.ENS"],["somme-si-ens","SOMME.SI.ENS"],["recherchev","RECHERCHEV"],["recherchex","RECHERCHEX"],["sierreur","SIERREUR"],["aujourdhui-datedif","AUJOURDHUI et DATEDIF"],["cas-facture","Cas pratique : facture"]]}],"rib":1,"w":{"B":125,"I":130}}</script>
+<script src="../../assets/app.js?v=bad542e8"></script>
+<script src="../../assets/player.js?v=a2e94913"></script>
+<footer class="sfoot"><a href="https://mehdinourreddine62.github.io/clic-par-clic/mentions-legales/">Mentions légales et confidentialité</a><span>Site indépendant, non affilié à Microsoft.</span></footer>
+</body>
+</html>

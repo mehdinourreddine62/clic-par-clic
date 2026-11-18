@@ -1,0 +1,310 @@
+{
+ "id": "cas-facture",
+ "titre": "Cas pratique : facture",
+ "niveau": 2,
+ "resume": "Construire une facture complète : RECHERCHEV, remise, TVA et impression.",
+ "motsCles": "cas pratique facture excel recherchev remise tva total ht ttc devis impression modèle",
+ "syntaxe": "RECHERCHEV · SOMME · SI · TVA · zone d'impression",
+ "ruban": true,
+ "titreSeo": "Faire une facture sur Excel : cas pratique animé",
+ "largeurs": {
+  "B": 125,
+  "I": 130
+ },
+ "arguments": [
+  [
+   "Notions utilisées",
+   "RECHERCHEV, références absolues, SOMME, SI, pourcentages, TVA, zone d'impression, mise en page"
+  ],
+  [
+   "Durée",
+   "Environ 15 minutes en refaisant le fichier"
+  ]
+ ],
+ "grille": [
+  [
+   "Code",
+   "Désignation",
+   "Prix unitaire",
+   "Quantité",
+   "Total HT",
+   "",
+   "",
+   "Code",
+   "Produit",
+   "Prix"
+  ],
+  [
+   "P02",
+   "",
+   "",
+   "2",
+   "",
+   "",
+   "",
+   "P01",
+   "Lampe de bureau",
+   "89,00 €"
+  ],
+  [
+   "P04",
+   "",
+   "",
+   "10",
+   "",
+   "",
+   "",
+   "P02",
+   "Suspension",
+   "189,00 €"
+  ],
+  [
+   "P01",
+   "",
+   "",
+   "3",
+   "",
+   "",
+   "",
+   "P03",
+   "Lampadaire",
+   "149,00 €"
+  ],
+  [
+   "P05",
+   "",
+   "",
+   "1",
+   "",
+   "",
+   "",
+   "P04",
+   "Ampoule LED",
+   "6,50 €"
+  ],
+  [
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "P05",
+   "Applique murale",
+   "59,00 €"
+  ],
+  [
+   "",
+   "",
+   "",
+   "Total HT",
+   "",
+   "",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "",
+   "",
+   "10 %",
+   "Remise",
+   "",
+   "",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "",
+   "",
+   "",
+   "Net HT",
+   "",
+   "",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "",
+   "",
+   "20 %",
+   "TVA",
+   "",
+   "",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "",
+   "",
+   "",
+   "Total TTC",
+   "",
+   "",
+   "",
+   "",
+   "",
+   ""
+  ]
+ ],
+ "etapes": [
+  {
+   "c": "A2",
+   "mark": "H2 H3 H4 H5 H6",
+   "t": "Une facture : seuls les codes et les quantités sont saisis. Le tarif, à droite, fournit le reste."
+  },
+  {
+   "c": "B2",
+   "f": "=RECHERCHEV(A2;$H$2:$J$6;2;FAUX)",
+   "v": "Suspension",
+   "fill": {
+    "B3": "Ampoule LED",
+    "B4": "Lampe de bureau",
+    "B5": "Applique murale"
+   },
+   "t": "RECHERCHEV va chercher la désignation de chaque code dans le tarif, figé avec des $."
+  },
+  {
+   "c": "C2",
+   "f": "=RECHERCHEV(A2;$H$2:$J$6;3;FAUX)",
+   "v": "189,00 €",
+   "fill": {
+    "C3": "6,50 €",
+    "C4": "89,00 €",
+    "C5": "59,00 €"
+   },
+   "t": "Même formule pour le prix : seul le numéro de colonne change, 3 au lieu de 2."
+  },
+  {
+   "c": "E2",
+   "f": "=C2*D2",
+   "v": "378,00 €",
+   "fill": {
+    "E3": "65,00 €",
+    "E4": "267,00 €",
+    "E5": "59,00 €"
+   },
+   "t": "Le total de chaque ligne : le prix unitaire multiplié par la quantité."
+  },
+  {
+   "c": "E7",
+   "f": "=SOMME(E2:E5)",
+   "v": "769,00 €",
+   "t": "SOMME additionne les lignes : 769 € hors taxe."
+  },
+  {
+   "c": "E8",
+   "f": "=SI(E7>=500;E7*C8;0)",
+   "v": "76,90 €",
+   "t": "Une remise de 10 % à partir de 500 € : SI ne l'applique que si le seuil est atteint."
+  },
+  {
+   "c": "E9",
+   "f": "=E7-E8",
+   "v": "692,10 €",
+   "t": "Le net hors taxe : le total moins la remise."
+  },
+  {
+   "c": "E10",
+   "f": "=E9*C10",
+   "v": "138,42 €",
+   "t": "La TVA à 20 % se calcule sur le net hors taxe."
+  },
+  {
+   "c": "E11",
+   "f": "=E9+E10",
+   "v": "830,52 €",
+   "fmt": {
+    "D11:E11": "b"
+   },
+   "t": "Le total TTC : le net hors taxe plus la TVA. C'est la somme à payer."
+  },
+  {
+   "c": "A1",
+   "sel": "A1:E11",
+   "drag": 1,
+   "tab": "Mise en page",
+   "btn": "Zone d'impression",
+   "copy": "A1:E11",
+   "t": "Sélectionnez la facture, puis Zone d'impression › Définir : le tarif ne sera pas imprimé."
+  },
+  {
+   "c": "A1",
+   "tab": "Mise en page",
+   "keys": "Ctrl + P",
+   "preview": {
+    "pages": [
+     [
+      5,
+      11,
+      0
+     ]
+    ]
+   },
+   "t": "L'aperçu ne montre que la facture, sur une seule page."
+  },
+  {
+   "c": "D3",
+   "f": "20",
+   "tab": "Accueil",
+   "set": {
+    "E3": "130,00 €",
+    "E7": "834,00 €",
+    "E8": "83,40 €",
+    "E9": "750,60 €",
+    "E10": "150,12 €",
+    "E11": "900,72 €"
+   },
+   "t": "Tout est relié : changez une quantité, et remise, TVA et total TTC se recalculent."
+  }
+ ],
+ "guide": {
+  "question": "Comment faire une facture sur Excel ?",
+  "intro": "Une facture Excel bien construite ne demande de saisir que les codes produits et les quantités : RECHERCHEV va chercher la désignation et le prix dans un tarif, puis des formules simples calculent les totaux, la remise, la TVA et le total TTC. Tout se recalcule dès qu'une quantité change.",
+  "exemple": {
+   "formule": "=RECHERCHEV(A2;$H$2:$J$6;3;FAUX)",
+   "explication": "Cherche le code de A2 dans le tarif et renvoie la 3e colonne, le prix. Les $ figent le tarif pour la recopie."
+  },
+  "erreurs": [
+   [
+    "#N/A dans la désignation",
+    "Le code n'existe pas dans le tarif, ou il contient un espace en trop."
+   ],
+   [
+    "Une TVA calculée avant la remise",
+    "Appliquez la remise d'abord : la TVA porte sur le net hors taxe."
+   ],
+   [
+    "Le tarif imprimé avec la facture",
+    "Définissez une zone d'impression limitée à la facture."
+   ]
+  ],
+  "faq": [
+   [
+    "Comment mettre le tarif sur une autre feuille ?",
+    "Écrivez la plage avec le nom de la feuille, par exemple Tarif!$A$2:$C$6, ou nommez-la."
+   ],
+   [
+    "Comment éviter #N/A sur les lignes vides ?",
+    "Entourez avec SI.NON.DISP(…;\"\") ou testez si le code est vide."
+   ],
+   [
+    "Faut-il arrondir la TVA ?",
+    "Pour une facture, oui : =ARRONDI(E9*C10;2)."
+   ]
+  ]
+ },
+ "voirAussi": [
+  "recherchev",
+  "tva-ht-et-ttc",
+  "calculer-une-remise"
+ ]
+}

@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Analyser des ventes sur Excel | Clic par clic</title>
+<meta name="description" content="Analyser des ventes se fait en deux temps. D'abord nettoyer les données, souvent mal saisies ou exportées d'un logiciel ">
+<link rel="canonical" href="https://mehdinourreddine62.github.io/clic-par-clic/excel/cas-analyse-de-ventes/">
+<meta name="robots" content="index,follow">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="Clic par clic">
+<meta property="og:title" content="Analyser des ventes sur Excel | Clic par clic">
+<meta property="og:description" content="Analyser des ventes se fait en deux temps. D'abord nettoyer les données, souvent mal saisies ou exportées d'un logiciel ">
+<meta property="og:url" content="https://mehdinourreddine62.github.io/clic-par-clic/excel/cas-analyse-de-ventes/">
+<meta property="og:image" content="https://mehdinourreddine62.github.io/clic-par-clic/assets/og-excel.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Clic par clic","item":"https://mehdinourreddine62.github.io/clic-par-clic/"},{"@type":"ListItem","position":2,"name":"Excel","item":"https://mehdinourreddine62.github.io/clic-par-clic/excel/"},{"@type":"ListItem","position":3,"name":"Cas pratiques","item":"https://mehdinourreddine62.github.io/clic-par-clic/excel/#theme-cas"},{"@type":"ListItem","position":4,"name":"Cas pratique : analyse de ventes","item":"https://mehdinourreddine62.github.io/clic-par-clic/excel/cas-analyse-de-ventes/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","name":"Cas pratique : analyse de ventes dans Excel","description":"Nettoyer des données, puis les analyser avec un tableau croisé et un segment.","inLanguage":"fr","isAccessibleForFree":true,"educationalLevel":"Intermédiaire","learningResourceType":"Leçon animée","url":"https://mehdinourreddine62.github.io/clic-par-clic/excel/cas-analyse-de-ventes/","isPartOf":{"@type":"Course","name":"Clic par clic : apprendre Excel en animation","url":"https://mehdinourreddine62.github.io/clic-par-clic/excel/"}}</script>
+<script>document.documentElement.classList.add("js");try{var t=localStorage.getItem("cpc-theme");if(t==="dark"||t==="light")document.documentElement.dataset.theme=t}catch(e){}</script>
+
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-48.png" sizes="48x48" type="image/png">
+<link rel="icon" href="../../assets/favicon-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="stylesheet" href="../../assets/app.css?v=245069ea">
+<script data-goatcounter="https://clicparclic.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</head>
+<body>
+<div class="wrap">
+  <div class="topbar"><a class="brand" href="../../"><span class="logo" aria-hidden="true"><i></i><i class="on"></i><i></i><i class="on"></i><i class="on"></i><i></i></span>Clic par clic</a><div class="tbtns"><button class="theme" id="share" type="button" data-share aria-label="Partager cette page"><svg viewBox="0 0 16 16"><path d="M12 10.5a2.4 2.4 0 0 0-1.9.9L6.3 9.3a2.4 2.4 0 0 0 0-1.6l3.8-2.1A2.4 2.4 0 1 0 9.6 4.2L5.8 6.3a2.4 2.4 0 1 0 0 3.4l3.8 2.1a2.4 2.4 0 1 0 2.4-1.3z"/></svg><span class="tl">Partager</span></button><button class="theme" id="theme" type="button"></button></div></div>
+  <main id="lesson">
+    <nav class="crumbs" aria-label="Fil d'Ariane"><a href="../../">Accueil</a><span aria-hidden="true">›</span><a href="../">Excel</a><span aria-hidden="true">›</span><a href="../#theme-cas">Cas pratiques</a><span aria-hidden="true">›</span><span>Cas pratique : analyse de ventes</span></nav>
+    <div class="lhead">
+      <div class="meta"><span class="tag" style="--k:var(--r3)"><svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2M3 13h18"/></svg>Cas pratiques</span><span><span class="lvl" title="Intermédiaire" aria-label="Intermédiaire"><i class="on"></i><i class="on"></i><i class=""></i></span> Intermédiaire</span></div>
+      <h1>Cas pratique : analyse de ventes</h1>
+      <p>Nettoyer des données, puis les analyser avec un tableau croisé et un segment.</p>
+    </div>
+    <div class="win haspv">
+      <div id="ribwrap"><div class="ribbon" id="ribbon"></div><div class="ribpanel" id="ribpanel" hidden></div></div>
+      <div class="fbar"><div class="namebox" id="namebox"></div><div class="fx">fx</div><div class="formula" id="formula"></div></div>
+      <div class="stage"><div class="sheetwrap" id="sheetwrap"><div class="sheetinner"><table class="sheet" id="sheet"></table><div class="ov" id="ov"></div></div></div><aside class="pivot" id="pivot" hidden></aside><div class="keys" id="keys" hidden></div><div class="msg" id="msg" hidden></div><div class="preview" id="preview" hidden></div></div>
+      <div class="tabs" id="tabs"></div>
+      <p class="cap" id="text" aria-live="polite">Des ventes exportées d'un logiciel : les noms sont mal saisis, avec des espaces et des majuscules au hasard.</p>
+      <div class="bar">
+        <button class="ic" id="prev" aria-label="Étape précédente"><svg viewBox="0 0 16 16"><path d="M10.5 2 4 8l6.5 6 1.2-1.3L6.6 8l5.1-4.7z"/></svg></button>
+        <button class="ic play" id="play" aria-label="Lecture"></button>
+        <button class="ic" id="next" aria-label="Étape suivante"><svg viewBox="0 0 16 16"><path d="M5.5 2 12 8l-6.5 6-1.2-1.3L9.4 8 4.3 3.3z"/></svg></button>
+        <div class="progress" id="progress"></div>
+        <span class="count" id="count"></span>
+      </div>
+    </div>
+    <div class="sharebox" id="sharebox"><span class="avis" id="avis"><span class="aq">Cette leçon vous a aidé ?</span><button type="button" data-avis="oui">Oui</button><button type="button" data-avis="non">Non</button></span><button class="share-btn" type="button" data-share>Partager la leçon</button></div>
+    <p class="hint">Clavier : <kbd>←</kbd> <kbd>→</kbd> pour changer d'étape, <kbd>Espace</kbd> pour lancer ou mettre en pause.</p>
+    <a class="dl" href="../../fichiers/excel/cas-analyse-de-ventes.xlsx" download="cas-analyse-de-ventes.xlsx"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg><span><b>Télécharger le fichier d'exercice</b><small>Excel · consignes, données de départ et solution</small></span></a><div class="pband" id="pband" hidden></div>
+    <details class="sx"><summary>Syntaxe <code>NOMPROPRE · SUPPRESPACE · tableau croisé dynamique · segment</code></summary><dl><dt>Notions utilisées</dt><dd>SUPPRESPACE, NOMPROPRE, collage des valeurs, mettre sous forme de tableau, tableau croisé dynamique, segment</dd><dt>Durée</dt><dd>Environ 15 minutes en refaisant le fichier</dd></dl></details>
+    <details class="sx"><summary>Résumé écrit des étapes</summary><ol class="steps"><li>Des ventes exportées d'un logiciel : les noms sont mal saisis, avec des espaces et des majuscules au hasard.</li><li>SUPPRESPACE retire les espaces, NOMPROPRE remet une seule majuscule : chaque nom est propre.</li><li>Copiez les noms nettoyés, collez seulement les valeurs sur la colonne A, puis effacez la colonne d'aide.</li><li>Ctrl + L met les données sous forme de tableau : il suivra les futures ventes.</li><li>Insertion › Tableau croisé dynamique, à placer sur la même feuille, en F1.</li><li>Vendeur en Lignes, Montant en Valeurs : le total de chaque vendeur, et un seul Alice.</li><li>Ajoutez Région en Colonnes : les ventes se croisent par vendeur et par région.</li><li>Insérer un segment sur Produit : un panneau de boutons pour filtrer d'un clic.</li><li>Cliquez sur Stylos : 420 € de stylos, dont 180 € vendus par Alice.</li><li>Une case vide est aussi une information : Chloé n'a vendu aucun stylo dans le Nord.</li></ol></details>
+    <section class="guide">
+      <h2>Comment analyser des ventes sur Excel ?</h2>
+      <p>Analyser des ventes se fait en deux temps. D'abord nettoyer les données, souvent mal saisies ou exportées d'un logiciel : espaces en trop, majuscules au hasard. Ensuite les résumer avec un tableau croisé dynamique, sans écrire de formule, puis filtrer d'un clic avec un segment.</p>
+      <h3>Exemple</h3>
+      <p><code class="gx">=NOMPROPRE(SUPPRESPACE(A2))</code></p>
+      <p>« BRUNO  » devient « Bruno » : sans ce nettoyage, le tableau croisé compterait trois vendeurs différents pour la même personne.</p>
+      <h3>Erreurs fréquentes</h3>
+      <ul><li><b>Le même vendeur sur plusieurs lignes du tableau croisé</b>Les noms diffèrent d'un espace ou d'une majuscule : nettoyez-les avant d'analyser.</li><li><b>Le tableau croisé ne montre pas les nouvelles ventes</b>Actualisez-le, et mettez les données sous forme de tableau pour qu'il suive les ajouts.</li></ul>
+      <h3>Questions fréquentes</h3>
+      <h4>Pourquoi coller les valeurs après le nettoyage ?</h4><p>Pour supprimer la colonne d'aide sans perdre les noms nettoyés.</p><h4>Comment voir des pourcentages plutôt que des montants ?</h4><p>Clic droit sur une valeur › Afficher les valeurs › % du total général.</p><h4>Comment ajouter un graphique ?</h4><p>Analyse du tableau croisé › Graphique croisé dynamique : il suit les filtres et les segments.</p>
+    </section>
+    <section class="also"><h2>Voir aussi</h2><div class="also-l"><a href="../creer-un-tableau-croise-dynamique/"><b>Créer un tableau croisé dynamique</b><small>Résumer un tableau en quelques clics, sans formule.</small></a><a href="../tcd-segments/"><b>Filtrer avec un segment</b><small>Des boutons pour filtrer un tableau croisé d'un seul clic.</small></a><a href="../supprespace/"><b>SUPPRESPACE</b><small>Retirer les espaces en trop qui faussent les recherches.</small></a></div></section>
+    <nav class="lnav" aria-label="Leçons voisines"><a href="../cas-facture/"><small>← Précédente</small>Cas pratique : facture</a></nav>
+  </main>
+</div>
+<script type="application/json" id="lesson-data">{"id":"cas-analyse-de-ventes","g":[["Vendeur","Région","Produit","Montant"],["  alice","Nord","Stylos","120"],["BRUNO ","Sud","Cahiers","80"],["Alice","Sud","Stylos","60"],["chloé","Nord","Cahiers","150"],["bruno","Nord","Stylos","90"],["Chloé  ","Sud","Stylos","110"],["alice ","Nord","Cahiers","70"],["Bruno","Sud","Stylos","40"]],"s":[{"c":"A2","mark":"A2 A3 A5 A6 A7 A8","t":"Des ventes exportées d'un logiciel : les noms sont mal saisis, avec des espaces et des majuscules au hasard."},{"c":"E2","f":"=NOMPROPRE(SUPPRESPACE(A2))","v":"Alice","fill":{"E3":"Bruno","E4":"Alice","E5":"Chloé","E6":"Bruno","E7":"Chloé","E8":"Alice","E9":"Bruno"},"t":"SUPPRESPACE retire les espaces, NOMPROPRE remet une seule majuscule : chaque nom est propre."},{"c":"A2","sel":"E2:E9","drag":1,"copy":"E2:E9","set":{"A2":"Alice","A3":"Bruno","A4":"Alice","A5":"Chloé","A6":"Bruno","A7":"Chloé","A8":"Alice","A9":"Bruno","E2":"","E3":"","E4":"","E5":"","E6":"","E7":"","E8":"","E9":""},"menu":"Copier › clic droit sur A2 › Collage spécial › \u003cb>Valeurs\u003c/b>","t":"Copiez les noms nettoyés, collez seulement les valeurs sur la colonne A, puis effacez la colonne d'aide."},{"c":"A1","tab":"Accueil","btn":"Mettre sous forme de tableau","keys":"Ctrl + L","fmt":{"A1:D1":"h","A3:D3":"z","A5:D5":"z","A7:D7":"z","A9:D9":"z"},"t":"Ctrl + L met les données sous forme de tableau : il suivra les futures ventes.","copy":""},{"c":"A1","sel":"A1:D9","drag":1,"tab":"Insertion","btn":"Tableau croisé dynamique","t":"Insertion › Tableau croisé dynamique, à placer sur la même feuille, en F1."},{"c":"F1","tab":"Analyse du tableau croisé","pivot":{"fields":["Vendeur","Région","Produit","Montant"],"filt":[],"cols":[],"rows":["Vendeur"],"vals":["Somme de Montant"],"pick":"Montant"},"set":{"F1":"Étiquettes de lignes","G1":"Somme de Montant","F2":"Alice","G2":"250","F3":"Bruno","G3":"210","F4":"Chloé","G4":"260","F5":"Total général","G5":"720"},"fmt":{"F1:G1":"h","F5:G5":"b"},"t":"Vendeur en Lignes, Montant en Valeurs : le total de chaque vendeur, et un seul Alice."},{"c":"G1","tab":"Analyse du tableau croisé","pivot":{"fields":["Vendeur","Région","Produit","Montant"],"filt":[],"cols":["Région"],"rows":["Vendeur"],"vals":["Somme de Montant"],"pick":"Région"},"set":{"F1":"Somme de Montant","G1":"Nord","H1":"Sud","I1":"Total général","F2":"Alice","G2":"190","H2":"60","I2":"250","F3":"Bruno","G3":"90","H3":"120","I3":"210","F4":"Chloé","G4":"150","H4":"110","I4":"260","F5":"Total général","G5":"430","H5":"290","I5":"720"},"fmt":{"F1:I1":"h","F5:I5":"b"},"t":"Ajoutez Région en Colonnes : les ventes se croisent par vendeur et par région."},{"c":"F1","tab":"Analyse du tableau croisé","btn":"Insérer un segment","slicer":{"at":"F7:G10","title":"Produit","items":["Cahiers","Stylos"],"on":[0,1]},"t":"Insérer un segment sur Produit : un panneau de boutons pour filtrer d'un clic."},{"c":"I5","tab":"Analyse du tableau croisé","slicer":{"at":"F7:G10","title":"Produit","items":["Cahiers","Stylos"],"on":[1]},"set":{"G2":"120","H2":"60","I2":"180","G3":"90","H3":"40","I3":"130","G4":"","H4":"110","I4":"110","G5":"210","H5":"210","I5":"420"},"mark":"I5","t":"Cliquez sur Stylos : 420 € de stylos, dont 180 € vendus par Alice."},{"c":"G4","tab":"Analyse du tableau croisé","slicer":{"at":"F7:G10","title":"Produit","items":["Cahiers","Stylos"],"on":[1]},"mark":"G4","t":"Une case vide est aussi une information : Chloé n'a vendu aucun stylo dans le Nord."}],"parcours":[{"id":"analyser-des-donnees","t":"Analyser des données","l":[["supprimer-les-doublons","Supprimer les doublons"],["supprespace","SUPPRESPACE"],["convertir-texte-en-colonnes","Séparer un texte en colonnes"],["mettre-sous-forme-de-tableau","Mettre sous forme de tableau"],["trier-sur-plusieurs-colonnes","Trier sur plusieurs colonnes"],["combiner-plusieurs-filtres","Combiner plusieurs filtres"],["creer-un-tableau-croise-dynamique","Créer un tableau croisé dynamique"],["tcd-somme-nombre-moyenne","Somme, nombre ou moyenne"],["tcd-segments","Filtrer avec un segment"],["graphique-croise-dynamique","Graphique croisé dynamique"],["mfc-nuances-de-couleurs","Nuances de couleurs"],["graphique-plusieurs-series","Plusieurs séries"],["cas-analyse-de-ventes","Cas pratique : analyse de ventes"]]}],"rib":1,"w":{"F":110}}</script>
+<script src="../../assets/app.js?v=bad542e8"></script>
+<script src="../../assets/player.js?v=a2e94913"></script>
+<footer class="sfoot"><a href="https://mehdinourreddine62.github.io/clic-par-clic/mentions-legales/">Mentions légales et confidentialité</a><span>Site indépendant, non affilié à Microsoft.</span></footer>
+</body>
+</html>
