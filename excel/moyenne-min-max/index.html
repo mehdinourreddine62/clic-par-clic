@@ -20,12 +20,12 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Clic par clic","item":"https://mehdinourreddine62.github.io/clic-par-clic/"},{"@type":"ListItem","position":2,"name":"Excel","item":"https://mehdinourreddine62.github.io/clic-par-clic/excel/"},{"@type":"ListItem","position":3,"name":"Calculs","item":"https://mehdinourreddine62.github.io/clic-par-clic/excel/#theme-calc"},{"@type":"ListItem","position":4,"name":"MOYENNE, MIN et MAX","item":"https://mehdinourreddine62.github.io/clic-par-clic/excel/moyenne-min-max/"}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","name":"MOYENNE, MIN et MAX dans Excel","description":"La moyenne, la plus petite et la plus grande valeur.","inLanguage":"fr","isAccessibleForFree":true,"educationalLevel":"Débutant","learningResourceType":"Leçon animée","url":"https://mehdinourreddine62.github.io/clic-par-clic/excel/moyenne-min-max/","isPartOf":{"@type":"Course","name":"Clic par clic : apprendre Excel en animation","url":"https://mehdinourreddine62.github.io/clic-par-clic/excel/"}}</script>
 <script>document.documentElement.classList.add("js");try{var t=localStorage.getItem("cpc-theme");if(t==="dark"||t==="light")document.documentElement.dataset.theme=t}catch(e){}</script>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap">
+
 <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../../assets/favicon-48.png" sizes="48x48" type="image/png">
 <link rel="icon" href="../../assets/favicon-192.png" sizes="192x192" type="image/png">
 <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
-<link rel="stylesheet" href="../../assets/app.css?v=041dbe2c">
+<link rel="stylesheet" href="../../assets/app.css?v=40716ac4">
 <script data-goatcounter="https://clicparclic.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </head>
 <body>
@@ -52,7 +52,7 @@
         <span class="count" id="count"></span>
       </div>
     </div>
-    <div class="sharebox" id="sharebox"><span>Cette leçon vous a aidé ? Partagez-la avec vos camarades.</span><button class="share-btn" type="button" data-share>Partager la leçon</button></div>
+    <div class="sharebox" id="sharebox"><span class="avis" id="avis"><span class="aq">Cette leçon vous a aidé ?</span><button type="button" data-avis="oui">Oui</button><button type="button" data-avis="non">Non</button></span><button class="share-btn" type="button" data-share>Partager la leçon</button></div>
     <p class="hint">Clavier : <kbd>←</kbd> <kbd>→</kbd> pour changer d'étape, <kbd>Espace</kbd> pour lancer ou mettre en pause.</p>
     <a class="dl" href="../../fichiers/excel/moyenne-min-max.xlsx" download="moyenne-min-max.xlsx"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg><span><b>Télécharger le fichier d'exercice</b><small>Excel · consignes, données de départ et solution</small></span></a><div class="pband" id="pband" hidden></div>
     <details class="sx"><summary>Syntaxe <code>=MOYENNE(plage)</code></summary><dl><dt>MOYENNE</dt><dd>La somme divisée par le nombre de valeurs</dd><dt>MIN</dt><dd>La plus petite valeur</dd><dt>MAX</dt><dd>La plus grande valeur</dd></dl></details>
@@ -73,7 +73,7 @@
   </main>
 </div>
 <script type="application/json" id="lesson-data">{"id":"moyenne-min-max","g":[["Élève","Note","","Statistique","Valeur"],["Léa","14","","Moyenne",""],["Hugo","9,5","","Minimum",""],["Inès","17","","Maximum",""],["Tom","11","","",""],["Nora","12,5","","",""]],"s":[{"c":"E2","f":"=MOYENNE(B2:B6)","v":"12,8","t":"MOYENNE additionne les notes et divise par leur nombre."},{"c":"E3","f":"=MIN(B2:B6)","v":"9,5","mark":"B3","t":"MIN renvoie la plus petite valeur."},{"c":"E4","f":"=MAX(B2:B6)","v":"17","mark":"B4","t":"MAX renvoie la plus grande."},{"c":"B5","set":{"B5":"","E2":"13,25"},"mark":"E2","t":"Une cellule vide est ignorée : la moyenne se calcule maintenant sur 4 élèves."}],"parcours":[{"id":"debuter","t":"Débuter avec Excel","l":[["ecran-excel","L'écran d'Excel"],["ruban","Le ruban et ses onglets"],["saisir-des-donnees","Saisir et modifier des données"],["selectionner","Sélectionner des cellules"],["copier-coller-annuler","Copier, coller, annuler"],["mettre-en-forme","Mettre en forme un tableau"],["formats-de-nombre","Formats de nombre"],["ecrire-une-formule","Écrire une formule"],["somme","SOMME"],["moyenne-min-max","MOYENNE, MIN et MAX"],["recopier-une-serie","Recopier une série"],["creer-un-graphique","Créer un graphique"]]},{"id":"formules-indispensables","t":"Les 15 formules indispensables","l":[["somme","SOMME"],["moyenne-min-max","MOYENNE, MIN et MAX"],["arrondi","ARRONDI"],["pourcentages","Pourcentages"],["references-absolues","Références absolues ($)"],["si","SI"],["et-ou","ET et OU"],["nb-si","NB.SI"],["somme-si","SOMME.SI"],["nb-si-ens","NB.SI.ENS"],["somme-si-ens","SOMME.SI.ENS"],["recherchev","RECHERCHEV"],["recherchex","RECHERCHEX"],["sierreur","SIERREUR"],["aujourdhui-datedif","AUJOURDHUI et DATEDIF"]]}]}</script>
-<script src="../../assets/app.js?v=bd42da65"></script>
+<script src="../../assets/app.js?v=bad542e8"></script>
 <script src="../../assets/player.js?v=a2e94913"></script>
 <footer class="sfoot"><a href="https://mehdinourreddine62.github.io/clic-par-clic/mentions-legales/">Mentions légales et confidentialité</a><span>Site indépendant, non affilié à Microsoft.</span></footer>
 </body>

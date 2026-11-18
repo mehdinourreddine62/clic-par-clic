@@ -54,7 +54,7 @@ const CTX=SOFTS.filter(sw=>sw.disponible).map(loadSoft);
 const PICO='<path d="M5 19c3 0 3-6 7-6s4-6 7-6"/><circle cx="5" cy="19" r="2"/><circle cx="19" cy="7" r="2"/>';
 
 /* ---------- gabarits ---------- */
-const FONTS=`<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap">`;
+const FONTS="";
 const THEME=`<script>document.documentElement.classList.add("js");try{var t=localStorage.getItem("cpc-theme");if(t==="dark"||t==="light")document.documentElement.dataset.theme=t}catch(e){}</script>`;
 /* Titre de 60 caractères au plus : au-delà, Google le coupe. On raccourcit pas à pas, sans changer l'adresse. */
 function fitTitle(full){const sfx=` | ${SITE.nom}`,ok=x=>x.length<=60;let b=full.endsWith(sfx)?full.slice(0,-sfx.length):full;
@@ -255,7 +255,7 @@ function lessonPage(l,i,{sw,lessons,parcours:PARCOURS}){
         <span class="count" id="count"></span>
       </div>
     </div>
-    <div class="sharebox" id="sharebox"><span>Cette leçon vous a aidé ? Partagez-la avec vos camarades.</span><button class="share-btn" type="button" data-share>Partager la leçon</button></div>
+    <div class="sharebox" id="sharebox"><span class="avis" id="avis"><span class="aq">Cette leçon vous a aidé ?</span><button type="button" data-avis="oui">Oui</button><button type="button" data-avis="non">Non</button></span><button class="share-btn" type="button" data-share>Partager la leçon</button></div>
     <p class="hint">Clavier : <kbd>←</kbd> <kbd>→</kbd> pour changer d'étape, <kbd>Espace</kbd> pour lancer ou mettre en pause.</p>
     ${l.hasFile?`<a class="dl" href="../../fichiers/${sw.id}/${l.id}.xlsx" download="${l.id}.xlsx"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg><span><b>Télécharger le fichier d'exercice</b><small>Excel · consignes, données de départ et solution</small></span></a>`:""}<div class="pband" id="pband" hidden></div>
     <details class="sx"><summary>Syntaxe <code>${esc(l.syntaxe)}</code></summary><dl>${l.arguments.map(([a,b])=>`<dt>${esc(a)}</dt><dd>${esc(b)}</dd>`).join("")}</dl></details>
@@ -329,6 +329,7 @@ for(const ctx of CTX){const{sw,lessons,parcours}=ctx;
 write("assets/app.css",fs.readFileSync("src/style.css","utf8"));
 for(const f of ["favicon.svg","favicon-48.png","favicon-192.png","apple-touch-icon.png"])fs.copyFileSync(`src/${f}`,`assets/${f}`);
 for(const f of fs.readdirSync("src/og"))fs.copyFileSync(`src/og/${f}`,`assets/${f}`);
+fs.mkdirSync("assets/fonts",{recursive:true});for(const f of fs.readdirSync("src/fonts"))fs.copyFileSync(`src/fonts/${f}`,`assets/fonts/${f}`);
 fs.copyFileSync("src/favicon-48.png","favicon.ico");
 for(const f of new Set(["app.js","home.js","root.js",...CTX.map(c=>c.sw.lecteur)]))write(`assets/${f}`,fs.readFileSync(`src/${f}`,"utf8"));
 /* Date de dernière modification de chaque page : empreinte du HTML gardée dans dates.json (fichier généré) */
@@ -357,10 +358,11 @@ write("mentions-legales/index.html",head({title:`Mentions légales | ${SITE.nom}
       <li>Aucun cookie publicitaire ni de suivi n'est utilisé.</li>
       <li>Mesure d'audience : le site utilise <a href="https://www.goatcounter.com">GoatCounter</a>, un outil sans cookie qui ne conserve que des statistiques anonymes et globales (pages vues, site de provenance, pays, type d'appareil et de navigateur). Il ne permet pas de suivre un visiteur d'une page à l'autre ni de l'identifier.</li>
       <li>Votre progression (leçons vues) et votre choix de mode sombre sont enregistrés uniquement dans votre navigateur, sur votre appareil. Ils ne sont jamais envoyés au site ; vous pouvez les effacer en supprimant les données de navigation.</li>
-      <li>Comme pour tout site, l'hébergeur GitHub reçoit techniquement l'adresse IP des visiteurs pour afficher les pages. Les polices de caractères sont chargées depuis Google Fonts : votre navigateur contacte alors les serveurs de Google.</li>
+      <li>Comme pour tout site, l'hébergeur GitHub reçoit techniquement l'adresse IP des visiteurs pour afficher les pages.</li>
+      <li>Les polices de caractères sont hébergées sur le site lui-même : aucun appel n'est fait à Google ni à un autre service.</li>
     </ul>
     <p>Pour toute question sur ces données, utilisez le contact ci-dessus. Vous pouvez aussi vous adresser à la <a href="https://www.cnil.fr">CNIL</a>.</p>
-    <p class="maj">Dernière mise à jour : 17 novembre 2026.</p>
+    <p class="maj">Dernière mise à jour : 18 novembre 2026.</p>
   </main>
 </div>
 <script src="../assets/app.js"></script>

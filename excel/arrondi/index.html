@@ -20,12 +20,12 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Clic par clic","item":"https://mehdinourreddine62.github.io/clic-par-clic/"},{"@type":"ListItem","position":2,"name":"Excel","item":"https://mehdinourreddine62.github.io/clic-par-clic/excel/"},{"@type":"ListItem","position":3,"name":"Calculs","item":"https://mehdinourreddine62.github.io/clic-par-clic/excel/#theme-calc"},{"@type":"ListItem","position":4,"name":"ARRONDI","item":"https://mehdinourreddine62.github.io/clic-par-clic/excel/arrondi/"}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","name":"ARRONDI dans Excel","description":"Garder le nombre de décimales voulu.","inLanguage":"fr","isAccessibleForFree":true,"educationalLevel":"Débutant","learningResourceType":"Leçon animée","url":"https://mehdinourreddine62.github.io/clic-par-clic/excel/arrondi/","isPartOf":{"@type":"Course","name":"Clic par clic : apprendre Excel en animation","url":"https://mehdinourreddine62.github.io/clic-par-clic/excel/"}}</script>
 <script>document.documentElement.classList.add("js");try{var t=localStorage.getItem("cpc-theme");if(t==="dark"||t==="light")document.documentElement.dataset.theme=t}catch(e){}</script>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap">
+
 <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../../assets/favicon-48.png" sizes="48x48" type="image/png">
 <link rel="icon" href="../../assets/favicon-192.png" sizes="192x192" type="image/png">
 <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
-<link rel="stylesheet" href="../../assets/app.css?v=041dbe2c">
+<link rel="stylesheet" href="../../assets/app.css?v=40716ac4">
 <script data-goatcounter="https://clicparclic.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </head>
 <body>
@@ -52,7 +52,7 @@
         <span class="count" id="count"></span>
       </div>
     </div>
-    <div class="sharebox" id="sharebox"><span>Cette leçon vous a aidé ? Partagez-la avec vos camarades.</span><button class="share-btn" type="button" data-share>Partager la leçon</button></div>
+    <div class="sharebox" id="sharebox"><span class="avis" id="avis"><span class="aq">Cette leçon vous a aidé ?</span><button type="button" data-avis="oui">Oui</button><button type="button" data-avis="non">Non</button></span><button class="share-btn" type="button" data-share>Partager la leçon</button></div>
     <p class="hint">Clavier : <kbd>←</kbd> <kbd>→</kbd> pour changer d'étape, <kbd>Espace</kbd> pour lancer ou mettre en pause.</p>
     <a class="dl" href="../../fichiers/excel/arrondi.xlsx" download="arrondi.xlsx"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg><span><b>Télécharger le fichier d'exercice</b><small>Excel · consignes, données de départ et solution</small></span></a><div class="pband" id="pband" hidden></div>
     <details class="sx"><summary>Syntaxe <code>=ARRONDI(nombre; décimales)</code></summary><dl><dt>nombre</dt><dd>La valeur à arrondir</dd><dt>décimales</dt><dd>2 pour les centimes, 0 pour un entier, -1 pour la dizaine</dd></dl></details>
@@ -73,7 +73,7 @@
   </main>
 </div>
 <script type="application/json" id="lesson-data">{"id":"arrondi","g":[["Valeur","2 décimales","Entier","Dizaine"],["12,3456","","",""],["7,891","","",""],["105,5","","",""]],"s":[{"c":"B2","f":"=ARRONDI(A2;2)","v":"12,35","fill":{"B3":"7,89","B4":"105,5"},"t":"Le 2 indique le nombre de décimales à garder."},{"c":"C2","f":"=ARRONDI(A2;0)","v":"12","fill":{"C3":"8","C4":"106"},"t":"Avec 0, on obtient un entier. À partir de 0,5, Excel arrondit vers le haut."},{"c":"D2","f":"=ARRONDI(A2;-1)","v":"10","fill":{"D3":"10","D4":"110"},"t":"Un nombre négatif arrondit à la dizaine (-1) ou à la centaine (-2)."}],"parcours":[{"id":"formules-indispensables","t":"Les 15 formules indispensables","l":[["somme","SOMME"],["moyenne-min-max","MOYENNE, MIN et MAX"],["arrondi","ARRONDI"],["pourcentages","Pourcentages"],["references-absolues","Références absolues ($)"],["si","SI"],["et-ou","ET et OU"],["nb-si","NB.SI"],["somme-si","SOMME.SI"],["nb-si-ens","NB.SI.ENS"],["somme-si-ens","SOMME.SI.ENS"],["recherchev","RECHERCHEV"],["recherchex","RECHERCHEX"],["sierreur","SIERREUR"],["aujourdhui-datedif","AUJOURDHUI et DATEDIF"]]}]}</script>
-<script src="../../assets/app.js?v=bd42da65"></script>
+<script src="../../assets/app.js?v=bad542e8"></script>
 <script src="../../assets/player.js?v=a2e94913"></script>
 <footer class="sfoot"><a href="https://mehdinourreddine62.github.io/clic-par-clic/mentions-legales/">Mentions légales et confidentialité</a><span>Site indépendant, non affilié à Microsoft.</span></footer>
 </body>

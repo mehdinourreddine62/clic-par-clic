@@ -20,12 +20,12 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Clic par clic","item":"https://mehdinourreddine62.github.io/clic-par-clic/"},{"@type":"ListItem","position":2,"name":"Excel","item":"https://mehdinourreddine62.github.io/clic-par-clic/excel/"},{"@type":"ListItem","position":3,"name":"Feuilles et noms","item":"https://mehdinourreddine62.github.io/clic-par-clic/excel/#theme-feuilles"},{"@type":"ListItem","position":4,"name":"Utiliser une cellule d'une autre feuille","item":"https://mehdinourreddine62.github.io/clic-par-clic/excel/reference-a-une-autre-feuille/"}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","name":"Utiliser une cellule d'une autre feuille dans Excel","description":"Reprendre un résultat calculé sur une autre feuille.","inLanguage":"fr","isAccessibleForFree":true,"educationalLevel":"Intermédiaire","learningResourceType":"Leçon animée","url":"https://mehdinourreddine62.github.io/clic-par-clic/excel/reference-a-une-autre-feuille/","isPartOf":{"@type":"Course","name":"Clic par clic : apprendre Excel en animation","url":"https://mehdinourreddine62.github.io/clic-par-clic/excel/"}}</script>
 <script>document.documentElement.classList.add("js");try{var t=localStorage.getItem("cpc-theme");if(t==="dark"||t==="light")document.documentElement.dataset.theme=t}catch(e){}</script>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap">
+
 <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../../assets/favicon-48.png" sizes="48x48" type="image/png">
 <link rel="icon" href="../../assets/favicon-192.png" sizes="192x192" type="image/png">
 <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
-<link rel="stylesheet" href="../../assets/app.css?v=041dbe2c">
+<link rel="stylesheet" href="../../assets/app.css?v=40716ac4">
 <script data-goatcounter="https://clicparclic.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </head>
 <body>
@@ -52,7 +52,7 @@
         <span class="count" id="count"></span>
       </div>
     </div>
-    <div class="sharebox" id="sharebox"><span>Cette leçon vous a aidé ? Partagez-la avec vos camarades.</span><button class="share-btn" type="button" data-share>Partager la leçon</button></div>
+    <div class="sharebox" id="sharebox"><span class="avis" id="avis"><span class="aq">Cette leçon vous a aidé ?</span><button type="button" data-avis="oui">Oui</button><button type="button" data-avis="non">Non</button></span><button class="share-btn" type="button" data-share>Partager la leçon</button></div>
     <p class="hint">Clavier : <kbd>←</kbd> <kbd>→</kbd> pour changer d'étape, <kbd>Espace</kbd> pour lancer ou mettre en pause.</p>
     <div class="pband" id="pband" hidden></div>
     <details class="sx"><summary>Syntaxe <code>=Ventes!B4</code></summary><dl><dt>Ventes</dt><dd>Le nom de la feuille</dd><dt>!</dt><dd>Sépare la feuille et la cellule</dd><dt>Apostrophes</dt><dd>Ajoutées si le nom contient un espace</dd></dl></details>
@@ -62,7 +62,7 @@
   </main>
 </div>
 <script type="application/json" id="lesson-data">{"id":"reference-a-une-autre-feuille","g":[["Total des ventes",""]],"s":[{"c":"B1","sheets":{"list":["Synthèse","Ventes"],"on":0},"spot":"tabs","t":"Les données sont sur la feuille Ventes, mais on veut leur total ici, sur Synthèse."},{"c":"B4","sheets":{"list":["Synthèse","Ventes"],"on":1},"set":{"A1":"Région","B1":"Montant","A2":"Nord","B2":"430","A3":"Sud","B3":"290","A4":"Total","B4":"720"},"bar":"=Ventes!B4","t":"Tapez = puis cliquez sur l'onglet Ventes et sur la cellule B4 : Excel écrit la référence tout seul."},{"c":"B1","sheets":{"list":["Synthèse","Ventes"],"on":0},"set":{"A1":"Total des ventes","B1":"720","A2":"","B2":"","A3":"","B3":"","A4":"","B4":""},"bar":"=Ventes!B4","t":"Validez : Synthèse affiche 720. Le point d'exclamation sépare le nom de la feuille et la cellule."},{"c":"B1","sheets":{"list":["Synthèse","Ventes 2026"],"on":0},"bar":"='Ventes 2026'!B4","t":"Si le nom de la feuille contient un espace, Excel l'entoure d'apostrophes."}],"nh":1}</script>
-<script src="../../assets/app.js?v=bd42da65"></script>
+<script src="../../assets/app.js?v=bad542e8"></script>
 <script src="../../assets/player.js?v=a2e94913"></script>
 <footer class="sfoot"><a href="https://mehdinourreddine62.github.io/clic-par-clic/mentions-legales/">Mentions légales et confidentialité</a><span>Site indépendant, non affilié à Microsoft.</span></footer>
 </body>

@@ -20,12 +20,12 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Clic par clic","item":"https://mehdinourreddine62.github.io/clic-par-clic/"},{"@type":"ListItem","position":2,"name":"Excel","item":"https://mehdinourreddine62.github.io/clic-par-clic/excel/"},{"@type":"ListItem","position":3,"name":"Tableaux croisés dynamiques","item":"https://mehdinourreddine62.github.io/clic-par-clic/excel/#theme-tcd"},{"@type":"ListItem","position":4,"name":"Actualiser un tableau croisé","item":"https://mehdinourreddine62.github.io/clic-par-clic/excel/tcd-actualiser/"}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","name":"Actualiser un tableau croisé dans Excel","description":"Mettre le tableau à jour après une modification des données.","inLanguage":"fr","isAccessibleForFree":true,"educationalLevel":"Intermédiaire","learningResourceType":"Leçon animée","url":"https://mehdinourreddine62.github.io/clic-par-clic/excel/tcd-actualiser/","isPartOf":{"@type":"Course","name":"Clic par clic : apprendre Excel en animation","url":"https://mehdinourreddine62.github.io/clic-par-clic/excel/"}}</script>
 <script>document.documentElement.classList.add("js");try{var t=localStorage.getItem("cpc-theme");if(t==="dark"||t==="light")document.documentElement.dataset.theme=t}catch(e){}</script>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap">
+
 <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../../assets/favicon-48.png" sizes="48x48" type="image/png">
 <link rel="icon" href="../../assets/favicon-192.png" sizes="192x192" type="image/png">
 <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
-<link rel="stylesheet" href="../../assets/app.css?v=041dbe2c">
+<link rel="stylesheet" href="../../assets/app.css?v=40716ac4">
 <script data-goatcounter="https://clicparclic.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </head>
 <body>
@@ -52,7 +52,7 @@
         <span class="count" id="count"></span>
       </div>
     </div>
-    <div class="sharebox" id="sharebox"><span>Cette leçon vous a aidé ? Partagez-la avec vos camarades.</span><button class="share-btn" type="button" data-share>Partager la leçon</button></div>
+    <div class="sharebox" id="sharebox"><span class="avis" id="avis"><span class="aq">Cette leçon vous a aidé ?</span><button type="button" data-avis="oui">Oui</button><button type="button" data-avis="non">Non</button></span><button class="share-btn" type="button" data-share>Partager la leçon</button></div>
     <p class="hint">Clavier : <kbd>←</kbd> <kbd>→</kbd> pour changer d'étape, <kbd>Espace</kbd> pour lancer ou mettre en pause.</p>
     <div class="pband" id="pband" hidden></div>
     <details class="sx"><summary>Syntaxe <code>Analyse du tableau croisé › Actualiser</code></summary><dl><dt>Actualiser</dt><dd>Relit les données d'origine</dd><dt>Alt + F5</dt><dd>Le raccourci</dd><dt>Piège</dt><dd>Le tableau ne se met jamais à jour tout seul</dd></dl></details>
@@ -62,7 +62,7 @@
   </main>
 </div>
 <script type="application/json" id="lesson-data">{"id":"tcd-actualiser","g":[["Vendeur","Région","Produit","Montant"],["Alice","Nord","Stylos","120"],["Bruno","Sud","Cahiers","80"],["Alice","Sud","Stylos","60"],["Chloé","Nord","Cahiers","150"],["Bruno","Nord","Stylos","90"],["Chloé","Sud","Stylos","110"],["Alice","Nord","Cahiers","70"],["Bruno","Sud","Stylos","40"]],"s":[{"c":"F1","tab":"Analyse du tableau croisé","pivot":{"fields":["Vendeur","Région","Produit","Montant"],"filt":[],"cols":[],"rows":["Région"],"vals":["Somme de Montant"]},"set":{"F1":"Étiquettes de lignes","G1":"Somme de Montant","F2":"Nord","G2":"430","F3":"Sud","G3":"290","F4":"Total général","G4":"720"},"fmt":{"F1:G1":"h","F4:G4":"b"},"t":"Le Nord totalise 430."},{"c":"D2","f":"320","tab":"Analyse du tableau croisé","mark":"G2","t":"Corrigez une vente dans les données : le tableau croisé ne bouge pas. Il affiche toujours 430."},{"c":"G2","tab":"Analyse du tableau croisé","btn":"Actualiser","set":{"G2":"630","G4":"920"},"mark":"G2 G4","t":"Cliquez sur Actualiser : le tableau relit les données et se met à jour."},{"c":"G2","tab":"Analyse du tableau croisé","keys":"Alt + F5","t":"Prenez le réflexe d'actualiser avant de lire un tableau croisé. Raccourci : Alt + F5."}],"rib":1,"w":{"E":26}}</script>
-<script src="../../assets/app.js?v=bd42da65"></script>
+<script src="../../assets/app.js?v=bad542e8"></script>
 <script src="../../assets/player.js?v=a2e94913"></script>
 <footer class="sfoot"><a href="https://mehdinourreddine62.github.io/clic-par-clic/mentions-legales/">Mentions légales et confidentialité</a><span>Site indépendant, non affilié à Microsoft.</span></footer>
 </body>

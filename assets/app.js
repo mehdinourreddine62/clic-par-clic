@@ -55,3 +55,16 @@ async function sharePage(ev){const btn=ev&&ev.currentTarget;
   catch(e){const t=document.createElement("textarea");t.value=url;document.body.appendChild(t);t.select();let ok=false;try{ok=document.execCommand("copy");}catch(_){}t.remove();if(ok)done();shareToast(ok?"Lien copié : collez-le où vous voulez":url);}
 }
 document.querySelectorAll("[data-share]").forEach(b=>b.addEventListener("click",sharePage));
+
+/* ---------- avis sur la leçon : compté dans GoatCounter, sans cookie ---------- */
+(function(){const a=document.getElementById("avis");if(!a)return;
+  const c=document.querySelector('link[rel="canonical"]'),path=c?new URL(c.href).pathname:location.pathname;
+  const msg={oui:"Merci ! Partagez-la avec vos camarades.",non:"Merci, elle sera améliorée."};
+  let st={};try{st=JSON.parse(localStorage.getItem("cpc-avis")||"{}");}catch(e){}
+  const done=v=>{a.innerHTML=`<span class="aq">${msg[v]}</span>`;a.classList.add("fait");};
+  if(st[path])done(st[path]);
+  a.querySelectorAll("[data-avis]").forEach(b=>b.addEventListener("click",()=>{const v=b.dataset.avis;
+    try{if(window.goatcounter&&goatcounter.count)goatcounter.count({path:`avis-${v}${path}`,title:`Avis ${v} : ${document.title.replace(/ \| [^|]+$/,"")}`,event:true});}catch(e){}
+    try{st[path]=v;localStorage.setItem("cpc-avis",JSON.stringify(st));}catch(e){}
+    done(v);}));
+})();
