@@ -302,7 +302,7 @@ function exercisePage(x,i,list,{sw}){
       <div class="xkeys">${keys.map(k=>`<button type="button" data-k="${esc(k)}" aria-label="${k==="⌫"?"Effacer":"Insérer "+esc(k)}">${esc(k)}</button>`).join("")}</div>
       <div class="xsheetwrap">${exoTable(x)}</div>
     </div>
-    <p class="xtip">Astuce : cliquez sur une cellule, ou faites glisser sur une plage, pour l'insérer dans la formule.</p>
+    <p class="xtip">Astuce : cliquez sur une cellule pour l'insérer dans la formule, ou faites glisser sur une plage. Sur téléphone, touchez une cellule, tapez « : », puis touchez la dernière cellule de la plage.</p>
     <div class="xact"><button type="button" id="xok" class="share-btn">Valider</button><button type="button" id="xhint" class="xbtn">Indice</button><button type="button" id="xsol" class="xbtn" hidden>Voir la solution</button></div>
     <div id="xmsg" class="xmsg" role="status" aria-live="polite"></div>
     <div id="xnext" class="xnextw" hidden>${next?`<a class="resume" href="../${next.id}/"><span><small>Exercice suivant</small><b>${esc(next.titre)}</b></span><span aria-hidden="true">→</span></a>`:`<a class="resume" href="../exercices/"><span><small>Dernier exercice</small><b>Revenir à la liste des exercices</b></span><span aria-hidden="true">→</span></a>`}</div>

@@ -24,7 +24,7 @@
 <link rel="icon" href="../../assets/favicon-48.png" sizes="48x48" type="image/png">
 <link rel="icon" href="../../assets/favicon-192.png" sizes="192x192" type="image/png">
 <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
-<link rel="stylesheet" href="../../assets/app.css?v=0d836f48">
+<link rel="stylesheet" href="../../assets/app.css?v=c7e8da2c">
 <script data-goatcounter="https://clicparclic.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </head>
 <body>
@@ -39,7 +39,7 @@
       <div class="xkeys"><button type="button" data-k="=" aria-label="Insérer =">=</button><button type="button" data-k=";" aria-label="Insérer ;">;</button><button type="button" data-k="$" aria-label="Insérer $">$</button><button type="button" data-k=":" aria-label="Insérer :">:</button><button type="button" data-k="(" aria-label="Insérer (">(</button><button type="button" data-k=")" aria-label="Insérer )">)</button><button type="button" data-k="&quot;" aria-label="Insérer &quot;">&quot;</button><button type="button" data-k="*" aria-label="Insérer *">*</button><button type="button" data-k="/" aria-label="Insérer /">/</button><button type="button" data-k="+" aria-label="Insérer +">+</button><button type="button" data-k="-" aria-label="Insérer -">-</button><button type="button" data-k="&gt;" aria-label="Insérer &gt;">&gt;</button><button type="button" data-k="&lt;" aria-label="Insérer &lt;">&lt;</button><button type="button" data-k="⌫" aria-label="Effacer">⌫</button></div>
       <div class="xsheetwrap"><table class="xsheet"><thead><tr><th></th><th>A</th><th>B</th><th>C</th><th>D</th><th>E</th><th>F</th></tr></thead><tbody><tr><th>1</th><td data-k="A1" class="xhead">Produit</td><td data-k="B1" class="xhead">Prix HT</td><td data-k="C1" class="xhead">Prix TTC</td><td data-k="D1" class="xhead"></td><td data-k="E1" class="xhead"></td><td data-k="F1" class="xhead">TVA</td></tr><tr><th>2</th><td data-k="A2" class="">Carnet</td><td data-k="B2" class="xn">12,49 €</td><td data-k="C2" class="xtarget">?</td><td data-k="D2" class=""></td><td data-k="E2" class=""></td><td data-k="F2" class="xn">20 %</td></tr><tr><th>3</th><td data-k="A3" class="">Surligneurs</td><td data-k="B3" class="xn">7,99 €</td><td data-k="C3" class="xrec"></td><td data-k="D3" class=""></td><td data-k="E3" class=""></td><td data-k="F3" class=""></td></tr><tr><th>4</th><td data-k="A4" class="">Trousse</td><td data-k="B4" class="xn">23,15 €</td><td data-k="C4" class="xrec"></td><td data-k="D4" class=""></td><td data-k="E4" class=""></td><td data-k="F4" class=""></td></tr><tr><th>5</th><td data-k="A5" class="">Gomme</td><td data-k="B5" class="xn">4,05 €</td><td data-k="C5" class="xrec"></td><td data-k="D5" class=""></td><td data-k="E5" class=""></td><td data-k="F5" class=""></td></tr></tbody></table></div>
     </div>
-    <p class="xtip">Astuce : cliquez sur une cellule, ou faites glisser sur une plage, pour l'insérer dans la formule.</p>
+    <p class="xtip">Astuce : cliquez sur une cellule pour l'insérer dans la formule, ou faites glisser sur une plage. Sur téléphone, touchez une cellule, tapez « : », puis touchez la dernière cellule de la plage.</p>
     <div class="xact"><button type="button" id="xok" class="share-btn">Valider</button><button type="button" id="xhint" class="xbtn">Indice</button><button type="button" id="xsol" class="xbtn" hidden>Voir la solution</button></div>
     <div id="xmsg" class="xmsg" role="status" aria-live="polite"></div>
     <div id="xnext" class="xnextw" hidden><a class="resume" href="../exercices/"><span><small>Dernier exercice</small><b>Revenir à la liste des exercices</b></span><span aria-hidden="true">→</span></a></div>
@@ -49,7 +49,7 @@
 </div>
 <script type="application/json" id="ex-data">{"id":"exercice-prix-ttc-arrondi","titre":"Prix TTC arrondi au centime","grille":[["Produit","Prix HT","Prix TTC","","","TVA"],["Carnet","12,49 €","","","","20 %"],["Surligneurs","7,99 €",""],["Trousse","23,15 €",""],["Gomme","4,05 €",""]],"cible":"C2","recopie":["C3","C4","C5"],"solution":"=ARRONDI(B2*(1+$F$2);2)","format":"€","indice":"Le prix TTC, c'est le HT multiplié par (1 + le taux), figé avec $F$2. Entourez le tout avec ARRONDI(…;2) pour garder deux décimales.","bravo":"12,49 € HT donnent 14,988 €, arrondis à 14,99 € TTC.","fonction":"ARRONDI","dollar":true,"exige":"F\\$2","exigeMsg":"l'exercice demande d'utiliser le taux de la cellule F2, figé avec des $ : $F$2."}</script>
 <script src="../../assets/app.js?v=bad542e8"></script>
-<script src="../../assets/exercices.js?v=37528aa6"></script>
+<script src="../../assets/exercices.js?v=5282ab44"></script>
 <footer class="sfoot"><a href="https://mehdinourreddine62.github.io/clic-par-clic/mentions-legales/">Mentions légales et confidentialité</a><span>Site indépendant, non affilié à Microsoft.</span></footer>
 </body>
 </html>

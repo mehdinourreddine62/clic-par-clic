@@ -197,14 +197,27 @@ inp.addEventListener("input",()=>{if(!done){msg.className="xmsg";msg.textContent
 $("#xhint").onclick=()=>setMsg("<b>Indice :</b> "+X.indice,"hint");
 $("#xsol").onclick=()=>{const d=$("#xcorr");d.open=true;d.scrollIntoView({behavior:"smooth",block:"center"});};
 /* touches utiles sur téléphone, et clic sur les cellules pour les insérer */
-function insert(t){const a=inp.selectionStart??inp.value.length,b=inp.selectionEnd??a;inp.value=inp.value.slice(0,a)+t+inp.value.slice(b);const p=a+t.length;inp.focus();inp.setSelectionRange(p,p);inp.dispatchEvent(new Event("input"));}
+let caret=null;inp.addEventListener("blur",()=>{caret=[inp.selectionStart,inp.selectionEnd];});
+function insert(t,noFocus){const f=document.activeElement===inp;let a=f?inp.selectionStart:(caret?caret[0]:inp.value.length),b=f?inp.selectionEnd:(caret?caret[1]:a);
+  if(a==null||a>inp.value.length){a=b=inp.value.length;}
+  inp.value=inp.value.slice(0,a)+t+inp.value.slice(b);const p=a+t.length;caret=[p,p];
+  if(!noFocus){inp.focus();inp.setSelectionRange(p,p);}inp.dispatchEvent(new Event("input"));}
 document.querySelectorAll(".xkeys button").forEach(b=>b.addEventListener("click",()=>{if(b.dataset.k==="⌫"){const a=inp.selectionStart||0;if(a>0){inp.value=inp.value.slice(0,a-1)+inp.value.slice(a);inp.focus();inp.setSelectionRange(a-1,a-1);}}else insert(b.dataset.k);}));
 let start=null,endK=null;
 const tdAt=(x,y)=>{const e=document.elementFromPoint(x,y);return e&&e.closest(".xsheet td[data-k]");};
 function hl(a,b){document.querySelectorAll(".xsheet td.xpick").forEach(t=>t.classList.remove("xpick"));if(!a)return;const A=target(a),B=target(b||a);
   for(let r=Math.min(A.r,B.r);r<=Math.max(A.r,B.r);r++)for(let c=Math.min(A.c,B.c);c<=Math.max(A.c,B.c);c++){const t=cell(colName(c)+r);if(t)t.classList.add("xpick");}}
 const sheet=$(".xsheet");
-sheet.addEventListener("pointerdown",e=>{const td=e.target.closest("td[data-k]");if(!td||done)return;e.preventDefault();start=endK=td.dataset.k;hl(start);});
-window.addEventListener("pointermove",e=>{if(!start)return;const td=tdAt(e.clientX,e.clientY);if(td&&td.dataset.k!==endK){endK=td.dataset.k;hl(start,endK);}});
-window.addEventListener("pointerup",()=>{if(!start)return;const ref=start===endK?start:start+":"+endK;start=null;setTimeout(()=>hl(null),400);if(!inp.value)inp.value="=";insert(ref);});
+/* Souris : clic ou glisser pour insérer une cellule ou une plage.
+   Doigt : la grille défile normalement ; un simple appui insère la cellule (tapez « : » puis touchez la dernière cellule pour une plage). */
+let touch=null;
+sheet.addEventListener("pointerdown",e=>{const td=e.target.closest("td[data-k]");if(!td||done)return;
+  if(e.pointerType!=="mouse"){touch={k:td.dataset.k,x:e.clientX,y:e.clientY};return;}
+  e.preventDefault();start=endK=td.dataset.k;hl(start);});
+window.addEventListener("pointermove",e=>{if(touch&&Math.hypot(e.clientX-touch.x,e.clientY-touch.y)>8)touch=null;
+  if(!start)return;const td=tdAt(e.clientX,e.clientY);if(td&&td.dataset.k!==endK){endK=td.dataset.k;hl(start,endK);}});
+window.addEventListener("pointercancel",()=>{touch=null;});
+window.addEventListener("pointerup",e=>{
+  if(touch){const k=touch.k;touch=null;hl(k);setTimeout(()=>hl(null),400);if(!inp.value)inp.value="=";insert(k,true);return;}
+  if(!start)return;const ref=start===endK?start:start+":"+endK;start=null;setTimeout(()=>hl(null),400);if(!inp.value)inp.value="=";insert(ref);});
 })();
