@@ -64,6 +64,7 @@ function loadSoft(sw){
   return{sw,cats,lessons,parcours,exercices,fonctions};
 }
 const ALL=[];
+const LIENS=fs.existsSync("content/liens-logiciels.json")?readJson("content/liens-logiciels.json"):[]; /* paires de leçons liées entre logiciels, dans les deux sens */
 const CTX=SOFTS.filter(sw=>sw.disponible).map(loadSoft);
 const PICO='<path d="M5 19c3 0 3-6 7-6s4-6 7-6"/><circle cx="5" cy="19" r="2"/><circle cx="19" cy="7" r="2"/>';
 
@@ -115,7 +116,7 @@ ${SITE.goatcounter?`<script data-goatcounter="https://${SITE.goatcounter}.goatco
 function softHome({sw,cats,lessons,parcours:PARCOURS}){
   const url=`${SITE.url}${sw.id}/`;
   const title=`${sw.titreSeo} | ${SITE.nom}`;
-  const desc=sw.descSeo;
+  const desc=cutDesc(sw.descSeo);
   const ld={"@context":"https://schema.org","@type":"Course",name:`${SITE.nom} : apprendre ${sw.nom} en animation`,description:desc,inLanguage:"fr",isAccessibleForFree:true,url,provider:{"@type":"Organization",name:SITE.nom,url:SITE.url}};
   const crumbs={"@context":"https://schema.org","@type":"BreadcrumbList",itemListElement:[{"@type":"ListItem",position:1,name:SITE.nom,item:SITE.url},{"@type":"ListItem",position:2,name:sw.nom,item:url}]};
   const sections=cats.map(c=>{
@@ -167,8 +168,8 @@ function rootHome(racine=false){
   const ROOT=new URL(SITE.url).origin+"/",home=racine?ROOT:SITE.url;
   const LIVE=CTX.filter(c=>c.sw.disponible===true);
   const dispo=LIVE.map(c=>c.sw.nom),liste=dispo.length>1?dispo.slice(0,-1).join(", ")+" et "+dispo.at(-1):dispo[0];
-  const title=racine?`${SITE.nom} : leçons animées gratuites pour ${liste}`:`${SITE.nom} : ${liste} en leçons animées gratuites`;
-  const desc=`Des leçons animées et gratuites pour apprendre ${liste} pas à pas : formules, mise en forme, raccourcis clavier, parcours guidés et fichiers d'exercice.`;
+  const title=racine?`${SITE.nom} : leçons animées gratuites pour ${liste}`:`${SITE.nom} : ${liste} en leçons animées`;
+  const desc=cutDesc(`Leçons animées et gratuites pour apprendre ${liste} pas à pas : formules, mise en forme, raccourcis, parcours guidés, exercices.`);
   const ld={"@context":"https://schema.org","@type":"WebSite",name:SITE.nom,alternateName:["Clic-par-clic","Clic par clic, leçons animées"],url:home,inLanguage:"fr",description:desc,publisher:{"@type":"Organization",name:SITE.nom,url:SITE.url,logo:`${SITE.url}assets/favicon-192.png`}};
   const verif=SITE.verificationGoogle?`<meta name="google-site-verification" content="${SITE.verificationGoogle}">\n`:"";
   const softs=SOFTS.map(sw=>{const c=LIVE.find(x=>x.sw===sw);
@@ -227,6 +228,7 @@ function lessonPage(l,i,{sw,lessons,parcours:PARCOURS}){
     {"@type":"ListItem",position:4,name:l.titre,item:url}]};
   const voir=(l.voirAussi||[]).map(id=>{const x=lessons.find(y=>y.id===id);if(!x)throw new Error(`${l.id} : voirAussi « ${id} » introuvable`);return x;});
   if(!voir.length)lessons.filter(x=>x.cat===c&&x!==l).slice(0,3).forEach(x=>voir.push(x));
+  const me=`${sw.id}/${l.id}`,ail=LIENS.filter(p=>p.includes(me)).map(p=>p.find(k=>k!==me)).map(k=>{const[s,id]=k.split("/"),x=ALL.find(y=>y.sw.id===s&&y.id===id);if(!x)throw new Error(`liens-logiciels : « ${k} » introuvable`);return x;}).filter(x=>x.sw.disponible===true);
   const guide=gd?`
     <section class="guide">
       <h2>${esc(gd.question||`À quoi sert ${l.titre} ?`)}</h2>
@@ -240,7 +242,7 @@ function lessonPage(l,i,{sw,lessons,parcours:PARCOURS}){
       ${gd.faq.map(([q,r])=>`<h4>${esc(q)}</h4><p>${esc(r)}</p>`).join("")}
     </section>`:"";
   const also=voir.length?`
-    <section class="also"><h2>Voir aussi</h2><div class="also-l">${voir.map(x=>`<a href="../${x.id}/"><b>${esc(x.titre)}</b><small>${esc(x.resume)}</small></a>`).join("")}</div></section>`:"";
+    <section class="also"><h2>Voir aussi</h2><div class="also-l">${voir.map(x=>`<a href="../${x.id}/"><b>${esc(x.titre)}</b><small>${esc(x.resume)}</small></a>`).join("")}${ail.map(x=>`<a href="../../${x.sw.id}/${x.id}/"><b>${esc(x.titre)}</b><small>Dans ${esc(x.sw.nom)} · ${esc(x.resume)}</small></a>`).join("")}</div></section>`:"";
   const ld={"@context":"https://schema.org","@type":"LearningResource",name:`${l.titre} dans ${sw.nom}`,description:l.resume,inLanguage:"fr",isAccessibleForFree:true,educationalLevel:LV[l.niveau],learningResourceType:"Leçon animée",url,isPartOf:{"@type":"Course",name:`${SITE.nom} : apprendre ${sw.nom} en animation`,url:hub}};
   const isWord=sw.lecteur!=="player.js",isPpt=sw.lecteur==="player-ppt.js";
   const data=isWord?{id:l.id,doc:l.document,s:l.etapes}:{id:l.id,g:l.grille,s:l.etapes};
@@ -300,7 +302,7 @@ function exoTable(x){const w=Math.max(...x.grille.map(r=>r.length)),cols=[...Arr
 function exercisePage(x,i,list,{sw}){
   const url=`${SITE.url}${sw.id}/${x.id}/`,next=list[i+1];
   const title=`Exercice ${sw.nom} corrigé – ${x.titre} | ${SITE.nom}`;
-  const desc=`${x.consigne} Exercice interactif et gratuit : tapez la formule, le site la corrige.`;
+  const desc=cutDesc(`${x.consigne} Exercice interactif gratuit, corrigé par le site.`);
   const ld={"@context":"https://schema.org","@type":"LearningResource",name:`Exercice : ${x.titre}`,description:x.resume,inLanguage:"fr",isAccessibleForFree:true,learningResourceType:"Exercice interactif",url,educationalLevel:"Débutant",teaches:x.l.titre};
   const keys=["=",";","$",":","(",")","\"","*","/","+","-",">","<","⌫"];
   return head({title,desc,url,root:"../../",ld,noindex:sw.disponible!==true})+`  <main class="xpage">
@@ -370,7 +372,7 @@ q.addEventListener("input",()=>{const v=n(q.value.trim());let any=0;document.que
 function routePage(p,{sw}){
   const url=`${SITE.url}${sw.id}/parcours/${p.id}/`;
   const title=`${p.titre} : parcours ${sw.nom} en ${p.items.length} leçons animées | ${SITE.nom}`;
-  const desc=`${p.resume} Parcours gratuit de ${p.items.length} leçons animées, à suivre dans l'ordre.`;
+  const desc=cutDesc(`${p.resume} Parcours gratuit de ${p.items.length} leçons animées.`);
   const ld={"@context":"https://schema.org","@type":"Course",name:p.titre,description:p.resume,inLanguage:"fr",isAccessibleForFree:true,url,provider:{"@type":"Organization",name:SITE.nom,url:SITE.url},
     hasPart:p.items.map(l=>({"@type":"LearningResource",name:l.titre,url:`${SITE.url}${sw.id}/${l.id}/`}))};
   return head({title,desc,url,root:"../../../",ld,noindex:sw.disponible!==true})+`  <main id="route" style="--k:var(--${p.couleur})">

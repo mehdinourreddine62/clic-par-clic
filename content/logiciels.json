@@ -11,7 +11,7 @@
   "titreHero": "Excel, <em>étape par étape.</em>",
   "intro": "Des leçons animées pour découvrir Excel, puis maîtriser les formules et les graphiques, directement dans une feuille de calcul.",
   "titreSeo": "Apprendre Excel gratuitement, en animation",
-  "descSeo": "Cours Excel gratuit pour débutants et étudiants : des leçons animées pas à pas. Découverte de l'écran et du ruban, raccourcis clavier, graphiques, SOMME, SI, RECHERCHEV, RECHERCHEX, dates et pourcentages.",
+  "descSeo": "Cours Excel gratuit pour débutants et étudiants, en leçons animées : écran et ruban, raccourcis, graphiques, SOMME, SI, RECHERCHEV, dates, pourcentages.",
   "exemplesRecherche": "somme, date, imprimer…"
  },
  {
@@ -25,7 +25,7 @@
   "titreHero": "Word, <em>étape par étape.</em>",
   "intro": "Des leçons animées pour réussir la mise en forme d'un rapport de stage, d'un mémoire ou d'un CV : styles, sommaire, numéros de page, tout se voit en direct.",
   "titreSeo": "Apprendre Word gratuitement, en animation",
-  "descSeo": "Cours Word gratuit pour étudiants : des leçons animées pas à pas pour un rapport de stage, un mémoire ou un CV. Styles de titres, numérotation des titres, sommaire automatique, numéros de page.",
+  "descSeo": "Cours Word gratuit pour étudiants, en leçons animées : rapport de stage, mémoire, styles de titres, numérotation, sommaire automatique, numéros de page.",
   "exemplesRecherche": "sommaire, numéro de page, styles…"
  },
  {
@@ -39,7 +39,7 @@
   "titreHero": "PowerPoint, <em>étape par étape.</em>",
   "intro": "Des leçons animées pour préparer une présentation et une soutenance : diapositives, thèmes, images, animations et mode Présentateur, tout se voit en direct.",
   "titreSeo": "Apprendre PowerPoint gratuitement, en animation",
-  "descSeo": "Cours PowerPoint gratuit pour étudiants : des leçons animées pas à pas pour réussir une présentation ou une soutenance de stage. Thèmes, dispositions, masque, animations, mode Présentateur.",
+  "descSeo": "Cours PowerPoint gratuit pour étudiants, en leçons animées : soutenance de stage, thèmes, masque, animations, mode Présentateur, export PDF.",
   "exemplesRecherche": "thème, diapositive, animation…"
  }
 ]
