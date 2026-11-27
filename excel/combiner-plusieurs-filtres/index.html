@@ -25,7 +25,7 @@
 <link rel="icon" href="../../assets/favicon-48.png" sizes="48x48" type="image/png">
 <link rel="icon" href="../../assets/favicon-192.png" sizes="192x192" type="image/png">
 <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
-<link rel="stylesheet" href="../../assets/app.css?v=cc9697b8">
+<link rel="stylesheet" href="../../assets/app.css?v=7c0b75ea">
 <script data-goatcounter="https://clicparclic.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </head>
 <body>
@@ -49,6 +49,7 @@
         <button class="ic" id="prev" aria-label="Étape précédente"><svg viewBox="0 0 16 16"><path d="M10.5 2 4 8l6.5 6 1.2-1.3L6.6 8l5.1-4.7z"/></svg></button>
         <button class="ic play" id="play" aria-label="Lecture"></button>
         <button class="ic" id="next" aria-label="Étape suivante"><svg viewBox="0 0 16 16"><path d="M5.5 2 12 8l-6.5 6-1.2-1.3L9.4 8 4.3 3.3z"/></svg></button>
+        <button class="ic speed" id="speed" type="button" aria-label="Vitesse normale : cliquer pour changer">1×</button>
         <button class="ic voice" id="voice" aria-label="Lire les étapes à voix haute" aria-pressed="false" title="Lecture à voix haute" hidden></button>
         <div class="progress" id="progress"></div>
         <span class="count" id="count"></span>
@@ -65,7 +66,7 @@
   </main>
 </div>
 <script type="application/json" id="lesson-data">{"id":"combiner-plusieurs-filtres","g":[["Vendeur","Région","Montant"],["Alice","Sud","300"],["Bruno","Nord","450"],["Chloé","Sud","520"],["David","Nord","200"],["Emma","Nord","610"],["Farid","Sud","150"]],"s":[{"c":"A1","tab":"Données","btn":"Filtrer","set":{"A1":"Vendeur ▾","B1":"Région ▾","C1":"Montant ▾"},"t":"Activez le filtre : chaque colonne peut recevoir son propre filtre."},{"c":"B1","menu":"Flèche de Région › cocher \u003cb>Nord\u003c/b> uniquement","hide":[2,4,7],"set":{"B1":"Région ⧩"},"t":"Filtrez la région sur Nord. Un entonnoir remplace la flèche pour signaler la colonne filtrée."},{"c":"C1","menu":"Flèche de Montant › Filtres numériques › \u003cb>Supérieur à…\u003c/b>","rule":"300","hide":[2,4,5,7],"set":{"C1":"Montant ⧩"},"t":"Ajoutez un filtre sur le montant : les deux se cumulent. Il ne reste que le Nord au-dessus de 300."},{"c":"A1","tab":"Données","btn":"Effacer","hide":[],"set":{"A1":"Vendeur ▾","B1":"Région ▾","C1":"Montant ▾"},"t":"Données › Effacer retire tous les filtres d'un coup, sans désactiver les flèches."}],"parcours":[{"id":"analyser-des-donnees","t":"Analyser des données","l":[["supprimer-les-doublons","Supprimer les doublons"],["supprespace","SUPPRESPACE"],["convertir-texte-en-colonnes","Séparer un texte en colonnes"],["mettre-sous-forme-de-tableau","Mettre sous forme de tableau"],["trier-sur-plusieurs-colonnes","Trier sur plusieurs colonnes"],["combiner-plusieurs-filtres","Combiner plusieurs filtres"],["creer-un-tableau-croise-dynamique","Créer un tableau croisé dynamique"],["tcd-somme-nombre-moyenne","Somme, nombre ou moyenne"],["tcd-segments","Filtrer avec un segment"],["graphique-croise-dynamique","Graphique croisé dynamique"],["mfc-nuances-de-couleurs","Nuances de couleurs"],["graphique-plusieurs-series","Plusieurs séries"],["cas-analyse-de-ventes","Cas pratique : analyse de ventes"]]}],"rib":1}</script>
-<script src="../../assets/app.js?v=81de5fac"></script>
+<script src="../../assets/app.js?v=4acc518c"></script>
 <script src="../../assets/player.js?v=e345543b"></script>
 <footer class="sfoot"><a href="https://mehdinourreddine62.github.io/clic-par-clic/mentions-legales/">Mentions légales et confidentialité</a><span>Site indépendant, non affilié à Microsoft.</span></footer>
 </body>

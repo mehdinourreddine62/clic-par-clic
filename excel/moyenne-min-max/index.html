@@ -25,7 +25,7 @@
 <link rel="icon" href="../../assets/favicon-48.png" sizes="48x48" type="image/png">
 <link rel="icon" href="../../assets/favicon-192.png" sizes="192x192" type="image/png">
 <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
-<link rel="stylesheet" href="../../assets/app.css?v=cc9697b8">
+<link rel="stylesheet" href="../../assets/app.css?v=7c0b75ea">
 <script data-goatcounter="https://clicparclic.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </head>
 <body>
@@ -49,6 +49,7 @@
         <button class="ic" id="prev" aria-label="Étape précédente"><svg viewBox="0 0 16 16"><path d="M10.5 2 4 8l6.5 6 1.2-1.3L6.6 8l5.1-4.7z"/></svg></button>
         <button class="ic play" id="play" aria-label="Lecture"></button>
         <button class="ic" id="next" aria-label="Étape suivante"><svg viewBox="0 0 16 16"><path d="M5.5 2 12 8l-6.5 6-1.2-1.3L9.4 8 4.3 3.3z"/></svg></button>
+        <button class="ic speed" id="speed" type="button" aria-label="Vitesse normale : cliquer pour changer">1×</button>
         <button class="ic voice" id="voice" aria-label="Lire les étapes à voix haute" aria-pressed="false" title="Lecture à voix haute" hidden></button>
         <div class="progress" id="progress"></div>
         <span class="count" id="count"></span>
@@ -76,7 +77,7 @@
   </main>
 </div>
 <script type="application/json" id="lesson-data">{"id":"moyenne-min-max","g":[["Élève","Note","","Statistique","Valeur"],["Léa","14","","Moyenne",""],["Hugo","9,5","","Minimum",""],["Inès","17","","Maximum",""],["Tom","11","","",""],["Nora","12,5","","",""]],"s":[{"c":"E2","f":"=MOYENNE(B2:B6)","v":"12,8","t":"MOYENNE additionne les notes et divise par leur nombre."},{"c":"E3","f":"=MIN(B2:B6)","v":"9,5","mark":"B3","t":"MIN renvoie la plus petite valeur."},{"c":"E4","f":"=MAX(B2:B6)","v":"17","mark":"B4","t":"MAX renvoie la plus grande."},{"c":"B5","set":{"B5":"","E2":"13,25"},"mark":"E2","t":"Une cellule vide est ignorée : la moyenne se calcule maintenant sur 4 élèves."}],"parcours":[{"id":"debuter","t":"Débuter avec Excel","l":[["ecran-excel","L'écran d'Excel"],["ruban","Le ruban et ses onglets"],["saisir-des-donnees","Saisir et modifier des données"],["selectionner","Sélectionner des cellules"],["copier-coller-annuler","Copier, coller, annuler"],["mettre-en-forme","Mettre en forme un tableau"],["formats-de-nombre","Formats de nombre"],["ecrire-une-formule","Écrire une formule"],["somme","SOMME"],["moyenne-min-max","MOYENNE, MIN et MAX"],["recopier-une-serie","Recopier une série"],["creer-un-graphique","Créer un graphique"]]},{"id":"formules-indispensables","t":"Les 15 formules indispensables","l":[["somme","SOMME"],["moyenne-min-max","MOYENNE, MIN et MAX"],["arrondi","ARRONDI"],["pourcentages","Pourcentages"],["references-absolues","Références absolues ($)"],["si","SI"],["et-ou","ET et OU"],["nb-si","NB.SI"],["somme-si","SOMME.SI"],["nb-si-ens","NB.SI.ENS"],["somme-si-ens","SOMME.SI.ENS"],["recherchev","RECHERCHEV"],["recherchex","RECHERCHEX"],["sierreur","SIERREUR"],["aujourdhui-datedif","AUJOURDHUI et DATEDIF"],["cas-facture","Cas pratique : facture"]]}]}</script>
-<script src="../../assets/app.js?v=81de5fac"></script>
+<script src="../../assets/app.js?v=4acc518c"></script>
 <script src="../../assets/player.js?v=e345543b"></script>
 <footer class="sfoot"><a href="https://mehdinourreddine62.github.io/clic-par-clic/mentions-legales/">Mentions légales et confidentialité</a><span>Site indépendant, non affilié à Microsoft.</span></footer>
 </body>

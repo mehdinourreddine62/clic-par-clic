@@ -3,7 +3,10 @@
 const $=s=>document.querySelector(s);
 const esc=s=>String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
 const ls=x=>x?x.split(" "):[];
-const wait=ms=>new Promise(r=>setTimeout(r,ms));
+/* vitesse des animations : 0,75 (lent), 1 (normal), 1,5 (rapide), mémorisée dans le navigateur */
+let SPD=1;try{const v=+localStorage.getItem("cpc-vitesse");if([0.75,1,1.5].includes(v))SPD=v;}catch(e){}
+const setSpd=v=>{SPD=v;document.documentElement.style.setProperty("--mv",(0.5/v).toFixed(3)+"s");document.documentElement.style.setProperty("--mv2",(0.45/v).toFixed(3)+"s");};setSpd(SPD);
+const wait=ms=>new Promise(r=>setTimeout(r,ms/SPD));
 const colIdx=s=>s.split("").reduce((a,c)=>a*26+c.charCodeAt(0)-64,0)-1;
 const colName=i=>{let s="";i++;while(i>0){const m=(i-1)%26;s=String.fromCharCode(65+m)+s;i=Math.floor((i-1)/26);}return s;};
 const pRef=r=>{const m=r.replace(/\$/g,"").match(/^([A-Z]+)(\d+)$/);return{c:colIdx(m[1]),r:+m[2]-1};};
@@ -95,7 +98,7 @@ window.cpcSayText=function(html){
   window.cpcSay=function(html){
     if(!S||!voice||!on)return Promise.resolve();
     S.cancel();const t=window.cpcSayText(html);if(!t)return Promise.resolve();
-    return new Promise(res=>{const u=new SpeechSynthesisUtterance(t);u.voice=voice;u.lang=voice.lang;u.rate=1;
+    return new Promise(res=>{const u=new SpeechSynthesisUtterance(t);u.voice=voice;u.lang=voice.lang;u.rate=SPD<1?0.9:SPD>1?1.2:1;
       const done=()=>{clearTimeout(k);res();};const k=setTimeout(done,2500+t.length*110);u.onend=done;u.onerror=done;S.speak(u);});
   };
   window.cpcSayStop=()=>{if(S)S.cancel();};
@@ -107,3 +110,9 @@ window.cpcSayText=function(html){
   if(S){pick();if(S.addEventListener)S.addEventListener("voiceschanged",pick);else S.onvoiceschanged=pick;}
   addEventListener("pagehide",()=>{if(S)S.cancel();});
 })();
+
+/* bouton de vitesse dans la barre des leçons */
+(function(){const b=document.getElementById("speed");if(!b)return;
+  const L={0.75:["0,75×","lente"],1:["1×","normale"],1.5:["1,5×","rapide"]};
+  const paint=()=>{b.textContent=L[SPD][0];b.setAttribute("aria-label","Vitesse "+L[SPD][1]+" : cliquer pour changer");b.title="Vitesse "+L[SPD][1];b.classList.toggle("on",SPD!==1);};
+  paint();b.addEventListener("click",()=>{const n=SPD===1?1.5:SPD===1.5?0.75:1;setSpd(n);try{localStorage.setItem("cpc-vitesse",String(n));}catch(e){}paint();});})();
