@@ -439,6 +439,7 @@ for(const u of urls){const f=u.slice(SITE.url.length)+"index.html",h=fs.existsSy
   NEWD[u]=DATES[u]&&DATES[u].h===h?DATES[u]:{h,d:today};}
 write("dates.json",JSON.stringify(NEWD,null,0).replace(/},/g,"},\n")+"\n");
 write("sitemap.xml",`<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map(u=>`  <url><loc>${u}</loc><lastmod>${NEWD[u].d}</lastmod></url>`).join("\n")}\n</urlset>\n`);
+fs.copyFileSync("sitemap.xml","racine/sitemap.xml"); /* même sitemap à la racine du domaine, pour la propriété Search Console https://mehdinourreddine62.github.io/ */
 /* ---------- mentions légales ---------- */
 {const C="https://github.com/mehdinourreddine62/clic-par-clic/issues";
 write("mentions-legales/index.html",head({title:`Mentions légales | ${SITE.nom}`,desc:`Mentions légales et politique de confidentialité du site ${SITE.nom} : éditeur, hébergeur, données personnelles, mesure d'audience sans cookie.`,url:`${SITE.url}mentions-legales/`,root:"../",ld:{"@context":"https://schema.org","@type":"WebPage",name:"Mentions légales",url:`${SITE.url}mentions-legales/`}})+`  <main class="legal">
