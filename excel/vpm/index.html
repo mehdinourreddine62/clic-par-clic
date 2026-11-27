@@ -3,15 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>VPM : calculer une mensualité dans Excel | Clic par clic</title>
-<meta name="description" content="Savoir combien on rembourse chaque mois pour un emprunt. Leçon Excel animée en 5 étapes, niveau intermédiaire, gratuite.">
+<title>VPM dans Excel : calculer la mensualité d'un prêt</title>
+<meta name="description" content="VPM (PMT en anglais) calcule le remboursement constant d'un emprunt. Elle prend le taux par période, le nombre de périodes et le montant emprunté.">
 <link rel="canonical" href="https://mehdinourreddine62.github.io/clic-par-clic/excel/vpm/">
 <meta name="robots" content="index,follow">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="Clic par clic">
-<meta property="og:title" content="VPM : calculer une mensualité dans Excel | Clic par clic">
-<meta property="og:description" content="Savoir combien on rembourse chaque mois pour un emprunt. Leçon Excel animée en 5 étapes, niveau intermédiaire, gratuite.">
+<meta property="og:title" content="VPM dans Excel : calculer la mensualité d'un prêt">
+<meta property="og:description" content="VPM (PMT en anglais) calcule le remboursement constant d'un emprunt. Elle prend le taux par période, le nombre de périodes et le montant emprunté.">
 <meta property="og:url" content="https://mehdinourreddine62.github.io/clic-par-clic/excel/vpm/">
 <meta property="og:image" content="https://mehdinourreddine62.github.io/clic-par-clic/assets/og-excel.png">
 <meta property="og:image:width" content="1200">
@@ -61,7 +61,18 @@
     <a class="dl" href="../../fichiers/excel/vpm.xlsx" download="vpm.xlsx"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg><span><b>Télécharger le fichier d'exercice</b><small>Excel · consignes, données de départ et solution</small></span></a><div class="pband" id="pband" hidden></div>
     <details class="sx"><summary>Syntaxe <code>=VPM(taux/12; années*12; -montant)</code></summary><dl><dt>taux/12</dt><dd>Le taux par mois</dd><dt>années*12</dt><dd>Le nombre de mensualités</dd><dt>-montant</dt><dd>Le capital emprunté, avec un signe moins</dd></dl></details>
     <details class="sx"><summary>Résumé écrit des étapes</summary><ol class="steps"><li>VPM calcule une mensualité : le taux par mois, le nombre de mois, le montant emprunté.</li><li>Tout doit être dans la même unité : le taux annuel est divisé par 12, la durée multipliée par 12.</li><li>Le signe moins devant le montant donne un résultat positif. Sans lui, VPM affiche un nombre négatif.</li><li>Mensualité × nombre de mois : le total réellement remboursé.</li><li>La différence avec le montant emprunté est le coût du crédit.</li></ol></details>
-    <section class="also"><h2>Voir aussi</h2><div class="also-l"><a href="../calculer-une-remise/"><b>Calculer une remise</b><small>Appliquer un pourcentage de réduction à un prix.</small></a><a href="../tva-ht-et-ttc/"><b>TVA : passer du HT au TTC</b><small>Ajouter la TVA, et la retirer sans se tromper.</small></a><a href="../marge-et-taux-de-marge/"><b>Marge, taux de marge et taux de marque</b><small>Trois calculs proches, qu'il ne faut pas confondre.</small></a></div></section>
+    <section class="guide">
+      <h2>Comment calculer une mensualité de crédit avec VPM dans Excel ?</h2>
+      <p>VPM (PMT en anglais) calcule le remboursement constant d'un emprunt. Elle prend le taux par période, le nombre de périodes et le montant emprunté. Pour des mensualités, divisez le taux annuel par 12 et multipliez la durée en années par 12. Mettez un signe moins devant le montant pour obtenir un résultat positif.</p>
+      <h3>Exemple</h3>
+      <p><code class="gx">=VPM(B2/12;B3*12;-B1)</code></p>
+      <p>10 000 € empruntés à 4 % sur 3 ans : 295,24 € par mois, soit 10 628,63 € remboursés et 628,63 € de coût du crédit (valeurs arrondies au centime).</p>
+      <h3>Erreurs fréquentes</h3>
+      <ul><li><b>La mensualité est négative</b>Le montant n'a pas de signe moins : VPM compte l'argent qui sort comme négatif.</li><li><b>La mensualité est énorme</b>Le taux annuel n'a pas été divisé par 12.</li></ul>
+      <h3>Questions fréquentes</h3>
+      <h4>Comment calculer le coût total du crédit ?</h4><p>Mensualité × nombre de mois − montant emprunté.</p><h4>L'assurance est-elle comprise ?</h4><p>Non : VPM ne calcule que le capital et les intérêts.</p><h4>Comment trouver la durée pour une mensualité donnée ?</h4><p>Avec NPM(taux/12;-mensualité;montant), qui renvoie le nombre de mois.</p>
+    </section>
+    <section class="also"><h2>Voir aussi</h2><div class="also-l"><a href="../interets-composes/"><b>Intérêts composés</b><small>Calculer ce que devient un capital placé plusieurs années.</small></a><a href="../pourcentages/"><b>Pourcentages</b><small>Calculer une évolution et une part du total.</small></a><a href="../references-absolues/"><b>Références absolues ($)</b><small>Empêcher une référence de bouger quand on recopie.</small></a><a href="../arrondi/"><b>ARRONDI</b><small>Garder le nombre de décimales voulu.</small></a></div></section>
     <nav class="lnav" aria-label="Leçons voisines"><a href="../interets-composes/"><small>← Précédente</small>Intérêts composés</a><a class="nx" id="nextLesson" href="../moyenne-ponderee/"><small>Suivante →</small>Moyenne pondérée</a></nav>
   </main>
 </div>

@@ -6,17 +6,90 @@
  "motsCles": "délai livraison jours ouvrés échéance workday",
  "syntaxe": "=SERIE.JOUR.OUVRE(début; jours; [fériés])",
  "arguments": [
-  ["début","La date de départ"],
-  ["jours","Le nombre de jours travaillés à ajouter"],
-  ["fériés","Les jours fériés à sauter"]
+  [
+   "début",
+   "La date de départ"
+  ],
+  [
+   "jours",
+   "Le nombre de jours travaillés à ajouter"
+  ],
+  [
+   "fériés",
+   "Les jours fériés à sauter"
+  ]
  ],
  "grille": [
-  ["Commande","Délai en jours ouvrés","Livraison"],
-  ["13/11/2026","5",""],
-  ["13/11/2026","1",""]
+  [
+   "Commande",
+   "Délai en jours ouvrés",
+   "Livraison"
+  ],
+  [
+   "13/11/2026",
+   "5",
+   ""
+  ],
+  [
+   "13/11/2026",
+   "1",
+   ""
+  ]
  ],
+ "titreSeo": "SERIE.JOUR.OUVRE : ajouter des jours ouvrés dans Excel",
  "etapes": [
-  {"c":"C2","f":"=SERIE.JOUR.OUVRE(A2;B2)","v":"20/11/2026","t":"Cinq jours ouvrés après le vendredi 13 : le week-end est sauté."},
-  {"c":"C2","fill":{"C3":"16/11/2026"},"mark":"C3","t":"Un jour ouvré après un vendredi, c'est le lundi suivant."}
+  {
+   "c": "C2",
+   "f": "=SERIE.JOUR.OUVRE(A2;B2)",
+   "v": "20/11/2026",
+   "t": "Cinq jours ouvrés après le vendredi 13 : le week-end est sauté."
+  },
+  {
+   "c": "C2",
+   "fill": {
+    "C3": "16/11/2026"
+   },
+   "mark": "C3",
+   "t": "Un jour ouvré après un vendredi, c'est le lundi suivant."
+  }
+ ],
+ "guide": {
+  "question": "Comment calculer une date en jours ouvrés dans Excel ?",
+  "intro": "SERIE.JOUR.OUVRE (WORKDAY en anglais) renvoie la date située un certain nombre de jours ouvrés après une date de départ, en sautant les samedis et dimanches. Un troisième argument, facultatif, désigne une plage de jours fériés à sauter aussi. Le résultat est une date : appliquez-lui un format Date si un nombre s'affiche.",
+  "exemple": {
+   "titre": "Exemple",
+   "formule": "=SERIE.JOUR.OUVRE(A2;B2)",
+   "explication": "Commande le vendredi 13/11/2026 avec un délai de 5 jours ouvrés : livraison le vendredi 20/11/2026. Avec 1 jour : lundi 16/11/2026."
+  },
+  "erreurs": [
+   [
+    "Un nombre comme 46346 s'affiche",
+    "C'est une date au format Standard : passez la cellule au format Date courte."
+   ],
+   [
+    "Les jours fériés ne sont pas sautés",
+    "Ajoutez une plage qui les contient en troisième argument."
+   ]
+  ],
+  "faq": [
+   [
+    "Comment compter les jours ouvrés entre deux dates ?",
+    "Avec NB.JOURS.OUVRES(début;fin;[fériés])."
+   ],
+   [
+    "Et si le week-end n'est pas samedi et dimanche ?",
+    "Utilisez SERIE.JOUR.OUVRE.INTL, qui permet de choisir les jours de repos."
+   ],
+   [
+    "Peut-on reculer dans le temps ?",
+    "Oui, avec un nombre de jours négatif."
+   ]
+  ]
+ },
+ "voirAussi": [
+  "nb-jours-ouvres",
+  "fin-mois",
+  "mois-decaler",
+  "joursem"
  ]
 }

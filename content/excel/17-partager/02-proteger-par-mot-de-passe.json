@@ -7,19 +7,100 @@
  "syntaxe": "Fichier › Informations › Protéger le classeur",
  "ruban": true,
  "arguments": [
-  ["Chiffrer avec mot de passe","Le fichier ne s'ouvre plus sans le mot de passe"],
-  ["Attention","Un mot de passe oublié ne se récupère pas"]
+  [
+   "Chiffrer avec mot de passe",
+   "Le fichier ne s'ouvre plus sans le mot de passe"
+  ],
+  [
+   "Attention",
+   "Un mot de passe oublié ne se récupère pas"
+  ]
  ],
  "grille": [
-  ["Client","Ville","Montant"],
-  ["Durand","Lille","120"],
-  ["Martin","Lyon","340"],
-  ["Petit","Nantes","210"]
+  [
+   "Client",
+   "Ville",
+   "Montant"
+  ],
+  [
+   "Durand",
+   "Lille",
+   "120"
+  ],
+  [
+   "Martin",
+   "Lyon",
+   "340"
+  ],
+  [
+   "Petit",
+   "Nantes",
+   "210"
+  ]
  ],
+ "titreSeo": "Mettre un mot de passe sur un fichier Excel",
  "etapes": [
-  {"c":"A1","tab":"Fichier","btn":"Informations","t":"Ouvrez Fichier › Informations › Protéger le classeur."},
-  {"c":"A1","menu":"Protéger le classeur › <b>Chiffrer avec mot de passe</b>","rule":"••••••••","t":"« Chiffrer avec mot de passe » : saisissez-le deux fois, puis enregistrez."},
-  {"c":"A1","tab":"Fichier","msg":"Ce classeur est protégé. Saisissez le mot de passe pour l'ouvrir.","t":"À la prochaine ouverture, Excel le demandera."},
-  {"c":"A1","tab":"Fichier","t":"Attention : un mot de passe oublié ne se récupère pas. Notez-le dans un endroit sûr."}
+  {
+   "c": "A1",
+   "tab": "Fichier",
+   "btn": "Informations",
+   "t": "Ouvrez Fichier › Informations › Protéger le classeur."
+  },
+  {
+   "c": "A1",
+   "menu": "Protéger le classeur › <b>Chiffrer avec mot de passe</b>",
+   "rule": "••••••••",
+   "t": "« Chiffrer avec mot de passe » : saisissez-le deux fois, puis enregistrez."
+  },
+  {
+   "c": "A1",
+   "tab": "Fichier",
+   "msg": "Ce classeur est protégé. Saisissez le mot de passe pour l'ouvrir.",
+   "t": "À la prochaine ouverture, Excel le demandera."
+  },
+  {
+   "c": "A1",
+   "tab": "Fichier",
+   "t": "Attention : un mot de passe oublié ne se récupère pas. Notez-le dans un endroit sûr."
+  }
+ ],
+ "guide": {
+  "question": "Comment protéger un fichier Excel par mot de passe ?",
+  "intro": "Pour qu'un classeur ne s'ouvre qu'avec un mot de passe, ouvrez Fichier › Informations › Protéger le classeur › Chiffrer avec mot de passe. Saisissez le mot de passe deux fois, puis enregistrez le fichier. Excel le demandera à chaque ouverture. Un mot de passe oublié ne se récupère pas.",
+  "exemple": {
+   "titre": "Exemple",
+   "formule": "Fichier › Informations › Protéger le classeur › Chiffrer avec mot de passe",
+   "explication": "Le fichier des clients ne s'ouvre plus sans le mot de passe, y compris sur un autre ordinateur."
+  },
+  "erreurs": [
+   [
+    "Le mot de passe n'est pas demandé",
+    "Le fichier n'a pas été enregistré après la protection."
+   ],
+   [
+    "Le mot de passe est refusé",
+    "Il respecte les majuscules et minuscules : vérifiez la touche Verr. Maj."
+   ]
+  ],
+  "faq": [
+   [
+    "Comment enlever le mot de passe ?",
+    "Ouvrez le fichier, Chiffrer avec mot de passe, effacez le mot de passe, puis enregistrez."
+   ],
+   [
+    "Quelle différence avec Protéger la feuille ?",
+    "Le mot de passe bloque l'ouverture du fichier ; la protection de feuille empêche seulement de modifier certaines cellules."
+   ],
+   [
+    "Que faire en cas d'oubli ?",
+    "Aucune solution fiable : notez le mot de passe dans un endroit sûr."
+   ]
+  ]
+ },
+ "voirAussi": [
+  "proteger-une-feuille",
+  "travailler-a-plusieurs",
+  "masquer-des-colonnes",
+  "commentaires"
  ]
 }

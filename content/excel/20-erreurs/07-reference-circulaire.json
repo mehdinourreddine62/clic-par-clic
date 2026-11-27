@@ -6,19 +6,95 @@
  "motsCles": "référence circulaire erreur formule elle-même boucle zéro",
  "syntaxe": "La plage ne doit pas contenir la cellule de la formule",
  "arguments": [
-  ["Cause","La formule utilise sa propre cellule"],
-  ["Signe","Un message d'alerte, et souvent un résultat à 0"],
-  ["Solution","Corriger la plage"]
+  [
+   "Cause",
+   "La formule utilise sa propre cellule"
+  ],
+  [
+   "Signe",
+   "Un message d'alerte, et souvent un résultat à 0"
+  ],
+  [
+   "Solution",
+   "Corriger la plage"
+  ]
  ],
  "grille": [
-  ["Mois","Ventes"],
-  ["Janvier","200"],
-  ["Février","150"],
-  ["Total",""]
+  [
+   "Mois",
+   "Ventes"
+  ],
+  [
+   "Janvier",
+   "200"
+  ],
+  [
+   "Février",
+   "150"
+  ],
+  [
+   "Total",
+   ""
+  ]
  ],
+ "titreSeo": "Référence circulaire dans Excel : la trouver et la corriger",
  "etapes": [
-  {"c":"B4","f":"=SOMME(B2:B4)","v":"0","msg":"Il existe une ou plusieurs références circulaires : une formule fait référence à sa propre cellule.","t":"La plage inclut la cellule du total elle-même : la formule tourne en rond."},
-  {"c":"B4","mark":"B4","t":"Excel affiche 0 et signale le problème dans la barre d'état, en bas de la fenêtre."},
-  {"c":"B4","f":"=SOMME(B2:B3)","v":"350","t":"Corrigez la plage pour qu'elle s'arrête avant la cellule de la formule."}
+  {
+   "c": "B4",
+   "f": "=SOMME(B2:B4)",
+   "v": "0",
+   "msg": "Il existe une ou plusieurs références circulaires : une formule fait référence à sa propre cellule.",
+   "t": "La plage inclut la cellule du total elle-même : la formule tourne en rond."
+  },
+  {
+   "c": "B4",
+   "mark": "B4",
+   "t": "Excel affiche 0 et signale le problème dans la barre d'état, en bas de la fenêtre."
+  },
+  {
+   "c": "B4",
+   "f": "=SOMME(B2:B3)",
+   "v": "350",
+   "t": "Corrigez la plage pour qu'elle s'arrête avant la cellule de la formule."
+  }
+ ],
+ "guide": {
+  "question": "Comment corriger une référence circulaire dans Excel ?",
+  "intro": "Une référence circulaire apparaît quand une formule utilise sa propre cellule, directement ou par un détour : le calcul tourne en rond. Excel affiche un avertissement, souvent un 0, et indique « Références circulaires » suivi de l'adresse dans la barre d'état. Le cas le plus courant : une plage de SOMME qui inclut la cellule du total.",
+  "exemple": {
+   "titre": "Exemple",
+   "formule": "=SOMME(B2:B4)  dans B4  →  =SOMME(B2:B3)",
+   "explication": "Le total est en B4 : la plage doit s'arrêter à B3, juste avant la cellule de la formule."
+  },
+  "erreurs": [
+   [
+    "L'avertissement revient à chaque ouverture",
+    "La référence circulaire n'est pas corrigée : suivez l'adresse indiquée dans la barre d'état."
+   ],
+   [
+    "Impossible de trouver la cellule",
+    "Formules › Vérification des erreurs › Références circulaires liste les cellules en cause."
+   ]
+  ],
+  "faq": [
+   [
+    "Pourquoi Excel affiche 0 ?",
+    "Il ne peut pas calculer une valeur qui dépend d'elle-même, alors il s'arrête."
+   ],
+   [
+    "Faut-il activer le calcul itératif ?",
+    "Non, sauf modèle financier volontairement circulaire : corrigez la formule."
+   ],
+   [
+    "Comment l'éviter avec SOMME ?",
+    "Placez le total sous les données et vérifiez la plage proposée par Somme automatique."
+   ]
+  ]
+ },
+ "voirAussi": [
+  "somme",
+  "antecedents-et-dependants",
+  "evaluer-la-formule",
+  "erreur-ref"
  ]
 }

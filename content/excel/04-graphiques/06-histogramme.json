@@ -6,23 +6,127 @@
  "motsCles": "histogramme colonnes barres verticales comparer catégories",
  "syntaxe": "Insertion › Histogramme",
  "ruban": true,
- "graphique": {"type":"col","labels":"A2:A5","series":["B2:B5"],"title":"Ventes par produit","at":"D2:H8"},
+ "graphique": {
+  "type": "col",
+  "labels": "A2:A5",
+  "series": [
+   "B2:B5"
+  ],
+  "title": "Ventes par produit",
+  "at": "D2:H8"
+ },
  "arguments": [
-  ["Une barre","Une catégorie"],
-  ["La hauteur","La valeur"],
-  ["À utiliser pour","Comparer quelques catégories entre elles"]
+  [
+   "Une barre",
+   "Une catégorie"
+  ],
+  [
+   "La hauteur",
+   "La valeur"
+  ],
+  [
+   "À utiliser pour",
+   "Comparer quelques catégories entre elles"
+  ]
  ],
  "grille": [
-  ["Produit","Ventes"],
-  ["Stylos","320"],
-  ["Cahiers","210"],
-  ["Classeurs","140"],
-  ["Trousses","260"]
+  [
+   "Produit",
+   "Ventes"
+  ],
+  [
+   "Stylos",
+   "320"
+  ],
+  [
+   "Cahiers",
+   "210"
+  ],
+  [
+   "Classeurs",
+   "140"
+  ],
+  [
+   "Trousses",
+   "260"
+  ]
  ],
+ "titreSeo": "Histogramme dans Excel : comparer des catégories",
  "etapes": [
-  {"c":"A1","sel":"A1:B5","drag":1,"tab":"Insertion","btn":"Histogramme","chart":1,"t":"L'histogramme compare des valeurs : une barre par catégorie."},
-  {"c":"B2","tab":"Insertion","chart":{"hi":0},"mark":"B2","t":"L'œil compare les hauteurs : on voit tout de suite que les stylos se vendent le mieux."},
-  {"c":"B2","tab":"Insertion","chart":{"hi":null,"dlabels":true},"t":"Ajoutez les étiquettes de données quand la valeur exacte compte."},
-  {"c":"B4","f":"400","tab":"Insertion","chart":{"hi":2},"t":"Une donnée change, la barre s'ajuste aussitôt."}
+  {
+   "c": "A1",
+   "sel": "A1:B5",
+   "drag": 1,
+   "tab": "Insertion",
+   "btn": "Histogramme",
+   "chart": 1,
+   "t": "L'histogramme compare des valeurs : une barre par catégorie."
+  },
+  {
+   "c": "B2",
+   "tab": "Insertion",
+   "chart": {
+    "hi": 0
+   },
+   "mark": "B2",
+   "t": "L'œil compare les hauteurs : on voit tout de suite que les stylos se vendent le mieux."
+  },
+  {
+   "c": "B2",
+   "tab": "Insertion",
+   "chart": {
+    "hi": null,
+    "dlabels": true
+   },
+   "t": "Ajoutez les étiquettes de données quand la valeur exacte compte."
+  },
+  {
+   "c": "B4",
+   "f": "400",
+   "tab": "Insertion",
+   "chart": {
+    "hi": 2
+   },
+   "t": "Une donnée change, la barre s'ajuste aussitôt."
+  }
+ ],
+ "guide": {
+  "question": "Comment faire un histogramme dans Excel ?",
+  "intro": "L'histogramme, ou graphique à colonnes, dessine une barre verticale par catégorie : c'est le graphique le plus simple pour comparer des valeurs. Sélectionnez les catégories et leurs valeurs, puis Insertion › Histogramme. Les barres se mettent à jour dès qu'une donnée change.",
+  "exemple": {
+   "titre": "Exemple",
+   "formule": "Insertion › Histogramme groupé",
+   "explication": "Ventes par produit : stylos 320, trousses 260, cahiers 210, classeurs 140. La barre la plus haute montre aussitôt le produit le plus vendu."
+  },
+  "erreurs": [
+   [
+    "Les noms des catégories sont trop longs",
+    "Utilisez plutôt des barres horizontales : les libellés y ont de la place."
+   ],
+   [
+    "L'échelle commence à un autre nombre que zéro",
+    "Les écarts paraissent exagérés : réglez l'axe vertical pour qu'il parte de 0."
+   ]
+  ],
+  "faq": [
+   [
+    "Histogramme ou barres ?",
+    "Même usage : colonnes verticales pour peu de catégories, barres horizontales pour des libellés longs ou nombreux."
+   ],
+   [
+    "Comment afficher la valeur sur chaque barre ?",
+    "Éléments de graphique › Étiquettes de données."
+   ],
+   [
+    "Comment trier les barres ?",
+    "Triez le tableau source : le graphique suit l'ordre des lignes."
+   ]
+  ]
+ },
+ "voirAussi": [
+  "graphique-en-barres",
+  "trier-un-graphique",
+  "histogramme-empile",
+  "creer-un-graphique"
  ]
 }

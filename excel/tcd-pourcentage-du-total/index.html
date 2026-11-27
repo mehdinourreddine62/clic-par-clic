@@ -3,15 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Afficher des pourcentages dans Excel | Clic par clic</title>
-<meta name="description" content="Transformer les montants en parts du total. Leçon Excel animée en 4 étapes, niveau intermédiaire, gratuite.">
+<title>Pourcentage du total dans un tableau croisé dynamique</title>
+<meta name="description" content="Un tableau croisé dynamique peut transformer ses montants en parts du total, sans aucune formule.">
 <link rel="canonical" href="https://mehdinourreddine62.github.io/clic-par-clic/excel/tcd-pourcentage-du-total/">
 <meta name="robots" content="index,follow">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="Clic par clic">
-<meta property="og:title" content="Afficher des pourcentages dans Excel | Clic par clic">
-<meta property="og:description" content="Transformer les montants en parts du total. Leçon Excel animée en 4 étapes, niveau intermédiaire, gratuite.">
+<meta property="og:title" content="Pourcentage du total dans un tableau croisé dynamique">
+<meta property="og:description" content="Un tableau croisé dynamique peut transformer ses montants en parts du total, sans aucune formule.">
 <meta property="og:url" content="https://mehdinourreddine62.github.io/clic-par-clic/excel/tcd-pourcentage-du-total/">
 <meta property="og:image" content="https://mehdinourreddine62.github.io/clic-par-clic/assets/og-excel.png">
 <meta property="og:image:width" content="1200">
@@ -61,7 +61,18 @@
     <div class="pband" id="pband" hidden></div>
     <details class="sx"><summary>Syntaxe <code>Clic droit › Afficher les valeurs › % du total général</code></summary><dl><dt>Afficher les valeurs</dt><dd>Change la façon de présenter le calcul</dd><dt>% du total général</dt><dd>Chaque valeur divisée par le total</dd></dl></details>
     <details class="sx"><summary>Résumé écrit des étapes</summary><ol class="steps"><li>Voici les ventes par vendeur. Qui pèse combien dans le total ?</li><li>Clic droit, « Afficher les valeurs », % du total général : chaque vendeur devient une part du total.</li><li>Chloé réalise un peu plus du tiers des ventes. Aucun calcul à écrire.</li><li>Pour garder aussi les montants, glissez Montant une seconde fois dans Valeurs.</li></ol></details>
-    <section class="also"><h2>Voir aussi</h2><div class="also-l"><a href="../creer-un-tableau-croise-dynamique/"><b>Créer un tableau croisé dynamique</b><small>Résumer un tableau en quelques clics, sans formule.</small></a><a href="../tcd-lignes-et-colonnes/"><b>Lignes et colonnes</b><small>Croiser deux informations dans le même tableau.</small></a><a href="../tcd-somme-nombre-moyenne/"><b>Somme, nombre ou moyenne</b><small>Changer le calcul affiché dans le tableau croisé.</small></a></div></section>
+    <section class="guide">
+      <h2>Comment afficher des pourcentages dans un tableau croisé dynamique ?</h2>
+      <p>Un tableau croisé dynamique peut transformer ses montants en parts du total, sans aucune formule. Faites un clic droit sur une valeur, puis Afficher les valeurs › % du total général. Les autres choix donnent les parts par ligne ou par colonne. Pour garder aussi les montants, ajoutez le même champ une seconde fois dans Valeurs.</p>
+      <h3>Exemple</h3>
+      <p><code class="gx">Clic droit › Afficher les valeurs › % du total général</code></p>
+      <p>Sur 720 € de ventes : Chloé 260 € (36,1 %), Alice 250 € (34,7 %), Bruno 210 € (29,2 %). Les pourcentages sont arrondis au dixième.</p>
+      <h3>Erreurs fréquentes</h3>
+      <ul><li><b>Les pourcentages dépassent 100 %</b>Vous avez choisi % de la ligne ou de la colonne au lieu de % du total général.</li><li><b>La colonne des montants a disparu</b>Elle a été transformée : glissez à nouveau le champ dans Valeurs pour avoir les deux.</li></ul>
+      <h3>Questions fréquentes</h3>
+      <h4>Comment afficher le pourcentage par région ?</h4><p>Mettez Région en colonnes, puis choisissez % du total de la ligne.</p><h4>Comment régler le nombre de décimales ?</h4><p>Clic droit › Format de nombre › Pourcentage.</p><h4>Les pourcentages se mettent-ils à jour ?</h4><p>Oui, après Actualiser.</p>
+    </section>
+    <section class="also"><h2>Voir aussi</h2><div class="also-l"><a href="../tcd-somme-nombre-moyenne/"><b>Somme, nombre ou moyenne</b><small>Changer le calcul affiché dans le tableau croisé.</small></a><a href="../pourcentages/"><b>Pourcentages</b><small>Calculer une évolution et une part du total.</small></a><a href="../creer-un-tableau-croise-dynamique/"><b>Créer un tableau croisé dynamique</b><small>Résumer un tableau en quelques clics, sans formule.</small></a><a href="../tcd-champ-calcule/"><b>Ajouter un champ calculé</b><small>Créer une nouvelle colonne de calcul dans le tableau croisé.</small></a></div></section>
     <nav class="lnav" aria-label="Leçons voisines"><a href="../tcd-actualiser/"><small>← Précédente</small>Actualiser un tableau croisé</a><a class="nx" id="nextLesson" href="../tcd-grouper-par-mois/"><small>Suivante →</small>Grouper des dates par mois</a></nav>
   </main>
 </div>

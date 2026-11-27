@@ -6,16 +6,90 @@
  "motsCles": "dernier jour fin mois échéance eomonth",
  "syntaxe": "=FIN.MOIS(date; mois)",
  "arguments": [
-  ["date","La date de départ"],
-  ["mois","0 pour le mois en cours, 1 pour le suivant, -1 pour le précédent"]
+  [
+   "date",
+   "La date de départ"
+  ],
+  [
+   "mois",
+   "0 pour le mois en cours, 1 pour le suivant, -1 pour le précédent"
+  ]
  ],
  "grille": [
-  ["Date","Fin du mois","Fin du mois suivant"],
-  ["13/11/2026","",""],
-  ["10/02/2028","",""]
+  [
+   "Date",
+   "Fin du mois",
+   "Fin du mois suivant"
+  ],
+  [
+   "13/11/2026",
+   "",
+   ""
+  ],
+  [
+   "10/02/2028",
+   "",
+   ""
+  ]
  ],
+ "titreSeo": "FIN.MOIS dans Excel : le dernier jour du mois",
  "etapes": [
-  {"c":"B2","f":"=FIN.MOIS(A2;0)","v":"30/11/2026","fill":{"B3":"29/02/2028"},"t":"Le 0 désigne le mois de la date. Les années bissextiles sont prises en compte."},
-  {"c":"C2","f":"=FIN.MOIS(A2;1)","v":"31/12/2026","fill":{"C3":"31/03/2028"},"t":"Avec 1, on obtient la fin du mois suivant. Avec -1, celle du mois précédent."}
+  {
+   "c": "B2",
+   "f": "=FIN.MOIS(A2;0)",
+   "v": "30/11/2026",
+   "fill": {
+    "B3": "29/02/2028"
+   },
+   "t": "Le 0 désigne le mois de la date. Les années bissextiles sont prises en compte."
+  },
+  {
+   "c": "C2",
+   "f": "=FIN.MOIS(A2;1)",
+   "v": "31/12/2026",
+   "fill": {
+    "C3": "31/03/2028"
+   },
+   "t": "Avec 1, on obtient la fin du mois suivant. Avec -1, celle du mois précédent."
+  }
+ ],
+ "guide": {
+  "question": "Comment trouver le dernier jour du mois dans Excel ?",
+  "intro": "FIN.MOIS (EOMONTH en anglais) renvoie le dernier jour du mois d'une date, décalé d'un nombre de mois. Avec 0, c'est la fin du mois de la date ; avec 1, celle du mois suivant ; avec -1, celle du mois précédent. Les mois de 30 ou 31 jours et les années bissextiles sont pris en compte.",
+  "exemple": {
+   "titre": "Exemple",
+   "formule": "=FIN.MOIS(A2;0)",
+   "explication": "Pour le 13/11/2026 : 30/11/2026 ; avec 1 : 31/12/2026. Pour le 10/02/2028, année bissextile : 29/02/2028."
+  },
+  "erreurs": [
+   [
+    "Un nombre s'affiche au lieu d'une date",
+    "Appliquez le format Date courte à la cellule."
+   ],
+   [
+    "#VALEUR!",
+    "La date de départ est du texte : retapez-la ou utilisez DATEVAL."
+   ]
+  ],
+  "faq": [
+   [
+    "Comment trouver le premier jour du mois ?",
+    "=FIN.MOIS(A2;-1)+1."
+   ],
+   [
+    "Comment trouver une échéance à 30 jours fin de mois ?",
+    "=FIN.MOIS(A2+30;0)."
+   ],
+   [
+    "Quelle différence avec MOIS.DECALER ?",
+    "MOIS.DECALER garde le même jour du mois ; FIN.MOIS va toujours au dernier jour."
+   ]
+  ]
+ },
+ "voirAussi": [
+  "mois-decaler",
+  "serie-jour-ouvre",
+  "date",
+  "aujourdhui-datedif"
  ]
 }

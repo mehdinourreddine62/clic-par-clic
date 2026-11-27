@@ -6,26 +6,137 @@
  "motsCles": "nuage de points dispersion relation corrélation deux variables xy graphique",
  "syntaxe": "Insertion › Nuage de points",
  "ruban": true,
- "graphique": {"type":"scatter","labels":"A2:A8","series":["B2:B8"],"title":"Prix et ventes","xt":"Prix","yt":"Ventes","at":"D2:H9"},
+ "graphique": {
+  "type": "scatter",
+  "labels": "A2:A8",
+  "series": [
+   "B2:B8"
+  ],
+  "title": "Prix et ventes",
+  "xt": "Prix",
+  "yt": "Ventes",
+  "at": "D2:H9"
+ },
  "arguments": [
-  ["Axe horizontal","La première mesure"],
-  ["Axe vertical","La seconde mesure"],
-  ["Un point","Une ligne du tableau"]
+  [
+   "Axe horizontal",
+   "La première mesure"
+  ],
+  [
+   "Axe vertical",
+   "La seconde mesure"
+  ],
+  [
+   "Un point",
+   "Une ligne du tableau"
+  ]
  ],
  "grille": [
-  ["Prix","Ventes"],
-  ["5","95"],
-  ["8","80"],
-  ["10","74"],
-  ["12","60"],
-  ["15","52"],
-  ["18","35"],
-  ["20","30"]
+  [
+   "Prix",
+   "Ventes"
+  ],
+  [
+   "5",
+   "95"
+  ],
+  [
+   "8",
+   "80"
+  ],
+  [
+   "10",
+   "74"
+  ],
+  [
+   "12",
+   "60"
+  ],
+  [
+   "15",
+   "52"
+  ],
+  [
+   "18",
+   "35"
+  ],
+  [
+   "20",
+   "30"
+  ]
  ],
+ "titreSeo": "Nuage de points dans Excel : voir un lien entre deux mesures",
  "etapes": [
-  {"c":"A1","sel":"A1:B8","drag":1,"tab":"Insertion","btn":"Nuage de points","chart":1,"t":"Le nuage de points place chaque ligne selon deux nombres : ici le prix et les ventes."},
-  {"c":"A4","sel":"A4:B4","tab":"Insertion","chart":{"hi":2},"t":"Un point = une ligne du tableau : prix de 10, 74 ventes."},
-  {"c":"A1","tab":"Insertion","chart":{"hi":null,"trend":true},"t":"Ajoutez une courbe de tendance : le lien apparaît. Plus le prix monte, moins on vend."},
-  {"c":"A1","tab":"Insertion","t":"À utiliser pour chercher un lien entre deux mesures, jamais pour des catégories ou des dates."}
+  {
+   "c": "A1",
+   "sel": "A1:B8",
+   "drag": 1,
+   "tab": "Insertion",
+   "btn": "Nuage de points",
+   "chart": 1,
+   "t": "Le nuage de points place chaque ligne selon deux nombres : ici le prix et les ventes."
+  },
+  {
+   "c": "A4",
+   "sel": "A4:B4",
+   "tab": "Insertion",
+   "chart": {
+    "hi": 2
+   },
+   "t": "Un point = une ligne du tableau : prix de 10, 74 ventes."
+  },
+  {
+   "c": "A1",
+   "tab": "Insertion",
+   "chart": {
+    "hi": null,
+    "trend": true
+   },
+   "t": "Ajoutez une courbe de tendance : le lien apparaît. Plus le prix monte, moins on vend."
+  },
+  {
+   "c": "A1",
+   "tab": "Insertion",
+   "t": "À utiliser pour chercher un lien entre deux mesures, jamais pour des catégories ou des dates."
+  }
+ ],
+ "guide": {
+  "question": "Comment faire un nuage de points dans Excel ?",
+  "intro": "Le nuage de points place chaque ligne du tableau selon deux nombres, l'un en abscisse, l'autre en ordonnée. Il sert à voir si deux mesures sont liées : prix et ventes, heures de révision et note. Sélectionnez les deux colonnes de nombres, puis Insertion › Nuage de points.",
+  "exemple": {
+   "titre": "Exemple",
+   "formule": "Insertion › Nuage de points",
+   "explication": "Prix de 5 à 20 € et ventes de 95 à 30 : les points descendent. Avec une courbe de tendance, le lien apparaît : plus le prix monte, moins on vend."
+  },
+  "erreurs": [
+   [
+    "Les points sont alignés à intervalles réguliers",
+    "La première colonne contient du texte ou des dates : le nuage a besoin de deux colonnes de nombres."
+   ],
+   [
+    "Les axes sont inversés",
+    "La première colonne sélectionnée va en abscisse : placez la cause (le prix) à gauche."
+   ]
+  ],
+  "faq": [
+   [
+    "Nuage de points ou courbe ?",
+    "La courbe suit le temps ; le nuage cherche un lien entre deux mesures."
+   ],
+   [
+    "Un lien prouve-t-il une cause ?",
+    "Non : il montre que deux mesures varient ensemble, pas que l'une provoque l'autre."
+   ],
+   [
+    "Comment voir la force du lien ?",
+    "Affichez le R² de la courbe de tendance : plus il est proche de 1, plus le lien est fort."
+   ]
+  ]
+ },
+ "voirAussi": [
+  "courbe-de-tendance",
+  "choisir-un-type-de-graphique",
+  "graphique-en-courbe",
+  "creer-un-graphique"
  ]
 }

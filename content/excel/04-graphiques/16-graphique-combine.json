@@ -6,23 +6,137 @@
  "motsCles": "graphique combiné axe secondaire barres courbe deux échelles",
  "syntaxe": "Modifier le type de graphique › Graphique combiné",
  "ruban": true,
- "graphique": {"type":"col","labels":"A2:A5","series":["B2:B5","C2:C5"],"title":"Ventes et marge","legend":true,"at":"E2:I8"},
+ "graphique": {
+  "type": "col",
+  "labels": "A2:A5",
+  "series": [
+   "B2:B5",
+   "C2:C5"
+  ],
+  "title": "Ventes et marge",
+  "legend": true,
+  "at": "E2:I8"
+ },
  "arguments": [
-  ["Graphique combiné","Un type différent pour chaque série"],
-  ["Axe secondaire","Une seconde échelle, à droite"],
-  ["À utiliser pour","Deux mesures d'ordres de grandeur différents"]
+  [
+   "Graphique combiné",
+   "Un type différent pour chaque série"
+  ],
+  [
+   "Axe secondaire",
+   "Une seconde échelle, à droite"
+  ],
+  [
+   "À utiliser pour",
+   "Deux mesures d'ordres de grandeur différents"
+  ]
  ],
  "grille": [
-  ["Mois","Ventes","Taux de marge"],
-  ["Janvier","200","18 %"],
-  ["Février","260","22 %"],
-  ["Mars","240","20 %"],
-  ["Avril","320","27 %"]
+  [
+   "Mois",
+   "Ventes",
+   "Taux de marge"
+  ],
+  [
+   "Janvier",
+   "200",
+   "18 %"
+  ],
+  [
+   "Février",
+   "260",
+   "22 %"
+  ],
+  [
+   "Mars",
+   "240",
+   "20 %"
+  ],
+  [
+   "Avril",
+   "320",
+   "27 %"
+  ]
  ],
+ "titreSeo": "Graphique combiné Excel : barres, courbe et axe secondaire",
  "etapes": [
-  {"c":"A1","sel":"A1:C5","drag":1,"tab":"Insertion","btn":"Histogramme","chart":1,"t":"Deux séries d'échelles très différentes : les barres de la marge sont presque invisibles."},
-  {"c":"A1","tab":"Création de graphique","btn":"Modifier le type de graphique","chart":{"type":"combo","line":[1]},"t":"Choisissez « Graphique combiné » : les ventes restent en barres, la marge devient une courbe."},
-  {"c":"A1","menu":"Graphique combiné › Taux de marge › <b>Axe secondaire</b>","chart":{"axis2":true,"unit2":" %"},"t":"Cochez « Axe secondaire » : la courbe reçoit sa propre échelle, à droite."},
-  {"c":"A5","tab":"Création de graphique","chart":{"hi":3},"mark":"B5 C5","t":"On lit maintenant les deux à la fois : avril est le meilleur mois, en ventes comme en marge."}
+  {
+   "c": "A1",
+   "sel": "A1:C5",
+   "drag": 1,
+   "tab": "Insertion",
+   "btn": "Histogramme",
+   "chart": 1,
+   "t": "Deux séries d'échelles très différentes : les barres de la marge sont presque invisibles."
+  },
+  {
+   "c": "A1",
+   "tab": "Création de graphique",
+   "btn": "Modifier le type de graphique",
+   "chart": {
+    "type": "combo",
+    "line": [
+     1
+    ]
+   },
+   "t": "Choisissez « Graphique combiné » : les ventes restent en barres, la marge devient une courbe."
+  },
+  {
+   "c": "A1",
+   "menu": "Graphique combiné › Taux de marge › <b>Axe secondaire</b>",
+   "chart": {
+    "axis2": true,
+    "unit2": " %"
+   },
+   "t": "Cochez « Axe secondaire » : la courbe reçoit sa propre échelle, à droite."
+  },
+  {
+   "c": "A5",
+   "tab": "Création de graphique",
+   "chart": {
+    "hi": 3
+   },
+   "mark": "B5 C5",
+   "t": "On lit maintenant les deux à la fois : avril est le meilleur mois, en ventes comme en marge."
+  }
+ ],
+ "guide": {
+  "question": "Comment faire un graphique combiné avec un axe secondaire dans Excel ?",
+  "intro": "Un graphique combiné affiche deux séries de nature différente sur le même graphique : par exemple des ventes en barres et un taux de marge en courbe. Comme les échelles sont très différentes, la seconde série reçoit un axe secondaire, à droite. Clic droit sur le graphique › Modifier le type de graphique › Graphique combiné, puis cochez Axe secondaire pour la courbe.",
+  "exemple": {
+   "titre": "Exemple",
+   "formule": "Modifier le type de graphique › Graphique combiné",
+   "explication": "Ventes de 200 à 320 en barres, taux de marge de 18 % à 27 % en courbe sur l'axe de droite : avril est le meilleur mois sur les deux plans."
+  },
+  "erreurs": [
+   [
+    "La deuxième série est invisible",
+    "Ses valeurs sont trop petites pour l'échelle principale : cochez Axe secondaire."
+   ],
+   [
+    "Le lecteur confond les deux axes",
+    "Ajoutez un titre à chaque axe, avec l'unité (€, %)."
+   ]
+  ],
+  "faq": [
+   [
+    "Peut-on combiner deux histogrammes ?",
+    "Oui, mais une barre et une courbe se lisent mieux."
+   ],
+   [
+    "Où se trouve l'option dans Excel 365 ?",
+    "Insertion › Graphique combiné, ou clic droit › Modifier le type de graphique › Graphique combiné."
+   ],
+   [
+    "Comment supprimer l'axe secondaire ?",
+    "Décochez Axe secondaire pour la série dans Modifier le type de graphique."
+   ]
+  ]
+ },
+ "voirAussi": [
+  "graphique-plusieurs-series",
+  "regler-les-axes",
+  "graphique-en-courbe",
+  "histogramme"
  ]
 }

@@ -7,23 +7,114 @@
  "syntaxe": "=VPM(taux/12; années*12; -montant)",
  "sansEnTete": true,
  "arguments": [
-  ["taux/12","Le taux par mois"],
-  ["années*12","Le nombre de mensualités"],
-  ["-montant","Le capital emprunté, avec un signe moins"]
+  [
+   "taux/12",
+   "Le taux par mois"
+  ],
+  [
+   "années*12",
+   "Le nombre de mensualités"
+  ],
+  [
+   "-montant",
+   "Le capital emprunté, avec un signe moins"
+  ]
  ],
  "grille": [
-  ["Montant emprunté","10 000,00 €"],
-  ["Taux annuel","4 %"],
-  ["Durée en années","3"],
-  ["Mensualité",""],
-  ["Total remboursé",""],
-  ["Coût du crédit",""]
+  [
+   "Montant emprunté",
+   "10 000,00 €"
+  ],
+  [
+   "Taux annuel",
+   "4 %"
+  ],
+  [
+   "Durée en années",
+   "3"
+  ],
+  [
+   "Mensualité",
+   ""
+  ],
+  [
+   "Total remboursé",
+   ""
+  ],
+  [
+   "Coût du crédit",
+   ""
+  ]
  ],
+ "titreSeo": "VPM dans Excel : calculer la mensualité d'un prêt",
  "etapes": [
-  {"c":"B4","f":"=VPM(B2/12;B3*12;-B1)","v":"295,24 €","t":"VPM calcule une mensualité : le taux par mois, le nombre de mois, le montant emprunté."},
-  {"c":"B4","mark":"B2 B3","t":"Tout doit être dans la même unité : le taux annuel est divisé par 12, la durée multipliée par 12."},
-  {"c":"B4","mark":"B1","t":"Le signe moins devant le montant donne un résultat positif. Sans lui, VPM affiche un nombre négatif."},
-  {"c":"B5","f":"=B4*B3*12","v":"10 628,63 €","t":"Mensualité × nombre de mois : le total réellement remboursé."},
-  {"c":"B6","f":"=B5-B1","v":"628,63 €","mark":"B6","t":"La différence avec le montant emprunté est le coût du crédit."}
+  {
+   "c": "B4",
+   "f": "=VPM(B2/12;B3*12;-B1)",
+   "v": "295,24 €",
+   "t": "VPM calcule une mensualité : le taux par mois, le nombre de mois, le montant emprunté."
+  },
+  {
+   "c": "B4",
+   "mark": "B2 B3",
+   "t": "Tout doit être dans la même unité : le taux annuel est divisé par 12, la durée multipliée par 12."
+  },
+  {
+   "c": "B4",
+   "mark": "B1",
+   "t": "Le signe moins devant le montant donne un résultat positif. Sans lui, VPM affiche un nombre négatif."
+  },
+  {
+   "c": "B5",
+   "f": "=B4*B3*12",
+   "v": "10 628,63 €",
+   "t": "Mensualité × nombre de mois : le total réellement remboursé."
+  },
+  {
+   "c": "B6",
+   "f": "=B5-B1",
+   "v": "628,63 €",
+   "mark": "B6",
+   "t": "La différence avec le montant emprunté est le coût du crédit."
+  }
+ ],
+ "guide": {
+  "question": "Comment calculer une mensualité de crédit avec VPM dans Excel ?",
+  "intro": "VPM (PMT en anglais) calcule le remboursement constant d'un emprunt. Elle prend le taux par période, le nombre de périodes et le montant emprunté. Pour des mensualités, divisez le taux annuel par 12 et multipliez la durée en années par 12. Mettez un signe moins devant le montant pour obtenir un résultat positif.",
+  "exemple": {
+   "titre": "Exemple",
+   "formule": "=VPM(B2/12;B3*12;-B1)",
+   "explication": "10 000 € empruntés à 4 % sur 3 ans : 295,24 € par mois, soit 10 628,63 € remboursés et 628,63 € de coût du crédit (valeurs arrondies au centime)."
+  },
+  "erreurs": [
+   [
+    "La mensualité est négative",
+    "Le montant n'a pas de signe moins : VPM compte l'argent qui sort comme négatif."
+   ],
+   [
+    "La mensualité est énorme",
+    "Le taux annuel n'a pas été divisé par 12."
+   ]
+  ],
+  "faq": [
+   [
+    "Comment calculer le coût total du crédit ?",
+    "Mensualité × nombre de mois − montant emprunté."
+   ],
+   [
+    "L'assurance est-elle comprise ?",
+    "Non : VPM ne calcule que le capital et les intérêts."
+   ],
+   [
+    "Comment trouver la durée pour une mensualité donnée ?",
+    "Avec NPM(taux/12;-mensualité;montant), qui renvoie le nombre de mois."
+   ]
+  ]
+ },
+ "voirAussi": [
+  "interets-composes",
+  "pourcentages",
+  "references-absolues",
+  "arrondi"
  ]
 }

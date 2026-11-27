@@ -6,18 +6,99 @@
  "motsCles": "joindre.texte assembler concaténer séparateur plage textjoin",
  "syntaxe": "=JOINDRE.TEXTE(séparateur; ignorer_vides; plage)",
  "arguments": [
-  ["séparateur","Le texte placé entre chaque valeur"],
-  ["ignorer_vides","VRAI pour sauter les cellules vides"],
-  ["plage","Les cellules à assembler"]
+  [
+   "séparateur",
+   "Le texte placé entre chaque valeur"
+  ],
+  [
+   "ignorer_vides",
+   "VRAI pour sauter les cellules vides"
+  ],
+  [
+   "plage",
+   "Les cellules à assembler"
+  ]
  ],
  "grille": [
-  ["Prénom","Nom","Ville","Résultat"],
-  ["Marie","Durand","Lille",""],
-  ["Karim","","Lyon",""]
+  [
+   "Prénom",
+   "Nom",
+   "Ville",
+   "Résultat"
+  ],
+  [
+   "Marie",
+   "Durand",
+   "Lille",
+   ""
+  ],
+  [
+   "Karim",
+   "",
+   "Lyon",
+   ""
+  ]
  ],
+ "titreSeo": "JOINDRE.TEXTE dans Excel : assembler du texte",
  "etapes": [
-  {"c":"D2","f":"=JOINDRE.TEXTE(\" - \";VRAI;A2:C2)","v":"Marie - Durand - Lille","t":"JOINDRE.TEXTE assemble toute une plage en plaçant le séparateur entre chaque valeur."},
-  {"c":"D2","fill":{"D3":"Karim - Lyon"},"mark":"B3","t":"Avec VRAI, les cellules vides sont ignorées : pas de séparateur en double."},
-  {"c":"D3","f":"=JOINDRE.TEXTE(\" - \";FAUX;A3:C3)","v":"Karim -  - Lyon","t":"Avec FAUX, la cellule vide laisse un trou."}
+  {
+   "c": "D2",
+   "f": "=JOINDRE.TEXTE(\" - \";VRAI;A2:C2)",
+   "v": "Marie - Durand - Lille",
+   "t": "JOINDRE.TEXTE assemble toute une plage en plaçant le séparateur entre chaque valeur."
+  },
+  {
+   "c": "D2",
+   "fill": {
+    "D3": "Karim - Lyon"
+   },
+   "mark": "B3",
+   "t": "Avec VRAI, les cellules vides sont ignorées : pas de séparateur en double."
+  },
+  {
+   "c": "D3",
+   "f": "=JOINDRE.TEXTE(\" - \";FAUX;A3:C3)",
+   "v": "Karim -  - Lyon",
+   "t": "Avec FAUX, la cellule vide laisse un trou."
+  }
+ ],
+ "guide": {
+  "question": "Comment assembler plusieurs cellules avec JOINDRE.TEXTE ?",
+  "intro": "JOINDRE.TEXTE (TEXTJOIN en anglais) assemble toute une plage de cellules en plaçant un séparateur entre chaque valeur. Le premier argument est le séparateur, le deuxième indique s'il faut ignorer les cellules vides (VRAI) ou non (FAUX), le troisième est la plage. Elle remplace avantageusement CONCAT et le signe &.",
+  "exemple": {
+   "titre": "Exemple",
+   "formule": "=JOINDRE.TEXTE(\" - \";VRAI;A2:C2)",
+   "explication": "Renvoie « Marie - Durand - Lille ». Pour Karim, sans nom, VRAI donne « Karim - Lyon » ; FAUX laisserait un séparateur en double."
+  },
+  "erreurs": [
+   [
+    "#NOM?",
+    "Le séparateur n'est pas entre guillemets, ou la version d'Excel est trop ancienne (avant 2019)."
+   ],
+   [
+    "Des séparateurs en double",
+    "Le deuxième argument vaut FAUX : mettez VRAI pour ignorer les cellules vides."
+   ]
+  ],
+  "faq": [
+   [
+    "Comment mettre un espace comme séparateur ?",
+    "Écrivez \" \" : un espace entre guillemets."
+   ],
+   [
+    "Comment aller à la ligne entre les valeurs ?",
+    "Utilisez CAR(10) comme séparateur et activez Renvoyer à la ligne automatiquement."
+   ],
+   [
+    "Quelle différence avec CONCAT ?",
+    "CONCAT colle sans séparateur ; JOINDRE.TEXTE ajoute le séparateur et peut ignorer les vides."
+   ]
+  ]
+ },
+ "voirAussi": [
+  "assembler-texte",
+  "texte-avant-texte-apres",
+  "substitue",
+  "supprespace"
  ]
 }

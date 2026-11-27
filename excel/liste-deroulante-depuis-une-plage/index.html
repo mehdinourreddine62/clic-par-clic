@@ -3,15 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Liste déroulante depuis une plage dans Excel | Clic par clic</title>
-<meta name="description" content="Une liste qui se met à jour quand ses choix changent. Leçon Excel animée en 4 étapes, niveau intermédiaire, gratuite.">
+<title>Liste déroulante Excel à partir d'une plage de cellules</title>
+<meta name="description" content="Une liste déroulante peut lire ses choix dans une plage de cellules au lieu de les taper un par un. Données › Validation des données › Autoriser ">
 <link rel="canonical" href="https://mehdinourreddine62.github.io/clic-par-clic/excel/liste-deroulante-depuis-une-plage/">
 <meta name="robots" content="index,follow">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="Clic par clic">
-<meta property="og:title" content="Liste déroulante depuis une plage dans Excel | Clic par clic">
-<meta property="og:description" content="Une liste qui se met à jour quand ses choix changent. Leçon Excel animée en 4 étapes, niveau intermédiaire, gratuite.">
+<meta property="og:title" content="Liste déroulante Excel à partir d'une plage de cellules">
+<meta property="og:description" content="Une liste déroulante peut lire ses choix dans une plage de cellules au lieu de les taper un par un. Données › Validation des données › Autoriser ">
 <meta property="og:url" content="https://mehdinourreddine62.github.io/clic-par-clic/excel/liste-deroulante-depuis-une-plage/">
 <meta property="og:image" content="https://mehdinourreddine62.github.io/clic-par-clic/assets/og-excel.png">
 <meta property="og:image:width" content="1200">
@@ -61,7 +61,18 @@
     <div class="pband" id="pband" hidden></div>
     <details class="sx"><summary>Syntaxe <code>Source : =$D$2:$D$4</code></summary><dl><dt>Source</dt><dd>Une plage de cellules contenant les choix</dd><dt>Avantage</dt><dd>Un seul endroit à tenir à jour</dd></dl></details>
     <details class="sx"><summary>Résumé écrit des étapes</summary><ol class="steps"><li>Au lieu de taper les choix, désignez une plage qui les contient.</li><li>La liste reprend le contenu de la plage.</li><li>Modifiez un choix dans la plage : inutile de rouvrir la validation.</li><li>La liste a suivi. Pratique quand les choix évoluent : un seul endroit à tenir à jour.</li></ol></details>
-    <section class="also"><h2>Voir aussi</h2><div class="also-l"><a href="../mettre-sous-forme-de-tableau/"><b>Mettre sous forme de tableau</b><small>Un vrai tableau : mise en forme, filtres et total automatiques.</small></a><a href="../liste-deroulante/"><b>Créer une liste déroulante</b><small>Faire choisir une valeur dans une liste, sans faute de frappe.</small></a><a href="../liste-deroulante-message-d-erreur/"><b>Liste déroulante : messages</b><small>Bloquer les mauvaises saisies et guider la personne qui remplit.</small></a></div></section>
+    <section class="guide">
+      <h2>Comment créer une liste déroulante à partir d'une plage dans Excel ?</h2>
+      <p>Une liste déroulante peut lire ses choix dans une plage de cellules au lieu de les taper un par un. Données › Validation des données › Autoriser : Liste, puis dans Source, sélectionnez la plage qui contient les choix. Modifier un choix dans la plage met la liste à jour aussitôt : un seul endroit à tenir à jour.</p>
+      <h3>Exemple</h3>
+      <p><code class="gx">Source : =$D$2:$D$4</code></p>
+      <p>Les choix À faire, En cours et Terminé sont en D2:D4 ; la colonne Statut propose ces trois valeurs dans sa liste.</p>
+      <h3>Erreurs fréquentes</h3>
+      <ul><li><b>Les nouveaux choix n'apparaissent pas</b>Ils sont sous la plage indiquée : agrandissez la plage, ou transformez-la en tableau Excel.</li><li><b>La liste fonctionne sur une ligne seulement</b>La validation n'a été posée que sur une cellule : sélectionnez toute la colonne avant de la créer.</li></ul>
+      <h3>Questions fréquentes</h3>
+      <h4>La plage peut-elle être sur une autre feuille ?</h4><p>Oui : tapez =Listes!$A$2:$A$4, ou donnez un nom à la plage et tapez =NomDeLaPlage.</p><h4>Comment ajouter un choix automatiquement ?</h4><p>Mettez les choix dans un tableau Excel et nommez la colonne : la liste suit.</p><h4>Comment supprimer une liste déroulante ?</h4><p>Validation des données › Effacer tout.</p>
+    </section>
+    <section class="also"><h2>Voir aussi</h2><div class="also-l"><a href="../liste-deroulante/"><b>Créer une liste déroulante</b><small>Faire choisir une valeur dans une liste, sans faute de frappe.</small></a><a href="../liste-deroulante-message-d-erreur/"><b>Liste déroulante : messages</b><small>Bloquer les mauvaises saisies et guider la personne qui remplit.</small></a><a href="../nommer-une-plage/"><b>Nommer une plage</b><small>Remplacer une référence par un nom lisible.</small></a><a href="../mettre-sous-forme-de-tableau/"><b>Mettre sous forme de tableau</b><small>Un vrai tableau : mise en forme, filtres et total automatiques.</small></a></div></section>
     <nav class="lnav" aria-label="Leçons voisines"><a href="../liste-deroulante/"><small>← Précédente</small>Créer une liste déroulante</a><a class="nx" id="nextLesson" href="../liste-deroulante-message-d-erreur/"><small>Suivante →</small>Liste déroulante : messages</a></nav>
   </main>
 </div>

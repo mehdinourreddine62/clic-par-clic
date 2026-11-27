@@ -3,15 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>JOINDRE.TEXTE – Excel en animation | Clic par clic</title>
-<meta name="description" content="Assembler une plage de cellules avec un séparateur. Leçon Excel animée en 3 étapes, niveau intermédiaire, gratuite.">
+<title>JOINDRE.TEXTE dans Excel : assembler du texte</title>
+<meta name="description" content="JOINDRE.TEXTE (TEXTJOIN en anglais) assemble toute une plage de cellules en plaçant un séparateur entre chaque valeur.">
 <link rel="canonical" href="https://mehdinourreddine62.github.io/clic-par-clic/excel/joindre-texte/">
 <meta name="robots" content="index,follow">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="Clic par clic">
-<meta property="og:title" content="JOINDRE.TEXTE – Excel en animation | Clic par clic">
-<meta property="og:description" content="Assembler une plage de cellules avec un séparateur. Leçon Excel animée en 3 étapes, niveau intermédiaire, gratuite.">
+<meta property="og:title" content="JOINDRE.TEXTE dans Excel : assembler du texte">
+<meta property="og:description" content="JOINDRE.TEXTE (TEXTJOIN en anglais) assemble toute une plage de cellules en plaçant un séparateur entre chaque valeur.">
 <meta property="og:url" content="https://mehdinourreddine62.github.io/clic-par-clic/excel/joindre-texte/">
 <meta property="og:image" content="https://mehdinourreddine62.github.io/clic-par-clic/assets/og-excel.png">
 <meta property="og:image:width" content="1200">
@@ -61,7 +61,18 @@
     <a class="dl" href="../../fichiers/excel/joindre-texte.xlsx" download="joindre-texte.xlsx"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg><span><b>Télécharger le fichier d'exercice</b><small>Excel · consignes, données de départ et solution</small></span></a><div class="pband" id="pband" hidden></div>
     <details class="sx"><summary>Syntaxe <code>=JOINDRE.TEXTE(séparateur; ignorer_vides; plage)</code></summary><dl><dt>séparateur</dt><dd>Le texte placé entre chaque valeur</dd><dt>ignorer_vides</dt><dd>VRAI pour sauter les cellules vides</dd><dt>plage</dt><dd>Les cellules à assembler</dd></dl></details>
     <details class="sx"><summary>Résumé écrit des étapes</summary><ol class="steps"><li>JOINDRE.TEXTE assemble toute une plage en plaçant le séparateur entre chaque valeur.</li><li>Avec VRAI, les cellules vides sont ignorées : pas de séparateur en double.</li><li>Avec FAUX, la cellule vide laisse un trou.</li></ol></details>
-    <section class="also"><h2>Voir aussi</h2><div class="also-l"><a href="../assembler-texte/"><b>Assembler du texte (&amp;)</b><small>Coller plusieurs textes dans une seule cellule.</small></a><a href="../gauche-droite-stxt/"><b>GAUCHE, DROITE et STXT</b><small>Extraire le début, la fin ou le milieu d'un texte.</small></a><a href="../majuscule-minuscule-nompropre/"><b>MAJUSCULE, MINUSCULE et NOMPROPRE</b><small>Uniformiser la casse de noms saisis n'importe comment.</small></a></div></section>
+    <section class="guide">
+      <h2>Comment assembler plusieurs cellules avec JOINDRE.TEXTE ?</h2>
+      <p>JOINDRE.TEXTE (TEXTJOIN en anglais) assemble toute une plage de cellules en plaçant un séparateur entre chaque valeur. Le premier argument est le séparateur, le deuxième indique s'il faut ignorer les cellules vides (VRAI) ou non (FAUX), le troisième est la plage. Elle remplace avantageusement CONCAT et le signe &amp;.</p>
+      <h3>Exemple</h3>
+      <p><code class="gx">=JOINDRE.TEXTE(&quot; - &quot;;VRAI;A2:C2)</code></p>
+      <p>Renvoie « Marie - Durand - Lille ». Pour Karim, sans nom, VRAI donne « Karim - Lyon » ; FAUX laisserait un séparateur en double.</p>
+      <h3>Erreurs fréquentes</h3>
+      <ul><li><b>#NOM?</b>Le séparateur n'est pas entre guillemets, ou la version d'Excel est trop ancienne (avant 2019).</li><li><b>Des séparateurs en double</b>Le deuxième argument vaut FAUX : mettez VRAI pour ignorer les cellules vides.</li></ul>
+      <h3>Questions fréquentes</h3>
+      <h4>Comment mettre un espace comme séparateur ?</h4><p>Écrivez &quot; &quot; : un espace entre guillemets.</p><h4>Comment aller à la ligne entre les valeurs ?</h4><p>Utilisez CAR(10) comme séparateur et activez Renvoyer à la ligne automatiquement.</p><h4>Quelle différence avec CONCAT ?</h4><p>CONCAT colle sans séparateur ; JOINDRE.TEXTE ajoute le séparateur et peut ignorer les vides.</p>
+    </section>
+    <section class="also"><h2>Voir aussi</h2><div class="also-l"><a href="../assembler-texte/"><b>Assembler du texte (&amp;)</b><small>Coller plusieurs textes dans une seule cellule.</small></a><a href="../texte-avant-texte-apres/"><b>TEXTE.AVANT et TEXTE.APRES</b><small>Extraire ce qui se trouve avant ou après un caractère.</small></a><a href="../substitue/"><b>SUBSTITUE</b><small>Remplacer un morceau de texte par un autre, avec une formule.</small></a><a href="../supprespace/"><b>SUPPRESPACE</b><small>Retirer les espaces en trop qui faussent les recherches.</small></a></div></section>
     <nav class="lnav" aria-label="Leçons voisines"><a href="../substitue/"><small>← Précédente</small>SUBSTITUE</a><a class="nx" id="nextLesson" href="../aujourdhui-datedif/"><small>Suivante →</small>AUJOURDHUI et DATEDIF</a></nav>
   </main>
 </div>

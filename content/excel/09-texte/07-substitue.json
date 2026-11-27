@@ -6,18 +6,106 @@
  "motsCles": "substitue remplacer texte caractère formule supprimer tiret",
  "syntaxe": "=SUBSTITUE(texte; ancien; nouveau)",
  "arguments": [
-  ["ancien","Le texte à remplacer"],
-  ["nouveau","Le texte de remplacement, ou \"\" pour supprimer"],
-  ["4e argument","Le numéro de l'occurrence à remplacer"]
+  [
+   "ancien",
+   "Le texte à remplacer"
+  ],
+  [
+   "nouveau",
+   "Le texte de remplacement, ou \"\" pour supprimer"
+  ],
+  [
+   "4e argument",
+   "Le numéro de l'occurrence à remplacer"
+  ]
  ],
  "grille": [
-  ["Référence","Nouvelle année","Sans tiret","2e tiret"],
-  ["REF-2025-001","","",""],
-  ["REF-2025-002","","",""]
+  [
+   "Référence",
+   "Nouvelle année",
+   "Sans tiret",
+   "2e tiret"
+  ],
+  [
+   "REF-2025-001",
+   "",
+   "",
+   ""
+  ],
+  [
+   "REF-2025-002",
+   "",
+   "",
+   ""
+  ]
  ],
+ "titreSeo": "SUBSTITUE dans Excel : remplacer du texte avec une formule",
  "etapes": [
-  {"c":"B2","f":"=SUBSTITUE(A2;\"2025\";\"2026\")","v":"REF-2026-001","fill":{"B3":"REF-2026-002"},"t":"SUBSTITUE remplace un texte par un autre, sans toucher à l'original."},
-  {"c":"C2","f":"=SUBSTITUE(A2;\"-\";\"\")","v":"REF2025001","fill":{"C3":"REF2025002"},"t":"Remplacer par rien, deux guillemets collés, revient à supprimer."},
-  {"c":"D2","f":"=SUBSTITUE(A2;\"-\";\"/\";2)","v":"REF-2025/001","fill":{"D3":"REF-2025/002"},"t":"Un quatrième argument vise une seule occurrence : ici, le deuxième tiret seulement."}
+  {
+   "c": "B2",
+   "f": "=SUBSTITUE(A2;\"2025\";\"2026\")",
+   "v": "REF-2026-001",
+   "fill": {
+    "B3": "REF-2026-002"
+   },
+   "t": "SUBSTITUE remplace un texte par un autre, sans toucher à l'original."
+  },
+  {
+   "c": "C2",
+   "f": "=SUBSTITUE(A2;\"-\";\"\")",
+   "v": "REF2025001",
+   "fill": {
+    "C3": "REF2025002"
+   },
+   "t": "Remplacer par rien, deux guillemets collés, revient à supprimer."
+  },
+  {
+   "c": "D2",
+   "f": "=SUBSTITUE(A2;\"-\";\"/\";2)",
+   "v": "REF-2025/001",
+   "fill": {
+    "D3": "REF-2025/002"
+   },
+   "t": "Un quatrième argument vise une seule occurrence : ici, le deuxième tiret seulement."
+  }
+ ],
+ "guide": {
+  "question": "Comment remplacer un texte par un autre avec SUBSTITUE ?",
+  "intro": "SUBSTITUE (SUBSTITUTE en anglais) remplace un morceau de texte par un autre dans une cellule, sans modifier l'original. Elle prend le texte, l'ancien morceau, le nouveau, et en option le numéro de l'occurrence à remplacer. Remplacer par deux guillemets collés (\"\") revient à supprimer.",
+  "exemple": {
+   "titre": "Exemple",
+   "formule": "=SUBSTITUE(A2;\"2025\";\"2026\")",
+   "explication": "REF-2025-001 devient REF-2026-001. Avec =SUBSTITUE(A2;\"-\";\"\"), on obtient REF2025001 ; avec =SUBSTITUE(A2;\"-\";\"/\";2), seul le deuxième tiret change : REF-2025/001."
+  },
+  "erreurs": [
+   [
+    "Rien n'est remplacé",
+    "SUBSTITUE respecte les majuscules : « ref » ne remplace pas « REF »."
+   ],
+   [
+    "Le résultat n'est plus un nombre",
+    "SUBSTITUE renvoie du texte : ajoutez -- devant, par exemple =--SUBSTITUE(A2;\" \";\"\")."
+   ]
+  ],
+  "faq": [
+   [
+    "Quelle différence avec REMPLACER ?",
+    "REMPLACER travaille sur une position (à partir du 5e caractère) ; SUBSTITUE cherche un texte précis."
+   ],
+   [
+    "Et Rechercher et remplacer (Ctrl + H) ?",
+    "Il modifie les cellules elles-mêmes ; SUBSTITUE laisse l'original intact et met le résultat ailleurs."
+   ],
+   [
+    "Comment supprimer les espaces ?",
+    "=SUBSTITUE(A2;\" \";\"\") les retire tous ; SUPPRESPACE ne retire que ceux en trop."
+   ]
+  ]
+ },
+ "voirAussi": [
+  "rechercher-et-remplacer",
+  "supprespace",
+  "joindre-texte",
+  "nbcar"
  ]
 }

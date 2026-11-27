@@ -3,15 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>MAX.SI.ENS et MIN.SI.ENS dans Excel | Clic par clic</title>
-<meta name="description" content="La plus grande ou la plus petite valeur d'un groupe. Leçon Excel animée en 2 étapes, niveau intermédiaire, gratuite.">
+<title>MAX.SI.ENS et MIN.SI.ENS dans Excel : exemple simple</title>
+<meta name="description" content="MAX.SI.ENS (MAXIFS en anglais) renvoie la plus grande valeur d'une plage parmi les lignes qui respectent un ou plusieurs critères ; MIN.SI.ENS fait de même…">
 <link rel="canonical" href="https://mehdinourreddine62.github.io/clic-par-clic/excel/max-si-ens-min-si-ens/">
 <meta name="robots" content="index,follow">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="Clic par clic">
-<meta property="og:title" content="MAX.SI.ENS et MIN.SI.ENS dans Excel | Clic par clic">
-<meta property="og:description" content="La plus grande ou la plus petite valeur d'un groupe. Leçon Excel animée en 2 étapes, niveau intermédiaire, gratuite.">
+<meta property="og:title" content="MAX.SI.ENS et MIN.SI.ENS dans Excel : exemple simple">
+<meta property="og:description" content="MAX.SI.ENS (MAXIFS en anglais) renvoie la plus grande valeur d'une plage parmi les lignes qui respectent un ou plusieurs critères ; MIN.SI.ENS fait de même…">
 <meta property="og:url" content="https://mehdinourreddine62.github.io/clic-par-clic/excel/max-si-ens-min-si-ens/">
 <meta property="og:image" content="https://mehdinourreddine62.github.io/clic-par-clic/assets/og-excel.png">
 <meta property="og:image:width" content="1200">
@@ -61,7 +61,18 @@
     <a class="dl" href="../../fichiers/excel/max-si-ens-min-si-ens.xlsx" download="max-si-ens-min-si-ens.xlsx"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg><span><b>Télécharger le fichier d'exercice</b><small>Excel · consignes, données de départ et solution</small></span></a><div class="pband" id="pband" hidden></div>
     <details class="sx"><summary>Syntaxe <code>=MAX.SI.ENS(plage_max; plage1; critère1)</code></summary><dl><dt>plage_max</dt><dd>Les valeurs à comparer</dd><dt>plage1; critère1</dt><dd>La condition à respecter</dd><dt>Version</dt><dd>Excel 2019 et suivants</dd></dl></details>
     <details class="sx"><summary>Résumé écrit des étapes</summary><ol class="steps"><li>La plus grande note, mais seulement dans la classe choisie.</li><li>MIN.SI.ENS fonctionne de la même façon pour la plus petite.</li></ol></details>
-    <section class="also"><h2>Voir aussi</h2><div class="also-l"><a href="../nb-nbval-nb-vide/"><b>NB, NBVAL et NB.VIDE</b><small>Compter les nombres, les cellules remplies ou les cellules vides.</small></a><a href="../nb-si/"><b>NB.SI</b><small>Compter les cellules qui respectent une condition.</small></a><a href="../nb-si-ens/"><b>NB.SI.ENS</b><small>Compter selon plusieurs conditions à la fois.</small></a></div></section>
+    <section class="guide">
+      <h2>Comment trouver la plus grande valeur selon un critère dans Excel ?</h2>
+      <p>MAX.SI.ENS (MAXIFS en anglais) renvoie la plus grande valeur d'une plage parmi les lignes qui respectent un ou plusieurs critères ; MIN.SI.ENS fait de même pour la plus petite. Le premier argument est la plage où chercher le maximum, puis viennent des paires plage de critère et critère.</p>
+      <h3>Exemple</h3>
+      <p><code class="gx">=MAX.SI.ENS($C$2:$C$6;$B$2:$B$6;E2)</code></p>
+      <p>Meilleure note de la classe A (14, 16, 12) : 16 ; de la classe B (9, 11) : 11. Avec MIN.SI.ENS : 12 et 9.</p>
+      <h3>Erreurs fréquentes</h3>
+      <ul><li><b>Le résultat est 0</b>Aucune ligne ne correspond au critère : vérifiez l'orthographe et les espaces.</li><li><b>#VALEUR!</b>Les plages n'ont pas la même taille.</li></ul>
+      <h3>Questions fréquentes</h3>
+      <h4>Peut-on mettre plusieurs critères ?</h4><p>Oui : ajoutez des paires, par exemple ;D2:D6;&quot;Fille&quot;.</p><h4>Comment écrire un critère « supérieur à » ?</h4><p>Entre guillemets : &quot;&gt;10&quot;, ou &quot;&gt;&quot;&amp;F1 avec une cellule.</p><h4>Quelle différence avec MAX ?</h4><p>MAX prend toute la plage ; MAX.SI.ENS ne retient que les lignes qui respectent les critères.</p>
+    </section>
+    <section class="also"><h2>Voir aussi</h2><div class="also-l"><a href="../moyenne-min-max/"><b>MOYENNE, MIN et MAX</b><small>La moyenne, la plus petite et la plus grande valeur.</small></a><a href="../somme-si-ens/"><b>SOMME.SI.ENS</b><small>Additionner selon plusieurs critères.</small></a><a href="../nb-si-ens/"><b>NB.SI.ENS</b><small>Compter selon plusieurs conditions à la fois.</small></a><a href="../grande-valeur-petite-valeur/"><b>GRANDE.VALEUR et PETITE.VALEUR</b><small>Trouver la 2e, la 3e… plus grande ou plus petite valeur.</small></a></div></section>
     <nav class="lnav" aria-label="Leçons voisines"><a href="../moyenne-si/"><small>← Précédente</small>MOYENNE.SI</a><a class="nx" id="nextLesson" href="../mediane/"><small>Suivante →</small>MEDIANE</a></nav>
   </main>
 </div>

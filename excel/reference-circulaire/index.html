@@ -3,15 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Référence circulaire – Excel en animation | Clic par clic</title>
-<meta name="description" content="Corriger une formule qui se calcule à partir d'elle-même. Leçon Excel animée en 3 étapes, niveau intermédiaire, gratuite.">
+<title>Référence circulaire dans Excel : la trouver et la corriger</title>
+<meta name="description" content="Une référence circulaire apparaît quand une formule utilise sa propre cellule, directement ou par un détour : le calcul tourne en rond.">
 <link rel="canonical" href="https://mehdinourreddine62.github.io/clic-par-clic/excel/reference-circulaire/">
 <meta name="robots" content="index,follow">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="Clic par clic">
-<meta property="og:title" content="Référence circulaire – Excel en animation | Clic par clic">
-<meta property="og:description" content="Corriger une formule qui se calcule à partir d'elle-même. Leçon Excel animée en 3 étapes, niveau intermédiaire, gratuite.">
+<meta property="og:title" content="Référence circulaire dans Excel : la trouver et la corriger">
+<meta property="og:description" content="Une référence circulaire apparaît quand une formule utilise sa propre cellule, directement ou par un détour : le calcul tourne en rond.">
 <meta property="og:url" content="https://mehdinourreddine62.github.io/clic-par-clic/excel/reference-circulaire/">
 <meta property="og:image" content="https://mehdinourreddine62.github.io/clic-par-clic/assets/og-excel.png">
 <meta property="og:image:width" content="1200">
@@ -61,7 +61,18 @@
     <div class="pband" id="pband" hidden></div>
     <details class="sx"><summary>Syntaxe <code>La plage ne doit pas contenir la cellule de la formule</code></summary><dl><dt>Cause</dt><dd>La formule utilise sa propre cellule</dd><dt>Signe</dt><dd>Un message d'alerte, et souvent un résultat à 0</dd><dt>Solution</dt><dd>Corriger la plage</dd></dl></details>
     <details class="sx"><summary>Résumé écrit des étapes</summary><ol class="steps"><li>La plage inclut la cellule du total elle-même : la formule tourne en rond.</li><li>Excel affiche 0 et signale le problème dans la barre d'état, en bas de la fenêtre.</li><li>Corrigez la plage pour qu'elle s'arrête avant la cellule de la formule.</li></ol></details>
-    <section class="also"><h2>Voir aussi</h2><div class="also-l"><a href="../erreur-div-0/"><b>Corriger #DIV/0!</b><small>Comprendre et supprimer l'erreur de division par zéro.</small></a><a href="../erreur-na/"><b>Corriger #N/A</b><small>Comprendre pourquoi une recherche ne trouve rien.</small></a><a href="../erreur-valeur/"><b>Corriger #VALEUR!</b><small>Repérer le texte qui empêche un calcul.</small></a></div></section>
+    <section class="guide">
+      <h2>Comment corriger une référence circulaire dans Excel ?</h2>
+      <p>Une référence circulaire apparaît quand une formule utilise sa propre cellule, directement ou par un détour : le calcul tourne en rond. Excel affiche un avertissement, souvent un 0, et indique « Références circulaires » suivi de l'adresse dans la barre d'état. Le cas le plus courant : une plage de SOMME qui inclut la cellule du total.</p>
+      <h3>Exemple</h3>
+      <p><code class="gx">=SOMME(B2:B4)  dans B4  →  =SOMME(B2:B3)</code></p>
+      <p>Le total est en B4 : la plage doit s'arrêter à B3, juste avant la cellule de la formule.</p>
+      <h3>Erreurs fréquentes</h3>
+      <ul><li><b>L'avertissement revient à chaque ouverture</b>La référence circulaire n'est pas corrigée : suivez l'adresse indiquée dans la barre d'état.</li><li><b>Impossible de trouver la cellule</b>Formules › Vérification des erreurs › Références circulaires liste les cellules en cause.</li></ul>
+      <h3>Questions fréquentes</h3>
+      <h4>Pourquoi Excel affiche 0 ?</h4><p>Il ne peut pas calculer une valeur qui dépend d'elle-même, alors il s'arrête.</p><h4>Faut-il activer le calcul itératif ?</h4><p>Non, sauf modèle financier volontairement circulaire : corrigez la formule.</p><h4>Comment l'éviter avec SOMME ?</h4><p>Placez le total sous les données et vérifiez la plage proposée par Somme automatique.</p>
+    </section>
+    <section class="also"><h2>Voir aussi</h2><div class="also-l"><a href="../somme/"><b>SOMME</b><small>Additionner une plage de cellules.</small></a><a href="../antecedents-et-dependants/"><b>Antécédents et dépendants</b><small>Voir d'où vient un résultat, et ce qu'il alimente.</small></a><a href="../evaluer-la-formule/"><b>Évaluer une formule pas à pas</b><small>Regarder Excel calculer une formule, morceau par morceau.</small></a><a href="../erreur-ref/"><b>Corriger #REF!</b><small>Comprendre ce qui se passe quand on supprime une cellule utilisée.</small></a></div></section>
     <nav class="lnav" aria-label="Leçons voisines"><a href="../erreur-propagation/"><small>← Précédente</small>Corriger #PROPAGATION!</a><a class="nx" id="nextLesson" href="../afficher-les-formules/"><small>Suivante →</small>Afficher les formules</a></nav>
   </main>
 </div>

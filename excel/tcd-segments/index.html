@@ -3,15 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Filtrer avec un segment – Excel en animation | Clic par clic</title>
-<meta name="description" content="Des boutons pour filtrer un tableau croisé d'un seul clic. Leçon Excel animée en 5 étapes, niveau intermédiaire, gratuite.">
+<title>Segments Excel : filtrer un tableau croisé en un clic</title>
+<meta name="description" content="Un segment est un panneau de boutons qui filtre un tableau croisé dynamique d'un clic.">
 <link rel="canonical" href="https://mehdinourreddine62.github.io/clic-par-clic/excel/tcd-segments/">
 <meta name="robots" content="index,follow">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="Clic par clic">
-<meta property="og:title" content="Filtrer avec un segment – Excel en animation | Clic par clic">
-<meta property="og:description" content="Des boutons pour filtrer un tableau croisé d'un seul clic. Leçon Excel animée en 5 étapes, niveau intermédiaire, gratuite.">
+<meta property="og:title" content="Segments Excel : filtrer un tableau croisé en un clic">
+<meta property="og:description" content="Un segment est un panneau de boutons qui filtre un tableau croisé dynamique d'un clic.">
 <meta property="og:url" content="https://mehdinourreddine62.github.io/clic-par-clic/excel/tcd-segments/">
 <meta property="og:image" content="https://mehdinourreddine62.github.io/clic-par-clic/assets/og-excel.png">
 <meta property="og:image:width" content="1200">
@@ -61,7 +61,18 @@
     <div class="pband" id="pband" hidden></div>
     <details class="sx"><summary>Syntaxe <code>Analyse du tableau croisé › Insérer un segment</code></summary><dl><dt>Segment</dt><dd>Un panneau de boutons lié au tableau croisé</dd><dt>Un clic</dt><dd>Filtre sur la valeur choisie</dd><dt>Ctrl + clic</dt><dd>Sélectionne plusieurs valeurs</dd></dl></details>
     <details class="sx"><summary>Résumé écrit des étapes</summary><ol class="steps"><li>Voici les ventes par vendeur. Un segment va permettre de les filtrer d'un clic.</li><li>Insérer un segment, cochez Région : un panneau de boutons apparaît.</li><li>Cliquez sur Nord : le tableau se filtre aussitôt.</li><li>Un autre clic change de région. Le bouton coloré rappelle toujours quel filtre est actif.</li><li>Le petit entonnoir en haut du segment efface le filtre.</li></ol></details>
-    <section class="also"><h2>Voir aussi</h2><div class="also-l"><a href="../creer-un-tableau-croise-dynamique/"><b>Créer un tableau croisé dynamique</b><small>Résumer un tableau en quelques clics, sans formule.</small></a><a href="../tcd-lignes-et-colonnes/"><b>Lignes et colonnes</b><small>Croiser deux informations dans le même tableau.</small></a><a href="../tcd-somme-nombre-moyenne/"><b>Somme, nombre ou moyenne</b><small>Changer le calcul affiché dans le tableau croisé.</small></a></div></section>
+    <section class="guide">
+      <h2>Comment filtrer un tableau croisé dynamique avec un segment ?</h2>
+      <p>Un segment est un panneau de boutons qui filtre un tableau croisé dynamique d'un clic. Cliquez dans le tableau croisé, puis Analyse du tableau croisé › Insérer un segment, et cochez le champ voulu. Un clic sur un bouton filtre ; Ctrl + clic en sélectionne plusieurs ; l'entonnoir barré en haut du segment efface le filtre.</p>
+      <h3>Exemple</h3>
+      <p><code class="gx">Analyse du tableau croisé › Insérer un segment › Région</code></p>
+      <p>Un clic sur Nord n'affiche que les ventes du Nord ; le bouton coloré rappelle le filtre actif.</p>
+      <h3>Erreurs fréquentes</h3>
+      <ul><li><b>Le segment ne filtre pas le tableau</b>Il est relié à un autre tableau croisé : clic droit › Connexions de rapport.</li><li><b>Des boutons apparaissent grisés</b>Ces valeurs n'ont plus de données après les autres filtres : c'est normal.</li></ul>
+      <h3>Questions fréquentes</h3>
+      <h4>Un segment peut-il filtrer plusieurs tableaux croisés ?</h4><p>Oui : clic droit sur le segment › Connexions de rapport, puis cochez les tableaux.</p><h4>Peut-on l'utiliser sans tableau croisé ?</h4><p>Oui, sur un tableau Excel : Création de tableau › Insérer un segment.</p><h4>Comment filtrer par date ?</h4><p>Une chronologie convient mieux : Insérer une chronologie.</p>
+    </section>
+    <section class="also"><h2>Voir aussi</h2><div class="also-l"><a href="../tcd-filtrer/"><b>Filtrer un tableau croisé</b><small>N'afficher qu'une partie des données, sans les modifier.</small></a><a href="../tcd-chronologie/"><b>Filtrer par date avec une chronologie</b><small>Une frise pour choisir la période affichée.</small></a><a href="../creer-un-tableau-croise-dynamique/"><b>Créer un tableau croisé dynamique</b><small>Résumer un tableau en quelques clics, sans formule.</small></a><a href="../graphique-croise-dynamique/"><b>Graphique croisé dynamique</b><small>Un graphique qui suit le tableau croisé.</small></a></div></section>
     <nav class="lnav" aria-label="Leçons voisines"><a href="../tcd-grouper-par-mois/"><small>← Précédente</small>Grouper des dates par mois</a><a class="nx" id="nextLesson" href="../tcd-chronologie/"><small>Suivante →</small>Filtrer par date avec une chronologie</a></nav>
   </main>
 </div>

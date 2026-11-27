@@ -6,20 +6,108 @@
  "motsCles": "#NOM? erreur nom fonction faute de frappe guillemets texte",
  "syntaxe": "Vérifier l'orthographe et les guillemets",
  "arguments": [
-  ["Cause 1","Un nom de fonction mal orthographié"],
-  ["Cause 2","Un texte écrit sans guillemets"],
-  ["Astuce","Choisir la fonction dans la liste proposée à la saisie"]
+  [
+   "Cause 1",
+   "Un nom de fonction mal orthographié"
+  ],
+  [
+   "Cause 2",
+   "Un texte écrit sans guillemets"
+  ],
+  [
+   "Astuce",
+   "Choisir la fonction dans la liste proposée à la saisie"
+  ]
  ],
  "grille": [
-  ["Mois","Ventes","Bon mois ?"],
-  ["Janvier","200",""],
-  ["Février","150",""],
-  ["Total","",""]
+  [
+   "Mois",
+   "Ventes",
+   "Bon mois ?"
+  ],
+  [
+   "Janvier",
+   "200",
+   ""
+  ],
+  [
+   "Février",
+   "150",
+   ""
+  ],
+  [
+   "Total",
+   "",
+   ""
+  ]
  ],
+ "titreSeo": "Erreur #NOM? dans Excel : cause et solution",
  "etapes": [
-  {"c":"B4","f":"=SOMM(B2:B3)","v":"#NOM?","t":"#NOM? : Excel ne reconnaît pas un mot de la formule. Ici, SOMM au lieu de SOMME."},
-  {"c":"B4","f":"=SOMME(B2:B3)","v":"350","t":"Corrigez le nom. Astuce : choisissez la fonction dans la liste proposée pendant la saisie."},
-  {"c":"C2","f":"=SI(B2>180;Oui;Non)","v":"#NOM?","t":"Autre cause : un texte sans guillemets. Excel prend Oui pour un nom qu'il ne connaît pas."},
-  {"c":"C2","f":"=SI(B2>180;\"Oui\";\"Non\")","v":"Oui","fill":{"C3":"Non"},"t":"Entre guillemets, le texte est compris."}
+  {
+   "c": "B4",
+   "f": "=SOMM(B2:B3)",
+   "v": "#NOM?",
+   "t": "#NOM? : Excel ne reconnaît pas un mot de la formule. Ici, SOMM au lieu de SOMME."
+  },
+  {
+   "c": "B4",
+   "f": "=SOMME(B2:B3)",
+   "v": "350",
+   "t": "Corrigez le nom. Astuce : choisissez la fonction dans la liste proposée pendant la saisie."
+  },
+  {
+   "c": "C2",
+   "f": "=SI(B2>180;Oui;Non)",
+   "v": "#NOM?",
+   "t": "Autre cause : un texte sans guillemets. Excel prend Oui pour un nom qu'il ne connaît pas."
+  },
+  {
+   "c": "C2",
+   "f": "=SI(B2>180;\"Oui\";\"Non\")",
+   "v": "Oui",
+   "fill": {
+    "C3": "Non"
+   },
+   "t": "Entre guillemets, le texte est compris."
+  }
+ ],
+ "guide": {
+  "question": "Comment corriger l'erreur #NOM? dans Excel ?",
+  "intro": "#NOM? signifie qu'Excel ne reconnaît pas un mot de la formule. Les deux causes principales : une faute de frappe dans le nom d'une fonction (SOMM au lieu de SOMME) et un texte écrit sans guillemets. Pour éviter les fautes, choisissez la fonction dans la liste qui s'affiche pendant la saisie et validez avec Tab.",
+  "exemple": {
+   "titre": "Exemple",
+   "formule": "=SI(B2>180;\"Oui\";\"Non\")",
+   "explication": "Sans guillemets autour de Oui et Non, Excel les prend pour des noms inconnus et affiche #NOM?. Entre guillemets, ils sont compris comme du texte."
+  },
+  "erreurs": [
+   [
+    "La fonction existe pourtant",
+    "Elle porte un nom anglais (SUM, IF) : dans Excel en français, écrivez SOMME, SI."
+   ],
+   [
+    "#NOM? avec une fonction récente",
+    "Le fichier est ouvert dans une ancienne version d'Excel qui ne la connaît pas (RECHERCHEX, FILTRE…)."
+   ]
+  ],
+  "faq": [
+   [
+    "Comment trouver le mot fautif ?",
+    "Cliquez dans la cellule : le mot inconnu est souvent le seul qui n'apparaît pas en majuscules."
+   ],
+   [
+    "Un nom de plage peut-il causer #NOM? ?",
+    "Oui, s'il est mal orthographié ou supprimé : vérifiez-le dans Formules › Gestionnaire de noms."
+   ],
+   [
+    "Où trouver les noms français des fonctions ?",
+    "Dans la page des fonctions Excel en français et en anglais du site."
+   ]
+  ]
+ },
+ "voirAussi": [
+  "erreur-valeur",
+  "erreur-ref",
+  "si",
+  "ecrire-une-formule"
  ]
 }

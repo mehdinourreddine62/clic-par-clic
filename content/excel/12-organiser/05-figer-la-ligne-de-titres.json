@@ -7,25 +7,151 @@
  "syntaxe": "Affichage › Figer les volets › Figer la ligne supérieure",
  "ruban": true,
  "arguments": [
-  ["Figer la ligne supérieure","La ligne 1 reste toujours visible"],
-  ["Libérer les volets","Annule le blocage"]
+  [
+   "Figer la ligne supérieure",
+   "La ligne 1 reste toujours visible"
+  ],
+  [
+   "Libérer les volets",
+   "Annule le blocage"
+  ]
  ],
  "grille": [
-  ["Client","Ville","Montant"],
-  ["Durand","Lille","120"],
-  ["Martin","Lyon","340"],
-  ["Bernard","Paris","90"],
-  ["Petit","Nantes","210"],
-  ["Robert","Lille","150"],
-  ["Richard","Paris","400"],
-  ["Moreau","Lyon","75"],
-  ["Simon","Nantes","260"],
-  ["Laurent","Paris","180"]
+  [
+   "Client",
+   "Ville",
+   "Montant"
+  ],
+  [
+   "Durand",
+   "Lille",
+   "120"
+  ],
+  [
+   "Martin",
+   "Lyon",
+   "340"
+  ],
+  [
+   "Bernard",
+   "Paris",
+   "90"
+  ],
+  [
+   "Petit",
+   "Nantes",
+   "210"
+  ],
+  [
+   "Robert",
+   "Lille",
+   "150"
+  ],
+  [
+   "Richard",
+   "Paris",
+   "400"
+  ],
+  [
+   "Moreau",
+   "Lyon",
+   "75"
+  ],
+  [
+   "Simon",
+   "Nantes",
+   "260"
+  ],
+  [
+   "Laurent",
+   "Paris",
+   "180"
+  ]
  ],
+ "titreSeo": "Figer la première ligne dans Excel (volets)",
  "etapes": [
-  {"c":"A6","tab":"Affichage","hide":[1,2,3,4],"keys":"Molette","t":"Faites défiler un long tableau : la ligne de titres disparaît, on ne sait plus quelle colonne est laquelle."},
-  {"c":"A1","tab":"Affichage","btn":"Figer les volets","hide":[],"freeze":{"r":1},"t":"Affichage › Figer les volets › Figer la ligne supérieure : un trait apparaît sous la ligne 1."},
-  {"c":"A7","tab":"Affichage","hide":[2,3,4,5],"keys":"Molette","t":"Faites défiler à nouveau : les titres restent en place."},
-  {"c":"A1","tab":"Affichage","btn":"Figer les volets","hide":[],"freeze":{"r":0},"t":"Pour revenir en arrière : Figer les volets › Libérer les volets."}
+  {
+   "c": "A6",
+   "tab": "Affichage",
+   "hide": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "keys": "Molette",
+   "t": "Faites défiler un long tableau : la ligne de titres disparaît, on ne sait plus quelle colonne est laquelle."
+  },
+  {
+   "c": "A1",
+   "tab": "Affichage",
+   "btn": "Figer les volets",
+   "hide": [],
+   "freeze": {
+    "r": 1
+   },
+   "t": "Affichage › Figer les volets › Figer la ligne supérieure : un trait apparaît sous la ligne 1."
+  },
+  {
+   "c": "A7",
+   "tab": "Affichage",
+   "hide": [
+    2,
+    3,
+    4,
+    5
+   ],
+   "keys": "Molette",
+   "t": "Faites défiler à nouveau : les titres restent en place."
+  },
+  {
+   "c": "A1",
+   "tab": "Affichage",
+   "btn": "Figer les volets",
+   "hide": [],
+   "freeze": {
+    "r": 0
+   },
+   "t": "Pour revenir en arrière : Figer les volets › Libérer les volets."
+  }
+ ],
+ "guide": {
+  "question": "Comment figer la première ligne dans Excel ?",
+  "intro": "Dans un long tableau, la ligne de titres disparaît dès que l'on fait défiler. Affichage › Figer les volets › Figer la ligne supérieure la garde toujours visible : un trait gris apparaît sous la ligne 1. Pour figer plusieurs lignes ou une colonne, sélectionnez la cellule située juste en dessous et à droite de la zone à figer, puis Figer les volets.",
+  "exemple": {
+   "titre": "Exemple",
+   "formule": "Affichage › Figer les volets › Figer la ligne supérieure",
+   "explication": "Les titres Client, Ville et Montant restent en haut de l'écran pendant que la liste défile."
+  },
+  "erreurs": [
+   [
+    "La mauvaise ligne est figée",
+    "Vous aviez fait défiler la feuille : remontez tout en haut, Libérer les volets, puis figez à nouveau."
+   ],
+   [
+    "Rien ne se passe",
+    "La feuille est en mode Mise en page : revenez en affichage Normal."
+   ]
+  ],
+  "faq": [
+   [
+    "Comment figer la ligne 1 et la colonne A ?",
+    "Sélectionnez B2, puis Figer les volets › Figer les volets."
+   ],
+   [
+    "Comment défiger ?",
+    "Affichage › Figer les volets › Libérer les volets."
+   ],
+   [
+    "Les volets figés s'impriment-ils ?",
+    "Non : pour répéter les titres à l'impression, utilisez Mise en page › Imprimer les titres."
+   ]
+  ]
+ },
+ "voirAussi": [
+  "repeter-les-titres",
+  "mettre-sous-forme-de-tableau",
+  "raccourcis-se-deplacer",
+  "trier-et-filtrer"
  ]
 }

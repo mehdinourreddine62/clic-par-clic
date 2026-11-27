@@ -7,19 +7,114 @@
  "syntaxe": "Formules › Afficher les formules",
  "ruban": true,
  "arguments": [
-  ["Afficher les formules","Chaque cellule montre son calcul"],
-  ["Second clic","Retour à l'affichage normal"]
+  [
+   "Afficher les formules",
+   "Chaque cellule montre son calcul"
+  ],
+  [
+   "Second clic",
+   "Retour à l'affichage normal"
+  ]
  ],
  "grille": [
-  ["Article","Quantité","Prix","Total"],
-  ["Stylo","10","1,20 €","12,00 €"],
-  ["Cahier","4","3,50 €","14,00 €"],
-  ["Total","","","26,00 €"]
+  [
+   "Article",
+   "Quantité",
+   "Prix",
+   "Total"
+  ],
+  [
+   "Stylo",
+   "10",
+   "1,20 €",
+   "12,00 €"
+  ],
+  [
+   "Cahier",
+   "4",
+   "3,50 €",
+   "14,00 €"
+  ],
+  [
+   "Total",
+   "",
+   "",
+   "26,00 €"
+  ]
  ],
+ "titreSeo": "Afficher les formules dans Excel au lieu des résultats",
  "etapes": [
-  {"c":"D2","tab":"Formules","t":"Une feuille n'affiche que des résultats. Impossible de voir d'un coup d'œil où sont les formules."},
-  {"c":"D2","tab":"Formules","btn":"Afficher les formules","set":{"D2":"'=B2*C2","D3":"'=B3*C3","D4":"'=SOMME(D2:D3)"},"t":"Formules › Afficher les formules : chaque cellule montre son calcul au lieu de son résultat."},
-  {"c":"D2","tab":"Formules","mark":"D2 D3 D4","t":"Pratique pour vérifier un tableau reçu, ou repérer une valeur tapée à la main au milieu des formules."},
-  {"c":"D2","tab":"Formules","btn":"Afficher les formules","set":{"D2":"12,00 €","D3":"14,00 €","D4":"26,00 €"},"t":"Un second clic revient à l'affichage normal."}
+  {
+   "c": "D2",
+   "tab": "Formules",
+   "t": "Une feuille n'affiche que des résultats. Impossible de voir d'un coup d'œil où sont les formules."
+  },
+  {
+   "c": "D2",
+   "tab": "Formules",
+   "btn": "Afficher les formules",
+   "set": {
+    "D2": "'=B2*C2",
+    "D3": "'=B3*C3",
+    "D4": "'=SOMME(D2:D3)"
+   },
+   "t": "Formules › Afficher les formules : chaque cellule montre son calcul au lieu de son résultat."
+  },
+  {
+   "c": "D2",
+   "tab": "Formules",
+   "mark": "D2 D3 D4",
+   "t": "Pratique pour vérifier un tableau reçu, ou repérer une valeur tapée à la main au milieu des formules."
+  },
+  {
+   "c": "D2",
+   "tab": "Formules",
+   "btn": "Afficher les formules",
+   "set": {
+    "D2": "12,00 €",
+    "D3": "14,00 €",
+    "D4": "26,00 €"
+   },
+   "t": "Un second clic revient à l'affichage normal."
+  }
+ ],
+ "guide": {
+  "question": "Comment afficher les formules au lieu des résultats dans Excel ?",
+  "intro": "Formules › Afficher les formules montre, dans chaque cellule, le calcul au lieu de son résultat. C'est le moyen le plus rapide de vérifier un tableau, de repérer une valeur tapée à la main au milieu de formules, ou d'imprimer les calculs. Un second clic revient à l'affichage normal ; le raccourci est Ctrl + \" (la touche 3 du clavier).",
+  "exemple": {
+   "titre": "Exemple",
+   "formule": "Formules › Afficher les formules",
+   "explication": "Dans la colonne Total, les cellules montrent =B2*C2, =B3*C3 et =SOMME(D2:D3) au lieu de 12,00 €, 14,00 € et 26,00 €."
+  },
+  "erreurs": [
+   [
+    "Les colonnes s'élargissent",
+    "C'est normal : Excel élargit l'affichage pour montrer les formules ; tout revient au second clic."
+   ],
+   [
+    "Une seule cellule affiche sa formule",
+    "Elle est au format Texte, ou commence par un espace : passez-la en Standard et retapez la formule."
+   ]
+  ],
+  "faq": [
+   [
+    "Le raccourci ne marche pas",
+    "Il dépend du clavier : utilisez le bouton Formules › Afficher les formules."
+   ],
+   [
+    "Les formules s'impriment-elles ?",
+    "Oui, si elles sont affichées au moment d'imprimer."
+   ],
+   [
+    "Comment voir la formule d'une seule cellule ?",
+    "Sélectionnez-la : la formule s'affiche dans la barre de formule."
+   ]
+  ]
+ },
+ "voirAussi": [
+  "evaluer-la-formule",
+  "antecedents-et-dependants",
+  "ecrire-une-formule",
+  "raccourcis-formules"
  ]
 }

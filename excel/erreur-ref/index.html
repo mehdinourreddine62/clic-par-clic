@@ -3,15 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Corriger #REF! – Excel en animation | Clic par clic</title>
-<meta name="description" content="Comprendre ce qui se passe quand on supprime une cellule utilisée. Leçon Excel animée en 4 étapes, niveau intermédiaire, gratuite.">
+<title>Erreur #REF! dans Excel : cause et solution | Clic par clic</title>
+<meta name="description" content="#REF! signifie qu'une formule pointe vers une cellule qui n'existe plus. Elle apparaît le plus souvent après la suppression d'une ligne, d'une colonne ou…">
 <link rel="canonical" href="https://mehdinourreddine62.github.io/clic-par-clic/excel/erreur-ref/">
 <meta name="robots" content="index,follow">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="Clic par clic">
-<meta property="og:title" content="Corriger #REF! – Excel en animation | Clic par clic">
-<meta property="og:description" content="Comprendre ce qui se passe quand on supprime une cellule utilisée. Leçon Excel animée en 4 étapes, niveau intermédiaire, gratuite.">
+<meta property="og:title" content="Erreur #REF! dans Excel : cause et solution | Clic par clic">
+<meta property="og:description" content="#REF! signifie qu'une formule pointe vers une cellule qui n'existe plus. Elle apparaît le plus souvent après la suppression d'une ligne, d'une colonne ou…">
 <meta property="og:url" content="https://mehdinourreddine62.github.io/clic-par-clic/excel/erreur-ref/">
 <meta property="og:image" content="https://mehdinourreddine62.github.io/clic-par-clic/assets/og-excel.png">
 <meta property="og:image:width" content="1200">
@@ -61,7 +61,18 @@
     <div class="pband" id="pband" hidden></div>
     <details class="sx"><summary>Syntaxe <code>Ctrl + Z, tout de suite</code></summary><dl><dt>Cause</dt><dd>La formule pointe vers une cellule supprimée</dd><dt>Réflexe</dt><dd>Annuler immédiatement avec Ctrl + Z</dd><dt>Prévention</dt><dd>Vérifier les dépendants avant de supprimer</dd></dl></details>
     <details class="sx"><summary>Résumé écrit des étapes</summary><ol class="steps"><li>La colonne Résultat soustrait les frais des ventes.</li><li>Supprimons la colonne Frais, que la formule utilise.</li><li>#REF! : la formule pointe vers une cellule qui n'existe plus.</li><li>Annulez tout de suite avec Ctrl + Z. Avant de supprimer, vérifiez qu'aucune formule n'en dépend.</li></ol></details>
-    <section class="also"><h2>Voir aussi</h2><div class="also-l"><a href="../erreur-div-0/"><b>Corriger #DIV/0!</b><small>Comprendre et supprimer l'erreur de division par zéro.</small></a><a href="../erreur-na/"><b>Corriger #N/A</b><small>Comprendre pourquoi une recherche ne trouve rien.</small></a><a href="../erreur-valeur/"><b>Corriger #VALEUR!</b><small>Repérer le texte qui empêche un calcul.</small></a></div></section>
+    <section class="guide">
+      <h2>Comment corriger l'erreur #REF! dans Excel ?</h2>
+      <p>#REF! signifie qu'une formule pointe vers une cellule qui n'existe plus. Elle apparaît le plus souvent après la suppression d'une ligne, d'une colonne ou d'une feuille utilisée par la formule, ou après un collage par-dessus. Le réflexe : Ctrl + Z tout de suite, puis vérifier les formules qui dépendent de ce que vous voulez supprimer.</p>
+      <h3>Exemple</h3>
+      <p><code class="gx">=B2-C2  devient  =B2-#REF!</code></p>
+      <p>La colonne Résultat soustrait les frais des ventes. En supprimant la colonne Frais, la formule perd sa référence et affiche #REF!.</p>
+      <h3>Erreurs fréquentes</h3>
+      <ul><li><b>Ctrl + Z n'est plus possible</b>Le fichier a été fermé : réécrivez la formule en désignant à nouveau les bonnes cellules.</li><li><b>#REF! dans une RECHERCHEV</b>Le numéro de colonne dépasse le nombre de colonnes du tableau.</li></ul>
+      <h3>Questions fréquentes</h3>
+      <h4>Comment savoir quelles formules utilisent une cellule ?</h4><p>Formules › Repérer les dépendants affiche des flèches vers elles.</p><h4>Comment éviter #REF! en supprimant ?</h4><p>Videz le contenu au lieu de supprimer la colonne, ou utilisez un tableau Excel dont les formules s'adaptent.</p><h4>Comment trouver tous les #REF! ?</h4><p>Ctrl + F, cherchez #REF! dans les formules.</p>
+    </section>
+    <section class="also"><h2>Voir aussi</h2><div class="also-l"><a href="../erreur-valeur/"><b>Corriger #VALEUR!</b><small>Repérer le texte qui empêche un calcul.</small></a><a href="../antecedents-et-dependants/"><b>Antécédents et dépendants</b><small>Voir d'où vient un résultat, et ce qu'il alimente.</small></a><a href="../erreur-nom/"><b>Corriger #NOM?</b><small>Trouver la faute de frappe dans une formule.</small></a><a href="../copier-coller-annuler/"><b>Copier, coller, annuler</b><small>Les raccourcis clavier à connaître dès le premier jour.</small></a></div></section>
     <nav class="lnav" aria-label="Leçons voisines"><a href="../erreur-valeur/"><small>← Précédente</small>Corriger #VALEUR!</a><a class="nx" id="nextLesson" href="../erreur-nom/"><small>Suivante →</small>Corriger #NOM?</a></nav>
   </main>
 </div>

@@ -3,15 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>SOMMEPROD – Excel en animation | Clic par clic</title>
-<meta name="description" content="Multiplier deux colonnes ligne par ligne, puis tout additionner. Leçon Excel animée en 2 étapes, niveau intermédiaire, gratuite.">
+<title>SOMMEPROD dans Excel : exemple animé et explication</title>
+<meta name="description" content="SOMMEPROD (SUMPRODUCT en anglais) multiplie deux plages ligne par ligne, puis additionne tous les produits.">
 <link rel="canonical" href="https://mehdinourreddine62.github.io/clic-par-clic/excel/sommeprod/">
 <meta name="robots" content="index,follow">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="Clic par clic">
-<meta property="og:title" content="SOMMEPROD – Excel en animation | Clic par clic">
-<meta property="og:description" content="Multiplier deux colonnes ligne par ligne, puis tout additionner. Leçon Excel animée en 2 étapes, niveau intermédiaire, gratuite.">
+<meta property="og:title" content="SOMMEPROD dans Excel : exemple animé et explication">
+<meta property="og:description" content="SOMMEPROD (SUMPRODUCT en anglais) multiplie deux plages ligne par ligne, puis additionne tous les produits.">
 <meta property="og:url" content="https://mehdinourreddine62.github.io/clic-par-clic/excel/sommeprod/">
 <meta property="og:image" content="https://mehdinourreddine62.github.io/clic-par-clic/assets/og-excel.png">
 <meta property="og:image:width" content="1200">
@@ -61,7 +61,18 @@
     <a class="dl" href="../../fichiers/excel/sommeprod.xlsx" download="sommeprod.xlsx"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg><span><b>Télécharger le fichier d'exercice</b><small>Excel · consignes, données de départ et solution</small></span></a><div class="pband" id="pband" hidden></div>
     <details class="sx"><summary>Syntaxe <code>=SOMMEPROD(plage1; plage2)</code></summary><dl><dt>plage1</dt><dd>La première colonne, par exemple les quantités</dd><dt>plage2</dt><dd>La seconde colonne, de même taille, par exemple les prix</dd></dl></details>
     <details class="sx"><summary>Résumé écrit des étapes</summary><ol class="steps"><li>SOMMEPROD multiplie chaque quantité par son prix, puis additionne le tout.</li><li>10 × 1,20 + 4 × 3,50 + 2 × 5,90 : le total, sans colonne intermédiaire.</li></ol></details>
-    <section class="also"><h2>Voir aussi</h2><div class="also-l"><a href="../somme/"><b>SOMME</b><small>Additionner une plage de cellules.</small></a><a href="../produit/"><b>PRODUIT</b><small>Multiplier toutes les valeurs d'une plage.</small></a><a href="../moyenne-min-max/"><b>MOYENNE, MIN et MAX</b><small>La moyenne, la plus petite et la plus grande valeur.</small></a></div></section>
+    <section class="guide">
+      <h2>À quoi sert SOMMEPROD dans Excel ?</h2>
+      <p>SOMMEPROD (SUMPRODUCT en anglais) multiplie deux plages ligne par ligne, puis additionne tous les produits. Elle calcule par exemple le montant total d'une commande à partir des quantités et des prix, sans colonne intermédiaire. Les plages doivent avoir la même taille.</p>
+      <h3>Exemple</h3>
+      <p><code class="gx">=SOMMEPROD(B2:B4;C2:C4)</code></p>
+      <p>10 × 1,20 + 4 × 3,50 + 2 × 5,90 = 12,00 + 14,00 + 11,80 = 37,80 €.</p>
+      <h3>Erreurs fréquentes</h3>
+      <ul><li><b>#VALEUR!</b>Les plages n'ont pas la même taille : B2:B4 et C2:C5, par exemple.</li><li><b>Le résultat est 0</b>Les nombres sont stockés comme texte : convertissez-les en nombres.</li></ul>
+      <h3>Questions fréquentes</h3>
+      <h4>Quelle différence avec SOMME ?</h4><p>SOMME additionne une plage ; SOMMEPROD multiplie d'abord les plages entre elles, ligne par ligne.</p><h4>Peut-on ajouter une condition ?</h4><p>Oui : =SOMMEPROD((A2:A4=&quot;Stylo&quot;)*B2:B4*C2:C4), mais SOMME.SI.ENS est plus simple pour un seul critère.</p><h4>Combien de plages peut-on multiplier ?</h4><p>Jusqu'à 255.</p>
+    </section>
+    <section class="also"><h2>Voir aussi</h2><div class="also-l"><a href="../somme/"><b>SOMME</b><small>Additionner une plage de cellules.</small></a><a href="../produit/"><b>PRODUIT</b><small>Multiplier toutes les valeurs d'une plage.</small></a><a href="../somme-si-ens/"><b>SOMME.SI.ENS</b><small>Additionner selon plusieurs critères.</small></a><a href="../moyenne-ponderee/"><b>Moyenne pondérée</b><small>Calculer une moyenne avec des coefficients.</small></a></div></section>
     <nav class="lnav" aria-label="Leçons voisines"><a href="../produit/"><small>← Précédente</small>PRODUIT</a><a class="nx" id="nextLesson" href="../moyenne-min-max/"><small>Suivante →</small>MOYENNE, MIN et MAX</a></nav>
   </main>
 </div>

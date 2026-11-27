@@ -6,19 +6,122 @@
  "motsCles": "#REF! erreur référence supprimée colonne ligne cellule introuvable",
  "syntaxe": "Ctrl + Z, tout de suite",
  "arguments": [
-  ["Cause","La formule pointe vers une cellule supprimée"],
-  ["Réflexe","Annuler immédiatement avec Ctrl + Z"],
-  ["Prévention","Vérifier les dépendants avant de supprimer"]
+  [
+   "Cause",
+   "La formule pointe vers une cellule supprimée"
+  ],
+  [
+   "Réflexe",
+   "Annuler immédiatement avec Ctrl + Z"
+  ],
+  [
+   "Prévention",
+   "Vérifier les dépendants avant de supprimer"
+  ]
  ],
  "grille": [
-  ["Mois","Ventes","Frais","Résultat"],
-  ["Janvier","500","120",""],
-  ["Février","620","150",""]
+  [
+   "Mois",
+   "Ventes",
+   "Frais",
+   "Résultat"
+  ],
+  [
+   "Janvier",
+   "500",
+   "120",
+   ""
+  ],
+  [
+   "Février",
+   "620",
+   "150",
+   ""
+  ]
  ],
+ "titreSeo": "Erreur #REF! dans Excel : cause et solution",
  "etapes": [
-  {"c":"D2","f":"=B2-C2","v":"380","fill":{"D3":"470"},"t":"La colonne Résultat soustrait les frais des ventes."},
-  {"c":"C1","sel":"col:C","menu":"Clic droit sur la lettre de la colonne C › <b>Supprimer</b>","spot":"cols","t":"Supprimons la colonne Frais, que la formule utilise."},
-  {"c":"C2","bar":"=B2-#REF!","set":{"C1":"Résultat","C2":"#REF!","C3":"#REF!","D1":"","D2":"","D3":""},"mark":"C2 C3","t":"#REF! : la formule pointe vers une cellule qui n'existe plus."},
-  {"c":"D2","keys":"Ctrl + Z","set":{"C1":"Frais","C2":"120","C3":"150","D1":"Résultat","D2":"380","D3":"470"},"t":"Annulez tout de suite avec Ctrl + Z. Avant de supprimer, vérifiez qu'aucune formule n'en dépend."}
+  {
+   "c": "D2",
+   "f": "=B2-C2",
+   "v": "380",
+   "fill": {
+    "D3": "470"
+   },
+   "t": "La colonne Résultat soustrait les frais des ventes."
+  },
+  {
+   "c": "C1",
+   "sel": "col:C",
+   "menu": "Clic droit sur la lettre de la colonne C › <b>Supprimer</b>",
+   "spot": "cols",
+   "t": "Supprimons la colonne Frais, que la formule utilise."
+  },
+  {
+   "c": "C2",
+   "bar": "=B2-#REF!",
+   "set": {
+    "C1": "Résultat",
+    "C2": "#REF!",
+    "C3": "#REF!",
+    "D1": "",
+    "D2": "",
+    "D3": ""
+   },
+   "mark": "C2 C3",
+   "t": "#REF! : la formule pointe vers une cellule qui n'existe plus."
+  },
+  {
+   "c": "D2",
+   "keys": "Ctrl + Z",
+   "set": {
+    "C1": "Frais",
+    "C2": "120",
+    "C3": "150",
+    "D1": "Résultat",
+    "D2": "380",
+    "D3": "470"
+   },
+   "t": "Annulez tout de suite avec Ctrl + Z. Avant de supprimer, vérifiez qu'aucune formule n'en dépend."
+  }
+ ],
+ "guide": {
+  "question": "Comment corriger l'erreur #REF! dans Excel ?",
+  "intro": "#REF! signifie qu'une formule pointe vers une cellule qui n'existe plus. Elle apparaît le plus souvent après la suppression d'une ligne, d'une colonne ou d'une feuille utilisée par la formule, ou après un collage par-dessus. Le réflexe : Ctrl + Z tout de suite, puis vérifier les formules qui dépendent de ce que vous voulez supprimer.",
+  "exemple": {
+   "titre": "Exemple",
+   "formule": "=B2-C2  devient  =B2-#REF!",
+   "explication": "La colonne Résultat soustrait les frais des ventes. En supprimant la colonne Frais, la formule perd sa référence et affiche #REF!."
+  },
+  "erreurs": [
+   [
+    "Ctrl + Z n'est plus possible",
+    "Le fichier a été fermé : réécrivez la formule en désignant à nouveau les bonnes cellules."
+   ],
+   [
+    "#REF! dans une RECHERCHEV",
+    "Le numéro de colonne dépasse le nombre de colonnes du tableau."
+   ]
+  ],
+  "faq": [
+   [
+    "Comment savoir quelles formules utilisent une cellule ?",
+    "Formules › Repérer les dépendants affiche des flèches vers elles."
+   ],
+   [
+    "Comment éviter #REF! en supprimant ?",
+    "Videz le contenu au lieu de supprimer la colonne, ou utilisez un tableau Excel dont les formules s'adaptent."
+   ],
+   [
+    "Comment trouver tous les #REF! ?",
+    "Ctrl + F, cherchez #REF! dans les formules."
+   ]
+  ]
+ },
+ "voirAussi": [
+  "erreur-valeur",
+  "antecedents-et-dependants",
+  "erreur-nom",
+  "copier-coller-annuler"
  ]
 }

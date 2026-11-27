@@ -6,26 +6,207 @@
  "motsCles": "tcd pourcentage du total général afficher les valeurs part répartition",
  "syntaxe": "Clic droit › Afficher les valeurs › % du total général",
  "ruban": true,
- "largeurs": {"E":26},
+ "largeurs": {
+  "E": 26
+ },
  "arguments": [
-  ["Afficher les valeurs","Change la façon de présenter le calcul"],
-  ["% du total général","Chaque valeur divisée par le total"]
+  [
+   "Afficher les valeurs",
+   "Change la façon de présenter le calcul"
+  ],
+  [
+   "% du total général",
+   "Chaque valeur divisée par le total"
+  ]
  ],
  "grille": [
-  ["Vendeur","Région","Produit","Montant"],
-  ["Alice","Nord","Stylos","120"],
-  ["Bruno","Sud","Cahiers","80"],
-  ["Alice","Sud","Stylos","60"],
-  ["Chloé","Nord","Cahiers","150"],
-  ["Bruno","Nord","Stylos","90"],
-  ["Chloé","Sud","Stylos","110"],
-  ["Alice","Nord","Cahiers","70"],
-  ["Bruno","Sud","Stylos","40"]
+  [
+   "Vendeur",
+   "Région",
+   "Produit",
+   "Montant"
+  ],
+  [
+   "Alice",
+   "Nord",
+   "Stylos",
+   "120"
+  ],
+  [
+   "Bruno",
+   "Sud",
+   "Cahiers",
+   "80"
+  ],
+  [
+   "Alice",
+   "Sud",
+   "Stylos",
+   "60"
+  ],
+  [
+   "Chloé",
+   "Nord",
+   "Cahiers",
+   "150"
+  ],
+  [
+   "Bruno",
+   "Nord",
+   "Stylos",
+   "90"
+  ],
+  [
+   "Chloé",
+   "Sud",
+   "Stylos",
+   "110"
+  ],
+  [
+   "Alice",
+   "Nord",
+   "Cahiers",
+   "70"
+  ],
+  [
+   "Bruno",
+   "Sud",
+   "Stylos",
+   "40"
+  ]
  ],
+ "titreSeo": "Pourcentage du total dans un tableau croisé dynamique",
  "etapes": [
-  {"c":"F1","tab":"Analyse du tableau croisé","pivot":{"fields":["Vendeur","Région","Produit","Montant"],"filt":[],"cols":[],"rows":["Vendeur"],"vals":["Somme de Montant"]},"set":{"F1":"Étiquettes de lignes","G1":"Somme de Montant","F2":"Alice","G2":"250","F3":"Bruno","G3":"210","F4":"Chloé","G4":"260","F5":"Total général","G5":"720"},"fmt":{"F1:G1":"h","F5:G5":"b"},"t":"Voici les ventes par vendeur. Qui pèse combien dans le total ?"},
-  {"c":"G2","menu":"Clic droit sur une valeur › <b>Afficher les valeurs</b> › % du total général","set":{"G2":"34,72 %","G3":"29,17 %","G4":"36,11 %","G5":"100,00 %"},"t":"Clic droit, « Afficher les valeurs », % du total général : chaque vendeur devient une part du total."},
-  {"c":"G4","tab":"Analyse du tableau croisé","mark":"G4","t":"Chloé réalise un peu plus du tiers des ventes. Aucun calcul à écrire."},
-  {"c":"H2","tab":"Analyse du tableau croisé","pivot":{"fields":["Vendeur","Région","Produit","Montant"],"filt":[],"cols":[],"rows":["Vendeur"],"vals":["Somme de Montant","% de Montant"],"pick":"Montant"},"set":{"G2":"250","G3":"210","G4":"260","G5":"720","H1":"% du total","H2":"34,72 %","H3":"29,17 %","H4":"36,11 %","H5":"100,00 %"},"fmt":{"H1":"h","H5":"b"},"t":"Pour garder aussi les montants, glissez Montant une seconde fois dans Valeurs."}
+  {
+   "c": "F1",
+   "tab": "Analyse du tableau croisé",
+   "pivot": {
+    "fields": [
+     "Vendeur",
+     "Région",
+     "Produit",
+     "Montant"
+    ],
+    "filt": [],
+    "cols": [],
+    "rows": [
+     "Vendeur"
+    ],
+    "vals": [
+     "Somme de Montant"
+    ]
+   },
+   "set": {
+    "F1": "Étiquettes de lignes",
+    "G1": "Somme de Montant",
+    "F2": "Alice",
+    "G2": "250",
+    "F3": "Bruno",
+    "G3": "210",
+    "F4": "Chloé",
+    "G4": "260",
+    "F5": "Total général",
+    "G5": "720"
+   },
+   "fmt": {
+    "F1:G1": "h",
+    "F5:G5": "b"
+   },
+   "t": "Voici les ventes par vendeur. Qui pèse combien dans le total ?"
+  },
+  {
+   "c": "G2",
+   "menu": "Clic droit sur une valeur › <b>Afficher les valeurs</b> › % du total général",
+   "set": {
+    "G2": "34,72 %",
+    "G3": "29,17 %",
+    "G4": "36,11 %",
+    "G5": "100,00 %"
+   },
+   "t": "Clic droit, « Afficher les valeurs », % du total général : chaque vendeur devient une part du total."
+  },
+  {
+   "c": "G4",
+   "tab": "Analyse du tableau croisé",
+   "mark": "G4",
+   "t": "Chloé réalise un peu plus du tiers des ventes. Aucun calcul à écrire."
+  },
+  {
+   "c": "H2",
+   "tab": "Analyse du tableau croisé",
+   "pivot": {
+    "fields": [
+     "Vendeur",
+     "Région",
+     "Produit",
+     "Montant"
+    ],
+    "filt": [],
+    "cols": [],
+    "rows": [
+     "Vendeur"
+    ],
+    "vals": [
+     "Somme de Montant",
+     "% de Montant"
+    ],
+    "pick": "Montant"
+   },
+   "set": {
+    "G2": "250",
+    "G3": "210",
+    "G4": "260",
+    "G5": "720",
+    "H1": "% du total",
+    "H2": "34,72 %",
+    "H3": "29,17 %",
+    "H4": "36,11 %",
+    "H5": "100,00 %"
+   },
+   "fmt": {
+    "H1": "h",
+    "H5": "b"
+   },
+   "t": "Pour garder aussi les montants, glissez Montant une seconde fois dans Valeurs."
+  }
+ ],
+ "guide": {
+  "question": "Comment afficher des pourcentages dans un tableau croisé dynamique ?",
+  "intro": "Un tableau croisé dynamique peut transformer ses montants en parts du total, sans aucune formule. Faites un clic droit sur une valeur, puis Afficher les valeurs › % du total général. Les autres choix donnent les parts par ligne ou par colonne. Pour garder aussi les montants, ajoutez le même champ une seconde fois dans Valeurs.",
+  "exemple": {
+   "titre": "Exemple",
+   "formule": "Clic droit › Afficher les valeurs › % du total général",
+   "explication": "Sur 720 € de ventes : Chloé 260 € (36,1 %), Alice 250 € (34,7 %), Bruno 210 € (29,2 %). Les pourcentages sont arrondis au dixième."
+  },
+  "erreurs": [
+   [
+    "Les pourcentages dépassent 100 %",
+    "Vous avez choisi % de la ligne ou de la colonne au lieu de % du total général."
+   ],
+   [
+    "La colonne des montants a disparu",
+    "Elle a été transformée : glissez à nouveau le champ dans Valeurs pour avoir les deux."
+   ]
+  ],
+  "faq": [
+   [
+    "Comment afficher le pourcentage par région ?",
+    "Mettez Région en colonnes, puis choisissez % du total de la ligne."
+   ],
+   [
+    "Comment régler le nombre de décimales ?",
+    "Clic droit › Format de nombre › Pourcentage."
+   ],
+   [
+    "Les pourcentages se mettent-ils à jour ?",
+    "Oui, après Actualiser."
+   ]
+  ]
+ },
+ "voirAussi": [
+  "tcd-somme-nombre-moyenne",
+  "pourcentages",
+  "creer-un-tableau-croise-dynamique",
+  "tcd-champ-calcule"
  ]
 }

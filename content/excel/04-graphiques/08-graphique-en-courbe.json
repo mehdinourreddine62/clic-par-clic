@@ -6,25 +6,132 @@
  "motsCles": "courbe ligne évolution temps tendance graphique mois",
  "syntaxe": "Insertion › Courbes",
  "ruban": true,
- "graphique": {"type":"line","labels":"A2:A7","series":["B2:B7"],"title":"Visiteurs par mois","at":"D2:H9"},
+ "graphique": {
+  "type": "line",
+  "labels": "A2:A7",
+  "series": [
+   "B2:B7"
+  ],
+  "title": "Visiteurs par mois",
+  "at": "D2:H9"
+ },
  "arguments": [
-  ["Axe horizontal","Le temps, dans l'ordre"],
-  ["Axe vertical","La valeur mesurée"],
-  ["À utiliser pour","Une évolution : jours, mois, années"]
+  [
+   "Axe horizontal",
+   "Le temps, dans l'ordre"
+  ],
+  [
+   "Axe vertical",
+   "La valeur mesurée"
+  ],
+  [
+   "À utiliser pour",
+   "Une évolution : jours, mois, années"
+  ]
  ],
  "grille": [
-  ["Mois","Visiteurs"],
-  ["Janv","210"],
-  ["Févr","240"],
-  ["Mars","230"],
-  ["Avr","300"],
-  ["Mai","340"],
-  ["Juin","390"]
+  [
+   "Mois",
+   "Visiteurs"
+  ],
+  [
+   "Janv",
+   "210"
+  ],
+  [
+   "Févr",
+   "240"
+  ],
+  [
+   "Mars",
+   "230"
+  ],
+  [
+   "Avr",
+   "300"
+  ],
+  [
+   "Mai",
+   "340"
+  ],
+  [
+   "Juin",
+   "390"
+  ]
  ],
+ "titreSeo": "Graphique en courbe dans Excel : suivre une évolution",
  "etapes": [
-  {"c":"A1","sel":"A1:B7","drag":1,"tab":"Insertion","btn":"Courbes","chart":1,"t":"La courbe relie les points dans l'ordre : elle montre une évolution."},
-  {"c":"A2","sel":"A2:A7","tab":"Insertion","t":"L'axe horizontal doit suivre le temps : jours, mois ou années, dans l'ordre."},
-  {"c":"B5","tab":"Insertion","chart":{"hi":3},"mark":"B5","t":"La pente raconte l'histoire : ici, la fréquentation décolle à partir d'avril."},
-  {"c":"B4","f":"150","tab":"Insertion","chart":{"hi":2},"t":"Un creux ou un pic saute aux yeux, bien plus que dans un tableau de chiffres."}
+  {
+   "c": "A1",
+   "sel": "A1:B7",
+   "drag": 1,
+   "tab": "Insertion",
+   "btn": "Courbes",
+   "chart": 1,
+   "t": "La courbe relie les points dans l'ordre : elle montre une évolution."
+  },
+  {
+   "c": "A2",
+   "sel": "A2:A7",
+   "tab": "Insertion",
+   "t": "L'axe horizontal doit suivre le temps : jours, mois ou années, dans l'ordre."
+  },
+  {
+   "c": "B5",
+   "tab": "Insertion",
+   "chart": {
+    "hi": 3
+   },
+   "mark": "B5",
+   "t": "La pente raconte l'histoire : ici, la fréquentation décolle à partir d'avril."
+  },
+  {
+   "c": "B4",
+   "f": "150",
+   "tab": "Insertion",
+   "chart": {
+    "hi": 2
+   },
+   "t": "Un creux ou un pic saute aux yeux, bien plus que dans un tableau de chiffres."
+  }
+ ],
+ "guide": {
+  "question": "Comment faire un graphique en courbe dans Excel ?",
+  "intro": "Le graphique en courbe relie des points dans l'ordre pour montrer une évolution dans le temps : chiffre d'affaires mensuel, fréquentation, notes au fil de l'année. Sélectionnez les dates et les valeurs, puis Insertion › Courbes. Les dates doivent être dans l'ordre chronologique, en première colonne.",
+  "exemple": {
+   "titre": "Exemple",
+   "formule": "Insertion › Courbes",
+   "explication": "Visiteurs de janvier à juin : 210, 240, 230, 300, 340, 390. La pente montre que la fréquentation décolle à partir d'avril."
+  },
+  "erreurs": [
+   [
+    "La courbe part dans tous les sens",
+    "Les dates ne sont pas triées : triez le tableau du plus ancien au plus récent."
+   ],
+   [
+    "Les mois deviennent une deuxième courbe",
+    "Excel a pris la colonne des mois pour des nombres : vérifiez qu'ils sont saisis comme texte ou comme dates, puis Sélectionner les données."
+   ]
+  ],
+  "faq": [
+   [
+    "Courbe ou histogramme ?",
+    "La courbe pour une évolution dans le temps, l'histogramme pour comparer des catégories."
+   ],
+   [
+    "Comment ajouter une deuxième courbe ?",
+    "Ajoutez une colonne de valeurs et incluez-la dans la sélection, ou Sélectionner les données › Ajouter."
+   ],
+   [
+    "Comment afficher la tendance ?",
+    "Éléments de graphique › Courbe de tendance."
+   ]
+  ]
+ },
+ "voirAussi": [
+  "courbe-de-tendance",
+  "graphique-plusieurs-series",
+  "creer-un-graphique",
+  "regler-les-axes"
  ]
 }

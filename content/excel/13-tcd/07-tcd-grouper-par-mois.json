@@ -7,22 +7,176 @@
  "syntaxe": "Clic droit sur une date › Grouper",
  "ruban": true,
  "arguments": [
-  ["Grouper","Regroupe les dates par mois, trimestre ou année"],
-  ["Dissocier","Revient au détail par jour"]
+  [
+   "Grouper",
+   "Regroupe les dates par mois, trimestre ou année"
+  ],
+  [
+   "Dissocier",
+   "Revient au détail par jour"
+  ]
  ],
  "grille": [
-  ["Date","Montant"],
-  ["05/01/2026","100"],
-  ["18/01/2026","50"],
-  ["03/02/2026","80"],
-  ["20/02/2026","120"],
-  ["11/03/2026","60"],
-  ["25/03/2026","90"]
+  [
+   "Date",
+   "Montant"
+  ],
+  [
+   "05/01/2026",
+   "100"
+  ],
+  [
+   "18/01/2026",
+   "50"
+  ],
+  [
+   "03/02/2026",
+   "80"
+  ],
+  [
+   "20/02/2026",
+   "120"
+  ],
+  [
+   "11/03/2026",
+   "60"
+  ],
+  [
+   "25/03/2026",
+   "90"
+  ]
  ],
+ "titreSeo": "Grouper des dates par mois dans un tableau croisé",
  "etapes": [
-  {"c":"D1","tab":"Analyse du tableau croisé","pivot":{"fields":["Date","Montant"],"filt":[],"cols":[],"rows":["Date"],"vals":["Somme de Montant"]},"set":{"D1":"Étiquettes de lignes","E1":"Somme de Montant","D2":"05/01/2026","E2":"100","D3":"18/01/2026","E3":"50","D4":"03/02/2026","E4":"80","D5":"20/02/2026","E5":"120","D6":"11/03/2026","E6":"60","D7":"25/03/2026","E7":"90","D8":"Total général","E8":"500"},"fmt":{"D1:E1":"h","D8:E8":"b"},"t":"Avec des dates en lignes, on obtient une ligne par jour : trop de détail."},
-  {"c":"D2","menu":"Clic droit sur une date › <b>Grouper</b> › Mois","pivot":{"fields":["Date","Montant"],"filt":[],"cols":[],"rows":["Mois"],"vals":["Somme de Montant"],"pick":"Mois"},"set":{"D2":"janv","E2":"150","D3":"févr","E3":"200","D4":"mars","E4":"150","D5":"Total général","E5":"500","D6":"","E6":"","D7":"","E7":"","D8":"","E8":""},"fmt":{"D5:E5":"b"},"t":"Clic droit sur une date, Grouper, Mois : les jours se regroupent."},
-  {"c":"E3","tab":"Analyse du tableau croisé","mark":"E3","t":"Février ressort tout de suite comme le meilleur mois."},
-  {"c":"D2","tab":"Analyse du tableau croisé","t":"Les versions récentes d'Excel regroupent souvent les dates toutes seules. Grouper propose aussi les trimestres et les années."}
+  {
+   "c": "D1",
+   "tab": "Analyse du tableau croisé",
+   "pivot": {
+    "fields": [
+     "Date",
+     "Montant"
+    ],
+    "filt": [],
+    "cols": [],
+    "rows": [
+     "Date"
+    ],
+    "vals": [
+     "Somme de Montant"
+    ]
+   },
+   "set": {
+    "D1": "Étiquettes de lignes",
+    "E1": "Somme de Montant",
+    "D2": "05/01/2026",
+    "E2": "100",
+    "D3": "18/01/2026",
+    "E3": "50",
+    "D4": "03/02/2026",
+    "E4": "80",
+    "D5": "20/02/2026",
+    "E5": "120",
+    "D6": "11/03/2026",
+    "E6": "60",
+    "D7": "25/03/2026",
+    "E7": "90",
+    "D8": "Total général",
+    "E8": "500"
+   },
+   "fmt": {
+    "D1:E1": "h",
+    "D8:E8": "b"
+   },
+   "t": "Avec des dates en lignes, on obtient une ligne par jour : trop de détail."
+  },
+  {
+   "c": "D2",
+   "menu": "Clic droit sur une date › <b>Grouper</b> › Mois",
+   "pivot": {
+    "fields": [
+     "Date",
+     "Montant"
+    ],
+    "filt": [],
+    "cols": [],
+    "rows": [
+     "Mois"
+    ],
+    "vals": [
+     "Somme de Montant"
+    ],
+    "pick": "Mois"
+   },
+   "set": {
+    "D2": "janv",
+    "E2": "150",
+    "D3": "févr",
+    "E3": "200",
+    "D4": "mars",
+    "E4": "150",
+    "D5": "Total général",
+    "E5": "500",
+    "D6": "",
+    "E6": "",
+    "D7": "",
+    "E7": "",
+    "D8": "",
+    "E8": ""
+   },
+   "fmt": {
+    "D5:E5": "b"
+   },
+   "t": "Clic droit sur une date, Grouper, Mois : les jours se regroupent."
+  },
+  {
+   "c": "E3",
+   "tab": "Analyse du tableau croisé",
+   "mark": "E3",
+   "t": "Février ressort tout de suite comme le meilleur mois."
+  },
+  {
+   "c": "D2",
+   "tab": "Analyse du tableau croisé",
+   "t": "Les versions récentes d'Excel regroupent souvent les dates toutes seules. Grouper propose aussi les trimestres et les années."
+  }
+ ],
+ "guide": {
+  "question": "Comment grouper des dates par mois dans un tableau croisé dynamique ?",
+  "intro": "Avec des dates en lignes, un tableau croisé dynamique affiche une ligne par jour. Pour résumer par mois, faites un clic droit sur une date du tableau croisé, choisissez Grouper, puis sélectionnez Mois (et Années si les données couvrent plusieurs années). Les versions récentes d'Excel regroupent souvent les dates d'elles-mêmes.",
+  "exemple": {
+   "titre": "Exemple",
+   "formule": "Clic droit sur une date › Grouper › Mois",
+   "explication": "Six ventes de janvier à mars deviennent trois lignes : janvier 150, février 200, mars 150. Février ressort comme le meilleur mois."
+  },
+  "erreurs": [
+   [
+    "Grouper affiche « Impossible de grouper cette sélection »",
+    "Une cellule de la colonne contient du texte ou est vide : corrigez la source, puis actualisez."
+   ],
+   [
+    "Les mois de deux années se mélangent",
+    "Cochez aussi Années dans la fenêtre Grouper."
+   ]
+  ],
+  "faq": [
+   [
+    "Comment grouper par trimestre ?",
+    "Dans la même fenêtre, sélectionnez Trimestres."
+   ],
+   [
+    "Comment annuler le groupement ?",
+    "Clic droit sur une date › Dissocier."
+   ],
+   [
+    "Peut-on filtrer par période ?",
+    "Oui, avec une chronologie : Analyse du tableau croisé › Insérer une chronologie."
+   ]
+  ]
+ },
+ "voirAussi": [
+  "creer-un-tableau-croise-dynamique",
+  "tcd-chronologie",
+  "tcd-lignes-et-colonnes",
+  "tcd-actualiser"
  ]
 }

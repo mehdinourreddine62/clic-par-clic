@@ -3,15 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Corriger #VALEUR! – Excel en animation | Clic par clic</title>
-<meta name="description" content="Repérer le texte qui empêche un calcul. Leçon Excel animée en 4 étapes, niveau débutant, gratuite.">
+<title>Erreur #VALEUR! dans Excel : cause et solution</title>
+<meta name="description" content="#VALEUR! apparaît quand une formule reçoit du texte là où elle attend un nombre. La cause la plus fréquente est une unité tapée dans la cellule (« 2 kg », «…">
 <link rel="canonical" href="https://mehdinourreddine62.github.io/clic-par-clic/excel/erreur-valeur/">
 <meta name="robots" content="index,follow">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="Clic par clic">
-<meta property="og:title" content="Corriger #VALEUR! – Excel en animation | Clic par clic">
-<meta property="og:description" content="Repérer le texte qui empêche un calcul. Leçon Excel animée en 4 étapes, niveau débutant, gratuite.">
+<meta property="og:title" content="Erreur #VALEUR! dans Excel : cause et solution">
+<meta property="og:description" content="#VALEUR! apparaît quand une formule reçoit du texte là où elle attend un nombre. La cause la plus fréquente est une unité tapée dans la cellule (« 2 kg », «…">
 <meta property="og:url" content="https://mehdinourreddine62.github.io/clic-par-clic/excel/erreur-valeur/">
 <meta property="og:image" content="https://mehdinourreddine62.github.io/clic-par-clic/assets/og-excel.png">
 <meta property="og:image:width" content="1200">
@@ -61,7 +61,18 @@
     <div class="pband" id="pband" hidden></div>
     <details class="sx"><summary>Syntaxe <code>Un nombre, sans unité, dans la cellule</code></summary><dl><dt>Cause</dt><dd>Du texte là où la formule attend un nombre</dd><dt>Indice</dt><dd>Le texte s'aligne à gauche, les nombres à droite</dd><dt>Solution</dt><dd>Mettre l'unité dans le titre de la colonne</dd></dl></details>
     <details class="sx"><summary>Résumé écrit des étapes</summary><ol class="steps"><li>#VALEUR! apparaît quand une formule reçoit du texte là où elle attend un nombre.</li><li>Le coupable : « 2 kg ». Avec l'unité, ce n'est plus un nombre mais du texte, aligné à gauche.</li><li>Ne gardez que le nombre dans la cellule : le calcul fonctionne.</li><li>L'unité a sa place dans le titre de la colonne.</li></ol></details>
-    <section class="also"><h2>Voir aussi</h2><div class="also-l"><a href="../erreur-div-0/"><b>Corriger #DIV/0!</b><small>Comprendre et supprimer l'erreur de division par zéro.</small></a><a href="../erreur-na/"><b>Corriger #N/A</b><small>Comprendre pourquoi une recherche ne trouve rien.</small></a><a href="../erreur-ref/"><b>Corriger #REF!</b><small>Comprendre ce qui se passe quand on supprime une cellule utilisée.</small></a></div></section>
+    <section class="guide">
+      <h2>Comment corriger l'erreur #VALEUR! dans Excel ?</h2>
+      <p>#VALEUR! apparaît quand une formule reçoit du texte là où elle attend un nombre. La cause la plus fréquente est une unité tapée dans la cellule (« 2 kg », « 3 € » saisi à la main), un espace, ou un nombre importé comme texte. Un nombre reconnu s'aligne à droite ; du texte s'aligne à gauche.</p>
+      <h3>Exemple</h3>
+      <p><code class="gx">=B3*C3</code></p>
+      <p>Avec « 2 kg » en B3, la formule renvoie #VALEUR!. En ne gardant que 2 dans la cellule, elle renvoie 6,00 €. L'unité se met dans le titre de la colonne : Poids (kg).</p>
+      <h3>Erreurs fréquentes</h3>
+      <ul><li><b>Le nombre semble correct mais l'erreur reste</b>Un espace invisible ou un nombre stocké comme texte : retapez-le, ou utilisez SUPPRESPACE.</li><li><b>#VALEUR! avec des dates</b>La date a été tapée dans un format non reconnu : saisissez-la sous la forme 13/11/2026.</li></ul>
+      <h3>Questions fréquentes</h3>
+      <h4>Pourquoi SOMME ne donne pas #VALEUR! ?</h4><p>SOMME ignore le texte ; le signe + ou * ne l'ignore pas. Les deux résultats peuvent donc différer.</p><h4>Comment repérer les nombres en texte ?</h4><p>Ils sont alignés à gauche et souvent signalés par un petit triangle vert.</p><h4>Peut-on masquer l'erreur ?</h4><p>Avec SIERREUR, mais corrigez plutôt la donnée : masquer cache aussi les vraies erreurs.</p>
+    </section>
+    <section class="also"><h2>Voir aussi</h2><div class="also-l"><a href="../erreur-nom/"><b>Corriger #NOM?</b><small>Trouver la faute de frappe dans une formule.</small></a><a href="../erreur-ref/"><b>Corriger #REF!</b><small>Comprendre ce qui se passe quand on supprime une cellule utilisée.</small></a><a href="../supprespace/"><b>SUPPRESPACE</b><small>Retirer les espaces en trop qui faussent les recherches.</small></a><a href="../sierreur/"><b>SIERREUR</b><small>Remplacer un message d'erreur par la valeur de son choix.</small></a></div></section>
     <nav class="lnav" aria-label="Leçons voisines"><a href="../erreur-na/"><small>← Précédente</small>Corriger #N/A</a><a class="nx" id="nextLesson" href="../erreur-ref/"><small>Suivante →</small>Corriger #REF!</a></nav>
   </main>
 </div>

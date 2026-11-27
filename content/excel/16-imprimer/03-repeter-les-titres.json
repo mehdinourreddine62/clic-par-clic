@@ -7,23 +7,149 @@
  "syntaxe": "Mise en page › Imprimer les titres",
  "ruban": true,
  "arguments": [
-  ["Lignes à répéter en haut","La ou les lignes de titres, par exemple $1:$1"],
-  ["Colonnes à répéter à gauche","Pour un tableau très large"]
+  [
+   "Lignes à répéter en haut",
+   "La ou les lignes de titres, par exemple $1:$1"
+  ],
+  [
+   "Colonnes à répéter à gauche",
+   "Pour un tableau très large"
+  ]
  ],
  "grille": [
-  ["Client","Ville","Montant"],
-  ["Durand","Lille","120"],
-  ["Martin","Lyon","340"],
-  ["Bernard","Paris","90"],
-  ["Petit","Nantes","210"],
-  ["Robert","Lille","150"],
-  ["Richard","Paris","400"],
-  ["Moreau","Lyon","75"],
-  ["Simon","Nantes","260"]
+  [
+   "Client",
+   "Ville",
+   "Montant"
+  ],
+  [
+   "Durand",
+   "Lille",
+   "120"
+  ],
+  [
+   "Martin",
+   "Lyon",
+   "340"
+  ],
+  [
+   "Bernard",
+   "Paris",
+   "90"
+  ],
+  [
+   "Petit",
+   "Nantes",
+   "210"
+  ],
+  [
+   "Robert",
+   "Lille",
+   "150"
+  ],
+  [
+   "Richard",
+   "Paris",
+   "400"
+  ],
+  [
+   "Moreau",
+   "Lyon",
+   "75"
+  ],
+  [
+   "Simon",
+   "Nantes",
+   "260"
+  ]
  ],
+ "titreSeo": "Répéter la ligne de titres à l'impression dans Excel",
  "etapes": [
-  {"c":"A1","tab":"Mise en page","keys":"Ctrl + P","preview":{"pages":[[3,8,1],[3,6,0]]},"t":"Sur un long tableau, la deuxième page n'a plus de titres : on ne sait plus quoi lire."},
-  {"c":"A1","sel":"row:1","menu":"Imprimer les titres › <b>Lignes à répéter en haut</b>","rule":"$1:$1","t":"Mise en page › Imprimer les titres : indiquez la ligne 1 comme ligne à répéter."},
-  {"c":"A1","tab":"Mise en page","keys":"Ctrl + P","preview":{"pages":[[3,8,1],[3,7,1]]},"t":"Les titres reviennent en haut de chaque page."}
+  {
+   "c": "A1",
+   "tab": "Mise en page",
+   "keys": "Ctrl + P",
+   "preview": {
+    "pages": [
+     [
+      3,
+      8,
+      1
+     ],
+     [
+      3,
+      6,
+      0
+     ]
+    ]
+   },
+   "t": "Sur un long tableau, la deuxième page n'a plus de titres : on ne sait plus quoi lire."
+  },
+  {
+   "c": "A1",
+   "sel": "row:1",
+   "menu": "Imprimer les titres › <b>Lignes à répéter en haut</b>",
+   "rule": "$1:$1",
+   "t": "Mise en page › Imprimer les titres : indiquez la ligne 1 comme ligne à répéter."
+  },
+  {
+   "c": "A1",
+   "tab": "Mise en page",
+   "keys": "Ctrl + P",
+   "preview": {
+    "pages": [
+     [
+      3,
+      8,
+      1
+     ],
+     [
+      3,
+      7,
+      1
+     ]
+    ]
+   },
+   "t": "Les titres reviennent en haut de chaque page."
+  }
+ ],
+ "guide": {
+  "question": "Comment répéter la ligne de titres sur chaque page imprimée dans Excel ?",
+  "intro": "Sur un long tableau imprimé, seule la première page a ses titres de colonnes. Mise en page › Imprimer les titres › Lignes à répéter en haut : indiquez la ligne 1 (elle s'écrit $1:$1). Les titres reviennent alors en haut de chaque page, à l'impression comme dans le PDF.",
+  "exemple": {
+   "titre": "Exemple",
+   "formule": "Mise en page › Imprimer les titres › $1:$1",
+   "explication": "Client, Ville et Montant apparaissent en haut de la page 1 et de la page 2."
+  },
+  "erreurs": [
+   [
+    "Le bouton Imprimer les titres est grisé",
+    "Un graphique ou plusieurs feuilles sont sélectionnés : cliquez sur une seule cellule de la feuille."
+   ],
+   [
+    "Les titres ne se voient pas à l'écran",
+    "C'est normal : la répétition ne concerne que l'impression ; à l'écran, figez les volets."
+   ]
+  ],
+  "faq": [
+   [
+    "Comment répéter une colonne à gauche ?",
+    "Dans la même fenêtre, Colonnes à répéter à gauche : $A:$A."
+   ],
+   [
+    "Peut-on répéter deux lignes ?",
+    "Oui : $1:$2."
+   ],
+   [
+    "Cela fonctionne-t-il pour un PDF ?",
+    "Oui, l'export PDF suit la mise en page."
+   ]
+  ]
+ },
+ "voirAussi": [
+  "figer-la-ligne-de-titres",
+  "zone-d-impression",
+  "tenir-sur-une-page",
+  "sauts-de-page"
  ]
 }

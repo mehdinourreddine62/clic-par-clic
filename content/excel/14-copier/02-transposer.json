@@ -6,16 +6,101 @@
  "motsCles": "transposer collage spécial lignes colonnes pivoter inverser tableau",
  "syntaxe": "Clic droit › Collage spécial › Transposer",
  "arguments": [
-  ["Transposer","Les lignes deviennent des colonnes"],
-  ["Résultat","Une copie : le tableau d'origine reste en place"]
+  [
+   "Transposer",
+   "Les lignes deviennent des colonnes"
+  ],
+  [
+   "Résultat",
+   "Une copie : le tableau d'origine reste en place"
+  ]
  ],
  "grille": [
-  ["Mois","Janv","Févr","Mars"],
-  ["Ventes","120","90","150"]
+  [
+   "Mois",
+   "Janv",
+   "Févr",
+   "Mars"
+  ],
+  [
+   "Ventes",
+   "120",
+   "90",
+   "150"
+  ]
  ],
+ "titreSeo": "Transposer dans Excel : lignes en colonnes",
  "etapes": [
-  {"c":"A1","sel":"A1:D2","drag":1,"copy":"A1:D2","keys":"Ctrl + C","t":"Ce tableau est en ligne, on le voudrait en colonne. Copiez-le."},
-  {"c":"A4","menu":"Clic droit › Collage spécial › <b>Transposer</b>","set":{"A4":"Mois","B4":"Ventes","A5":"Janv","B5":"120","A6":"Févr","B6":"90","A7":"Mars","B7":"150"},"fmt":{"A4:B4":"b"},"copy":"","t":"Collage spécial, Transposer : les lignes deviennent des colonnes."},
-  {"c":"A4","sel":"A4:B7","t":"Les données sont identiques, seule l'orientation a changé."}
+  {
+   "c": "A1",
+   "sel": "A1:D2",
+   "drag": 1,
+   "copy": "A1:D2",
+   "keys": "Ctrl + C",
+   "t": "Ce tableau est en ligne, on le voudrait en colonne. Copiez-le."
+  },
+  {
+   "c": "A4",
+   "menu": "Clic droit › Collage spécial › <b>Transposer</b>",
+   "set": {
+    "A4": "Mois",
+    "B4": "Ventes",
+    "A5": "Janv",
+    "B5": "120",
+    "A6": "Févr",
+    "B6": "90",
+    "A7": "Mars",
+    "B7": "150"
+   },
+   "fmt": {
+    "A4:B4": "b"
+   },
+   "copy": "",
+   "t": "Collage spécial, Transposer : les lignes deviennent des colonnes."
+  },
+  {
+   "c": "A4",
+   "sel": "A4:B7",
+   "t": "Les données sont identiques, seule l'orientation a changé."
+  }
+ ],
+ "guide": {
+  "question": "Comment transformer des lignes en colonnes dans Excel ?",
+  "intro": "Transposer fait pivoter un tableau : les lignes deviennent des colonnes et inversement. Copiez le tableau avec Ctrl + C, cliquez sur la cellule de destination, puis clic droit › Collage spécial › Transposer (ou l'icône Transposer dans les options de collage). Les données sont identiques, seule l'orientation change.",
+  "exemple": {
+   "titre": "Exemple",
+   "formule": "Clic droit › Collage spécial › Transposer",
+   "explication": "Mois et ventes sur deux lignes (janv 120, févr 90, mars 150) deviennent deux colonnes de quatre lignes."
+  },
+  "erreurs": [
+   [
+    "Message « La zone de collage ne correspond pas »",
+    "La destination chevauche l'original : collez ailleurs, sur une zone vide."
+   ],
+   [
+    "Le tableau transposé ne se met pas à jour",
+    "Le collage spécial copie des valeurs figées : utilisez =TRANSPOSE(A1:D2) pour un lien dynamique."
+   ]
+  ],
+  "faq": [
+   [
+    "Existe-t-il une formule ?",
+    "Oui : =TRANSPOSE(A1:D2), qui se met à jour avec la source."
+   ],
+   [
+    "Peut-on transposer un tableau Excel (mis sous forme de tableau) ?",
+    "Pas directement : convertissez-le en plage ou copiez ses valeurs avant."
+   ],
+   [
+    "Les formules sont-elles conservées ?",
+    "Oui, leurs références sont adaptées ; vérifiez-les après collage."
+   ]
+  ]
+ },
+ "voirAussi": [
+  "coller-les-valeurs",
+  "copier-coller-annuler",
+  "options-de-recopie",
+  "colonnes-et-lignes"
  ]
 }

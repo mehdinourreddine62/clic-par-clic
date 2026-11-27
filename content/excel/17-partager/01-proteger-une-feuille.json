@@ -7,21 +7,124 @@
  "syntaxe": "Révision › Protéger la feuille",
  "ruban": true,
  "arguments": [
-  ["Verrouillée","Toutes les cellules le sont par défaut"],
-  ["Déverrouiller","À faire pour les cellules à laisser modifiables"],
-  ["Protéger la feuille","Active le verrouillage"]
+  [
+   "Verrouillée",
+   "Toutes les cellules le sont par défaut"
+  ],
+  [
+   "Déverrouiller",
+   "À faire pour les cellules à laisser modifiables"
+  ],
+  [
+   "Protéger la feuille",
+   "Active le verrouillage"
+  ]
  ],
  "grille": [
-  ["Article","Quantité","Prix","Total"],
-  ["Stylo","10","1,20 €","12,00 €"],
-  ["Cahier","4","3,50 €","14,00 €"],
-  ["Classeur","2","5,90 €","11,80 €"]
+  [
+   "Article",
+   "Quantité",
+   "Prix",
+   "Total"
+  ],
+  [
+   "Stylo",
+   "10",
+   "1,20 €",
+   "12,00 €"
+  ],
+  [
+   "Cahier",
+   "4",
+   "3,50 €",
+   "14,00 €"
+  ],
+  [
+   "Classeur",
+   "2",
+   "5,90 €",
+   "11,80 €"
+  ]
  ],
+ "titreSeo": "Protéger une feuille Excel et ses formules",
  "etapes": [
-  {"c":"D2","tab":"Révision","bar":"=B2*C2","mark":"D2 D3 D4","t":"Les formules de la colonne Total ne doivent pas être effacées par erreur."},
-  {"c":"B2","sel":"B2:C4","drag":1,"menu":"Clic droit › Format de cellule › Protection › décocher <b>Verrouillée</b>","t":"Sélectionnez les cellules à laisser modifiables et décochez « Verrouillée »."},
-  {"c":"B2","tab":"Révision","btn":"Protéger la feuille","t":"Révision › Protéger la feuille active le verrouillage de tout le reste."},
-  {"c":"D2","tab":"Révision","f":"5","v":"12,00 €","bar":"=B2*C2","msg":"La cellule que vous essayez de modifier se trouve sur une feuille protégée.","t":"Essayez de modifier un total : Excel refuse."},
-  {"c":"B2","tab":"Révision","f":"12","set":{"D2":"14,40 €"},"mark":"D2","t":"Les quantités restent modifiables, et le total se recalcule."}
+  {
+   "c": "D2",
+   "tab": "Révision",
+   "bar": "=B2*C2",
+   "mark": "D2 D3 D4",
+   "t": "Les formules de la colonne Total ne doivent pas être effacées par erreur."
+  },
+  {
+   "c": "B2",
+   "sel": "B2:C4",
+   "drag": 1,
+   "menu": "Clic droit › Format de cellule › Protection › décocher <b>Verrouillée</b>",
+   "t": "Sélectionnez les cellules à laisser modifiables et décochez « Verrouillée »."
+  },
+  {
+   "c": "B2",
+   "tab": "Révision",
+   "btn": "Protéger la feuille",
+   "t": "Révision › Protéger la feuille active le verrouillage de tout le reste."
+  },
+  {
+   "c": "D2",
+   "tab": "Révision",
+   "f": "5",
+   "v": "12,00 €",
+   "bar": "=B2*C2",
+   "msg": "La cellule que vous essayez de modifier se trouve sur une feuille protégée.",
+   "t": "Essayez de modifier un total : Excel refuse."
+  },
+  {
+   "c": "B2",
+   "tab": "Révision",
+   "f": "12",
+   "set": {
+    "D2": "14,40 €"
+   },
+   "mark": "D2",
+   "t": "Les quantités restent modifiables, et le total se recalcule."
+  }
+ ],
+ "guide": {
+  "question": "Comment protéger les formules d'une feuille Excel ?",
+  "intro": "Protéger une feuille empêche d'effacer ou de modifier les cellules verrouillées, comme les formules, tout en laissant d'autres cellules modifiables. Par défaut, toutes les cellules sont verrouillées : décochez d'abord Verrouillée (clic droit › Format de cellule › Protection) pour les cellules de saisie, puis Révision › Protéger la feuille.",
+  "exemple": {
+   "titre": "Exemple",
+   "formule": "Révision › Protéger la feuille",
+   "explication": "Les quantités restent modifiables ; la colonne Total, qui contient les formules, est protégée et se recalcule toute seule."
+  },
+  "erreurs": [
+   [
+    "Plus rien n'est modifiable",
+    "Vous n'avez pas déverrouillé les cellules de saisie avant de protéger : ôtez la protection, déverrouillez-les, puis protégez à nouveau."
+   ],
+   [
+    "La protection est contournée",
+    "Sans mot de passe, n'importe qui peut ôter la protection : ajoutez-en un dans la fenêtre Protéger la feuille."
+   ]
+  ],
+  "faq": [
+   [
+    "Comment ôter la protection ?",
+    "Révision › Ôter la protection de la feuille."
+   ],
+   [
+    "La protection empêche-t-elle d'ouvrir le fichier ?",
+    "Non : pour cela, chiffrez le classeur avec un mot de passe."
+   ],
+   [
+    "Peut-on autoriser le tri et le filtre ?",
+    "Oui, en cochant ces options dans la fenêtre Protéger la feuille."
+   ]
+  ]
+ },
+ "voirAussi": [
+  "proteger-par-mot-de-passe",
+  "masquer-des-colonnes",
+  "travailler-a-plusieurs",
+  "commentaires"
  ]
 }

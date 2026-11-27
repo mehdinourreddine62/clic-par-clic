@@ -3,15 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Ajouter un champ calculé dans Excel | Clic par clic</title>
-<meta name="description" content="Créer une nouvelle colonne de calcul dans le tableau croisé. Leçon Excel animée en 4 étapes, niveau avancé, gratuite.">
+<title>Champ calculé dans un tableau croisé dynamique Excel</title>
+<meta name="description" content="Un champ calculé crée une nouvelle colonne de calcul à partir des champs existants, directement dans le tableau croisé.">
 <link rel="canonical" href="https://mehdinourreddine62.github.io/clic-par-clic/excel/tcd-champ-calcule/">
 <meta name="robots" content="index,follow">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="Clic par clic">
-<meta property="og:title" content="Ajouter un champ calculé dans Excel | Clic par clic">
-<meta property="og:description" content="Créer une nouvelle colonne de calcul dans le tableau croisé. Leçon Excel animée en 4 étapes, niveau avancé, gratuite.">
+<meta property="og:title" content="Champ calculé dans un tableau croisé dynamique Excel">
+<meta property="og:description" content="Un champ calculé crée une nouvelle colonne de calcul à partir des champs existants, directement dans le tableau croisé.">
 <meta property="og:url" content="https://mehdinourreddine62.github.io/clic-par-clic/excel/tcd-champ-calcule/">
 <meta property="og:image" content="https://mehdinourreddine62.github.io/clic-par-clic/assets/og-excel.png">
 <meta property="og:image:width" content="1200">
@@ -61,7 +61,18 @@
     <div class="pband" id="pband" hidden></div>
     <details class="sx"><summary>Syntaxe <code>Champs, éléments et jeux › Champ calculé</code></summary><dl><dt>Nom</dt><dd>Le nom du nouveau champ</dd><dt>Formule</dt><dd>Un calcul sur les autres champs, par exemple =Montant*10%</dd></dl></details>
     <details class="sx"><summary>Résumé écrit des étapes</summary><ol class="steps"><li>On veut ajouter la commission de chaque vendeur : 10 % de ses ventes.</li><li>Dans Champs, éléments et jeux, choisissez Champ calculé, nommez-le et écrivez sa formule.</li><li>Le nouveau champ s'ajoute à la liste et au tableau, comme une vraie colonne.</li><li>Il se recalcule avec les filtres et les regroupements, ce qu'une formule tapée à côté ne ferait pas.</li></ol></details>
-    <section class="also"><h2>Voir aussi</h2><div class="also-l"><a href="../creer-un-tableau-croise-dynamique/"><b>Créer un tableau croisé dynamique</b><small>Résumer un tableau en quelques clics, sans formule.</small></a><a href="../tcd-lignes-et-colonnes/"><b>Lignes et colonnes</b><small>Croiser deux informations dans le même tableau.</small></a><a href="../tcd-somme-nombre-moyenne/"><b>Somme, nombre ou moyenne</b><small>Changer le calcul affiché dans le tableau croisé.</small></a></div></section>
+    <section class="guide">
+      <h2>Comment ajouter un champ calculé dans un tableau croisé dynamique ?</h2>
+      <p>Un champ calculé crée une nouvelle colonne de calcul à partir des champs existants, directement dans le tableau croisé. Analyse du tableau croisé › Champs, éléments et jeux › Champ calculé : donnez-lui un nom, écrivez sa formule avec les noms des champs, puis cliquez sur Ajouter. Il se recalcule avec les filtres et les regroupements.</p>
+      <h3>Exemple</h3>
+      <p><code class="gx">=Montant*10%</code></p>
+      <p>Une commission de 10 % : Chloé 26 €, Alice 25 €, Bruno 21 €, calculée sur la somme des ventes de chaque vendeur.</p>
+      <h3>Erreurs fréquentes</h3>
+      <ul><li><b>Le résultat est faux pour une moyenne</b>Un champ calculé travaille sur les sommes des champs, jamais ligne par ligne : faites ce calcul dans la source.</li><li><b>Le nom du champ n'est pas reconnu</b>Insérez-le avec le bouton Insérer un champ, surtout s'il contient des espaces.</li></ul>
+      <h3>Questions fréquentes</h3>
+      <h4>Comment modifier ou supprimer un champ calculé ?</h4><p>Rouvrez Champ calculé, choisissez-le dans la liste Nom, puis Modifier ou Supprimer.</p><h4>Pourquoi ne pas écrire une formule à côté ?</h4><p>Elle ne suivrait pas les filtres, les regroupements ni l'ajout de lignes.</p><h4>Peut-on utiliser SI ?</h4><p>Oui, dans la formule du champ : =SI(Montant&gt;100;Montant*10%;0).</p>
+    </section>
+    <section class="also"><h2>Voir aussi</h2><div class="also-l"><a href="../tcd-pourcentage-du-total/"><b>Afficher des pourcentages</b><small>Transformer les montants en parts du total.</small></a><a href="../tcd-somme-nombre-moyenne/"><b>Somme, nombre ou moyenne</b><small>Changer le calcul affiché dans le tableau croisé.</small></a><a href="../creer-un-tableau-croise-dynamique/"><b>Créer un tableau croisé dynamique</b><small>Résumer un tableau en quelques clics, sans formule.</small></a><a href="../pourcentages/"><b>Pourcentages</b><small>Calculer une évolution et une part du total.</small></a></div></section>
     <nav class="lnav" aria-label="Leçons voisines"><a href="../tcd-chronologie/"><small>← Précédente</small>Filtrer par date avec une chronologie</a><a class="nx" id="nextLesson" href="../graphique-croise-dynamique/"><small>Suivante →</small>Graphique croisé dynamique</a></nav>
   </main>
 </div>

@@ -5,26 +5,126 @@
  "resume": "Faire apparaître la direction générale d'une série.",
  "motsCles": "courbe de tendance droite régression direction prévision graphique",
  "syntaxe": "Éléments de graphique › Courbe de tendance",
- "graphique": {"type":"line","labels":"A2:A9","series":["B2:B9"],"title":"Visiteurs par semaine","at":"D2:H9"},
+ "graphique": {
+  "type": "line",
+  "labels": "A2:A9",
+  "series": [
+   "B2:B9"
+  ],
+  "title": "Visiteurs par semaine",
+  "at": "D2:H9"
+ },
  "arguments": [
-  ["Courbe de tendance","Une droite qui résume l'évolution"],
-  ["Limite","Elle décrit le passé, pas l'avenir"]
+  [
+   "Courbe de tendance",
+   "Une droite qui résume l'évolution"
+  ],
+  [
+   "Limite",
+   "Elle décrit le passé, pas l'avenir"
+  ]
  ],
  "grille": [
-  ["Semaine","Visiteurs"],
-  ["S1","210"],
-  ["S2","260"],
-  ["S3","230"],
-  ["S4","300"],
-  ["S5","280"],
-  ["S6","340"],
-  ["S7","330"],
-  ["S8","390"]
+  [
+   "Semaine",
+   "Visiteurs"
+  ],
+  [
+   "S1",
+   "210"
+  ],
+  [
+   "S2",
+   "260"
+  ],
+  [
+   "S3",
+   "230"
+  ],
+  [
+   "S4",
+   "300"
+  ],
+  [
+   "S5",
+   "280"
+  ],
+  [
+   "S6",
+   "340"
+  ],
+  [
+   "S7",
+   "330"
+  ],
+  [
+   "S8",
+   "390"
+  ]
  ],
+ "titreSeo": "Ajouter une courbe de tendance dans Excel",
  "etapes": [
-  {"c":"A1","chart":1,"t":"La courbe monte et descend d'une semaine à l'autre : difficile de voir la direction générale."},
-  {"c":"A1","chart":{"panel":1,"pick":"trend","trend":true},"t":"Dans les éléments de graphique, cochez « Courbe de tendance »."},
-  {"c":"A1","t":"La droite en pointillés résume le mouvement : ici, une hausse régulière."},
-  {"c":"B6","f":"120","t":"Elle se recalcule avec les données. Attention : une tendance décrit le passé, elle ne garantit pas la suite."}
+  {
+   "c": "A1",
+   "chart": 1,
+   "t": "La courbe monte et descend d'une semaine à l'autre : difficile de voir la direction générale."
+  },
+  {
+   "c": "A1",
+   "chart": {
+    "panel": 1,
+    "pick": "trend",
+    "trend": true
+   },
+   "t": "Dans les éléments de graphique, cochez « Courbe de tendance »."
+  },
+  {
+   "c": "A1",
+   "t": "La droite en pointillés résume le mouvement : ici, une hausse régulière."
+  },
+  {
+   "c": "B6",
+   "f": "120",
+   "t": "Elle se recalcule avec les données. Attention : une tendance décrit le passé, elle ne garantit pas la suite."
+  }
+ ],
+ "guide": {
+  "question": "Comment ajouter une courbe de tendance dans Excel ?",
+  "intro": "Une courbe de tendance résume la direction générale d'une série qui monte et descend : elle trace une droite (ou une courbe) qui lisse les variations. Sélectionnez le graphique, puis Éléments de graphique (le bouton +) › Courbe de tendance. Elle se recalcule quand les données changent.",
+  "exemple": {
+   "titre": "Exemple",
+   "formule": "Éléments de graphique › Courbe de tendance",
+   "explication": "Visiteurs sur 8 semaines : 210, 260, 230, 300, 280, 340, 330, 390. Malgré les creux, la droite en pointillés montre une hausse régulière."
+  },
+  "erreurs": [
+   [
+    "L'option est grisée",
+    "Elle n'existe pas pour les graphiques en secteurs ni pour les histogrammes empilés : utilisez une courbe ou un nuage de points."
+   ],
+   [
+    "La tendance est prise pour une prévision",
+    "Elle décrit le passé ; prolonger la droite reste une hypothèse."
+   ]
+  ],
+  "faq": [
+   [
+    "Comment afficher l'équation ?",
+    "Clic droit sur la courbe de tendance › Format › cochez Afficher l'équation sur le graphique."
+   ],
+   [
+    "Quel type choisir ?",
+    "Linéaire dans la plupart des cas ; exponentielle si la croissance s'accélère."
+   ],
+   [
+    "Comment prolonger la tendance ?",
+    "Dans Format de la courbe de tendance, réglez Prévision : en avant de quelques périodes."
+   ]
+  ]
+ },
+ "voirAussi": [
+  "graphique-en-courbe",
+  "nuage-de-points",
+  "elements-d-un-graphique",
+  "creer-un-graphique"
  ]
 }

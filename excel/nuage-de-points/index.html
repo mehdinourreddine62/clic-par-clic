@@ -3,15 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Nuage de points – Excel en animation | Clic par clic</title>
-<meta name="description" content="Voir s'il existe un lien entre deux mesures. Leçon Excel animée en 4 étapes, niveau intermédiaire, gratuite.">
+<title>Nuage de points dans Excel : voir un lien entre deux mesures</title>
+<meta name="description" content="Le nuage de points place chaque ligne du tableau selon deux nombres, l'un en abscisse, l'autre en ordonnée. Il sert à voir si deux mesures sont liées ">
 <link rel="canonical" href="https://mehdinourreddine62.github.io/clic-par-clic/excel/nuage-de-points/">
 <meta name="robots" content="index,follow">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="Clic par clic">
-<meta property="og:title" content="Nuage de points – Excel en animation | Clic par clic">
-<meta property="og:description" content="Voir s'il existe un lien entre deux mesures. Leçon Excel animée en 4 étapes, niveau intermédiaire, gratuite.">
+<meta property="og:title" content="Nuage de points dans Excel : voir un lien entre deux mesures">
+<meta property="og:description" content="Le nuage de points place chaque ligne du tableau selon deux nombres, l'un en abscisse, l'autre en ordonnée. Il sert à voir si deux mesures sont liées ">
 <meta property="og:url" content="https://mehdinourreddine62.github.io/clic-par-clic/excel/nuage-de-points/">
 <meta property="og:image" content="https://mehdinourreddine62.github.io/clic-par-clic/assets/og-excel.png">
 <meta property="og:image:width" content="1200">
@@ -61,7 +61,18 @@
     <div class="pband" id="pband" hidden></div>
     <details class="sx"><summary>Syntaxe <code>Insertion › Nuage de points</code></summary><dl><dt>Axe horizontal</dt><dd>La première mesure</dd><dt>Axe vertical</dt><dd>La seconde mesure</dd><dt>Un point</dt><dd>Une ligne du tableau</dd></dl></details>
     <details class="sx"><summary>Résumé écrit des étapes</summary><ol class="steps"><li>Le nuage de points place chaque ligne selon deux nombres : ici le prix et les ventes.</li><li>Un point = une ligne du tableau : prix de 10, 74 ventes.</li><li>Ajoutez une courbe de tendance : le lien apparaît. Plus le prix monte, moins on vend.</li><li>À utiliser pour chercher un lien entre deux mesures, jamais pour des catégories ou des dates.</li></ol></details>
-    <section class="also"><h2>Voir aussi</h2><div class="also-l"><a href="../creer-un-graphique/"><b>Créer un graphique</b><small>Transformer un tableau en graphique en deux clics.</small></a><a href="../preparer-ses-donnees/"><b>Bien préparer ses données</b><small>Un tableau propre donne un graphique juste.</small></a><a href="../choisir-un-type-de-graphique/"><b>Choisir le bon type</b><small>Histogramme, courbe, secteurs ou barres : à chaque question son graphique.</small></a></div></section>
+    <section class="guide">
+      <h2>Comment faire un nuage de points dans Excel ?</h2>
+      <p>Le nuage de points place chaque ligne du tableau selon deux nombres, l'un en abscisse, l'autre en ordonnée. Il sert à voir si deux mesures sont liées : prix et ventes, heures de révision et note. Sélectionnez les deux colonnes de nombres, puis Insertion › Nuage de points.</p>
+      <h3>Exemple</h3>
+      <p><code class="gx">Insertion › Nuage de points</code></p>
+      <p>Prix de 5 à 20 € et ventes de 95 à 30 : les points descendent. Avec une courbe de tendance, le lien apparaît : plus le prix monte, moins on vend.</p>
+      <h3>Erreurs fréquentes</h3>
+      <ul><li><b>Les points sont alignés à intervalles réguliers</b>La première colonne contient du texte ou des dates : le nuage a besoin de deux colonnes de nombres.</li><li><b>Les axes sont inversés</b>La première colonne sélectionnée va en abscisse : placez la cause (le prix) à gauche.</li></ul>
+      <h3>Questions fréquentes</h3>
+      <h4>Nuage de points ou courbe ?</h4><p>La courbe suit le temps ; le nuage cherche un lien entre deux mesures.</p><h4>Un lien prouve-t-il une cause ?</h4><p>Non : il montre que deux mesures varient ensemble, pas que l'une provoque l'autre.</p><h4>Comment voir la force du lien ?</h4><p>Affichez le R² de la courbe de tendance : plus il est proche de 1, plus le lien est fort.</p>
+    </section>
+    <section class="also"><h2>Voir aussi</h2><div class="also-l"><a href="../courbe-de-tendance/"><b>Courbe de tendance</b><small>Faire apparaître la direction générale d'une série.</small></a><a href="../choisir-un-type-de-graphique/"><b>Choisir le bon type</b><small>Histogramme, courbe, secteurs ou barres : à chaque question son graphique.</small></a><a href="../graphique-en-courbe/"><b>Courbe</b><small>Suivre une évolution dans le temps.</small></a><a href="../creer-un-graphique/"><b>Créer un graphique</b><small>Transformer un tableau en graphique en deux clics.</small></a></div></section>
     <nav class="lnav" aria-label="Leçons voisines"><a href="../courbe-de-tendance/"><small>← Précédente</small>Courbe de tendance</a><a class="nx" id="nextLesson" href="../graphiques-sparkline/"><small>Suivante →</small>Graphiques sparkline</a></nav>
   </main>
 </div>

@@ -6,20 +6,133 @@
  "motsCles": "maximum minimum condition critère groupe meilleur",
  "syntaxe": "=MAX.SI.ENS(plage_max; plage1; critère1)",
  "arguments": [
-  ["plage_max","Les valeurs à comparer"],
-  ["plage1; critère1","La condition à respecter"],
-  ["Version","Excel 2019 et suivants"]
+  [
+   "plage_max",
+   "Les valeurs à comparer"
+  ],
+  [
+   "plage1; critère1",
+   "La condition à respecter"
+  ],
+  [
+   "Version",
+   "Excel 2019 et suivants"
+  ]
  ],
  "grille": [
-  ["Élève","Classe","Note","","Classe","Meilleure note","Moins bonne"],
-  ["Léa","A","14","","A","",""],
-  ["Hugo","B","9","","B","",""],
-  ["Inès","A","16","","","",""],
-  ["Tom","B","11","","","",""],
-  ["Nora","A","12","","","",""]
+  [
+   "Élève",
+   "Classe",
+   "Note",
+   "",
+   "Classe",
+   "Meilleure note",
+   "Moins bonne"
+  ],
+  [
+   "Léa",
+   "A",
+   "14",
+   "",
+   "A",
+   "",
+   ""
+  ],
+  [
+   "Hugo",
+   "B",
+   "9",
+   "",
+   "B",
+   "",
+   ""
+  ],
+  [
+   "Inès",
+   "A",
+   "16",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Tom",
+   "B",
+   "11",
+   "",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Nora",
+   "A",
+   "12",
+   "",
+   "",
+   "",
+   ""
+  ]
  ],
+ "titreSeo": "MAX.SI.ENS et MIN.SI.ENS dans Excel : exemple simple",
  "etapes": [
-  {"c":"F2","f":"=MAX.SI.ENS($C$2:$C$6;$B$2:$B$6;E2)","v":"16","fill":{"F3":"11"},"t":"La plus grande note, mais seulement dans la classe choisie."},
-  {"c":"G2","f":"=MIN.SI.ENS($C$2:$C$6;$B$2:$B$6;E2)","v":"12","fill":{"G3":"9"},"t":"MIN.SI.ENS fonctionne de la même façon pour la plus petite."}
+  {
+   "c": "F2",
+   "f": "=MAX.SI.ENS($C$2:$C$6;$B$2:$B$6;E2)",
+   "v": "16",
+   "fill": {
+    "F3": "11"
+   },
+   "t": "La plus grande note, mais seulement dans la classe choisie."
+  },
+  {
+   "c": "G2",
+   "f": "=MIN.SI.ENS($C$2:$C$6;$B$2:$B$6;E2)",
+   "v": "12",
+   "fill": {
+    "G3": "9"
+   },
+   "t": "MIN.SI.ENS fonctionne de la même façon pour la plus petite."
+  }
+ ],
+ "guide": {
+  "question": "Comment trouver la plus grande valeur selon un critère dans Excel ?",
+  "intro": "MAX.SI.ENS (MAXIFS en anglais) renvoie la plus grande valeur d'une plage parmi les lignes qui respectent un ou plusieurs critères ; MIN.SI.ENS fait de même pour la plus petite. Le premier argument est la plage où chercher le maximum, puis viennent des paires plage de critère et critère.",
+  "exemple": {
+   "titre": "Exemple",
+   "formule": "=MAX.SI.ENS($C$2:$C$6;$B$2:$B$6;E2)",
+   "explication": "Meilleure note de la classe A (14, 16, 12) : 16 ; de la classe B (9, 11) : 11. Avec MIN.SI.ENS : 12 et 9."
+  },
+  "erreurs": [
+   [
+    "Le résultat est 0",
+    "Aucune ligne ne correspond au critère : vérifiez l'orthographe et les espaces."
+   ],
+   [
+    "#VALEUR!",
+    "Les plages n'ont pas la même taille."
+   ]
+  ],
+  "faq": [
+   [
+    "Peut-on mettre plusieurs critères ?",
+    "Oui : ajoutez des paires, par exemple ;D2:D6;\"Fille\"."
+   ],
+   [
+    "Comment écrire un critère « supérieur à » ?",
+    "Entre guillemets : \">10\", ou \">\"&F1 avec une cellule."
+   ],
+   [
+    "Quelle différence avec MAX ?",
+    "MAX prend toute la plage ; MAX.SI.ENS ne retient que les lignes qui respectent les critères."
+   ]
+  ]
+ },
+ "voirAussi": [
+  "moyenne-min-max",
+  "somme-si-ens",
+  "nb-si-ens",
+  "grande-valeur-petite-valeur"
  ]
 }

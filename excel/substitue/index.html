@@ -3,15 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>SUBSTITUE – Excel en animation | Clic par clic</title>
-<meta name="description" content="Remplacer un morceau de texte par un autre, avec une formule. Leçon Excel animée en 3 étapes, niveau intermédiaire, gratuite.">
+<title>SUBSTITUE dans Excel : remplacer du texte avec une formule</title>
+<meta name="description" content="SUBSTITUE (SUBSTITUTE en anglais) remplace un morceau de texte par un autre dans une cellule, sans modifier l'original.">
 <link rel="canonical" href="https://mehdinourreddine62.github.io/clic-par-clic/excel/substitue/">
 <meta name="robots" content="index,follow">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="Clic par clic">
-<meta property="og:title" content="SUBSTITUE – Excel en animation | Clic par clic">
-<meta property="og:description" content="Remplacer un morceau de texte par un autre, avec une formule. Leçon Excel animée en 3 étapes, niveau intermédiaire, gratuite.">
+<meta property="og:title" content="SUBSTITUE dans Excel : remplacer du texte avec une formule">
+<meta property="og:description" content="SUBSTITUE (SUBSTITUTE en anglais) remplace un morceau de texte par un autre dans une cellule, sans modifier l'original.">
 <meta property="og:url" content="https://mehdinourreddine62.github.io/clic-par-clic/excel/substitue/">
 <meta property="og:image" content="https://mehdinourreddine62.github.io/clic-par-clic/assets/og-excel.png">
 <meta property="og:image:width" content="1200">
@@ -61,7 +61,18 @@
     <a class="dl" href="../../fichiers/excel/substitue.xlsx" download="substitue.xlsx"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg><span><b>Télécharger le fichier d'exercice</b><small>Excel · consignes, données de départ et solution</small></span></a><div class="pband" id="pband" hidden></div>
     <details class="sx"><summary>Syntaxe <code>=SUBSTITUE(texte; ancien; nouveau)</code></summary><dl><dt>ancien</dt><dd>Le texte à remplacer</dd><dt>nouveau</dt><dd>Le texte de remplacement, ou &quot;&quot; pour supprimer</dd><dt>4e argument</dt><dd>Le numéro de l'occurrence à remplacer</dd></dl></details>
     <details class="sx"><summary>Résumé écrit des étapes</summary><ol class="steps"><li>SUBSTITUE remplace un texte par un autre, sans toucher à l'original.</li><li>Remplacer par rien, deux guillemets collés, revient à supprimer.</li><li>Un quatrième argument vise une seule occurrence : ici, le deuxième tiret seulement.</li></ol></details>
-    <section class="also"><h2>Voir aussi</h2><div class="also-l"><a href="../assembler-texte/"><b>Assembler du texte (&amp;)</b><small>Coller plusieurs textes dans une seule cellule.</small></a><a href="../gauche-droite-stxt/"><b>GAUCHE, DROITE et STXT</b><small>Extraire le début, la fin ou le milieu d'un texte.</small></a><a href="../majuscule-minuscule-nompropre/"><b>MAJUSCULE, MINUSCULE et NOMPROPRE</b><small>Uniformiser la casse de noms saisis n'importe comment.</small></a></div></section>
+    <section class="guide">
+      <h2>Comment remplacer un texte par un autre avec SUBSTITUE ?</h2>
+      <p>SUBSTITUE (SUBSTITUTE en anglais) remplace un morceau de texte par un autre dans une cellule, sans modifier l'original. Elle prend le texte, l'ancien morceau, le nouveau, et en option le numéro de l'occurrence à remplacer. Remplacer par deux guillemets collés (&quot;&quot;) revient à supprimer.</p>
+      <h3>Exemple</h3>
+      <p><code class="gx">=SUBSTITUE(A2;&quot;2025&quot;;&quot;2026&quot;)</code></p>
+      <p>REF-2025-001 devient REF-2026-001. Avec =SUBSTITUE(A2;&quot;-&quot;;&quot;&quot;), on obtient REF2025001 ; avec =SUBSTITUE(A2;&quot;-&quot;;&quot;/&quot;;2), seul le deuxième tiret change : REF-2025/001.</p>
+      <h3>Erreurs fréquentes</h3>
+      <ul><li><b>Rien n'est remplacé</b>SUBSTITUE respecte les majuscules : « ref » ne remplace pas « REF ».</li><li><b>Le résultat n'est plus un nombre</b>SUBSTITUE renvoie du texte : ajoutez -- devant, par exemple =--SUBSTITUE(A2;&quot; &quot;;&quot;&quot;).</li></ul>
+      <h3>Questions fréquentes</h3>
+      <h4>Quelle différence avec REMPLACER ?</h4><p>REMPLACER travaille sur une position (à partir du 5e caractère) ; SUBSTITUE cherche un texte précis.</p><h4>Et Rechercher et remplacer (Ctrl + H) ?</h4><p>Il modifie les cellules elles-mêmes ; SUBSTITUE laisse l'original intact et met le résultat ailleurs.</p><h4>Comment supprimer les espaces ?</h4><p>=SUBSTITUE(A2;&quot; &quot;;&quot;&quot;) les retire tous ; SUPPRESPACE ne retire que ceux en trop.</p>
+    </section>
+    <section class="also"><h2>Voir aussi</h2><div class="also-l"><a href="../rechercher-et-remplacer/"><b>Rechercher et remplacer</b><small>Corriger le même texte partout, en une seule fois.</small></a><a href="../supprespace/"><b>SUPPRESPACE</b><small>Retirer les espaces en trop qui faussent les recherches.</small></a><a href="../joindre-texte/"><b>JOINDRE.TEXTE</b><small>Assembler une plage de cellules avec un séparateur.</small></a><a href="../nbcar/"><b>NBCAR</b><small>Compter le nombre de caractères d'un texte.</small></a></div></section>
     <nav class="lnav" aria-label="Leçons voisines"><a href="../texte-avant-texte-apres/"><small>← Précédente</small>TEXTE.AVANT et TEXTE.APRES</a><a class="nx" id="nextLesson" href="../joindre-texte/"><small>Suivante →</small>JOINDRE.TEXTE</a></nav>
   </main>
 </div>

@@ -3,15 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Corriger #NOM? – Excel en animation | Clic par clic</title>
-<meta name="description" content="Trouver la faute de frappe dans une formule. Leçon Excel animée en 4 étapes, niveau débutant, gratuite.">
+<title>Erreur #NOM? dans Excel : cause et solution | Clic par clic</title>
+<meta name="description" content="#NOM? signifie qu'Excel ne reconnaît pas un mot de la formule. Les deux causes principales ">
 <link rel="canonical" href="https://mehdinourreddine62.github.io/clic-par-clic/excel/erreur-nom/">
 <meta name="robots" content="index,follow">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="Clic par clic">
-<meta property="og:title" content="Corriger #NOM? – Excel en animation | Clic par clic">
-<meta property="og:description" content="Trouver la faute de frappe dans une formule. Leçon Excel animée en 4 étapes, niveau débutant, gratuite.">
+<meta property="og:title" content="Erreur #NOM? dans Excel : cause et solution | Clic par clic">
+<meta property="og:description" content="#NOM? signifie qu'Excel ne reconnaît pas un mot de la formule. Les deux causes principales ">
 <meta property="og:url" content="https://mehdinourreddine62.github.io/clic-par-clic/excel/erreur-nom/">
 <meta property="og:image" content="https://mehdinourreddine62.github.io/clic-par-clic/assets/og-excel.png">
 <meta property="og:image:width" content="1200">
@@ -61,7 +61,18 @@
     <div class="pband" id="pband" hidden></div>
     <details class="sx"><summary>Syntaxe <code>Vérifier l'orthographe et les guillemets</code></summary><dl><dt>Cause 1</dt><dd>Un nom de fonction mal orthographié</dd><dt>Cause 2</dt><dd>Un texte écrit sans guillemets</dd><dt>Astuce</dt><dd>Choisir la fonction dans la liste proposée à la saisie</dd></dl></details>
     <details class="sx"><summary>Résumé écrit des étapes</summary><ol class="steps"><li>#NOM? : Excel ne reconnaît pas un mot de la formule. Ici, SOMM au lieu de SOMME.</li><li>Corrigez le nom. Astuce : choisissez la fonction dans la liste proposée pendant la saisie.</li><li>Autre cause : un texte sans guillemets. Excel prend Oui pour un nom qu'il ne connaît pas.</li><li>Entre guillemets, le texte est compris.</li></ol></details>
-    <section class="also"><h2>Voir aussi</h2><div class="also-l"><a href="../erreur-div-0/"><b>Corriger #DIV/0!</b><small>Comprendre et supprimer l'erreur de division par zéro.</small></a><a href="../erreur-na/"><b>Corriger #N/A</b><small>Comprendre pourquoi une recherche ne trouve rien.</small></a><a href="../erreur-valeur/"><b>Corriger #VALEUR!</b><small>Repérer le texte qui empêche un calcul.</small></a></div></section>
+    <section class="guide">
+      <h2>Comment corriger l'erreur #NOM? dans Excel ?</h2>
+      <p>#NOM? signifie qu'Excel ne reconnaît pas un mot de la formule. Les deux causes principales : une faute de frappe dans le nom d'une fonction (SOMM au lieu de SOMME) et un texte écrit sans guillemets. Pour éviter les fautes, choisissez la fonction dans la liste qui s'affiche pendant la saisie et validez avec Tab.</p>
+      <h3>Exemple</h3>
+      <p><code class="gx">=SI(B2&gt;180;&quot;Oui&quot;;&quot;Non&quot;)</code></p>
+      <p>Sans guillemets autour de Oui et Non, Excel les prend pour des noms inconnus et affiche #NOM?. Entre guillemets, ils sont compris comme du texte.</p>
+      <h3>Erreurs fréquentes</h3>
+      <ul><li><b>La fonction existe pourtant</b>Elle porte un nom anglais (SUM, IF) : dans Excel en français, écrivez SOMME, SI.</li><li><b>#NOM? avec une fonction récente</b>Le fichier est ouvert dans une ancienne version d'Excel qui ne la connaît pas (RECHERCHEX, FILTRE…).</li></ul>
+      <h3>Questions fréquentes</h3>
+      <h4>Comment trouver le mot fautif ?</h4><p>Cliquez dans la cellule : le mot inconnu est souvent le seul qui n'apparaît pas en majuscules.</p><h4>Un nom de plage peut-il causer #NOM? ?</h4><p>Oui, s'il est mal orthographié ou supprimé : vérifiez-le dans Formules › Gestionnaire de noms.</p><h4>Où trouver les noms français des fonctions ?</h4><p>Dans la page des fonctions Excel en français et en anglais du site.</p>
+    </section>
+    <section class="also"><h2>Voir aussi</h2><div class="also-l"><a href="../erreur-valeur/"><b>Corriger #VALEUR!</b><small>Repérer le texte qui empêche un calcul.</small></a><a href="../erreur-ref/"><b>Corriger #REF!</b><small>Comprendre ce qui se passe quand on supprime une cellule utilisée.</small></a><a href="../si/"><b>SI</b><small>Afficher un résultat différent selon une condition.</small></a><a href="../ecrire-une-formule/"><b>Écrire une formule</b><small>Faire un calcul entre deux cellules.</small></a></div></section>
     <nav class="lnav" aria-label="Leçons voisines"><a href="../erreur-ref/"><small>← Précédente</small>Corriger #REF!</a><a class="nx" id="nextLesson" href="../erreur-propagation/"><small>Suivante →</small>Corriger #PROPAGATION!</a></nav>
   </main>
 </div>

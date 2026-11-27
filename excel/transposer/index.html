@@ -3,15 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Transposer un tableau – Excel en animation | Clic par clic</title>
-<meta name="description" content="Transformer des lignes en colonnes, et inversement. Leçon Excel animée en 3 étapes, niveau débutant, gratuite.">
+<title>Transposer dans Excel : lignes en colonnes | Clic par clic</title>
+<meta name="description" content="Transposer fait pivoter un tableau : les lignes deviennent des colonnes et inversement.">
 <link rel="canonical" href="https://mehdinourreddine62.github.io/clic-par-clic/excel/transposer/">
 <meta name="robots" content="index,follow">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="Clic par clic">
-<meta property="og:title" content="Transposer un tableau – Excel en animation | Clic par clic">
-<meta property="og:description" content="Transformer des lignes en colonnes, et inversement. Leçon Excel animée en 3 étapes, niveau débutant, gratuite.">
+<meta property="og:title" content="Transposer dans Excel : lignes en colonnes | Clic par clic">
+<meta property="og:description" content="Transposer fait pivoter un tableau : les lignes deviennent des colonnes et inversement.">
 <meta property="og:url" content="https://mehdinourreddine62.github.io/clic-par-clic/excel/transposer/">
 <meta property="og:image" content="https://mehdinourreddine62.github.io/clic-par-clic/assets/og-excel.png">
 <meta property="og:image:width" content="1200">
@@ -61,7 +61,18 @@
     <div class="pband" id="pband" hidden></div>
     <details class="sx"><summary>Syntaxe <code>Clic droit › Collage spécial › Transposer</code></summary><dl><dt>Transposer</dt><dd>Les lignes deviennent des colonnes</dd><dt>Résultat</dt><dd>Une copie : le tableau d'origine reste en place</dd></dl></details>
     <details class="sx"><summary>Résumé écrit des étapes</summary><ol class="steps"><li>Ce tableau est en ligne, on le voudrait en colonne. Copiez-le.</li><li>Collage spécial, Transposer : les lignes deviennent des colonnes.</li><li>Les données sont identiques, seule l'orientation a changé.</li></ol></details>
-    <section class="also"><h2>Voir aussi</h2><div class="also-l"><a href="../coller-les-valeurs/"><b>Coller uniquement les valeurs</b><small>Coller un résultat sans emporter la formule.</small></a><a href="../reproduire-la-mise-en-forme/"><b>Reproduire la mise en forme</b><small>Copier l'apparence d'un tableau sur un autre, en un geste.</small></a><a href="../recopier-une-serie/"><b>Recopier une série</b><small>Faire écrire à Excel une suite de nombres, de jours ou de dates.</small></a></div></section>
+    <section class="guide">
+      <h2>Comment transformer des lignes en colonnes dans Excel ?</h2>
+      <p>Transposer fait pivoter un tableau : les lignes deviennent des colonnes et inversement. Copiez le tableau avec Ctrl + C, cliquez sur la cellule de destination, puis clic droit › Collage spécial › Transposer (ou l'icône Transposer dans les options de collage). Les données sont identiques, seule l'orientation change.</p>
+      <h3>Exemple</h3>
+      <p><code class="gx">Clic droit › Collage spécial › Transposer</code></p>
+      <p>Mois et ventes sur deux lignes (janv 120, févr 90, mars 150) deviennent deux colonnes de quatre lignes.</p>
+      <h3>Erreurs fréquentes</h3>
+      <ul><li><b>Message « La zone de collage ne correspond pas »</b>La destination chevauche l'original : collez ailleurs, sur une zone vide.</li><li><b>Le tableau transposé ne se met pas à jour</b>Le collage spécial copie des valeurs figées : utilisez =TRANSPOSE(A1:D2) pour un lien dynamique.</li></ul>
+      <h3>Questions fréquentes</h3>
+      <h4>Existe-t-il une formule ?</h4><p>Oui : =TRANSPOSE(A1:D2), qui se met à jour avec la source.</p><h4>Peut-on transposer un tableau Excel (mis sous forme de tableau) ?</h4><p>Pas directement : convertissez-le en plage ou copiez ses valeurs avant.</p><h4>Les formules sont-elles conservées ?</h4><p>Oui, leurs références sont adaptées ; vérifiez-les après collage.</p>
+    </section>
+    <section class="also"><h2>Voir aussi</h2><div class="also-l"><a href="../coller-les-valeurs/"><b>Coller uniquement les valeurs</b><small>Coller un résultat sans emporter la formule.</small></a><a href="../copier-coller-annuler/"><b>Copier, coller, annuler</b><small>Les raccourcis clavier à connaître dès le premier jour.</small></a><a href="../options-de-recopie/"><b>Les options de recopie</b><small>Choisir ce que la poignée recopie : jours, mois ou simple copie.</small></a><a href="../colonnes-et-lignes/"><b>Colonnes et lignes</b><small>Élargir une colonne et insérer une ligne.</small></a></div></section>
     <nav class="lnav" aria-label="Leçons voisines"><a href="../coller-les-valeurs/"><small>← Précédente</small>Coller uniquement les valeurs</a><a class="nx" id="nextLesson" href="../reproduire-la-mise-en-forme/"><small>Suivante →</small>Reproduire la mise en forme</a></nav>
   </main>
 </div>

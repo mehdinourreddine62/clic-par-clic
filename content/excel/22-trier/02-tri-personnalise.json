@@ -7,21 +7,127 @@
  "syntaxe": "Trier › Ordre › Liste personnalisée",
  "ruban": true,
  "arguments": [
-  ["Liste personnalisée","L'ordre voulu, valeur par valeur"],
-  ["Mémoire","La liste reste disponible pour les prochains tris"]
+  [
+   "Liste personnalisée",
+   "L'ordre voulu, valeur par valeur"
+  ],
+  [
+   "Mémoire",
+   "La liste reste disponible pour les prochains tris"
+  ]
  ],
  "grille": [
-  ["Tâche","Priorité"],
-  ["Rapport","Basse"],
-  ["Devis","Haute"],
-  ["Relance","Moyenne"],
-  ["Facture","Haute"],
-  ["Archivage","Basse"]
+  [
+   "Tâche",
+   "Priorité"
+  ],
+  [
+   "Rapport",
+   "Basse"
+  ],
+  [
+   "Devis",
+   "Haute"
+  ],
+  [
+   "Relance",
+   "Moyenne"
+  ],
+  [
+   "Facture",
+   "Haute"
+  ],
+  [
+   "Archivage",
+   "Basse"
+  ]
  ],
+ "titreSeo": "Tri personnalisé dans Excel : trier dans un ordre logique",
  "etapes": [
-  {"c":"B2","tab":"Données","btn":"Trier","set":{"A2":"Rapport","B2":"Basse","A3":"Archivage","B3":"Basse","A4":"Devis","B4":"Haute","A5":"Facture","B5":"Haute","A6":"Relance","B6":"Moyenne"},"t":"Triées de A à Z, les priorités n'ont aucun sens : Basse passe avant Haute."},
-  {"c":"B2","menu":"Trier › Ordre : <b>Liste personnalisée</b>","rule":"Haute, Moyenne, Basse","t":"Dans Trier, choisissez Ordre › Liste personnalisée et tapez l'ordre voulu."},
-  {"c":"B2","tab":"Données","set":{"A2":"Devis","B2":"Haute","A3":"Facture","B3":"Haute","A4":"Relance","B4":"Moyenne","A5":"Rapport","B5":"Basse","A6":"Archivage","B6":"Basse"},"t":"Les tâches sont maintenant classées par importance."},
-  {"c":"B2","tab":"Données","t":"La liste est enregistrée : Excel la proposera pour vos prochains tris, comme les jours et les mois."}
+  {
+   "c": "B2",
+   "tab": "Données",
+   "btn": "Trier",
+   "set": {
+    "A2": "Rapport",
+    "B2": "Basse",
+    "A3": "Archivage",
+    "B3": "Basse",
+    "A4": "Devis",
+    "B4": "Haute",
+    "A5": "Facture",
+    "B5": "Haute",
+    "A6": "Relance",
+    "B6": "Moyenne"
+   },
+   "t": "Triées de A à Z, les priorités n'ont aucun sens : Basse passe avant Haute."
+  },
+  {
+   "c": "B2",
+   "menu": "Trier › Ordre : <b>Liste personnalisée</b>",
+   "rule": "Haute, Moyenne, Basse",
+   "t": "Dans Trier, choisissez Ordre › Liste personnalisée et tapez l'ordre voulu."
+  },
+  {
+   "c": "B2",
+   "tab": "Données",
+   "set": {
+    "A2": "Devis",
+    "B2": "Haute",
+    "A3": "Facture",
+    "B3": "Haute",
+    "A4": "Relance",
+    "B4": "Moyenne",
+    "A5": "Rapport",
+    "B5": "Basse",
+    "A6": "Archivage",
+    "B6": "Basse"
+   },
+   "t": "Les tâches sont maintenant classées par importance."
+  },
+  {
+   "c": "B2",
+   "tab": "Données",
+   "t": "La liste est enregistrée : Excel la proposera pour vos prochains tris, comme les jours et les mois."
+  }
+ ],
+ "guide": {
+  "question": "Comment trier selon un ordre personnalisé dans Excel ?",
+  "intro": "Un tri alphabétique ne respecte pas toujours la logique : Basse passe avant Haute. Données › Trier, choisissez la colonne, puis dans Ordre, Liste personnalisée : tapez l'ordre voulu (Haute, Moyenne, Basse), une valeur par ligne, puis Ajouter. Excel garde la liste et la proposera pour vos prochains tris.",
+  "exemple": {
+   "titre": "Exemple",
+   "formule": "Données › Trier › Ordre › Liste personnalisée",
+   "explication": "Les tâches Devis et Facture (Haute) passent en tête, puis Relance (Moyenne), puis Rapport et Archivage (Basse)."
+  },
+  "erreurs": [
+   [
+    "Certaines lignes restent en bas",
+    "Leur valeur ne figure pas dans la liste, ou contient un espace : vérifiez l'orthographe."
+   ],
+   [
+    "Seule une colonne est triée",
+    "Sélectionnez une seule cellule du tableau avant de trier, pas toute la colonne."
+   ]
+  ],
+  "faq": [
+   [
+    "Où retrouver mes listes ?",
+    "Fichier › Options › Options avancées › Modifier les listes personnalisées."
+   ],
+   [
+    "Les jours et les mois ont-ils une liste ?",
+    "Oui, Excel les connaît déjà : lundi, mardi… et janvier, février…"
+   ],
+   [
+    "Peut-on combiner avec un autre tri ?",
+    "Oui : ajoutez un niveau dans la fenêtre Trier."
+   ]
+  ]
+ },
+ "voirAussi": [
+  "trier-sur-plusieurs-colonnes",
+  "trier-et-filtrer",
+  "filtrer-par-couleur",
+  "combiner-plusieurs-filtres"
  ]
 }
