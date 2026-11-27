@@ -1,0 +1,208 @@
+{
+ "id": "lancer-le-diaporama",
+ "titre": "Lancer et conduire le diaporama",
+ "niveau": 1,
+ "resume": "Lancer le diaporama avec F5, avancer, revenir, aller à une diapositive, noircir l'écran et quitter.",
+ "motsCles": "powerpoint lancer diaporama f5 maj f5 plein écran flèches écran noir touche b échap aller à une diapositive",
+ "syntaxe": "F5 · Maj + F5 · B · Échap",
+ "titreSeo": "Lancer un diaporama PowerPoint : F5 et raccourcis",
+ "arguments": [
+  [
+   "F5",
+   "Diaporama à partir du début"
+  ],
+  [
+   "Maj + F5",
+   "À partir de la diapositive en cours"
+  ],
+  [
+   "Flèches, Espace, clic",
+   "Avancer ou revenir"
+  ],
+  [
+   "B",
+   "Écran noir ; Échap pour quitter"
+  ]
+ ],
+ "document": {
+  "theme": "ion",
+  "slides": [
+   {
+    "id": "s1",
+    "layout": "titre",
+    "notes": "Bonjour, je suis Léa Martin. Je vais vous présenter mes dix semaines de stage chez Lumen.",
+    "el": [
+     {
+      "id": "s1-t",
+      "k": "titre",
+      "txt": "Soutenance de stage"
+     },
+     {
+      "id": "s1-s",
+      "k": "sous",
+      "txt": "Léa Martin · BTS Communication · juin 2026"
+     }
+    ]
+   },
+   {
+    "id": "s2",
+    "layout": "titre-contenu",
+    "notes": "Une entreprise de 45 personnes : présenter ses produits et ses clients en une minute.",
+    "el": [
+     {
+      "id": "s2-t",
+      "k": "titre",
+      "txt": "Présentation de Lumen"
+     },
+     {
+      "id": "s2-c",
+      "k": "puces",
+      "items": [
+       "Fabricant de luminaires, à Lyon",
+       "45 salariés",
+       "Clients : magasins de décoration"
+      ]
+     }
+    ]
+   },
+   {
+    "id": "s3",
+    "layout": "deux",
+    "notes": "Insister sur le salon : 300 contacts recueillis en trois jours.",
+    "el": [
+     {
+      "id": "s3-t",
+      "k": "titre",
+      "txt": "Mes missions"
+     },
+     {
+      "id": "s3-a",
+      "k": "puces",
+      "items": [
+       "Animer les réseaux sociaux",
+       "Préparer le salon Maison & Objet",
+       "Rédiger la lettre d'information"
+      ]
+     },
+     {
+      "id": "s3-i",
+      "k": "image",
+      "img": "stand"
+     }
+    ]
+   },
+   {
+    "id": "s4",
+    "layout": "titre-contenu",
+    "notes": "Conclure sur ce que le stage m'a appris, puis remercier le jury.",
+    "el": [
+     {
+      "id": "s4-t",
+      "k": "titre",
+      "txt": "Bilan"
+     },
+     {
+      "id": "s4-c",
+      "k": "puces",
+      "items": [
+       "Abonnés Instagram : +18 %",
+       "300 contacts au salon",
+       "Des compétences en gestion de projet"
+      ]
+     }
+    ]
+   }
+  ],
+  "cur": "s3"
+ },
+ "etapes": [
+  {
+   "tab": "Diaporama",
+   "btn": "À partir du début",
+   "vue": "diaporama",
+   "cur": "s1",
+   "t": "Diaporama › À partir du début, ou la touche F5, lance la présentation en plein écran."
+  },
+  {
+   "tab": "Diaporama",
+   "keys": "→",
+   "cur": "s2",
+   "t": "Flèche droite, Espace ou un clic : vous passez à la diapositive suivante."
+  },
+  {
+   "tab": "Diaporama",
+   "keys": "←",
+   "cur": "s1",
+   "t": "Flèche gauche : vous revenez à la diapositive précédente."
+  },
+  {
+   "tab": "Diaporama",
+   "keys": "4 + Entrée",
+   "cur": "s4",
+   "t": "Tapez le numéro d'une diapositive puis Entrée pour y aller directement, ici la 4."
+  },
+  {
+   "tab": "Diaporama",
+   "keys": "B",
+   "vue": "noir",
+   "t": "La touche B noircit l'écran : le jury vous regarde, vous et non la diapositive."
+  },
+  {
+   "tab": "Diaporama",
+   "keys": "B",
+   "vue": "diaporama",
+   "t": "Appuyez de nouveau sur B : la même diapositive revient, sans perdre votre place."
+  },
+  {
+   "tab": "Diaporama",
+   "keys": "Échap",
+   "vue": "normal",
+   "t": "Échap quitte le diaporama à tout moment et revient à l'écran de travail."
+  },
+  {
+   "at": "s3",
+   "tab": "Diaporama",
+   "keys": "Maj + F5",
+   "vue": "diaporama",
+   "t": "Maj + F5 lance le diaporama à partir de la diapositive sélectionnée, pratique pour répéter."
+  }
+ ],
+ "guide": {
+  "question": "Comment lancer un diaporama PowerPoint ?",
+  "intro": "La touche F5 lance le diaporama à partir de la première diapositive, Maj + F5 à partir de celle qui est sélectionnée (aussi dans l'onglet Diaporama). Pendant la présentation, la flèche droite, Espace ou un clic avancent, la flèche gauche revient en arrière, un numéro suivi d'Entrée va directement à une diapositive, B noircit l'écran et Échap quitte.",
+  "exemple": {
+   "titre": "Raccourci clé",
+   "formule": "F5",
+   "explication": "Avec une télécommande de présentation, les boutons correspondent aux flèches droite et gauche."
+  },
+  "erreurs": [
+   [
+    "F5 ne lance rien sur un portable",
+    "La touche F5 demande Fn : essayez Fn + F5, ou l'onglet Diaporama."
+   ],
+   [
+    "Le diaporama démarre au milieu",
+    "C'est Maj + F5 qui a été utilisé : Échap, puis F5."
+   ]
+  ],
+  "faq": [
+   [
+    "Comment revenir à la première diapositive ?",
+    "Tapez 1 puis Entrée, ou appuyez sur Début."
+   ],
+   [
+    "Comment afficher un écran blanc ?",
+    "Touche W ; appuyez de nouveau pour revenir."
+   ],
+   [
+    "Comment voir toutes les touches ?",
+    "Pendant le diaporama, appuyez sur F1."
+   ]
+  ]
+ },
+ "voirAussi": [
+  "mode-presentateur",
+  "animations-powerpoint",
+  "transitions-powerpoint"
+ ]
+}

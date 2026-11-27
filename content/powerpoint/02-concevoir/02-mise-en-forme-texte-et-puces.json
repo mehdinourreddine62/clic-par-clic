@@ -1,0 +1,254 @@
+{
+ "id": "mise-en-forme-texte-et-puces",
+ "titre": "Mettre en forme le texte et les puces",
+ "niveau": 1,
+ "resume": "Couleur et taille du texte, forme des puces, sous-puces avec Tab et listes numérotées.",
+ "motsCles": "powerpoint mise en forme texte puces sous-puces tab niveau numérotation taille police couleur liste",
+ "syntaxe": "Accueil › Police · Accueil › Paragraphe",
+ "titreSeo": "Mettre en forme le texte et les puces dans PowerPoint",
+ "arguments": [
+  [
+   "Couleur, Taille",
+   "Groupe Police de l'onglet Accueil"
+  ],
+  [
+   "Puces, Numérotation",
+   "Groupe Paragraphe"
+  ],
+  [
+   "Tab",
+   "Décale une ligne en sous-puce"
+  ],
+  [
+   "Maj + Tab",
+   "Remonte une ligne d'un niveau"
+  ]
+ ],
+ "document": {
+  "theme": "ion",
+  "slides": [
+   {
+    "id": "s1",
+    "layout": "titre",
+    "notes": "Bonjour, je suis Léa Martin. Je vais vous présenter mes dix semaines de stage chez Lumen.",
+    "el": [
+     {
+      "id": "s1-t",
+      "k": "titre",
+      "txt": "Soutenance de stage"
+     },
+     {
+      "id": "s1-s",
+      "k": "sous",
+      "txt": "Léa Martin · BTS Communication · juin 2026"
+     }
+    ]
+   },
+   {
+    "id": "s2",
+    "layout": "titre-contenu",
+    "notes": "Une entreprise de 45 personnes : présenter ses produits et ses clients en une minute.",
+    "el": [
+     {
+      "id": "s2-t",
+      "k": "titre",
+      "txt": "Présentation de Lumen"
+     },
+     {
+      "id": "s2-c",
+      "k": "puces",
+      "items": [
+       "Fabricant de luminaires, à Lyon",
+       "45 salariés",
+       "Clients : magasins de décoration"
+      ]
+     }
+    ]
+   },
+   {
+    "id": "s3",
+    "layout": "deux",
+    "notes": "Insister sur le salon : 300 contacts recueillis en trois jours.",
+    "el": [
+     {
+      "id": "s3-t",
+      "k": "titre",
+      "txt": "Mes missions"
+     },
+     {
+      "id": "s3-a",
+      "k": "puces",
+      "items": [
+       "Animer les réseaux sociaux",
+       "Préparer le salon Maison & Objet",
+       "Rédiger la lettre d'information"
+      ]
+     },
+     {
+      "id": "s3-i",
+      "k": "image",
+      "img": "stand"
+     }
+    ]
+   },
+   {
+    "id": "s4",
+    "layout": "titre-contenu",
+    "notes": "Conclure sur ce que le stage m'a appris, puis remercier le jury.",
+    "el": [
+     {
+      "id": "s4-t",
+      "k": "titre",
+      "txt": "Bilan"
+     },
+     {
+      "id": "s4-c",
+      "k": "puces",
+      "items": [
+       "Abonnés Instagram : +18 %",
+       "300 contacts au salon",
+       "Des compétences en gestion de projet"
+      ]
+     }
+    ]
+   }
+  ],
+  "cur": "s4"
+ },
+ "etapes": [
+  {
+   "tab": "Accueil",
+   "at": "s4-t",
+   "btn": "Couleur",
+   "ctx": {
+    "items": [
+     "Automatique",
+     "Blanc",
+     "Orange",
+     "Bleu clair"
+    ],
+    "hot": 2
+   },
+   "props": {
+    "s4-t": {
+     "couleur": "#f2a13a"
+    }
+   },
+   "t": "Sélectionnez le titre, puis Accueil › Couleur de police : ici, orange."
+  },
+  {
+   "tab": "Accueil",
+   "at": "s4-c",
+   "btn": "Taille",
+   "ctx": {
+    "items": [
+     "18",
+     "20",
+     "24",
+     "28"
+    ],
+    "hot": 3
+   },
+   "props": {
+    "s4-c": {
+     "taille": 1.2
+    }
+   },
+   "t": "Sélectionnez la zone de texte et passez à 28 points : le texte se lit du fond de la salle."
+  },
+  {
+   "tab": "Accueil",
+   "at": "s4-c",
+   "btn": "Puces",
+   "ctx": {
+    "items": [
+     "Aucune",
+     "Puces rondes",
+     "Puces carrées",
+     "Coches"
+    ],
+    "hot": 3
+   },
+   "props": {
+    "s4-c": {
+     "puce": "coche"
+    }
+   },
+   "t": "Accueil › Puces : changez leur forme, ici des coches pour un bilan."
+  },
+  {
+   "tab": "Accueil",
+   "at": "s4-c",
+   "keys": "Tab",
+   "textes": {
+    "s4-c": [
+     "Abonnés Instagram : +18 %",
+     [
+      "soit 390 abonnés de plus"
+     ],
+     "300 contacts au salon",
+     "Des compétences en gestion de projet"
+    ]
+   },
+   "t": "Tapez une nouvelle ligne et appuyez sur Tab au début : elle devient une sous-puce, en retrait."
+  },
+  {
+   "tab": "Accueil",
+   "at": "s3-a",
+   "btn": "Numérotation",
+   "ctx": {
+    "items": [
+     "Aucune",
+     "1. 2. 3.",
+     "1) 2) 3)",
+     "I. II. III."
+    ],
+    "hot": 1
+   },
+   "props": {
+    "s3-a": {
+     "puce": "num"
+    }
+   },
+   "t": "Pour une suite d'étapes, Accueil › Numérotation remplace les puces par 1. 2. 3."
+  }
+ ],
+ "guide": {
+  "question": "Comment faire des puces et des sous-puces dans PowerPoint ?",
+  "intro": "Dans une zone de contenu, chaque ligne tapée devient une puce. Pour créer une sous-puce, placez-vous au début de la ligne et appuyez sur Tab ; Maj + Tab la remonte d'un niveau. Accueil › Puces change leur forme, Accueil › Numérotation les remplace par des numéros, et le groupe Police règle la couleur et la taille.",
+  "exemple": {
+   "titre": "Lisibilité",
+   "formule": "24 à 28 points",
+   "explication": "Pas plus de cinq lignes par diapositive, et des mots clés plutôt que des phrases."
+  },
+  "erreurs": [
+   [
+    "La sous-puce ne se décale pas",
+    "Le curseur n'est pas au début de la ligne : cliquez juste avant le premier mot, puis Tab."
+   ],
+   [
+    "Le texte rétrécit tout seul",
+    "La zone déborde et PowerPoint ajuste le texte : coupez la diapositive en deux."
+   ]
+  ],
+  "faq": [
+   [
+    "Comment enlever les puces ?",
+    "Sélectionnez le texte, puis Accueil › Puces › Aucune."
+   ],
+   [
+    "Comment changer la couleur des puces seulement ?",
+    "Accueil › flèche de Puces › Puces et numéros › Couleur."
+   ],
+   [
+    "Comment appliquer la même police partout ?",
+    "Passez par le masque des diapositives."
+   ]
+  ]
+ },
+ "voirAussi": [
+  "masque-des-diapositives",
+  "ajouter-des-diapositives",
+  "smartart-powerpoint"
+ ]
+}

@@ -1,0 +1,215 @@
+{
+ "id": "animations-powerpoint",
+ "titre": "Faire apparaître le texte ligne par ligne",
+ "niveau": 2,
+ "resume": "Animer une liste à puces pour dévoiler chaque ligne au clic pendant l'oral.",
+ "motsCles": "powerpoint animation apparaître puces ligne par ligne un par un au clic texte animer",
+ "syntaxe": "Animations › Apparaître",
+ "titreSeo": "Animation PowerPoint : faire apparaître le texte ligne par ligne",
+ "arguments": [
+  [
+   "Animations › Apparaître",
+   "Une entrée simple et sobre"
+  ],
+  [
+   "Numéros 1, 2, 3",
+   "L'ordre d'apparition"
+  ],
+  [
+   "Démarrer : Au clic",
+   "Chaque ligne attend votre clic"
+  ],
+  [
+   "Maj + F5",
+   "Diaporama à partir de la diapositive en cours"
+  ]
+ ],
+ "document": {
+  "theme": "ion",
+  "slides": [
+   {
+    "id": "s1",
+    "layout": "titre",
+    "notes": "Bonjour, je suis Léa Martin. Je vais vous présenter mes dix semaines de stage chez Lumen.",
+    "el": [
+     {
+      "id": "s1-t",
+      "k": "titre",
+      "txt": "Soutenance de stage"
+     },
+     {
+      "id": "s1-s",
+      "k": "sous",
+      "txt": "Léa Martin · BTS Communication · juin 2026"
+     }
+    ]
+   },
+   {
+    "id": "s2",
+    "layout": "titre-contenu",
+    "notes": "Une entreprise de 45 personnes : présenter ses produits et ses clients en une minute.",
+    "el": [
+     {
+      "id": "s2-t",
+      "k": "titre",
+      "txt": "Présentation de Lumen"
+     },
+     {
+      "id": "s2-c",
+      "k": "puces",
+      "items": [
+       "Fabricant de luminaires, à Lyon",
+       "45 salariés",
+       "Clients : magasins de décoration"
+      ]
+     }
+    ]
+   },
+   {
+    "id": "s3",
+    "layout": "deux",
+    "notes": "Insister sur le salon : 300 contacts recueillis en trois jours.",
+    "el": [
+     {
+      "id": "s3-t",
+      "k": "titre",
+      "txt": "Mes missions"
+     },
+     {
+      "id": "s3-a",
+      "k": "puces",
+      "items": [
+       "Animer les réseaux sociaux",
+       "Préparer le salon Maison & Objet",
+       "Rédiger la lettre d'information"
+      ]
+     },
+     {
+      "id": "s3-i",
+      "k": "image",
+      "img": "stand"
+     }
+    ]
+   },
+   {
+    "id": "s4",
+    "layout": "titre-contenu",
+    "notes": "Conclure sur ce que le stage m'a appris, puis remercier le jury.",
+    "el": [
+     {
+      "id": "s4-t",
+      "k": "titre",
+      "txt": "Bilan"
+     },
+     {
+      "id": "s4-c",
+      "k": "puces",
+      "items": [
+       "Abonnés Instagram : +18 %",
+       "300 contacts au salon",
+       "Des compétences en gestion de projet"
+      ]
+     }
+    ]
+   }
+  ],
+  "cur": "s4"
+ },
+ "etapes": [
+  {
+   "at": "s4-c",
+   "tab": "Animations",
+   "btn": "Apparaître",
+   "props": {
+    "s4-c": {
+     "anim": 1,
+     "par": true
+    }
+   },
+   "t": "Sélectionnez la zone de texte, puis Animations › Apparaître : chaque puce reçoit un numéro."
+  },
+  {
+   "sel": "s4-c",
+   "tab": "Animations",
+   "btn": "Démarrer",
+   "ctx": {
+    "items": [
+     "Au clic",
+     "Avec la précédente",
+     "Après la précédente"
+    ],
+    "hot": 0
+   },
+   "t": "Démarrer : Au clic, chaque ligne n'apparaît que lorsque vous cliquez ou appuyez sur une flèche."
+  },
+  {
+   "tab": "Animations",
+   "keys": "Maj + F5",
+   "vue": "diaporama",
+   "build": 0,
+   "t": "Maj + F5 lance le diaporama sur cette diapositive : seul le titre est visible."
+  },
+  {
+   "tab": "Animations",
+   "keys": "→",
+   "build": 1,
+   "t": "Appuyez sur la flèche droite : la première ligne apparaît."
+  },
+  {
+   "tab": "Animations",
+   "keys": "→",
+   "build": 2,
+   "t": "Encore une fois : la deuxième ligne, pendant que vous la commentez."
+  },
+  {
+   "tab": "Animations",
+   "keys": "→",
+   "build": 3,
+   "t": "Et la troisième : le jury suit votre oral au lieu de tout lire d'avance."
+  },
+  {
+   "tab": "Animations",
+   "keys": "Échap",
+   "vue": "normal",
+   "t": "Échap quitte le diaporama et revient à l'écran de travail."
+  }
+ ],
+ "guide": {
+  "question": "Comment faire apparaître le texte ligne par ligne dans PowerPoint ?",
+  "intro": "Sélectionnez la zone de texte qui contient la liste, puis choisissez une animation d'entrée dans l'onglet Animations, par exemple Apparaître ou Estomper. PowerPoint numérote chaque ligne : en diaporama, chacune apparaît à un clic ou à une flèche. Options d'effet › Un par un ou Par paragraphe règle le découpage.",
+  "exemple": {
+   "titre": "Pour une soutenance",
+   "formule": "Apparaître ou Estomper",
+   "explication": "Des animations d'entrée simples ; évitez les effets qui tournent ou rebondissent."
+  },
+  "erreurs": [
+   [
+    "Tout le texte apparaît d'un coup",
+    "Options d'effet est réglé sur Comme un objet : choisissez Par paragraphe."
+   ],
+   [
+    "Les lignes apparaissent seules",
+    "Démarrer est réglé sur Après la précédente : choisissez Au clic."
+   ]
+  ],
+  "faq": [
+   [
+    "Comment changer l'ordre des animations ?",
+    "Animations › Volet Animation, puis faites glisser les lignes."
+   ],
+   [
+    "Comment supprimer une animation ?",
+    "Sélectionnez son numéro sur la diapositive et appuyez sur Suppr."
+   ],
+   [
+    "Comment animer une image ?",
+    "Sélectionnez-la et choisissez une animation : elle reçoit le numéro suivant."
+   ]
+  ]
+ },
+ "voirAussi": [
+  "transitions-powerpoint",
+  "lancer-le-diaporama",
+  "smartart-powerpoint"
+ ]
+}

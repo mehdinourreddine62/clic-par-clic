@@ -1,0 +1,215 @@
+{
+ "id": "transitions-powerpoint",
+ "titre": "Ajouter une transition entre les diapositives",
+ "niveau": 1,
+ "resume": "Choisir une transition, régler sa durée, l'appliquer partout ou la retirer.",
+ "motsCles": "powerpoint transition diapositive fondu effet durée appliquer partout aucune enchaînement",
+ "syntaxe": "Transitions › Fondu · Appliquer partout",
+ "titreSeo": "Ajouter une transition PowerPoint entre les diapositives",
+ "arguments": [
+  [
+   "Transitions",
+   "L'effet au passage d'une diapositive à la suivante"
+  ],
+  [
+   "Durée",
+   "En secondes"
+  ],
+  [
+   "Appliquer partout",
+   "La même transition pour toutes"
+  ],
+  [
+   "Aucune",
+   "Retire la transition"
+  ]
+ ],
+ "document": {
+  "theme": "ion",
+  "slides": [
+   {
+    "id": "s1",
+    "layout": "titre",
+    "notes": "Bonjour, je suis Léa Martin. Je vais vous présenter mes dix semaines de stage chez Lumen.",
+    "el": [
+     {
+      "id": "s1-t",
+      "k": "titre",
+      "txt": "Soutenance de stage"
+     },
+     {
+      "id": "s1-s",
+      "k": "sous",
+      "txt": "Léa Martin · BTS Communication · juin 2026"
+     }
+    ]
+   },
+   {
+    "id": "s2",
+    "layout": "titre-contenu",
+    "notes": "Une entreprise de 45 personnes : présenter ses produits et ses clients en une minute.",
+    "el": [
+     {
+      "id": "s2-t",
+      "k": "titre",
+      "txt": "Présentation de Lumen"
+     },
+     {
+      "id": "s2-c",
+      "k": "puces",
+      "items": [
+       "Fabricant de luminaires, à Lyon",
+       "45 salariés",
+       "Clients : magasins de décoration"
+      ]
+     }
+    ]
+   },
+   {
+    "id": "s3",
+    "layout": "deux",
+    "notes": "Insister sur le salon : 300 contacts recueillis en trois jours.",
+    "el": [
+     {
+      "id": "s3-t",
+      "k": "titre",
+      "txt": "Mes missions"
+     },
+     {
+      "id": "s3-a",
+      "k": "puces",
+      "items": [
+       "Animer les réseaux sociaux",
+       "Préparer le salon Maison & Objet",
+       "Rédiger la lettre d'information"
+      ]
+     },
+     {
+      "id": "s3-i",
+      "k": "image",
+      "img": "stand"
+     }
+    ]
+   },
+   {
+    "id": "s4",
+    "layout": "titre-contenu",
+    "notes": "Conclure sur ce que le stage m'a appris, puis remercier le jury.",
+    "el": [
+     {
+      "id": "s4-t",
+      "k": "titre",
+      "txt": "Bilan"
+     },
+     {
+      "id": "s4-c",
+      "k": "puces",
+      "items": [
+       "Abonnés Instagram : +18 %",
+       "300 contacts au salon",
+       "Des compétences en gestion de projet"
+      ]
+     }
+    ]
+   }
+  ],
+  "cur": "s2"
+ },
+ "etapes": [
+  {
+   "at": "s2",
+   "tab": "Transitions",
+   "btn": "Fondu",
+   "props": {
+    "s2": {
+     "trans": "Fondu"
+    }
+   },
+   "t": "Sélectionnez une diapositive, puis Transitions › Fondu : un aperçu se joue aussitôt."
+  },
+  {
+   "tab": "Transitions",
+   "spot": "nav",
+   "t": "Une étoile apparaît sous le numéro de la miniature : cette diapositive a une transition."
+  },
+  {
+   "tab": "Transitions",
+   "btn": "Durée",
+   "ctx": {
+    "items": [
+     "00,50",
+     "00,70",
+     "01,00",
+     "01,50"
+    ],
+    "hot": 2
+   },
+   "t": "Réglez la Durée en secondes : autour d'une seconde, la transition reste discrète."
+  },
+  {
+   "tab": "Transitions",
+   "btn": "Appliquer partout",
+   "props": {
+    "s1": {
+     "trans": "Fondu"
+    },
+    "s3": {
+     "trans": "Fondu"
+    },
+    "s4": {
+     "trans": "Fondu"
+    }
+   },
+   "t": "Appliquer partout donne la même transition à toutes les diapositives : c'est plus sobre."
+  },
+  {
+   "at": "s1",
+   "tab": "Transitions",
+   "btn": "Aucune",
+   "props": {
+    "s1": {
+     "trans": null
+    }
+   },
+   "t": "Pour retirer la transition d'une diapositive, sélectionnez-la et choisissez Aucune."
+  }
+ ],
+ "guide": {
+  "question": "Comment mettre une transition sur toutes les diapositives PowerPoint ?",
+  "intro": "Sélectionnez une diapositive, choisissez un effet dans l'onglet Transitions (Fondu, Poussée, Balayer…), réglez la Durée, puis cliquez sur Appliquer partout. Une étoile sous le numéro de chaque miniature signale une transition. Aucune retire l'effet de la diapositive sélectionnée.",
+  "exemple": {
+   "titre": "Pour une soutenance",
+   "formule": "Fondu, 1 seconde",
+   "explication": "Une transition discrète et identique partout fait plus professionnel qu'un effet différent à chaque diapositive."
+  },
+  "erreurs": [
+   [
+    "La transition ne se voit pas",
+    "Elle se joue seulement en diaporama (F5) ou avec le bouton Aperçu."
+   ],
+   [
+    "Les diapositives défilent toutes seules",
+    "Après : une durée est cochée dans Minutage ; décochez-la et gardez Manuellement."
+   ]
+  ],
+  "faq": [
+   [
+    "Quelle différence entre transition et animation ?",
+    "La transition agit entre deux diapositives, l'animation sur un élément à l'intérieur d'une diapositive."
+   ],
+   [
+    "Comment revoir la transition ?",
+    "Transitions › Aperçu."
+   ],
+   [
+    "Comment retirer toutes les transitions ?",
+    "Choisissez Aucune, puis Appliquer partout."
+   ]
+  ]
+ },
+ "voirAussi": [
+  "animations-powerpoint",
+  "lancer-le-diaporama",
+  "mode-presentateur"
+ ]
+}

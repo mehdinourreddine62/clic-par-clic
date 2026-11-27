@@ -1,0 +1,249 @@
+{
+ "id": "inserer-une-image-powerpoint",
+ "titre": "Insérer et rogner une image",
+ "niveau": 1,
+ "resume": "Insérer une photo depuis l'ordinateur, la rogner avec les poignées noires et lui donner un style.",
+ "motsCles": "powerpoint insérer image photo rogner recadrer format de l'image style ombre cadre",
+ "syntaxe": "Insertion › Images · Format de l'image › Rogner",
+ "titreSeo": "Insérer et rogner une image dans PowerPoint",
+ "arguments": [
+  [
+   "Insertion › Images",
+   "Cet appareil, images de stock ou en ligne"
+  ],
+  [
+   "Format de l'image",
+   "Onglet visible quand l'image est sélectionnée"
+  ],
+  [
+   "Rogner",
+   "Poignées noires à glisser vers l'intérieur"
+  ],
+  [
+   "Styles d'images",
+   "Cadre, ombre, contour"
+  ]
+ ],
+ "document": {
+  "theme": "ion",
+  "slides": [
+   {
+    "id": "s1",
+    "layout": "titre",
+    "notes": "Bonjour, je suis Léa Martin. Je vais vous présenter mes dix semaines de stage chez Lumen.",
+    "el": [
+     {
+      "id": "s1-t",
+      "k": "titre",
+      "txt": "Soutenance de stage"
+     },
+     {
+      "id": "s1-s",
+      "k": "sous",
+      "txt": "Léa Martin · BTS Communication · juin 2026"
+     }
+    ]
+   },
+   {
+    "id": "s2",
+    "layout": "titre-contenu",
+    "notes": "Une entreprise de 45 personnes : présenter ses produits et ses clients en une minute.",
+    "el": [
+     {
+      "id": "s2-t",
+      "k": "titre",
+      "txt": "Présentation de Lumen"
+     },
+     {
+      "id": "s2-c",
+      "k": "puces",
+      "items": [
+       "Fabricant de luminaires, à Lyon",
+       "45 salariés",
+       "Clients : magasins de décoration"
+      ]
+     }
+    ]
+   },
+   {
+    "id": "s3",
+    "layout": "deux",
+    "notes": "Insister sur le salon : 300 contacts recueillis en trois jours.",
+    "el": [
+     {
+      "id": "s3-t",
+      "k": "titre",
+      "txt": "Mes missions"
+     },
+     {
+      "id": "s3-a",
+      "k": "puces",
+      "items": [
+       "Animer les réseaux sociaux",
+       "Préparer le salon Maison & Objet",
+       "Rédiger la lettre d'information"
+      ]
+     }
+    ]
+   },
+   {
+    "id": "s4",
+    "layout": "titre-contenu",
+    "notes": "Conclure sur ce que le stage m'a appris, puis remercier le jury.",
+    "el": [
+     {
+      "id": "s4-t",
+      "k": "titre",
+      "txt": "Bilan"
+     },
+     {
+      "id": "s4-c",
+      "k": "puces",
+      "items": [
+       "Abonnés Instagram : +18 %",
+       "300 contacts au salon",
+       "Des compétences en gestion de projet"
+      ]
+     }
+    ]
+   }
+  ],
+  "cur": "s3"
+ },
+ "etapes": [
+  {
+   "at": "s3",
+   "tab": "Insertion",
+   "btn": "Images",
+   "ctx": {
+    "items": [
+     "Cet appareil…",
+     "Images de stock…",
+     "Images en ligne…"
+    ],
+    "hot": 0
+   },
+   "dialog": {
+    "titre": "Insérer une image",
+    "lignes": [
+     [
+      "Dossier",
+      "Images › Stage"
+     ],
+     [
+      "Fichier",
+      "stand-lumen.jpg"
+     ]
+    ],
+    "ok": true,
+    "okLabel": "Insérer"
+   },
+   "elAjout": [
+    {
+     "slide": "s3",
+     "el": {
+      "id": "s3-i",
+      "k": "image",
+      "img": "stand"
+     }
+    }
+   ],
+   "t": "Insertion › Images › Cet appareil : choisissez la photo puis cliquez sur Insérer."
+  },
+  {
+   "sel": "s3-i",
+   "tab": "Format de l'image",
+   "spot": "onglet:Format de l'image",
+   "t": "L'image sélectionnée, l'onglet Format de l'image apparaît dans le ruban."
+  },
+  {
+   "sel": "s3-i",
+   "tab": "Format de l'image",
+   "btn": "Rogner",
+   "props": {
+    "s3-i": {
+     "cropMode": true
+    }
+   },
+   "t": "Format de l'image › Rogner : des poignées noires apparaissent sur les bords."
+  },
+  {
+   "sel": "s3-i",
+   "tab": "Format de l'image",
+   "poignee": true,
+   "props": {
+    "s3-i": {
+     "crop": "carre"
+    }
+   },
+   "t": "Faites glisser une poignée noire vers l'intérieur pour couper ce qui ne sert pas."
+  },
+  {
+   "tab": "Format de l'image",
+   "keys": "Échap",
+   "props": {
+    "s3-i": {
+     "cropMode": false
+    }
+   },
+   "t": "Appuyez sur Échap ou cliquez à côté : seule la partie gardée reste visible."
+  },
+  {
+   "sel": "s3-i",
+   "tab": "Format de l'image",
+   "btn": "Styles",
+   "ctx": {
+    "items": [
+     "Cadre simple, blanc",
+     "Rectangle à ombre portée",
+     "Ovale à contour estompé"
+    ],
+    "hot": 1
+   },
+   "props": {
+    "s3-i": {
+     "style": "ombre"
+    }
+   },
+   "t": "Format de l'image › Styles : un cadre et une ombre donnent du relief à la photo."
+  }
+ ],
+ "guide": {
+  "question": "Comment rogner une image dans PowerPoint ?",
+  "intro": "Insérez la photo par Insertion › Images › Cet appareil. Une fois l'image sélectionnée, l'onglet Format de l'image apparaît : le bouton Rogner affiche des poignées noires sur les bords et aux coins. Faites-les glisser vers l'intérieur pour couper ce qui est inutile, puis appuyez sur Échap. Le groupe Styles d'images ajoute un cadre ou une ombre.",
+  "exemple": {
+   "titre": "Bon réflexe",
+   "formule": "Format de l'image › Rogner",
+   "explication": "Rognez plutôt que d'écraser l'image : tirer une poignée blanche de côté la déforme."
+  },
+  "erreurs": [
+   [
+    "L'image est déformée",
+    "Vous avez tiré une poignée de côté : Ctrl + Z, puis redimensionnez par un coin."
+   ],
+   [
+    "L'onglet Format de l'image n'apparaît pas",
+    "L'image n'est pas sélectionnée : cliquez dessus."
+   ]
+  ],
+  "faq": [
+   [
+    "Comment récupérer la partie coupée ?",
+    "Recliquez sur Rogner et tirez les poignées vers l'extérieur : rien n'est perdu."
+   ],
+   [
+    "Comment rogner en cercle ?",
+    "Format de l'image › flèche de Rogner › Rogner à la forme › Ellipse."
+   ],
+   [
+    "Comment alléger le fichier ?",
+    "Format de l'image › Compresser les images."
+   ]
+  ]
+ },
+ "voirAussi": [
+  "tableau-et-graphique-powerpoint",
+  "smartart-powerpoint",
+  "masque-des-diapositives"
+ ]
+}

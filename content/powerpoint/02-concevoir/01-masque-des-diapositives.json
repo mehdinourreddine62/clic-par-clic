@@ -1,0 +1,219 @@
+{
+ "id": "masque-des-diapositives",
+ "titre": "Le masque des diapositives : logo, police et couleurs",
+ "niveau": 2,
+ "resume": "Modifier le masque pour placer un logo, changer la police et les couleurs de toutes les diapositives d'un coup.",
+ "motsCles": "powerpoint masque des diapositives logo police couleurs modèle toutes les diapositives thème uniformiser",
+ "syntaxe": "Affichage › Masque des diapositives",
+ "titreSeo": "Masque des diapositives PowerPoint : logo, police, couleurs",
+ "arguments": [
+  [
+   "Masque",
+   "Le modèle commun à toutes les diapositives"
+  ],
+  [
+   "Logo",
+   "Inséré sur le masque, il apparaît partout"
+  ],
+  [
+   "Polices et Couleurs",
+   "Changent l'ensemble de la présentation"
+  ],
+  [
+   "Fermer le mode Masque",
+   "Revenir aux diapositives"
+  ]
+ ],
+ "document": {
+  "theme": "ion",
+  "slides": [
+   {
+    "id": "s1",
+    "layout": "titre",
+    "notes": "Bonjour, je suis Léa Martin. Je vais vous présenter mes dix semaines de stage chez Lumen.",
+    "el": [
+     {
+      "id": "s1-t",
+      "k": "titre",
+      "txt": "Soutenance de stage"
+     },
+     {
+      "id": "s1-s",
+      "k": "sous",
+      "txt": "Léa Martin · BTS Communication · juin 2026"
+     }
+    ]
+   },
+   {
+    "id": "s2",
+    "layout": "titre-contenu",
+    "notes": "Une entreprise de 45 personnes : présenter ses produits et ses clients en une minute.",
+    "el": [
+     {
+      "id": "s2-t",
+      "k": "titre",
+      "txt": "Présentation de Lumen"
+     },
+     {
+      "id": "s2-c",
+      "k": "puces",
+      "items": [
+       "Fabricant de luminaires, à Lyon",
+       "45 salariés",
+       "Clients : magasins de décoration"
+      ]
+     }
+    ]
+   },
+   {
+    "id": "s3",
+    "layout": "deux",
+    "notes": "Insister sur le salon : 300 contacts recueillis en trois jours.",
+    "el": [
+     {
+      "id": "s3-t",
+      "k": "titre",
+      "txt": "Mes missions"
+     },
+     {
+      "id": "s3-a",
+      "k": "puces",
+      "items": [
+       "Animer les réseaux sociaux",
+       "Préparer le salon Maison & Objet",
+       "Rédiger la lettre d'information"
+      ]
+     },
+     {
+      "id": "s3-i",
+      "k": "image",
+      "img": "stand"
+     }
+    ]
+   },
+   {
+    "id": "s4",
+    "layout": "titre-contenu",
+    "notes": "Conclure sur ce que le stage m'a appris, puis remercier le jury.",
+    "el": [
+     {
+      "id": "s4-t",
+      "k": "titre",
+      "txt": "Bilan"
+     },
+     {
+      "id": "s4-c",
+      "k": "puces",
+      "items": [
+       "Abonnés Instagram : +18 %",
+       "300 contacts au salon",
+       "Des compétences en gestion de projet"
+      ]
+     }
+    ]
+   }
+  ],
+  "cur": "s2"
+ },
+ "etapes": [
+  {
+   "tab": "Affichage",
+   "btn": "Masque des diapositives",
+   "vue": "masque",
+   "t": "Affichage › Masque des diapositives : le modèle commun à toutes les diapositives s'affiche."
+  },
+  {
+   "tab": "Masque des diapositives",
+   "at": "m",
+   "t": "La grande miniature en haut est le masque : ce que vous y changez s'applique partout."
+  },
+  {
+   "tab": "Insertion",
+   "btn": "Images",
+   "ctx": {
+    "items": [
+     "Cet appareil…",
+     "Images de stock…",
+     "Images en ligne…"
+    ],
+    "hot": 0
+   },
+   "logo": true,
+   "t": "Insertion › Images : ajoutez le logo de l'entreprise, puis placez-le dans un coin."
+  },
+  {
+   "tab": "Masque des diapositives",
+   "btn": "Polices",
+   "ctx": {
+    "items": [
+     "Aptos",
+     "Georgia",
+     "Trebuchet MS",
+     "Arial"
+    ],
+    "hot": 1
+   },
+   "police": "georgia",
+   "t": "Masque des diapositives › Polices : une seule police pour tous les titres et textes."
+  },
+  {
+   "tab": "Masque des diapositives",
+   "btn": "Couleurs",
+   "ctx": {
+    "items": [
+     "Office",
+     "Bleu-vert",
+     "Vert",
+     "Violet"
+    ],
+    "hot": 2
+   },
+   "couleurs": "vert",
+   "t": "Couleurs change la palette : le fond, les titres et les formes suivent."
+  },
+  {
+   "tab": "Masque des diapositives",
+   "btn": "Fermer le mode Masque",
+   "vue": "normal",
+   "t": "Fermer le mode Masque : toutes les diapositives ont maintenant le logo, la police et les couleurs."
+  }
+ ],
+ "guide": {
+  "question": "Comment mettre un logo sur toutes les diapositives PowerPoint ?",
+  "intro": "Le masque des diapositives est le modèle commun à toute la présentation. Ouvrez-le par Affichage › Masque des diapositives, cliquez sur la grande miniature du haut, puis insérez le logo, changez les polices ou les couleurs : chaque modification s'applique à toutes les diapositives. Fermez ensuite le mode Masque pour revenir à votre travail.",
+  "exemple": {
+   "titre": "Pour une soutenance",
+   "formule": "Affichage › Masque des diapositives",
+   "explication": "Logo de l'entreprise en haut à droite, une police lisible, les couleurs de l'entreprise si possible."
+  },
+  "erreurs": [
+   [
+    "Le logo n'apparaît que sur une diapositive",
+    "Il a été inséré sur une diapositive normale : supprimez-le et insérez-le sur le masque."
+   ],
+   [
+    "Le logo apparaît seulement sur certaines dispositions",
+    "Il a été placé sur une disposition (petite miniature) et non sur le masque (grande miniature du haut)."
+   ]
+  ],
+  "faq": [
+   [
+    "Peut-on déplacer le logo sur une diapositive ?",
+    "Non, il est verrouillé : c'est voulu. Pour le modifier, rouvrez le masque."
+   ],
+   [
+    "Comment masquer le logo sur la diapositive de titre ?",
+    "Dans le masque, sélectionnez la disposition Titre et cochez Masquer les graphiques d'arrière-plan."
+   ],
+   [
+    "Le masque change-t-il le texte déjà écrit ?",
+    "Il change son apparence (police, couleur), jamais son contenu."
+   ]
+  ]
+ },
+ "voirAussi": [
+  "mise-en-forme-texte-et-puces",
+  "creer-une-presentation",
+  "numeros-et-pied-de-page-powerpoint"
+ ]
+}

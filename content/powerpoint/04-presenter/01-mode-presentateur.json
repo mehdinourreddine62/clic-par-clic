@@ -1,0 +1,208 @@
+{
+ "id": "mode-presentateur",
+ "titre": "Utiliser le mode Présentateur",
+ "niveau": 2,
+ "resume": "Voir ses notes, le minuteur et la diapositive suivante pendant que le public voit la diapositive en cours.",
+ "motsCles": "powerpoint mode présentateur notes minuteur diapositive suivante deux écrans vidéoprojecteur alt f5 soutenance oral",
+ "syntaxe": "Diaporama › Utiliser le mode Présentateur · Alt + F5",
+ "titreSeo": "Mode Présentateur PowerPoint : notes et minuteur",
+ "arguments": [
+  [
+   "Diapositive en cours",
+   "Celle que voit le public"
+  ],
+  [
+   "Minuteur",
+   "Le temps écoulé depuis le début"
+  ],
+  [
+   "Diapositive suivante",
+   "Pour annoncer la suite"
+  ],
+  [
+   "Notes",
+   "Vos phrases clés, invisibles du public"
+  ]
+ ],
+ "document": {
+  "theme": "ion",
+  "slides": [
+   {
+    "id": "s1",
+    "layout": "titre",
+    "notes": "Bonjour, je suis Léa Martin. Je vais vous présenter mes dix semaines de stage chez Lumen.",
+    "el": [
+     {
+      "id": "s1-t",
+      "k": "titre",
+      "txt": "Soutenance de stage"
+     },
+     {
+      "id": "s1-s",
+      "k": "sous",
+      "txt": "Léa Martin · BTS Communication · juin 2026"
+     }
+    ]
+   },
+   {
+    "id": "s2",
+    "layout": "titre-contenu",
+    "notes": "Une entreprise de 45 personnes : présenter ses produits et ses clients en une minute.",
+    "el": [
+     {
+      "id": "s2-t",
+      "k": "titre",
+      "txt": "Présentation de Lumen"
+     },
+     {
+      "id": "s2-c",
+      "k": "puces",
+      "items": [
+       "Fabricant de luminaires, à Lyon",
+       "45 salariés",
+       "Clients : magasins de décoration"
+      ]
+     }
+    ]
+   },
+   {
+    "id": "s3",
+    "layout": "deux",
+    "notes": "Insister sur le salon : 300 contacts recueillis en trois jours.",
+    "el": [
+     {
+      "id": "s3-t",
+      "k": "titre",
+      "txt": "Mes missions"
+     },
+     {
+      "id": "s3-a",
+      "k": "puces",
+      "items": [
+       "Animer les réseaux sociaux",
+       "Préparer le salon Maison & Objet",
+       "Rédiger la lettre d'information"
+      ]
+     },
+     {
+      "id": "s3-i",
+      "k": "image",
+      "img": "stand"
+     }
+    ]
+   },
+   {
+    "id": "s4",
+    "layout": "titre-contenu",
+    "notes": "Conclure sur ce que le stage m'a appris, puis remercier le jury.",
+    "el": [
+     {
+      "id": "s4-t",
+      "k": "titre",
+      "txt": "Bilan"
+     },
+     {
+      "id": "s4-c",
+      "k": "puces",
+      "items": [
+       "Abonnés Instagram : +18 %",
+       "300 contacts au salon",
+       "Des compétences en gestion de projet"
+      ]
+     }
+    ]
+   }
+  ],
+  "cur": "s1"
+ },
+ "etapes": [
+  {
+   "tab": "Diaporama",
+   "btn": "Utiliser le mode Présentateur",
+   "t": "Diaporama › Utiliser le mode Présentateur : vous verrez vos notes sur votre écran pendant l'oral."
+  },
+  {
+   "tab": "Diaporama",
+   "keys": "Alt + F5",
+   "vue": "presentateur",
+   "cur": "s1",
+   "chrono": "00:00:00",
+   "t": "Sans second écran, Alt + F5 ouvre ce mode pour vous entraîner chez vous."
+  },
+  {
+   "tab": "Diaporama",
+   "spot": "pv:cur",
+   "chrono": "00:00:08",
+   "t": "À gauche, en grand, la diapositive que le public voit sur le vidéoprojecteur."
+  },
+  {
+   "tab": "Diaporama",
+   "spot": "pv:minuteur",
+   "chrono": "00:00:21",
+   "t": "En haut, le minuteur : il indique depuis combien de temps vous parlez."
+  },
+  {
+   "tab": "Diaporama",
+   "spot": "pv:suivante",
+   "chrono": "00:00:34",
+   "t": "À droite, la diapositive suivante : vous pouvez annoncer la suite avant de cliquer."
+  },
+  {
+   "tab": "Diaporama",
+   "spot": "pv:notes",
+   "chrono": "00:00:47",
+   "t": "En dessous, vos notes, que le public ne voit pas : quelques mots clés suffisent."
+  },
+  {
+   "tab": "Diaporama",
+   "keys": "→",
+   "cur": "s2",
+   "chrono": "00:01:05",
+   "t": "La flèche droite passe à la diapositive suivante ; le minuteur continue de tourner."
+  },
+  {
+   "tab": "Diaporama",
+   "keys": "Échap",
+   "vue": "normal",
+   "t": "Échap termine la présentation et revient à l'écran de travail."
+  }
+ ],
+ "guide": {
+  "question": "Comment voir ses notes pendant une présentation PowerPoint ?",
+  "intro": "Écrivez vos notes sous chaque diapositive (bouton Notes de la barre d'état), puis cochez Diaporama › Utiliser le mode Présentateur. Branché à un vidéoprojecteur, PowerPoint montre la diapositive au public et, sur votre ordinateur, la diapositive en cours, la suivante, vos notes et un minuteur. Sans second écran, Alt + F5 ouvre ce mode pour répéter.",
+  "exemple": {
+   "titre": "Pour s'entraîner",
+   "formule": "Alt + F5",
+   "explication": "Chronométrez une répétition complète : le minuteur vous montre si vous tenez le temps prévu."
+  },
+  "erreurs": [
+   [
+    "Le public voit le mode Présentateur",
+    "Les écrans sont inversés : en haut du mode Présentateur, Paramètres d'affichage › Permuter le mode Présentateur et le diaporama."
+   ],
+   [
+    "Les notes sont trop petites",
+    "Utilisez les boutons de taille du texte sous les notes."
+   ]
+  ],
+  "faq": [
+   [
+    "Où écrire les notes ?",
+    "Sous la diapositive, dans la zone ouverte par le bouton Notes de la barre d'état."
+   ],
+   [
+    "Comment mettre le minuteur en pause ?",
+    "Avec le bouton pause à côté du minuteur."
+   ],
+   [
+    "Le jury voit-il les notes ?",
+    "Non, ni à l'écran ni dans le PDF exporté en diapositives."
+   ]
+  ]
+ },
+ "voirAussi": [
+  "lancer-le-diaporama",
+  "ecran-et-ruban-powerpoint",
+  "exporter-en-pdf-powerpoint"
+ ]
+}

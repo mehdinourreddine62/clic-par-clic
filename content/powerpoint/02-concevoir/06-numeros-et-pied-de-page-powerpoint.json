@@ -1,0 +1,275 @@
+{
+ "id": "numeros-et-pied-de-page-powerpoint",
+ "titre": "Numéroter les diapositives et ajouter un pied de page",
+ "niveau": 1,
+ "resume": "Afficher le numéro de chaque diapositive et un texte en bas, sauf sur la diapositive de titre.",
+ "motsCles": "powerpoint numéro de diapositive numéroter pied de page en-tête date sauf diapositive de titre",
+ "syntaxe": "Insertion › En-tête/pied de page",
+ "titreSeo": "Numéroter les diapositives PowerPoint et pied de page",
+ "arguments": [
+  [
+   "Numéro de diapositive",
+   "Case à cocher, numéro mis à jour seul"
+  ],
+  [
+   "Pied de page",
+   "Texte répété en bas de chaque diapositive"
+  ],
+  [
+   "Ne pas afficher sur la diapositive de titre",
+   "Une première diapositive propre"
+  ],
+  [
+   "Appliquer partout",
+   "Toutes les diapositives"
+  ]
+ ],
+ "document": {
+  "theme": "ion",
+  "slides": [
+   {
+    "id": "s1",
+    "layout": "titre",
+    "notes": "Bonjour, je suis Léa Martin. Je vais vous présenter mes dix semaines de stage chez Lumen.",
+    "el": [
+     {
+      "id": "s1-t",
+      "k": "titre",
+      "txt": "Soutenance de stage"
+     },
+     {
+      "id": "s1-s",
+      "k": "sous",
+      "txt": "Léa Martin · BTS Communication · juin 2026"
+     }
+    ]
+   },
+   {
+    "id": "s2",
+    "layout": "titre-contenu",
+    "notes": "Une entreprise de 45 personnes : présenter ses produits et ses clients en une minute.",
+    "el": [
+     {
+      "id": "s2-t",
+      "k": "titre",
+      "txt": "Présentation de Lumen"
+     },
+     {
+      "id": "s2-c",
+      "k": "puces",
+      "items": [
+       "Fabricant de luminaires, à Lyon",
+       "45 salariés",
+       "Clients : magasins de décoration"
+      ]
+     }
+    ]
+   },
+   {
+    "id": "s3",
+    "layout": "deux",
+    "notes": "Insister sur le salon : 300 contacts recueillis en trois jours.",
+    "el": [
+     {
+      "id": "s3-t",
+      "k": "titre",
+      "txt": "Mes missions"
+     },
+     {
+      "id": "s3-a",
+      "k": "puces",
+      "items": [
+       "Animer les réseaux sociaux",
+       "Préparer le salon Maison & Objet",
+       "Rédiger la lettre d'information"
+      ]
+     },
+     {
+      "id": "s3-i",
+      "k": "image",
+      "img": "stand"
+     }
+    ]
+   },
+   {
+    "id": "s4",
+    "layout": "titre-contenu",
+    "notes": "Conclure sur ce que le stage m'a appris, puis remercier le jury.",
+    "el": [
+     {
+      "id": "s4-t",
+      "k": "titre",
+      "txt": "Bilan"
+     },
+     {
+      "id": "s4-c",
+      "k": "puces",
+      "items": [
+       "Abonnés Instagram : +18 %",
+       "300 contacts au salon",
+       "Des compétences en gestion de projet"
+      ]
+     }
+    ]
+   }
+  ],
+  "cur": "s2"
+ },
+ "etapes": [
+  {
+   "at": "s2",
+   "tab": "Insertion",
+   "btn": "En-tête/pied de page",
+   "dialog": {
+    "titre": "En-tête et pied de page",
+    "lignes": [
+     [
+      "Date et heure",
+      "☐"
+     ],
+     [
+      "Numéro de diapositive",
+      "☑",
+      "☐"
+     ],
+     [
+      "Pied de page",
+      "☐"
+     ],
+     [
+      "Texte du pied de page",
+      ""
+     ],
+     [
+      "Ne pas afficher sur la diapositive de titre",
+      "☐"
+     ]
+    ],
+    "hot": [
+     1
+    ],
+    "okLabel": "Appliquer partout"
+   },
+   "t": "Insertion › En-tête/pied de page, puis cochez Numéro de diapositive."
+  },
+  {
+   "tab": "Insertion",
+   "dialog": {
+    "titre": "En-tête et pied de page",
+    "lignes": [
+     [
+      "Date et heure",
+      "☐"
+     ],
+     [
+      "Numéro de diapositive",
+      "☑"
+     ],
+     [
+      "Pied de page",
+      "☑",
+      "☐"
+     ],
+     [
+      "Texte du pied de page",
+      "Léa Martin · Soutenance de stage",
+      ""
+     ],
+     [
+      "Ne pas afficher sur la diapositive de titre",
+      "☐"
+     ]
+    ],
+    "hot": [
+     2,
+     3
+    ],
+    "okLabel": "Appliquer partout"
+   },
+   "t": "Cochez Pied de page et tapez le texte qui apparaîtra en bas de chaque diapositive."
+  },
+  {
+   "tab": "Insertion",
+   "dialog": {
+    "titre": "En-tête et pied de page",
+    "lignes": [
+     [
+      "Date et heure",
+      "☐"
+     ],
+     [
+      "Numéro de diapositive",
+      "☑"
+     ],
+     [
+      "Pied de page",
+      "☑"
+     ],
+     [
+      "Texte du pied de page",
+      "Léa Martin · Soutenance de stage"
+     ],
+     [
+      "Ne pas afficher sur la diapositive de titre",
+      "☑",
+      "☐"
+     ]
+    ],
+    "hot": [
+     4
+    ],
+    "okLabel": "Appliquer partout",
+    "ok": true
+   },
+   "pied": {
+    "txt": "Léa Martin · Soutenance de stage",
+    "num": true,
+    "saufTitre": true
+   },
+   "t": "Cochez Ne pas afficher sur la diapositive de titre, puis cliquez sur Appliquer partout."
+  },
+  {
+   "at": "s1",
+   "tab": "Insertion",
+   "t": "La diapositive de titre reste sans pied de page ; les autres sont numérotées automatiquement."
+  }
+ ],
+ "guide": {
+  "question": "Comment numéroter les diapositives dans PowerPoint ?",
+  "intro": "Insertion › En-tête/pied de page ouvre une fenêtre : cochez Numéro de diapositive, puis, si vous le souhaitez, Pied de page avec le texte à répéter (votre nom, le titre). Cochez Ne pas afficher sur la diapositive de titre et cliquez sur Appliquer partout. Les numéros se mettent à jour seuls quand vous ajoutez ou déplacez des diapositives.",
+  "exemple": {
+   "titre": "Pour une soutenance",
+   "formule": "Numéro + pied de page",
+   "explication": "Le jury peut citer une diapositive par son numéro pendant les questions."
+  },
+  "erreurs": [
+   [
+    "Le numéro n'apparaît pas",
+    "Le thème ne prévoit pas d'emplacement sur cette disposition : vérifiez le masque des diapositives."
+   ],
+   [
+    "Le pied de page n'est que sur une diapositive",
+    "Vous avez cliqué sur Appliquer au lieu d'Appliquer partout."
+   ]
+  ],
+  "faq": [
+   [
+    "Comment commencer la numérotation à 0 ?",
+    "Création › Taille des diapositives › Taille personnalisée › Numéroter à partir de : 0."
+   ],
+   [
+    "Comment changer la police du numéro ?",
+    "Dans le masque des diapositives, mettez en forme la zone du numéro."
+   ],
+   [
+    "Comment ajouter la date ?",
+    "Cochez Date et heure, fixe ou mise à jour automatiquement."
+   ]
+  ]
+ },
+ "voirAussi": [
+  "masque-des-diapositives",
+  "mode-presentateur",
+  "exporter-en-pdf-powerpoint"
+ ]
+}

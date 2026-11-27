@@ -656,7 +656,7 @@ table.sheet{border-collapse:collapse;font-size:14px;font-family:var(--f-body);fo
 .pmain{width:100%;max-width:640px}
 .pmain.pop .pslide{animation:wpop 1.4s ease-out}
 .pmain,.pmini{container-type:inline-size}
-.pslide{position:relative;width:100%;aspect-ratio:16/9;background:#fff;color:#222;font-family:Aptos,"Segoe UI",Arial,sans-serif;box-shadow:0 2px 10px rgba(0,0,0,.18);overflow:hidden;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:auto 1fr;gap:2.4cqw 3cqw;padding:4.5cqw 6cqw 7cqw;align-content:stretch}
+.pslide{position:relative;width:100%;aspect-ratio:16/9;background:#fff;color:#222;font-family:var(--pfont,Aptos,"Segoe UI",Arial,sans-serif);box-shadow:0 2px 10px rgba(0,0,0,.18);overflow:hidden;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:auto 1fr;gap:2.4cqw 3cqw;padding:4.5cqw 6cqw 7cqw;align-content:stretch}
 .pdeco{position:absolute;inset:0;pointer-events:none}
 .pe{position:relative;grid-column:1/-1;min-width:0;line-height:1.2;border:1px solid transparent;border-radius:2px;padding:.6cqw 1cqw}
 .pe-titre{font-size:4.4cqw;font-weight:600;align-self:end}
@@ -678,7 +678,7 @@ table.sheet{border-collapse:collapse;font-size:14px;font-family:var(--f-body);fo
 .panim{position:absolute;left:-2.6cqw;top:0;font-size:1.6cqw;line-height:1;padding:.3cqw .6cqw;background:#e9e9e9;border:1px solid #bdbdbd;color:#333;font-weight:400}
 .phid{visibility:hidden}
 .pfoot{position:absolute;left:6cqw;right:6cqw;bottom:2.4cqw;display:flex;justify-content:space-between;font-size:1.6cqw;color:#777}
-.plogo{position:absolute;right:2.4cqw;top:2cqw;width:11cqw}
+.plogo{position:absolute;right:2.4cqw;top:2cqw;width:14cqw}
 .plogo svg{display:block;width:100%}
 /* dispositions */
 .lay-titre,.lay-section{grid-template-rows:1fr auto auto 1fr}
@@ -705,3 +705,54 @@ table.sheet{border-collapse:collapse;font-size:14px;font-family:var(--f-body);fo
 .wdoc.pshow .pslide{box-shadow:none}
 @media (max-width:640px){.wppt .wstatus{gap:10px;white-space:nowrap}.wppt .wstatus span:nth-child(2){display:none}.wppt .wnav{width:74px;padding:8px 4px 8px 2px;gap:6px}.pthumb .pn{width:11px;font-size:9px}.wppt .wdoc{padding:10px 8px}.panim{display:none}}
 @media (max-width:640px){.wppt .wstage{height:300px}}
+
+/* PowerPoint : mise en forme, images, graphiques, SmartArt */
+.pe-titre{color:var(--ptc,inherit)}
+.pu-coche{list-style:"✓  "}.pu-carre{list-style:square}
+.pe-puces ol{margin:0;padding-left:3.4cqw}
+.pe-puces li{position:relative}
+.pe-puces li .panim{left:-6cqw}
+.pimg{position:relative;line-height:0;margin:auto;width:100%;max-width:44cqw;aspect-ratio:16/10;transition:aspect-ratio .5s}
+.pimg svg{width:100%!important;height:100%!important;max-height:none!important;border-radius:0!important}
+.pcrop-carre{aspect-ratio:1/1;max-width:30cqw}
+.pcrop{outline:2px solid #111;outline-offset:2px}
+.pcrop::before,.pcrop::after{content:"";position:absolute;width:3cqw;height:3cqw;border:.7cqw solid #111;z-index:2}
+.pcrop::before{left:-1cqw;top:-1cqw;border-right:0;border-bottom:0}.pcrop::after{right:-1cqw;bottom:-1cqw;border-left:0;border-top:0}
+.pis-ombre{box-shadow:1.2cqw 1.2cqw 1.6cqw rgba(0,0,0,.45);border:.6cqw solid #fff}
+.pe-graph svg{display:block;width:100%;max-height:30cqw}
+.pe-graph text{font-family:inherit}
+.psm{display:flex;align-items:center;gap:1.2cqw;height:100%;padding:2cqw 0}
+.psm-b{flex:1;min-height:12cqw;display:flex;align-items:center;justify-content:center;text-align:center;background:var(--pacc);color:#fff;border-radius:1cqw;padding:1.4cqw;font-size:2.2cqw}
+.psm-multi .psm-1{background:#e07a1f}.psm-multi .psm-2{background:#8a4fbf}.psm-multi .psm-3{background:#c43e1c}
+.psm-a{flex:none;width:0;height:0;border-left:1.8cqw solid var(--pacc);border-top:1.4cqw solid transparent;border-bottom:1.4cqw solid transparent;opacity:.8}
+.plogo{background:#fff;border-radius:.8cqw;padding:.6cqw}
+.pc-vert{--pacc:#3a8b3a;--ptc:#2c6e2c}.th-ion.pc-vert{background:#1f4a2c;--ptc:#fff}.th-ion.pc-vert .pdeco{background:linear-gradient(90deg,transparent 0 92%,#4a9a5c 92% 100%)}
+.pc-violet{--pacc:#7b4bb0;--ptc:#5b2f8c}.th-ion.pc-violet{background:#3a2552;--ptc:#fff}.th-ion.pc-violet .pdeco{background:linear-gradient(90deg,transparent 0 92%,#9a6bd0 92% 100%)}
+.pfm{color:#999}
+.pthumb-l{padding-left:14px}
+.pthumb-l .pn{display:none}
+/* transitions et diaporama */
+.ptr-fondu .pslide{animation:fadein 1s}
+.ptr-poussee .pslide{animation:ppush .8s ease-out}
+@keyframes ppush{from{transform:translateY(100%)}}
+.pin .pslide{animation:fadein .5s}
+.pnoir{width:100%;height:100%;background:#000}
+.wdoc.pshow .pvide{border:0}
+/* mode Présentateur */
+.wdoc.ppres{background:#1f1f1f;color:#eee;padding:10px;display:block}
+.ppv{display:grid;grid-template-columns:3fr 2fr;grid-template-rows:auto 1fr;gap:10px;height:100%}
+.ppv-top{grid-column:1/-1;display:flex;gap:14px;align-items:center;font-size:13px;padding:2px 4px;border-radius:6px}
+.ppv-top b{font-variant-numeric:tabular-nums;font-size:15px}
+.ppv .pmain{max-width:none}
+.ppv small{display:block;font-size:11px;color:#bbb;margin:4px 0}
+.ppv-side{display:flex;flex-direction:column;gap:8px;min-height:0}
+.ppv-nx .pmain{width:80%}
+.ppv-fin{aspect-ratio:16/9;background:#000;display:flex;align-items:center;justify-content:center;font-size:11px;color:#aaa}
+.ppv-notes{flex:1;min-height:0;overflow:auto;background:#2b2b2b;border-radius:6px;padding:8px 10px;font-size:13px;line-height:1.45}
+/* PDF */
+.wdoc.ppdf{justify-content:flex-start;overflow:auto;gap:14px}
+.ppdf .pmain{max-width:520px}
+.ppdfbar{align-self:stretch;background:#3b3f42;color:#ddd;font-size:12px;padding:6px 10px;border-radius:4px}
+@media (max-width:640px){.ppv{grid-template-columns:1fr 1fr;gap:6px}.ppv-notes{font-size:11px;padding:6px}.ppv-top b{font-size:13px}}
+.pe-tableau td,.pe-tableau th{height:3.6cqw}
+.wdoc.pshow .pmain{width:auto}

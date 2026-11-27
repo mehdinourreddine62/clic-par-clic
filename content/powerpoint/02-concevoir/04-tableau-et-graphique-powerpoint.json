@@ -1,0 +1,348 @@
+{
+ "id": "tableau-et-graphique-powerpoint",
+ "titre": "Insérer un tableau ou un graphique venant d'Excel",
+ "niveau": 2,
+ "resume": "Créer un tableau dans une diapositive, puis copier un graphique Excel et choisir l'option de collage.",
+ "motsCles": "powerpoint tableau insérer graphique excel copier coller options de collage lier données diapositive",
+ "syntaxe": "Insertion › Tableau · Ctrl + C dans Excel, Ctrl + V dans PowerPoint",
+ "titreSeo": "Tableau et graphique Excel dans PowerPoint",
+ "arguments": [
+  [
+   "Insertion › Tableau",
+   "Glisser sur la grille pour choisir sa taille"
+  ],
+  [
+   "Tab",
+   "Cellule suivante"
+  ],
+  [
+   "Ctrl + C puis Ctrl + V",
+   "Copier le graphique d'Excel vers PowerPoint"
+  ],
+  [
+   "Options de collage",
+   "Thème de destination, mise en forme source, lien, image"
+  ]
+ ],
+ "document": {
+  "theme": "ion",
+  "slides": [
+   {
+    "id": "s1",
+    "layout": "titre",
+    "notes": "Bonjour, je suis Léa Martin. Je vais vous présenter mes dix semaines de stage chez Lumen.",
+    "el": [
+     {
+      "id": "s1-t",
+      "k": "titre",
+      "txt": "Soutenance de stage"
+     },
+     {
+      "id": "s1-s",
+      "k": "sous",
+      "txt": "Léa Martin · BTS Communication · juin 2026"
+     }
+    ]
+   },
+   {
+    "id": "s2",
+    "layout": "titre-contenu",
+    "notes": "Une entreprise de 45 personnes : présenter ses produits et ses clients en une minute.",
+    "el": [
+     {
+      "id": "s2-t",
+      "k": "titre",
+      "txt": "Présentation de Lumen"
+     },
+     {
+      "id": "s2-c",
+      "k": "puces",
+      "items": [
+       "Fabricant de luminaires, à Lyon",
+       "45 salariés",
+       "Clients : magasins de décoration"
+      ]
+     }
+    ]
+   },
+   {
+    "id": "s3",
+    "layout": "deux",
+    "notes": "Insister sur le salon : 300 contacts recueillis en trois jours.",
+    "el": [
+     {
+      "id": "s3-t",
+      "k": "titre",
+      "txt": "Mes missions"
+     },
+     {
+      "id": "s3-a",
+      "k": "puces",
+      "items": [
+       "Animer les réseaux sociaux",
+       "Préparer le salon Maison & Objet",
+       "Rédiger la lettre d'information"
+      ]
+     },
+     {
+      "id": "s3-i",
+      "k": "image",
+      "img": "stand"
+     }
+    ]
+   },
+   {
+    "id": "s4",
+    "layout": "titre-contenu",
+    "notes": "Conclure sur ce que le stage m'a appris, puis remercier le jury.",
+    "el": [
+     {
+      "id": "s4-t",
+      "k": "titre",
+      "txt": "Bilan"
+     },
+     {
+      "id": "s4-c",
+      "k": "puces",
+      "items": [
+       "Abonnés Instagram : +18 %",
+       "300 contacts au salon",
+       "Des compétences en gestion de projet"
+      ]
+     }
+    ]
+   }
+  ],
+  "cur": "s3"
+ },
+ "etapes": [
+  {
+   "at": "s3",
+   "tab": "Accueil",
+   "btn": "Nouvelle diapositive",
+   "groupe": "Diapositives",
+   "ctx": {
+    "items": [
+     "Titre",
+     "Titre et contenu",
+     "Deux contenus",
+     "Titre seul",
+     "Vide"
+    ],
+    "hot": 3
+   },
+   "ajout": [
+    {
+     "after": "s3",
+     "slide": {
+      "id": "s5",
+      "layout": "titre-seul",
+      "el": [
+       {
+        "id": "s5-t",
+        "k": "titre",
+        "txt": "Résultats du stage"
+       }
+      ]
+     }
+    }
+   ],
+   "t": "Ajoutez une diapositive Titre seul après les missions et tapez son titre : Résultats du stage."
+  },
+  {
+   "tab": "Insertion",
+   "btn": "Tableau",
+   "grille": [
+    3,
+    4
+   ],
+   "elAjout": [
+    {
+     "slide": "s5",
+     "el": {
+      "id": "s5-tab",
+      "k": "tableau",
+      "lignes": [
+       [
+        "",
+        "",
+        ""
+       ],
+       [
+        "",
+        "",
+        ""
+       ],
+       [
+        "",
+        "",
+        ""
+       ],
+       [
+        "",
+        "",
+        ""
+       ]
+      ]
+     }
+    }
+   ],
+   "t": "Insertion › Tableau : glissez sur la grille jusqu'à 3 colonnes et 4 lignes."
+  },
+  {
+   "at": "s5-tab",
+   "tab": "Insertion",
+   "props": {
+    "s5-tab": {
+     "lignes": [
+      [
+       "Indicateur",
+       "Mars",
+       "Juin"
+      ],
+      [
+       "Abonnés Instagram",
+       "2 150",
+       "2 540"
+      ],
+      [
+       "Ouverture de la lettre",
+       "21 %",
+       "27 %"
+      ],
+      [
+       "Visiteurs du site par mois",
+       "3 400",
+       "4 100"
+      ]
+     ]
+    }
+   },
+   "t": "Cliquez dans la première cellule et tapez ; la touche Tab passe à la cellule suivante."
+  },
+  {
+   "tab": "Accueil",
+   "btn": "Nouvelle diapositive",
+   "groupe": "Diapositives",
+   "ctx": {
+    "items": [
+     "Titre",
+     "Titre et contenu",
+     "Deux contenus",
+     "Titre seul",
+     "Vide"
+    ],
+    "hot": 3
+   },
+   "ajout": [
+    {
+     "after": "s5",
+     "slide": {
+      "id": "s6",
+      "layout": "titre-seul",
+      "el": [
+       {
+        "id": "s6-t",
+        "k": "titre",
+        "txt": "Évolution des abonnés Instagram"
+       }
+      ]
+     }
+    }
+   ],
+   "t": "Le graphique existe déjà dans Excel : ajoutez une diapositive Titre seul pour l'accueillir."
+  },
+  {
+   "tab": "Accueil",
+   "keys": "Ctrl + C",
+   "toast": "Dans Excel : graphique sélectionné et copié",
+   "t": "Dans Excel, cliquez sur le bord du graphique et copiez-le avec Ctrl + C."
+  },
+  {
+   "at": "s6",
+   "tab": "Accueil",
+   "keys": "Ctrl + V",
+   "elAjout": [
+    {
+     "slide": "s6",
+     "el": {
+      "id": "s6-g",
+      "k": "graph",
+      "barres": [
+       [
+        "Mars",
+        2150
+       ],
+       [
+        "Avril",
+        2260
+       ],
+       [
+        "Mai",
+        2410
+       ],
+       [
+        "Juin",
+        2540
+       ]
+      ]
+     }
+    }
+   ],
+   "t": "Revenez dans PowerPoint, cliquez sur la diapositive et collez avec Ctrl + V."
+  },
+  {
+   "at": "s6-g",
+   "tab": "Accueil",
+   "ctx": {
+    "items": [
+     "Utiliser le thème de destination",
+     "Conserver la mise en forme source",
+     "Lier les données (thème de destination)",
+     "Lier les données (mise en forme source)",
+     "Image"
+    ],
+    "hot": 0
+   },
+   "t": "Les Options de collage gardent les couleurs de la présentation, ou collent une simple image."
+  }
+ ],
+ "guide": {
+  "question": "Comment mettre un graphique Excel dans PowerPoint ?",
+  "intro": "Dans Excel, cliquez sur le bord du graphique et copiez-le avec Ctrl + C. Dans PowerPoint, cliquez sur la diapositive et collez avec Ctrl + V. Le bouton Options de collage, qui apparaît en bas à droite du graphique, permet de prendre les couleurs de la présentation (thème de destination), de garder celles d'Excel, de lier les données au classeur ou de coller une image. Pour un tableau simple, Insertion › Tableau suffit.",
+  "exemple": {
+   "titre": "Le bon choix",
+   "formule": "Utiliser le thème de destination",
+   "explication": "Le graphique prend les couleurs et la police de la présentation, et reste modifiable."
+  },
+  "erreurs": [
+   [
+    "Le graphique change quand le fichier Excel change",
+    "Il a été collé avec liaison : c'est voulu. Collez-le en image pour le figer."
+   ],
+   [
+    "Le graphique est flou",
+    "Il a été collé en image puis agrandi : recollez-le en graphique."
+   ]
+  ],
+  "faq": [
+   [
+    "Comment modifier les données après le collage ?",
+    "Clic droit sur le graphique › Modifier les données."
+   ],
+   [
+    "Faut-il garder le fichier Excel ?",
+    "Seulement si les données sont liées ; sinon elles sont incorporées dans la présentation."
+   ],
+   [
+    "Comment ajouter une ligne au tableau ?",
+    "Dans la dernière cellule, appuyez sur Tab."
+   ]
+  ]
+ },
+ "voirAussi": [
+  "inserer-une-image-powerpoint",
+  "smartart-powerpoint",
+  "mise-en-forme-texte-et-puces"
+ ]
+}

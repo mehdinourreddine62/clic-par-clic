@@ -1,0 +1,219 @@
+{
+ "id": "smartart-powerpoint",
+ "titre": "Transformer une liste en SmartArt",
+ "niveau": 2,
+ "resume": "Convertir une liste à puces en schéma SmartArt, ajouter une forme et changer les couleurs.",
+ "motsCles": "powerpoint smartart convertir liste schéma processus étapes diagramme formes couleurs",
+ "syntaxe": "Accueil › Convertir en SmartArt",
+ "titreSeo": "SmartArt PowerPoint : transformer une liste en schéma",
+ "arguments": [
+  [
+   "Convertir en SmartArt",
+   "Transforme une liste à puces en schéma"
+  ],
+  [
+   "Processus",
+   "Des étapes reliées par des flèches"
+  ],
+  [
+   "Ajouter une forme",
+   "Une case de plus"
+  ],
+  [
+   "Modifier les couleurs",
+   "Couleurs du thème ou couleurs vives"
+  ]
+ ],
+ "document": {
+  "theme": "ion",
+  "slides": [
+   {
+    "id": "s1",
+    "layout": "titre",
+    "notes": "Bonjour, je suis Léa Martin. Je vais vous présenter mes dix semaines de stage chez Lumen.",
+    "el": [
+     {
+      "id": "s1-t",
+      "k": "titre",
+      "txt": "Soutenance de stage"
+     },
+     {
+      "id": "s1-s",
+      "k": "sous",
+      "txt": "Léa Martin · BTS Communication · juin 2026"
+     }
+    ]
+   },
+   {
+    "id": "s2",
+    "layout": "titre-contenu",
+    "notes": "Une entreprise de 45 personnes : présenter ses produits et ses clients en une minute.",
+    "el": [
+     {
+      "id": "s2-t",
+      "k": "titre",
+      "txt": "Présentation de Lumen"
+     },
+     {
+      "id": "s2-c",
+      "k": "puces",
+      "items": [
+       "Fabricant de luminaires, à Lyon",
+       "45 salariés",
+       "Clients : magasins de décoration"
+      ]
+     }
+    ]
+   },
+   {
+    "id": "s3",
+    "layout": "deux",
+    "notes": "Insister sur le salon : 300 contacts recueillis en trois jours.",
+    "el": [
+     {
+      "id": "s3-t",
+      "k": "titre",
+      "txt": "Mes missions"
+     },
+     {
+      "id": "s3-a",
+      "k": "puces",
+      "items": [
+       "Animer les réseaux sociaux",
+       "Préparer le salon Maison & Objet",
+       "Rédiger la lettre d'information"
+      ]
+     },
+     {
+      "id": "s3-i",
+      "k": "image",
+      "img": "stand"
+     }
+    ]
+   },
+   {
+    "id": "s4",
+    "layout": "titre-contenu",
+    "notes": "Conclure sur ce que le stage m'a appris, puis remercier le jury.",
+    "el": [
+     {
+      "id": "s4-t",
+      "k": "titre",
+      "txt": "Le salon, étape par étape"
+     },
+     {
+      "id": "s4-c",
+      "k": "puces",
+      "items": [
+       "Préparer le stand",
+       "Accueillir les visiteurs",
+       "Relancer les contacts"
+      ]
+     }
+    ]
+   }
+  ],
+  "cur": "s4"
+ },
+ "etapes": [
+  {
+   "at": "s4-c",
+   "tab": "Accueil",
+   "btn": "Convertir en SmartArt",
+   "ctx": {
+    "items": [
+     "Liste à puces verticale",
+     "Processus de base",
+     "Cycle de base",
+     "Autres graphiques SmartArt…"
+    ],
+    "hot": 1
+   },
+   "props": {
+    "s4-c": {
+     "k": "smart"
+    }
+   },
+   "t": "Sélectionnez la liste, puis Accueil › Convertir en SmartArt › Processus de base."
+  },
+  {
+   "sel": "s4-c",
+   "tab": "Création SmartArt",
+   "spot": "onglet:Création SmartArt",
+   "t": "Le SmartArt sélectionné, l'onglet Création SmartArt apparaît avec ses réglages."
+  },
+  {
+   "sel": "s4-c",
+   "tab": "Création SmartArt",
+   "btn": "Ajouter une forme",
+   "props": {
+    "s4-c": {
+     "items": [
+      "Préparer le stand",
+      "Accueillir les visiteurs",
+      "Relancer les contacts",
+      "Mesurer les résultats"
+     ]
+    }
+   },
+   "t": "Ajouter une forme crée une case de plus ; tapez son texte directement dedans."
+  },
+  {
+   "sel": "s4-c",
+   "tab": "Création SmartArt",
+   "btn": "Modifier les couleurs",
+   "ctx": {
+    "items": [
+     "Couleurs du thème",
+     "Coloré : couleurs vives",
+     "Coloré : accentuation"
+    ],
+    "hot": 1
+   },
+   "props": {
+    "s4-c": {
+     "multi": true
+    }
+   },
+   "t": "Modifier les couleurs : chaque étape prend une couleur différente."
+  }
+ ],
+ "guide": {
+  "question": "Comment convertir une liste en SmartArt dans PowerPoint ?",
+  "intro": "Sélectionnez la zone de texte qui contient la liste à puces, puis Accueil › Convertir en SmartArt et choisissez un modèle : Processus pour des étapes, Cycle pour un fonctionnement qui se répète, Liste pour des idées de même importance. L'onglet Création SmartArt permet ensuite d'ajouter des formes et de changer les couleurs. Insertion › SmartArt crée un schéma vide.",
+  "exemple": {
+   "titre": "Le bon modèle",
+   "formule": "Processus de base",
+   "explication": "Pour des étapes dans l'ordre : chaque puce devient une case, reliée à la suivante par une flèche."
+  },
+  "erreurs": [
+   [
+    "Le texte devient minuscule",
+    "Trop de cases ou trop de mots : gardez trois à cinq étapes et des mots courts."
+   ],
+   [
+    "Le bouton est grisé",
+    "Le texte n'est pas sélectionné : cliquez sur le bord de la zone de texte."
+   ]
+  ],
+  "faq": [
+   [
+    "Comment revenir à une liste ?",
+    "Création SmartArt › Convertir › Convertir en texte."
+   ],
+   [
+    "Comment modifier le texte d'une case ?",
+    "Cliquez dans la case et tapez, ou ouvrez le Volet Texte."
+   ],
+   [
+    "Peut-on animer un SmartArt ?",
+    "Oui : Animations, puis Options d'effet › Un par un."
+   ]
+  ]
+ },
+ "voirAussi": [
+  "mise-en-forme-texte-et-puces",
+  "animations-powerpoint",
+  "tableau-et-graphique-powerpoint"
+ ]
+}

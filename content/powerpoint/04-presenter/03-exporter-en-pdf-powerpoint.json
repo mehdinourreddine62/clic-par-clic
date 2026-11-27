@@ -1,0 +1,235 @@
+{
+ "id": "exporter-en-pdf-powerpoint",
+ "titre": "Exporter une présentation en PDF",
+ "niveau": 1,
+ "resume": "Enregistrer la présentation au format PDF pour l'envoyer au jury ou la garder en secours.",
+ "motsCles": "powerpoint exporter pdf enregistrer en pdf convertir publier envoyer jury diapositives",
+ "syntaxe": "Fichier › Exporter › Créer un document PDF/XPS",
+ "titreSeo": "Exporter une présentation PowerPoint en PDF",
+ "arguments": [
+  [
+   "Fichier › Exporter",
+   "Créer un document PDF/XPS"
+  ],
+  [
+   "Nom de fichier",
+   "Votre nom et le sujet"
+  ],
+  [
+   "Publier",
+   "Crée le PDF"
+  ],
+  [
+   "Le PDF",
+   "Lisible partout, sans PowerPoint"
+  ]
+ ],
+ "document": {
+  "theme": "ion",
+  "slides": [
+   {
+    "id": "s1",
+    "layout": "titre",
+    "notes": "Bonjour, je suis Léa Martin. Je vais vous présenter mes dix semaines de stage chez Lumen.",
+    "el": [
+     {
+      "id": "s1-t",
+      "k": "titre",
+      "txt": "Soutenance de stage"
+     },
+     {
+      "id": "s1-s",
+      "k": "sous",
+      "txt": "Léa Martin · BTS Communication · juin 2026"
+     }
+    ]
+   },
+   {
+    "id": "s2",
+    "layout": "titre-contenu",
+    "notes": "Une entreprise de 45 personnes : présenter ses produits et ses clients en une minute.",
+    "el": [
+     {
+      "id": "s2-t",
+      "k": "titre",
+      "txt": "Présentation de Lumen"
+     },
+     {
+      "id": "s2-c",
+      "k": "puces",
+      "items": [
+       "Fabricant de luminaires, à Lyon",
+       "45 salariés",
+       "Clients : magasins de décoration"
+      ]
+     }
+    ]
+   },
+   {
+    "id": "s3",
+    "layout": "deux",
+    "notes": "Insister sur le salon : 300 contacts recueillis en trois jours.",
+    "el": [
+     {
+      "id": "s3-t",
+      "k": "titre",
+      "txt": "Mes missions"
+     },
+     {
+      "id": "s3-a",
+      "k": "puces",
+      "items": [
+       "Animer les réseaux sociaux",
+       "Préparer le salon Maison & Objet",
+       "Rédiger la lettre d'information"
+      ]
+     },
+     {
+      "id": "s3-i",
+      "k": "image",
+      "img": "stand"
+     }
+    ]
+   },
+   {
+    "id": "s4",
+    "layout": "titre-contenu",
+    "notes": "Conclure sur ce que le stage m'a appris, puis remercier le jury.",
+    "el": [
+     {
+      "id": "s4-t",
+      "k": "titre",
+      "txt": "Bilan"
+     },
+     {
+      "id": "s4-c",
+      "k": "puces",
+      "items": [
+       "Abonnés Instagram : +18 %",
+       "300 contacts au salon",
+       "Des compétences en gestion de projet"
+      ]
+     }
+    ]
+   }
+  ],
+  "cur": "s1"
+ },
+ "etapes": [
+  {
+   "tab": "Fichier",
+   "btn": "Exporter",
+   "ctx": {
+    "items": [
+     "Créer un document PDF/XPS",
+     "Créer une vidéo",
+     "Créer des documents"
+    ],
+    "hot": 0
+   },
+   "t": "Fichier › Exporter › Créer un document PDF/XPS."
+  },
+  {
+   "tab": "Fichier",
+   "dialog": {
+    "titre": "Publier au format PDF ou XPS",
+    "lignes": [
+     [
+      "Dossier",
+      "Documents › Stage"
+     ],
+     [
+      "Nom de fichier",
+      "Soutenance Léa Martin",
+      "Présentation1"
+     ],
+     [
+      "Type",
+      "PDF"
+     ],
+     [
+      "Optimiser pour",
+      "Standard (en ligne et impression)"
+     ]
+    ],
+    "hot": [
+     1
+    ],
+    "okLabel": "Publier"
+   },
+   "t": "Choisissez le dossier et donnez un nom clair au fichier ; le type PDF est déjà choisi."
+  },
+  {
+   "tab": "Fichier",
+   "dialog": {
+    "titre": "Publier au format PDF ou XPS",
+    "lignes": [
+     [
+      "Dossier",
+      "Documents › Stage"
+     ],
+     [
+      "Nom de fichier",
+      "Soutenance Léa Martin"
+     ],
+     [
+      "Type",
+      "PDF"
+     ],
+     [
+      "Optimiser pour",
+      "Standard (en ligne et impression)"
+     ]
+    ],
+    "hot": [],
+    "ok": true,
+    "okLabel": "Publier"
+   },
+   "vue": "pdf",
+   "t": "Cliquez sur Publier : le PDF s'ouvre, une page par diapositive, sans les notes."
+  },
+  {
+   "tab": "Fichier",
+   "spot": "doc",
+   "t": "Envoyez ce PDF au jury, et gardez-le sur une clé USB en secours le jour de l'oral."
+  }
+ ],
+ "guide": {
+  "question": "Comment enregistrer un PowerPoint en PDF ?",
+  "intro": "Fichier › Exporter › Créer un document PDF/XPS ouvre une fenêtre d'enregistrement : choisissez le dossier, le nom du fichier, puis cliquez sur Publier. Chaque diapositive devient une page du PDF ; les notes n'y figurent pas. Le bouton Options permet de publier plusieurs diapositives par page ou les pages de notes.",
+  "exemple": {
+   "titre": "Nom du fichier",
+   "formule": "Soutenance Léa Martin.pdf",
+   "explication": "Un nom clair, avec votre nom, aide le jury à retrouver votre document."
+  },
+  "erreurs": [
+   [
+    "Les animations ont disparu",
+    "Un PDF est figé : chaque diapositive est affichée dans son état final."
+   ],
+   [
+    "Le fichier est trop lourd pour un courriel",
+    "Choisissez Optimiser pour : Taille minimale, ou compressez les images avant."
+   ]
+  ],
+  "faq": [
+   [
+    "Comment mettre plusieurs diapositives par page ?",
+    "Dans la fenêtre, Options › Publier : Documents, puis le nombre par page."
+   ],
+   [
+    "Comment inclure les notes ?",
+    "Options › Publier : Pages de notes."
+   ],
+   [
+    "Peut-on présenter à partir du PDF ?",
+    "Oui, en plein écran dans le lecteur PDF, mais sans animations ni mode Présentateur."
+   ]
+  ]
+ },
+ "voirAussi": [
+  "mode-presentateur",
+  "numeros-et-pied-de-page-powerpoint",
+  "lancer-le-diaporama"
+ ]
+}
