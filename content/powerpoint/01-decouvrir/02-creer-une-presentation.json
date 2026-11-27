@@ -1,0 +1,131 @@
+{
+ "id": "creer-une-presentation",
+ "titre": "Créer une présentation et choisir un thème",
+ "niveau": 1,
+ "resume": "Ouvrir une présentation vide, écrire la diapositive de titre, appliquer un thème et enregistrer.",
+ "motsCles": "powerpoint créer présentation nouvelle diapositive de titre thème design couleurs enregistrer ctrl s soutenance",
+ "syntaxe": "Fichier › Nouveau · Création › Thèmes",
+ "titreSeo": "Créer une présentation PowerPoint et choisir un thème",
+ "arguments": [
+  [
+   "Fichier › Nouveau",
+   "Ouvre une présentation vide"
+  ],
+  [
+   "Zone de titre",
+   "Cliquer dedans puis taper"
+  ],
+  [
+   "Création › Thèmes",
+   "Couleurs, polices et décor d'un seul clic"
+  ],
+  [
+   "Ctrl + S",
+   "Enregistrer"
+  ]
+ ],
+ "document": {
+  "theme": "office",
+  "slides": [
+   {
+    "id": "s1",
+    "layout": "titre",
+    "el": [
+     {
+      "id": "s1-t",
+      "k": "titre",
+      "txt": ""
+     },
+     {
+      "id": "s1-s",
+      "k": "sous",
+      "txt": ""
+     }
+    ]
+   }
+  ]
+ },
+ "etapes": [
+  {
+   "tab": "Fichier",
+   "btn": "Nouveau",
+   "ctx": {
+    "items": [
+     "Nouvelle présentation",
+     "Rechercher des modèles en ligne"
+    ],
+    "hot": 0
+   },
+   "t": "Fichier › Nouveau › Nouvelle présentation : une diapositive de titre vide s'ouvre."
+  },
+  {
+   "at": "s1-t",
+   "textes": {
+    "s1-t": "Soutenance de stage"
+   },
+   "t": "Cliquez dans la zone de titre et tapez : Soutenance de stage."
+  },
+  {
+   "at": "s1-s",
+   "textes": {
+    "s1-s": "Léa Martin · BTS Communication · juin 2026"
+   },
+   "t": "Cliquez dans la zone du dessous pour ajouter votre nom, votre formation et la date."
+  },
+  {
+   "tab": "Création",
+   "btn": "Facette",
+   "theme": "facette",
+   "t": "Création › Thèmes : un clic sur un thème change les couleurs, les polices et le décor."
+  },
+  {
+   "tab": "Création",
+   "btn": "Ion",
+   "theme": "ion",
+   "t": "Essayez-en un autre, ici Ion : le texte reste en place, seule l'apparence change."
+  },
+  {
+   "tab": "Création",
+   "keys": "Ctrl + S",
+   "toast": "Enregistré : Soutenance Léa Martin.pptx",
+   "t": "Enregistrez dès maintenant avec Ctrl + S, puis régulièrement pendant votre travail."
+  }
+ ],
+ "guide": {
+  "question": "Comment créer une présentation PowerPoint avec un thème ?",
+  "intro": "Fichier › Nouveau › Nouvelle présentation ouvre une présentation avec une diapositive de titre. Cliquez dans la zone « Cliquez pour ajouter un titre » et tapez, puis faites de même pour le sous-titre. L'onglet Création propose ensuite des thèmes : un clic applique à toutes les diapositives des couleurs, des polices et un décor cohérents.",
+  "exemple": {
+   "titre": "Pour une soutenance",
+   "formule": "Création › Thèmes › Ion",
+   "explication": "Choisissez un thème sobre et lisible ; gardez le même du début à la fin."
+  },
+  "erreurs": [
+   [
+    "Le thème ne s'applique qu'à une diapositive",
+    "Vous avez fait un clic droit › Appliquer aux diapositives sélectionnées : faites un clic simple sur le thème."
+   ],
+   [
+    "Le texte devient illisible",
+    "Le contraste est insuffisant : Création › Variantes propose d'autres couleurs pour le même thème."
+   ]
+  ],
+  "faq": [
+   [
+    "Comment changer seulement les couleurs ?",
+    "Création › Variantes › Couleurs."
+   ],
+   [
+    "Peut-on partir d'un modèle ?",
+    "Oui : Fichier › Nouveau propose des modèles en ligne."
+   ],
+   [
+    "Quel format de diapositive choisir ?",
+    "Le format 16:9, proposé par défaut, convient aux écrans et vidéoprojecteurs actuels."
+   ]
+  ]
+ },
+ "voirAussi": [
+  "ecran-et-ruban-powerpoint",
+  "ajouter-des-diapositives"
+ ]
+}

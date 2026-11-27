@@ -1,0 +1,193 @@
+{
+ "id": "ecran-et-ruban-powerpoint",
+ "titre": "L'écran et le ruban de PowerPoint",
+ "niveau": 1,
+ "resume": "Se repérer dans PowerPoint : miniatures, diapositive, onglets, ruban, barre d'état et notes.",
+ "motsCles": "powerpoint ppt découvrir écran ruban onglets miniatures diapositive barre d'état notes débutant interface",
+ "syntaxe": "Onglet › Groupe › Bouton",
+ "titreSeo": "Découvrir l'écran et le ruban de PowerPoint : tutoriel animé",
+ "arguments": [
+  [
+   "Miniatures",
+   "Toutes les diapositives, à gauche, dans l'ordre"
+  ],
+  [
+   "Diapositive",
+   "Au centre, celle que vous modifiez"
+  ],
+  [
+   "Ruban",
+   "Les boutons de l'onglet choisi, rangés par groupes"
+  ],
+  [
+   "Notes",
+   "Sous la diapositive, vos phrases pour l'oral"
+  ]
+ ],
+ "document": {
+  "theme": "office",
+  "slides": [
+   {
+    "id": "s1",
+    "layout": "titre",
+    "el": [
+     {
+      "id": "s1-t",
+      "k": "titre",
+      "txt": "Soutenance de stage"
+     },
+     {
+      "id": "s1-s",
+      "k": "sous",
+      "txt": "Léa Martin · BTS Communication · juin 2026"
+     }
+    ]
+   },
+   {
+    "id": "s2",
+    "layout": "titre-contenu",
+    "el": [
+     {
+      "id": "s2-t",
+      "k": "titre",
+      "txt": "Présentation de Lumen"
+     },
+     {
+      "id": "s2-c",
+      "k": "puces",
+      "items": [
+       "Fabricant de luminaires, à Lyon",
+       "45 salariés",
+       "Clients : magasins de décoration"
+      ]
+     }
+    ]
+   },
+   {
+    "id": "s3",
+    "layout": "deux",
+    "notes": "Insister sur le salon : 300 contacts recueillis en trois jours.",
+    "el": [
+     {
+      "id": "s3-t",
+      "k": "titre",
+      "txt": "Mes missions"
+     },
+     {
+      "id": "s3-a",
+      "k": "puces",
+      "items": [
+       "Animer les réseaux sociaux",
+       "Préparer le salon Maison & Objet",
+       "Rédiger la lettre d'information"
+      ]
+     },
+     {
+      "id": "s3-i",
+      "k": "image",
+      "img": "stand"
+     }
+    ]
+   },
+   {
+    "id": "s4",
+    "layout": "titre-contenu",
+    "el": [
+     {
+      "id": "s4-t",
+      "k": "titre",
+      "txt": "Bilan"
+     },
+     {
+      "id": "s4-c",
+      "k": "puces",
+      "items": [
+       "Abonnés Instagram : +18 %",
+       "300 contacts au salon",
+       "Des compétences en gestion de projet"
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ "etapes": [
+  {
+   "spot": "doc",
+   "t": "Voici PowerPoint : au centre, la diapositive en cours, celle que vous modifiez."
+  },
+  {
+   "spot": "nav",
+   "t": "À gauche, les miniatures de toutes les diapositives, dans l'ordre où elles passeront."
+  },
+  {
+   "at": "s3",
+   "t": "Cliquez sur une miniature : la diapositive s'affiche en grand au centre."
+  },
+  {
+   "spot": "onglets",
+   "t": "En haut, les onglets : Accueil, Insertion, Création, Transitions, Animations…"
+  },
+  {
+   "tab": "Création",
+   "spot": "ruban",
+   "t": "Cliquez sur un onglet : le ruban affiche ses boutons, ici les thèmes de l'onglet Création."
+  },
+  {
+   "tab": "Accueil",
+   "spot": "groupe:Diapositives",
+   "t": "Les boutons sont rangés par groupes, nommés en bas du ruban : Diapositives, Police, Paragraphe…"
+  },
+  {
+   "spot": "statut",
+   "t": "En bas, la barre d'état indique le numéro de la diapositive et leur nombre total."
+  },
+  {
+   "at": "notes",
+   "notesVue": true,
+   "t": "Cliquez sur Notes, en bas : une zone s'ouvre sous la diapositive pour préparer votre oral."
+  },
+  {
+   "tab": "Fichier",
+   "spot": "ruban",
+   "t": "L'onglet Fichier concerne toute la présentation : enregistrer, exporter en PDF, imprimer."
+  }
+ ],
+ "guide": {
+  "question": "Comment se repérer dans l'écran de PowerPoint ?",
+  "intro": "PowerPoint affiche au centre la diapositive en cours et, à gauche, les miniatures de toutes les diapositives. En haut, les onglets (Accueil, Insertion, Création, Transitions, Animations, Diaporama…) changent les boutons du ruban, rangés par groupes. En bas, la barre d'état indique le numéro de la diapositive et donne accès aux notes, ces phrases que vous seul verrez pendant l'oral.",
+  "exemple": {
+   "titre": "À retenir",
+   "formule": "Onglet › Groupe › Bouton",
+   "explication": "Les chemins des leçons se lisent ainsi : Accueil › Diapositives › Nouvelle diapositive, par exemple."
+  },
+  "erreurs": [
+   [
+    "Les miniatures ont disparu",
+    "Affichage › Normal les fait réapparaître ; sinon, élargissez la colonne de gauche avec la souris."
+   ],
+   [
+    "La zone de notes est invisible",
+    "Cliquez sur Notes dans la barre d'état, en bas de la fenêtre."
+   ]
+  ],
+  "faq": [
+   [
+    "Quelle différence entre PowerPoint et Word ?",
+    "Word produit des pages à lire ; PowerPoint produit des diapositives à projeter pendant un oral."
+   ],
+   [
+    "Où sont Enregistrer et Imprimer ?",
+    "Dans l'onglet Fichier."
+   ],
+   [
+    "Comment lancer le diaporama ?",
+    "Avec la touche F5, ou Diaporama › À partir du début."
+   ]
+  ]
+ },
+ "voirAussi": [
+  "creer-une-presentation",
+  "ajouter-des-diapositives"
+ ]
+}

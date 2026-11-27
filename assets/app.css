@@ -641,3 +641,67 @@ table.sheet{border-collapse:collapse;font-size:14px;font-family:var(--f-body);fo
 .ic.voice.on{background:var(--accent-soft);border-color:var(--accent);color:var(--accent)}
 .ic.speed{width:auto;min-width:38px;padding:0 8px;border-radius:999px;font-size:.8rem;font-weight:600;color:var(--ink);font-variant-numeric:tabular-nums}
 .ic.speed.on{background:var(--accent-soft);border-color:var(--accent);color:var(--accent)}
+
+/* ---------- PowerPoint : miniatures, diapositive 16:9, thèmes ---------- */
+.wppt .wnav{width:150px;gap:8px;padding:10px 8px 10px 4px}
+.pthumb{display:flex;gap:4px;align-items:flex-start;cursor:default;border-radius:4px}
+.pthumb .pn{flex:none;width:16px;font-size:11px;color:var(--muted);text-align:right;line-height:1.2;display:flex;flex-direction:column;align-items:flex-end;gap:2px}
+.pthumb .ptr{font-style:normal;font-size:9px;color:var(--muted)}
+.pmini{flex:1;min-width:0;overflow:hidden;border:2px solid transparent;border-radius:3px;pointer-events:none}
+.pthumb.on .pmini{border-color:#c43e1c}
+.pthumb.psel .pmini,.pthumb.wsel .pmini{border-color:#c43e1c;box-shadow:0 0 0 3px rgba(196,62,28,.25)}
+.pthumb.pop .pmini{animation:wpop 1.6s ease-out}
+.pmini .pslide{box-shadow:0 1px 2px rgba(0,0,0,.18)}
+.wppt .wdoc{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:18px 18px}
+.pmain{width:100%;max-width:640px}
+.pmain.pop .pslide{animation:wpop 1.4s ease-out}
+.pmain,.pmini{container-type:inline-size}
+.pslide{position:relative;width:100%;aspect-ratio:16/9;background:#fff;color:#222;font-family:Aptos,"Segoe UI",Arial,sans-serif;box-shadow:0 2px 10px rgba(0,0,0,.18);overflow:hidden;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:auto 1fr;gap:2.4cqw 3cqw;padding:4.5cqw 6cqw 7cqw;align-content:stretch}
+.pdeco{position:absolute;inset:0;pointer-events:none}
+.pe{position:relative;grid-column:1/-1;min-width:0;line-height:1.2;border:1px solid transparent;border-radius:2px;padding:.6cqw 1cqw}
+.pe-titre{font-size:4.4cqw;font-weight:600;align-self:end}
+.pe-sous,.pe-texte{font-size:2.5cqw}
+.pe-puces{font-size:2.4cqw;align-self:start}
+.pe-puces ul{margin:0;padding-left:3cqw}
+.pe-puces li{margin:0 0 1cqw}
+.pe-puces li.p2{margin-left:3cqw;font-size:.88em;list-style:"– "}
+.pe-image{padding:0;align-self:center;justify-self:center;width:100%}
+.pe-image svg{display:block;width:100%;height:auto;max-height:30cqw;border-radius:1cqw}
+.pe-tableau table{border-collapse:collapse;width:100%;font-size:2.2cqw}
+.pe-tableau th,.pe-tableau td{border:1px solid rgba(0,0,0,.15);padding:.6cqw 1cqw;text-align:left}
+.pe-tableau th{background:var(--pacc,#156082);color:#fff}
+.pph{border:1px dashed #9aa3ab;color:#7a838b;font-weight:400;display:flex;align-items:center;min-height:6cqw}
+.pph.pe-titre{justify-content:flex-start}
+.pmini .pslide .pph{border-color:transparent}
+.psel{border:1px solid #2b78d0!important;box-shadow:0 0 0 1px rgba(43,120,208,.35)}
+.pe.pop{animation:wpop 1.6s ease-out}
+.panim{position:absolute;left:-2.6cqw;top:0;font-size:1.6cqw;line-height:1;padding:.3cqw .6cqw;background:#e9e9e9;border:1px solid #bdbdbd;color:#333;font-weight:400}
+.phid{visibility:hidden}
+.pfoot{position:absolute;left:6cqw;right:6cqw;bottom:2.4cqw;display:flex;justify-content:space-between;font-size:1.6cqw;color:#777}
+.plogo{position:absolute;right:2.4cqw;top:2cqw;width:11cqw}
+.plogo svg{display:block;width:100%}
+/* dispositions */
+.lay-titre,.lay-section{grid-template-rows:1fr auto auto 1fr}
+.lay-titre .pe-titre,.lay-section .pe-titre{grid-row:2;font-size:6cqw;text-align:center;justify-content:center}
+.lay-titre .pe-sous,.lay-section .pe-sous,.lay-section .pe-texte{grid-row:3;text-align:center;justify-content:center}
+.lay-titre-contenu .pe-titre,.lay-deux .pe-titre,.lay-titre-seul .pe-titre{align-self:start}
+.lay-deux .pe:not(.pe-titre){grid-column:auto}
+.lay-titre-seul{grid-template-rows:auto 1fr}
+/* thèmes */
+.th-office{--pacc:#156082}
+.th-ion{--pacc:#2f8f83;background:#1b4f5a;color:#fff}
+.th-ion .pdeco{background:linear-gradient(90deg,transparent 0 92%,#2f8f83 92% 100%)}
+.th-ion .pe-titre{font-weight:300;letter-spacing:.02em}
+.th-ion .pph{border-color:rgba(255,255,255,.5);color:rgba(255,255,255,.75)}
+.th-ion .pfoot{color:rgba(255,255,255,.7)}
+.th-ion .pe-tableau th,.th-ion .pe-tableau td{border-color:rgba(255,255,255,.3)}
+.th-facette{--pacc:#3a8b3a}
+.th-facette .pdeco{background:linear-gradient(115deg,#9fd29f 0 4%,#3a8b3a 4% 7%,transparent 7%)}
+.th-facette .pe-titre{color:#2c6e2c}
+/* zone de commentaires et diaporama */
+.pnotes{width:100%;max-width:640px;background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:8px 10px;font-size:12px;color:var(--muted)}
+.wdoc.pshow{background:#000;padding:0}
+.wdoc.pshow .pmain{max-width:none;width:min(100%,calc(430px*16/9))}
+.wdoc.pshow .pslide{box-shadow:none}
+@media (max-width:640px){.wppt .wstatus{gap:10px;white-space:nowrap}.wppt .wstatus span:nth-child(2){display:none}.wppt .wnav{width:74px;padding:8px 4px 8px 2px;gap:6px}.pthumb .pn{width:11px;font-size:9px}.wppt .wdoc{padding:10px 8px}.panim{display:none}}
+@media (max-width:640px){.wppt .wstage{height:300px}}

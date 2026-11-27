@@ -242,7 +242,7 @@ function lessonPage(l,i,{sw,lessons,parcours:PARCOURS}){
   const also=voir.length?`
     <section class="also"><h2>Voir aussi</h2><div class="also-l">${voir.map(x=>`<a href="../${x.id}/"><b>${esc(x.titre)}</b><small>${esc(x.resume)}</small></a>`).join("")}</div></section>`:"";
   const ld={"@context":"https://schema.org","@type":"LearningResource",name:`${l.titre} dans ${sw.nom}`,description:l.resume,inLanguage:"fr",isAccessibleForFree:true,educationalLevel:LV[l.niveau],learningResourceType:"Leçon animée",url,isPartOf:{"@type":"Course",name:`${SITE.nom} : apprendre ${sw.nom} en animation`,url:hub}};
-  const isWord=sw.lecteur==="player-word.js";
+  const isWord=sw.lecteur!=="player.js",isPpt=sw.lecteur==="player-ppt.js";
   const data=isWord?{id:l.id,doc:l.document,s:l.etapes}:{id:l.id,g:l.grille,s:l.etapes};
   const inP=PARCOURS.filter(p=>p.lecons.includes(l.id)).map(p=>({id:p.id,t:p.titre,l:p.items.map(x=>[x.id,x.titre])}));
   if(inP.length)data.parcours=inP;
@@ -255,7 +255,7 @@ function lessonPage(l,i,{sw,lessons,parcours:PARCOURS}){
       <p>${esc(l.resume)}</p>
       ${l.en&&l.en.length?`<p class="enl">En anglais : ${l.en.map(f=>`<b lang="en">${esc(f.en)}</b>`).join(", ")} · <a href="../fonctions-francais-anglais/">Toutes les fonctions en anglais</a></p>`:""}
     </div>
-    ${isWord?`<div class="win wword">
+    ${isWord?`<div class="win wword${isPpt?" wppt":""}">
       <div id="ribwrap"><div class="ribbon" id="ribbon"></div><div class="ribpanel" id="ribpanel" hidden></div></div>
       <div class="wstage"><aside class="wnav" id="wnav" hidden></aside><div class="wdoc" id="wdoc"></div><div class="keys" id="keys" hidden></div></div>
       <div class="wstatus" id="wstatus"></div><div class="cursor" id="wcursor"><svg viewBox="0 0 20 24"><path d="M2 1.5v17l4.6-4.2 3 7 2.9-1.2-3-6.9h6.3z"/></svg></div>`:`<div class="win${l.etapes.some(e=>e.pivot)?" haspv":""}">
