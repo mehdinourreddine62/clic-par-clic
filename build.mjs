@@ -22,7 +22,7 @@ const ico=c=>`<svg viewBox="0 0 24 24">${c.icone}</svg>`;
 
 /* ---------- lecture du contenu ---------- */
 const SOFTS=readJson("content/logiciels.json");
-const RESERVED=new Set(["assets","fichiers","parcours","index","exercices"]);
+const RESERVED=new Set(["assets","fichiers","parcours","index","exercices","fonctions-francais-anglais"]);
 function loadSoft(sw){
   const base=`content/${sw.id}`;
   const cats=readJson(`${base}/categories.json`);
@@ -55,7 +55,13 @@ function loadSoft(sw){
     if(!x.solution||x.solution[0]!=="=")throw new Error(`exercice « ${x.id} » : solution manquante`);
     (x.l.exos=x.l.exos||[]).push(x);
   });
-  return{sw,cats,lessons,parcours,exercices};
+  /* noms anglais des fonctions (facultatif) */
+  const fonctions=fs.existsSync(`${base}/fonctions.json`)?readJson(`${base}/fonctions.json`):[];
+  if(fonctions.length){const byFr=new Map(fonctions.map(f=>[f.fr,f]));
+    const toks=t=>(t.match(/[A-Z][A-Z0-9.]*[A-Z0-9]|[A-Z]{2,}/g)||[]).filter(x=>byFr.has(x));
+    lessons.forEach(l=>{let fs_=toks(l.titre);if(!fs_.length&&/^=/.test(l.syntaxe)&&!["erreurs","feuilles"].includes(l.cat.id)&&l.id!=="somme-cumulee")fs_=toks(l.syntaxe);l.en=[...new Set(fs_)].map(x=>byFr.get(x));});
+    fonctions.forEach(f=>{f.l=lessons.find(l=>toks(l.titre).includes(f.fr))||lessons.find(l=>/^=/.test(l.syntaxe)&&toks(l.syntaxe).includes(f.fr));});}
+  return{sw,cats,lessons,parcours,exercices,fonctions};
 }
 const ALL=[];
 const CTX=SOFTS.filter(sw=>sw.disponible).map(loadSoft);
@@ -114,7 +120,7 @@ function softHome({sw,cats,lessons,parcours:PARCOURS}){
   const crumbs={"@context":"https://schema.org","@type":"BreadcrumbList",itemListElement:[{"@type":"ListItem",position:1,name:SITE.nom,item:SITE.url},{"@type":"ListItem",position:2,name:sw.nom,item:url}]};
   const sections=cats.map(c=>{
     const g=lessons.filter(l=>l.cat===c);if(!g.length)return"";
-    const cards=g.map(l=>`<a class="card" href="${l.id}/" data-id="${l.id}" data-c="${c.id}" data-l="${l.niveau}" data-s="${esc(norm(`${l.titre} ${l.resume} ${l.motsCles||""} ${c.nom}`))}"><span class="cn">${esc(l.titre)}</span><span class="cd">${esc(l.resume)}</span><span class="cf">${bars(l.niveau)}<span>${l.etapes.length} étapes</span></span></a>`).join("\n");
+    const cards=g.map(l=>`<a class="card" href="${l.id}/" data-id="${l.id}" data-c="${c.id}" data-l="${l.niveau}" data-s="${esc(norm(`${l.titre} ${l.resume} ${l.motsCles||""} ${c.nom} ${(l.en||[]).map(f=>f.en).join(" ")}`))}"><span class="cn">${esc(l.titre)}</span><span class="cd">${esc(l.resume)}</span><span class="cf">${bars(l.niveau)}<span>${l.etapes.length} étapes</span></span></a>`).join("\n");
     return `<section class="sec" id="theme-${c.id}" style="--k:var(--${c.couleur})"><h2><span class="ico" aria-hidden="true">${ico(c)}</span><span class="st">${esc(c.nom)}<small>${g.length} leçon${g.length>1?"s":""}</small></span></h2><div class="cards">\n${cards}\n</div></section>`;
   }).join("\n");
   const fams=[...new Set(cats.map(c=>c.famille||"Rubriques"))];
@@ -136,6 +142,7 @@ ${cats.filter(c=>(c.famille||"Rubriques")===f).map(c=>{const n=lessons.filter(l=
     ${PARCOURS.length?`<section class="routes" id="routes"><h2>Parcours guidés</h2><div class="rgrid">
 ${PARCOURS.map(p=>`<a class="route" href="parcours/${p.id}/" data-ids="${p.lecons.join(" ")}" style="--k:var(--${p.couleur})"><span class="rh"><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24">${PICO}</svg></span><span><b>${esc(p.titre)}</b><small>${esc(p.pour)}</small></span></span><span class="rd">${esc(p.resume)}</span><span class="rf"><span class="rn">${p.items.length} leçons</span><span class="tp"><i></i></span></span></a>`).join("\n")}
 </div></section>`:""}
+    ${(GLOS[sw.id]||[]).length?`<a class="xhub" href="fonctions-francais-anglais/"><span class="xlk-i" aria-hidden="true">⇄</span><span><small>Traduction</small><b>Les fonctions ${esc(sw.nom)} en français et en anglais</b></span><span aria-hidden="true">→</span></a>`:""}
     ${(EXOS[sw.id]||[]).length?`<a class="xhub" href="exercices/"><span class="xlk-i" aria-hidden="true">✎</span><span><small>Exercices interactifs</small><b>S'entraîner : tapez la formule, le site corrige</b></span><span aria-hidden="true">→</span></a>`:""}
     <div id="tiles">
 ${tiles}
@@ -168,7 +175,7 @@ function rootHome(racine=false){
     const inner=`<span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24">${sw.icone}</svg></span><span class="sb"><b>${esc(sw.nom)}</b><span class="sd">${esc(sw.accroche)}</span><small>${c?`${c.lessons.length} leçons${c.parcours.length?` · ${c.parcours.length} parcours guidés`:""}`:"Bientôt disponible"}</small></span>`;
     return c?`<a class="soft" href="${sw.id}/" data-sw="${sw.id}" data-ids="${c.lessons.map(l=>l.id).join(" ")}" style="--k:var(--${sw.couleur})">${inner}<span class="tp" aria-hidden="true"><i></i></span></a>`
             :`<div class="soft soon" aria-disabled="true" style="--k:var(--${sw.couleur})">${inner}</div>`;}).join("\n");
-  const results=LIVE.map(({sw,lessons})=>lessons.map(l=>`<a class="card" hidden href="${sw.id}/${l.id}/" data-id="${l.id}" data-sw="${sw.id}" data-s="${esc(norm(`${sw.nom} ${l.titre} ${l.resume} ${l.motsCles||""} ${l.cat.nom}`))}"><span class="cn">${esc(l.titre)}</span><span class="cd">${esc(l.resume)}</span><span class="cf"><span class="swt" style="--k:var(--${sw.couleur})">${esc(sw.nom)} · ${esc(l.cat.nom)}</span><span>${l.etapes.length} étapes</span></span></a>`).join("\n")).join("\n");
+  const results=LIVE.map(({sw,lessons})=>lessons.map(l=>`<a class="card" hidden href="${sw.id}/${l.id}/" data-id="${l.id}" data-sw="${sw.id}" data-s="${esc(norm(`${sw.nom} ${l.titre} ${l.resume} ${l.motsCles||""} ${l.cat.nom} ${(l.en||[]).map(f=>f.en).join(" ")}`))}"><span class="cn">${esc(l.titre)}</span><span class="cd">${esc(l.resume)}</span><span class="cf"><span class="swt" style="--k:var(--${sw.couleur})">${esc(sw.nom)} · ${esc(l.cat.nom)}</span><span>${l.etapes.length} étapes</span></span></a>`).join("\n")).join("\n");
   const A=fs.existsSync("content/accueil.json")?readJson("content/accueil.json"):{};
   const findL=id=>{const l=ALL.find(x=>x.id===id);if(!l)throw new Error(`accueil.json : leçon « ${id} » introuvable`);return l;};
   const featP=(A.parcours||[]).map(k=>{const[sid,pid]=k.split("/"),c=CTX.find(x=>x.sw.id===sid),p=c&&c.parcours.find(x=>x.id===pid);if(!p)throw new Error(`accueil.json : parcours « ${k} » introuvable`);return[c.sw,p];});
@@ -246,6 +253,7 @@ function lessonPage(l,i,{sw,lessons,parcours:PARCOURS}){
       <div class="meta"><span class="tag" style="--k:var(--${c.couleur})">${ico(c)}${esc(c.nom)}</span><span>${bars(l.niveau)} ${LV[l.niveau]}</span></div>
       <h1>${esc(l.titre)}</h1>
       <p>${esc(l.resume)}</p>
+      ${l.en&&l.en.length?`<p class="enl">En anglais : ${l.en.map(f=>`<b lang="en">${esc(f.en)}</b>`).join(", ")} · <a href="../fonctions-francais-anglais/">Toutes les fonctions en anglais</a></p>`:""}
     </div>
     ${isWord?`<div class="win wword">
       <div id="ribwrap"><div class="ribbon" id="ribbon"></div><div class="ribpanel" id="ribpanel" hidden></div></div>
@@ -334,6 +342,29 @@ ${list.map((x,i)=>`<li data-id="${x.id}"><a href="../${x.id}/"><span class="rnum
 </body>
 </html>
 `;}
+const GLOS={};
+function glossaryPage(list,{sw}){
+  const url=`${SITE.url}${sw.id}/fonctions-francais-anglais/`;
+  const title=`Fonctions ${sw.nom} en français et en anglais | ${SITE.nom}`;
+  const desc=`Traduction de ${list.length} fonctions ${sw.nom} du français vers l'anglais et inversement : RECHERCHEV = VLOOKUP, SI = IF, SOMME = SUM, NB.SI = COUNTIF…`;
+  const groups=[...new Set(list.map(f=>f.groupe))];
+  const ld={"@context":"https://schema.org","@type":"DefinedTermSet",name:`Fonctions ${sw.nom} : français et anglais`,url,hasDefinedTerm:list.map(f=>({"@type":"DefinedTerm",name:f.fr,alternateName:f.en,description:f.desc}))};
+  return head({title,desc,url,root:"../../",ld,noindex:sw.disponible!==true})+`  <main class="glos">
+    <nav class="crumbs" aria-label="Fil d'Ariane"><a href="../../">Accueil</a><span aria-hidden="true">›</span><a href="../">${esc(sw.nom)}</a><span aria-hidden="true">›</span><span>Fonctions en anglais</span></nav>
+    <div class="lhead"><h1>Fonctions ${esc(sw.nom)} : français ↔ anglais</h1><p>Un tutoriel en anglais parle de VLOOKUP ou de IF ? Voici le nom de chaque fonction dans les deux langues. Dans ${esc(sw.nom)} en français, tapez toujours le nom français, avec des ; entre les arguments.</p></div>
+    <div class="tools"><input id="gq" type="search" placeholder="Chercher en français ou en anglais : vlookup, somme, countif…" aria-label="Chercher une fonction"></div>
+${groups.map(g=>`    <section class="gsec"><h2>${esc(g)}</h2><table class="gtab"><thead><tr><th>Français</th><th>Anglais</th><th>À quoi ça sert</th></tr></thead><tbody>
+${list.filter(f=>f.groupe===g).map(f=>`<tr data-s="${esc(norm(f.fr+" "+f.en+" "+f.desc))}"><td><b>${esc(f.fr)}</b></td><td lang="en">${esc(f.en)}</td><td>${esc(f.desc)}${f.l?` <a href="../${f.l.id}/">Voir la leçon</a>`:""}</td></tr>`).join("\n")}
+</tbody></table></section>`).join("\n")}
+    <p class="gnone" id="gnone" hidden>Aucune fonction ne correspond.</p>
+  </main>
+</div>
+<script src="../../assets/app.js"></script>
+<script>(function(){const q=document.getElementById("gq"),n=s=>s.toLowerCase().normalize("NFD").replace(/[\\u0300-\\u036f]/g,"");
+q.addEventListener("input",()=>{const v=n(q.value.trim());let any=0;document.querySelectorAll(".gsec").forEach(sec=>{let k=0;sec.querySelectorAll("tbody tr").forEach(tr=>{const ok=!v||tr.dataset.s.includes(v);tr.hidden=!ok;if(ok)k++;});sec.hidden=!k;any+=k;});document.getElementById("gnone").hidden=!!any;});})();</script>
+</body>
+</html>
+`;}
 function routePage(p,{sw}){
   const url=`${SITE.url}${sw.id}/parcours/${p.id}/`;
   const title=`${p.titre} : parcours ${sw.nom} en ${p.items.length} leçons animées | ${SITE.nom}`;
@@ -381,11 +412,12 @@ fs.copyFileSync("src/favicon-48.png","racine/favicon.ico");
 write("racine/robots.txt",`User-agent: *\nAllow: /\n\nSitemap: ${SITE.url}sitemap.xml\n`);
 write("racine/.nojekyll","");
 let nFiles=0;const urls=[SITE.url];
-for(const c of CTX)EXOS[c.sw.id]=c.exercices||[];
+for(const c of CTX){EXOS[c.sw.id]=c.exercices||[];GLOS[c.sw.id]=c.fonctions||[];}
 for(const ctx of CTX){const{sw,lessons,parcours}=ctx;
   const live=sw.disponible===true;
   write(`${sw.id}/index.html`,softHome(ctx));if(live)urls.push(`${SITE.url}${sw.id}/`);
   lessons.forEach((l,i)=>write(`${sw.id}/${l.id}/index.html`,lessonPage(l,i,ctx)));
+  if((ctx.fonctions||[]).length){write(`${sw.id}/fonctions-francais-anglais/index.html`,glossaryPage(ctx.fonctions,ctx));if(live)urls.push(`${SITE.url}${sw.id}/fonctions-francais-anglais/`);}
   const exos=ctx.exercices||[];
   if(exos.length){write(`${sw.id}/exercices/index.html`,exercisesIndex(exos,ctx));if(live)urls.push(`${SITE.url}${sw.id}/exercices/`);
     exos.forEach((x,i)=>{write(`${sw.id}/${x.id}/index.html`,exercisePage(x,i,exos,ctx));if(live)urls.push(`${SITE.url}${sw.id}/${x.id}/`);});}

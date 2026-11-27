@@ -1,0 +1,650 @@
+[
+ {
+  "groupe": "Calculs",
+  "fr": "SOMME",
+  "en": "SUM",
+  "desc": "Additionne des nombres ou une plage."
+ },
+ {
+  "groupe": "Calculs",
+  "fr": "PRODUIT",
+  "en": "PRODUCT",
+  "desc": "Multiplie des nombres entre eux."
+ },
+ {
+  "groupe": "Calculs",
+  "fr": "SOMMEPROD",
+  "en": "SUMPRODUCT",
+  "desc": "Multiplie deux plages terme à terme, puis additionne."
+ },
+ {
+  "groupe": "Calculs",
+  "fr": "ARRONDI",
+  "en": "ROUND",
+  "desc": "Arrondit au nombre de décimales choisi."
+ },
+ {
+  "groupe": "Calculs",
+  "fr": "ARRONDI.SUP",
+  "en": "ROUNDUP",
+  "desc": "Arrondit toujours vers le haut."
+ },
+ {
+  "groupe": "Calculs",
+  "fr": "ARRONDI.INF",
+  "en": "ROUNDDOWN",
+  "desc": "Arrondit toujours vers le bas."
+ },
+ {
+  "groupe": "Calculs",
+  "fr": "ARRONDI.AU.MULTIPLE",
+  "en": "MROUND",
+  "desc": "Arrondit au multiple le plus proche."
+ },
+ {
+  "groupe": "Calculs",
+  "fr": "ENT",
+  "en": "INT",
+  "desc": "Garde la partie entière, vers le bas."
+ },
+ {
+  "groupe": "Calculs",
+  "fr": "TRONQUE",
+  "en": "TRUNC",
+  "desc": "Coupe les décimales sans arrondir."
+ },
+ {
+  "groupe": "Calculs",
+  "fr": "MOD",
+  "en": "MOD",
+  "desc": "Reste d'une division."
+ },
+ {
+  "groupe": "Calculs",
+  "fr": "ABS",
+  "en": "ABS",
+  "desc": "Valeur absolue, sans le signe."
+ },
+ {
+  "groupe": "Calculs",
+  "fr": "PUISSANCE",
+  "en": "POWER",
+  "desc": "Élève un nombre à une puissance."
+ },
+ {
+  "groupe": "Calculs",
+  "fr": "RACINE",
+  "en": "SQRT",
+  "desc": "Racine carrée."
+ },
+ {
+  "groupe": "Calculs",
+  "fr": "SOUS.TOTAL",
+  "en": "SUBTOTAL",
+  "desc": "Total qui ne compte que les lignes visibles."
+ },
+ {
+  "groupe": "Calculs",
+  "fr": "AGREGAT",
+  "en": "AGGREGATE",
+  "desc": "Total qui peut ignorer les erreurs et les lignes masquées."
+ },
+ {
+  "groupe": "Calculs",
+  "fr": "ALEA",
+  "en": "RAND",
+  "desc": "Nombre aléatoire entre 0 et 1."
+ },
+ {
+  "groupe": "Calculs",
+  "fr": "ALEA.ENTRE.BORNES",
+  "en": "RANDBETWEEN",
+  "desc": "Nombre entier aléatoire entre deux bornes."
+ },
+ {
+  "groupe": "Calculs",
+  "fr": "VPM",
+  "en": "PMT",
+  "desc": "Mensualité d'un emprunt."
+ },
+ {
+  "groupe": "Statistiques et comptage",
+  "fr": "MOYENNE",
+  "en": "AVERAGE",
+  "desc": "Moyenne de valeurs."
+ },
+ {
+  "groupe": "Statistiques et comptage",
+  "fr": "MIN",
+  "en": "MIN",
+  "desc": "Plus petite valeur."
+ },
+ {
+  "groupe": "Statistiques et comptage",
+  "fr": "MAX",
+  "en": "MAX",
+  "desc": "Plus grande valeur."
+ },
+ {
+  "groupe": "Statistiques et comptage",
+  "fr": "MEDIANE",
+  "en": "MEDIAN",
+  "desc": "Valeur du milieu d'une série."
+ },
+ {
+  "groupe": "Statistiques et comptage",
+  "fr": "GRANDE.VALEUR",
+  "en": "LARGE",
+  "desc": "La 2e, 3e… plus grande valeur."
+ },
+ {
+  "groupe": "Statistiques et comptage",
+  "fr": "PETITE.VALEUR",
+  "en": "SMALL",
+  "desc": "La 2e, 3e… plus petite valeur."
+ },
+ {
+  "groupe": "Statistiques et comptage",
+  "fr": "RANG",
+  "en": "RANK",
+  "desc": "Position d'une valeur dans un classement."
+ },
+ {
+  "groupe": "Statistiques et comptage",
+  "fr": "NB",
+  "en": "COUNT",
+  "desc": "Compte les cellules contenant un nombre."
+ },
+ {
+  "groupe": "Statistiques et comptage",
+  "fr": "NBVAL",
+  "en": "COUNTA",
+  "desc": "Compte les cellules non vides."
+ },
+ {
+  "groupe": "Statistiques et comptage",
+  "fr": "NB.VIDE",
+  "en": "COUNTBLANK",
+  "desc": "Compte les cellules vides."
+ },
+ {
+  "groupe": "Statistiques et comptage",
+  "fr": "NB.SI",
+  "en": "COUNTIF",
+  "desc": "Compte les cellules qui respectent un critère."
+ },
+ {
+  "groupe": "Statistiques et comptage",
+  "fr": "NB.SI.ENS",
+  "en": "COUNTIFS",
+  "desc": "Compte selon plusieurs critères."
+ },
+ {
+  "groupe": "Statistiques et comptage",
+  "fr": "SOMME.SI",
+  "en": "SUMIF",
+  "desc": "Additionne selon un critère."
+ },
+ {
+  "groupe": "Statistiques et comptage",
+  "fr": "SOMME.SI.ENS",
+  "en": "SUMIFS",
+  "desc": "Additionne selon plusieurs critères."
+ },
+ {
+  "groupe": "Statistiques et comptage",
+  "fr": "MOYENNE.SI",
+  "en": "AVERAGEIF",
+  "desc": "Moyenne selon un critère."
+ },
+ {
+  "groupe": "Statistiques et comptage",
+  "fr": "MOYENNE.SI.ENS",
+  "en": "AVERAGEIFS",
+  "desc": "Moyenne selon plusieurs critères."
+ },
+ {
+  "groupe": "Statistiques et comptage",
+  "fr": "MAX.SI.ENS",
+  "en": "MAXIFS",
+  "desc": "Plus grande valeur selon des critères."
+ },
+ {
+  "groupe": "Statistiques et comptage",
+  "fr": "MIN.SI.ENS",
+  "en": "MINIFS",
+  "desc": "Plus petite valeur selon des critères."
+ },
+ {
+  "groupe": "Statistiques et comptage",
+  "fr": "QUARTILE.INCLUS",
+  "en": "QUARTILE.INC",
+  "desc": "Quartile d'une série."
+ },
+ {
+  "groupe": "Logique et erreurs",
+  "fr": "SI",
+  "en": "IF",
+  "desc": "Affiche un résultat selon une condition."
+ },
+ {
+  "groupe": "Logique et erreurs",
+  "fr": "SI.CONDITIONS",
+  "en": "IFS",
+  "desc": "Plusieurs conditions sans SI imbriqués."
+ },
+ {
+  "groupe": "Logique et erreurs",
+  "fr": "SI.MULTIPLE",
+  "en": "SWITCH",
+  "desc": "Choisit un résultat selon une valeur."
+ },
+ {
+  "groupe": "Logique et erreurs",
+  "fr": "ET",
+  "en": "AND",
+  "desc": "VRAI si toutes les conditions sont remplies."
+ },
+ {
+  "groupe": "Logique et erreurs",
+  "fr": "OU",
+  "en": "OR",
+  "desc": "VRAI si au moins une condition est remplie."
+ },
+ {
+  "groupe": "Logique et erreurs",
+  "fr": "NON",
+  "en": "NOT",
+  "desc": "Inverse VRAI et FAUX."
+ },
+ {
+  "groupe": "Logique et erreurs",
+  "fr": "SIERREUR",
+  "en": "IFERROR",
+  "desc": "Remplace une erreur par une valeur choisie."
+ },
+ {
+  "groupe": "Logique et erreurs",
+  "fr": "SI.NON.DISP",
+  "en": "IFNA",
+  "desc": "Remplace #N/A par une valeur choisie."
+ },
+ {
+  "groupe": "Logique et erreurs",
+  "fr": "ESTVIDE",
+  "en": "ISBLANK",
+  "desc": "VRAI si la cellule est vide."
+ },
+ {
+  "groupe": "Logique et erreurs",
+  "fr": "ESTNUM",
+  "en": "ISNUMBER",
+  "desc": "VRAI si la valeur est un nombre."
+ },
+ {
+  "groupe": "Logique et erreurs",
+  "fr": "ESTERREUR",
+  "en": "ISERROR",
+  "desc": "VRAI si la valeur est une erreur."
+ },
+ {
+  "groupe": "Recherche",
+  "fr": "RECHERCHEV",
+  "en": "VLOOKUP",
+  "desc": "Cherche une valeur dans la première colonne d'un tableau."
+ },
+ {
+  "groupe": "Recherche",
+  "fr": "RECHERCHEH",
+  "en": "HLOOKUP",
+  "desc": "Cherche une valeur dans la première ligne d'un tableau."
+ },
+ {
+  "groupe": "Recherche",
+  "fr": "RECHERCHEX",
+  "en": "XLOOKUP",
+  "desc": "Recherche moderne, dans tous les sens."
+ },
+ {
+  "groupe": "Recherche",
+  "fr": "INDEX",
+  "en": "INDEX",
+  "desc": "Renvoie la valeur à une position donnée."
+ },
+ {
+  "groupe": "Recherche",
+  "fr": "EQUIV",
+  "en": "MATCH",
+  "desc": "Renvoie la position d'une valeur."
+ },
+ {
+  "groupe": "Recherche",
+  "fr": "EQUIVX",
+  "en": "XMATCH",
+  "desc": "Version moderne d'EQUIV."
+ },
+ {
+  "groupe": "Recherche",
+  "fr": "CHOISIR",
+  "en": "CHOOSE",
+  "desc": "Choisit une valeur dans une liste par son numéro."
+ },
+ {
+  "groupe": "Recherche",
+  "fr": "DECALER",
+  "en": "OFFSET",
+  "desc": "Référence décalée à partir d'une cellule."
+ },
+ {
+  "groupe": "Recherche",
+  "fr": "INDIRECT",
+  "en": "INDIRECT",
+  "desc": "Transforme un texte en référence de cellule."
+ },
+ {
+  "groupe": "Texte",
+  "fr": "CONCAT",
+  "en": "CONCAT",
+  "desc": "Assemble plusieurs textes."
+ },
+ {
+  "groupe": "Texte",
+  "fr": "CONCATENER",
+  "en": "CONCATENATE",
+  "desc": "Ancienne version de CONCAT."
+ },
+ {
+  "groupe": "Texte",
+  "fr": "JOINDRE.TEXTE",
+  "en": "TEXTJOIN",
+  "desc": "Assemble des textes avec un séparateur."
+ },
+ {
+  "groupe": "Texte",
+  "fr": "GAUCHE",
+  "en": "LEFT",
+  "desc": "Premiers caractères d'un texte."
+ },
+ {
+  "groupe": "Texte",
+  "fr": "DROITE",
+  "en": "RIGHT",
+  "desc": "Derniers caractères d'un texte."
+ },
+ {
+  "groupe": "Texte",
+  "fr": "STXT",
+  "en": "MID",
+  "desc": "Caractères au milieu d'un texte."
+ },
+ {
+  "groupe": "Texte",
+  "fr": "NBCAR",
+  "en": "LEN",
+  "desc": "Nombre de caractères."
+ },
+ {
+  "groupe": "Texte",
+  "fr": "CHERCHE",
+  "en": "SEARCH",
+  "desc": "Position d'un texte dans un autre."
+ },
+ {
+  "groupe": "Texte",
+  "fr": "TROUVE",
+  "en": "FIND",
+  "desc": "Comme CHERCHE, en respectant les majuscules."
+ },
+ {
+  "groupe": "Texte",
+  "fr": "SUBSTITUE",
+  "en": "SUBSTITUTE",
+  "desc": "Remplace un texte par un autre."
+ },
+ {
+  "groupe": "Texte",
+  "fr": "SUPPRESPACE",
+  "en": "TRIM",
+  "desc": "Supprime les espaces en trop."
+ },
+ {
+  "groupe": "Texte",
+  "fr": "MAJUSCULE",
+  "en": "UPPER",
+  "desc": "Met en majuscules."
+ },
+ {
+  "groupe": "Texte",
+  "fr": "MINUSCULE",
+  "en": "LOWER",
+  "desc": "Met en minuscules."
+ },
+ {
+  "groupe": "Texte",
+  "fr": "NOMPROPRE",
+  "en": "PROPER",
+  "desc": "Une majuscule au début de chaque mot."
+ },
+ {
+  "groupe": "Texte",
+  "fr": "TEXTE",
+  "en": "TEXT",
+  "desc": "Affiche un nombre ou une date dans un format choisi."
+ },
+ {
+  "groupe": "Texte",
+  "fr": "TEXTE.AVANT",
+  "en": "TEXTBEFORE",
+  "desc": "Texte avant un séparateur."
+ },
+ {
+  "groupe": "Texte",
+  "fr": "TEXTE.APRES",
+  "en": "TEXTAFTER",
+  "desc": "Texte après un séparateur."
+ },
+ {
+  "groupe": "Texte",
+  "fr": "FRACTIONNER.TEXTE",
+  "en": "TEXTSPLIT",
+  "desc": "Découpe un texte en plusieurs cellules."
+ },
+ {
+  "groupe": "Texte",
+  "fr": "CNUM",
+  "en": "VALUE",
+  "desc": "Transforme un texte en nombre."
+ },
+ {
+  "groupe": "Texte",
+  "fr": "CAR",
+  "en": "CHAR",
+  "desc": "Caractère correspondant à un code."
+ },
+ {
+  "groupe": "Dates et heures",
+  "fr": "AUJOURDHUI",
+  "en": "TODAY",
+  "desc": "Date du jour."
+ },
+ {
+  "groupe": "Dates et heures",
+  "fr": "MAINTENANT",
+  "en": "NOW",
+  "desc": "Date et heure actuelles."
+ },
+ {
+  "groupe": "Dates et heures",
+  "fr": "DATE",
+  "en": "DATE",
+  "desc": "Assemble une année, un mois et un jour."
+ },
+ {
+  "groupe": "Dates et heures",
+  "fr": "ANNEE",
+  "en": "YEAR",
+  "desc": "Année d'une date."
+ },
+ {
+  "groupe": "Dates et heures",
+  "fr": "MOIS",
+  "en": "MONTH",
+  "desc": "Mois d'une date."
+ },
+ {
+  "groupe": "Dates et heures",
+  "fr": "JOUR",
+  "en": "DAY",
+  "desc": "Jour du mois d'une date."
+ },
+ {
+  "groupe": "Dates et heures",
+  "fr": "JOURSEM",
+  "en": "WEEKDAY",
+  "desc": "Numéro du jour de la semaine."
+ },
+ {
+  "groupe": "Dates et heures",
+  "fr": "JOURS",
+  "en": "DAYS",
+  "desc": "Nombre de jours entre deux dates."
+ },
+ {
+  "groupe": "Dates et heures",
+  "fr": "DATEDIF",
+  "en": "DATEDIF",
+  "desc": "Écart en années, mois ou jours (âge, ancienneté)."
+ },
+ {
+  "groupe": "Dates et heures",
+  "fr": "DATEVAL",
+  "en": "DATEVALUE",
+  "desc": "Transforme un texte en date."
+ },
+ {
+  "groupe": "Dates et heures",
+  "fr": "FIN.MOIS",
+  "en": "EOMONTH",
+  "desc": "Dernier jour du mois."
+ },
+ {
+  "groupe": "Dates et heures",
+  "fr": "MOIS.DECALER",
+  "en": "EDATE",
+  "desc": "Date décalée d'un nombre de mois."
+ },
+ {
+  "groupe": "Dates et heures",
+  "fr": "NB.JOURS.OUVRES",
+  "en": "NETWORKDAYS",
+  "desc": "Nombre de jours ouvrés entre deux dates."
+ },
+ {
+  "groupe": "Dates et heures",
+  "fr": "NB.JOURS.OUVRES.INTL",
+  "en": "NETWORKDAYS.INTL",
+  "desc": "Jours ouvrés avec un week-end au choix."
+ },
+ {
+  "groupe": "Dates et heures",
+  "fr": "SERIE.JOUR.OUVRE",
+  "en": "WORKDAY",
+  "desc": "Date après un nombre de jours ouvrés."
+ },
+ {
+  "groupe": "Dates et heures",
+  "fr": "NO.SEMAINE.ISO",
+  "en": "ISOWEEKNUM",
+  "desc": "Numéro de semaine (norme européenne)."
+ },
+ {
+  "groupe": "Dates et heures",
+  "fr": "NO.SEMAINE",
+  "en": "WEEKNUM",
+  "desc": "Numéro de semaine."
+ },
+ {
+  "groupe": "Dates et heures",
+  "fr": "HEURE",
+  "en": "HOUR",
+  "desc": "Heure d'un horaire."
+ },
+ {
+  "groupe": "Dates et heures",
+  "fr": "MINUTE",
+  "en": "MINUTE",
+  "desc": "Minutes d'un horaire."
+ },
+ {
+  "groupe": "Dates et heures",
+  "fr": "TEMPS",
+  "en": "TIME",
+  "desc": "Assemble heures, minutes et secondes."
+ },
+ {
+  "groupe": "Fonctions récentes (Microsoft 365)",
+  "fr": "FILTRE",
+  "en": "FILTER",
+  "desc": "Extrait les lignes qui respectent une condition."
+ },
+ {
+  "groupe": "Fonctions récentes (Microsoft 365)",
+  "fr": "UNIQUE",
+  "en": "UNIQUE",
+  "desc": "Liste sans doublons."
+ },
+ {
+  "groupe": "Fonctions récentes (Microsoft 365)",
+  "fr": "TRIER",
+  "en": "SORT",
+  "desc": "Trie une liste."
+ },
+ {
+  "groupe": "Fonctions récentes (Microsoft 365)",
+  "fr": "TRIERPAR",
+  "en": "SORTBY",
+  "desc": "Trie selon une autre colonne."
+ },
+ {
+  "groupe": "Fonctions récentes (Microsoft 365)",
+  "fr": "SEQUENCE",
+  "en": "SEQUENCE",
+  "desc": "Suite de nombres."
+ },
+ {
+  "groupe": "Fonctions récentes (Microsoft 365)",
+  "fr": "PRENDRE",
+  "en": "TAKE",
+  "desc": "Garde les premières ou dernières lignes."
+ },
+ {
+  "groupe": "Fonctions récentes (Microsoft 365)",
+  "fr": "EXCLURE",
+  "en": "DROP",
+  "desc": "Retire les premières ou dernières lignes."
+ },
+ {
+  "groupe": "Fonctions récentes (Microsoft 365)",
+  "fr": "ASSEMB.V",
+  "en": "VSTACK",
+  "desc": "Empile plusieurs plages les unes sous les autres."
+ },
+ {
+  "groupe": "Fonctions récentes (Microsoft 365)",
+  "fr": "ASSEMB.H",
+  "en": "HSTACK",
+  "desc": "Place plusieurs plages côte à côte."
+ },
+ {
+  "groupe": "Fonctions récentes (Microsoft 365)",
+  "fr": "LET",
+  "en": "LET",
+  "desc": "Nomme des calculs dans une formule."
+ },
+ {
+  "groupe": "Fonctions récentes (Microsoft 365)",
+  "fr": "LAMBDA",
+  "en": "LAMBDA",
+  "desc": "Crée sa propre fonction."
+ }
+]
