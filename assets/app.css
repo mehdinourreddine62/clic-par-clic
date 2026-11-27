@@ -637,3 +637,5 @@ table.sheet{border-collapse:collapse;font-size:14px;font-family:var(--f-body);fo
 .gtab td a{color:var(--accent);white-space:nowrap}
 .gnone{color:var(--muted)}
 @media (max-width:640px){.gtab thead{display:none}.gtab tr{display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid var(--line)}.gtab td{border:0;padding:6px 12px}.gtab td:nth-child(3){grid-column:1/-1;padding-top:0;color:var(--muted)}}
+.ic.voice svg{width:17px;height:17px;fill:currentColor}
+.ic.voice.on{background:var(--accent-soft);border-color:var(--accent);color:var(--accent)}

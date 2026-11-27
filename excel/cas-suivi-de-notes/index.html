@@ -25,7 +25,7 @@
 <link rel="icon" href="../../assets/favicon-48.png" sizes="48x48" type="image/png">
 <link rel="icon" href="../../assets/favicon-192.png" sizes="192x192" type="image/png">
 <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
-<link rel="stylesheet" href="../../assets/app.css?v=b93f7cbc">
+<link rel="stylesheet" href="../../assets/app.css?v=cc9697b8">
 <script data-goatcounter="https://clicparclic.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </head>
 <body>
@@ -49,6 +49,7 @@
         <button class="ic" id="prev" aria-label="Étape précédente"><svg viewBox="0 0 16 16"><path d="M10.5 2 4 8l6.5 6 1.2-1.3L6.6 8l5.1-4.7z"/></svg></button>
         <button class="ic play" id="play" aria-label="Lecture"></button>
         <button class="ic" id="next" aria-label="Étape suivante"><svg viewBox="0 0 16 16"><path d="M5.5 2 12 8l-6.5 6-1.2-1.3L9.4 8 4.3 3.3z"/></svg></button>
+        <button class="ic voice" id="voice" aria-label="Lire les étapes à voix haute" aria-pressed="false" title="Lecture à voix haute" hidden></button>
         <div class="progress" id="progress"></div>
         <span class="count" id="count"></span>
       </div>
@@ -64,8 +65,8 @@
   </main>
 </div>
 <script type="application/json" id="lesson-data">{"id":"cas-suivi-de-notes","g":[["Élève","Maths","Français","Anglais","Moyenne","Mention","Rang"],["Coefficient","3","2","1","","",""],["Léa","14","12","16","","",""],["Hugo","9","11","13","","",""],["Inès","17","15","14","","",""],["Tom","8","10","12","","",""],["Nora","12","16","15","","",""],["Moyenne de la classe","","","","","",""],["Nombre d'admis","","","","","",""]],"s":[{"c":"A1","tab":"Accueil","mark":"B2 C2 D2","t":"Les notes de trois matières, et leur coefficient en ligne 2. Objectif : moyenne, mention et rang de chaque élève."},{"c":"E3","f":"=ARRONDI(SOMMEPROD(B3:D3;$B$2:$D$2)/SOMME($B$2:$D$2);2)","v":"13,67","t":"Moyenne pondérée : SOMMEPROD applique les coefficients, SOMME les additionne, ARRONDI garde 2 décimales."},{"c":"E3","fill":{"E4":"10,33","E5":"15,83","E6":"9,33","E7":"13,83"},"t":"Les coefficients sont figés avec des $ : la formule se recopie pour toute la classe."},{"c":"F3","f":"=SI.CONDITIONS(E3>=16;\"Très bien\";E3>=14;\"Bien\";E3>=12;\"Assez bien\";E3>=10;\"Passable\";VRAI;\"Insuffisant\")","v":"Assez bien","fill":{"F4":"Passable","F5":"Bien","F6":"Insuffisant","F7":"Assez bien"},"t":"SI.CONDITIONS attribue la mention, en testant les seuils du plus haut au plus bas."},{"c":"G3","f":"=RANG(E3;$E$3:$E$7)","v":"3","fill":{"G4":"4","G5":"1","G6":"5","G7":"2"},"t":"RANG classe chaque élève dans la classe."},{"c":"E3","sel":"E3:E7","drag":1,"menu":"Mise en forme conditionnelle › Règles de mise en surbrillance › \u003cb>Inférieur à…\u003c/b>","rule":"10","bad":"E6","t":"En rouge, les moyennes sous 10 : on repère tout de suite qui est en difficulté."},{"c":"E8","f":"=ARRONDI(MOYENNE(E3:E7);2)","v":"12,6","t":"La moyenne de la classe, arrondie elle aussi."},{"c":"E9","f":"=NB.SI(E3:E7;\">=10\")","v":"4","t":"NB.SI compte les élèves qui ont au moins 10."},{"c":"A3","sel":"A3:A7","sel2":"E3:E7","keys":"Ctrl","tab":"Insertion","btn":"Barres","chart":1,"t":"Sélectionnez les noms et les moyennes, puis Insertion › Barres : la classe d'un coup d'œil."},{"c":"D6","f":"16","tab":"Accueil","set":{"E6":"10","F6":"Passable","E8":"12,73","E9":"5"},"unbad":"E6","t":"Une note corrigée ? Moyenne, mention, couleurs, statistiques et graphique se mettent à jour."}],"rib":1,"chart":{"type":"bar","labels":"A3:A7","series":["E3:E7"],"title":"Moyennes de la classe","at":"A11:F20"}}</script>
-<script src="../../assets/app.js?v=bad542e8"></script>
-<script src="../../assets/player.js?v=a2e94913"></script>
+<script src="../../assets/app.js?v=81de5fac"></script>
+<script src="../../assets/player.js?v=e345543b"></script>
 <footer class="sfoot"><a href="https://mehdinourreddine62.github.io/clic-par-clic/mentions-legales/">Mentions légales et confidentialité</a><span>Site indépendant, non affilié à Microsoft.</span></footer>
 </body>
 </html>

@@ -223,6 +223,7 @@ function ui(s,i){
   $("#prev").disabled=i===0;$("#next").disabled=i===n-1;
   $("#progress").innerHTML=cur.s.map((_,k)=>`<button class="seg ${k<i?"done":""} ${k===i?"cur":""}" data-i="${k}" aria-label="Aller à l'étape ${k+1}"></button>`).join("");
   $("#progress").querySelectorAll(".seg").forEach(b=>b.onclick=()=>{playing=false;go(+b.dataset.i,true);});
+  if(window.cpcSay)window.cpcSpeech=window.cpcSay(s.t);
   const nl=$("#nextLesson");if(nl)nl.classList.toggle("hl",i===n-1);const sb=$("#sharebox");if(sb)sb.classList.toggle("hl",i===n-1);
   if(i===n-1)markSeen(cur.id);
   updatePlay();
@@ -284,7 +285,7 @@ async function animate(i){
   cu.classList.remove("on");running=false;updatePlay();
   if(playing){
     const words=s.t.replace(/<[^>]+>/g,"").split(/\s+/).length;
-    await wait(Math.max(1900,words*290));if(!ok())return;
+    await Promise.all([wait(Math.max(1900,words*290)),window.cpcSpeech]);if(!ok())return;if(window.cpcVoiceOn&&window.cpcVoiceOn()){await wait(400);if(!ok())return;}
     if(i<cur.s.length-1)animate(i+1);else{playing=false;updatePlay();}
   }
 }

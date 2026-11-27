@@ -268,6 +268,7 @@ function lessonPage(l,i,{sw,lessons,parcours:PARCOURS}){
         <button class="ic" id="prev" aria-label="Étape précédente"><svg viewBox="0 0 16 16"><path d="M10.5 2 4 8l6.5 6 1.2-1.3L6.6 8l5.1-4.7z"/></svg></button>
         <button class="ic play" id="play" aria-label="Lecture"></button>
         <button class="ic" id="next" aria-label="Étape suivante"><svg viewBox="0 0 16 16"><path d="M5.5 2 12 8l-6.5 6-1.2-1.3L9.4 8 4.3 3.3z"/></svg></button>
+        <button class="ic voice" id="voice" aria-label="Lire les étapes à voix haute" aria-pressed="false" title="Lecture à voix haute" hidden></button>
         <div class="progress" id="progress"></div>
         <span class="count" id="count"></span>
       </div>

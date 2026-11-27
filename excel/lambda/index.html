@@ -25,7 +25,7 @@
 <link rel="icon" href="../../assets/favicon-48.png" sizes="48x48" type="image/png">
 <link rel="icon" href="../../assets/favicon-192.png" sizes="192x192" type="image/png">
 <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
-<link rel="stylesheet" href="../../assets/app.css?v=b93f7cbc">
+<link rel="stylesheet" href="../../assets/app.css?v=cc9697b8">
 <script data-goatcounter="https://clicparclic.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </head>
 <body>
@@ -49,6 +49,7 @@
         <button class="ic" id="prev" aria-label="Étape précédente"><svg viewBox="0 0 16 16"><path d="M10.5 2 4 8l6.5 6 1.2-1.3L6.6 8l5.1-4.7z"/></svg></button>
         <button class="ic play" id="play" aria-label="Lecture"></button>
         <button class="ic" id="next" aria-label="Étape suivante"><svg viewBox="0 0 16 16"><path d="M5.5 2 12 8l-6.5 6-1.2-1.3L9.4 8 4.3 3.3z"/></svg></button>
+        <button class="ic voice" id="voice" aria-label="Lire les étapes à voix haute" aria-pressed="false" title="Lecture à voix haute" hidden></button>
         <div class="progress" id="progress"></div>
         <span class="count" id="count"></span>
       </div>
@@ -64,8 +65,8 @@
   </main>
 </div>
 <script type="application/json" id="lesson-data">{"id":"lambda","g":[["Prix HT","Prix TTC"],["100",""],["250",""],["40",""]],"s":[{"c":"B2","f":"=LAMBDA(ht;ht*1,2)(A2)","v":"120","t":"LAMBDA crée une fonction : ici, elle ajoute 20 % de TVA. On la teste directement sur A2."},{"c":"B2","tab":"Formules","btn":"Gestionnaire de noms","menu":"Gestionnaire de noms › Nouveau › Nom : \u003cb>TTC\u003c/b>","rule":"=LAMBDA(ht;ht*1,2)","t":"Pour la réutiliser, enregistrez-la dans le Gestionnaire de noms, sous le nom TTC."},{"c":"B2","f":"=TTC(A2)","v":"120","fill":{"B3":"300","B4":"48"},"t":"Elle s'utilise ensuite comme n'importe quelle fonction d'Excel, partout dans le classeur."},{"c":"B2","tab":"Formules","t":"Pour changer la règle, modifiez-la une seule fois dans le Gestionnaire de noms : toutes les cellules suivent."}],"rib":1}</script>
-<script src="../../assets/app.js?v=bad542e8"></script>
-<script src="../../assets/player.js?v=a2e94913"></script>
+<script src="../../assets/app.js?v=81de5fac"></script>
+<script src="../../assets/player.js?v=e345543b"></script>
 <footer class="sfoot"><a href="https://mehdinourreddine62.github.io/clic-par-clic/mentions-legales/">Mentions légales et confidentialité</a><span>Site indépendant, non affilié à Microsoft.</span></footer>
 </body>
 </html>

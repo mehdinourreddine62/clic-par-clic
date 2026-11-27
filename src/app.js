@@ -68,3 +68,42 @@ document.querySelectorAll("[data-share]").forEach(b=>b.addEventListener("click",
     try{st[path]=v;localStorage.setItem("cpc-avis",JSON.stringify(st));}catch(e){}
     done(v);}));
 })();
+
+/* ---------- lecture à voix haute des étapes (voix de l'appareil, sans service extérieur) ---------- */
+window.cpcSayText=function(html){
+  let t=String(html).replace(/<[^>]+>/g," ").replace(/&nbsp;| | /g," ").replace(/&amp;/g,"&").replace(/&lt;/g,"<").replace(/&gt;/g,">");
+  t=t.replace(/›/g,", puis ").replace(/\bCtrl\b/g,"Contrôle").replace(/\bMaj\b/g,"Majuscule").replace(/\bSuppr\b/g,"Supprimer")
+   .replace(/(\$?[A-Z]{1,3}\$?\d+):(\$?[A-Z]{1,3}\$?\d+)/g,"de $1 à $2")
+   .replace(/\b([A-Z]{2,})\.([A-Z])/g,"$1 point $2").replace(/\b([A-Z]{2,})\.([A-Z])/g,"$1 point $2")
+   .replace(/(^|[\s(«])=(?=[A-Z$\d(])/g,"$1égal ").replace(/(^|\s)=(?=\s|$)/g,"$1égal")
+   .replace(/>=/g," supérieur ou égal à ").replace(/<=/g," inférieur ou égal à ").replace(/<>/g," différent de ")
+   .replace(/(\S)\s?>\s?(\d)/g,"$1 supérieur à $2").replace(/(\S)\s?<\s?(\d)/g,"$1 inférieur à $2")
+   .replace(/(\S);(?=\S)/g,"$1 point-virgule ").replace(/\s*\+\s*/g," plus ").replace(/(\S)\*(\S)/g,"$1 fois $2").replace(/×/g," fois ")
+   .replace(/([A-Z]\$?\d+|\))\/(?=\$?[A-Z(])/g,"$1 divisé par ")
+   .replace(/\$/g," dollar ").replace(/([A-Z.]+)\(/g,"$1, ").replace(/[()"]/g," ").replace(/\s{2,}/g," ").trim();
+  return t;
+};
+(function(){
+  const S=window.speechSynthesis;let voice=null,on=false;
+  try{on=localStorage.getItem("cpc-voix")==="1";}catch(e){}
+  const pick=()=>{if(!S)return;const v=S.getVoices().filter(x=>/^fr/i.test(x.lang));
+    voice=v.find(x=>x.localService&&/fr-FR/i.test(x.lang))||v.find(x=>x.localService)||null;
+    const b=document.getElementById("voice");if(b){b.hidden=!voice;paint();}};
+  const paint=()=>{const b=document.getElementById("voice");if(!b)return;b.classList.toggle("on",on);
+    b.setAttribute("aria-pressed",on?"true":"false");b.setAttribute("aria-label",on?"Couper la lecture à voix haute":"Lire les étapes à voix haute");
+    b.innerHTML=on?'<svg viewBox="0 0 16 16"><path d="M2 6h3l4-3v10L5 10H2z"/><path d="M11 5.5a3.5 3.5 0 0 1 0 5M12.8 3.6a6 6 0 0 1 0 8.8" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>':'<svg viewBox="0 0 16 16"><path d="M2 6h3l4-3v10L5 10H2z"/><path d="M11 6l4 4M15 6l-4 4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>';};
+  window.cpcSay=function(html){
+    if(!S||!voice||!on)return Promise.resolve();
+    S.cancel();const t=window.cpcSayText(html);if(!t)return Promise.resolve();
+    return new Promise(res=>{const u=new SpeechSynthesisUtterance(t);u.voice=voice;u.lang=voice.lang;u.rate=1;
+      const done=()=>{clearTimeout(k);res();};const k=setTimeout(done,2500+t.length*110);u.onend=done;u.onerror=done;S.speak(u);});
+  };
+  window.cpcSayStop=()=>{if(S)S.cancel();};
+  window.cpcVoiceOn=()=>on&&!!voice;
+  const b=document.getElementById("voice");
+  if(b){b.addEventListener("click",()=>{on=!on;try{localStorage.setItem("cpc-voix",on?"1":"0");}catch(e){}paint();
+      if(on){const tx=document.getElementById("text");if(tx)window.cpcSay(tx.innerHTML);}else window.cpcSayStop();
+      try{if(window.goatcounter&&goatcounter.count)goatcounter.count({path:"voix-"+(on?"oui":"non"),title:"Lecture à voix haute",event:true});}catch(e){}});}
+  if(S){pick();if(S.addEventListener)S.addEventListener("voiceschanged",pick);else S.onvoiceschanged=pick;}
+  addEventListener("pagehide",()=>{if(S)S.cancel();});
+})();
