@@ -7,19 +7,103 @@
  "syntaxe": "Cliquer, taper, valider",
  "sansEnTete": true,
  "arguments": [
-  ["Entrée","Valide et descend d'une ligne"],
-  ["Tabulation","Valide et passe à la cellule de droite"],
-  ["F2 ou double-clic","Modifie le contenu sans tout retaper"],
-  ["Suppr","Vide la cellule"]
+  [
+   "Entrée",
+   "Valide et descend d'une ligne"
+  ],
+  [
+   "Tabulation",
+   "Valide et passe à la cellule de droite"
+  ],
+  [
+   "F2 ou double-clic",
+   "Modifie le contenu sans tout retaper"
+  ],
+  [
+   "Suppr",
+   "Vide la cellule"
+  ]
  ],
  "grille": [
-  [""]
+  [
+   ""
+  ]
  ],
+ "titreSeo": "Saisir et modifier des données dans Excel",
  "etapes": [
-  {"c":"A1","f":"Produit","keys":"Tab","t":"Cliquez sur une cellule et tapez. La touche Tabulation valide et passe à droite."},
-  {"c":"B1","f":"Prix","keys":"Entrée","t":"La touche Entrée valide et descend d'une ligne."},
-  {"c":"A2","f":"Stylo","set":{"B2":"1,2"},"mark":"A2 B2","t":"Le texte se range à gauche, les nombres à droite : c'est ainsi qu'Excel les distingue."},
-  {"c":"A2","f":"Stylo bleu","keys":"F2","t":"Pour corriger sans tout retaper, double-cliquez sur la cellule ou appuyez sur F2."},
-  {"c":"B2","set":{"B2":""},"keys":"Suppr","t":"La touche Suppr vide la cellule."}
+  {
+   "c": "A1",
+   "f": "Produit",
+   "keys": "Tab",
+   "t": "Cliquez sur une cellule et tapez. La touche Tabulation valide et passe à droite."
+  },
+  {
+   "c": "B1",
+   "f": "Prix",
+   "keys": "Entrée",
+   "t": "La touche Entrée valide et descend d'une ligne."
+  },
+  {
+   "c": "A2",
+   "f": "Stylo",
+   "set": {
+    "B2": "1,2"
+   },
+   "mark": "A2 B2",
+   "t": "Le texte se range à gauche, les nombres à droite : c'est ainsi qu'Excel les distingue."
+  },
+  {
+   "c": "A2",
+   "f": "Stylo bleu",
+   "keys": "F2",
+   "t": "Pour corriger sans tout retaper, double-cliquez sur la cellule ou appuyez sur F2."
+  },
+  {
+   "c": "B2",
+   "set": {
+    "B2": ""
+   },
+   "keys": "Suppr",
+   "t": "La touche Suppr vide la cellule."
+  }
+ ],
+ "guide": {
+  "question": "Comment saisir, corriger et effacer une cellule dans Excel ?",
+  "intro": "Cliquez sur une cellule et tapez : Entrée valide et descend, Tab valide et passe à droite. Excel range le texte à gauche et les nombres à droite, ce qui permet de vérifier qu'un nombre est bien reconnu. Pour corriger sans tout retaper, double-cliquez sur la cellule ou appuyez sur F2 ; la touche Suppr vide la cellule.",
+  "exemple": {
+   "titre": "À retenir",
+   "formule": "Entrée   Tab   F2   Suppr",
+   "explication": "Tapez Stylo puis Tab, 1,20 puis Entrée : le nombre s'aligne à droite, il est reconnu."
+  },
+  "erreurs": [
+   [
+    "Un nombre s'aligne à gauche",
+    "Il contient un espace, un point au lieu d'une virgule ou une unité : Excel le prend pour du texte."
+   ],
+   [
+    "La saisie remplace tout le contenu",
+    "Vous avez tapé directement sur la cellule : utilisez F2 pour modifier sans effacer."
+   ]
+  ],
+  "faq": [
+   [
+    "Comment aller à la ligne dans une cellule ?",
+    "Alt + Entrée."
+   ],
+   [
+    "Comment annuler une saisie en cours ?",
+    "Échap, avant de valider."
+   ],
+   [
+    "Comment écrire un numéro qui commence par 0 ?",
+    "Tapez une apostrophe avant : '0612…, ou mettez la cellule au format Texte."
+   ]
+  ]
+ },
+ "voirAussi": [
+  "selectionner",
+  "raccourcis-saisir",
+  "formats-de-nombre",
+  "ecran-excel"
  ]
 }

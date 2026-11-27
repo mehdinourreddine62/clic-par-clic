@@ -6,27 +6,178 @@
  "motsCles": "tcd actualiser mettre à jour rafraîchir données modifiées alt f5",
  "syntaxe": "Analyse du tableau croisé › Actualiser",
  "ruban": true,
- "largeurs": {"E":26},
+ "largeurs": {
+  "E": 26
+ },
  "arguments": [
-  ["Actualiser","Relit les données d'origine"],
-  ["Alt + F5","Le raccourci"],
-  ["Piège","Le tableau ne se met jamais à jour tout seul"]
+  [
+   "Actualiser",
+   "Relit les données d'origine"
+  ],
+  [
+   "Alt + F5",
+   "Le raccourci"
+  ],
+  [
+   "Piège",
+   "Le tableau ne se met jamais à jour tout seul"
+  ]
  ],
  "grille": [
-  ["Vendeur","Région","Produit","Montant"],
-  ["Alice","Nord","Stylos","120"],
-  ["Bruno","Sud","Cahiers","80"],
-  ["Alice","Sud","Stylos","60"],
-  ["Chloé","Nord","Cahiers","150"],
-  ["Bruno","Nord","Stylos","90"],
-  ["Chloé","Sud","Stylos","110"],
-  ["Alice","Nord","Cahiers","70"],
-  ["Bruno","Sud","Stylos","40"]
+  [
+   "Vendeur",
+   "Région",
+   "Produit",
+   "Montant"
+  ],
+  [
+   "Alice",
+   "Nord",
+   "Stylos",
+   "120"
+  ],
+  [
+   "Bruno",
+   "Sud",
+   "Cahiers",
+   "80"
+  ],
+  [
+   "Alice",
+   "Sud",
+   "Stylos",
+   "60"
+  ],
+  [
+   "Chloé",
+   "Nord",
+   "Cahiers",
+   "150"
+  ],
+  [
+   "Bruno",
+   "Nord",
+   "Stylos",
+   "90"
+  ],
+  [
+   "Chloé",
+   "Sud",
+   "Stylos",
+   "110"
+  ],
+  [
+   "Alice",
+   "Nord",
+   "Cahiers",
+   "70"
+  ],
+  [
+   "Bruno",
+   "Sud",
+   "Stylos",
+   "40"
+  ]
  ],
+ "titreSeo": "Actualiser un tableau croisé dynamique Excel",
  "etapes": [
-  {"c":"F1","tab":"Analyse du tableau croisé","pivot":{"fields":["Vendeur","Région","Produit","Montant"],"filt":[],"cols":[],"rows":["Région"],"vals":["Somme de Montant"]},"set":{"F1":"Étiquettes de lignes","G1":"Somme de Montant","F2":"Nord","G2":"430","F3":"Sud","G3":"290","F4":"Total général","G4":"720"},"fmt":{"F1:G1":"h","F4:G4":"b"},"t":"Le Nord totalise 430."},
-  {"c":"D2","f":"320","tab":"Analyse du tableau croisé","mark":"G2","t":"Corrigez une vente dans les données : le tableau croisé ne bouge pas. Il affiche toujours 430."},
-  {"c":"G2","tab":"Analyse du tableau croisé","btn":"Actualiser","set":{"G2":"630","G4":"920"},"mark":"G2 G4","t":"Cliquez sur Actualiser : le tableau relit les données et se met à jour."},
-  {"c":"G2","tab":"Analyse du tableau croisé","keys":"Alt + F5","t":"Prenez le réflexe d'actualiser avant de lire un tableau croisé. Raccourci : Alt + F5."}
+  {
+   "c": "F1",
+   "tab": "Analyse du tableau croisé",
+   "pivot": {
+    "fields": [
+     "Vendeur",
+     "Région",
+     "Produit",
+     "Montant"
+    ],
+    "filt": [],
+    "cols": [],
+    "rows": [
+     "Région"
+    ],
+    "vals": [
+     "Somme de Montant"
+    ]
+   },
+   "set": {
+    "F1": "Étiquettes de lignes",
+    "G1": "Somme de Montant",
+    "F2": "Nord",
+    "G2": "430",
+    "F3": "Sud",
+    "G3": "290",
+    "F4": "Total général",
+    "G4": "720"
+   },
+   "fmt": {
+    "F1:G1": "h",
+    "F4:G4": "b"
+   },
+   "t": "Le Nord totalise 430."
+  },
+  {
+   "c": "D2",
+   "f": "320",
+   "tab": "Analyse du tableau croisé",
+   "mark": "G2",
+   "t": "Corrigez une vente dans les données : le tableau croisé ne bouge pas. Il affiche toujours 430."
+  },
+  {
+   "c": "G2",
+   "tab": "Analyse du tableau croisé",
+   "btn": "Actualiser",
+   "set": {
+    "G2": "630",
+    "G4": "920"
+   },
+   "mark": "G2 G4",
+   "t": "Cliquez sur Actualiser : le tableau relit les données et se met à jour."
+  },
+  {
+   "c": "G2",
+   "tab": "Analyse du tableau croisé",
+   "keys": "Alt + F5",
+   "t": "Prenez le réflexe d'actualiser avant de lire un tableau croisé. Raccourci : Alt + F5."
+  }
+ ],
+ "guide": {
+  "question": "Pourquoi mon tableau croisé dynamique ne se met-il pas à jour ?",
+  "intro": "Un tableau croisé dynamique ne se recalcule pas tout seul quand les données changent : il garde une copie en mémoire. Cliquez dans le tableau croisé, puis Analyse du tableau croisé › Actualiser, ou Alt + F5. Pour tous les tableaux croisés du classeur : Actualiser tout, ou Ctrl + Alt + F5.",
+  "exemple": {
+   "titre": "Exemple",
+   "formule": "Analyse du tableau croisé › Actualiser",
+   "explication": "Le Nord affiche 430. Une vente corrigée dans les données ne change rien ; après Actualiser, le total du Nord est recalculé."
+  },
+  "erreurs": [
+   [
+    "Les nouvelles lignes ne sont pas prises",
+    "La source est une plage fixe : Modifier la source de données, ou mettez les données sous forme de tableau."
+   ],
+   [
+    "La mise en forme disparaît",
+    "Options du tableau croisé › cochez Conserver la mise en forme des cellules lors de la mise à jour."
+   ]
+  ],
+  "faq": [
+   [
+    "Peut-on actualiser automatiquement ?",
+    "Options du tableau croisé › Données › Actualiser les données lors de l'ouverture du fichier."
+   ],
+   [
+    "Actualiser modifie-t-il les données ?",
+    "Non : seul le tableau croisé est relu."
+   ],
+   [
+    "Pourquoi des éléments supprimés restent dans les filtres ?",
+    "Options › Données › Nombre d'éléments à retenir par champ : Aucun."
+   ]
+  ]
+ },
+ "voirAussi": [
+  "creer-un-tableau-croise-dynamique",
+  "tcd-filtrer",
+  "mettre-sous-forme-de-tableau",
+  "tcd-somme-nombre-moyenne"
  ]
 }

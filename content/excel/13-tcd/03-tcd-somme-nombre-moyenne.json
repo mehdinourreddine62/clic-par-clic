@@ -6,27 +6,247 @@
  "motsCles": "tcd synthétiser valeurs somme nombre moyenne paramètres champ",
  "syntaxe": "Clic droit › Synthétiser les valeurs par",
  "ruban": true,
- "largeurs": {"E":26},
+ "largeurs": {
+  "E": 26
+ },
  "arguments": [
-  ["Somme","Additionne les valeurs"],
-  ["Nombre","Compte les lignes"],
-  ["Moyenne","Calcule la valeur moyenne"]
+  [
+   "Somme",
+   "Additionne les valeurs"
+  ],
+  [
+   "Nombre",
+   "Compte les lignes"
+  ],
+  [
+   "Moyenne",
+   "Calcule la valeur moyenne"
+  ]
  ],
  "grille": [
-  ["Vendeur","Région","Produit","Montant"],
-  ["Alice","Nord","Stylos","120"],
-  ["Bruno","Sud","Cahiers","80"],
-  ["Alice","Sud","Stylos","60"],
-  ["Chloé","Nord","Cahiers","150"],
-  ["Bruno","Nord","Stylos","90"],
-  ["Chloé","Sud","Stylos","110"],
-  ["Alice","Nord","Cahiers","70"],
-  ["Bruno","Sud","Stylos","40"]
+  [
+   "Vendeur",
+   "Région",
+   "Produit",
+   "Montant"
+  ],
+  [
+   "Alice",
+   "Nord",
+   "Stylos",
+   "120"
+  ],
+  [
+   "Bruno",
+   "Sud",
+   "Cahiers",
+   "80"
+  ],
+  [
+   "Alice",
+   "Sud",
+   "Stylos",
+   "60"
+  ],
+  [
+   "Chloé",
+   "Nord",
+   "Cahiers",
+   "150"
+  ],
+  [
+   "Bruno",
+   "Nord",
+   "Stylos",
+   "90"
+  ],
+  [
+   "Chloé",
+   "Sud",
+   "Stylos",
+   "110"
+  ],
+  [
+   "Alice",
+   "Nord",
+   "Cahiers",
+   "70"
+  ],
+  [
+   "Bruno",
+   "Sud",
+   "Stylos",
+   "40"
+  ]
  ],
+ "titreSeo": "Somme, nombre ou moyenne dans un tableau croisé",
  "etapes": [
-  {"c":"F1","tab":"Analyse du tableau croisé","pivot":{"fields":["Vendeur","Région","Produit","Montant"],"filt":[],"cols":[],"rows":["Région"],"vals":["Somme de Montant"]},"set":{"F1":"Étiquettes de lignes","G1":"Somme de Montant","F2":"Nord","G2":"430","F3":"Sud","G3":"290","F4":"Total général","G4":"720"},"fmt":{"F1:G1":"h","F4:G4":"b"},"t":"Par défaut, un tableau croisé additionne les nombres."},
-  {"c":"G2","menu":"Clic droit sur une valeur › <b>Synthétiser les valeurs par</b> › Nombre","pivot":{"fields":["Vendeur","Région","Produit","Montant"],"filt":[],"cols":[],"rows":["Région"],"vals":["Nombre de Montant"],"pick":"Montant"},"set":{"G1":"Nombre de Montant","G2":"4","G3":"4","G4":"8"},"t":"Clic droit sur une valeur, « Synthétiser les valeurs par », Nombre : on compte les ventes au lieu de les additionner."},
-  {"c":"G2","menu":"Clic droit sur une valeur › <b>Synthétiser les valeurs par</b> › Moyenne","pivot":{"fields":["Vendeur","Région","Produit","Montant"],"filt":[],"cols":[],"rows":["Région"],"vals":["Moyenne de Montant"],"pick":"Montant"},"set":{"G1":"Moyenne de Montant","G2":"107,5","G3":"72,5","G4":"90"},"t":"Avec Moyenne, on obtient la vente moyenne de chaque région."},
-  {"c":"H2","tab":"Analyse du tableau croisé","pivot":{"fields":["Vendeur","Région","Produit","Montant"],"filt":[],"cols":[],"rows":["Région"],"vals":["Somme de Montant","Nombre de Montant"],"pick":"Montant"},"set":{"G1":"Somme de Montant","G2":"430","G3":"290","G4":"720","H1":"Nombre de Montant","H2":"4","H3":"4","H4":"8"},"fmt":{"H1":"h","H4":"b"},"t":"Pour afficher deux calculs côte à côte, glissez le champ une seconde fois dans Valeurs."}
+  {
+   "c": "F1",
+   "tab": "Analyse du tableau croisé",
+   "pivot": {
+    "fields": [
+     "Vendeur",
+     "Région",
+     "Produit",
+     "Montant"
+    ],
+    "filt": [],
+    "cols": [],
+    "rows": [
+     "Région"
+    ],
+    "vals": [
+     "Somme de Montant"
+    ]
+   },
+   "set": {
+    "F1": "Étiquettes de lignes",
+    "G1": "Somme de Montant",
+    "F2": "Nord",
+    "G2": "430",
+    "F3": "Sud",
+    "G3": "290",
+    "F4": "Total général",
+    "G4": "720"
+   },
+   "fmt": {
+    "F1:G1": "h",
+    "F4:G4": "b"
+   },
+   "t": "Par défaut, un tableau croisé additionne les nombres."
+  },
+  {
+   "c": "G2",
+   "menu": "Clic droit sur une valeur › <b>Synthétiser les valeurs par</b> › Nombre",
+   "pivot": {
+    "fields": [
+     "Vendeur",
+     "Région",
+     "Produit",
+     "Montant"
+    ],
+    "filt": [],
+    "cols": [],
+    "rows": [
+     "Région"
+    ],
+    "vals": [
+     "Nombre de Montant"
+    ],
+    "pick": "Montant"
+   },
+   "set": {
+    "G1": "Nombre de Montant",
+    "G2": "4",
+    "G3": "4",
+    "G4": "8"
+   },
+   "t": "Clic droit sur une valeur, « Synthétiser les valeurs par », Nombre : on compte les ventes au lieu de les additionner."
+  },
+  {
+   "c": "G2",
+   "menu": "Clic droit sur une valeur › <b>Synthétiser les valeurs par</b> › Moyenne",
+   "pivot": {
+    "fields": [
+     "Vendeur",
+     "Région",
+     "Produit",
+     "Montant"
+    ],
+    "filt": [],
+    "cols": [],
+    "rows": [
+     "Région"
+    ],
+    "vals": [
+     "Moyenne de Montant"
+    ],
+    "pick": "Montant"
+   },
+   "set": {
+    "G1": "Moyenne de Montant",
+    "G2": "107,5",
+    "G3": "72,5",
+    "G4": "90"
+   },
+   "t": "Avec Moyenne, on obtient la vente moyenne de chaque région."
+  },
+  {
+   "c": "H2",
+   "tab": "Analyse du tableau croisé",
+   "pivot": {
+    "fields": [
+     "Vendeur",
+     "Région",
+     "Produit",
+     "Montant"
+    ],
+    "filt": [],
+    "cols": [],
+    "rows": [
+     "Région"
+    ],
+    "vals": [
+     "Somme de Montant",
+     "Nombre de Montant"
+    ],
+    "pick": "Montant"
+   },
+   "set": {
+    "G1": "Somme de Montant",
+    "G2": "430",
+    "G3": "290",
+    "G4": "720",
+    "H1": "Nombre de Montant",
+    "H2": "4",
+    "H3": "4",
+    "H4": "8"
+   },
+   "fmt": {
+    "H1": "h",
+    "H4": "b"
+   },
+   "t": "Pour afficher deux calculs côte à côte, glissez le champ une seconde fois dans Valeurs."
+  }
+ ],
+ "guide": {
+  "question": "Comment remplacer la somme par une moyenne dans un tableau croisé dynamique ?",
+  "intro": "Par défaut, un tableau croisé additionne les nombres. Clic droit sur une valeur › Synthétiser les valeurs par : choisissez Nombre pour compter les lignes, Moyenne, Max ou Min. Pour afficher deux calculs côte à côte, glissez le même champ une seconde fois dans la zone Valeurs.",
+  "exemple": {
+   "titre": "Exemple",
+   "formule": "Clic droit › Synthétiser les valeurs par › Moyenne",
+   "explication": "Nord : somme 430, 4 ventes, moyenne 107,50 € ; Sud : somme 290, 4 ventes, moyenne 72,50 €."
+  },
+  "erreurs": [
+   [
+    "Le tableau affiche Nombre au lieu de Somme",
+    "La colonne contient du texte ou des cellules vides : corrigez la source, puis actualisez."
+   ],
+   [
+    "Trop de décimales",
+    "Clic droit › Format de nombre, pas Format de cellule, pour que le format tienne."
+   ]
+  ],
+  "faq": [
+   [
+    "Comment compter les vendeurs différents ?",
+    "Cochez Ajouter ces données au modèle de données à la création, puis choisissez Nombre distinct."
+   ],
+   [
+    "Comment renommer « Somme de Montant » ?",
+    "Cliquez sur l'en-tête et tapez un nouveau nom, différent du nom du champ."
+   ],
+   [
+    "Comment afficher des pourcentages ?",
+    "Clic droit › Afficher les valeurs › % du total général."
+   ]
+  ]
+ },
+ "voirAussi": [
+  "tcd-pourcentage-du-total",
+  "creer-un-tableau-croise-dynamique",
+  "tcd-champ-calcule",
+  "moyenne-min-max"
  ]
 }

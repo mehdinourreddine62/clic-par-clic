@@ -6,20 +6,108 @@
  "motsCles": "#PROPAGATION! #EPARS! erreur formule dynamique unique filtre place occupée",
  "syntaxe": "Vider les cellules qui gênent",
  "arguments": [
-  ["Cause","Le résultat a besoin de plusieurs cellules, dont une est occupée"],
-  ["Solution","Vider la cellule qui bloque"],
-  ["Autre nom","#EPARS! dans certaines versions"]
+  [
+   "Cause",
+   "Le résultat a besoin de plusieurs cellules, dont une est occupée"
+  ],
+  [
+   "Solution",
+   "Vider la cellule qui bloque"
+  ],
+  [
+   "Autre nom",
+   "#EPARS! dans certaines versions"
+  ]
  ],
  "grille": [
-  ["Client","","Clients"],
-  ["Dupont","",""],
-  ["Martin","",""],
-  ["Dupont","","occupé"],
-  ["Leroy","",""]
+  [
+   "Client",
+   "",
+   "Clients"
+  ],
+  [
+   "Dupont",
+   "",
+   ""
+  ],
+  [
+   "Martin",
+   "",
+   ""
+  ],
+  [
+   "Dupont",
+   "",
+   "occupé"
+  ],
+  [
+   "Leroy",
+   "",
+   ""
+  ]
  ],
+ "titreSeo": "Erreur #PROPAGATION! dans Excel : cause et solution",
  "etapes": [
-  {"c":"C2","f":"=UNIQUE(A2:A5)","v":"#PROPAGATION!","mark":"C4","t":"#PROPAGATION! : le résultat a besoin de plusieurs cellules, mais l'une d'elles est occupée."},
-  {"c":"C4","keys":"Suppr","set":{"C2":"Dupont","C3":"Martin","C4":"Leroy"},"spill":"C2:C4","t":"Videz la cellule qui gêne : le résultat se déploie aussitôt."},
-  {"c":"C2","t":"Gardez toujours de la place sous et à droite d'une formule dynamique."}
+  {
+   "c": "C2",
+   "f": "=UNIQUE(A2:A5)",
+   "v": "#PROPAGATION!",
+   "mark": "C4",
+   "t": "#PROPAGATION! : le résultat a besoin de plusieurs cellules, mais l'une d'elles est occupée."
+  },
+  {
+   "c": "C4",
+   "keys": "Suppr",
+   "set": {
+    "C2": "Dupont",
+    "C3": "Martin",
+    "C4": "Leroy"
+   },
+   "spill": "C2:C4",
+   "t": "Videz la cellule qui gêne : le résultat se déploie aussitôt."
+  },
+  {
+   "c": "C2",
+   "t": "Gardez toujours de la place sous et à droite d'une formule dynamique."
+  }
+ ],
+ "guide": {
+  "question": "Comment corriger l'erreur #PROPAGATION! dans Excel ?",
+  "intro": "#PROPAGATION! (#SPILL! en anglais) apparaît quand une formule dynamique (UNIQUE, FILTRE, TRIER, SEQUENCE…) a besoin de plusieurs cellules pour afficher son résultat, mais que l'une d'elles est occupée. Videz la cellule qui gêne : le résultat se déploie aussitôt. Un clic sur l'erreur montre la zone nécessaire en pointillés.",
+  "exemple": {
+   "titre": "Exemple",
+   "formule": "=UNIQUE(A2:A5)",
+   "explication": "La liste des clients sans doublon a besoin de trois cellules ; « occupé » en C4 bloque le résultat. Une fois C4 vidée, Dupont, Martin et Leroy s'affichent."
+  },
+  "erreurs": [
+   [
+    "La cellule semble vide mais l'erreur reste",
+    "Elle contient un espace ou une chaîne vide : sélectionnez-la et appuyez sur Suppr."
+   ],
+   [
+    "#PROPAGATION! dans un tableau Excel",
+    "Les formules dynamiques ne se déploient pas dans un tableau : placez-la à côté."
+   ]
+  ],
+  "faq": [
+   [
+    "Comment savoir quelle cellule gêne ?",
+    "Cliquez sur le losange d'avertissement › Sélectionner les cellules qui obstruent."
+   ],
+   [
+    "Comment faire référence à tout le résultat ?",
+    "Ajoutez # : =NBVAL(C2#)."
+   ],
+   [
+    "Pourquoi le résultat a-t-il changé de taille ?",
+    "Il suit les données : prévoyez toujours de la place sous et à droite."
+   ]
+  ]
+ },
+ "voirAussi": [
+  "unique-trier",
+  "filtre",
+  "sequence",
+  "erreur-valeur"
  ]
 }

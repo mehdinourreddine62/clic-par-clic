@@ -6,21 +6,115 @@
  "motsCles": "raccourci clavier sélection maj flèche espace colonne ligne",
  "syntaxe": "Maj + flèche",
  "arguments": [
-  ["Maj + flèche","Étend la sélection d'une cellule"],
-  ["Ctrl + Maj + flèche","Étend jusqu'au bord des données"],
-  ["Ctrl + Espace","Toute la colonne"],
-  ["Maj + Espace","Toute la ligne"]
+  [
+   "Maj + flèche",
+   "Étend la sélection d'une cellule"
+  ],
+  [
+   "Ctrl + Maj + flèche",
+   "Étend jusqu'au bord des données"
+  ],
+  [
+   "Ctrl + Espace",
+   "Toute la colonne"
+  ],
+  [
+   "Maj + Espace",
+   "Toute la ligne"
+  ]
  ],
  "grille": [
-  ["Produit","Prix","Stock"],
-  ["Stylo","1,20 €","40"],
-  ["Cahier","3,50 €","25"],
-  ["Classeur","5,90 €","12"]
+  [
+   "Produit",
+   "Prix",
+   "Stock"
+  ],
+  [
+   "Stylo",
+   "1,20 €",
+   "40"
+  ],
+  [
+   "Cahier",
+   "3,50 €",
+   "25"
+  ],
+  [
+   "Classeur",
+   "5,90 €",
+   "12"
+  ]
  ],
+ "titreSeo": "Raccourcis Excel pour sélectionner : Maj, Ctrl + Espace",
  "etapes": [
-  {"c":"A2","sel":"A2:B2","kb":1,"keys":"Maj + →","t":"Maj + flèche étend la sélection d'une cellule."},
-  {"c":"A2","sel":"A2:B4","kb":1,"keys":"Ctrl + Maj + ↓","t":"Ajoutez Ctrl pour aller d'un coup jusqu'à la dernière ligne."},
-  {"c":"B2","sel":"col:B","kb":1,"keys":"Ctrl + Espace","spot":"cols","t":"Ctrl + Espace sélectionne toute la colonne."},
-  {"c":"B2","sel":"row:2","kb":1,"keys":"Maj + Espace","spot":"rows","t":"Maj + Espace sélectionne toute la ligne."}
+  {
+   "c": "A2",
+   "sel": "A2:B2",
+   "kb": 1,
+   "keys": "Maj + →",
+   "t": "Maj + flèche étend la sélection d'une cellule."
+  },
+  {
+   "c": "A2",
+   "sel": "A2:B4",
+   "kb": 1,
+   "keys": "Ctrl + Maj + ↓",
+   "t": "Ajoutez Ctrl pour aller d'un coup jusqu'à la dernière ligne."
+  },
+  {
+   "c": "B2",
+   "sel": "col:B",
+   "kb": 1,
+   "keys": "Ctrl + Espace",
+   "spot": "cols",
+   "t": "Ctrl + Espace sélectionne toute la colonne."
+  },
+  {
+   "c": "B2",
+   "sel": "row:2",
+   "kb": 1,
+   "keys": "Maj + Espace",
+   "spot": "rows",
+   "t": "Maj + Espace sélectionne toute la ligne."
+  }
+ ],
+ "guide": {
+  "question": "Comment sélectionner au clavier dans Excel ?",
+  "intro": "Maj + flèche étend la sélection d'une cellule ; Ctrl + Maj + flèche l'étend d'un coup jusqu'au bout des données. Ctrl + Espace sélectionne la colonne entière, Maj + Espace la ligne entière, et Ctrl + A tout le tableau. Ces raccourcis sont plus rapides et plus précis que la souris sur un long tableau.",
+  "exemple": {
+   "titre": "À retenir",
+   "formule": "Maj + →   Ctrl + Maj + ↓   Ctrl + Espace   Maj + Espace",
+   "explication": "Depuis A1, Ctrl + Maj + ↓ sélectionne A1:A4 ; Maj + → étend à la colonne Prix."
+  },
+  "erreurs": [
+   [
+    "Ctrl + Maj + ↓ s'arrête trop tôt",
+    "Une cellule vide coupe la colonne : appuyez de nouveau sur ↓ avec Ctrl + Maj."
+   ],
+   [
+    "Maj + Espace écrit un espace",
+    "Vous étiez en train de modifier la cellule : appuyez d'abord sur Échap."
+   ]
+  ],
+  "faq": [
+   [
+    "Comment sélectionner tout le tableau ?",
+    "Ctrl + A depuis une cellule du tableau."
+   ],
+   [
+    "Comment sélectionner des cellules éloignées au clavier ?",
+    "Maj + F8, puis déplacez-vous et étendez la sélection."
+   ],
+   [
+    "Comment insérer une ligne au clavier ?",
+    "Maj + Espace pour sélectionner la ligne, puis Ctrl + +."
+   ]
+  ]
+ },
+ "voirAussi": [
+  "raccourcis-se-deplacer",
+  "selectionner",
+  "raccourcis-saisir",
+  "raccourcis-classeur"
  ]
 }

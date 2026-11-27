@@ -6,26 +6,228 @@
  "motsCles": "tcd filtre filtrer zone filtres vendeur tous segment",
  "syntaxe": "Glisser un champ dans la zone Filtres",
  "ruban": true,
- "largeurs": {"E":26},
+ "largeurs": {
+  "E": 26
+ },
  "arguments": [
-  ["Zone Filtres","Ajoute une liste au-dessus du tableau"],
-  ["(Tous)","Affiche toutes les données"]
+  [
+   "Zone Filtres",
+   "Ajoute une liste au-dessus du tableau"
+  ],
+  [
+   "(Tous)",
+   "Affiche toutes les données"
+  ]
  ],
  "grille": [
-  ["Vendeur","Région","Produit","Montant"],
-  ["Alice","Nord","Stylos","120"],
-  ["Bruno","Sud","Cahiers","80"],
-  ["Alice","Sud","Stylos","60"],
-  ["Chloé","Nord","Cahiers","150"],
-  ["Bruno","Nord","Stylos","90"],
-  ["Chloé","Sud","Stylos","110"],
-  ["Alice","Nord","Cahiers","70"],
-  ["Bruno","Sud","Stylos","40"]
+  [
+   "Vendeur",
+   "Région",
+   "Produit",
+   "Montant"
+  ],
+  [
+   "Alice",
+   "Nord",
+   "Stylos",
+   "120"
+  ],
+  [
+   "Bruno",
+   "Sud",
+   "Cahiers",
+   "80"
+  ],
+  [
+   "Alice",
+   "Sud",
+   "Stylos",
+   "60"
+  ],
+  [
+   "Chloé",
+   "Nord",
+   "Cahiers",
+   "150"
+  ],
+  [
+   "Bruno",
+   "Nord",
+   "Stylos",
+   "90"
+  ],
+  [
+   "Chloé",
+   "Sud",
+   "Stylos",
+   "110"
+  ],
+  [
+   "Alice",
+   "Nord",
+   "Cahiers",
+   "70"
+  ],
+  [
+   "Bruno",
+   "Sud",
+   "Stylos",
+   "40"
+  ]
  ],
+ "titreSeo": "Filtrer un tableau croisé dynamique (zone Filtres)",
  "etapes": [
-  {"c":"F3","tab":"Analyse du tableau croisé","pivot":{"fields":["Vendeur","Région","Produit","Montant"],"filt":[],"cols":[],"rows":["Région"],"vals":["Somme de Montant"]},"set":{"F3":"Étiquettes de lignes","G3":"Somme de Montant","F4":"Nord","G4":"430","F5":"Sud","G5":"290","F6":"Total général","G6":"720"},"fmt":{"F3:G3":"h","F6:G6":"b"},"t":"Voici les ventes par région, tous vendeurs confondus."},
-  {"c":"G1","tab":"Analyse du tableau croisé","pivot":{"fields":["Vendeur","Région","Produit","Montant"],"filt":["Vendeur"],"cols":[],"rows":["Région"],"vals":["Somme de Montant"],"pick":"Vendeur"},"set":{"F1":"Vendeur","G1":"(Tous)"},"fmt":{"F1":"b"},"dd":{"at":"G1"},"t":"Glissez Vendeur dans la zone Filtres : une liste apparaît au-dessus du tableau."},
-  {"c":"G1","tab":"Analyse du tableau croisé","dd":{"at":"G1","items":["(Tous)","Alice","Bruno","Chloé"],"open":1,"pick":1},"set":{"G1":"Alice","G4":"190","G5":"60","G6":"250"},"t":"Choisissez Alice : le tableau ne montre plus que ses ventes."},
-  {"c":"G1","tab":"Analyse du tableau croisé","dd":{"at":"G1","items":["(Tous)","Alice","Bruno","Chloé"],"open":1,"pick":0},"set":{"G1":"(Tous)","G4":"430","G5":"290","G6":"720"},"t":"Revenez sur « (Tous) » pour tout réafficher. Les données d'origine ne sont jamais modifiées."}
+  {
+   "c": "F3",
+   "tab": "Analyse du tableau croisé",
+   "pivot": {
+    "fields": [
+     "Vendeur",
+     "Région",
+     "Produit",
+     "Montant"
+    ],
+    "filt": [],
+    "cols": [],
+    "rows": [
+     "Région"
+    ],
+    "vals": [
+     "Somme de Montant"
+    ]
+   },
+   "set": {
+    "F3": "Étiquettes de lignes",
+    "G3": "Somme de Montant",
+    "F4": "Nord",
+    "G4": "430",
+    "F5": "Sud",
+    "G5": "290",
+    "F6": "Total général",
+    "G6": "720"
+   },
+   "fmt": {
+    "F3:G3": "h",
+    "F6:G6": "b"
+   },
+   "t": "Voici les ventes par région, tous vendeurs confondus."
+  },
+  {
+   "c": "G1",
+   "tab": "Analyse du tableau croisé",
+   "pivot": {
+    "fields": [
+     "Vendeur",
+     "Région",
+     "Produit",
+     "Montant"
+    ],
+    "filt": [
+     "Vendeur"
+    ],
+    "cols": [],
+    "rows": [
+     "Région"
+    ],
+    "vals": [
+     "Somme de Montant"
+    ],
+    "pick": "Vendeur"
+   },
+   "set": {
+    "F1": "Vendeur",
+    "G1": "(Tous)"
+   },
+   "fmt": {
+    "F1": "b"
+   },
+   "dd": {
+    "at": "G1"
+   },
+   "t": "Glissez Vendeur dans la zone Filtres : une liste apparaît au-dessus du tableau."
+  },
+  {
+   "c": "G1",
+   "tab": "Analyse du tableau croisé",
+   "dd": {
+    "at": "G1",
+    "items": [
+     "(Tous)",
+     "Alice",
+     "Bruno",
+     "Chloé"
+    ],
+    "open": 1,
+    "pick": 1
+   },
+   "set": {
+    "G1": "Alice",
+    "G4": "190",
+    "G5": "60",
+    "G6": "250"
+   },
+   "t": "Choisissez Alice : le tableau ne montre plus que ses ventes."
+  },
+  {
+   "c": "G1",
+   "tab": "Analyse du tableau croisé",
+   "dd": {
+    "at": "G1",
+    "items": [
+     "(Tous)",
+     "Alice",
+     "Bruno",
+     "Chloé"
+    ],
+    "open": 1,
+    "pick": 0
+   },
+   "set": {
+    "G1": "(Tous)",
+    "G4": "430",
+    "G5": "290",
+    "G6": "720"
+   },
+   "t": "Revenez sur « (Tous) » pour tout réafficher. Les données d'origine ne sont jamais modifiées."
+  }
+ ],
+ "guide": {
+  "question": "Comment filtrer un tableau croisé dynamique ?",
+  "intro": "Glissez un champ dans la zone Filtres de la liste des champs : une liste déroulante apparaît au-dessus du tableau croisé. Choisissez une valeur pour n'afficher que ses données, ou cochez Sélectionner plusieurs éléments. Les données d'origine ne sont jamais modifiées ; revenez sur (Tous) pour tout réafficher.",
+  "exemple": {
+   "titre": "Exemple",
+   "formule": "Glisser Vendeur dans la zone Filtres",
+   "explication": "Avec le filtre sur Alice, le tableau des régions n'affiche plus que ses ventes : Nord 190, Sud 60."
+  },
+  "erreurs": [
+   [
+    "La liste propose des valeurs supprimées",
+    "Actualisez, et réglez Nombre d'éléments à retenir par champ sur Aucun."
+   ],
+   [
+    "Le total semble faux",
+    "Un filtre est actif sur un autre champ : vérifiez les entonnoirs des en-têtes."
+   ]
+  ],
+  "faq": [
+   [
+    "Filtre ou segment ?",
+    "Le segment fait la même chose avec des boutons visibles, plus pratiques."
+   ],
+   [
+    "Comment créer un onglet par vendeur ?",
+    "Analyse du tableau croisé › Options › Afficher les pages de filtre du rapport."
+   ],
+   [
+    "Peut-on filtrer les 3 meilleurs ?",
+    "Oui : flèche de l'en-tête de lignes › Filtres s'appliquant aux valeurs › 10 premiers."
+   ]
+  ]
+ },
+ "voirAussi": [
+  "tcd-segments",
+  "tcd-chronologie",
+  "creer-un-tableau-croise-dynamique",
+  "tcd-actualiser"
  ]
 }

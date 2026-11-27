@@ -3,15 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Additionner plusieurs feuilles dans Excel | Clic par clic</title>
-<meta name="description" content="Faire le total de la même cellule sur plusieurs feuilles. Leçon Excel animée en 4 étapes, niveau avancé, gratuite.">
+<title>Additionner la même cellule sur plusieurs feuilles Excel</title>
+<meta name="description" content="Quand plusieurs feuilles ont la même structure (une par mois), une seule formule additionne la même cellule sur toutes : =SOMME(Janvier:Mars!B2).">
 <link rel="canonical" href="https://mehdinourreddine62.github.io/clic-par-clic/excel/somme-sur-plusieurs-feuilles/">
 <meta name="robots" content="index,follow">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="Clic par clic">
-<meta property="og:title" content="Additionner plusieurs feuilles dans Excel | Clic par clic">
-<meta property="og:description" content="Faire le total de la même cellule sur plusieurs feuilles. Leçon Excel animée en 4 étapes, niveau avancé, gratuite.">
+<meta property="og:title" content="Additionner la même cellule sur plusieurs feuilles Excel">
+<meta property="og:description" content="Quand plusieurs feuilles ont la même structure (une par mois), une seule formule additionne la même cellule sur toutes : =SOMME(Janvier:Mars!B2).">
 <meta property="og:url" content="https://mehdinourreddine62.github.io/clic-par-clic/excel/somme-sur-plusieurs-feuilles/">
 <meta property="og:image" content="https://mehdinourreddine62.github.io/clic-par-clic/assets/og-excel.png">
 <meta property="og:image:width" content="1200">
@@ -61,7 +61,18 @@
     <div class="pband" id="pband" hidden></div>
     <details class="sx"><summary>Syntaxe <code>=SOMME(Janvier:Mars!B2)</code></summary><dl><dt>Janvier:Mars</dt><dd>De la feuille Janvier à la feuille Mars</dd><dt>!B2</dt><dd>La même cellule sur chacune</dd><dt>Condition</dt><dd>Des feuilles construites à l'identique</dd></dl></details>
     <details class="sx"><summary>Résumé écrit des étapes</summary><ol class="steps"><li>Trois feuilles construites à l'identique : les ventes de stylos sont toujours en B2.</li><li>Février affiche 90, et Mars 150, au même endroit.</li><li>Sur la feuille Total, cette formule additionne B2 de Janvier jusqu'à Mars.</li><li>Glissez une nouvelle feuille entre Janvier et Mars : elle est comptée automatiquement.</li></ol></details>
-    <section class="also"><h2>Voir aussi</h2><div class="also-l"><a href="../reference-a-une-autre-feuille/"><b>Utiliser une cellule d'une autre feuille</b><small>Reprendre un résultat calculé sur une autre feuille.</small></a><a href="../nommer-une-plage/"><b>Nommer une plage</b><small>Remplacer une référence par un nom lisible.</small></a><a href="../nommer-une-cellule/"><b>Nommer une cellule</b><small>Donner un nom à un taux pour ne plus penser aux $.</small></a></div></section>
+    <section class="guide">
+      <h2>Comment faire la somme de plusieurs feuilles dans Excel ?</h2>
+      <p>Quand plusieurs feuilles ont la même structure (une par mois), une seule formule additionne la même cellule sur toutes : =SOMME(Janvier:Mars!B2). Les deux-points désignent toutes les feuilles placées entre Janvier et Mars. Une feuille glissée entre les deux est comptée automatiquement.</p>
+      <h3>Exemple</h3>
+      <p><code class="gx">=SOMME(Janvier:Mars!B2)</code></p>
+      <p>Ventes de stylos : 120 en janvier, 90 en février, 150 en mars. La feuille Total affiche 360.</p>
+      <h3>Erreurs fréquentes</h3>
+      <ul><li><b>Le total est faux</b>Les feuilles ne sont pas construites à l'identique : la donnée n'est pas en B2 partout.</li><li><b>Une feuille n'est pas comptée</b>Elle est placée en dehors de Janvier et Mars : déplacez son onglet entre les deux.</li></ul>
+      <h3>Questions fréquentes</h3>
+      <h4>Comment écrire la formule sans la taper ?</h4><p>Tapez =SOMME(, cliquez sur l'onglet Janvier, Maj + clic sur Mars, cliquez sur B2, puis Entrée.</p><h4>Les noms avec espaces ?</h4><p>Excel ajoute des apostrophes : ='Mois 1:Mois 3'!B2.</p><h4>Fonctionne-t-il avec MOYENNE ?</h4><p>Oui, ainsi qu'avec MAX, MIN et NB.</p>
+    </section>
+    <section class="also"><h2>Voir aussi</h2><div class="also-l"><a href="../reference-a-une-autre-feuille/"><b>Utiliser une cellule d'une autre feuille</b><small>Reprendre un résultat calculé sur une autre feuille.</small></a><a href="../feuilles-du-classeur/"><b>Les feuilles du classeur</b><small>Ajouter, renommer et parcourir les feuilles.</small></a><a href="../somme/"><b>SOMME</b><small>Additionner une plage de cellules.</small></a><a href="../nommer-une-plage/"><b>Nommer une plage</b><small>Remplacer une référence par un nom lisible.</small></a></div></section>
     <nav class="lnav" aria-label="Leçons voisines"><a href="../reference-a-une-autre-feuille/"><small>← Précédente</small>Utiliser une cellule d'une autre feuille</a><a class="nx" id="nextLesson" href="../nommer-une-plage/"><small>Suivante →</small>Nommer une plage</a></nav>
   </main>
 </div>

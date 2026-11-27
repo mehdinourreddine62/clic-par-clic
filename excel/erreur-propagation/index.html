@@ -3,15 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Corriger #PROPAGATION! – Excel en animation | Clic par clic</title>
-<meta name="description" content="Libérer la place dont une formule dynamique a besoin. Leçon Excel animée en 3 étapes, niveau avancé, gratuite.">
+<title>Erreur #PROPAGATION! dans Excel : cause et solution</title>
+<meta name="description" content="#PROPAGATION! (#SPILL! en anglais) apparaît quand une formule dynamique (UNIQUE, FILTRE, TRIER, SEQUENCE…) a besoin de plusieurs cellules pour afficher son…">
 <link rel="canonical" href="https://mehdinourreddine62.github.io/clic-par-clic/excel/erreur-propagation/">
 <meta name="robots" content="index,follow">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="Clic par clic">
-<meta property="og:title" content="Corriger #PROPAGATION! – Excel en animation | Clic par clic">
-<meta property="og:description" content="Libérer la place dont une formule dynamique a besoin. Leçon Excel animée en 3 étapes, niveau avancé, gratuite.">
+<meta property="og:title" content="Erreur #PROPAGATION! dans Excel : cause et solution">
+<meta property="og:description" content="#PROPAGATION! (#SPILL! en anglais) apparaît quand une formule dynamique (UNIQUE, FILTRE, TRIER, SEQUENCE…) a besoin de plusieurs cellules pour afficher son…">
 <meta property="og:url" content="https://mehdinourreddine62.github.io/clic-par-clic/excel/erreur-propagation/">
 <meta property="og:image" content="https://mehdinourreddine62.github.io/clic-par-clic/assets/og-excel.png">
 <meta property="og:image:width" content="1200">
@@ -61,7 +61,18 @@
     <div class="pband" id="pband" hidden></div>
     <details class="sx"><summary>Syntaxe <code>Vider les cellules qui gênent</code></summary><dl><dt>Cause</dt><dd>Le résultat a besoin de plusieurs cellules, dont une est occupée</dd><dt>Solution</dt><dd>Vider la cellule qui bloque</dd><dt>Autre nom</dt><dd>#EPARS! dans certaines versions</dd></dl></details>
     <details class="sx"><summary>Résumé écrit des étapes</summary><ol class="steps"><li>#PROPAGATION! : le résultat a besoin de plusieurs cellules, mais l'une d'elles est occupée.</li><li>Videz la cellule qui gêne : le résultat se déploie aussitôt.</li><li>Gardez toujours de la place sous et à droite d'une formule dynamique.</li></ol></details>
-    <section class="also"><h2>Voir aussi</h2><div class="also-l"><a href="../erreur-div-0/"><b>Corriger #DIV/0!</b><small>Comprendre et supprimer l'erreur de division par zéro.</small></a><a href="../erreur-na/"><b>Corriger #N/A</b><small>Comprendre pourquoi une recherche ne trouve rien.</small></a><a href="../erreur-valeur/"><b>Corriger #VALEUR!</b><small>Repérer le texte qui empêche un calcul.</small></a></div></section>
+    <section class="guide">
+      <h2>Comment corriger l'erreur #PROPAGATION! dans Excel ?</h2>
+      <p>#PROPAGATION! (#SPILL! en anglais) apparaît quand une formule dynamique (UNIQUE, FILTRE, TRIER, SEQUENCE…) a besoin de plusieurs cellules pour afficher son résultat, mais que l'une d'elles est occupée. Videz la cellule qui gêne : le résultat se déploie aussitôt. Un clic sur l'erreur montre la zone nécessaire en pointillés.</p>
+      <h3>Exemple</h3>
+      <p><code class="gx">=UNIQUE(A2:A5)</code></p>
+      <p>La liste des clients sans doublon a besoin de trois cellules ; « occupé » en C4 bloque le résultat. Une fois C4 vidée, Dupont, Martin et Leroy s'affichent.</p>
+      <h3>Erreurs fréquentes</h3>
+      <ul><li><b>La cellule semble vide mais l'erreur reste</b>Elle contient un espace ou une chaîne vide : sélectionnez-la et appuyez sur Suppr.</li><li><b>#PROPAGATION! dans un tableau Excel</b>Les formules dynamiques ne se déploient pas dans un tableau : placez-la à côté.</li></ul>
+      <h3>Questions fréquentes</h3>
+      <h4>Comment savoir quelle cellule gêne ?</h4><p>Cliquez sur le losange d'avertissement › Sélectionner les cellules qui obstruent.</p><h4>Comment faire référence à tout le résultat ?</h4><p>Ajoutez # : =NBVAL(C2#).</p><h4>Pourquoi le résultat a-t-il changé de taille ?</h4><p>Il suit les données : prévoyez toujours de la place sous et à droite.</p>
+    </section>
+    <section class="also"><h2>Voir aussi</h2><div class="also-l"><a href="../unique-trier/"><b>UNIQUE et TRIER</b><small>Obtenir une liste sans doublons, classée automatiquement.</small></a><a href="../filtre/"><b>FILTRE</b><small>Extraire les lignes d'un tableau qui respectent une condition.</small></a><a href="../sequence/"><b>SEQUENCE</b><small>Générer automatiquement une suite de nombres.</small></a><a href="../erreur-valeur/"><b>Corriger #VALEUR!</b><small>Repérer le texte qui empêche un calcul.</small></a></div></section>
     <nav class="lnav" aria-label="Leçons voisines"><a href="../erreur-nom/"><small>← Précédente</small>Corriger #NOM?</a><a class="nx" id="nextLesson" href="../reference-circulaire/"><small>Suivante →</small>Référence circulaire</a></nav>
   </main>
 </div>

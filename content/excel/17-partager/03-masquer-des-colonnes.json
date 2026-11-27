@@ -6,19 +6,110 @@
  "motsCles": "masquer afficher colonne ligne cacher clic droit",
  "syntaxe": "Clic droit sur la lettre › Masquer",
  "arguments": [
-  ["Masquer","La colonne disparaît de l'écran et de l'impression"],
-  ["Afficher","Sélectionner les colonnes voisines, puis clic droit"]
+  [
+   "Masquer",
+   "La colonne disparaît de l'écran et de l'impression"
+  ],
+  [
+   "Afficher",
+   "Sélectionner les colonnes voisines, puis clic droit"
+  ]
  ],
  "grille": [
-  ["Client","Ville","Marge","Montant"],
-  ["Durand","Lille","32 %","120"],
-  ["Martin","Lyon","28 %","340"],
-  ["Petit","Nantes","35 %","210"]
+  [
+   "Client",
+   "Ville",
+   "Marge",
+   "Montant"
+  ],
+  [
+   "Durand",
+   "Lille",
+   "32 %",
+   "120"
+  ],
+  [
+   "Martin",
+   "Lyon",
+   "28 %",
+   "340"
+  ],
+  [
+   "Petit",
+   "Nantes",
+   "35 %",
+   "210"
+  ]
  ],
+ "titreSeo": "Masquer et afficher des colonnes dans Excel",
  "etapes": [
-  {"c":"C1","sel":"col:C","menu":"Clic droit sur la lettre de la colonne › <b>Masquer</b>","spot":"cols","t":"Pour cacher une colonne sans la supprimer : clic droit sur sa lettre, Masquer."},
-  {"c":"B1","hidec":["C"],"t":"La colonne disparaît de l'écran et de l'impression. Les lettres passent directement de B à D."},
-  {"c":"B2","f":"Roubaix","hidec":["C"],"t":"Ses données sont toujours là, et les formules qui les utilisent continuent de fonctionner."},
-  {"c":"B1","sel":"B1:D1","menu":"Sélectionner les colonnes B et D › clic droit › <b>Afficher</b>","hidec":[],"t":"Pour la retrouver : sélectionnez les deux colonnes voisines, clic droit, Afficher."}
+  {
+   "c": "C1",
+   "sel": "col:C",
+   "menu": "Clic droit sur la lettre de la colonne › <b>Masquer</b>",
+   "spot": "cols",
+   "t": "Pour cacher une colonne sans la supprimer : clic droit sur sa lettre, Masquer."
+  },
+  {
+   "c": "B1",
+   "hidec": [
+    "C"
+   ],
+   "t": "La colonne disparaît de l'écran et de l'impression. Les lettres passent directement de B à D."
+  },
+  {
+   "c": "B2",
+   "f": "Roubaix",
+   "hidec": [
+    "C"
+   ],
+   "t": "Ses données sont toujours là, et les formules qui les utilisent continuent de fonctionner."
+  },
+  {
+   "c": "B1",
+   "sel": "B1:D1",
+   "menu": "Sélectionner les colonnes B et D › clic droit › <b>Afficher</b>",
+   "hidec": [],
+   "t": "Pour la retrouver : sélectionnez les deux colonnes voisines, clic droit, Afficher."
+  }
+ ],
+ "guide": {
+  "question": "Comment masquer une colonne dans Excel, et la faire réapparaître ?",
+  "intro": "Pour cacher une colonne sans la supprimer, faites un clic droit sur sa lettre, puis Masquer. Elle disparaît de l'écran et de l'impression, mais ses données restent et les formules qui les utilisent continuent de fonctionner. Pour l'afficher de nouveau, sélectionnez les deux colonnes voisines, clic droit, Afficher.",
+  "exemple": {
+   "titre": "Exemple",
+   "formule": "Clic droit sur la lettre › Masquer",
+   "explication": "La colonne Marge (C) disparaît : les lettres passent de B à D, mais les montants et les formules restent justes."
+  },
+  "erreurs": [
+   [
+    "La colonne A ne réapparaît pas",
+    "Elle n'a pas de voisine à gauche : tapez A1 dans la zone Nom, puis Format › Masquer et afficher › Afficher les colonnes."
+   ],
+   [
+    "Les données masquées restent visibles pour les autres",
+    "Masquer ne protège rien : pour cacher des données sensibles, supprimez-les du fichier partagé."
+   ]
+  ],
+  "faq": [
+   [
+    "Comment savoir s'il y a des colonnes masquées ?",
+    "Une lettre manque, et un double trait marque l'emplacement."
+   ],
+   [
+    "Comment masquer des lignes ?",
+    "Clic droit sur le numéro de ligne › Masquer."
+   ],
+   [
+    "Les colonnes masquées comptent-elles dans SOMME ?",
+    "Oui ; SOUS.TOTAL(109;…) les ignore."
+   ]
+  ]
+ },
+ "voirAussi": [
+  "colonnes-et-lignes",
+  "proteger-une-feuille",
+  "zone-d-impression",
+  "travailler-a-plusieurs"
  ]
 }

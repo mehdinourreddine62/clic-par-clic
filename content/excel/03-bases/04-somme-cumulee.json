@@ -6,19 +6,103 @@
  "motsCles": "cumul cumulé progressif running total",
  "syntaxe": "=SOMME($B$2:B2)",
  "arguments": [
-  ["$B$2","Le début de la plage, figé"],
-  ["B2","La fin de la plage, qui descend à chaque ligne"]
+  [
+   "$B$2",
+   "Le début de la plage, figé"
+  ],
+  [
+   "B2",
+   "La fin de la plage, qui descend à chaque ligne"
+  ]
  ],
  "grille": [
-  ["Mois","Ventes","Cumul"],
-  ["Janvier","200",""],
-  ["Février","150",""],
-  ["Mars","300",""],
-  ["Avril","250",""]
+  [
+   "Mois",
+   "Ventes",
+   "Cumul"
+  ],
+  [
+   "Janvier",
+   "200",
+   ""
+  ],
+  [
+   "Février",
+   "150",
+   ""
+  ],
+  [
+   "Mars",
+   "300",
+   ""
+  ],
+  [
+   "Avril",
+   "250",
+   ""
+  ]
  ],
+ "titreSeo": "Somme cumulée dans Excel : un total qui progresse",
  "etapes": [
-  {"c":"C2","f":"=SOMME($B$2:B2)","v":"200","t":"Le début de la plage est figé avec des $, la fin reste libre."},
-  {"c":"C2","fill":{"C3":"350","C4":"650","C5":"900"},"t":"En recopiant, la plage s'allonge d'une ligne à chaque fois."},
-  {"c":"C5","f":"=SOMME($B$2:B5)","v":"900","t":"En C5, la plage va de B2 à B5 : c'est le total depuis janvier."}
+  {
+   "c": "C2",
+   "f": "=SOMME($B$2:B2)",
+   "v": "200",
+   "t": "Le début de la plage est figé avec des $, la fin reste libre."
+  },
+  {
+   "c": "C2",
+   "fill": {
+    "C3": "350",
+    "C4": "650",
+    "C5": "900"
+   },
+   "t": "En recopiant, la plage s'allonge d'une ligne à chaque fois."
+  },
+  {
+   "c": "C5",
+   "f": "=SOMME($B$2:B5)",
+   "v": "900",
+   "t": "En C5, la plage va de B2 à B5 : c'est le total depuis janvier."
+  }
+ ],
+ "guide": {
+  "question": "Comment faire une somme cumulée dans Excel ?",
+  "intro": "Une somme cumulée additionne toutes les valeurs depuis le début jusqu'à la ligne courante. On l'écrit avec SOMME en figeant le début de la plage avec des $ et en laissant la fin libre : en recopiant vers le bas, la plage s'allonge d'une ligne à chaque fois.",
+  "exemple": {
+   "titre": "Exemple",
+   "formule": "=SOMME($B$2:B2)",
+   "explication": "Ventes 200, 150, 300, 250 : le cumul donne 200, 350, 650 et 900. En C5, la formule est devenue =SOMME($B$2:B5)."
+  },
+  "erreurs": [
+   [
+    "Le cumul reste égal à la valeur de la ligne",
+    "Le début de la plage n'est pas figé : écrivez $B$2."
+   ],
+   [
+    "Le cumul compte tout dès la première ligne",
+    "La fin de la plage est figée aussi : seule la première référence prend des $."
+   ]
+  ],
+  "faq": [
+   [
+    "Peut-on écrire =C1+B2 à la place ?",
+    "Oui, mais la première ligne demande une formule différente ; SOMME($B$2:B2) est la même partout."
+   ],
+   [
+    "Comment faire un cumul par mois dans un tableau croisé ?",
+    "Clic droit › Afficher les valeurs › Résultat cumulé par."
+   ],
+   [
+    "Comment afficher le cumul en pourcentage ?",
+    "Divisez le cumul par le total figé : =C2/$C$5."
+   ]
+  ]
+ },
+ "voirAussi": [
+  "references-absolues",
+  "somme",
+  "recopier-une-serie",
+  "pourcentages"
  ]
 }

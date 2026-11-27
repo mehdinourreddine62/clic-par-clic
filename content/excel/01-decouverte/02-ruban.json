@@ -7,28 +7,133 @@
  "syntaxe": "Un onglet = une famille de commandes",
  "ruban": true,
  "arguments": [
-  ["Accueil","Copier, coller, police, alignement, nombres"],
-  ["Insertion","Tableaux, images, graphiques"],
-  ["Mise en page","Impression"],
-  ["Formules","Les fonctions par famille"],
-  ["Données","Trier, filtrer, nettoyer"],
-  ["Révision","Orthographe, commentaires, protection"],
-  ["Affichage","Zoom, volets figés"],
-  ["Fichier","Ouvrir, enregistrer, imprimer"]
+  [
+   "Accueil",
+   "Copier, coller, police, alignement, nombres"
+  ],
+  [
+   "Insertion",
+   "Tableaux, images, graphiques"
+  ],
+  [
+   "Mise en page",
+   "Impression"
+  ],
+  [
+   "Formules",
+   "Les fonctions par famille"
+  ],
+  [
+   "Données",
+   "Trier, filtrer, nettoyer"
+  ],
+  [
+   "Révision",
+   "Orthographe, commentaires, protection"
+  ],
+  [
+   "Affichage",
+   "Zoom, volets figés"
+  ],
+  [
+   "Fichier",
+   "Ouvrir, enregistrer, imprimer"
+  ]
  ],
  "grille": [
-  ["Produit","Prix"],
-  ["Stylo","1,20 €"],
-  ["Cahier","3,50 €"]
+  [
+   "Produit",
+   "Prix"
+  ],
+  [
+   "Stylo",
+   "1,20 €"
+  ],
+  [
+   "Cahier",
+   "3,50 €"
+  ]
  ],
+ "titreSeo": "Le ruban d'Excel : à quoi sert chaque onglet",
  "etapes": [
-  {"c":"A1","tab":"Accueil","t":"Accueil : les commandes de tous les jours. Copier, coller, police, alignement, format des nombres."},
-  {"tab":"Insertion","t":"Insertion : ajouter un tableau, une image ou un graphique.","c":"A1"},
-  {"tab":"Mise en page","t":"Mise en page : préparer l'impression, avec les marges et l'orientation.","c":"A1"},
-  {"tab":"Formules","t":"Formules : toutes les fonctions, classées par famille.","c":"A1"},
-  {"tab":"Données","t":"Données : trier, filtrer et nettoyer une liste.","c":"A1"},
-  {"tab":"Révision","t":"Révision : vérifier l'orthographe, commenter et protéger la feuille.","c":"A1"},
-  {"tab":"Affichage","t":"Affichage : zoomer et figer les titres pour qu'ils restent visibles.","c":"A1"},
-  {"tab":"Fichier","t":"Fichier : ouvrir, enregistrer et imprimer le classeur.","c":"A1"}
+  {
+   "c": "A1",
+   "tab": "Accueil",
+   "t": "Accueil : les commandes de tous les jours. Copier, coller, police, alignement, format des nombres."
+  },
+  {
+   "tab": "Insertion",
+   "t": "Insertion : ajouter un tableau, une image ou un graphique.",
+   "c": "A1"
+  },
+  {
+   "tab": "Mise en page",
+   "t": "Mise en page : préparer l'impression, avec les marges et l'orientation.",
+   "c": "A1"
+  },
+  {
+   "tab": "Formules",
+   "t": "Formules : toutes les fonctions, classées par famille.",
+   "c": "A1"
+  },
+  {
+   "tab": "Données",
+   "t": "Données : trier, filtrer et nettoyer une liste.",
+   "c": "A1"
+  },
+  {
+   "tab": "Révision",
+   "t": "Révision : vérifier l'orthographe, commenter et protéger la feuille.",
+   "c": "A1"
+  },
+  {
+   "tab": "Affichage",
+   "t": "Affichage : zoomer et figer les titres pour qu'ils restent visibles.",
+   "c": "A1"
+  },
+  {
+   "tab": "Fichier",
+   "t": "Fichier : ouvrir, enregistrer et imprimer le classeur.",
+   "c": "A1"
+  }
+ ],
+ "guide": {
+  "question": "Dans quel onglet du ruban trouver chaque commande Excel ?",
+  "intro": "Le ruban range les commandes d'Excel par onglets. Accueil : copier, coller, police, alignement, formats de nombre. Insertion : tableaux, images, graphiques. Mise en page : marges, orientation, impression. Formules : toutes les fonctions. Données : trier, filtrer, nettoyer. Révision : orthographe, commentaires, protection. Affichage : zoom, figer les volets. Fichier : ouvrir, enregistrer, imprimer, exporter.",
+  "exemple": {
+   "titre": "À retenir",
+   "formule": "Un onglet = une famille de commandes",
+   "explication": "Pour figer la ligne de titres, pensez « ce que je vois » : onglet Affichage. Pour trier, « mes données » : onglet Données."
+  },
+  "erreurs": [
+   [
+    "Le ruban a disparu",
+    "Il est réduit : double-cliquez sur un onglet, ou Ctrl + F1."
+   ],
+   [
+    "Un onglet inconnu apparaît",
+    "C'est un onglet contextuel, par exemple Création de graphique : il s'affiche quand l'objet est sélectionné."
+   ]
+  ],
+  "faq": [
+   [
+    "Comment trouver une commande sans savoir où elle est ?",
+    "Tapez son nom dans la zone Rechercher, en haut de la fenêtre."
+   ],
+   [
+    "Peut-on personnaliser le ruban ?",
+    "Oui : clic droit sur le ruban › Personnaliser le ruban."
+   ],
+   [
+    "Comment utiliser le ruban au clavier ?",
+    "Appuyez sur Alt : des lettres apparaissent sur chaque onglet et bouton."
+   ]
+  ]
+ },
+ "voirAussi": [
+  "ecran-excel",
+  "raccourcis-classeur",
+  "feuilles-du-classeur",
+  "figer-la-ligne-de-titres"
  ]
 }

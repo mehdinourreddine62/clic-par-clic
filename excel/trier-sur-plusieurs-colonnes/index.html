@@ -4,14 +4,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Trier sur plusieurs colonnes dans Excel | Clic par clic</title>
-<meta name="description" content="Classer par région, puis par montant à l'intérieur de chaque région. Leçon Excel animée en 4 étapes, niveau intermédiaire, gratuite.">
+<meta name="description" content="Données › Trier ouvre la fenêtre de tri, où l'on empile des niveaux : le premier regroupe, les suivants classent à l'intérieur de chaque groupe.">
 <link rel="canonical" href="https://mehdinourreddine62.github.io/clic-par-clic/excel/trier-sur-plusieurs-colonnes/">
 <meta name="robots" content="index,follow">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="Clic par clic">
 <meta property="og:title" content="Trier sur plusieurs colonnes dans Excel | Clic par clic">
-<meta property="og:description" content="Classer par région, puis par montant à l'intérieur de chaque région. Leçon Excel animée en 4 étapes, niveau intermédiaire, gratuite.">
+<meta property="og:description" content="Données › Trier ouvre la fenêtre de tri, où l'on empile des niveaux : le premier regroupe, les suivants classent à l'intérieur de chaque groupe.">
 <meta property="og:url" content="https://mehdinourreddine62.github.io/clic-par-clic/excel/trier-sur-plusieurs-colonnes/">
 <meta property="og:image" content="https://mehdinourreddine62.github.io/clic-par-clic/assets/og-excel.png">
 <meta property="og:image:width" content="1200">
@@ -61,7 +61,18 @@
     <div class="pband" id="pband" hidden></div>
     <details class="sx"><summary>Syntaxe <code>Données › Trier › Ajouter un niveau</code></summary><dl><dt>Trier par</dt><dd>Le premier critère de classement</dd><dt>Puis par</dt><dd>Le critère utilisé à égalité sur le premier</dd><dt>Ajouter un niveau</dt><dd>Ajoute un critère supplémentaire</dd></dl></details>
     <details class="sx"><summary>Résumé écrit des étapes</summary><ol class="steps"><li>On veut regrouper les vendeurs par région, puis classer les montants à l'intérieur de chaque région.</li><li>Données › Trier ouvre la boîte de tri. Premier niveau : Région, de A à Z.</li><li>« Ajouter un niveau » : puis par Montant, du plus grand au plus petit.</li><li>Les régions sont regroupées, et dans chacune, les montants sont classés.</li></ol></details>
-    <section class="also"><h2>Voir aussi</h2><div class="also-l"><a href="../tri-personnalise/"><b>Trier dans un ordre personnalisé</b><small>Classer selon un ordre logique, et non alphabétique.</small></a><a href="../filtrer-par-couleur/"><b>Filtrer par couleur</b><small>N'afficher que les lignes surlignées d'une couleur.</small></a><a href="../filtres-numeriques/"><b>Filtres numériques</b><small>Filtrer au-dessus d'un seuil, entre deux valeurs ou les meilleurs résultats.</small></a></div></section>
+    <section class="guide">
+      <h2>Comment trier sur plusieurs colonnes dans Excel ?</h2>
+      <p>Données › Trier ouvre la fenêtre de tri, où l'on empile des niveaux : le premier regroupe, les suivants classent à l'intérieur de chaque groupe. Choisissez la première colonne et son ordre, puis Ajouter un niveau pour la deuxième. Cochez Mes données ont des en-têtes pour que la ligne de titres reste en place.</p>
+      <h3>Exemple</h3>
+      <p><code class="gx">Données › Trier › Ajouter un niveau</code></p>
+      <p>Région de A à Z, puis Montant du plus grand au plus petit : Nord (Emma 610, Bruno 450, David 200), puis Sud (Chloé 520, Alice 300, Farid 150).</p>
+      <h3>Erreurs fréquentes</h3>
+      <ul><li><b>La ligne de titres est triée avec les données</b>Cochez Mes données ont des en-têtes.</li><li><b>Une seule colonne est triée</b>Seule cette colonne était sélectionnée : cliquez sur une cellule du tableau, sans sélectionner de colonne.</li></ul>
+      <h3>Questions fréquentes</h3>
+      <h4>Combien de niveaux peut-on ajouter ?</h4><p>Jusqu'à 64.</p><h4>Comment trier selon un ordre logique (Haute, Moyenne, Basse) ?</h4><p>Ordre › Liste personnalisée.</p><h4>Existe-t-il une formule ?</h4><p>Oui : TRIER.PAR, dans Excel 365, renvoie une copie triée.</p>
+    </section>
+    <section class="also"><h2>Voir aussi</h2><div class="also-l"><a href="../trier-et-filtrer/"><b>Trier et filtrer</b><small>Classer une liste et n'afficher que certaines lignes.</small></a><a href="../tri-personnalise/"><b>Trier dans un ordre personnalisé</b><small>Classer selon un ordre logique, et non alphabétique.</small></a><a href="../combiner-plusieurs-filtres/"><b>Combiner plusieurs filtres</b><small>Filtrer sur deux colonnes à la fois.</small></a><a href="../unique-trier/"><b>UNIQUE et TRIER</b><small>Obtenir une liste sans doublons, classée automatiquement.</small></a></div></section>
     <nav class="lnav" aria-label="Leçons voisines"><a href="../mfc-valeurs-les-plus-elevees/"><small>← Précédente</small>Les plus hautes valeurs</a><a class="nx" id="nextLesson" href="../tri-personnalise/"><small>Suivante →</small>Trier dans un ordre personnalisé</a></nav>
   </main>
 </div>

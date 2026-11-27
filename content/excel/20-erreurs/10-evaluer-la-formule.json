@@ -7,17 +7,95 @@
  "syntaxe": "Formules › Évaluer la formule",
  "ruban": true,
  "arguments": [
-  ["Évaluer","Remplace un morceau de la formule par sa valeur"],
-  ["Intérêt","Voir à quelle étape le calcul déraille"]
+  [
+   "Évaluer",
+   "Remplace un morceau de la formule par sa valeur"
+  ],
+  [
+   "Intérêt",
+   "Voir à quelle étape le calcul déraille"
+  ]
  ],
  "grille": [
-  ["Élève","Note","Résultat"],
-  ["Léa","14","Admis"]
+  [
+   "Élève",
+   "Note",
+   "Résultat"
+  ],
+  [
+   "Léa",
+   "14",
+   "Admis"
+  ]
  ],
+ "titreSeo": "Évaluer une formule pas à pas dans Excel",
  "etapes": [
-  {"c":"C2","tab":"Formules","btn":"Évaluer la formule","bar":"=SI(B2>=10;\"Admis\";\"Ajourné\")","t":"Pour comprendre une formule compliquée, sélectionnez-la et ouvrez « Évaluer la formule »."},
-  {"c":"C2","bar":"=SI(B2>=10;\"Admis\";\"Ajourné\")","menu":"Évaluer la formule › <b>Évaluer</b>","rule":"=SI(14>=10;\"Admis\";\"Ajourné\")","t":"Chaque clic sur Évaluer remplace un morceau par sa valeur : B2 devient 14."},
-  {"c":"C2","bar":"=SI(B2>=10;\"Admis\";\"Ajourné\")","menu":"Évaluer la formule › <b>Évaluer</b>","rule":"=SI(VRAI;\"Admis\";\"Ajourné\")","t":"Puis le test est calculé : 14 est bien supérieur ou égal à 10, donc VRAI."},
-  {"c":"C2","bar":"=SI(B2>=10;\"Admis\";\"Ajourné\")","menu":"Évaluer la formule › <b>Évaluer</b>","rule":"\"Admis\"","t":"Et enfin le résultat. On voit exactement à quelle étape une formule se trompe."}
+  {
+   "c": "C2",
+   "tab": "Formules",
+   "btn": "Évaluer la formule",
+   "bar": "=SI(B2>=10;\"Admis\";\"Ajourné\")",
+   "t": "Pour comprendre une formule compliquée, sélectionnez-la et ouvrez « Évaluer la formule »."
+  },
+  {
+   "c": "C2",
+   "bar": "=SI(B2>=10;\"Admis\";\"Ajourné\")",
+   "menu": "Évaluer la formule › <b>Évaluer</b>",
+   "rule": "=SI(14>=10;\"Admis\";\"Ajourné\")",
+   "t": "Chaque clic sur Évaluer remplace un morceau par sa valeur : B2 devient 14."
+  },
+  {
+   "c": "C2",
+   "bar": "=SI(B2>=10;\"Admis\";\"Ajourné\")",
+   "menu": "Évaluer la formule › <b>Évaluer</b>",
+   "rule": "=SI(VRAI;\"Admis\";\"Ajourné\")",
+   "t": "Puis le test est calculé : 14 est bien supérieur ou égal à 10, donc VRAI."
+  },
+  {
+   "c": "C2",
+   "bar": "=SI(B2>=10;\"Admis\";\"Ajourné\")",
+   "menu": "Évaluer la formule › <b>Évaluer</b>",
+   "rule": "\"Admis\"",
+   "t": "Et enfin le résultat. On voit exactement à quelle étape une formule se trompe."
+  }
+ ],
+ "guide": {
+  "question": "Comment comprendre une formule Excel étape par étape ?",
+  "intro": "Formules › Évaluer la formule ouvre une fenêtre qui calcule la formule sélectionnée morceau par morceau : chaque clic sur Évaluer remplace la partie soulignée par sa valeur. On voit exactement à quelle étape une formule donne un résultat inattendu.",
+  "exemple": {
+   "titre": "Exemple",
+   "formule": "=SI(B2>=10;\"Admis\";\"Ajourné\")",
+   "explication": "Premier clic : B2 devient 14. Deuxième : 14>=10 devient VRAI. Dernier : la formule renvoie « Admis »."
+  },
+  "erreurs": [
+   [
+    "Le bouton est grisé",
+    "La cellule ne contient pas de formule, ou la feuille est protégée."
+   ],
+   [
+    "L'étape montre #N/A",
+    "C'est là que la formule échoue : vérifiez la valeur cherchée à cette étape."
+   ]
+  ],
+  "faq": [
+   [
+    "Peut-on calculer un morceau dans la barre de formule ?",
+    "Oui : sélectionnez-le et appuyez sur F9 ; Échap pour annuler sans modifier."
+   ],
+   [
+    "À quoi sert le bouton Pas à pas détaillé ?",
+    "Il entre dans une cellule référencée pour voir sa propre formule."
+   ],
+   [
+    "Fonctionne-t-il avec les formules dynamiques ?",
+    "Oui, mais les résultats en plusieurs cellules sont affichés entre accolades."
+   ]
+  ]
+ },
+ "voirAussi": [
+  "antecedents-et-dependants",
+  "afficher-les-formules",
+  "si",
+  "erreur-valeur"
  ]
 }

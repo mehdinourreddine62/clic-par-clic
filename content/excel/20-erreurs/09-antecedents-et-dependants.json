@@ -7,19 +7,142 @@
  "syntaxe": "Formules › Repérer les antécédents",
  "ruban": true,
  "arguments": [
-  ["Antécédents","Les cellules utilisées par la formule"],
-  ["Dépendants","Les cellules qui utilisent celle-ci"],
-  ["Supprimer les flèches","Nettoie l'affichage"]
+  [
+   "Antécédents",
+   "Les cellules utilisées par la formule"
+  ],
+  [
+   "Dépendants",
+   "Les cellules qui utilisent celle-ci"
+  ],
+  [
+   "Supprimer les flèches",
+   "Nettoie l'affichage"
+  ]
  ],
  "grille": [
-  ["Prix HT","TVA","Prix TTC","Remise","Prix final"],
-  ["100","20 %","120","10 %","108"]
+  [
+   "Prix HT",
+   "TVA",
+   "Prix TTC",
+   "Remise",
+   "Prix final"
+  ],
+  [
+   "100",
+   "20 %",
+   "120",
+   "10 %",
+   "108"
+  ]
  ],
+ "titreSeo": "Repérer les antécédents et dépendants dans Excel",
  "etapes": [
-  {"c":"E2","tab":"Formules","bar":"=C2*(1-D2)","t":"D'où vient ce prix final ? Sélectionnez la cellule."},
-  {"c":"E2","tab":"Formules","btn":"Repérer les antécédents","bar":"=C2*(1-D2)","arrows":[["C2","E2"],["D2","E2"]],"t":"« Repérer les antécédents » trace une flèche depuis chaque cellule utilisée par la formule."},
-  {"c":"E2","tab":"Formules","btn":"Repérer les antécédents","bar":"=C2*(1-D2)","arrows":[["A2","C2"],["B2","C2"],["C2","E2"],["D2","E2"]],"t":"Un second clic remonte d'un niveau : le prix TTC dépend lui-même du prix HT et de la TVA."},
-  {"c":"A2","tab":"Formules","btn":"Repérer les dépendants","arrows":[["A2","C2"]],"t":"Dans l'autre sens, « Repérer les dépendants » montre ce qui changerait si vous modifiiez la cellule."},
-  {"c":"A2","tab":"Formules","btn":"Supprimer les flèches","arrows":[],"t":"« Supprimer les flèches » nettoie l'écran."}
+  {
+   "c": "E2",
+   "tab": "Formules",
+   "bar": "=C2*(1-D2)",
+   "t": "D'où vient ce prix final ? Sélectionnez la cellule."
+  },
+  {
+   "c": "E2",
+   "tab": "Formules",
+   "btn": "Repérer les antécédents",
+   "bar": "=C2*(1-D2)",
+   "arrows": [
+    [
+     "C2",
+     "E2"
+    ],
+    [
+     "D2",
+     "E2"
+    ]
+   ],
+   "t": "« Repérer les antécédents » trace une flèche depuis chaque cellule utilisée par la formule."
+  },
+  {
+   "c": "E2",
+   "tab": "Formules",
+   "btn": "Repérer les antécédents",
+   "bar": "=C2*(1-D2)",
+   "arrows": [
+    [
+     "A2",
+     "C2"
+    ],
+    [
+     "B2",
+     "C2"
+    ],
+    [
+     "C2",
+     "E2"
+    ],
+    [
+     "D2",
+     "E2"
+    ]
+   ],
+   "t": "Un second clic remonte d'un niveau : le prix TTC dépend lui-même du prix HT et de la TVA."
+  },
+  {
+   "c": "A2",
+   "tab": "Formules",
+   "btn": "Repérer les dépendants",
+   "arrows": [
+    [
+     "A2",
+     "C2"
+    ]
+   ],
+   "t": "Dans l'autre sens, « Repérer les dépendants » montre ce qui changerait si vous modifiiez la cellule."
+  },
+  {
+   "c": "A2",
+   "tab": "Formules",
+   "btn": "Supprimer les flèches",
+   "arrows": [],
+   "t": "« Supprimer les flèches » nettoie l'écran."
+  }
+ ],
+ "guide": {
+  "question": "Comment voir quelles cellules une formule utilise dans Excel ?",
+  "intro": "Formules › Repérer les antécédents trace des flèches depuis chaque cellule utilisée par la formule sélectionnée ; un second clic remonte d'un niveau. Repérer les dépendants fait l'inverse : il montre les formules qui changeraient si vous modifiiez la cellule. Supprimer les flèches nettoie l'écran.",
+  "exemple": {
+   "titre": "Exemple",
+   "formule": "Formules › Repérer les antécédents",
+   "explication": "Le prix final 108 (=C2*(1-D2)) dépend du prix TTC 120 et de la remise de 10 % ; le prix TTC dépend lui-même du prix HT 100 et de la TVA de 20 %."
+  },
+  "erreurs": [
+   [
+    "Une flèche pointillée vers une icône",
+    "L'antécédent est sur une autre feuille : double-cliquez sur la flèche pour y aller."
+   ],
+   [
+    "Aucune flèche n'apparaît",
+    "La cellule ne contient pas de formule, ou la feuille est protégée."
+   ]
+  ],
+  "faq": [
+   [
+    "À quoi servent les dépendants ?",
+    "À vérifier qu'aucune formule n'utilise une cellule avant de la supprimer."
+   ],
+   [
+    "Les flèches gênent-elles le calcul ?",
+    "Non : elles n'affichent qu'un repère visuel, sans rien modifier."
+   ],
+   [
+    "Les flèches s'impriment-elles ?",
+    "Non, elles restent à l'écran."
+   ]
+  ]
+ },
+ "voirAussi": [
+  "evaluer-la-formule",
+  "afficher-les-formules",
+  "erreur-ref",
+  "reference-circulaire"
  ]
 }

@@ -6,17 +6,89 @@
  "motsCles": "heure actuelle minute maintenant now hour",
  "syntaxe": "=MAINTENANT()",
  "arguments": [
-  ["MAINTENANT()","La date et l'heure actuelles"],
-  ["HEURE","Les heures, de 0 à 23"],
-  ["MINUTE","Les minutes, de 0 à 59"]
+  [
+   "MAINTENANT()",
+   "La date et l'heure actuelles"
+  ],
+  [
+   "HEURE",
+   "Les heures, de 0 à 23"
+  ],
+  [
+   "MINUTE",
+   "Les minutes, de 0 à 59"
+  ]
  ],
  "grille": [
-  ["Maintenant","Heure","Minute"],
-  ["","",""]
+  [
+   "Maintenant",
+   "Heure",
+   "Minute"
+  ],
+  [
+   "",
+   "",
+   ""
+  ]
  ],
+ "titreSeo": "MAINTENANT, HEURE et MINUTE dans Excel",
  "etapes": [
-  {"c":"A2","f":"=MAINTENANT()","v":"13/11/2026 14:35","t":"MAINTENANT renvoie la date et l'heure actuelles."},
-  {"c":"B2","f":"=HEURE(A2)","v":"14","t":"HEURE extrait les heures."},
-  {"c":"C2","f":"=MINUTE(A2)","v":"35","t":"MINUTE extrait les minutes."}
+  {
+   "c": "A2",
+   "f": "=MAINTENANT()",
+   "v": "13/11/2026 14:35",
+   "t": "MAINTENANT renvoie la date et l'heure actuelles."
+  },
+  {
+   "c": "B2",
+   "f": "=HEURE(A2)",
+   "v": "14",
+   "t": "HEURE extrait les heures."
+  },
+  {
+   "c": "C2",
+   "f": "=MINUTE(A2)",
+   "v": "35",
+   "t": "MINUTE extrait les minutes."
+  }
+ ],
+ "guide": {
+  "question": "Comment afficher l'heure actuelle et extraire les heures dans Excel ?",
+  "intro": "MAINTENANT (NOW en anglais) renvoie la date et l'heure actuelles, recalculées à chaque modification du classeur. HEURE extrait le nombre d'heures d'une date-heure, MINUTE le nombre de minutes, SECONDE les secondes. Pour une heure figée, préférez le raccourci Ctrl + : (deux-points).",
+  "exemple": {
+   "titre": "Exemple",
+   "formule": "=HEURE(A2)   =MINUTE(A2)",
+   "explication": "Si A2 contient 13/11/2026 14:35, HEURE renvoie 14 et MINUTE renvoie 35."
+  },
+  "erreurs": [
+   [
+    "L'heure change sans cesse",
+    "MAINTENANT se recalcule : pour garder un horodatage, copiez puis collez la valeur, ou utilisez Ctrl + :."
+   ],
+   [
+    "Un nombre décimal s'affiche",
+    "C'est une date-heure sans format : appliquez le format jj/mm/aaaa hh:mm."
+   ]
+  ],
+  "faq": [
+   [
+    "Quelle différence avec AUJOURDHUI ?",
+    "AUJOURDHUI ne donne que la date, sans l'heure."
+   ],
+   [
+    "Comment calculer une durée entre deux heures ?",
+    "Soustrayez-les et appliquez le format [h]:mm."
+   ],
+   [
+    "Comment fabriquer une heure ?",
+    "=TEMPS(14;35;0) donne 14:35."
+   ]
+  ]
+ },
+ "voirAussi": [
+  "aujourdhui-datedif",
+  "date",
+  "ecart-entre-deux-dates",
+  "raccourcis-saisir"
  ]
 }

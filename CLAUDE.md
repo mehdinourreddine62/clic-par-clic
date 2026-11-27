@@ -24,7 +24,7 @@ Le `README.md` décrit l'organisation des fichiers et tous les champs d'une leç
 - Des données réalistes et cohérentes ; les résultats affichés doivent être exacts (calcule-les).
 - Montrer le geste : `drag`, `btn`, `keys`, `fill`, `mark` plutôt que du texte.
 - Pas de nombre de leçons écrit en dur dans les textes de l'accueil : il évolue.
-- Les leçons les plus recherchées (100 Excel au 27 novembre 2026, toutes les leçons Word et PowerPoint) ont un `titreSeo`, un `guide` (texte visible pour Google) et des `voirAussi`. Fais de même pour toute leçon qui vise une recherche fréquente.
+- Les leçons les plus recherchées (152 Excel sur 170 au 27 novembre 2026, toutes les leçons Word et PowerPoint) ont un `titreSeo`, un `guide` (texte visible pour Google) et des `voirAussi`. Fais de même pour toute leçon qui vise une recherche fréquente.
 
 ## Organisation
 
@@ -73,7 +73,7 @@ Le `README.md` décrit l'organisation des fichiers et tous les champs d'une leç
 Pause sur Excel depuis novembre 2026 pour mesurer l'audience. Le site accueille désormais plusieurs logiciels ; Word est le prochain. Excel compte 170 leçons, 23 rubriques, 5 parcours, 4 cas pratiques et 66 fichiers Excel ; Word, 19 leçons en 5 rubriques et 1 parcours ; PowerPoint, 14 leçons en 4 rubriques.
 
 Reste à faire, dans l'ordre envisagé :
-1. Référencement (27 novembre 2026) : Google ne connaissait que 14 pages sur 225 au 23 novembre (sitemap pas encore lu, envoyé correctement le 27). Fait : descriptions raccourcies, liens entre logiciels (`content/liens-logiciels.json`), `guide` pour 60 leçons Excel de plus en deux lots de 30 (graphiques, erreurs, impression, protection, tableaux croisés, fonctions, raccourcis, dates, mise en forme conditionnelle, filtres). Reste : 60 leçons Excel sans `guide` (proposer le lot suivant), analyser Search Console quand il y aura des données (requêtes en page 2 ou 3), liens entrants (texte de présentation à rédiger pour le propriétaire).
+1. Référencement (27 novembre 2026) : Google ne connaissait que 14 pages sur 225 au 23 novembre (sitemap pas encore lu, envoyé correctement le 27). Fait : descriptions raccourcies, liens entre logiciels (`content/liens-logiciels.json`), `guide` pour 90 leçons Excel de plus en trois lots de 30. Reste : 18 leçons Excel sans `guide` (les plus confidentielles, dont les 2 cas pratiques) (proposer le lot suivant), analyser Search Console quand il y aura des données (requêtes en page 2 ou 3), liens entrants (texte de présentation à rédiger pour le propriétaire).
 2. Compteur de visites : fait le 17 novembre 2026, GoatCounter, compte `clicparclic` (`site.json`), statistiques sur https://clicparclic.goatcounter.com. Le consulter avec le propriétaire avant de décider de la suite (dons, contenus payants : il y pense à long terme, sans publicité de préférence).
 3. Fait le 18 novembre 2026 : cas pratiques « Facture » (`cas-facture`, en fin du parcours formules-indispensables) et « Analyse de ventes » (`cas-analyse-de-ventes`, en fin du parcours analyser-des-donnees), mis en avant sur l'accueil.
 4. (fusionné avec le point 3)

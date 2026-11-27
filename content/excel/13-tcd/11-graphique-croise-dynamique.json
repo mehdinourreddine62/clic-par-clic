@@ -6,27 +6,215 @@
  "motsCles": "tcd graphique croisé dynamique pivot chart lié tableau croisé",
  "syntaxe": "Analyse du tableau croisé › Graphique croisé dynamique",
  "ruban": true,
- "largeurs": {"E":26},
- "graphique": {"type":"col","labels":"F2:F4","series":["G2:G4"],"title":"Ventes par vendeur","at":"F6:H12"},
+ "largeurs": {
+  "E": 26
+ },
+ "graphique": {
+  "type": "col",
+  "labels": "F2:F4",
+  "series": [
+   "G2:G4"
+  ],
+  "title": "Ventes par vendeur",
+  "at": "F6:H12"
+ },
  "arguments": [
-  ["Source","Le tableau croisé, pas les données d'origine"],
-  ["Lien","Changer le tableau change le graphique, et inversement"]
+  [
+   "Source",
+   "Le tableau croisé, pas les données d'origine"
+  ],
+  [
+   "Lien",
+   "Changer le tableau change le graphique, et inversement"
+  ]
  ],
  "grille": [
-  ["Vendeur","Région","Produit","Montant"],
-  ["Alice","Nord","Stylos","120"],
-  ["Bruno","Sud","Cahiers","80"],
-  ["Alice","Sud","Stylos","60"],
-  ["Chloé","Nord","Cahiers","150"],
-  ["Bruno","Nord","Stylos","90"],
-  ["Chloé","Sud","Stylos","110"],
-  ["Alice","Nord","Cahiers","70"],
-  ["Bruno","Sud","Stylos","40"]
+  [
+   "Vendeur",
+   "Région",
+   "Produit",
+   "Montant"
+  ],
+  [
+   "Alice",
+   "Nord",
+   "Stylos",
+   "120"
+  ],
+  [
+   "Bruno",
+   "Sud",
+   "Cahiers",
+   "80"
+  ],
+  [
+   "Alice",
+   "Sud",
+   "Stylos",
+   "60"
+  ],
+  [
+   "Chloé",
+   "Nord",
+   "Cahiers",
+   "150"
+  ],
+  [
+   "Bruno",
+   "Nord",
+   "Stylos",
+   "90"
+  ],
+  [
+   "Chloé",
+   "Sud",
+   "Stylos",
+   "110"
+  ],
+  [
+   "Alice",
+   "Nord",
+   "Cahiers",
+   "70"
+  ],
+  [
+   "Bruno",
+   "Sud",
+   "Stylos",
+   "40"
+  ]
  ],
+ "titreSeo": "Graphique croisé dynamique dans Excel",
  "etapes": [
-  {"c":"F1","tab":"Analyse du tableau croisé","pivot":{"fields":["Vendeur","Région","Produit","Montant"],"filt":[],"cols":[],"rows":["Vendeur"],"vals":["Somme de Montant"]},"set":{"F1":"Étiquettes de lignes","G1":"Somme de Montant","F2":"Alice","G2":"250","F3":"Bruno","G3":"210","F4":"Chloé","G4":"260","F5":"Total général","G5":"720"},"fmt":{"F1:G1":"h","F5:G5":"b"},"t":"Voici les ventes par vendeur."},
-  {"c":"F1","tab":"Analyse du tableau croisé","btn":"Graphique croisé dynamique","chart":1,"t":"Graphique croisé dynamique : le graphique se construit à partir du tableau croisé."},
-  {"c":"F1","tab":"Analyse du tableau croisé","pivot":{"fields":["Vendeur","Région","Produit","Montant"],"filt":[],"cols":[],"rows":["Produit"],"vals":["Somme de Montant"],"pick":"Produit"},"set":{"F2":"Cahiers","G2":"300","F3":"Stylos","G3":"420","F4":"Total général","G4":"720","F5":"","G5":""},"fmt":{"F4:G4":"b"},"chart":{"labels":"F2:F3","series":["G2:G3"],"title":"Ventes par produit"},"t":"Remplacez Vendeur par Produit dans le tableau croisé : le graphique suit, sans rien refaire."},
-  {"c":"F1","tab":"Analyse du tableau croisé","t":"Tableau et graphique restent liés : filtrer l'un filtre l'autre."}
+  {
+   "c": "F1",
+   "tab": "Analyse du tableau croisé",
+   "pivot": {
+    "fields": [
+     "Vendeur",
+     "Région",
+     "Produit",
+     "Montant"
+    ],
+    "filt": [],
+    "cols": [],
+    "rows": [
+     "Vendeur"
+    ],
+    "vals": [
+     "Somme de Montant"
+    ]
+   },
+   "set": {
+    "F1": "Étiquettes de lignes",
+    "G1": "Somme de Montant",
+    "F2": "Alice",
+    "G2": "250",
+    "F3": "Bruno",
+    "G3": "210",
+    "F4": "Chloé",
+    "G4": "260",
+    "F5": "Total général",
+    "G5": "720"
+   },
+   "fmt": {
+    "F1:G1": "h",
+    "F5:G5": "b"
+   },
+   "t": "Voici les ventes par vendeur."
+  },
+  {
+   "c": "F1",
+   "tab": "Analyse du tableau croisé",
+   "btn": "Graphique croisé dynamique",
+   "chart": 1,
+   "t": "Graphique croisé dynamique : le graphique se construit à partir du tableau croisé."
+  },
+  {
+   "c": "F1",
+   "tab": "Analyse du tableau croisé",
+   "pivot": {
+    "fields": [
+     "Vendeur",
+     "Région",
+     "Produit",
+     "Montant"
+    ],
+    "filt": [],
+    "cols": [],
+    "rows": [
+     "Produit"
+    ],
+    "vals": [
+     "Somme de Montant"
+    ],
+    "pick": "Produit"
+   },
+   "set": {
+    "F2": "Cahiers",
+    "G2": "300",
+    "F3": "Stylos",
+    "G3": "420",
+    "F4": "Total général",
+    "G4": "720",
+    "F5": "",
+    "G5": ""
+   },
+   "fmt": {
+    "F4:G4": "b"
+   },
+   "chart": {
+    "labels": "F2:F3",
+    "series": [
+     "G2:G3"
+    ],
+    "title": "Ventes par produit"
+   },
+   "t": "Remplacez Vendeur par Produit dans le tableau croisé : le graphique suit, sans rien refaire."
+  },
+  {
+   "c": "F1",
+   "tab": "Analyse du tableau croisé",
+   "t": "Tableau et graphique restent liés : filtrer l'un filtre l'autre."
+  }
+ ],
+ "guide": {
+  "question": "Comment créer un graphique croisé dynamique dans Excel ?",
+  "intro": "Un graphique croisé dynamique est construit à partir d'un tableau croisé et lui reste lié. Cliquez dans le tableau croisé, puis Analyse du tableau croisé › Graphique croisé dynamique. Quand vous changez les champs ou les filtres du tableau, le graphique suit, et ses boutons de champ permettent aussi de filtrer.",
+  "exemple": {
+   "titre": "Exemple",
+   "formule": "Analyse du tableau croisé › Graphique croisé dynamique",
+   "explication": "Le graphique des ventes par vendeur (Alice 250, Bruno 210, Chloé 260) devient, en remplaçant Vendeur par Produit, celui des ventes par produit."
+  },
+  "erreurs": [
+   [
+    "Le graphique a changé tout seul",
+    "C'est normal : il suit le tableau croisé. Pour figer un graphique, copiez-le en image."
+   ],
+   [
+    "Les boutons de champ encombrent",
+    "Analyse du graphique croisé › Boutons de champ › Masquer tout."
+   ]
+  ],
+  "faq": [
+   [
+    "Peut-on choisir n'importe quel type ?",
+    "Presque : les nuages de points ne sont pas proposés."
+   ],
+   [
+    "Comment filtrer le graphique ?",
+    "Avec les boutons du graphique, un segment ou une chronologie."
+   ],
+   [
+    "Peut-on créer graphique et tableau en même temps ?",
+    "Oui : Insertion › Graphique croisé dynamique › Graphique croisé dynamique et tableau croisé dynamique."
+   ]
+  ]
+ },
+ "voirAussi": [
+  "creer-un-tableau-croise-dynamique",
+  "tcd-segments",
+  "creer-un-graphique",
+  "tcd-filtrer"
  ]
 }

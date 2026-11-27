@@ -6,22 +6,150 @@
  "motsCles": "sélectionner des données série ajouter intervertir lignes colonnes graphique",
  "syntaxe": "Création de graphique › Sélectionner des données",
  "ruban": true,
- "graphique": {"type":"col","labels":"A2:A5","series":["B2:B5"],"title":"Ventes","legend":true,"at":"E2:I8"},
+ "graphique": {
+  "type": "col",
+  "labels": "A2:A5",
+  "series": [
+   "B2:B5"
+  ],
+  "title": "Ventes",
+  "legend": true,
+  "at": "E2:I8"
+ },
  "arguments": [
-  ["Sélectionner des données","Ajouter, retirer ou modifier une série"],
-  ["Intervertir lignes/colonnes","Échange l'axe et la légende"]
+  [
+   "Sélectionner des données",
+   "Ajouter, retirer ou modifier une série"
+  ],
+  [
+   "Intervertir lignes/colonnes",
+   "Échange l'axe et la légende"
+  ]
  ],
  "grille": [
-  ["Trimestre","Nord","Sud"],
-  ["T1","120","90"],
-  ["T2","140","110"],
-  ["T3","100","130"],
-  ["T4","180","150"]
+  [
+   "Trimestre",
+   "Nord",
+   "Sud"
+  ],
+  [
+   "T1",
+   "120",
+   "90"
+  ],
+  [
+   "T2",
+   "140",
+   "110"
+  ],
+  [
+   "T3",
+   "100",
+   "130"
+  ],
+  [
+   "T4",
+   "180",
+   "150"
+  ]
  ],
+ "titreSeo": "Modifier les données d'un graphique Excel",
  "etapes": [
-  {"c":"A1","tab":"Création de graphique","chart":{"selected":1},"t":"Ce graphique ne montre que le Nord. Sélectionnez-le pour ouvrir l'onglet Création de graphique."},
-  {"c":"A1","sel":"A1:C5","drag":1,"tab":"Création de graphique","btn":"Sélectionner des données","chart":{"series":["B2:B5","C2:C5"]},"t":"« Sélectionner des données » permet d'ajouter une série : étendez la plage à la colonne Sud."},
-  {"c":"A1","tab":"Création de graphique","btn":"Intervertir lignes/colonnes","chart":{"labels":"B1:C1","series":["B2:C2","B3:C3","B4:C4","B5:C5"],"names":["A2","A3","A4","A5"]},"t":"« Intervertir lignes/colonnes » retourne le graphique : les régions passent sur l'axe, les trimestres en couleurs."},
-  {"c":"A1","tab":"Création de graphique","btn":"Intervertir lignes/colonnes","chart":{"labels":"A2:A5","series":["B2:B5","C2:C5"],"names":null},"t":"Mêmes données, autre question. Choisissez le sens qui répond à la vôtre."}
+  {
+   "c": "A1",
+   "tab": "Création de graphique",
+   "chart": {
+    "selected": 1
+   },
+   "t": "Ce graphique ne montre que le Nord. Sélectionnez-le pour ouvrir l'onglet Création de graphique."
+  },
+  {
+   "c": "A1",
+   "sel": "A1:C5",
+   "drag": 1,
+   "tab": "Création de graphique",
+   "btn": "Sélectionner des données",
+   "chart": {
+    "series": [
+     "B2:B5",
+     "C2:C5"
+    ]
+   },
+   "t": "« Sélectionner des données » permet d'ajouter une série : étendez la plage à la colonne Sud."
+  },
+  {
+   "c": "A1",
+   "tab": "Création de graphique",
+   "btn": "Intervertir lignes/colonnes",
+   "chart": {
+    "labels": "B1:C1",
+    "series": [
+     "B2:C2",
+     "B3:C3",
+     "B4:C4",
+     "B5:C5"
+    ],
+    "names": [
+     "A2",
+     "A3",
+     "A4",
+     "A5"
+    ]
+   },
+   "t": "« Intervertir lignes/colonnes » retourne le graphique : les régions passent sur l'axe, les trimestres en couleurs."
+  },
+  {
+   "c": "A1",
+   "tab": "Création de graphique",
+   "btn": "Intervertir lignes/colonnes",
+   "chart": {
+    "labels": "A2:A5",
+    "series": [
+     "B2:B5",
+     "C2:C5"
+    ],
+    "names": null
+   },
+   "t": "Mêmes données, autre question. Choisissez le sens qui répond à la vôtre."
+  }
+ ],
+ "guide": {
+  "question": "Comment ajouter une série ou changer les données d'un graphique Excel ?",
+  "intro": "Sélectionnez le graphique, puis Création de graphique › Sélectionner des données : vous pouvez y étendre la plage, ajouter ou retirer une série. Le bouton Intervertir lignes/colonnes retourne le graphique : ce qui était sur l'axe passe en couleurs, et inversement. Mêmes données, autre question.",
+  "exemple": {
+   "titre": "Exemple",
+   "formule": "Création de graphique › Sélectionner des données",
+   "explication": "Un graphique du Nord seul reçoit la colonne Sud ; après Intervertir lignes/colonnes, Nord et Sud passent sur l'axe et les trimestres en couleurs."
+  },
+  "erreurs": [
+   [
+    "L'onglet Création de graphique n'apparaît pas",
+    "Le graphique n'est pas sélectionné : cliquez sur son bord."
+   ],
+   [
+    "La nouvelle ligne n'est pas prise",
+    "La plage est fixe : étendez-la, ou mettez les données sous forme de tableau."
+   ]
+  ],
+  "faq": [
+   [
+    "Peut-on changer la plage à la souris ?",
+    "Oui : le graphique sélectionné, faites glisser les cadres de couleur autour des données."
+   ],
+   [
+    "Comment renommer une série ?",
+    "Sélectionner des données › Modifier, champ Nom de la série."
+   ],
+   [
+    "Comment masquer une série sans la supprimer ?",
+    "Le bouton Filtres du graphique (l'entonnoir) permet de la décocher."
+   ]
+  ]
+ },
+ "voirAussi": [
+  "graphique-plusieurs-series",
+  "graphique-qui-s-agrandit",
+  "creer-un-graphique",
+  "choisir-un-type-de-graphique"
  ]
 }

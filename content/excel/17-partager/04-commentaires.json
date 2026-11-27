@@ -7,20 +7,119 @@
  "syntaxe": "Révision › Nouveau commentaire",
  "ruban": true,
  "arguments": [
-  ["Nouveau commentaire","Attache une remarque à la cellule"],
-  ["Repère coloré","Signale une cellule commentée"],
-  ["Répondre","La discussion reste dans le fichier"]
+  [
+   "Nouveau commentaire",
+   "Attache une remarque à la cellule"
+  ],
+  [
+   "Repère coloré",
+   "Signale une cellule commentée"
+  ],
+  [
+   "Répondre",
+   "La discussion reste dans le fichier"
+  ]
  ],
  "grille": [
-  ["Client","Ville","Montant"],
-  ["Durand","Lille","120"],
-  ["Martin","Lyon","340"],
-  ["Petit","Nantes","210"]
+  [
+   "Client",
+   "Ville",
+   "Montant"
+  ],
+  [
+   "Durand",
+   "Lille",
+   "120"
+  ],
+  [
+   "Martin",
+   "Lyon",
+   "340"
+  ],
+  [
+   "Petit",
+   "Nantes",
+   "210"
+  ]
  ],
+ "titreSeo": "Ajouter un commentaire dans une cellule Excel",
  "etapes": [
-  {"c":"C3","tab":"Révision","btn":"Nouveau commentaire","note":{"at":"C3","text":""},"t":"Cliquez sur une cellule, puis Révision › Nouveau commentaire."},
-  {"c":"C3","tab":"Révision","note":{"at":"C3","text":"Montant à vérifier avec le client."},"t":"Écrivez votre remarque : elle reste attachée à la cellule, sans modifier son contenu."},
-  {"c":"A1","tab":"Révision","note":{"at":"C3","closed":1},"t":"Un repère coloré dans le coin signale la présence d'un commentaire."},
-  {"c":"C3","tab":"Révision","note":{"at":"C3","text":"Montant à vérifier avec le client.","reply":"Vérifié, c'est bon."},"t":"Les autres peuvent répondre : la discussion reste dans le fichier."}
+  {
+   "c": "C3",
+   "tab": "Révision",
+   "btn": "Nouveau commentaire",
+   "note": {
+    "at": "C3",
+    "text": ""
+   },
+   "t": "Cliquez sur une cellule, puis Révision › Nouveau commentaire."
+  },
+  {
+   "c": "C3",
+   "tab": "Révision",
+   "note": {
+    "at": "C3",
+    "text": "Montant à vérifier avec le client."
+   },
+   "t": "Écrivez votre remarque : elle reste attachée à la cellule, sans modifier son contenu."
+  },
+  {
+   "c": "A1",
+   "tab": "Révision",
+   "note": {
+    "at": "C3",
+    "closed": 1
+   },
+   "t": "Un repère coloré dans le coin signale la présence d'un commentaire."
+  },
+  {
+   "c": "C3",
+   "tab": "Révision",
+   "note": {
+    "at": "C3",
+    "text": "Montant à vérifier avec le client.",
+    "reply": "Vérifié, c'est bon."
+   },
+   "t": "Les autres peuvent répondre : la discussion reste dans le fichier."
+  }
+ ],
+ "guide": {
+  "question": "Comment ajouter un commentaire sur une cellule Excel ?",
+  "intro": "Cliquez sur la cellule, puis Révision › Nouveau commentaire, ou clic droit › Nouveau commentaire. La remarque reste attachée à la cellule sans modifier son contenu ; un repère coloré dans le coin signale sa présence. Les autres personnes peuvent y répondre : la discussion reste dans le fichier.",
+  "exemple": {
+   "titre": "Exemple",
+   "formule": "Révision › Nouveau commentaire",
+   "explication": "Sur le montant de Martin (340), un commentaire « À vérifier avec la facture » ; un collègue répond dans le même fil."
+  },
+  "erreurs": [
+   [
+    "Le commentaire ne s'affiche pas en entier",
+    "Survolez la cellule, ou Révision › Afficher les commentaires pour ouvrir le volet."
+   ],
+   [
+    "Commentaire ou note ?",
+    "Les notes, l'ancien système, n'acceptent pas de réponses : clic droit › Nouvelle note."
+   ]
+  ],
+  "faq": [
+   [
+    "Comment supprimer un commentaire ?",
+    "Clic droit sur la cellule › Supprimer le commentaire."
+   ],
+   [
+    "Comment marquer un commentaire comme traité ?",
+    "Bouton … › Résoudre le fil."
+   ],
+   [
+    "Les commentaires s'impriment-ils ?",
+    "Mise en page › Imprimer les titres › Feuille › Commentaires et notes : À la fin de la feuille."
+   ]
+  ]
+ },
+ "voirAussi": [
+  "travailler-a-plusieurs",
+  "proteger-une-feuille",
+  "masquer-des-colonnes",
+  "feuilles-du-classeur"
  ]
 }

@@ -7,23 +7,139 @@
  "syntaxe": "Données › Trier › Ajouter un niveau",
  "ruban": true,
  "arguments": [
-  ["Trier par","Le premier critère de classement"],
-  ["Puis par","Le critère utilisé à égalité sur le premier"],
-  ["Ajouter un niveau","Ajoute un critère supplémentaire"]
+  [
+   "Trier par",
+   "Le premier critère de classement"
+  ],
+  [
+   "Puis par",
+   "Le critère utilisé à égalité sur le premier"
+  ],
+  [
+   "Ajouter un niveau",
+   "Ajoute un critère supplémentaire"
+  ]
  ],
  "grille": [
-  ["Vendeur","Région","Montant"],
-  ["Alice","Sud","300"],
-  ["Bruno","Nord","450"],
-  ["Chloé","Sud","520"],
-  ["David","Nord","200"],
-  ["Emma","Nord","610"],
-  ["Farid","Sud","150"]
+  [
+   "Vendeur",
+   "Région",
+   "Montant"
+  ],
+  [
+   "Alice",
+   "Sud",
+   "300"
+  ],
+  [
+   "Bruno",
+   "Nord",
+   "450"
+  ],
+  [
+   "Chloé",
+   "Sud",
+   "520"
+  ],
+  [
+   "David",
+   "Nord",
+   "200"
+  ],
+  [
+   "Emma",
+   "Nord",
+   "610"
+  ],
+  [
+   "Farid",
+   "Sud",
+   "150"
+  ]
  ],
+ "titreSeo": "Trier sur plusieurs colonnes dans Excel",
  "etapes": [
-  {"c":"A1","tab":"Données","t":"On veut regrouper les vendeurs par région, puis classer les montants à l'intérieur de chaque région."},
-  {"c":"A1","tab":"Données","btn":"Trier","menu":"Données › Trier › Trier par : <b>Région</b> › de A à Z","t":"Données › Trier ouvre la boîte de tri. Premier niveau : Région, de A à Z."},
-  {"c":"A1","menu":"Trier › Ajouter un niveau › Puis par : <b>Montant</b> › du plus grand au plus petit","t":"« Ajouter un niveau » : puis par Montant, du plus grand au plus petit."},
-  {"c":"A1","tab":"Données","set":{"A2":"Emma","B2":"Nord","C2":"610","A3":"Bruno","B3":"Nord","C3":"450","A4":"David","B4":"Nord","C4":"200","A5":"Chloé","B5":"Sud","C5":"520","A6":"Alice","B6":"Sud","C6":"300","A7":"Farid","B7":"Sud","C7":"150"},"mark":"B2 B3 B4","t":"Les régions sont regroupées, et dans chacune, les montants sont classés."}
+  {
+   "c": "A1",
+   "tab": "Données",
+   "t": "On veut regrouper les vendeurs par région, puis classer les montants à l'intérieur de chaque région."
+  },
+  {
+   "c": "A1",
+   "tab": "Données",
+   "btn": "Trier",
+   "menu": "Données › Trier › Trier par : <b>Région</b> › de A à Z",
+   "t": "Données › Trier ouvre la boîte de tri. Premier niveau : Région, de A à Z."
+  },
+  {
+   "c": "A1",
+   "menu": "Trier › Ajouter un niveau › Puis par : <b>Montant</b> › du plus grand au plus petit",
+   "t": "« Ajouter un niveau » : puis par Montant, du plus grand au plus petit."
+  },
+  {
+   "c": "A1",
+   "tab": "Données",
+   "set": {
+    "A2": "Emma",
+    "B2": "Nord",
+    "C2": "610",
+    "A3": "Bruno",
+    "B3": "Nord",
+    "C3": "450",
+    "A4": "David",
+    "B4": "Nord",
+    "C4": "200",
+    "A5": "Chloé",
+    "B5": "Sud",
+    "C5": "520",
+    "A6": "Alice",
+    "B6": "Sud",
+    "C6": "300",
+    "A7": "Farid",
+    "B7": "Sud",
+    "C7": "150"
+   },
+   "mark": "B2 B3 B4",
+   "t": "Les régions sont regroupées, et dans chacune, les montants sont classés."
+  }
+ ],
+ "guide": {
+  "question": "Comment trier sur plusieurs colonnes dans Excel ?",
+  "intro": "Données › Trier ouvre la fenêtre de tri, où l'on empile des niveaux : le premier regroupe, les suivants classent à l'intérieur de chaque groupe. Choisissez la première colonne et son ordre, puis Ajouter un niveau pour la deuxième. Cochez Mes données ont des en-têtes pour que la ligne de titres reste en place.",
+  "exemple": {
+   "titre": "Exemple",
+   "formule": "Données › Trier › Ajouter un niveau",
+   "explication": "Région de A à Z, puis Montant du plus grand au plus petit : Nord (Emma 610, Bruno 450, David 200), puis Sud (Chloé 520, Alice 300, Farid 150)."
+  },
+  "erreurs": [
+   [
+    "La ligne de titres est triée avec les données",
+    "Cochez Mes données ont des en-têtes."
+   ],
+   [
+    "Une seule colonne est triée",
+    "Seule cette colonne était sélectionnée : cliquez sur une cellule du tableau, sans sélectionner de colonne."
+   ]
+  ],
+  "faq": [
+   [
+    "Combien de niveaux peut-on ajouter ?",
+    "Jusqu'à 64."
+   ],
+   [
+    "Comment trier selon un ordre logique (Haute, Moyenne, Basse) ?",
+    "Ordre › Liste personnalisée."
+   ],
+   [
+    "Existe-t-il une formule ?",
+    "Oui : TRIER.PAR, dans Excel 365, renvoie une copie triée."
+   ]
+  ]
+ },
+ "voirAussi": [
+  "trier-et-filtrer",
+  "tri-personnalise",
+  "combiner-plusieurs-filtres",
+  "unique-trier"
  ]
 }

@@ -6,18 +6,102 @@
  "motsCles": "intérêts composés capital placement taux années épargne puissance",
  "syntaxe": "=capital*(1+taux)^années",
  "arguments": [
-  ["1 + taux","Ce que devient 1 € en un an"],
-  ["^ années","Répété chaque année"],
-  ["Intérêts simples","capital × (1 + taux × années)"]
+  [
+   "1 + taux",
+   "Ce que devient 1 € en un an"
+  ],
+  [
+   "^ années",
+   "Répété chaque année"
+  ],
+  [
+   "Intérêts simples",
+   "capital × (1 + taux × années)"
+  ]
  ],
  "grille": [
-  ["Capital","Taux","Années","Capital final","Intérêts simples"],
-  ["1 000,00 €","5 %","1","",""],
-  ["1 000,00 €","5 %","10","",""]
+  [
+   "Capital",
+   "Taux",
+   "Années",
+   "Capital final",
+   "Intérêts simples"
+  ],
+  [
+   "1 000,00 €",
+   "5 %",
+   "1",
+   "",
+   ""
+  ],
+  [
+   "1 000,00 €",
+   "5 %",
+   "10",
+   "",
+   ""
+  ]
  ],
+ "titreSeo": "Calculer des intérêts composés dans Excel",
  "etapes": [
-  {"c":"D2","f":"=A2*(1+B2)^C2","v":"1 050,00 €","t":"Après un an à 5 %, 1 000 € deviennent 1 050 €."},
-  {"c":"D2","fill":{"D3":"1 628,89 €"},"t":"Chaque année, les intérêts s'ajoutent au capital et rapportent à leur tour."},
-  {"c":"E3","f":"=A3*(1+B3*C3)","v":"1 500,00 €","mark":"D3 E3","t":"Sans cet effet, on n'aurait que 1 500 €. L'écart grandit avec le temps."}
+  {
+   "c": "D2",
+   "f": "=A2*(1+B2)^C2",
+   "v": "1 050,00 €",
+   "t": "Après un an à 5 %, 1 000 € deviennent 1 050 €."
+  },
+  {
+   "c": "D2",
+   "fill": {
+    "D3": "1 628,89 €"
+   },
+   "t": "Chaque année, les intérêts s'ajoutent au capital et rapportent à leur tour."
+  },
+  {
+   "c": "E3",
+   "f": "=A3*(1+B3*C3)",
+   "v": "1 500,00 €",
+   "mark": "D3 E3",
+   "t": "Sans cet effet, on n'aurait que 1 500 €. L'écart grandit avec le temps."
+  }
+ ],
+ "guide": {
+  "question": "Comment calculer des intérêts composés dans Excel ?",
+  "intro": "Avec des intérêts composés, les intérêts de chaque année s'ajoutent au capital et rapportent à leur tour. Le capital final se calcule avec =capital*(1+taux)^années. Avec des intérêts simples, seul le capital de départ rapporte : =capital*(1+taux*années). L'écart grandit avec le temps.",
+  "exemple": {
+   "titre": "Exemple",
+   "formule": "=A2*(1+B2)^C2",
+   "explication": "1 000 € à 5 % : 1 050 € après un an. Après 10 ans : 1 628,89 € en intérêts composés, contre 1 500 € en intérêts simples."
+  },
+  "erreurs": [
+   [
+    "Le résultat est énorme",
+    "Le taux est tapé 5 au lieu de 5 % : écrivez 5 % ou 0,05."
+   ],
+   [
+    "Le calcul mensuel est faux",
+    "Divisez le taux par 12 et multipliez la durée par 12."
+   ]
+  ],
+  "faq": [
+   [
+    "Existe-t-il une fonction ?",
+    "Oui : =VC(taux;années;0;-capital) donne le même résultat."
+   ],
+   [
+    "Comment voir l'évolution année par année ?",
+    "Une colonne d'années de 1 à 10 et la formule recopiée, puis un graphique en courbe."
+   ],
+   [
+    "Comment trouver le taux nécessaire ?",
+    "=TAUX(années;0;-capital;objectif)."
+   ]
+  ]
+ },
+ "voirAussi": [
+  "vpm",
+  "puissance-racine",
+  "pourcentages",
+  "references-absolues"
  ]
 }

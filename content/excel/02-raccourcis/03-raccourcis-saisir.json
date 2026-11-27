@@ -6,21 +6,121 @@
  "motsCles": "raccourci clavier saisie date recopier remplir alt entrée",
  "syntaxe": "Ctrl + ;",
  "arguments": [
-  ["Ctrl + ;","Insère la date du jour"],
-  ["Ctrl + B","Recopie la cellule du dessus"],
-  ["Ctrl + Entrée","Remplit toute la sélection"],
-  ["Alt + Entrée","Va à la ligne dans la cellule"]
+  [
+   "Ctrl + ;",
+   "Insère la date du jour"
+  ],
+  [
+   "Ctrl + B",
+   "Recopie la cellule du dessus"
+  ],
+  [
+   "Ctrl + Entrée",
+   "Remplit toute la sélection"
+  ],
+  [
+   "Alt + Entrée",
+   "Va à la ligne dans la cellule"
+  ]
  ],
  "grille": [
-  ["Tâche","Date","Statut"],
-  ["Devis","",""],
-  ["Facture","",""],
-  ["Relance","",""]
+  [
+   "Tâche",
+   "Date",
+   "Statut"
+  ],
+  [
+   "Devis",
+   "",
+   ""
+  ],
+  [
+   "Facture",
+   "",
+   ""
+  ],
+  [
+   "Relance",
+   "",
+   ""
+  ]
  ],
+ "titreSeo": "Raccourcis de saisie Excel : date du jour, Ctrl + Entrée",
  "etapes": [
-  {"c":"B2","kb":1,"keys":"Ctrl + ;","set":{"B2":"13/11/2026"},"t":"Ctrl + ; insère la date du jour."},
-  {"c":"B3","kb":1,"keys":"Ctrl + B","set":{"B3":"13/11/2026"},"t":"Ctrl + B recopie la cellule du dessus."},
-  {"c":"C2","sel":"C2:C4","kb":1,"keys":"Ctrl + Entrée","set":{"C2":"À faire","C3":"À faire","C4":"À faire"},"t":"Sélectionnez plusieurs cellules, tapez, puis Ctrl + Entrée : toutes sont remplies d'un coup."},
-  {"c":"A2","kb":1,"keys":"Alt + Entrée","t":"Alt + Entrée permet d'aller à la ligne à l'intérieur d'une cellule."}
+  {
+   "c": "B2",
+   "kb": 1,
+   "keys": "Ctrl + ;",
+   "set": {
+    "B2": "13/11/2026"
+   },
+   "t": "Ctrl + ; insère la date du jour."
+  },
+  {
+   "c": "B3",
+   "kb": 1,
+   "keys": "Ctrl + B",
+   "set": {
+    "B3": "13/11/2026"
+   },
+   "t": "Ctrl + B recopie la cellule du dessus."
+  },
+  {
+   "c": "C2",
+   "sel": "C2:C4",
+   "kb": 1,
+   "keys": "Ctrl + Entrée",
+   "set": {
+    "C2": "À faire",
+    "C3": "À faire",
+    "C4": "À faire"
+   },
+   "t": "Sélectionnez plusieurs cellules, tapez, puis Ctrl + Entrée : toutes sont remplies d'un coup."
+  },
+  {
+   "c": "A2",
+   "kb": 1,
+   "keys": "Alt + Entrée",
+   "t": "Alt + Entrée permet d'aller à la ligne à l'intérieur d'une cellule."
+  }
+ ],
+ "guide": {
+  "question": "Quels raccourcis permettent de saisir plus vite dans Excel ?",
+  "intro": "Ctrl + ; insère la date du jour, figée. Ctrl + B recopie la cellule du dessus. Ctrl + Entrée remplit d'un coup toutes les cellules sélectionnées avec ce que vous venez de taper. Alt + Entrée va à la ligne à l'intérieur d'une cellule.",
+  "exemple": {
+   "titre": "À retenir",
+   "formule": "Ctrl + ;   Ctrl + B   Ctrl + Entrée   Alt + Entrée",
+   "explication": "Sélectionnez les trois cellules Statut, tapez « À faire », puis Ctrl + Entrée : les trois cellules sont remplies."
+  },
+  "erreurs": [
+   [
+    "Ctrl + D ne recopie pas vers le bas",
+    "Dans Excel en français, Ctrl + D recopie vers la droite ; vers le bas, c'est Ctrl + B."
+   ],
+   [
+    "La date change chaque jour",
+    "Vous avez utilisé =AUJOURDHUI() : Ctrl + ; insère au contraire une date fixe."
+   ]
+  ],
+  "faq": [
+   [
+    "Comment insérer l'heure actuelle ?",
+    "Ctrl + : (deux-points)."
+   ],
+   [
+    "Comment recopier vers la droite ?",
+    "Ctrl + D, dans Excel en français."
+   ],
+   [
+    "Comment remplir une colonne entière d'une formule ?",
+    "Sélectionnez la plage, tapez la formule, puis Ctrl + Entrée."
+   ]
+  ]
+ },
+ "voirAussi": [
+  "raccourcis-selectionner",
+  "saisir-des-donnees",
+  "raccourcis-formules",
+  "copier-coller-annuler"
  ]
 }

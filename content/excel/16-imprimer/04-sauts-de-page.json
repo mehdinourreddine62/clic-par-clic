@@ -7,25 +7,148 @@
  "syntaxe": "Affichage › Aperçu des sauts de page",
  "ruban": true,
  "arguments": [
-  ["Aperçu des sauts de page","Montre les limites de chaque page"],
-  ["Faire glisser","Déplace une coupure"],
-  ["Insérer un saut de page","Force une nouvelle page"]
+  [
+   "Aperçu des sauts de page",
+   "Montre les limites de chaque page"
+  ],
+  [
+   "Faire glisser",
+   "Déplace une coupure"
+  ],
+  [
+   "Insérer un saut de page",
+   "Force une nouvelle page"
+  ]
  ],
  "grille": [
-  ["Région","Client","Montant"],
-  ["Nord","Durand","120"],
-  ["Nord","Martin","340"],
-  ["Nord","Bernard","90"],
-  ["Nord","Petit","210"],
-  ["Sud","Robert","150"],
-  ["Sud","Richard","400"],
-  ["Sud","Moreau","75"],
-  ["Sud","Simon","260"]
+  [
+   "Région",
+   "Client",
+   "Montant"
+  ],
+  [
+   "Nord",
+   "Durand",
+   "120"
+  ],
+  [
+   "Nord",
+   "Martin",
+   "340"
+  ],
+  [
+   "Nord",
+   "Bernard",
+   "90"
+  ],
+  [
+   "Nord",
+   "Petit",
+   "210"
+  ],
+  [
+   "Sud",
+   "Robert",
+   "150"
+  ],
+  [
+   "Sud",
+   "Richard",
+   "400"
+  ],
+  [
+   "Sud",
+   "Moreau",
+   "75"
+  ],
+  [
+   "Sud",
+   "Simon",
+   "260"
+  ]
  ],
+ "titreSeo": "Insérer un saut de page dans Excel",
  "etapes": [
-  {"c":"A1","tab":"Affichage","btn":"Aperçu des sauts de page","copy":"A1:C7","t":"Affichage › Aperçu des sauts de page : les pointillés montrent où Excel coupera la page."},
-  {"c":"A6","tab":"Affichage","copy":"A1:C7","mark":"A6 A7","t":"Problème : la coupure tombe au milieu de la région Sud."},
-  {"c":"A6","tab":"Mise en page","btn":"Sauts de page","copy":"A1:C5","t":"Cliquez sur la première ligne du Sud, puis Mise en page › Sauts de page › Insérer."},
-  {"c":"A1","tab":"Mise en page","keys":"Ctrl + P","copy":"A1:C5","preview":{"pages":[[3,5,1],[3,4,0]]},"t":"L'aperçu confirme : chaque région sort sur sa propre page."}
+  {
+   "c": "A1",
+   "tab": "Affichage",
+   "btn": "Aperçu des sauts de page",
+   "copy": "A1:C7",
+   "t": "Affichage › Aperçu des sauts de page : les pointillés montrent où Excel coupera la page."
+  },
+  {
+   "c": "A6",
+   "tab": "Affichage",
+   "copy": "A1:C7",
+   "mark": "A6 A7",
+   "t": "Problème : la coupure tombe au milieu de la région Sud."
+  },
+  {
+   "c": "A6",
+   "tab": "Mise en page",
+   "btn": "Sauts de page",
+   "copy": "A1:C5",
+   "t": "Cliquez sur la première ligne du Sud, puis Mise en page › Sauts de page › Insérer."
+  },
+  {
+   "c": "A1",
+   "tab": "Mise en page",
+   "keys": "Ctrl + P",
+   "copy": "A1:C5",
+   "preview": {
+    "pages": [
+     [
+      3,
+      5,
+      1
+     ],
+     [
+      3,
+      4,
+      0
+     ]
+    ]
+   },
+   "t": "L'aperçu confirme : chaque région sort sur sa propre page."
+  }
+ ],
+ "guide": {
+  "question": "Comment choisir où couper les pages à l'impression dans Excel ?",
+  "intro": "Affichage › Aperçu des sauts de page montre en pointillés où Excel coupera les pages. Pour forcer une coupure, cliquez sur la première ligne de la nouvelle page, puis Mise en page › Sauts de page › Insérer. Vous pouvez aussi faire glisser les lignes bleues directement dans l'aperçu.",
+  "exemple": {
+   "titre": "Exemple",
+   "formule": "Mise en page › Sauts de page › Insérer",
+   "explication": "En plaçant un saut avant la première ligne du Sud, la région Nord sort sur la page 1 et la région Sud sur la page 2."
+  },
+  "erreurs": [
+   [
+    "Le saut se place à côté d'une colonne",
+    "Une cellule au milieu de la ligne était sélectionnée : cliquez sur le numéro de ligne ou en colonne A."
+   ],
+   [
+    "Les sauts manuels ne tiennent pas",
+    "Une mise à l'échelle Ajuster à 1 page les ignore : réglez l'échelle sur Automatique."
+   ]
+  ],
+  "faq": [
+   [
+    "Comment supprimer un saut ?",
+    "Sélectionnez la ligne sous le saut, puis Sauts de page › Supprimer le saut de page."
+   ],
+   [
+    "Comment tout remettre à zéro ?",
+    "Sauts de page › Réinitialiser tous les sauts de page."
+   ],
+   [
+    "Comment revenir à l'affichage normal ?",
+    "Affichage › Normal."
+   ]
+  ]
+ },
+ "voirAussi": [
+  "tenir-sur-une-page",
+  "zone-d-impression",
+  "repeter-les-titres",
+  "masquer-des-colonnes"
  ]
 }

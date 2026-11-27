@@ -1,15 +1,58 @@
 [
- ["excel/creer-un-graphique", "powerpoint/tableau-et-graphique-powerpoint"],
- ["word/inserer-un-tableau", "powerpoint/tableau-et-graphique-powerpoint"],
- ["word/inserer-une-image", "powerpoint/inserer-une-image-powerpoint"],
- ["word/exporter-en-pdf", "powerpoint/exporter-en-pdf-powerpoint"],
- ["word/ecran-et-ruban-word", "powerpoint/ecran-et-ruban-powerpoint"],
- ["excel/ruban", "word/ecran-et-ruban-word"],
- ["excel/ruban", "powerpoint/ecran-et-ruban-powerpoint"],
- ["word/mettre-en-forme-le-texte", "powerpoint/mise-en-forme-texte-et-puces"],
- ["word/en-tetes-et-pieds-de-page", "powerpoint/numeros-et-pied-de-page-powerpoint"],
- ["word/numeroter-les-pages", "powerpoint/numeros-et-pied-de-page-powerpoint"],
- ["word/modifier-un-style", "powerpoint/masque-des-diapositives"],
- ["word/suivi-des-modifications-et-commentaires", "excel/commentaires"],
- ["word/raccourcis-clavier-word", "excel/raccourcis-se-deplacer"]
+ [
+  "excel/creer-un-graphique",
+  "powerpoint/tableau-et-graphique-powerpoint"
+ ],
+ [
+  "word/inserer-un-tableau",
+  "powerpoint/tableau-et-graphique-powerpoint"
+ ],
+ [
+  "word/inserer-une-image",
+  "powerpoint/inserer-une-image-powerpoint"
+ ],
+ [
+  "word/exporter-en-pdf",
+  "powerpoint/exporter-en-pdf-powerpoint"
+ ],
+ [
+  "word/ecran-et-ruban-word",
+  "powerpoint/ecran-et-ruban-powerpoint"
+ ],
+ [
+  "excel/ruban",
+  "word/ecran-et-ruban-word"
+ ],
+ [
+  "excel/ruban",
+  "powerpoint/ecran-et-ruban-powerpoint"
+ ],
+ [
+  "word/mettre-en-forme-le-texte",
+  "powerpoint/mise-en-forme-texte-et-puces"
+ ],
+ [
+  "word/en-tetes-et-pieds-de-page",
+  "powerpoint/numeros-et-pied-de-page-powerpoint"
+ ],
+ [
+  "word/numeroter-les-pages",
+  "powerpoint/numeros-et-pied-de-page-powerpoint"
+ ],
+ [
+  "word/modifier-un-style",
+  "powerpoint/masque-des-diapositives"
+ ],
+ [
+  "word/suivi-des-modifications-et-commentaires",
+  "excel/commentaires"
+ ],
+ [
+  "word/raccourcis-clavier-word",
+  "excel/raccourcis-se-deplacer"
+ ],
+ [
+  "excel/sauts-de-page",
+  "word/sauts-de-page-et-de-section"
+ ]
 ]

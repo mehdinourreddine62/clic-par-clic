@@ -3,15 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Actualiser un tableau croisé dans Excel | Clic par clic</title>
-<meta name="description" content="Mettre le tableau à jour après une modification des données. Leçon Excel animée en 4 étapes, niveau intermédiaire, gratuite.">
+<title>Actualiser un tableau croisé dynamique Excel | Clic par clic</title>
+<meta name="description" content="Un tableau croisé dynamique ne se recalcule pas tout seul quand les données changent : il garde une copie en mémoire.">
 <link rel="canonical" href="https://mehdinourreddine62.github.io/clic-par-clic/excel/tcd-actualiser/">
 <meta name="robots" content="index,follow">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="Clic par clic">
-<meta property="og:title" content="Actualiser un tableau croisé dans Excel | Clic par clic">
-<meta property="og:description" content="Mettre le tableau à jour après une modification des données. Leçon Excel animée en 4 étapes, niveau intermédiaire, gratuite.">
+<meta property="og:title" content="Actualiser un tableau croisé dynamique Excel | Clic par clic">
+<meta property="og:description" content="Un tableau croisé dynamique ne se recalcule pas tout seul quand les données changent : il garde une copie en mémoire.">
 <meta property="og:url" content="https://mehdinourreddine62.github.io/clic-par-clic/excel/tcd-actualiser/">
 <meta property="og:image" content="https://mehdinourreddine62.github.io/clic-par-clic/assets/og-excel.png">
 <meta property="og:image:width" content="1200">
@@ -61,7 +61,18 @@
     <div class="pband" id="pband" hidden></div>
     <details class="sx"><summary>Syntaxe <code>Analyse du tableau croisé › Actualiser</code></summary><dl><dt>Actualiser</dt><dd>Relit les données d'origine</dd><dt>Alt + F5</dt><dd>Le raccourci</dd><dt>Piège</dt><dd>Le tableau ne se met jamais à jour tout seul</dd></dl></details>
     <details class="sx"><summary>Résumé écrit des étapes</summary><ol class="steps"><li>Le Nord totalise 430.</li><li>Corrigez une vente dans les données : le tableau croisé ne bouge pas. Il affiche toujours 430.</li><li>Cliquez sur Actualiser : le tableau relit les données et se met à jour.</li><li>Prenez le réflexe d'actualiser avant de lire un tableau croisé. Raccourci : Alt + F5.</li></ol></details>
-    <section class="also"><h2>Voir aussi</h2><div class="also-l"><a href="../creer-un-tableau-croise-dynamique/"><b>Créer un tableau croisé dynamique</b><small>Résumer un tableau en quelques clics, sans formule.</small></a><a href="../tcd-lignes-et-colonnes/"><b>Lignes et colonnes</b><small>Croiser deux informations dans le même tableau.</small></a><a href="../tcd-somme-nombre-moyenne/"><b>Somme, nombre ou moyenne</b><small>Changer le calcul affiché dans le tableau croisé.</small></a></div></section>
+    <section class="guide">
+      <h2>Pourquoi mon tableau croisé dynamique ne se met-il pas à jour ?</h2>
+      <p>Un tableau croisé dynamique ne se recalcule pas tout seul quand les données changent : il garde une copie en mémoire. Cliquez dans le tableau croisé, puis Analyse du tableau croisé › Actualiser, ou Alt + F5. Pour tous les tableaux croisés du classeur : Actualiser tout, ou Ctrl + Alt + F5.</p>
+      <h3>Exemple</h3>
+      <p><code class="gx">Analyse du tableau croisé › Actualiser</code></p>
+      <p>Le Nord affiche 430. Une vente corrigée dans les données ne change rien ; après Actualiser, le total du Nord est recalculé.</p>
+      <h3>Erreurs fréquentes</h3>
+      <ul><li><b>Les nouvelles lignes ne sont pas prises</b>La source est une plage fixe : Modifier la source de données, ou mettez les données sous forme de tableau.</li><li><b>La mise en forme disparaît</b>Options du tableau croisé › cochez Conserver la mise en forme des cellules lors de la mise à jour.</li></ul>
+      <h3>Questions fréquentes</h3>
+      <h4>Peut-on actualiser automatiquement ?</h4><p>Options du tableau croisé › Données › Actualiser les données lors de l'ouverture du fichier.</p><h4>Actualiser modifie-t-il les données ?</h4><p>Non : seul le tableau croisé est relu.</p><h4>Pourquoi des éléments supprimés restent dans les filtres ?</h4><p>Options › Données › Nombre d'éléments à retenir par champ : Aucun.</p>
+    </section>
+    <section class="also"><h2>Voir aussi</h2><div class="also-l"><a href="../creer-un-tableau-croise-dynamique/"><b>Créer un tableau croisé dynamique</b><small>Résumer un tableau en quelques clics, sans formule.</small></a><a href="../tcd-filtrer/"><b>Filtrer un tableau croisé</b><small>N'afficher qu'une partie des données, sans les modifier.</small></a><a href="../mettre-sous-forme-de-tableau/"><b>Mettre sous forme de tableau</b><small>Un vrai tableau : mise en forme, filtres et total automatiques.</small></a><a href="../tcd-somme-nombre-moyenne/"><b>Somme, nombre ou moyenne</b><small>Changer le calcul affiché dans le tableau croisé.</small></a></div></section>
     <nav class="lnav" aria-label="Leçons voisines"><a href="../tcd-filtrer/"><small>← Précédente</small>Filtrer un tableau croisé</a><a class="nx" id="nextLesson" href="../tcd-pourcentage-du-total/"><small>Suivante →</small>Afficher des pourcentages</a></nav>
   </main>
 </div>

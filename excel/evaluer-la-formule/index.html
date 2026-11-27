@@ -4,14 +4,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Évaluer une formule pas à pas dans Excel | Clic par clic</title>
-<meta name="description" content="Regarder Excel calculer une formule, morceau par morceau. Leçon Excel animée en 4 étapes, niveau intermédiaire, gratuite.">
+<meta name="description" content="Formules › Évaluer la formule ouvre une fenêtre qui calcule la formule sélectionnée morceau par morceau ">
 <link rel="canonical" href="https://mehdinourreddine62.github.io/clic-par-clic/excel/evaluer-la-formule/">
 <meta name="robots" content="index,follow">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="Clic par clic">
 <meta property="og:title" content="Évaluer une formule pas à pas dans Excel | Clic par clic">
-<meta property="og:description" content="Regarder Excel calculer une formule, morceau par morceau. Leçon Excel animée en 4 étapes, niveau intermédiaire, gratuite.">
+<meta property="og:description" content="Formules › Évaluer la formule ouvre une fenêtre qui calcule la formule sélectionnée morceau par morceau ">
 <meta property="og:url" content="https://mehdinourreddine62.github.io/clic-par-clic/excel/evaluer-la-formule/">
 <meta property="og:image" content="https://mehdinourreddine62.github.io/clic-par-clic/assets/og-excel.png">
 <meta property="og:image:width" content="1200">
@@ -61,7 +61,18 @@
     <div class="pband" id="pband" hidden></div>
     <details class="sx"><summary>Syntaxe <code>Formules › Évaluer la formule</code></summary><dl><dt>Évaluer</dt><dd>Remplace un morceau de la formule par sa valeur</dd><dt>Intérêt</dt><dd>Voir à quelle étape le calcul déraille</dd></dl></details>
     <details class="sx"><summary>Résumé écrit des étapes</summary><ol class="steps"><li>Pour comprendre une formule compliquée, sélectionnez-la et ouvrez « Évaluer la formule ».</li><li>Chaque clic sur Évaluer remplace un morceau par sa valeur : B2 devient 14.</li><li>Puis le test est calculé : 14 est bien supérieur ou égal à 10, donc VRAI.</li><li>Et enfin le résultat. On voit exactement à quelle étape une formule se trompe.</li></ol></details>
-    <section class="also"><h2>Voir aussi</h2><div class="also-l"><a href="../erreur-div-0/"><b>Corriger #DIV/0!</b><small>Comprendre et supprimer l'erreur de division par zéro.</small></a><a href="../erreur-na/"><b>Corriger #N/A</b><small>Comprendre pourquoi une recherche ne trouve rien.</small></a><a href="../erreur-valeur/"><b>Corriger #VALEUR!</b><small>Repérer le texte qui empêche un calcul.</small></a></div></section>
+    <section class="guide">
+      <h2>Comment comprendre une formule Excel étape par étape ?</h2>
+      <p>Formules › Évaluer la formule ouvre une fenêtre qui calcule la formule sélectionnée morceau par morceau : chaque clic sur Évaluer remplace la partie soulignée par sa valeur. On voit exactement à quelle étape une formule donne un résultat inattendu.</p>
+      <h3>Exemple</h3>
+      <p><code class="gx">=SI(B2&gt;=10;&quot;Admis&quot;;&quot;Ajourné&quot;)</code></p>
+      <p>Premier clic : B2 devient 14. Deuxième : 14&gt;=10 devient VRAI. Dernier : la formule renvoie « Admis ».</p>
+      <h3>Erreurs fréquentes</h3>
+      <ul><li><b>Le bouton est grisé</b>La cellule ne contient pas de formule, ou la feuille est protégée.</li><li><b>L'étape montre #N/A</b>C'est là que la formule échoue : vérifiez la valeur cherchée à cette étape.</li></ul>
+      <h3>Questions fréquentes</h3>
+      <h4>Peut-on calculer un morceau dans la barre de formule ?</h4><p>Oui : sélectionnez-le et appuyez sur F9 ; Échap pour annuler sans modifier.</p><h4>À quoi sert le bouton Pas à pas détaillé ?</h4><p>Il entre dans une cellule référencée pour voir sa propre formule.</p><h4>Fonctionne-t-il avec les formules dynamiques ?</h4><p>Oui, mais les résultats en plusieurs cellules sont affichés entre accolades.</p>
+    </section>
+    <section class="also"><h2>Voir aussi</h2><div class="also-l"><a href="../antecedents-et-dependants/"><b>Antécédents et dépendants</b><small>Voir d'où vient un résultat, et ce qu'il alimente.</small></a><a href="../afficher-les-formules/"><b>Afficher les formules</b><small>Voir d'un coup tous les calculs d'une feuille.</small></a><a href="../si/"><b>SI</b><small>Afficher un résultat différent selon une condition.</small></a><a href="../erreur-valeur/"><b>Corriger #VALEUR!</b><small>Repérer le texte qui empêche un calcul.</small></a></div></section>
     <nav class="lnav" aria-label="Leçons voisines"><a href="../antecedents-et-dependants/"><small>← Précédente</small>Antécédents et dépendants</a><a class="nx" id="nextLesson" href="../creer-un-tableau-croise-dynamique/"><small>Suivante →</small>Créer un tableau croisé dynamique</a></nav>
   </main>
 </div>

@@ -6,24 +6,125 @@
  "motsCles": "sélection plage colonne ligne ctrl glisser",
  "syntaxe": "A2:B3 = de A2 jusqu'à B3",
  "arguments": [
-  ["Clic","Une cellule"],
-  ["Cliquer-glisser","Une plage"],
-  ["Clic sur une lettre","Toute la colonne"],
-  ["Ctrl + clic","Ajoute une autre sélection"],
-  ["Ctrl + A","Tout le tableau"]
+  [
+   "Clic",
+   "Une cellule"
+  ],
+  [
+   "Cliquer-glisser",
+   "Une plage"
+  ],
+  [
+   "Clic sur une lettre",
+   "Toute la colonne"
+  ],
+  [
+   "Ctrl + clic",
+   "Ajoute une autre sélection"
+  ],
+  [
+   "Ctrl + A",
+   "Tout le tableau"
+  ]
  ],
  "grille": [
-  ["Produit","Prix","Stock"],
-  ["Stylo","1,20 €","40"],
-  ["Cahier","3,50 €","25"],
-  ["Classeur","5,90 €","12"]
+  [
+   "Produit",
+   "Prix",
+   "Stock"
+  ],
+  [
+   "Stylo",
+   "1,20 €",
+   "40"
+  ],
+  [
+   "Cahier",
+   "3,50 €",
+   "25"
+  ],
+  [
+   "Classeur",
+   "5,90 €",
+   "12"
+  ]
  ],
+ "titreSeo": "Sélectionner des cellules, une colonne, un tableau Excel",
  "etapes": [
-  {"c":"A2","t":"Un clic sélectionne une cellule."},
-  {"c":"A2","sel":"A2:B3","drag":1,"t":"Cliquez et faites glisser pour sélectionner une plage. Celle-ci se note A2:B3."},
-  {"c":"B1","sel":"col:B","spot":"cols","t":"Un clic sur la lettre d'une colonne sélectionne toute la colonne."},
-  {"c":"A3","sel":"row:3","spot":"rows","t":"Un clic sur un numéro sélectionne toute la ligne."},
-  {"c":"A2","sel":"A2:A4","sel2":"C2:C4","drag":1,"keys":"Ctrl","t":"Maintenez Ctrl pour ajouter une seconde sélection, même éloignée."},
-  {"c":"A1","sel":"A1:C4","keys":"Ctrl + A","t":"Ctrl + A sélectionne tout le tableau d'un coup."}
+  {
+   "c": "A2",
+   "t": "Un clic sélectionne une cellule."
+  },
+  {
+   "c": "A2",
+   "sel": "A2:B3",
+   "drag": 1,
+   "t": "Cliquez et faites glisser pour sélectionner une plage. Celle-ci se note A2:B3."
+  },
+  {
+   "c": "B1",
+   "sel": "col:B",
+   "spot": "cols",
+   "t": "Un clic sur la lettre d'une colonne sélectionne toute la colonne."
+  },
+  {
+   "c": "A3",
+   "sel": "row:3",
+   "spot": "rows",
+   "t": "Un clic sur un numéro sélectionne toute la ligne."
+  },
+  {
+   "c": "A2",
+   "sel": "A2:A4",
+   "sel2": "C2:C4",
+   "drag": 1,
+   "keys": "Ctrl",
+   "t": "Maintenez Ctrl pour ajouter une seconde sélection, même éloignée."
+  },
+  {
+   "c": "A1",
+   "sel": "A1:C4",
+   "keys": "Ctrl + A",
+   "t": "Ctrl + A sélectionne tout le tableau d'un coup."
+  }
+ ],
+ "guide": {
+  "question": "Comment sélectionner des cellules dans Excel ?",
+  "intro": "Un clic sélectionne une cellule ; cliquer-glisser sélectionne une plage, notée par exemple A2:B3 (de A2 jusqu'à B3). Un clic sur une lettre sélectionne la colonne entière, un clic sur un numéro la ligne entière. Ctrl permet d'ajouter une sélection éloignée, et Ctrl + A sélectionne tout le tableau.",
+  "exemple": {
+   "titre": "À retenir",
+   "formule": "A2:B3 = de A2 jusqu'à B3",
+   "explication": "La plage A2:B3 contient quatre cellules : Stylo, 1,20 €, Cahier et 3,50 €."
+  },
+  "erreurs": [
+   [
+    "La sélection se décale en glissant",
+    "Vous avez commencé sur le bord de la cellule, ce qui la déplace : partez du centre."
+   ],
+   [
+    "Ctrl + A sélectionne toute la feuille",
+    "Vous étiez sur une cellule vide : placez-vous dans le tableau, puis Ctrl + A."
+   ]
+  ],
+  "faq": [
+   [
+    "Comment sélectionner sans la souris ?",
+    "Maj + flèches, et Ctrl + Maj + flèche jusqu'au bout des données."
+   ],
+   [
+    "Comment voir la somme de la sélection ?",
+    "Elle s'affiche dans la barre d'état, en bas à droite, avec la moyenne et le nombre."
+   ],
+   [
+    "Comment sélectionner des cellules éloignées ?",
+    "Maintenez Ctrl en cliquant."
+   ]
+  ]
+ },
+ "voirAussi": [
+  "raccourcis-selectionner",
+  "saisir-des-donnees",
+  "copier-coller-annuler",
+  "ecran-excel"
  ]
 }

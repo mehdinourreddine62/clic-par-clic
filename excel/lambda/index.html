@@ -3,15 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>LAMBDA : créer sa propre fonction dans Excel | Clic par clic</title>
-<meta name="description" content="Enregistrer un calcul sous un nom et l'utiliser comme une fonction d'Excel. Leçon Excel animée en 4 étapes, niveau avancé, gratuite.">
+<title>LAMBDA dans Excel : créer sa propre fonction | Clic par clic</title>
+<meta name="description" content="LAMBDA crée une fonction personnalisée à partir d'une formule : on déclare des paramètres, puis le calcul.">
 <link rel="canonical" href="https://mehdinourreddine62.github.io/clic-par-clic/excel/lambda/">
 <meta name="robots" content="index,follow">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="Clic par clic">
-<meta property="og:title" content="LAMBDA : créer sa propre fonction dans Excel | Clic par clic">
-<meta property="og:description" content="Enregistrer un calcul sous un nom et l'utiliser comme une fonction d'Excel. Leçon Excel animée en 4 étapes, niveau avancé, gratuite.">
+<meta property="og:title" content="LAMBDA dans Excel : créer sa propre fonction | Clic par clic">
+<meta property="og:description" content="LAMBDA crée une fonction personnalisée à partir d'une formule : on déclare des paramètres, puis le calcul.">
 <meta property="og:url" content="https://mehdinourreddine62.github.io/clic-par-clic/excel/lambda/">
 <meta property="og:image" content="https://mehdinourreddine62.github.io/clic-par-clic/assets/og-excel.png">
 <meta property="og:image:width" content="1200">
@@ -61,7 +61,18 @@
     <div class="pband" id="pband" hidden></div>
     <details class="sx"><summary>Syntaxe <code>=LAMBDA(paramètre; calcul)</code></summary><dl><dt>paramètre</dt><dd>La valeur que la fonction recevra</dd><dt>calcul</dt><dd>Ce que la fonction en fait</dd><dt>Gestionnaire de noms</dt><dd>Là où l'on enregistre la fonction</dd><dt>Version</dt><dd>Microsoft 365</dd></dl></details>
     <details class="sx"><summary>Résumé écrit des étapes</summary><ol class="steps"><li>LAMBDA crée une fonction : ici, elle ajoute 20 % de TVA. On la teste directement sur A2.</li><li>Pour la réutiliser, enregistrez-la dans le Gestionnaire de noms, sous le nom TTC.</li><li>Elle s'utilise ensuite comme n'importe quelle fonction d'Excel, partout dans le classeur.</li><li>Pour changer la règle, modifiez-la une seule fois dans le Gestionnaire de noms : toutes les cellules suivent.</li></ol></details>
-    <section class="also"><h2>Voir aussi</h2><div class="also-l"><a href="../filtre/"><b>FILTRE</b><small>Extraire les lignes d'un tableau qui respectent une condition.</small></a><a href="../unique-trier/"><b>UNIQUE et TRIER</b><small>Obtenir une liste sans doublons, classée automatiquement.</small></a><a href="../sequence/"><b>SEQUENCE</b><small>Générer automatiquement une suite de nombres.</small></a></div></section>
+    <section class="guide">
+      <h2>Comment créer sa propre fonction avec LAMBDA dans Excel ?</h2>
+      <p>LAMBDA crée une fonction personnalisée à partir d'une formule : on déclare des paramètres, puis le calcul. On la teste en ajoutant ses valeurs entre parenthèses, puis on l'enregistre dans Formules › Gestionnaire de noms sous un nom, par exemple TTC. Elle s'utilise ensuite comme une fonction d'Excel, dans tout le classeur. Disponible dans Excel 365 et 2024.</p>
+      <h3>Exemple</h3>
+      <p><code class="gx">=LAMBDA(ht;ht*1,2)</code></p>
+      <p>Testée avec =LAMBDA(ht;ht*1,2)(A2), elle donne 120 pour 100 € HT. Enregistrée sous le nom TTC, =TTC(A2) donne 120, 300 et 48.</p>
+      <h3>Erreurs fréquentes</h3>
+      <ul><li><b>#CALC!</b>La LAMBDA est écrite dans une cellule sans valeurs : ajoutez (A2) pour la tester, ou enregistrez-la comme nom.</li><li><b>#NOM?</b>Le nom TTC n'est pas défini dans ce classeur : les LAMBDA ne passent pas d'un fichier à l'autre.</li></ul>
+      <h3>Questions fréquentes</h3>
+      <h4>Comment modifier la règle ?</h4><p>Une seule fois, dans le Gestionnaire de noms : toutes les cellules suivent.</p><h4>Peut-on avoir plusieurs paramètres ?</h4><p>Oui : =LAMBDA(ht;taux;ht*(1+taux)).</p><h4>Quelle différence avec LET ?</h4><p>LET nomme un calcul dans une formule ; LAMBDA crée une fonction réutilisable partout.</p>
+    </section>
+    <section class="also"><h2>Voir aussi</h2><div class="also-l"><a href="../let/"><b>LET</b><small>Nommer un calcul pour ne l'écrire qu'une fois.</small></a><a href="../nommer-une-plage/"><b>Nommer une plage</b><small>Remplacer une référence par un nom lisible.</small></a><a href="../tva-ht-et-ttc/"><b>TVA : passer du HT au TTC</b><small>Ajouter la TVA, et la retirer sans se tromper.</small></a><a href="../erreur-nom/"><b>Corriger #NOM?</b><small>Trouver la faute de frappe dans une formule.</small></a></div></section>
     <nav class="lnav" aria-label="Leçons voisines"><a href="../let/"><small>← Précédente</small>LET</a><a class="nx" id="nextLesson" href="../cas-budget-etudiant/"><small>Suivante →</small>Cas pratique : budget mensuel d'étudiant</a></nav>
   </main>
 </div>

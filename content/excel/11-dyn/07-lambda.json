@@ -7,21 +7,110 @@
  "syntaxe": "=LAMBDA(paramètre; calcul)",
  "ruban": true,
  "arguments": [
-  ["paramètre","La valeur que la fonction recevra"],
-  ["calcul","Ce que la fonction en fait"],
-  ["Gestionnaire de noms","Là où l'on enregistre la fonction"],
-  ["Version","Microsoft 365"]
+  [
+   "paramètre",
+   "La valeur que la fonction recevra"
+  ],
+  [
+   "calcul",
+   "Ce que la fonction en fait"
+  ],
+  [
+   "Gestionnaire de noms",
+   "Là où l'on enregistre la fonction"
+  ],
+  [
+   "Version",
+   "Microsoft 365"
+  ]
  ],
  "grille": [
-  ["Prix HT","Prix TTC"],
-  ["100",""],
-  ["250",""],
-  ["40",""]
+  [
+   "Prix HT",
+   "Prix TTC"
+  ],
+  [
+   "100",
+   ""
+  ],
+  [
+   "250",
+   ""
+  ],
+  [
+   "40",
+   ""
+  ]
  ],
+ "titreSeo": "LAMBDA dans Excel : créer sa propre fonction",
  "etapes": [
-  {"c":"B2","f":"=LAMBDA(ht;ht*1,2)(A2)","v":"120","t":"LAMBDA crée une fonction : ici, elle ajoute 20 % de TVA. On la teste directement sur A2."},
-  {"c":"B2","tab":"Formules","btn":"Gestionnaire de noms","menu":"Gestionnaire de noms › Nouveau › Nom : <b>TTC</b>","rule":"=LAMBDA(ht;ht*1,2)","t":"Pour la réutiliser, enregistrez-la dans le Gestionnaire de noms, sous le nom TTC."},
-  {"c":"B2","f":"=TTC(A2)","v":"120","fill":{"B3":"300","B4":"48"},"t":"Elle s'utilise ensuite comme n'importe quelle fonction d'Excel, partout dans le classeur."},
-  {"c":"B2","tab":"Formules","t":"Pour changer la règle, modifiez-la une seule fois dans le Gestionnaire de noms : toutes les cellules suivent."}
+  {
+   "c": "B2",
+   "f": "=LAMBDA(ht;ht*1,2)(A2)",
+   "v": "120",
+   "t": "LAMBDA crée une fonction : ici, elle ajoute 20 % de TVA. On la teste directement sur A2."
+  },
+  {
+   "c": "B2",
+   "tab": "Formules",
+   "btn": "Gestionnaire de noms",
+   "menu": "Gestionnaire de noms › Nouveau › Nom : <b>TTC</b>",
+   "rule": "=LAMBDA(ht;ht*1,2)",
+   "t": "Pour la réutiliser, enregistrez-la dans le Gestionnaire de noms, sous le nom TTC."
+  },
+  {
+   "c": "B2",
+   "f": "=TTC(A2)",
+   "v": "120",
+   "fill": {
+    "B3": "300",
+    "B4": "48"
+   },
+   "t": "Elle s'utilise ensuite comme n'importe quelle fonction d'Excel, partout dans le classeur."
+  },
+  {
+   "c": "B2",
+   "tab": "Formules",
+   "t": "Pour changer la règle, modifiez-la une seule fois dans le Gestionnaire de noms : toutes les cellules suivent."
+  }
+ ],
+ "guide": {
+  "question": "Comment créer sa propre fonction avec LAMBDA dans Excel ?",
+  "intro": "LAMBDA crée une fonction personnalisée à partir d'une formule : on déclare des paramètres, puis le calcul. On la teste en ajoutant ses valeurs entre parenthèses, puis on l'enregistre dans Formules › Gestionnaire de noms sous un nom, par exemple TTC. Elle s'utilise ensuite comme une fonction d'Excel, dans tout le classeur. Disponible dans Excel 365 et 2024.",
+  "exemple": {
+   "titre": "Exemple",
+   "formule": "=LAMBDA(ht;ht*1,2)",
+   "explication": "Testée avec =LAMBDA(ht;ht*1,2)(A2), elle donne 120 pour 100 € HT. Enregistrée sous le nom TTC, =TTC(A2) donne 120, 300 et 48."
+  },
+  "erreurs": [
+   [
+    "#CALC!",
+    "La LAMBDA est écrite dans une cellule sans valeurs : ajoutez (A2) pour la tester, ou enregistrez-la comme nom."
+   ],
+   [
+    "#NOM?",
+    "Le nom TTC n'est pas défini dans ce classeur : les LAMBDA ne passent pas d'un fichier à l'autre."
+   ]
+  ],
+  "faq": [
+   [
+    "Comment modifier la règle ?",
+    "Une seule fois, dans le Gestionnaire de noms : toutes les cellules suivent."
+   ],
+   [
+    "Peut-on avoir plusieurs paramètres ?",
+    "Oui : =LAMBDA(ht;taux;ht*(1+taux))."
+   ],
+   [
+    "Quelle différence avec LET ?",
+    "LET nomme un calcul dans une formule ; LAMBDA crée une fonction réutilisable partout."
+   ]
+  ]
+ },
+ "voirAussi": [
+  "let",
+  "nommer-une-plage",
+  "tva-ht-et-ttc",
+  "erreur-nom"
  ]
 }

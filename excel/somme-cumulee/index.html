@@ -3,15 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Somme cumulée – Excel en animation | Clic par clic</title>
-<meta name="description" content="Un total qui progresse ligne après ligne. Leçon Excel animée en 3 étapes, niveau intermédiaire, gratuite.">
+<title>Somme cumulée dans Excel : un total qui progresse</title>
+<meta name="description" content="Une somme cumulée additionne toutes les valeurs depuis le début jusqu'à la ligne courante.">
 <link rel="canonical" href="https://mehdinourreddine62.github.io/clic-par-clic/excel/somme-cumulee/">
 <meta name="robots" content="index,follow">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="Clic par clic">
-<meta property="og:title" content="Somme cumulée – Excel en animation | Clic par clic">
-<meta property="og:description" content="Un total qui progresse ligne après ligne. Leçon Excel animée en 3 étapes, niveau intermédiaire, gratuite.">
+<meta property="og:title" content="Somme cumulée dans Excel : un total qui progresse">
+<meta property="og:description" content="Une somme cumulée additionne toutes les valeurs depuis le début jusqu'à la ligne courante.">
 <meta property="og:url" content="https://mehdinourreddine62.github.io/clic-par-clic/excel/somme-cumulee/">
 <meta property="og:image" content="https://mehdinourreddine62.github.io/clic-par-clic/assets/og-excel.png">
 <meta property="og:image:width" content="1200">
@@ -61,7 +61,18 @@
     <a class="dl" href="../../fichiers/excel/somme-cumulee.xlsx" download="somme-cumulee.xlsx"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg><span><b>Télécharger le fichier d'exercice</b><small>Excel · consignes, données de départ et solution</small></span></a><div class="pband" id="pband" hidden></div>
     <details class="sx"><summary>Syntaxe <code>=SOMME($B$2:B2)</code></summary><dl><dt>$B$2</dt><dd>Le début de la plage, figé</dd><dt>B2</dt><dd>La fin de la plage, qui descend à chaque ligne</dd></dl></details>
     <details class="sx"><summary>Résumé écrit des étapes</summary><ol class="steps"><li>Le début de la plage est figé avec des $, la fin reste libre.</li><li>En recopiant, la plage s'allonge d'une ligne à chaque fois.</li><li>En C5, la plage va de B2 à B5 : c'est le total depuis janvier.</li></ol></details>
-    <section class="also"><h2>Voir aussi</h2><div class="also-l"><a href="../ecrire-une-formule/"><b>Écrire une formule</b><small>Faire un calcul entre deux cellules.</small></a><a href="../references-absolues/"><b>Références absolues ($)</b><small>Empêcher une référence de bouger quand on recopie.</small></a><a href="../pourcentages/"><b>Pourcentages</b><small>Calculer une évolution et une part du total.</small></a></div></section>
+    <section class="guide">
+      <h2>Comment faire une somme cumulée dans Excel ?</h2>
+      <p>Une somme cumulée additionne toutes les valeurs depuis le début jusqu'à la ligne courante. On l'écrit avec SOMME en figeant le début de la plage avec des $ et en laissant la fin libre : en recopiant vers le bas, la plage s'allonge d'une ligne à chaque fois.</p>
+      <h3>Exemple</h3>
+      <p><code class="gx">=SOMME($B$2:B2)</code></p>
+      <p>Ventes 200, 150, 300, 250 : le cumul donne 200, 350, 650 et 900. En C5, la formule est devenue =SOMME($B$2:B5).</p>
+      <h3>Erreurs fréquentes</h3>
+      <ul><li><b>Le cumul reste égal à la valeur de la ligne</b>Le début de la plage n'est pas figé : écrivez $B$2.</li><li><b>Le cumul compte tout dès la première ligne</b>La fin de la plage est figée aussi : seule la première référence prend des $.</li></ul>
+      <h3>Questions fréquentes</h3>
+      <h4>Peut-on écrire =C1+B2 à la place ?</h4><p>Oui, mais la première ligne demande une formule différente ; SOMME($B$2:B2) est la même partout.</p><h4>Comment faire un cumul par mois dans un tableau croisé ?</h4><p>Clic droit › Afficher les valeurs › Résultat cumulé par.</p><h4>Comment afficher le cumul en pourcentage ?</h4><p>Divisez le cumul par le total figé : =C2/$C$5.</p>
+    </section>
+    <section class="also"><h2>Voir aussi</h2><div class="also-l"><a href="../references-absolues/"><b>Références absolues ($)</b><small>Empêcher une référence de bouger quand on recopie.</small></a><a href="../somme/"><b>SOMME</b><small>Additionner une plage de cellules.</small></a><a href="../recopier-une-serie/"><b>Recopier une série</b><small>Faire écrire à Excel une suite de nombres, de jours ou de dates.</small></a><a href="../pourcentages/"><b>Pourcentages</b><small>Calculer une évolution et une part du total.</small></a></div></section>
     <nav class="lnav" aria-label="Leçons voisines"><a href="../pourcentages/"><small>← Précédente</small>Pourcentages</a><a class="nx" id="nextLesson" href="../coller-les-valeurs/"><small>Suivante →</small>Coller uniquement les valeurs</a></nav>
   </main>
 </div>

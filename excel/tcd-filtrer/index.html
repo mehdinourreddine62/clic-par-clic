@@ -3,15 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Filtrer un tableau croisé dans Excel | Clic par clic</title>
-<meta name="description" content="N'afficher qu'une partie des données, sans les modifier. Leçon Excel animée en 4 étapes, niveau intermédiaire, gratuite.">
+<title>Filtrer un tableau croisé dynamique (zone Filtres)</title>
+<meta name="description" content="Glissez un champ dans la zone Filtres de la liste des champs : une liste déroulante apparaît au-dessus du tableau croisé.">
 <link rel="canonical" href="https://mehdinourreddine62.github.io/clic-par-clic/excel/tcd-filtrer/">
 <meta name="robots" content="index,follow">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="Clic par clic">
-<meta property="og:title" content="Filtrer un tableau croisé dans Excel | Clic par clic">
-<meta property="og:description" content="N'afficher qu'une partie des données, sans les modifier. Leçon Excel animée en 4 étapes, niveau intermédiaire, gratuite.">
+<meta property="og:title" content="Filtrer un tableau croisé dynamique (zone Filtres)">
+<meta property="og:description" content="Glissez un champ dans la zone Filtres de la liste des champs : une liste déroulante apparaît au-dessus du tableau croisé.">
 <meta property="og:url" content="https://mehdinourreddine62.github.io/clic-par-clic/excel/tcd-filtrer/">
 <meta property="og:image" content="https://mehdinourreddine62.github.io/clic-par-clic/assets/og-excel.png">
 <meta property="og:image:width" content="1200">
@@ -61,7 +61,18 @@
     <div class="pband" id="pband" hidden></div>
     <details class="sx"><summary>Syntaxe <code>Glisser un champ dans la zone Filtres</code></summary><dl><dt>Zone Filtres</dt><dd>Ajoute une liste au-dessus du tableau</dd><dt>(Tous)</dt><dd>Affiche toutes les données</dd></dl></details>
     <details class="sx"><summary>Résumé écrit des étapes</summary><ol class="steps"><li>Voici les ventes par région, tous vendeurs confondus.</li><li>Glissez Vendeur dans la zone Filtres : une liste apparaît au-dessus du tableau.</li><li>Choisissez Alice : le tableau ne montre plus que ses ventes.</li><li>Revenez sur « (Tous) » pour tout réafficher. Les données d'origine ne sont jamais modifiées.</li></ol></details>
-    <section class="also"><h2>Voir aussi</h2><div class="also-l"><a href="../creer-un-tableau-croise-dynamique/"><b>Créer un tableau croisé dynamique</b><small>Résumer un tableau en quelques clics, sans formule.</small></a><a href="../tcd-lignes-et-colonnes/"><b>Lignes et colonnes</b><small>Croiser deux informations dans le même tableau.</small></a><a href="../tcd-somme-nombre-moyenne/"><b>Somme, nombre ou moyenne</b><small>Changer le calcul affiché dans le tableau croisé.</small></a></div></section>
+    <section class="guide">
+      <h2>Comment filtrer un tableau croisé dynamique ?</h2>
+      <p>Glissez un champ dans la zone Filtres de la liste des champs : une liste déroulante apparaît au-dessus du tableau croisé. Choisissez une valeur pour n'afficher que ses données, ou cochez Sélectionner plusieurs éléments. Les données d'origine ne sont jamais modifiées ; revenez sur (Tous) pour tout réafficher.</p>
+      <h3>Exemple</h3>
+      <p><code class="gx">Glisser Vendeur dans la zone Filtres</code></p>
+      <p>Avec le filtre sur Alice, le tableau des régions n'affiche plus que ses ventes : Nord 190, Sud 60.</p>
+      <h3>Erreurs fréquentes</h3>
+      <ul><li><b>La liste propose des valeurs supprimées</b>Actualisez, et réglez Nombre d'éléments à retenir par champ sur Aucun.</li><li><b>Le total semble faux</b>Un filtre est actif sur un autre champ : vérifiez les entonnoirs des en-têtes.</li></ul>
+      <h3>Questions fréquentes</h3>
+      <h4>Filtre ou segment ?</h4><p>Le segment fait la même chose avec des boutons visibles, plus pratiques.</p><h4>Comment créer un onglet par vendeur ?</h4><p>Analyse du tableau croisé › Options › Afficher les pages de filtre du rapport.</p><h4>Peut-on filtrer les 3 meilleurs ?</h4><p>Oui : flèche de l'en-tête de lignes › Filtres s'appliquant aux valeurs › 10 premiers.</p>
+    </section>
+    <section class="also"><h2>Voir aussi</h2><div class="also-l"><a href="../tcd-segments/"><b>Filtrer avec un segment</b><small>Des boutons pour filtrer un tableau croisé d'un seul clic.</small></a><a href="../tcd-chronologie/"><b>Filtrer par date avec une chronologie</b><small>Une frise pour choisir la période affichée.</small></a><a href="../creer-un-tableau-croise-dynamique/"><b>Créer un tableau croisé dynamique</b><small>Résumer un tableau en quelques clics, sans formule.</small></a><a href="../tcd-actualiser/"><b>Actualiser un tableau croisé</b><small>Mettre le tableau à jour après une modification des données.</small></a></div></section>
     <nav class="lnav" aria-label="Leçons voisines"><a href="../tcd-somme-nombre-moyenne/"><small>← Précédente</small>Somme, nombre ou moyenne</a><a class="nx" id="nextLesson" href="../tcd-actualiser/"><small>Suivante →</small>Actualiser un tableau croisé</a></nav>
   </main>
 </div>

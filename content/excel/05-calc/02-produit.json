@@ -6,15 +6,84 @@
  "motsCles": "multiplier multiplication volume",
  "syntaxe": "=PRODUIT(plage)",
  "arguments": [
-  ["plage","Les cellules à multiplier entre elles"]
+  [
+   "plage",
+   "Les cellules à multiplier entre elles"
+  ]
  ],
  "grille": [
-  ["Longueur","Largeur","Hauteur","Volume"],
-  ["2","3","4",""],
-  ["5","2","1,5",""]
+  [
+   "Longueur",
+   "Largeur",
+   "Hauteur",
+   "Volume"
+  ],
+  [
+   "2",
+   "3",
+   "4",
+   ""
+  ],
+  [
+   "5",
+   "2",
+   "1,5",
+   ""
+  ]
  ],
+ "titreSeo": "PRODUIT dans Excel : multiplier toute une plage",
  "etapes": [
-  {"c":"D2","f":"=PRODUIT(A2:C2)","v":"24","t":"PRODUIT multiplie toutes les valeurs de la plage : 2 × 3 × 4."},
-  {"c":"D2","fill":{"D3":"15"},"t":"Pratique dès qu'il y a plus de deux nombres à multiplier."}
+  {
+   "c": "D2",
+   "f": "=PRODUIT(A2:C2)",
+   "v": "24",
+   "t": "PRODUIT multiplie toutes les valeurs de la plage : 2 × 3 × 4."
+  },
+  {
+   "c": "D2",
+   "fill": {
+    "D3": "15"
+   },
+   "t": "Pratique dès qu'il y a plus de deux nombres à multiplier."
+  }
+ ],
+ "guide": {
+  "question": "Comment multiplier plusieurs cellules avec PRODUIT dans Excel ?",
+  "intro": "PRODUIT (PRODUCT en anglais) multiplie toutes les valeurs d'une plage entre elles. Elle évite d'écrire A2*B2*C2 quand il y a beaucoup de nombres. Les cellules vides et le texte sont ignorés, ce qui peut surprendre.",
+  "exemple": {
+   "titre": "Exemple",
+   "formule": "=PRODUIT(A2:C2)",
+   "explication": "Longueur 2, largeur 3, hauteur 4 : volume 24. Pour 5 × 2 × 1,5 : 15."
+  },
+  "erreurs": [
+   [
+    "Le résultat n'est pas 0 malgré une cellule vide",
+    "PRODUIT ignore les cellules vides : vérifiez qu'aucune valeur ne manque."
+   ],
+   [
+    "#VALEUR!",
+    "Le signe * avec du texte donne cette erreur, PRODUIT non : les deux peuvent différer."
+   ]
+  ],
+  "faq": [
+   [
+    "Quelle différence avec SOMMEPROD ?",
+    "PRODUIT multiplie les valeurs d'une plage ; SOMMEPROD multiplie deux plages ligne par ligne puis additionne."
+   ],
+   [
+    "Peut-on mélanger plages et nombres ?",
+    "Oui : =PRODUIT(A2:C2;1,2)."
+   ],
+   [
+    "Comment multiplier une colonne par un même nombre ?",
+    "=A2*$E$1, recopiée vers le bas, ou Collage spécial › Multiplication."
+   ]
+  ]
+ },
+ "voirAussi": [
+  "sommeprod",
+  "somme",
+  "puissance-racine",
+  "ecrire-une-formule"
  ]
 }

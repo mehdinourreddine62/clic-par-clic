@@ -3,15 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>PRODUIT – Excel en animation | Clic par clic</title>
-<meta name="description" content="Multiplier toutes les valeurs d'une plage. Leçon Excel animée en 2 étapes, niveau débutant, gratuite.">
+<title>PRODUIT dans Excel : multiplier toute une plage</title>
+<meta name="description" content="PRODUIT (PRODUCT en anglais) multiplie toutes les valeurs d'une plage entre elles. Elle évite d'écrire A2*B2*C2 quand il y a beaucoup de nombres.">
 <link rel="canonical" href="https://mehdinourreddine62.github.io/clic-par-clic/excel/produit/">
 <meta name="robots" content="index,follow">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="Clic par clic">
-<meta property="og:title" content="PRODUIT – Excel en animation | Clic par clic">
-<meta property="og:description" content="Multiplier toutes les valeurs d'une plage. Leçon Excel animée en 2 étapes, niveau débutant, gratuite.">
+<meta property="og:title" content="PRODUIT dans Excel : multiplier toute une plage">
+<meta property="og:description" content="PRODUIT (PRODUCT en anglais) multiplie toutes les valeurs d'une plage entre elles. Elle évite d'écrire A2*B2*C2 quand il y a beaucoup de nombres.">
 <meta property="og:url" content="https://mehdinourreddine62.github.io/clic-par-clic/excel/produit/">
 <meta property="og:image" content="https://mehdinourreddine62.github.io/clic-par-clic/assets/og-excel.png">
 <meta property="og:image:width" content="1200">
@@ -61,7 +61,18 @@
     <a class="dl" href="../../fichiers/excel/produit.xlsx" download="produit.xlsx"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg><span><b>Télécharger le fichier d'exercice</b><small>Excel · consignes, données de départ et solution</small></span></a><div class="pband" id="pband" hidden></div>
     <details class="sx"><summary>Syntaxe <code>=PRODUIT(plage)</code></summary><dl><dt>plage</dt><dd>Les cellules à multiplier entre elles</dd></dl></details>
     <details class="sx"><summary>Résumé écrit des étapes</summary><ol class="steps"><li>PRODUIT multiplie toutes les valeurs de la plage : 2 × 3 × 4.</li><li>Pratique dès qu'il y a plus de deux nombres à multiplier.</li></ol></details>
-    <section class="also"><h2>Voir aussi</h2><div class="also-l"><a href="../somme/"><b>SOMME</b><small>Additionner une plage de cellules.</small></a><a href="../sommeprod/"><b>SOMMEPROD</b><small>Multiplier deux colonnes ligne par ligne, puis tout additionner.</small></a><a href="../moyenne-min-max/"><b>MOYENNE, MIN et MAX</b><small>La moyenne, la plus petite et la plus grande valeur.</small></a></div></section>
+    <section class="guide">
+      <h2>Comment multiplier plusieurs cellules avec PRODUIT dans Excel ?</h2>
+      <p>PRODUIT (PRODUCT en anglais) multiplie toutes les valeurs d'une plage entre elles. Elle évite d'écrire A2*B2*C2 quand il y a beaucoup de nombres. Les cellules vides et le texte sont ignorés, ce qui peut surprendre.</p>
+      <h3>Exemple</h3>
+      <p><code class="gx">=PRODUIT(A2:C2)</code></p>
+      <p>Longueur 2, largeur 3, hauteur 4 : volume 24. Pour 5 × 2 × 1,5 : 15.</p>
+      <h3>Erreurs fréquentes</h3>
+      <ul><li><b>Le résultat n'est pas 0 malgré une cellule vide</b>PRODUIT ignore les cellules vides : vérifiez qu'aucune valeur ne manque.</li><li><b>#VALEUR!</b>Le signe * avec du texte donne cette erreur, PRODUIT non : les deux peuvent différer.</li></ul>
+      <h3>Questions fréquentes</h3>
+      <h4>Quelle différence avec SOMMEPROD ?</h4><p>PRODUIT multiplie les valeurs d'une plage ; SOMMEPROD multiplie deux plages ligne par ligne puis additionne.</p><h4>Peut-on mélanger plages et nombres ?</h4><p>Oui : =PRODUIT(A2:C2;1,2).</p><h4>Comment multiplier une colonne par un même nombre ?</h4><p>=A2*$E$1, recopiée vers le bas, ou Collage spécial › Multiplication.</p>
+    </section>
+    <section class="also"><h2>Voir aussi</h2><div class="also-l"><a href="../sommeprod/"><b>SOMMEPROD</b><small>Multiplier deux colonnes ligne par ligne, puis tout additionner.</small></a><a href="../somme/"><b>SOMME</b><small>Additionner une plage de cellules.</small></a><a href="../puissance-racine/"><b>PUISSANCE et RACINE</b><small>Calculer un carré ou une racine carrée.</small></a><a href="../ecrire-une-formule/"><b>Écrire une formule</b><small>Faire un calcul entre deux cellules.</small></a></div></section>
     <nav class="lnav" aria-label="Leçons voisines"><a href="../somme/"><small>← Précédente</small>SOMME</a><a class="nx" id="nextLesson" href="../sommeprod/"><small>Suivante →</small>SOMMEPROD</a></nav>
   </main>
 </div>

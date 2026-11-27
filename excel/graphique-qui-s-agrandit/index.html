@@ -3,15 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Un graphique qui s'agrandit tout seul dans Excel</title>
-<meta name="description" content="Faire suivre le graphique quand on ajoute des données. Leçon Excel animée en 4 étapes, niveau intermédiaire, gratuite.">
+<title>Graphique Excel qui se met à jour avec les nouvelles lignes</title>
+<meta name="description" content="Un graphique classique dessine une plage fixe : une ligne ajoutée en dessous est ignorée.">
 <link rel="canonical" href="https://mehdinourreddine62.github.io/clic-par-clic/excel/graphique-qui-s-agrandit/">
 <meta name="robots" content="index,follow">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="Clic par clic">
-<meta property="og:title" content="Un graphique qui s'agrandit tout seul dans Excel">
-<meta property="og:description" content="Faire suivre le graphique quand on ajoute des données. Leçon Excel animée en 4 étapes, niveau intermédiaire, gratuite.">
+<meta property="og:title" content="Graphique Excel qui se met à jour avec les nouvelles lignes">
+<meta property="og:description" content="Un graphique classique dessine une plage fixe : une ligne ajoutée en dessous est ignorée.">
 <meta property="og:url" content="https://mehdinourreddine62.github.io/clic-par-clic/excel/graphique-qui-s-agrandit/">
 <meta property="og:image" content="https://mehdinourreddine62.github.io/clic-par-clic/assets/og-excel.png">
 <meta property="og:image:width" content="1200">
@@ -61,7 +61,18 @@
     <div class="pband" id="pband" hidden></div>
     <details class="sx"><summary>Syntaxe <code>Mettre les données sous forme de tableau</code></summary><dl><dt>Plage classique</dt><dd>Le graphique ne voit pas les nouvelles lignes</dd><dt>Tableau</dt><dd>Le graphique suit le tableau quand il s'agrandit</dd></dl></details>
     <details class="sx"><summary>Résumé écrit des étapes</summary><ol class="steps"><li>Un graphique classique dessine une plage fixe : ici, de janvier à avril.</li><li>Ajoutez un mois sous les données : le graphique l'ignore.</li><li>Mettez les données sous forme de tableau : le graphique prend maintenant tout le tableau.</li><li>Ajoutez une ligne : le tableau s'étend, et le graphique suit tout seul.</li></ol></details>
-    <section class="also"><h2>Voir aussi</h2><div class="also-l"><a href="../creer-un-graphique/"><b>Créer un graphique</b><small>Transformer un tableau en graphique en deux clics.</small></a><a href="../preparer-ses-donnees/"><b>Bien préparer ses données</b><small>Un tableau propre donne un graphique juste.</small></a><a href="../choisir-un-type-de-graphique/"><b>Choisir le bon type</b><small>Histogramme, courbe, secteurs ou barres : à chaque question son graphique.</small></a></div></section>
+    <section class="guide">
+      <h2>Comment faire un graphique Excel qui s'agrandit avec les données ?</h2>
+      <p>Un graphique classique dessine une plage fixe : une ligne ajoutée en dessous est ignorée. Mettez les données sous forme de tableau (Ctrl + L, ou Accueil › Mettre sous forme de tableau) : le graphique s'appuie alors sur le tableau entier, et chaque ligne ajoutée apparaît aussitôt dans le graphique.</p>
+      <h3>Exemple</h3>
+      <p><code class="gx">Ctrl + L</code></p>
+      <p>Ventes de janvier à avril sous forme de tableau : tapez Mai et sa valeur sur la ligne suivante, la barre de mai apparaît dans le graphique.</p>
+      <h3>Erreurs fréquentes</h3>
+      <ul><li><b>Le graphique ignore toujours la nouvelle ligne</b>Il a été créé avant le tableau : recréez-le depuis le tableau, ou redéfinissez sa plage.</li><li><b>La ligne ajoutée ne fait pas partie du tableau</b>Une ligne vide sépare les données : tapez juste sous la dernière ligne.</li></ul>
+      <h3>Questions fréquentes</h3>
+      <h4>Ctrl + L ou Ctrl + T ?</h4><p>Dans Excel en français, Ctrl + L ; Ctrl + T est le raccourci anglais.</p><h4>Les formules suivent-elles aussi ?</h4><p>Oui : une colonne calculée du tableau se recopie seule sur la nouvelle ligne.</p><h4>Comment retirer le style du tableau ?</h4><p>Création de tableau › Styles › Aucun ; le tableau reste actif.</p>
+    </section>
+    <section class="also"><h2>Voir aussi</h2><div class="also-l"><a href="../mettre-sous-forme-de-tableau/"><b>Mettre sous forme de tableau</b><small>Un vrai tableau : mise en forme, filtres et total automatiques.</small></a><a href="../modifier-les-donnees-d-un-graphique/"><b>Changer les données d'un graphique</b><small>Ajouter une série et inverser lignes et colonnes.</small></a><a href="../creer-un-graphique/"><b>Créer un graphique</b><small>Transformer un tableau en graphique en deux clics.</small></a><a href="../graphique-en-courbe/"><b>Courbe</b><small>Suivre une évolution dans le temps.</small></a></div></section>
     <nav class="lnav" aria-label="Leçons voisines"><a href="../graphiques-sparkline/"><small>← Précédente</small>Graphiques sparkline</a><a class="nx" id="nextLesson" href="../modifier-les-donnees-d-un-graphique/"><small>Suivante →</small>Changer les données d'un graphique</a></nav>
   </main>
 </div>

@@ -3,15 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Antécédents et dépendants dans Excel | Clic par clic</title>
-<meta name="description" content="Voir d'où vient un résultat, et ce qu'il alimente. Leçon Excel animée en 5 étapes, niveau intermédiaire, gratuite.">
+<title>Repérer les antécédents et dépendants dans Excel</title>
+<meta name="description" content="Formules › Repérer les antécédents trace des flèches depuis chaque cellule utilisée par la formule sélectionnée ; un second clic remonte d'un niveau.">
 <link rel="canonical" href="https://mehdinourreddine62.github.io/clic-par-clic/excel/antecedents-et-dependants/">
 <meta name="robots" content="index,follow">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="Clic par clic">
-<meta property="og:title" content="Antécédents et dépendants dans Excel | Clic par clic">
-<meta property="og:description" content="Voir d'où vient un résultat, et ce qu'il alimente. Leçon Excel animée en 5 étapes, niveau intermédiaire, gratuite.">
+<meta property="og:title" content="Repérer les antécédents et dépendants dans Excel">
+<meta property="og:description" content="Formules › Repérer les antécédents trace des flèches depuis chaque cellule utilisée par la formule sélectionnée ; un second clic remonte d'un niveau.">
 <meta property="og:url" content="https://mehdinourreddine62.github.io/clic-par-clic/excel/antecedents-et-dependants/">
 <meta property="og:image" content="https://mehdinourreddine62.github.io/clic-par-clic/assets/og-excel.png">
 <meta property="og:image:width" content="1200">
@@ -61,7 +61,18 @@
     <div class="pband" id="pband" hidden></div>
     <details class="sx"><summary>Syntaxe <code>Formules › Repérer les antécédents</code></summary><dl><dt>Antécédents</dt><dd>Les cellules utilisées par la formule</dd><dt>Dépendants</dt><dd>Les cellules qui utilisent celle-ci</dd><dt>Supprimer les flèches</dt><dd>Nettoie l'affichage</dd></dl></details>
     <details class="sx"><summary>Résumé écrit des étapes</summary><ol class="steps"><li>D'où vient ce prix final ? Sélectionnez la cellule.</li><li>« Repérer les antécédents » trace une flèche depuis chaque cellule utilisée par la formule.</li><li>Un second clic remonte d'un niveau : le prix TTC dépend lui-même du prix HT et de la TVA.</li><li>Dans l'autre sens, « Repérer les dépendants » montre ce qui changerait si vous modifiiez la cellule.</li><li>« Supprimer les flèches » nettoie l'écran.</li></ol></details>
-    <section class="also"><h2>Voir aussi</h2><div class="also-l"><a href="../erreur-div-0/"><b>Corriger #DIV/0!</b><small>Comprendre et supprimer l'erreur de division par zéro.</small></a><a href="../erreur-na/"><b>Corriger #N/A</b><small>Comprendre pourquoi une recherche ne trouve rien.</small></a><a href="../erreur-valeur/"><b>Corriger #VALEUR!</b><small>Repérer le texte qui empêche un calcul.</small></a></div></section>
+    <section class="guide">
+      <h2>Comment voir quelles cellules une formule utilise dans Excel ?</h2>
+      <p>Formules › Repérer les antécédents trace des flèches depuis chaque cellule utilisée par la formule sélectionnée ; un second clic remonte d'un niveau. Repérer les dépendants fait l'inverse : il montre les formules qui changeraient si vous modifiiez la cellule. Supprimer les flèches nettoie l'écran.</p>
+      <h3>Exemple</h3>
+      <p><code class="gx">Formules › Repérer les antécédents</code></p>
+      <p>Le prix final 108 (=C2*(1-D2)) dépend du prix TTC 120 et de la remise de 10 % ; le prix TTC dépend lui-même du prix HT 100 et de la TVA de 20 %.</p>
+      <h3>Erreurs fréquentes</h3>
+      <ul><li><b>Une flèche pointillée vers une icône</b>L'antécédent est sur une autre feuille : double-cliquez sur la flèche pour y aller.</li><li><b>Aucune flèche n'apparaît</b>La cellule ne contient pas de formule, ou la feuille est protégée.</li></ul>
+      <h3>Questions fréquentes</h3>
+      <h4>À quoi servent les dépendants ?</h4><p>À vérifier qu'aucune formule n'utilise une cellule avant de la supprimer.</p><h4>Les flèches gênent-elles le calcul ?</h4><p>Non : elles n'affichent qu'un repère visuel, sans rien modifier.</p><h4>Les flèches s'impriment-elles ?</h4><p>Non, elles restent à l'écran.</p>
+    </section>
+    <section class="also"><h2>Voir aussi</h2><div class="also-l"><a href="../evaluer-la-formule/"><b>Évaluer une formule pas à pas</b><small>Regarder Excel calculer une formule, morceau par morceau.</small></a><a href="../afficher-les-formules/"><b>Afficher les formules</b><small>Voir d'un coup tous les calculs d'une feuille.</small></a><a href="../erreur-ref/"><b>Corriger #REF!</b><small>Comprendre ce qui se passe quand on supprime une cellule utilisée.</small></a><a href="../reference-circulaire/"><b>Référence circulaire</b><small>Corriger une formule qui se calcule à partir d'elle-même.</small></a></div></section>
     <nav class="lnav" aria-label="Leçons voisines"><a href="../afficher-les-formules/"><small>← Précédente</small>Afficher les formules</a><a class="nx" id="nextLesson" href="../evaluer-la-formule/"><small>Suivante →</small>Évaluer une formule pas à pas</a></nav>
   </main>
 </div>

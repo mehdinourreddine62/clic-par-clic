@@ -5,23 +5,123 @@
  "resume": "Écrire un titre utile et afficher les valeurs.",
  "motsCles": "titre étiquettes de données valeurs message graphique lisible",
  "syntaxe": "Double-clic sur le titre pour le modifier",
- "graphique": {"type":"col","labels":"A2:A5","series":["B2:B5"],"title":"Ventes","at":"D2:H8"},
+ "graphique": {
+  "type": "col",
+  "labels": "A2:A5",
+  "series": [
+   "B2:B5"
+  ],
+  "title": "Ventes",
+  "at": "D2:H8"
+ },
  "arguments": [
-  ["Titre","Annonce le message, pas seulement le sujet"],
-  ["Étiquettes de données","Affichent la valeur sur chaque barre"],
-  ["Axe","Peut être retiré quand les valeurs sont écrites"]
+  [
+   "Titre",
+   "Annonce le message, pas seulement le sujet"
+  ],
+  [
+   "Étiquettes de données",
+   "Affichent la valeur sur chaque barre"
+  ],
+  [
+   "Axe",
+   "Peut être retiré quand les valeurs sont écrites"
+  ]
  ],
  "grille": [
-  ["Produit","Ventes"],
-  ["Stylos","320"],
-  ["Cahiers","210"],
-  ["Classeurs","140"],
-  ["Trousses","260"]
+  [
+   "Produit",
+   "Ventes"
+  ],
+  [
+   "Stylos",
+   "320"
+  ],
+  [
+   "Cahiers",
+   "210"
+  ],
+  [
+   "Classeurs",
+   "140"
+  ],
+  [
+   "Trousses",
+   "260"
+  ]
  ],
+ "titreSeo": "Titre et étiquettes de données d'un graphique Excel",
  "etapes": [
-  {"c":"A1","chart":{"spot":"title"},"t":"« Ventes » ne dit pas grand-chose. Double-cliquez sur le titre pour le modifier."},
-  {"c":"A1","chart":{"title":"Les stylos en tête des ventes de mars"},"t":"Un bon titre annonce le message, pas seulement le sujet."},
-  {"c":"A1","chart":{"panel":1,"pick":"dlabels","dlabels":true},"t":"Ajoutez les étiquettes de données pour afficher les valeurs."},
-  {"c":"A1","chart":{"panel":1,"pick":"axis","axis":false},"t":"Les valeurs étant écrites, l'axe vertical fait doublon : on peut le retirer."}
+  {
+   "c": "A1",
+   "chart": {
+    "spot": "title"
+   },
+   "t": "« Ventes » ne dit pas grand-chose. Double-cliquez sur le titre pour le modifier."
+  },
+  {
+   "c": "A1",
+   "chart": {
+    "title": "Les stylos en tête des ventes de mars"
+   },
+   "t": "Un bon titre annonce le message, pas seulement le sujet."
+  },
+  {
+   "c": "A1",
+   "chart": {
+    "panel": 1,
+    "pick": "dlabels",
+    "dlabels": true
+   },
+   "t": "Ajoutez les étiquettes de données pour afficher les valeurs."
+  },
+  {
+   "c": "A1",
+   "chart": {
+    "panel": 1,
+    "pick": "axis",
+    "axis": false
+   },
+   "t": "Les valeurs étant écrites, l'axe vertical fait doublon : on peut le retirer."
+  }
+ ],
+ "guide": {
+  "question": "Comment modifier le titre et afficher les valeurs d'un graphique Excel ?",
+  "intro": "Double-cliquez sur le titre d'un graphique pour le réécrire : un bon titre annonce le message (« Les stylos se vendent le mieux ») plutôt que le sujet (« Ventes »). Éléments de graphique (le bouton +) › Étiquettes de données affiche la valeur sur chaque barre ; l'axe vertical devient alors inutile et peut être retiré.",
+  "exemple": {
+   "titre": "Exemple",
+   "formule": "Éléments de graphique › Étiquettes de données",
+   "explication": "Les valeurs 320, 260, 210 et 140 s'affichent sur les barres : le lecteur n'a plus à les estimer sur l'axe."
+  },
+  "erreurs": [
+   [
+    "Le titre ne se modifie pas",
+    "Il est lié à une cellule : changez le texte de la cellule, ou cliquez dans la barre de formule pour supprimer le lien."
+   ],
+   [
+    "Les étiquettes se chevauchent",
+    "Réduisez la police, ou choisissez la position Bord intérieur."
+   ]
+  ],
+  "faq": [
+   [
+    "Comment lier le titre à une cellule ?",
+    "Sélectionnez le titre, tapez = dans la barre de formule, puis cliquez sur la cellule."
+   ],
+   [
+    "Comment afficher des pourcentages ?",
+    "Dans un graphique en secteurs, cochez Pourcentage dans les options des étiquettes."
+   ],
+   [
+    "Comment ajouter un titre d'axe ?",
+    "Éléments de graphique › Titres des axes."
+   ]
+  ]
+ },
+ "voirAussi": [
+  "elements-d-un-graphique",
+  "creer-un-graphique",
+  "couleurs-du-graphique",
+  "histogramme"
  ]
 }

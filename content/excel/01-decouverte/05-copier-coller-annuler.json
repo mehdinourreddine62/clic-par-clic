@@ -6,22 +6,122 @@
  "motsCles": "raccourcis clavier ctrl c v z s enregistrer annuler rétablir",
  "syntaxe": "Ctrl + C, puis Ctrl + V",
  "arguments": [
-  ["Ctrl + C","Copier"],
-  ["Ctrl + X","Couper"],
-  ["Ctrl + V","Coller"],
-  ["Ctrl + Z","Annuler"],
-  ["Ctrl + Y","Rétablir"],
-  ["Ctrl + S","Enregistrer"]
+  [
+   "Ctrl + C",
+   "Copier"
+  ],
+  [
+   "Ctrl + X",
+   "Couper"
+  ],
+  [
+   "Ctrl + V",
+   "Coller"
+  ],
+  [
+   "Ctrl + Z",
+   "Annuler"
+  ],
+  [
+   "Ctrl + Y",
+   "Rétablir"
+  ],
+  [
+   "Ctrl + S",
+   "Enregistrer"
+  ]
  ],
  "grille": [
-  ["Article","Prix"],
-  ["Stylo","1,20 €"]
+  [
+   "Article",
+   "Prix"
+  ],
+  [
+   "Stylo",
+   "1,20 €"
+  ]
  ],
+ "titreSeo": "Copier, coller, annuler dans Excel : les raccourcis",
  "etapes": [
-  {"c":"A2","sel":"A2:B2","drag":1,"copy":"A2:B2","keys":"Ctrl + C","t":"Ctrl + C copie la sélection. Des pointillés l'entourent."},
-  {"c":"A3","set":{"A3":"Stylo","B3":"1,20 €"},"keys":"Ctrl + V","t":"Cliquez ailleurs, puis Ctrl + V colle la copie."},
-  {"c":"A3","copy":"","set":{"A3":"","B3":""},"keys":"Ctrl + Z","t":"Une erreur ? Ctrl + Z annule la dernière action."},
-  {"c":"A3","set":{"A3":"Stylo","B3":"1,20 €"},"keys":"Ctrl + Y","t":"Et Ctrl + Y la rétablit."},
-  {"c":"A3","keys":"Ctrl + S","t":"Pensez à enregistrer régulièrement avec Ctrl + S."}
+  {
+   "c": "A2",
+   "sel": "A2:B2",
+   "drag": 1,
+   "copy": "A2:B2",
+   "keys": "Ctrl + C",
+   "t": "Ctrl + C copie la sélection. Des pointillés l'entourent."
+  },
+  {
+   "c": "A3",
+   "set": {
+    "A3": "Stylo",
+    "B3": "1,20 €"
+   },
+   "keys": "Ctrl + V",
+   "t": "Cliquez ailleurs, puis Ctrl + V colle la copie."
+  },
+  {
+   "c": "A3",
+   "copy": "",
+   "set": {
+    "A3": "",
+    "B3": ""
+   },
+   "keys": "Ctrl + Z",
+   "t": "Une erreur ? Ctrl + Z annule la dernière action."
+  },
+  {
+   "c": "A3",
+   "set": {
+    "A3": "Stylo",
+    "B3": "1,20 €"
+   },
+   "keys": "Ctrl + Y",
+   "t": "Et Ctrl + Y la rétablit."
+  },
+  {
+   "c": "A3",
+   "keys": "Ctrl + S",
+   "t": "Pensez à enregistrer régulièrement avec Ctrl + S."
+  }
+ ],
+ "guide": {
+  "question": "Quels sont les raccourcis pour copier, coller et annuler dans Excel ?",
+  "intro": "Cinq raccourcis servent tous les jours : Ctrl + C copie la sélection (des pointillés l'entourent), Ctrl + V la colle là où vous avez cliqué, Ctrl + Z annule la dernière action, Ctrl + Y la rétablit, et Ctrl + S enregistre le fichier. Échap fait disparaître les pointillés de la copie.",
+  "exemple": {
+   "titre": "À retenir",
+   "formule": "Ctrl + C   Ctrl + V   Ctrl + Z   Ctrl + Y   Ctrl + S",
+   "explication": "Copiez la ligne Stylo 1,20 €, cliquez deux lignes plus bas, Ctrl + V : la ligne est dupliquée avec sa mise en forme."
+  },
+  "erreurs": [
+   [
+    "Le collage déplace des formules",
+    "Les références relatives s'adaptent à leur nouvel emplacement : figez-les avec $ si besoin."
+   ],
+   [
+    "Ctrl + Z n'annule plus rien",
+    "Le fichier a été fermé ou une macro a été lancée : l'historique est perdu."
+   ]
+  ],
+  "faq": [
+   [
+    "Comment coller uniquement les valeurs ?",
+    "Clic droit › Options de collage › Valeurs, ou Ctrl + Alt + V."
+   ],
+   [
+    "Comment couper au lieu de copier ?",
+    "Ctrl + X : la sélection est déplacée au moment du collage."
+   ],
+   [
+    "Combien d'actions peut-on annuler ?",
+    "Jusqu'à 100 actions."
+   ]
+  ]
+ },
+ "voirAussi": [
+  "coller-les-valeurs",
+  "transposer",
+  "raccourcis-saisir",
+  "selectionner"
  ]
 }

@@ -6,23 +6,125 @@
  "motsCles": "couleur palette style mettre en évidence barre graphique modifier les couleurs",
  "syntaxe": "Création de graphique › Modifier les couleurs",
  "ruban": true,
- "graphique": {"type":"col","labels":"A2:A5","series":["B2:B5"],"title":"Ventes par produit","at":"D2:H8"},
+ "graphique": {
+  "type": "col",
+  "labels": "A2:A5",
+  "series": [
+   "B2:B5"
+  ],
+  "title": "Ventes par produit",
+  "at": "D2:H8"
+ },
  "arguments": [
-  ["Modifier les couleurs","Applique une palette à tout le graphique"],
-  ["Deux clics sur une barre","La sélectionne seule pour la colorer"],
-  ["Conseil","Une seule couleur forte, pour guider le regard"]
+  [
+   "Modifier les couleurs",
+   "Applique une palette à tout le graphique"
+  ],
+  [
+   "Deux clics sur une barre",
+   "La sélectionne seule pour la colorer"
+  ],
+  [
+   "Conseil",
+   "Une seule couleur forte, pour guider le regard"
+  ]
  ],
  "grille": [
-  ["Produit","Ventes"],
-  ["Stylos","320"],
-  ["Cahiers","210"],
-  ["Classeurs","140"],
-  ["Trousses","260"]
+  [
+   "Produit",
+   "Ventes"
+  ],
+  [
+   "Stylos",
+   "320"
+  ],
+  [
+   "Cahiers",
+   "210"
+  ],
+  [
+   "Classeurs",
+   "140"
+  ],
+  [
+   "Trousses",
+   "260"
+  ]
  ],
+ "titreSeo": "Changer les couleurs d'un graphique Excel",
  "etapes": [
-  {"c":"A1","tab":"Création de graphique","chart":{"selected":1},"t":"Un clic sur le graphique fait apparaître l'onglet Création de graphique."},
-  {"c":"A1","tab":"Création de graphique","btn":"Modifier les couleurs","chart":{"color":"r4"},"t":"« Modifier les couleurs » applique une autre palette à tout le graphique."},
-  {"c":"A1","tab":"Création de graphique","chart":{"color":"r0","hi":0},"t":"Cliquez deux fois sur une barre pour la sélectionner seule, et gardez-lui une couleur vive."},
-  {"c":"A1","tab":"Création de graphique","chart":{"selected":0},"t":"Une seule couleur forte guide le regard. Évitez l'arc-en-ciel : il ne veut rien dire."}
+  {
+   "c": "A1",
+   "tab": "Création de graphique",
+   "chart": {
+    "selected": 1
+   },
+   "t": "Un clic sur le graphique fait apparaître l'onglet Création de graphique."
+  },
+  {
+   "c": "A1",
+   "tab": "Création de graphique",
+   "btn": "Modifier les couleurs",
+   "chart": {
+    "color": "r4"
+   },
+   "t": "« Modifier les couleurs » applique une autre palette à tout le graphique."
+  },
+  {
+   "c": "A1",
+   "tab": "Création de graphique",
+   "chart": {
+    "color": "r0",
+    "hi": 0
+   },
+   "t": "Cliquez deux fois sur une barre pour la sélectionner seule, et gardez-lui une couleur vive."
+  },
+  {
+   "c": "A1",
+   "tab": "Création de graphique",
+   "chart": {
+    "selected": 0
+   },
+   "t": "Une seule couleur forte guide le regard. Évitez l'arc-en-ciel : il ne veut rien dire."
+  }
+ ],
+ "guide": {
+  "question": "Comment changer les couleurs d'un graphique Excel ?",
+  "intro": "Sélectionnez le graphique, puis Création de graphique › Modifier les couleurs pour changer toute la palette, ou Styles de graphique pour un autre rendu. Pour mettre une barre en évidence, cliquez deux fois sur elle (deux clics séparés) pour la sélectionner seule, puis choisissez une couleur de remplissage. Une seule couleur forte guide le regard.",
+  "exemple": {
+   "titre": "Exemple",
+   "formule": "Deux clics sur une barre › Remplissage",
+   "explication": "Toutes les barres en gris, celle des stylos (320) en couleur vive : le lecteur voit immédiatement le meilleur produit."
+  },
+  "erreurs": [
+   [
+    "Toutes les barres changent de couleur",
+    "Un seul clic sélectionne toute la série : cliquez une seconde fois sur la barre voulue."
+   ],
+   [
+    "Une barre par couleur, sans raison",
+    "Dans Format de la série, décochez Varier les couleurs par point."
+   ]
+  ],
+  "faq": [
+   [
+    "Comment reprendre les couleurs de l'entreprise ?",
+    "Mise en page › Couleurs › Personnaliser les couleurs, ou Remplissage › Autres couleurs."
+   ],
+   [
+    "Comment réutiliser un graphique mis en forme ?",
+    "Clic droit › Enregistrer comme modèle."
+   ],
+   [
+    "Les couleurs sont-elles lisibles imprimées en noir et blanc ?",
+    "Pas toujours : jouez aussi sur la clarté, ou ajoutez des étiquettes."
+   ]
+  ]
+ },
+ "voirAussi": [
+  "titre-et-etiquettes",
+  "histogramme",
+  "graphique-en-barres",
+  "elements-d-un-graphique"
  ]
 }
