@@ -5,21 +5,115 @@
  "resume": "Élargir une colonne et insérer une ligne.",
  "motsCles": "largeur colonne dièses ##### insérer ligne ajuster",
  "syntaxe": "Double-clic entre deux lettres de colonnes",
- "largeurs": {"A":66,"B":58},
+ "largeurs": {
+  "A": 66,
+  "B": 58
+ },
  "arguments": [
-  ["#####","La colonne est trop étroite pour le nombre"],
-  ["Double-clic sur la limite","Ajuste la largeur au contenu"],
-  ["Clic droit › Insertion","Ajoute une ligne ou une colonne"]
+  [
+   "#####",
+   "La colonne est trop étroite pour le nombre"
+  ],
+  [
+   "Double-clic sur la limite",
+   "Ajuste la largeur au contenu"
+  ],
+  [
+   "Clic droit › Insertion",
+   "Ajoute une ligne ou une colonne"
+  ]
  ],
  "grille": [
-  ["Produit","Prix"],
-  ["Ordinateur portable","######"],
-  ["Stylo","1,20 €"]
+  [
+   "Produit",
+   "Prix"
+  ],
+  [
+   "Ordinateur portable",
+   "######"
+  ],
+  [
+   "Stylo",
+   "1,20 €"
+  ]
  ],
+ "titreSeo": "Élargir une colonne et insérer une ligne dans Excel",
  "etapes": [
-  {"c":"B2","mark":"B2","t":"Des ##### ? Rien de grave : le nombre est simplement trop long pour la colonne."},
-  {"c":"B2","w":{"A":170,"B":120},"set":{"B2":"1 249,50 €"},"keys":"Double-clic","t":"Double-cliquez sur la limite entre deux lettres de colonnes : la largeur s'ajuste au contenu."},
-  {"c":"A3","sel":"row:3","menu":"Clic droit sur le numéro de ligne › <b>Insertion</b>","set":{"A3":"","B3":"","A4":"Stylo","B4":"1,20 €"},"t":"Un clic droit sur un numéro de ligne permet d'insérer une ligne vide au-dessus."},
-  {"c":"A3","f":"Cahier","set":{"B3":"3,50 €"},"t":"Il ne reste plus qu'à la remplir."}
+  {
+   "c": "B2",
+   "mark": "B2",
+   "t": "Des ##### ? Rien de grave : le nombre est simplement trop long pour la colonne."
+  },
+  {
+   "c": "B2",
+   "w": {
+    "A": 170,
+    "B": 120
+   },
+   "set": {
+    "B2": "1 249,50 €"
+   },
+   "keys": "Double-clic",
+   "t": "Double-cliquez sur la limite entre deux lettres de colonnes : la largeur s'ajuste au contenu."
+  },
+  {
+   "c": "A3",
+   "sel": "row:3",
+   "menu": "Clic droit sur le numéro de ligne › <b>Insertion</b>",
+   "set": {
+    "A3": "",
+    "B3": "",
+    "A4": "Stylo",
+    "B4": "1,20 €"
+   },
+   "t": "Un clic droit sur un numéro de ligne permet d'insérer une ligne vide au-dessus."
+  },
+  {
+   "c": "A3",
+   "f": "Cahier",
+   "set": {
+    "B3": "3,50 €"
+   },
+   "t": "Il ne reste plus qu'à la remplir."
+  }
+ ],
+ "guide": {
+  "question": "Comment élargir une colonne et insérer une ligne dans Excel ?",
+  "intro": "Des ##### dans une cellule signifient seulement que la colonne est trop étroite pour le nombre. Double-cliquez sur la limite entre deux lettres de colonnes : la largeur s'ajuste au contenu le plus long. Pour insérer une ligne vide, faites un clic droit sur le numéro de ligne, puis Insérer : la nouvelle ligne se place au-dessus.",
+  "exemple": {
+   "titre": "Astuce",
+   "formule": "Double-clic entre deux lettres de colonnes",
+   "explication": "« Ordinateur portable » et son prix s'affichaient en ##### ; après le double-clic, la colonne s'élargit et tout est lisible."
+  },
+  "erreurs": [
+   [
+    "La colonne s'élargit trop",
+    "Une cellule contient un texte très long : faites glisser la limite à la main, ou renvoyez le texte à la ligne."
+   ],
+   [
+    "Insérer est grisé",
+    "La feuille est protégée, ou la dernière ligne contient des données."
+   ]
+  ],
+  "faq": [
+   [
+    "Comment ajuster plusieurs colonnes d'un coup ?",
+    "Sélectionnez-les, puis double-cliquez sur une des limites."
+   ],
+   [
+    "Comment supprimer une ligne ?",
+    "Clic droit sur son numéro › Supprimer."
+   ],
+   [
+    "Comment insérer plusieurs lignes ?",
+    "Sélectionnez autant de lignes que voulu, puis clic droit › Insérer."
+   ]
+  ]
+ },
+ "voirAussi": [
+  "masquer-des-colonnes",
+  "saisir-des-donnees",
+  "mettre-en-forme",
+  "ecran-excel"
  ]
 }

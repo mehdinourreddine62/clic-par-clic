@@ -6,17 +6,95 @@
  "motsCles": "nbcar longueur compter caractères texte limite",
  "syntaxe": "=NBCAR(texte)",
  "arguments": [
-  ["texte","La cellule à mesurer"],
-  ["Compte","Lettres, chiffres, espaces et ponctuation"]
+  [
+   "texte",
+   "La cellule à mesurer"
+  ],
+  [
+   "Compte",
+   "Lettres, chiffres, espaces et ponctuation"
+  ]
  ],
  "grille": [
-  ["Message","Longueur","Limite de 40"],
-  ["Rendez-vous lundi à 9 h","",""],
-  ["Merci de confirmer votre présence avant vendredi midi","",""]
+  [
+   "Message",
+   "Longueur",
+   "Limite de 40"
+  ],
+  [
+   "Rendez-vous lundi à 9 h",
+   "",
+   ""
+  ],
+  [
+   "Merci de confirmer votre présence avant vendredi midi",
+   "",
+   ""
+  ]
  ],
+ "titreSeo": "NBCAR dans Excel : compter les caractères",
  "etapes": [
-  {"c":"B2","f":"=NBCAR(A2)","v":"23","fill":{"B3":"53"},"t":"NBCAR compte tous les caractères d'une cellule."},
-  {"c":"B2","mark":"A2","t":"Les espaces et la ponctuation comptent aussi."},
-  {"c":"C2","f":"=SI(B2>40;\"Trop long\";\"OK\")","v":"OK","fill":{"C3":"Trop long"},"t":"Combinée à SI, elle vérifie qu'un texte respecte une limite."}
+  {
+   "c": "B2",
+   "f": "=NBCAR(A2)",
+   "v": "23",
+   "fill": {
+    "B3": "53"
+   },
+   "t": "NBCAR compte tous les caractères d'une cellule."
+  },
+  {
+   "c": "B2",
+   "mark": "A2",
+   "t": "Les espaces et la ponctuation comptent aussi."
+  },
+  {
+   "c": "C2",
+   "f": "=SI(B2>40;\"Trop long\";\"OK\")",
+   "v": "OK",
+   "fill": {
+    "C3": "Trop long"
+   },
+   "t": "Combinée à SI, elle vérifie qu'un texte respecte une limite."
+  }
+ ],
+ "guide": {
+  "question": "Comment compter le nombre de caractères d'une cellule dans Excel ?",
+  "intro": "NBCAR (LEN en anglais) compte tous les caractères d'une cellule, espaces et ponctuation compris. Elle sert à vérifier une longueur maximale (message, référence, code), ou à préparer un découpage avec GAUCHE ou DROITE.",
+  "exemple": {
+   "titre": "Exemple",
+   "formule": "=NBCAR(A2)",
+   "explication": "« Rendez-vous lundi à 9 h » compte 23 caractères : OK pour une limite de 40. Le second message en compte 53 : =SI(B3>40;\"Trop long\";\"OK\") affiche Trop long."
+  },
+  "erreurs": [
+   [
+    "Le nombre est plus grand que prévu",
+    "Des espaces en trop au début ou à la fin : nettoyez avec SUPPRESPACE."
+   ],
+   [
+    "NBCAR d'un nombre",
+    "Elle compte les chiffres tapés, pas le format affiché : 1,20 € tapé 1,2 compte 3 caractères."
+   ]
+  ],
+  "faq": [
+   [
+    "Comment compter les mots ?",
+    "=NBCAR(SUPPRESPACE(A2))-NBCAR(SUBSTITUE(A2;\" \";\"\"))+1."
+   ],
+   [
+    "Comment compter un caractère précis ?",
+    "=NBCAR(A2)-NBCAR(SUBSTITUE(A2;\"@\";\"\"))."
+   ],
+   [
+    "Comment limiter la saisie ?",
+    "Données › Validation des données › Longueur du texte."
+   ]
+  ]
+ },
+ "voirAussi": [
+  "supprespace",
+  "gauche-droite-stxt",
+  "substitue",
+  "si"
  ]
 }

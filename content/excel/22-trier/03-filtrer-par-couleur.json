@@ -7,21 +7,120 @@
  "syntaxe": "Flèche de filtre › Filtrer par couleur",
  "ruban": true,
  "arguments": [
-  ["Filtrer par couleur","Masque les lignes d'une autre couleur"],
-  ["Trier par couleur","Place les lignes colorées en haut, sans rien masquer"]
+  [
+   "Filtrer par couleur",
+   "Masque les lignes d'une autre couleur"
+  ],
+  [
+   "Trier par couleur",
+   "Place les lignes colorées en haut, sans rien masquer"
+  ]
  ],
  "grille": [
-  ["Client","Ville","Montant"],
-  ["Durand","Lille","120"],
-  ["Martin","Lyon","340"],
-  ["Petit","Nantes","210"],
-  ["Simon","Paris","90"],
-  ["Robert","Lille","150"]
+  [
+   "Client",
+   "Ville",
+   "Montant"
+  ],
+  [
+   "Durand",
+   "Lille",
+   "120"
+  ],
+  [
+   "Martin",
+   "Lyon",
+   "340"
+  ],
+  [
+   "Petit",
+   "Nantes",
+   "210"
+  ],
+  [
+   "Simon",
+   "Paris",
+   "90"
+  ],
+  [
+   "Robert",
+   "Lille",
+   "150"
+  ]
  ],
+ "titreSeo": "Filtrer par couleur dans Excel",
  "etapes": [
-  {"c":"A1","tab":"Données","bad":"A3 B3 C3 A5 B5 C5","t":"Certaines lignes ont été colorées à la main : ce sont les clients à relancer."},
-  {"c":"A1","tab":"Données","btn":"Filtrer","set":{"A1":"Client ▾","B1":"Ville ▾","C1":"Montant ▾"},"t":"Activez le filtre : une flèche apparaît sur chaque titre."},
-  {"c":"A1","menu":"Flèche de filtre › Filtrer par couleur › <b>Rouge</b>","hide":[2,4,6],"t":"La flèche propose « Filtrer par couleur » : choisissez le rouge. Seules les lignes colorées restent."},
-  {"c":"A1","tab":"Données","hide":[],"t":"Effacez le filtre pour tout revoir. « Trier par couleur » existe aussi, pour placer ces lignes en haut."}
+  {
+   "c": "A1",
+   "tab": "Données",
+   "bad": "A3 B3 C3 A5 B5 C5",
+   "t": "Certaines lignes ont été colorées à la main : ce sont les clients à relancer."
+  },
+  {
+   "c": "A1",
+   "tab": "Données",
+   "btn": "Filtrer",
+   "set": {
+    "A1": "Client ▾",
+    "B1": "Ville ▾",
+    "C1": "Montant ▾"
+   },
+   "t": "Activez le filtre : une flèche apparaît sur chaque titre."
+  },
+  {
+   "c": "A1",
+   "menu": "Flèche de filtre › Filtrer par couleur › <b>Rouge</b>",
+   "hide": [
+    2,
+    4,
+    6
+   ],
+   "t": "La flèche propose « Filtrer par couleur » : choisissez le rouge. Seules les lignes colorées restent."
+  },
+  {
+   "c": "A1",
+   "tab": "Données",
+   "hide": [],
+   "t": "Effacez le filtre pour tout revoir. « Trier par couleur » existe aussi, pour placer ces lignes en haut."
+  }
+ ],
+ "guide": {
+  "question": "Comment filtrer les lignes par couleur dans Excel ?",
+  "intro": "Si des lignes ont été colorées à la main, le filtre permet de n'afficher qu'elles. Activez le filtre avec Données › Filtrer (ou Ctrl + Maj + L), ouvrez la flèche de la colonne colorée, puis Filtrer par couleur et choisissez la couleur. Trier par couleur place ces lignes en haut sans masquer les autres.",
+  "exemple": {
+   "titre": "Exemple",
+   "formule": "Flèche de filtre › Filtrer par couleur",
+   "explication": "Les clients à relancer, surlignés en rouge, restent seuls à l'écran ; Effacer le filtre fait réapparaître tout le tableau."
+  },
+  "erreurs": [
+   [
+    "Filtrer par couleur est grisé",
+    "Aucune cellule de cette colonne n'est colorée : choisissez la colonne qui porte la couleur."
+   ],
+   [
+    "Des lignes colorées n'apparaissent pas",
+    "La couleur est légèrement différente : uniformisez avec le pinceau Reproduire la mise en forme."
+   ]
+  ],
+  "faq": [
+   [
+    "Peut-on compter les lignes colorées ?",
+    "Après le filtre, =SOUS.TOTAL(3;A2:A100) compte les lignes visibles."
+   ],
+   [
+    "Et les couleurs de mise en forme conditionnelle ?",
+    "Elles sont aussi proposées dans Filtrer par couleur."
+   ],
+   [
+    "Mieux qu'une couleur ?",
+    "Une colonne Statut (À relancer) se filtre et se compte plus facilement."
+   ]
+  ]
+ },
+ "voirAussi": [
+  "trier-et-filtrer",
+  "filtres-numeriques",
+  "combiner-plusieurs-filtres",
+  "tri-personnalise"
  ]
 }

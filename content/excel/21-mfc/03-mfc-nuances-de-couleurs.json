@@ -7,20 +7,124 @@
  "syntaxe": "Mise en forme conditionnelle › Nuances de couleurs",
  "ruban": true,
  "arguments": [
-  ["Échelle","Un dégradé entre la plus petite et la plus grande valeur"],
-  ["Sens","À choisir selon que les grandes valeurs sont bonnes ou mauvaises"]
+  [
+   "Échelle",
+   "Un dégradé entre la plus petite et la plus grande valeur"
+  ],
+  [
+   "Sens",
+   "À choisir selon que les grandes valeurs sont bonnes ou mauvaises"
+  ]
  ],
  "grille": [
-  ["Jour","9 h","12 h","15 h","18 h"],
-  ["Lundi","12","45","20","38"],
-  ["Mardi","15","52","18","41"],
-  ["Mercredi","30","60","35","55"],
-  ["Jeudi","10","48","22","36"]
+  [
+   "Jour",
+   "9 h",
+   "12 h",
+   "15 h",
+   "18 h"
+  ],
+  [
+   "Lundi",
+   "12",
+   "45",
+   "20",
+   "38"
+  ],
+  [
+   "Mardi",
+   "15",
+   "52",
+   "18",
+   "41"
+  ],
+  [
+   "Mercredi",
+   "30",
+   "60",
+   "35",
+   "55"
+  ],
+  [
+   "Jeudi",
+   "10",
+   "48",
+   "22",
+   "36"
+  ]
  ],
+ "titreSeo": "Nuances de couleurs dans Excel : carte de chaleur",
  "etapes": [
-  {"c":"B2","sel":"B2:E5","drag":1,"tab":"Accueil","btn":"Mise en forme conditionnelle","t":"Un tableau de fréquentation : difficile d'y voir quelque chose. Sélectionnez les valeurs."},
-  {"c":"B2","sel":"B2:E5","menu":"Mise en forme conditionnelle › <b>Nuances de couleurs</b>","scale":{"r":"B2:E5"},"t":"Nuances de couleurs : du rouge pour les plus petites valeurs au vert pour les plus grandes."},
-  {"c":"C1","tab":"Accueil","mark":"C1","t":"Le tableau se lit comme une carte : le créneau de 12 h ressort tout de suite."},
-  {"c":"B2","tab":"Accueil","scale":{"r":"B2:E5","inv":1},"t":"Choisissez le sens selon le sujet : pour des retards ou des coûts, le rouge doit signaler les valeurs élevées."}
+  {
+   "c": "B2",
+   "sel": "B2:E5",
+   "drag": 1,
+   "tab": "Accueil",
+   "btn": "Mise en forme conditionnelle",
+   "t": "Un tableau de fréquentation : difficile d'y voir quelque chose. Sélectionnez les valeurs."
+  },
+  {
+   "c": "B2",
+   "sel": "B2:E5",
+   "menu": "Mise en forme conditionnelle › <b>Nuances de couleurs</b>",
+   "scale": {
+    "r": "B2:E5"
+   },
+   "t": "Nuances de couleurs : du rouge pour les plus petites valeurs au vert pour les plus grandes."
+  },
+  {
+   "c": "C1",
+   "tab": "Accueil",
+   "mark": "C1",
+   "t": "Le tableau se lit comme une carte : le créneau de 12 h ressort tout de suite."
+  },
+  {
+   "c": "B2",
+   "tab": "Accueil",
+   "scale": {
+    "r": "B2:E5",
+    "inv": 1
+   },
+   "t": "Choisissez le sens selon le sujet : pour des retards ou des coûts, le rouge doit signaler les valeurs élevées."
+  }
+ ],
+ "guide": {
+  "question": "Comment faire une carte de chaleur dans Excel ?",
+  "intro": "Les nuances de couleurs colorent chaque cellule selon sa valeur, du plus petit au plus grand : le tableau devient une carte de chaleur. Sélectionnez les valeurs, puis Accueil › Mise en forme conditionnelle › Nuances de couleurs. Choisissez le sens selon le sujet : pour des coûts ou des retards, le rouge doit signaler les valeurs élevées.",
+  "exemple": {
+   "titre": "Exemple",
+   "formule": "Mise en forme conditionnelle › Nuances de couleurs",
+   "explication": "Fréquentation par jour et par heure, de 10 à 60 : le créneau de 12 h ressort en vert, le maximum étant mercredi à 12 h (60)."
+  },
+  "erreurs": [
+   [
+    "Une colonne de totaux écrase les couleurs",
+    "Elle a été incluse dans la sélection : appliquez la règle aux seules valeurs."
+   ],
+   [
+    "Les couleurs sont dans le mauvais sens",
+    "Choisissez l'échelle inverse (vert-jaune-rouge au lieu de rouge-jaune-vert)."
+   ]
+  ],
+  "faq": [
+   [
+    "Peut-on choisir ses couleurs ?",
+    "Oui : Gérer les règles › Modifier › couleur du minimum, du point médian et du maximum."
+   ],
+   [
+    "Comment comparer deux tableaux ?",
+    "Fixez les mêmes valeurs minimum et maximum dans les deux règles."
+   ],
+   [
+    "Comment supprimer les couleurs ?",
+    "Mise en forme conditionnelle › Effacer les règles."
+   ]
+  ]
+ },
+ "voirAussi": [
+  "mfc-barres-de-donnees",
+  "mfc-jeux-d-icones",
+  "mise-en-forme-conditionnelle",
+  "tcd-lignes-et-colonnes"
  ]
 }

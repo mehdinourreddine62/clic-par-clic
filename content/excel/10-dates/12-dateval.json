@@ -6,16 +6,91 @@
  "motsCles": "convertir texte date import datevalue",
  "syntaxe": "=DATEVAL(texte)",
  "arguments": [
-  ["texte","Une date écrite sous forme de texte"]
+  [
+   "texte",
+   "Une date écrite sous forme de texte"
+  ]
  ],
  "grille": [
-  ["Texte importé","Vraie date","Lendemain"],
-  ["'13/11/2026","",""],
-  ["'01/12/2026","",""]
+  [
+   "Texte importé",
+   "Vraie date",
+   "Lendemain"
+  ],
+  [
+   "'13/11/2026",
+   "",
+   ""
+  ],
+  [
+   "'01/12/2026",
+   "",
+   ""
+  ]
  ],
+ "titreSeo": "DATEVAL dans Excel : convertir un texte en date",
  "etapes": [
-  {"c":"A2","mark":"A2 A3","t":"Une date importée est parfois du texte : elle s'aligne à gauche et ne se calcule pas."},
-  {"c":"B2","f":"=DATEVAL(A2)","v":"13/11/2026","fill":{"B3":"01/12/2026"},"t":"DATEVAL la convertit en vraie date. Mettez ensuite la cellule au format Date."},
-  {"c":"C2","f":"=B2+1","v":"14/11/2026","fill":{"C3":"02/12/2026"},"t":"On peut maintenant calculer avec : ajouter 1 donne le lendemain."}
+  {
+   "c": "A2",
+   "mark": "A2 A3",
+   "t": "Une date importée est parfois du texte : elle s'aligne à gauche et ne se calcule pas."
+  },
+  {
+   "c": "B2",
+   "f": "=DATEVAL(A2)",
+   "v": "13/11/2026",
+   "fill": {
+    "B3": "01/12/2026"
+   },
+   "t": "DATEVAL la convertit en vraie date. Mettez ensuite la cellule au format Date."
+  },
+  {
+   "c": "C2",
+   "f": "=B2+1",
+   "v": "14/11/2026",
+   "fill": {
+    "C3": "02/12/2026"
+   },
+   "t": "On peut maintenant calculer avec : ajouter 1 donne le lendemain."
+  }
+ ],
+ "guide": {
+  "question": "Comment convertir un texte en date dans Excel ?",
+  "intro": "Une date importée d'un autre logiciel est parfois du texte : elle s'aligne à gauche et ne se calcule pas. DATEVAL (DATEVALUE en anglais) la convertit en vraie date, c'est-à-dire en numéro de série ; appliquez ensuite le format Date à la cellule. On peut alors ajouter des jours, calculer des écarts ou trier.",
+  "exemple": {
+   "titre": "Exemple",
+   "formule": "=DATEVAL(A2)",
+   "explication": "Le texte 13/11/2026 devient une vraie date ; =B2+1 donne le lendemain, 14/11/2026."
+  },
+  "erreurs": [
+   [
+    "#VALEUR!",
+    "Le texte n'a pas un format de date reconnu (par exemple 2026.11.13) : remplacez d'abord les points par des barres obliques avec SUBSTITUE."
+   ],
+   [
+    "Un nombre comme 46339 s'affiche",
+    "C'est normal : appliquez le format Date courte."
+   ]
+  ],
+  "faq": [
+   [
+    "Comment convertir toute une colonne d'un coup ?",
+    "Données › Convertir › Terminer : Excel reconnaît souvent les dates."
+   ],
+   [
+    "Comment savoir si une date est du texte ?",
+    "Elle s'aligne à gauche, et =ESTTEXTE(A2) renvoie VRAI."
+   ],
+   [
+    "Et les dates au format américain ?",
+    "Convertir › Date › MJA permet de les retourner."
+   ]
+  ]
+ },
+ "voirAussi": [
+  "date",
+  "convertir-texte-en-colonnes",
+  "substitue",
+  "annee-mois-jour"
  ]
 }

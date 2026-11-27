@@ -6,18 +6,101 @@
  "motsCles": "carré exposant puissance racine carrée",
  "syntaxe": "=A2^2 · =RACINE(nombre)",
  "arguments": [
-  ["^","Élève à la puissance : A2^2 pour le carré"],
-  ["PUISSANCE(nombre; exposant)","Le même calcul sous forme de fonction"],
-  ["RACINE","La racine carrée"]
+  [
+   "^",
+   "Élève à la puissance : A2^2 pour le carré"
+  ],
+  [
+   "PUISSANCE(nombre; exposant)",
+   "Le même calcul sous forme de fonction"
+  ],
+  [
+   "RACINE",
+   "La racine carrée"
+  ]
  ],
  "grille": [
-  ["Nombre","Carré","Racine"],
-  ["9","",""],
-  ["16","",""],
-  ["2","",""]
+  [
+   "Nombre",
+   "Carré",
+   "Racine"
+  ],
+  [
+   "9",
+   "",
+   ""
+  ],
+  [
+   "16",
+   "",
+   ""
+  ],
+  [
+   "2",
+   "",
+   ""
+  ]
  ],
+ "titreSeo": "Puissance et racine carrée dans Excel",
  "etapes": [
-  {"c":"B2","f":"=A2^2","v":"81","fill":{"B3":"256","B4":"4"},"t":"L'accent circonflexe élève à la puissance. =PUISSANCE(A2;2) donne le même résultat."},
-  {"c":"C2","f":"=RACINE(A2)","v":"3","fill":{"C3":"4","C4":"1,414"},"t":"RACINE calcule la racine carrée."}
+  {
+   "c": "B2",
+   "f": "=A2^2",
+   "v": "81",
+   "fill": {
+    "B3": "256",
+    "B4": "4"
+   },
+   "t": "L'accent circonflexe élève à la puissance. =PUISSANCE(A2;2) donne le même résultat."
+  },
+  {
+   "c": "C2",
+   "f": "=RACINE(A2)",
+   "v": "3",
+   "fill": {
+    "C3": "4",
+    "C4": "1,414"
+   },
+   "t": "RACINE calcule la racine carrée."
+  }
+ ],
+ "guide": {
+  "question": "Comment calculer un carré et une racine carrée dans Excel ?",
+  "intro": "L'accent circonflexe ^ élève un nombre à une puissance : =A2^2 donne le carré, =A2^3 le cube. La fonction PUISSANCE(A2;2) fait la même chose. RACINE renvoie la racine carrée d'un nombre positif.",
+  "exemple": {
+   "titre": "Exemple",
+   "formule": "=A2^2   =RACINE(A2)",
+   "explication": "9 au carré : 81, racine : 3. 16 : 256 et 4. 2 : 4 et environ 1,414."
+  },
+  "erreurs": [
+   [
+    "#NOMBRE!",
+    "RACINE d'un nombre négatif : utilisez ABS si le signe ne compte pas."
+   ],
+   [
+    "La touche ^ n'écrit rien",
+    "Sur un clavier français, appuyez sur ^ puis sur la barre d'espace."
+   ]
+  ],
+  "faq": [
+   [
+    "Comment calculer une racine cubique ?",
+    "=A2^(1/3)."
+   ],
+   [
+    "PUISSANCE ou ^ ?",
+    "Le résultat est identique ; ^ est plus court à écrire."
+   ],
+   [
+    "Comment arrondir le résultat ?",
+    "=ARRONDI(RACINE(A2);2)."
+   ]
+  ]
+ },
+ "voirAussi": [
+  "abs",
+  "arrondi",
+  "interets-composes",
+  "ecrire-une-formule"
  ]
 }

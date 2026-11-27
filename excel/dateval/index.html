@@ -3,15 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>DATEVAL – Excel en animation | Clic par clic</title>
-<meta name="description" content="Transformer un texte en vraie date utilisable dans les calculs. Leçon Excel animée en 3 étapes, niveau intermédiaire, gratuite.">
+<title>DATEVAL dans Excel : convertir un texte en date</title>
+<meta name="description" content="Une date importée d'un autre logiciel est parfois du texte : elle s'aligne à gauche et ne se calcule pas.">
 <link rel="canonical" href="https://mehdinourreddine62.github.io/clic-par-clic/excel/dateval/">
 <meta name="robots" content="index,follow">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="Clic par clic">
-<meta property="og:title" content="DATEVAL – Excel en animation | Clic par clic">
-<meta property="og:description" content="Transformer un texte en vraie date utilisable dans les calculs. Leçon Excel animée en 3 étapes, niveau intermédiaire, gratuite.">
+<meta property="og:title" content="DATEVAL dans Excel : convertir un texte en date">
+<meta property="og:description" content="Une date importée d'un autre logiciel est parfois du texte : elle s'aligne à gauche et ne se calcule pas.">
 <meta property="og:url" content="https://mehdinourreddine62.github.io/clic-par-clic/excel/dateval/">
 <meta property="og:image" content="https://mehdinourreddine62.github.io/clic-par-clic/assets/og-excel.png">
 <meta property="og:image:width" content="1200">
@@ -61,7 +61,18 @@
     <a class="dl" href="../../fichiers/excel/dateval.xlsx" download="dateval.xlsx"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg><span><b>Télécharger le fichier d'exercice</b><small>Excel · consignes, données de départ et solution</small></span></a><div class="pband" id="pband" hidden></div>
     <details class="sx"><summary>Syntaxe <code>=DATEVAL(texte)</code></summary><dl><dt>texte</dt><dd>Une date écrite sous forme de texte</dd></dl></details>
     <details class="sx"><summary>Résumé écrit des étapes</summary><ol class="steps"><li>Une date importée est parfois du texte : elle s'aligne à gauche et ne se calcule pas.</li><li>DATEVAL la convertit en vraie date. Mettez ensuite la cellule au format Date.</li><li>On peut maintenant calculer avec : ajouter 1 donne le lendemain.</li></ol></details>
-    <section class="also"><h2>Voir aussi</h2><div class="also-l"><a href="../aujourdhui-datedif/"><b>AUJOURDHUI et DATEDIF</b><small>Afficher la date du jour et calculer une ancienneté ou un âge.</small></a><a href="../annee-mois-jour/"><b>ANNEE, MOIS et JOUR</b><small>Extraire l'année, le mois ou le jour d'une date.</small></a><a href="../date/"><b>DATE</b><small>Construire une date à partir d'une année, d'un mois et d'un jour.</small></a></div></section>
+    <section class="guide">
+      <h2>Comment convertir un texte en date dans Excel ?</h2>
+      <p>Une date importée d'un autre logiciel est parfois du texte : elle s'aligne à gauche et ne se calcule pas. DATEVAL (DATEVALUE en anglais) la convertit en vraie date, c'est-à-dire en numéro de série ; appliquez ensuite le format Date à la cellule. On peut alors ajouter des jours, calculer des écarts ou trier.</p>
+      <h3>Exemple</h3>
+      <p><code class="gx">=DATEVAL(A2)</code></p>
+      <p>Le texte 13/11/2026 devient une vraie date ; =B2+1 donne le lendemain, 14/11/2026.</p>
+      <h3>Erreurs fréquentes</h3>
+      <ul><li><b>#VALEUR!</b>Le texte n'a pas un format de date reconnu (par exemple 2026.11.13) : remplacez d'abord les points par des barres obliques avec SUBSTITUE.</li><li><b>Un nombre comme 46339 s'affiche</b>C'est normal : appliquez le format Date courte.</li></ul>
+      <h3>Questions fréquentes</h3>
+      <h4>Comment convertir toute une colonne d'un coup ?</h4><p>Données › Convertir › Terminer : Excel reconnaît souvent les dates.</p><h4>Comment savoir si une date est du texte ?</h4><p>Elle s'aligne à gauche, et =ESTTEXTE(A2) renvoie VRAI.</p><h4>Et les dates au format américain ?</h4><p>Convertir › Date › MJA permet de les retourner.</p>
+    </section>
+    <section class="also"><h2>Voir aussi</h2><div class="also-l"><a href="../date/"><b>DATE</b><small>Construire une date à partir d'une année, d'un mois et d'un jour.</small></a><a href="../convertir-texte-en-colonnes/"><b>Séparer un texte en colonnes</b><small>Répartir des données collées dans une seule colonne.</small></a><a href="../substitue/"><b>SUBSTITUE</b><small>Remplacer un morceau de texte par un autre, avec une formule.</small></a><a href="../annee-mois-jour/"><b>ANNEE, MOIS et JOUR</b><small>Extraire l'année, le mois ou le jour d'une date.</small></a></div></section>
     <nav class="lnav" aria-label="Leçons voisines"><a href="../texte/"><small>← Précédente</small>TEXTE</a><a class="nx" id="nextLesson" href="../maintenant-heure-minute/"><small>Suivante →</small>MAINTENANT, HEURE et MINUTE</a></nav>
   </main>
 </div>

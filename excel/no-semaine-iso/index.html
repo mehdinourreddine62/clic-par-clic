@@ -3,15 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>NO.SEMAINE.ISO – Excel en animation | Clic par clic</title>
-<meta name="description" content="Obtenir le numéro de semaine d'une date. Leçon Excel animée en 2 étapes, niveau intermédiaire, gratuite.">
+<title>Numéro de semaine dans Excel : NO.SEMAINE.ISO</title>
+<meta name="description" content="NO.SEMAINE.ISO (ISOWEEKNUM en anglais) renvoie le numéro de semaine selon la norme ISO utilisée en France et en Europe ">
 <link rel="canonical" href="https://mehdinourreddine62.github.io/clic-par-clic/excel/no-semaine-iso/">
 <meta name="robots" content="index,follow">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="Clic par clic">
-<meta property="og:title" content="NO.SEMAINE.ISO – Excel en animation | Clic par clic">
-<meta property="og:description" content="Obtenir le numéro de semaine d'une date. Leçon Excel animée en 2 étapes, niveau intermédiaire, gratuite.">
+<meta property="og:title" content="Numéro de semaine dans Excel : NO.SEMAINE.ISO">
+<meta property="og:description" content="NO.SEMAINE.ISO (ISOWEEKNUM en anglais) renvoie le numéro de semaine selon la norme ISO utilisée en France et en Europe ">
 <meta property="og:url" content="https://mehdinourreddine62.github.io/clic-par-clic/excel/no-semaine-iso/">
 <meta property="og:image" content="https://mehdinourreddine62.github.io/clic-par-clic/assets/og-excel.png">
 <meta property="og:image:width" content="1200">
@@ -61,7 +61,18 @@
     <a class="dl" href="../../fichiers/excel/no-semaine-iso.xlsx" download="no-semaine-iso.xlsx"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg><span><b>Télécharger le fichier d'exercice</b><small>Excel · consignes, données de départ et solution</small></span></a><div class="pband" id="pband" hidden></div>
     <details class="sx"><summary>Syntaxe <code>=NO.SEMAINE.ISO(date)</code></summary><dl><dt>date</dt><dd>La date à analyser</dd><dt>Norme ISO</dt><dd>La semaine commence le lundi, comme en France</dd></dl></details>
     <details class="sx"><summary>Résumé écrit des étapes</summary><ol class="steps"><li>NO.SEMAINE.ISO donne le numéro de semaine utilisé en France et en Europe.</li><li>Le 1er janvier 2027 tombe un vendredi : il appartient encore à la semaine 53 de 2026.</li></ol></details>
-    <section class="also"><h2>Voir aussi</h2><div class="also-l"><a href="../aujourdhui-datedif/"><b>AUJOURDHUI et DATEDIF</b><small>Afficher la date du jour et calculer une ancienneté ou un âge.</small></a><a href="../annee-mois-jour/"><b>ANNEE, MOIS et JOUR</b><small>Extraire l'année, le mois ou le jour d'une date.</small></a><a href="../date/"><b>DATE</b><small>Construire une date à partir d'une année, d'un mois et d'un jour.</small></a></div></section>
+    <section class="guide">
+      <h2>Comment obtenir le numéro de semaine d'une date dans Excel ?</h2>
+      <p>NO.SEMAINE.ISO (ISOWEEKNUM en anglais) renvoie le numéro de semaine selon la norme ISO utilisée en France et en Europe : les semaines commencent le lundi, et la semaine 1 est celle qui contient le premier jeudi de l'année. Un 1er janvier peut donc appartenir à la dernière semaine de l'année précédente.</p>
+      <h3>Exemple</h3>
+      <p><code class="gx">=NO.SEMAINE.ISO(A2)</code></p>
+      <p>Le 13/11/2026 est en semaine 46. Le vendredi 01/01/2027 est encore en semaine 53 de 2026 ; le lundi 04/01/2027 ouvre la semaine 1.</p>
+      <h3>Erreurs fréquentes</h3>
+      <ul><li><b>Le numéro diffère d'un calendrier</b>NO.SEMAINE sans ISO suit la convention américaine (semaine du dimanche) : utilisez NO.SEMAINE.ISO.</li><li><b>#VALEUR!</b>La date est du texte : convertissez-la avec DATEVAL.</li></ul>
+      <h3>Questions fréquentes</h3>
+      <h4>Comment afficher « S46 » ?</h4><p>=&quot;S&quot;&amp;NO.SEMAINE.ISO(A2).</p><h4>Comment regrouper des ventes par semaine ?</h4><p>Ajoutez une colonne avec NO.SEMAINE.ISO, puis un tableau croisé dynamique.</p><h4>Comment trouver le lundi de la semaine ?</h4><p>=A2-JOURSEM(A2;2)+1.</p>
+    </section>
+    <section class="also"><h2>Voir aussi</h2><div class="also-l"><a href="../joursem/"><b>JOURSEM</b><small>Savoir quel jour de la semaine tombe une date.</small></a><a href="../date/"><b>DATE</b><small>Construire une date à partir d'une année, d'un mois et d'un jour.</small></a><a href="../annee-mois-jour/"><b>ANNEE, MOIS et JOUR</b><small>Extraire l'année, le mois ou le jour d'une date.</small></a><a href="../tcd-grouper-par-mois/"><b>Grouper des dates par mois</b><small>Passer d'une ligne par jour à une ligne par mois.</small></a></div></section>
     <nav class="lnav" aria-label="Leçons voisines"><a href="../joursem/"><small>← Précédente</small>JOURSEM</a><a class="nx" id="nextLesson" href="../fin-mois/"><small>Suivante →</small>FIN.MOIS</a></nav>
   </main>
 </div>

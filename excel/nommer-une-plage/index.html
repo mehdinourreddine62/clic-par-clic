@@ -3,15 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Nommer une plage – Excel en animation | Clic par clic</title>
-<meta name="description" content="Remplacer une référence par un nom lisible. Leçon Excel animée en 4 étapes, niveau intermédiaire, gratuite.">
+<title>Nommer une plage dans Excel : formules plus lisibles</title>
+<meta name="description" content="Un nom remplace une référence comme B2:B4 par un mot lisible, par exemple Ventes. Sélectionnez la plage, cliquez dans la zone Nom (à gauche de la barre de…">
 <link rel="canonical" href="https://mehdinourreddine62.github.io/clic-par-clic/excel/nommer-une-plage/">
 <meta name="robots" content="index,follow">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="Clic par clic">
-<meta property="og:title" content="Nommer une plage – Excel en animation | Clic par clic">
-<meta property="og:description" content="Remplacer une référence par un nom lisible. Leçon Excel animée en 4 étapes, niveau intermédiaire, gratuite.">
+<meta property="og:title" content="Nommer une plage dans Excel : formules plus lisibles">
+<meta property="og:description" content="Un nom remplace une référence comme B2:B4 par un mot lisible, par exemple Ventes. Sélectionnez la plage, cliquez dans la zone Nom (à gauche de la barre de…">
 <meta property="og:url" content="https://mehdinourreddine62.github.io/clic-par-clic/excel/nommer-une-plage/">
 <meta property="og:image" content="https://mehdinourreddine62.github.io/clic-par-clic/assets/og-excel.png">
 <meta property="og:image:width" content="1200">
@@ -61,7 +61,18 @@
     <div class="pband" id="pband" hidden></div>
     <details class="sx"><summary>Syntaxe <code>=SOMME(Ventes)</code></summary><dl><dt>Zone Nom</dt><dd>Sélectionner la plage, taper le nom, valider</dd><dt>Règles</dt><dd>Pas d'espace, pas de chiffre au début</dd><dt>Gestionnaire de noms</dt><dd>Modifier ou supprimer un nom</dd></dl></details>
     <details class="sx"><summary>Résumé écrit des étapes</summary><ol class="steps"><li>Sélectionnez la plage, puis cliquez dans la zone Nom, à gauche de la barre de formule.</li><li>Tapez un nom sans espace, par exemple Ventes, et validez avec Entrée.</li><li>Le nom remplace la référence dans les formules : plus lisible que B2:B4.</li><li>Formules › Gestionnaire de noms liste tous les noms du classeur, pour les modifier ou les supprimer.</li></ol></details>
-    <section class="also"><h2>Voir aussi</h2><div class="also-l"><a href="../reference-a-une-autre-feuille/"><b>Utiliser une cellule d'une autre feuille</b><small>Reprendre un résultat calculé sur une autre feuille.</small></a><a href="../somme-sur-plusieurs-feuilles/"><b>Additionner plusieurs feuilles</b><small>Faire le total de la même cellule sur plusieurs feuilles.</small></a><a href="../nommer-une-cellule/"><b>Nommer une cellule</b><small>Donner un nom à un taux pour ne plus penser aux $.</small></a></div></section>
+    <section class="guide">
+      <h2>Comment nommer une plage de cellules dans Excel ?</h2>
+      <p>Un nom remplace une référence comme B2:B4 par un mot lisible, par exemple Ventes. Sélectionnez la plage, cliquez dans la zone Nom (à gauche de la barre de formule), tapez le nom sans espace, puis Entrée. Le nom s'utilise ensuite dans toutes les formules du classeur et reste toujours figé, comme une référence absolue.</p>
+      <h3>Exemple</h3>
+      <p><code class="gx">=SOMME(Ventes)</code></p>
+      <p>Ventes désigne B2:B4 (120, 90, 150) : la somme donne 360, et la formule se lit d'elle-même.</p>
+      <h3>Erreurs fréquentes</h3>
+      <ul><li><b>Le nom est refusé</b>Il contient un espace, commence par un chiffre, ou ressemble à une adresse (VT1).</li><li><b>#NOM?</b>Le nom est mal orthographié dans la formule, ou a été supprimé.</li></ul>
+      <h3>Questions fréquentes</h3>
+      <h4>Comment modifier ou supprimer un nom ?</h4><p>Formules › Gestionnaire de noms.</p><h4>Comment voir tous les noms ?</h4><p>La flèche de la zone Nom les liste ; un clic sélectionne la plage.</p><h4>Un nom peut-il servir dans une liste déroulante ?</h4><p>Oui : Source =Ventes, même depuis une autre feuille.</p>
+    </section>
+    <section class="also"><h2>Voir aussi</h2><div class="also-l"><a href="../nommer-une-cellule/"><b>Nommer une cellule</b><small>Donner un nom à un taux pour ne plus penser aux $.</small></a><a href="../references-absolues/"><b>Références absolues ($)</b><small>Empêcher une référence de bouger quand on recopie.</small></a><a href="../let/"><b>LET</b><small>Nommer un calcul pour ne l'écrire qu'une fois.</small></a><a href="../liste-deroulante-depuis-une-plage/"><b>Liste déroulante depuis une plage</b><small>Une liste qui se met à jour quand ses choix changent.</small></a></div></section>
     <nav class="lnav" aria-label="Leçons voisines"><a href="../somme-sur-plusieurs-feuilles/"><small>← Précédente</small>Additionner plusieurs feuilles</a><a class="nx" id="nextLesson" href="../nommer-une-cellule/"><small>Suivante →</small>Nommer une cellule</a></nav>
   </main>
 </div>

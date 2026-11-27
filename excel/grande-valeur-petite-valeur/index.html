@@ -4,14 +4,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>GRANDE.VALEUR et PETITE.VALEUR dans Excel | Clic par clic</title>
-<meta name="description" content="Trouver la 2e, la 3e… plus grande ou plus petite valeur. Leçon Excel animée en 2 étapes, niveau intermédiaire, gratuite.">
+<meta name="description" content="GRANDE.VALEUR (LARGE en anglais) renvoie la k-ième plus grande valeur d'une plage ; PETITE.VALEUR (SMALL) la k-ième plus petite.">
 <link rel="canonical" href="https://mehdinourreddine62.github.io/clic-par-clic/excel/grande-valeur-petite-valeur/">
 <meta name="robots" content="index,follow">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="Clic par clic">
 <meta property="og:title" content="GRANDE.VALEUR et PETITE.VALEUR dans Excel | Clic par clic">
-<meta property="og:description" content="Trouver la 2e, la 3e… plus grande ou plus petite valeur. Leçon Excel animée en 2 étapes, niveau intermédiaire, gratuite.">
+<meta property="og:description" content="GRANDE.VALEUR (LARGE en anglais) renvoie la k-ième plus grande valeur d'une plage ; PETITE.VALEUR (SMALL) la k-ième plus petite.">
 <meta property="og:url" content="https://mehdinourreddine62.github.io/clic-par-clic/excel/grande-valeur-petite-valeur/">
 <meta property="og:image" content="https://mehdinourreddine62.github.io/clic-par-clic/assets/og-excel.png">
 <meta property="og:image:width" content="1200">
@@ -61,7 +61,18 @@
     <a class="dl" href="../../fichiers/excel/grande-valeur-petite-valeur.xlsx" download="grande-valeur-petite-valeur.xlsx"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg><span><b>Télécharger le fichier d'exercice</b><small>Excel · consignes, données de départ et solution</small></span></a><div class="pband" id="pband" hidden></div>
     <details class="sx"><summary>Syntaxe <code>=GRANDE.VALEUR(plage; rang)</code></summary><dl><dt>plage</dt><dd>Les valeurs à comparer</dd><dt>rang</dt><dd>1 pour la première, 2 pour la deuxième…</dd></dl></details>
     <details class="sx"><summary>Résumé écrit des étapes</summary><ol class="steps"><li>Le 2 demande la deuxième plus grande valeur. Avec 1, on retrouve le maximum.</li><li>PETITE.VALEUR fait la même chose en partant du bas.</li></ol></details>
-    <section class="also"><h2>Voir aussi</h2><div class="also-l"><a href="../nb-nbval-nb-vide/"><b>NB, NBVAL et NB.VIDE</b><small>Compter les nombres, les cellules remplies ou les cellules vides.</small></a><a href="../nb-si/"><b>NB.SI</b><small>Compter les cellules qui respectent une condition.</small></a><a href="../nb-si-ens/"><b>NB.SI.ENS</b><small>Compter selon plusieurs conditions à la fois.</small></a></div></section>
+    <section class="guide">
+      <h2>Comment trouver la 2e plus grande valeur dans Excel ?</h2>
+      <p>GRANDE.VALEUR (LARGE en anglais) renvoie la k-ième plus grande valeur d'une plage ; PETITE.VALEUR (SMALL) la k-ième plus petite. Avec un rang de 1, on retrouve le maximum ou le minimum. Elles servent à faire un podium ou à repérer les meilleurs résultats sans trier.</p>
+      <h3>Exemple</h3>
+      <p><code class="gx">=GRANDE.VALEUR(B2:B6;2)</code></p>
+      <p>Scores 82, 95, 70, 88, 91 : le 2e meilleur est 91, le 2e plus faible (=PETITE.VALEUR(B2:B6;2)) est 82.</p>
+      <h3>Erreurs fréquentes</h3>
+      <ul><li><b>#NOMBRE!</b>Le rang dépasse le nombre de valeurs, ou vaut 0.</li><li><b>Deux fois le même score</b>Les ex æquo occupent deux rangs : GRANDE.VALEUR(…;1) et (…;2) renvoient alors le même nombre.</li></ul>
+      <h3>Questions fréquentes</h3>
+      <h4>Comment afficher le nom du 2e ?</h4><p>Avec RECHERCHEX : =RECHERCHEX(GRANDE.VALEUR(B2:B6;2);B2:B6;A2:A6).</p><h4>Comment faire un top 3 ?</h4><p>Écrivez 1, 2, 3 dans une colonne et utilisez cette cellule comme rang.</p><h4>Et avec un critère ?</h4><p>MAX.SI.ENS pour le premier ; pour les suivants, FILTRE puis GRANDE.VALEUR.</p>
+    </section>
+    <section class="also"><h2>Voir aussi</h2><div class="also-l"><a href="../moyenne-min-max/"><b>MOYENNE, MIN et MAX</b><small>La moyenne, la plus petite et la plus grande valeur.</small></a><a href="../max-si-ens-min-si-ens/"><b>MAX.SI.ENS et MIN.SI.ENS</b><small>La plus grande ou la plus petite valeur d'un groupe.</small></a><a href="../rang/"><b>RANG</b><small>Donner le classement de chaque valeur.</small></a><a href="../trier-et-filtrer/"><b>Trier et filtrer</b><small>Classer une liste et n'afficher que certaines lignes.</small></a></div></section>
     <nav class="lnav" aria-label="Leçons voisines"><a href="../mediane/"><small>← Précédente</small>MEDIANE</a><a class="nx" id="nextLesson" href="../rang/"><small>Suivante →</small>RANG</a></nav>
   </main>
 </div>

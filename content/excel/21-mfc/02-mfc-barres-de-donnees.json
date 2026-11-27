@@ -7,21 +7,107 @@
  "syntaxe": "Mise en forme conditionnelle › Barres de données",
  "ruban": true,
  "arguments": [
-  ["Barre","Sa longueur suit la valeur de la cellule"],
-  ["Référence","La plus grande valeur de la sélection remplit la cellule"]
+  [
+   "Barre",
+   "Sa longueur suit la valeur de la cellule"
+  ],
+  [
+   "Référence",
+   "La plus grande valeur de la sélection remplit la cellule"
+  ]
  ],
  "grille": [
-  ["Vendeur","Ventes"],
-  ["Alice","900"],
-  ["Bruno","400"],
-  ["Chloé","660"],
-  ["David","150"],
-  ["Emma","780"]
+  [
+   "Vendeur",
+   "Ventes"
+  ],
+  [
+   "Alice",
+   "900"
+  ],
+  [
+   "Bruno",
+   "400"
+  ],
+  [
+   "Chloé",
+   "660"
+  ],
+  [
+   "David",
+   "150"
+  ],
+  [
+   "Emma",
+   "780"
+  ]
  ],
+ "titreSeo": "Barres de données dans Excel (mise en forme conditionnelle)",
  "etapes": [
-  {"c":"B2","sel":"B2:B6","drag":1,"tab":"Accueil","btn":"Mise en forme conditionnelle","t":"Sélectionnez les valeurs, puis ouvrez Mise en forme conditionnelle."},
-  {"c":"B2","sel":"B2:B6","menu":"Mise en forme conditionnelle › <b>Barres de données</b>","bars":"B2:B6","t":"Barres de données : chaque cellule reçoit une barre proportionnelle à sa valeur."},
-  {"c":"B5","f":"820","tab":"Accueil","t":"Les barres suivent les valeurs : modifiez un chiffre, sa barre s'allonge."},
-  {"c":"B2","tab":"Accueil","t":"Un mini-graphique sans quitter le tableau : les plus grands et les plus petits se repèrent d'un coup d'œil."}
+  {
+   "c": "B2",
+   "sel": "B2:B6",
+   "drag": 1,
+   "tab": "Accueil",
+   "btn": "Mise en forme conditionnelle",
+   "t": "Sélectionnez les valeurs, puis ouvrez Mise en forme conditionnelle."
+  },
+  {
+   "c": "B2",
+   "sel": "B2:B6",
+   "menu": "Mise en forme conditionnelle › <b>Barres de données</b>",
+   "bars": "B2:B6",
+   "t": "Barres de données : chaque cellule reçoit une barre proportionnelle à sa valeur."
+  },
+  {
+   "c": "B5",
+   "f": "820",
+   "tab": "Accueil",
+   "t": "Les barres suivent les valeurs : modifiez un chiffre, sa barre s'allonge."
+  },
+  {
+   "c": "B2",
+   "tab": "Accueil",
+   "t": "Un mini-graphique sans quitter le tableau : les plus grands et les plus petits se repèrent d'un coup d'œil."
+  }
+ ],
+ "guide": {
+  "question": "Comment ajouter des barres de données dans les cellules Excel ?",
+  "intro": "Les barres de données dessinent dans chaque cellule une barre proportionnelle à sa valeur : un mini-graphique sans quitter le tableau. Sélectionnez les valeurs, puis Accueil › Mise en forme conditionnelle › Barres de données, et choisissez une couleur. Les barres suivent les valeurs quand elles changent.",
+  "exemple": {
+   "titre": "Exemple",
+   "formule": "Mise en forme conditionnelle › Barres de données",
+   "explication": "Ventes de 150 à 900 : la barre d'Alice (900) remplit la cellule, celle de David (150) en occupe une petite partie."
+  },
+  "erreurs": [
+   [
+    "Toutes les barres semblent pareilles",
+    "Les valeurs sont proches : dans Gérer les règles, réglez le minimum à 0 au lieu d'Automatique."
+   ],
+   [
+    "La barre cache le nombre",
+    "Choisissez un remplissage dégradé, ou cochez Afficher la barre uniquement dans une colonne voisine."
+   ]
+  ],
+  "faq": [
+   [
+    "Comment supprimer les barres ?",
+    "Mise en forme conditionnelle › Effacer les règles › des cellules sélectionnées."
+   ],
+   [
+    "Les nombres négatifs sont-ils gérés ?",
+    "Oui : la barre part vers la gauche, dans une autre couleur."
+   ],
+   [
+    "Barres de données ou graphique ?",
+    "Les barres restent dans le tableau ; un graphique se partage plus facilement."
+   ]
+  ]
+ },
+ "voirAussi": [
+  "mfc-nuances-de-couleurs",
+  "mfc-jeux-d-icones",
+  "mise-en-forme-conditionnelle",
+  "graphiques-sparkline"
  ]
 }

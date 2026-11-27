@@ -6,18 +6,98 @@
  "motsCles": "cherche trouve position caractère arobase extraire gauche",
  "syntaxe": "=CHERCHE(texte_cherché; texte)",
  "arguments": [
-  ["texte_cherché","Le caractère ou le mot à trouver"],
-  ["texte","La cellule où chercher"],
-  ["TROUVE","La même chose, en distinguant majuscules et minuscules"]
+  [
+   "texte_cherché",
+   "Le caractère ou le mot à trouver"
+  ],
+  [
+   "texte",
+   "La cellule où chercher"
+  ],
+  [
+   "TROUVE",
+   "La même chose, en distinguant majuscules et minuscules"
+  ]
  ],
  "grille": [
-  ["E-mail","Position du @","Identifiant"],
-  ["lea.martin@ecole.fr","",""],
-  ["tom@campus.org","",""]
+  [
+   "E-mail",
+   "Position du @",
+   "Identifiant"
+  ],
+  [
+   "lea.martin@ecole.fr",
+   "",
+   ""
+  ],
+  [
+   "tom@campus.org",
+   "",
+   ""
+  ]
  ],
+ "titreSeo": "CHERCHE dans Excel : trouver la position d'un caractère",
  "etapes": [
-  {"c":"B2","f":"=CHERCHE(\"@\";A2)","v":"11","fill":{"B3":"4"},"t":"CHERCHE donne la position d'un caractère : l'arobase est le 11e caractère."},
-  {"c":"C2","f":"=GAUCHE(A2;B2-1)","v":"lea.martin","fill":{"C3":"tom"},"t":"Cette position sert à découper : GAUCHE prend tout ce qui précède l'arobase."},
-  {"c":"C2","t":"C'est la méthode qui fonctionne dans toutes les versions d'Excel, même anciennes."}
+  {
+   "c": "B2",
+   "f": "=CHERCHE(\"@\";A2)",
+   "v": "11",
+   "fill": {
+    "B3": "4"
+   },
+   "t": "CHERCHE donne la position d'un caractère : l'arobase est le 11e caractère."
+  },
+  {
+   "c": "C2",
+   "f": "=GAUCHE(A2;B2-1)",
+   "v": "lea.martin",
+   "fill": {
+    "C3": "tom"
+   },
+   "t": "Cette position sert à découper : GAUCHE prend tout ce qui précède l'arobase."
+  },
+  {
+   "c": "C2",
+   "t": "C'est la méthode qui fonctionne dans toutes les versions d'Excel, même anciennes."
+  }
+ ],
+ "guide": {
+  "question": "Comment trouver la position d'un caractère avec CHERCHE dans Excel ?",
+  "intro": "CHERCHE (SEARCH en anglais) renvoie la position d'un caractère ou d'un mot dans un texte. Combinée à GAUCHE, DROITE ou STXT, elle permet de découper un texte à un endroit précis : avant l'arobase d'une adresse, après un tiret. Elle ignore les majuscules ; TROUVE fait la même chose en les respectant.",
+  "exemple": {
+   "titre": "Exemple",
+   "formule": "=GAUCHE(A2;CHERCHE(\"@\";A2)-1)",
+   "explication": "Dans lea.martin@ecole.fr, l'arobase est le 11e caractère : GAUCHE garde les 10 premiers, lea.martin."
+  },
+  "erreurs": [
+   [
+    "#VALEUR!",
+    "Le caractère cherché n'existe pas dans le texte : entourez la formule de SIERREUR."
+   ],
+   [
+    "L'arobase est incluse",
+    "Oubli du -1 après CHERCHE."
+   ]
+  ],
+  "faq": [
+   [
+    "Quelle différence avec TROUVE ?",
+    "TROUVE distingue majuscules et minuscules ; CHERCHE non."
+   ],
+   [
+    "Existe-t-il plus simple ?",
+    "Dans Excel 365, TEXTE.AVANT(A2;\"@\") donne directement lea.martin."
+   ],
+   [
+    "Comment savoir si un mot est présent ?",
+    "=ESTNUM(CHERCHE(\"ecole\";A2)) renvoie VRAI ou FAUX."
+   ]
+  ]
+ },
+ "voirAussi": [
+  "texte-avant-texte-apres",
+  "gauche-droite-stxt",
+  "nbcar",
+  "sierreur"
  ]
 }

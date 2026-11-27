@@ -3,15 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Utiliser une cellule d'une autre feuille dans Excel</title>
-<meta name="description" content="Reprendre un résultat calculé sur une autre feuille. Leçon Excel animée en 4 étapes, niveau intermédiaire, gratuite.">
+<title>Formule Excel avec une cellule d'une autre feuille</title>
+<meta name="description" content="Pour reprendre une valeur d'une autre feuille, tapez =, cliquez sur l'onglet de la feuille, puis sur la cellule, et validez ">
 <link rel="canonical" href="https://mehdinourreddine62.github.io/clic-par-clic/excel/reference-a-une-autre-feuille/">
 <meta name="robots" content="index,follow">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="Clic par clic">
-<meta property="og:title" content="Utiliser une cellule d'une autre feuille dans Excel">
-<meta property="og:description" content="Reprendre un résultat calculé sur une autre feuille. Leçon Excel animée en 4 étapes, niveau intermédiaire, gratuite.">
+<meta property="og:title" content="Formule Excel avec une cellule d'une autre feuille">
+<meta property="og:description" content="Pour reprendre une valeur d'une autre feuille, tapez =, cliquez sur l'onglet de la feuille, puis sur la cellule, et validez ">
 <meta property="og:url" content="https://mehdinourreddine62.github.io/clic-par-clic/excel/reference-a-une-autre-feuille/">
 <meta property="og:image" content="https://mehdinourreddine62.github.io/clic-par-clic/assets/og-excel.png">
 <meta property="og:image:width" content="1200">
@@ -61,7 +61,18 @@
     <div class="pband" id="pband" hidden></div>
     <details class="sx"><summary>Syntaxe <code>=Ventes!B4</code></summary><dl><dt>Ventes</dt><dd>Le nom de la feuille</dd><dt>!</dt><dd>Sépare la feuille et la cellule</dd><dt>Apostrophes</dt><dd>Ajoutées si le nom contient un espace</dd></dl></details>
     <details class="sx"><summary>Résumé écrit des étapes</summary><ol class="steps"><li>Les données sont sur la feuille Ventes, mais on veut leur total ici, sur Synthèse.</li><li>Tapez = puis cliquez sur l'onglet Ventes et sur la cellule B4 : Excel écrit la référence tout seul.</li><li>Validez : Synthèse affiche 720. Le point d'exclamation sépare le nom de la feuille et la cellule.</li><li>Si le nom de la feuille contient un espace, Excel l'entoure d'apostrophes.</li></ol></details>
-    <section class="also"><h2>Voir aussi</h2><div class="also-l"><a href="../somme-sur-plusieurs-feuilles/"><b>Additionner plusieurs feuilles</b><small>Faire le total de la même cellule sur plusieurs feuilles.</small></a><a href="../nommer-une-plage/"><b>Nommer une plage</b><small>Remplacer une référence par un nom lisible.</small></a><a href="../nommer-une-cellule/"><b>Nommer une cellule</b><small>Donner un nom à un taux pour ne plus penser aux $.</small></a></div></section>
+    <section class="guide">
+      <h2>Comment utiliser une cellule d'une autre feuille dans une formule Excel ?</h2>
+      <p>Pour reprendre une valeur d'une autre feuille, tapez =, cliquez sur l'onglet de la feuille, puis sur la cellule, et validez : Excel écrit la référence tout seul. Le point d'exclamation sépare le nom de la feuille et l'adresse de la cellule. Si le nom contient un espace, Excel l'entoure d'apostrophes.</p>
+      <h3>Exemple</h3>
+      <p><code class="gx">=Ventes!B4</code></p>
+      <p>Sur la feuille Synthèse, la formule affiche 720, le total calculé en B4 de la feuille Ventes. Avec une feuille nommée Ventes 2026 : ='Ventes 2026'!B4.</p>
+      <h3>Erreurs fréquentes</h3>
+      <ul><li><b>#REF!</b>La feuille a été supprimée.</li><li><b>Une fenêtre demande de choisir un fichier</b>Le nom de la feuille est mal écrit : Excel croit à un autre classeur. Recliquez plutôt que de taper.</li></ul>
+      <h3>Questions fréquentes</h3>
+      <h4>La référence suit-elle si je renomme la feuille ?</h4><p>Oui, Excel met les formules à jour.</p><h4>Comment additionner la même cellule sur plusieurs feuilles ?</h4><p>=SOMME(Janvier:Mars!B4).</p><h4>Peut-on viser un autre fichier ?</h4><p>Oui, en cliquant dans l'autre classeur ouvert ; la formule contient alors son nom entre crochets.</p>
+    </section>
+    <section class="also"><h2>Voir aussi</h2><div class="also-l"><a href="../somme-sur-plusieurs-feuilles/"><b>Additionner plusieurs feuilles</b><small>Faire le total de la même cellule sur plusieurs feuilles.</small></a><a href="../feuilles-du-classeur/"><b>Les feuilles du classeur</b><small>Ajouter, renommer et parcourir les feuilles.</small></a><a href="../nommer-une-plage/"><b>Nommer une plage</b><small>Remplacer une référence par un nom lisible.</small></a><a href="../erreur-ref/"><b>Corriger #REF!</b><small>Comprendre ce qui se passe quand on supprime une cellule utilisée.</small></a></div></section>
     <nav class="lnav" aria-label="Leçons voisines"><a href="../calcul-d-heures/"><small>← Précédente</small>Calcul d'heures</a><a class="nx" id="nextLesson" href="../somme-sur-plusieurs-feuilles/"><small>Suivante →</small>Additionner plusieurs feuilles</a></nav>
   </main>
 </div>

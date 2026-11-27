@@ -6,19 +6,113 @@
  "motsCles": "deuxième troisième podium top large small",
  "syntaxe": "=GRANDE.VALEUR(plage; rang)",
  "arguments": [
-  ["plage","Les valeurs à comparer"],
-  ["rang","1 pour la première, 2 pour la deuxième…"]
+  [
+   "plage",
+   "Les valeurs à comparer"
+  ],
+  [
+   "rang",
+   "1 pour la première, 2 pour la deuxième…"
+  ]
  ],
  "grille": [
-  ["Joueur","Score","","Position","Score"],
-  ["Léa","82","","2e meilleur",""],
-  ["Hugo","95","","2e plus faible",""],
-  ["Inès","70","","",""],
-  ["Tom","88","","",""],
-  ["Nora","91","","",""]
+  [
+   "Joueur",
+   "Score",
+   "",
+   "Position",
+   "Score"
+  ],
+  [
+   "Léa",
+   "82",
+   "",
+   "2e meilleur",
+   ""
+  ],
+  [
+   "Hugo",
+   "95",
+   "",
+   "2e plus faible",
+   ""
+  ],
+  [
+   "Inès",
+   "70",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Tom",
+   "88",
+   "",
+   "",
+   ""
+  ],
+  [
+   "Nora",
+   "91",
+   "",
+   "",
+   ""
+  ]
  ],
+ "titreSeo": "GRANDE.VALEUR et PETITE.VALEUR dans Excel",
  "etapes": [
-  {"c":"E2","f":"=GRANDE.VALEUR(B2:B6;2)","v":"91","mark":"B6","t":"Le 2 demande la deuxième plus grande valeur. Avec 1, on retrouve le maximum."},
-  {"c":"E3","f":"=PETITE.VALEUR(B2:B6;2)","v":"82","mark":"B2","t":"PETITE.VALEUR fait la même chose en partant du bas."}
+  {
+   "c": "E2",
+   "f": "=GRANDE.VALEUR(B2:B6;2)",
+   "v": "91",
+   "mark": "B6",
+   "t": "Le 2 demande la deuxième plus grande valeur. Avec 1, on retrouve le maximum."
+  },
+  {
+   "c": "E3",
+   "f": "=PETITE.VALEUR(B2:B6;2)",
+   "v": "82",
+   "mark": "B2",
+   "t": "PETITE.VALEUR fait la même chose en partant du bas."
+  }
+ ],
+ "guide": {
+  "question": "Comment trouver la 2e plus grande valeur dans Excel ?",
+  "intro": "GRANDE.VALEUR (LARGE en anglais) renvoie la k-ième plus grande valeur d'une plage ; PETITE.VALEUR (SMALL) la k-ième plus petite. Avec un rang de 1, on retrouve le maximum ou le minimum. Elles servent à faire un podium ou à repérer les meilleurs résultats sans trier.",
+  "exemple": {
+   "titre": "Exemple",
+   "formule": "=GRANDE.VALEUR(B2:B6;2)",
+   "explication": "Scores 82, 95, 70, 88, 91 : le 2e meilleur est 91, le 2e plus faible (=PETITE.VALEUR(B2:B6;2)) est 82."
+  },
+  "erreurs": [
+   [
+    "#NOMBRE!",
+    "Le rang dépasse le nombre de valeurs, ou vaut 0."
+   ],
+   [
+    "Deux fois le même score",
+    "Les ex æquo occupent deux rangs : GRANDE.VALEUR(…;1) et (…;2) renvoient alors le même nombre."
+   ]
+  ],
+  "faq": [
+   [
+    "Comment afficher le nom du 2e ?",
+    "Avec RECHERCHEX : =RECHERCHEX(GRANDE.VALEUR(B2:B6;2);B2:B6;A2:A6)."
+   ],
+   [
+    "Comment faire un top 3 ?",
+    "Écrivez 1, 2, 3 dans une colonne et utilisez cette cellule comme rang."
+   ],
+   [
+    "Et avec un critère ?",
+    "MAX.SI.ENS pour le premier ; pour les suivants, FILTRE puis GRANDE.VALEUR."
+   ]
+  ]
+ },
+ "voirAussi": [
+  "moyenne-min-max",
+  "max-si-ens-min-si-ens",
+  "rang",
+  "trier-et-filtrer"
  ]
 }

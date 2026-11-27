@@ -3,15 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>MOIS.DECALER – Excel en animation | Clic par clic</title>
-<meta name="description" content="Ajouter ou retirer des mois à une date. Leçon Excel animée en 3 étapes, niveau intermédiaire, gratuite.">
+<title>MOIS.DECALER dans Excel : ajouter des mois à une date</title>
+<meta name="description" content="MOIS.DECALER (EDATE en anglais) ajoute ou retire un nombre de mois à une date, en gardant le même jour du mois.">
 <link rel="canonical" href="https://mehdinourreddine62.github.io/clic-par-clic/excel/mois-decaler/">
 <meta name="robots" content="index,follow">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="Clic par clic">
-<meta property="og:title" content="MOIS.DECALER – Excel en animation | Clic par clic">
-<meta property="og:description" content="Ajouter ou retirer des mois à une date. Leçon Excel animée en 3 étapes, niveau intermédiaire, gratuite.">
+<meta property="og:title" content="MOIS.DECALER dans Excel : ajouter des mois à une date">
+<meta property="og:description" content="MOIS.DECALER (EDATE en anglais) ajoute ou retire un nombre de mois à une date, en gardant le même jour du mois.">
 <meta property="og:url" content="https://mehdinourreddine62.github.io/clic-par-clic/excel/mois-decaler/">
 <meta property="og:image" content="https://mehdinourreddine62.github.io/clic-par-clic/assets/og-excel.png">
 <meta property="og:image:width" content="1200">
@@ -61,7 +61,18 @@
     <a class="dl" href="../../fichiers/excel/mois-decaler.xlsx" download="mois-decaler.xlsx"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg><span><b>Télécharger le fichier d'exercice</b><small>Excel · consignes, données de départ et solution</small></span></a><div class="pband" id="pband" hidden></div>
     <details class="sx"><summary>Syntaxe <code>=MOIS.DECALER(date; mois)</code></summary><dl><dt>date</dt><dd>La date de départ</dd><dt>mois</dt><dd>Le nombre de mois à ajouter, ou à retirer s'il est négatif</dd></dl></details>
     <details class="sx"><summary>Résumé écrit des étapes</summary><ol class="steps"><li>MOIS.DECALER ajoute un nombre de mois à une date.</li><li>Le 31 février n'existe pas : Excel s'arrête au dernier jour du mois.</li><li>Un nombre négatif recule dans le temps.</li></ol></details>
-    <section class="also"><h2>Voir aussi</h2><div class="also-l"><a href="../aujourdhui-datedif/"><b>AUJOURDHUI et DATEDIF</b><small>Afficher la date du jour et calculer une ancienneté ou un âge.</small></a><a href="../annee-mois-jour/"><b>ANNEE, MOIS et JOUR</b><small>Extraire l'année, le mois ou le jour d'une date.</small></a><a href="../date/"><b>DATE</b><small>Construire une date à partir d'une année, d'un mois et d'un jour.</small></a></div></section>
+    <section class="guide">
+      <h2>Comment ajouter des mois à une date dans Excel ?</h2>
+      <p>MOIS.DECALER (EDATE en anglais) ajoute ou retire un nombre de mois à une date, en gardant le même jour du mois. Si ce jour n'existe pas (31 février), Excel s'arrête au dernier jour du mois. Un nombre négatif recule dans le temps.</p>
+      <h3>Exemple</h3>
+      <p><code class="gx">=MOIS.DECALER(A2;B2)</code></p>
+      <p>15/01/2026 + 3 mois : 15/04/2026. 31/01/2026 + 1 mois : 28/02/2026. 13/11/2026 - 2 mois : 13/09/2026.</p>
+      <h3>Erreurs fréquentes</h3>
+      <ul><li><b>Un nombre s'affiche au lieu d'une date</b>Appliquez le format Date courte.</li><li><b>#VALEUR!</b>La date de départ est du texte : convertissez-la avec DATEVAL.</li></ul>
+      <h3>Questions fréquentes</h3>
+      <h4>Comment ajouter des années ?</h4><p>=MOIS.DECALER(A2;12*nombre_d'années).</p><h4>Comment aller à la fin du mois ?</h4><p>Utilisez FIN.MOIS.</p><h4>Pourquoi pas simplement +30 ?</h4><p>Les mois n'ont pas tous 30 jours : MOIS.DECALER tombe toujours sur le bon jour.</p>
+    </section>
+    <section class="also"><h2>Voir aussi</h2><div class="also-l"><a href="../fin-mois/"><b>FIN.MOIS</b><small>Trouver le dernier jour d'un mois.</small></a><a href="../date/"><b>DATE</b><small>Construire une date à partir d'une année, d'un mois et d'un jour.</small></a><a href="../ecart-entre-deux-dates/"><b>Écart entre deux dates</b><small>Compter le nombre de jours entre deux dates.</small></a><a href="../serie-jour-ouvre/"><b>SERIE.JOUR.OUVRE</b><small>Trouver la date après un certain nombre de jours travaillés.</small></a></div></section>
     <nav class="lnav" aria-label="Leçons voisines"><a href="../fin-mois/"><small>← Précédente</small>FIN.MOIS</a><a class="nx" id="nextLesson" href="../nb-jours-ouvres/"><small>Suivante →</small>NB.JOURS.OUVRES</a></nav>
   </main>
 </div>

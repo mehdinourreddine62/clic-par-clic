@@ -5,23 +5,128 @@
  "resume": "Minimum, maximum et graduations, sans tromper le lecteur.",
  "motsCles": "axe minimum maximum échelle graduations unité zéro trompeur graphique",
  "syntaxe": "Double-clic sur l'axe › Options d'axe",
- "graphique": {"type":"col","labels":"A2:A5","series":["B2:B5"],"title":"Ventes par magasin","min":90,"max":105,"step":5,"at":"D2:H8"},
+ "graphique": {
+  "type": "col",
+  "labels": "A2:A5",
+  "series": [
+   "B2:B5"
+  ],
+  "title": "Ventes par magasin",
+  "min": 90,
+  "max": 105,
+  "step": 5,
+  "at": "D2:H8"
+ },
  "arguments": [
-  ["Minimum","La valeur où commence l'axe"],
-  ["Maximum","La valeur où il s'arrête"],
-  ["Unité principale","L'écart entre deux graduations"]
+  [
+   "Minimum",
+   "La valeur où commence l'axe"
+  ],
+  [
+   "Maximum",
+   "La valeur où il s'arrête"
+  ],
+  [
+   "Unité principale",
+   "L'écart entre deux graduations"
+  ]
  ],
  "grille": [
-  ["Magasin","Ventes"],
-  ["Lille","96"],
-  ["Lyon","98"],
-  ["Nantes","101"],
-  ["Paris","104"]
+  [
+   "Magasin",
+   "Ventes"
+  ],
+  [
+   "Lille",
+   "96"
+  ],
+  [
+   "Lyon",
+   "98"
+  ],
+  [
+   "Nantes",
+   "101"
+  ],
+  [
+   "Paris",
+   "104"
+  ]
  ],
+ "titreSeo": "Modifier l'axe d'un graphique Excel (minimum, maximum)",
  "etapes": [
-  {"c":"A1","chart":{"spot":"axis"},"t":"Paris semble vendre trois fois plus que Lille. Regardez l'axe : il commence à 90."},
-  {"c":"A1","menu":"Double-clic sur l'axe › Options d'axe › <b>Minimum</b>","rule":"0","chart":{"min":0,"max":120,"step":30},"t":"Remettez le minimum à 0 : les écarts retrouvent leur vraie taille."},
-  {"c":"A1","chart":{"dlabels":true},"t":"Pour un histogramme, l'axe doit partir de zéro, sinon les hauteurs trompent."},
-  {"c":"A1","menu":"Options d'axe › <b>Unité principale</b>","rule":"20","chart":{"step":20},"t":"L'unité principale règle l'écart entre deux graduations."}
+  {
+   "c": "A1",
+   "chart": {
+    "spot": "axis"
+   },
+   "t": "Paris semble vendre trois fois plus que Lille. Regardez l'axe : il commence à 90."
+  },
+  {
+   "c": "A1",
+   "menu": "Double-clic sur l'axe › Options d'axe › <b>Minimum</b>",
+   "rule": "0",
+   "chart": {
+    "min": 0,
+    "max": 120,
+    "step": 30
+   },
+   "t": "Remettez le minimum à 0 : les écarts retrouvent leur vraie taille."
+  },
+  {
+   "c": "A1",
+   "chart": {
+    "dlabels": true
+   },
+   "t": "Pour un histogramme, l'axe doit partir de zéro, sinon les hauteurs trompent."
+  },
+  {
+   "c": "A1",
+   "menu": "Options d'axe › <b>Unité principale</b>",
+   "rule": "20",
+   "chart": {
+    "step": 20
+   },
+   "t": "L'unité principale règle l'écart entre deux graduations."
+  }
+ ],
+ "guide": {
+  "question": "Comment modifier le minimum et le maximum d'un axe dans Excel ?",
+  "intro": "Double-cliquez sur l'axe d'un graphique pour ouvrir Options d'axe : vous y réglez le minimum, le maximum et l'unité principale (l'écart entre deux graduations). Excel choisit parfois un minimum supérieur à zéro, ce qui exagère les écarts. Pour un histogramme ou des barres, l'axe doit partir de zéro.",
+  "exemple": {
+   "titre": "Exemple",
+   "formule": "Double-clic sur l'axe › Options d'axe › Minimum : 0",
+   "explication": "Ventes de 96 à 104 : avec un axe qui commence à 90, Paris semble vendre trois fois plus que Lille ; à partir de 0, les écarts retrouvent leur vraie taille."
+  },
+  "erreurs": [
+   [
+    "Le minimum revient tout seul",
+    "Le bouton Réinitialiser remet la valeur automatique : tapez la valeur, puis Entrée."
+   ],
+   [
+    "Les graduations sont trop serrées",
+    "Augmentez l'unité principale."
+   ]
+  ],
+  "faq": [
+   [
+    "Comment inverser l'ordre des catégories ?",
+    "Options d'axe › cochez Catégories en ordre inverse."
+   ],
+   [
+    "Comment afficher les milliers ?",
+    "Options d'axe › Unités d'affichage › Milliers."
+   ],
+   [
+    "Peut-on couper l'axe ?",
+    "Excel ne le propose pas ; mieux vaut ne pas tronquer un histogramme."
+   ]
+  ]
+ },
+ "voirAussi": [
+  "graphique-combine",
+  "elements-d-un-graphique",
+  "histogramme",
+  "titre-et-etiquettes"
  ]
 }

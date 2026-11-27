@@ -6,21 +6,109 @@
  "motsCles": "raccourci clavier déplacer naviguer ctrl flèche origine fin",
  "syntaxe": "Ctrl + flèche",
  "arguments": [
-  ["Ctrl + flèche","Saute jusqu'au bord des données"],
-  ["Ctrl + Origine","Revient en A1"],
-  ["Ctrl + Fin","Va à la dernière cellule utilisée"]
+  [
+   "Ctrl + flèche",
+   "Saute jusqu'au bord des données"
+  ],
+  [
+   "Ctrl + Origine",
+   "Revient en A1"
+  ],
+  [
+   "Ctrl + Fin",
+   "Va à la dernière cellule utilisée"
+  ]
  ],
  "grille": [
-  ["Produit","Prix","Stock"],
-  ["Stylo","1,20 €","40"],
-  ["Cahier","3,50 €","25"],
-  ["Classeur","5,90 €","12"]
+  [
+   "Produit",
+   "Prix",
+   "Stock"
+  ],
+  [
+   "Stylo",
+   "1,20 €",
+   "40"
+  ],
+  [
+   "Cahier",
+   "3,50 €",
+   "25"
+  ],
+  [
+   "Classeur",
+   "5,90 €",
+   "12"
+  ]
  ],
+ "titreSeo": "Raccourcis Excel pour se déplacer : Ctrl + flèche",
  "etapes": [
-  {"c":"A1","t":"Les raccourcis évitent d'aller chercher la souris. Partons de la cellule A1."},
-  {"c":"A4","kb":1,"keys":"Ctrl + ↓","t":"Ctrl + flèche saute directement jusqu'au bord des données."},
-  {"c":"C4","kb":1,"keys":"Ctrl + →","t":"Cela fonctionne dans les quatre directions."},
-  {"c":"A1","kb":1,"keys":"Ctrl + Origine","t":"Ctrl + Origine ramène tout en haut, en A1."},
-  {"c":"C4","kb":1,"keys":"Ctrl + Fin","t":"Ctrl + Fin va à la dernière cellule utilisée."}
+  {
+   "c": "A1",
+   "t": "Les raccourcis évitent d'aller chercher la souris. Partons de la cellule A1."
+  },
+  {
+   "c": "A4",
+   "kb": 1,
+   "keys": "Ctrl + ↓",
+   "t": "Ctrl + flèche saute directement jusqu'au bord des données."
+  },
+  {
+   "c": "C4",
+   "kb": 1,
+   "keys": "Ctrl + →",
+   "t": "Cela fonctionne dans les quatre directions."
+  },
+  {
+   "c": "A1",
+   "kb": 1,
+   "keys": "Ctrl + Origine",
+   "t": "Ctrl + Origine ramène tout en haut, en A1."
+  },
+  {
+   "c": "C4",
+   "kb": 1,
+   "keys": "Ctrl + Fin",
+   "t": "Ctrl + Fin va à la dernière cellule utilisée."
+  }
+ ],
+ "guide": {
+  "question": "Comment se déplacer rapidement dans un tableau Excel au clavier ?",
+  "intro": "Ctrl + flèche saute directement au bord des données, dans la direction de la flèche : la dernière ligne remplie, la dernière colonne. Ctrl + Origine ramène en A1, Ctrl + Fin va à la dernière cellule utilisée de la feuille. Ajoutez Maj pour sélectionner en même temps.",
+  "exemple": {
+   "titre": "À retenir",
+   "formule": "Ctrl + ↓   Ctrl + →   Ctrl + Origine   Ctrl + Fin",
+   "explication": "Depuis A1, Ctrl + ↓ va en A4, au dernier produit ; Ctrl + → va en C1, à la dernière colonne."
+  },
+  "erreurs": [
+   [
+    "Ctrl + flèche s'arrête au milieu",
+    "Une cellule vide coupe le tableau : la touche s'arrête avant le trou. Appuyez de nouveau pour continuer."
+   ],
+   [
+    "Les flèches font défiler la feuille sans bouger la cellule",
+    "Arrêt défil est activé : appuyez sur la touche Arrêt défil (ScrLk)."
+   ]
+  ],
+  "faq": [
+   [
+    "Comment aller à une cellule précise ?",
+    "Tapez son adresse dans la zone Nom, à gauche de la barre de formule, puis Entrée ; F5 ouvre aussi la fenêtre Atteindre."
+   ],
+   [
+    "Comment changer de feuille au clavier ?",
+    "Ctrl + Pg suiv et Ctrl + Pg préc."
+   ],
+   [
+    "Comment sélectionner jusqu'au bout des données ?",
+    "Ctrl + Maj + flèche."
+   ]
+  ]
+ },
+ "voirAussi": [
+  "raccourcis-selectionner",
+  "raccourcis-classeur",
+  "raccourcis-saisir",
+  "ecran-excel"
  ]
 }

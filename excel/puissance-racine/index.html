@@ -3,15 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>PUISSANCE et RACINE – Excel en animation | Clic par clic</title>
-<meta name="description" content="Calculer un carré ou une racine carrée. Leçon Excel animée en 2 étapes, niveau débutant, gratuite.">
+<title>Puissance et racine carrée dans Excel | Clic par clic</title>
+<meta name="description" content="L'accent circonflexe ^ élève un nombre à une puissance : =A2^2 donne le carré, =A2^3 le cube. La fonction PUISSANCE(A2;2) fait la même chose.">
 <link rel="canonical" href="https://mehdinourreddine62.github.io/clic-par-clic/excel/puissance-racine/">
 <meta name="robots" content="index,follow">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="Clic par clic">
-<meta property="og:title" content="PUISSANCE et RACINE – Excel en animation | Clic par clic">
-<meta property="og:description" content="Calculer un carré ou une racine carrée. Leçon Excel animée en 2 étapes, niveau débutant, gratuite.">
+<meta property="og:title" content="Puissance et racine carrée dans Excel | Clic par clic">
+<meta property="og:description" content="L'accent circonflexe ^ élève un nombre à une puissance : =A2^2 donne le carré, =A2^3 le cube. La fonction PUISSANCE(A2;2) fait la même chose.">
 <meta property="og:url" content="https://mehdinourreddine62.github.io/clic-par-clic/excel/puissance-racine/">
 <meta property="og:image" content="https://mehdinourreddine62.github.io/clic-par-clic/assets/og-excel.png">
 <meta property="og:image:width" content="1200">
@@ -61,7 +61,18 @@
     <a class="dl" href="../../fichiers/excel/puissance-racine.xlsx" download="puissance-racine.xlsx"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg><span><b>Télécharger le fichier d'exercice</b><small>Excel · consignes, données de départ et solution</small></span></a><div class="pband" id="pband" hidden></div>
     <details class="sx"><summary>Syntaxe <code>=A2^2 · =RACINE(nombre)</code></summary><dl><dt>^</dt><dd>Élève à la puissance : A2^2 pour le carré</dd><dt>PUISSANCE(nombre; exposant)</dt><dd>Le même calcul sous forme de fonction</dd><dt>RACINE</dt><dd>La racine carrée</dd></dl></details>
     <details class="sx"><summary>Résumé écrit des étapes</summary><ol class="steps"><li>L'accent circonflexe élève à la puissance. =PUISSANCE(A2;2) donne le même résultat.</li><li>RACINE calcule la racine carrée.</li></ol></details>
-    <section class="also"><h2>Voir aussi</h2><div class="also-l"><a href="../somme/"><b>SOMME</b><small>Additionner une plage de cellules.</small></a><a href="../produit/"><b>PRODUIT</b><small>Multiplier toutes les valeurs d'une plage.</small></a><a href="../sommeprod/"><b>SOMMEPROD</b><small>Multiplier deux colonnes ligne par ligne, puis tout additionner.</small></a></div></section>
+    <section class="guide">
+      <h2>Comment calculer un carré et une racine carrée dans Excel ?</h2>
+      <p>L'accent circonflexe ^ élève un nombre à une puissance : =A2^2 donne le carré, =A2^3 le cube. La fonction PUISSANCE(A2;2) fait la même chose. RACINE renvoie la racine carrée d'un nombre positif.</p>
+      <h3>Exemple</h3>
+      <p><code class="gx">=A2^2   =RACINE(A2)</code></p>
+      <p>9 au carré : 81, racine : 3. 16 : 256 et 4. 2 : 4 et environ 1,414.</p>
+      <h3>Erreurs fréquentes</h3>
+      <ul><li><b>#NOMBRE!</b>RACINE d'un nombre négatif : utilisez ABS si le signe ne compte pas.</li><li><b>La touche ^ n'écrit rien</b>Sur un clavier français, appuyez sur ^ puis sur la barre d'espace.</li></ul>
+      <h3>Questions fréquentes</h3>
+      <h4>Comment calculer une racine cubique ?</h4><p>=A2^(1/3).</p><h4>PUISSANCE ou ^ ?</h4><p>Le résultat est identique ; ^ est plus court à écrire.</p><h4>Comment arrondir le résultat ?</h4><p>=ARRONDI(RACINE(A2);2).</p>
+    </section>
+    <section class="also"><h2>Voir aussi</h2><div class="also-l"><a href="../abs/"><b>ABS</b><small>Supprimer le signe d'un nombre pour ne garder que l'écart.</small></a><a href="../arrondi/"><b>ARRONDI</b><small>Garder le nombre de décimales voulu.</small></a><a href="../interets-composes/"><b>Intérêts composés</b><small>Calculer ce que devient un capital placé plusieurs années.</small></a><a href="../ecrire-une-formule/"><b>Écrire une formule</b><small>Faire un calcul entre deux cellules.</small></a></div></section>
     <nav class="lnav" aria-label="Leçons voisines"><a href="../abs/"><small>← Précédente</small>ABS</a><a class="nx" id="nextLesson" href="../sous-total/"><small>Suivante →</small>SOUS.TOTAL</a></nav>
   </main>
 </div>

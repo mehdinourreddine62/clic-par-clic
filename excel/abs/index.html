@@ -3,15 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>ABS – Excel en animation | Clic par clic</title>
-<meta name="description" content="Supprimer le signe d'un nombre pour ne garder que l'écart. Leçon Excel animée en 2 étapes, niveau débutant, gratuite.">
+<title>ABS dans Excel : valeur absolue d'un nombre | Clic par clic</title>
+<meta name="description" content="ABS renvoie la valeur absolue d'un nombre, c'est-à-dire le nombre sans son signe. Elle sert à mesurer la taille d'un écart sans se soucier de son sens ">
 <link rel="canonical" href="https://mehdinourreddine62.github.io/clic-par-clic/excel/abs/">
 <meta name="robots" content="index,follow">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="Clic par clic">
-<meta property="og:title" content="ABS – Excel en animation | Clic par clic">
-<meta property="og:description" content="Supprimer le signe d'un nombre pour ne garder que l'écart. Leçon Excel animée en 2 étapes, niveau débutant, gratuite.">
+<meta property="og:title" content="ABS dans Excel : valeur absolue d'un nombre | Clic par clic">
+<meta property="og:description" content="ABS renvoie la valeur absolue d'un nombre, c'est-à-dire le nombre sans son signe. Elle sert à mesurer la taille d'un écart sans se soucier de son sens ">
 <meta property="og:url" content="https://mehdinourreddine62.github.io/clic-par-clic/excel/abs/">
 <meta property="og:image" content="https://mehdinourreddine62.github.io/clic-par-clic/assets/og-excel.png">
 <meta property="og:image:width" content="1200">
@@ -61,7 +61,18 @@
     <a class="dl" href="../../fichiers/excel/abs.xlsx" download="abs.xlsx"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg><span><b>Télécharger le fichier d'exercice</b><small>Excel · consignes, données de départ et solution</small></span></a><div class="pband" id="pband" hidden></div>
     <details class="sx"><summary>Syntaxe <code>=ABS(nombre)</code></summary><dl><dt>nombre</dt><dd>La valeur dont on retire le signe</dd></dl></details>
     <details class="sx"><summary>Résumé écrit des étapes</summary><ol class="steps"><li>L'écart peut être positif ou négatif.</li><li>ABS retire le signe : on ne garde que la taille de l'écart.</li></ol></details>
-    <section class="also"><h2>Voir aussi</h2><div class="also-l"><a href="../somme/"><b>SOMME</b><small>Additionner une plage de cellules.</small></a><a href="../produit/"><b>PRODUIT</b><small>Multiplier toutes les valeurs d'une plage.</small></a><a href="../sommeprod/"><b>SOMMEPROD</b><small>Multiplier deux colonnes ligne par ligne, puis tout additionner.</small></a></div></section>
+    <section class="guide">
+      <h2>À quoi sert la fonction ABS dans Excel ?</h2>
+      <p>ABS renvoie la valeur absolue d'un nombre, c'est-à-dire le nombre sans son signe. Elle sert à mesurer la taille d'un écart sans se soucier de son sens : un écart de -15 et un écart de +15 ont la même importance.</p>
+      <h3>Exemple</h3>
+      <p><code class="gx">=ABS(C2)</code></p>
+      <p>Prévu 100, réel 120 : écart 20. Prévu 80, réel 65 : écart -15, valeur absolue 15. Prévu 50, réel 50 : 0.</p>
+      <h3>Erreurs fréquentes</h3>
+      <ul><li><b>Le signe a disparu alors qu'il comptait</b>Gardez une colonne avec l'écart signé, et ajoutez ABS dans une autre.</li><li><b>#VALEUR!</b>La cellule contient du texte.</li></ul>
+      <h3>Questions fréquentes</h3>
+      <h4>Comment calculer l'écart moyen sans signe ?</h4><p>=MOYENNE(D2:D4) sur la colonne des valeurs absolues.</p><h4>Comment savoir si un écart dépasse 10 dans un sens ou l'autre ?</h4><p>=SI(ABS(C2)&gt;10;&quot;À vérifier&quot;;&quot;OK&quot;).</p><h4>ABS change-t-il un nombre positif ?</h4><p>Non : il reste identique.</p>
+    </section>
+    <section class="also"><h2>Voir aussi</h2><div class="also-l"><a href="../mod/"><b>MOD</b><small>Le reste d'une division : utile pour repérer les nombres pairs.</small></a><a href="../ent-tronque/"><b>ENT et TRONQUE</b><small>Garder uniquement la partie entière d'un nombre.</small></a><a href="../si/"><b>SI</b><small>Afficher un résultat différent selon une condition.</small></a><a href="../pourcentages/"><b>Pourcentages</b><small>Calculer une évolution et une part du total.</small></a></div></section>
     <nav class="lnav" aria-label="Leçons voisines"><a href="../mod/"><small>← Précédente</small>MOD</a><a class="nx" id="nextLesson" href="../puissance-racine/"><small>Suivante →</small>PUISSANCE et RACINE</a></nav>
   </main>
 </div>

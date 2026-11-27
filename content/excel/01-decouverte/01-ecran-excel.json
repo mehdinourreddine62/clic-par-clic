@@ -7,22 +7,107 @@
  "syntaxe": "Colonne + ligne = adresse",
  "ruban": true,
  "arguments": [
-  ["Ruban","Toutes les commandes, rangées par onglets"],
-  ["Zone Nom","L'adresse de la cellule sélectionnée"],
-  ["Barre de formule","Le contenu réel de la cellule"],
-  ["Onglets de feuilles","Les différentes feuilles du classeur"]
+  [
+   "Ruban",
+   "Toutes les commandes, rangées par onglets"
+  ],
+  [
+   "Zone Nom",
+   "L'adresse de la cellule sélectionnée"
+  ],
+  [
+   "Barre de formule",
+   "Le contenu réel de la cellule"
+  ],
+  [
+   "Onglets de feuilles",
+   "Les différentes feuilles du classeur"
+  ]
  ],
  "grille": [
-  ["Produit","Prix"],
-  ["Stylo","1,20 €"],
-  ["Cahier","3,50 €"]
+  [
+   "Produit",
+   "Prix"
+  ],
+  [
+   "Stylo",
+   "1,20 €"
+  ],
+  [
+   "Cahier",
+   "3,50 €"
+  ]
  ],
+ "titreSeo": "L'écran d'Excel pour débutant : ruban, cellules, formules",
  "etapes": [
-  {"c":"A1","spot":"ribbon","t":"En haut, le ruban regroupe toutes les commandes, rangées par onglets."},
-  {"c":"B2","spot":"cell","t":"La feuille est une grille de cellules. Un clic sélectionne une cellule."},
-  {"c":"B2","spot":"cols rows","t":"Chaque cellule a une adresse : la lettre de sa colonne, puis le numéro de sa ligne. Ici, B2."},
-  {"c":"B2","spot":"namebox","t":"La zone Nom affiche l'adresse de la cellule sélectionnée."},
-  {"c":"B2","spot":"formula","t":"La barre de formule montre le contenu réel de la cellule."},
-  {"c":"B2","spot":"tabs","t":"En bas, les onglets permettent de passer d'une feuille à l'autre."}
+  {
+   "c": "A1",
+   "spot": "ribbon",
+   "t": "En haut, le ruban regroupe toutes les commandes, rangées par onglets."
+  },
+  {
+   "c": "B2",
+   "spot": "cell",
+   "t": "La feuille est une grille de cellules. Un clic sélectionne une cellule."
+  },
+  {
+   "c": "B2",
+   "spot": "cols rows",
+   "t": "Chaque cellule a une adresse : la lettre de sa colonne, puis le numéro de sa ligne. Ici, B2."
+  },
+  {
+   "c": "B2",
+   "spot": "namebox",
+   "t": "La zone Nom affiche l'adresse de la cellule sélectionnée."
+  },
+  {
+   "c": "B2",
+   "spot": "formula",
+   "t": "La barre de formule montre le contenu réel de la cellule."
+  },
+  {
+   "c": "B2",
+   "spot": "tabs",
+   "t": "En bas, les onglets permettent de passer d'une feuille à l'autre."
+  }
+ ],
+ "guide": {
+  "question": "Comment se repérer dans l'écran d'Excel ?",
+  "intro": "L'écran d'Excel comprend le ruban en haut, qui regroupe les commandes par onglets ; la feuille au centre, une grille de cellules ; la zone Nom, qui affiche l'adresse de la cellule sélectionnée ; la barre de formule, qui montre son contenu réel ; et en bas, les onglets des feuilles. Chaque cellule a une adresse : la lettre de sa colonne puis le numéro de sa ligne.",
+  "exemple": {
+   "titre": "À retenir",
+   "formule": "Colonne + ligne = adresse",
+   "explication": "La cellule à l'intersection de la colonne B et de la ligne 2 s'appelle B2 ; elle contient ici le prix du stylo, 1,20 €."
+  },
+  "erreurs": [
+   [
+    "La barre de formule a disparu",
+    "Affichage › cochez Barre de formule."
+   ],
+   [
+    "Le ruban est réduit",
+    "Double-cliquez sur un onglet pour le réafficher."
+   ]
+  ],
+  "faq": [
+   [
+    "Combien de lignes compte une feuille ?",
+    "1 048 576 lignes et 16 384 colonnes, jusqu'à XFD."
+   ],
+   [
+    "Pourquoi la cellule affiche un résultat et la barre une formule ?",
+    "La cellule montre le résultat ; la barre de formule montre le calcul."
+   ],
+   [
+    "Comment zoomer ?",
+    "Avec le curseur en bas à droite, ou Ctrl + molette de la souris."
+   ]
+  ]
+ },
+ "voirAussi": [
+  "ruban",
+  "saisir-des-donnees",
+  "selectionner",
+  "feuilles-du-classeur"
  ]
 }

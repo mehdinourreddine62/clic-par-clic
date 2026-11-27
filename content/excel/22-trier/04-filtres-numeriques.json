@@ -7,23 +7,133 @@
  "syntaxe": "Flèche de filtre › Filtres numériques",
  "ruban": true,
  "arguments": [
-  ["Supérieur à","Garde les valeurs au-dessus d'un seuil"],
-  ["Entre","Garde une fourchette"],
-  ["10 premiers","Garde les meilleures valeurs, en nombre réglable"]
+  [
+   "Supérieur à",
+   "Garde les valeurs au-dessus d'un seuil"
+  ],
+  [
+   "Entre",
+   "Garde une fourchette"
+  ],
+  [
+   "10 premiers",
+   "Garde les meilleures valeurs, en nombre réglable"
+  ]
  ],
  "grille": [
-  ["Produit","Ventes"],
-  ["Stylos","320"],
-  ["Cahiers","210"],
-  ["Classeurs","140"],
-  ["Trousses","260"],
-  ["Gommes","90"],
-  ["Règles","180"]
+  [
+   "Produit",
+   "Ventes"
+  ],
+  [
+   "Stylos",
+   "320"
+  ],
+  [
+   "Cahiers",
+   "210"
+  ],
+  [
+   "Classeurs",
+   "140"
+  ],
+  [
+   "Trousses",
+   "260"
+  ],
+  [
+   "Gommes",
+   "90"
+  ],
+  [
+   "Règles",
+   "180"
+  ]
  ],
+ "titreSeo": "Filtres numériques Excel : supérieur à, entre, 10 premiers",
  "etapes": [
-  {"c":"A1","tab":"Données","btn":"Filtrer","set":{"A1":"Produit ▾","B1":"Ventes ▾"},"t":"Activez le filtre sur le tableau."},
-  {"c":"B1","menu":"Flèche de Ventes › Filtres numériques › <b>Supérieur à…</b>","rule":"200","hide":[4,6,7],"t":"Filtres numériques › Supérieur à… 200 : seules les ventes au-dessus de 200 restent."},
-  {"c":"B1","menu":"Filtres numériques › <b>10 premiers…</b>","rule":"2","hide":[3,4,6,7],"t":"« 10 premiers », réglé sur 2 : les deux meilleures ventes, sans avoir à trier."},
-  {"c":"B1","menu":"Filtres numériques › <b>Entre…</b>","rule":"100 et 250","hide":[2,5,6],"t":"« Entre » garde une fourchette. Les filtres textuels et de dates fonctionnent de la même façon."}
+  {
+   "c": "A1",
+   "tab": "Données",
+   "btn": "Filtrer",
+   "set": {
+    "A1": "Produit ▾",
+    "B1": "Ventes ▾"
+   },
+   "t": "Activez le filtre sur le tableau."
+  },
+  {
+   "c": "B1",
+   "menu": "Flèche de Ventes › Filtres numériques › <b>Supérieur à…</b>",
+   "rule": "200",
+   "hide": [
+    4,
+    6,
+    7
+   ],
+   "t": "Filtres numériques › Supérieur à… 200 : seules les ventes au-dessus de 200 restent."
+  },
+  {
+   "c": "B1",
+   "menu": "Filtres numériques › <b>10 premiers…</b>",
+   "rule": "2",
+   "hide": [
+    3,
+    4,
+    6,
+    7
+   ],
+   "t": "« 10 premiers », réglé sur 2 : les deux meilleures ventes, sans avoir à trier."
+  },
+  {
+   "c": "B1",
+   "menu": "Filtres numériques › <b>Entre…</b>",
+   "rule": "100 et 250",
+   "hide": [
+    2,
+    5,
+    6
+   ],
+   "t": "« Entre » garde une fourchette. Les filtres textuels et de dates fonctionnent de la même façon."
+  }
+ ],
+ "guide": {
+  "question": "Comment filtrer des nombres supérieurs à une valeur dans Excel ?",
+  "intro": "Sur une colonne de nombres, la flèche de filtre propose Filtres numériques : Supérieur à, Inférieur à, Entre, 10 premiers, Au-dessus de la moyenne… Activez le filtre (Données › Filtrer), ouvrez la flèche, choisissez la condition et tapez la valeur. Les autres lignes sont masquées, pas supprimées.",
+  "exemple": {
+   "titre": "Exemple",
+   "formule": "Filtres numériques › Supérieur à… 200",
+   "explication": "Sur six produits, seuls stylos (320), trousses (260) et cahiers (210) restent. Avec 10 premiers réglé sur 2 : stylos et trousses."
+  },
+  "erreurs": [
+   [
+    "Filtres numériques n'apparaît pas",
+    "La colonne contient du texte : Excel propose alors Filtres textuels. Convertissez les nombres."
+   ],
+   [
+    "Une valeur égale au seuil disparaît",
+    "Supérieur à exclut le seuil : choisissez Supérieur ou égal à."
+   ]
+  ],
+  "faq": [
+   [
+    "Comment faire la somme des lignes visibles ?",
+    "=SOUS.TOTAL(9;B2:B7), qui ignore les lignes masquées."
+   ],
+   [
+    "Peut-on filtrer deux colonnes ?",
+    "Oui, les filtres se cumulent colonne par colonne."
+   ],
+   [
+    "Comment enlever tous les filtres ?",
+    "Données › Effacer, ou Ctrl + Maj + L pour retirer les flèches."
+   ]
+  ]
+ },
+ "voirAussi": [
+  "trier-et-filtrer",
+  "combiner-plusieurs-filtres",
+  "filtrer-par-couleur",
+  "filtre"
  ]
 }

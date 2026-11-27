@@ -3,15 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Nuances de couleurs – Excel en animation | Clic par clic</title>
-<meta name="description" content="Transformer un tableau de chiffres en carte de chaleur. Leçon Excel animée en 4 étapes, niveau débutant, gratuite.">
+<title>Nuances de couleurs dans Excel : carte de chaleur</title>
+<meta name="description" content="Les nuances de couleurs colorent chaque cellule selon sa valeur, du plus petit au plus grand : le tableau devient une carte de chaleur.">
 <link rel="canonical" href="https://mehdinourreddine62.github.io/clic-par-clic/excel/mfc-nuances-de-couleurs/">
 <meta name="robots" content="index,follow">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="Clic par clic">
-<meta property="og:title" content="Nuances de couleurs – Excel en animation | Clic par clic">
-<meta property="og:description" content="Transformer un tableau de chiffres en carte de chaleur. Leçon Excel animée en 4 étapes, niveau débutant, gratuite.">
+<meta property="og:title" content="Nuances de couleurs dans Excel : carte de chaleur">
+<meta property="og:description" content="Les nuances de couleurs colorent chaque cellule selon sa valeur, du plus petit au plus grand : le tableau devient une carte de chaleur.">
 <meta property="og:url" content="https://mehdinourreddine62.github.io/clic-par-clic/excel/mfc-nuances-de-couleurs/">
 <meta property="og:image" content="https://mehdinourreddine62.github.io/clic-par-clic/assets/og-excel.png">
 <meta property="og:image:width" content="1200">
@@ -61,7 +61,18 @@
     <div class="pband" id="pband" hidden></div>
     <details class="sx"><summary>Syntaxe <code>Mise en forme conditionnelle › Nuances de couleurs</code></summary><dl><dt>Échelle</dt><dd>Un dégradé entre la plus petite et la plus grande valeur</dd><dt>Sens</dt><dd>À choisir selon que les grandes valeurs sont bonnes ou mauvaises</dd></dl></details>
     <details class="sx"><summary>Résumé écrit des étapes</summary><ol class="steps"><li>Un tableau de fréquentation : difficile d'y voir quelque chose. Sélectionnez les valeurs.</li><li>Nuances de couleurs : du rouge pour les plus petites valeurs au vert pour les plus grandes.</li><li>Le tableau se lit comme une carte : le créneau de 12 h ressort tout de suite.</li><li>Choisissez le sens selon le sujet : pour des retards ou des coûts, le rouge doit signaler les valeurs élevées.</li></ol></details>
-    <section class="also"><h2>Voir aussi</h2><div class="also-l"><a href="../mise-en-forme-conditionnelle/"><b>Mise en forme conditionnelle</b><small>Colorer automatiquement les cellules selon leur valeur.</small></a><a href="../mfc-barres-de-donnees/"><b>Barres de données</b><small>Une barre dans chaque cellule, proportionnelle à sa valeur.</small></a><a href="../mfc-jeux-d-icones/"><b>Jeux d'icônes</b><small>Une flèche ou un feu tricolore à côté de chaque valeur.</small></a></div></section>
+    <section class="guide">
+      <h2>Comment faire une carte de chaleur dans Excel ?</h2>
+      <p>Les nuances de couleurs colorent chaque cellule selon sa valeur, du plus petit au plus grand : le tableau devient une carte de chaleur. Sélectionnez les valeurs, puis Accueil › Mise en forme conditionnelle › Nuances de couleurs. Choisissez le sens selon le sujet : pour des coûts ou des retards, le rouge doit signaler les valeurs élevées.</p>
+      <h3>Exemple</h3>
+      <p><code class="gx">Mise en forme conditionnelle › Nuances de couleurs</code></p>
+      <p>Fréquentation par jour et par heure, de 10 à 60 : le créneau de 12 h ressort en vert, le maximum étant mercredi à 12 h (60).</p>
+      <h3>Erreurs fréquentes</h3>
+      <ul><li><b>Une colonne de totaux écrase les couleurs</b>Elle a été incluse dans la sélection : appliquez la règle aux seules valeurs.</li><li><b>Les couleurs sont dans le mauvais sens</b>Choisissez l'échelle inverse (vert-jaune-rouge au lieu de rouge-jaune-vert).</li></ul>
+      <h3>Questions fréquentes</h3>
+      <h4>Peut-on choisir ses couleurs ?</h4><p>Oui : Gérer les règles › Modifier › couleur du minimum, du point médian et du maximum.</p><h4>Comment comparer deux tableaux ?</h4><p>Fixez les mêmes valeurs minimum et maximum dans les deux règles.</p><h4>Comment supprimer les couleurs ?</h4><p>Mise en forme conditionnelle › Effacer les règles.</p>
+    </section>
+    <section class="also"><h2>Voir aussi</h2><div class="also-l"><a href="../mfc-barres-de-donnees/"><b>Barres de données</b><small>Une barre dans chaque cellule, proportionnelle à sa valeur.</small></a><a href="../mfc-jeux-d-icones/"><b>Jeux d'icônes</b><small>Une flèche ou un feu tricolore à côté de chaque valeur.</small></a><a href="../mise-en-forme-conditionnelle/"><b>Mise en forme conditionnelle</b><small>Colorer automatiquement les cellules selon leur valeur.</small></a><a href="../tcd-lignes-et-colonnes/"><b>Lignes et colonnes</b><small>Croiser deux informations dans le même tableau.</small></a></div></section>
     <nav class="lnav" aria-label="Leçons voisines"><a href="../mfc-barres-de-donnees/"><small>← Précédente</small>Barres de données</a><a class="nx" id="nextLesson" href="../mfc-jeux-d-icones/"><small>Suivante →</small>Jeux d'icônes</a></nav>
   </main>
 </div>

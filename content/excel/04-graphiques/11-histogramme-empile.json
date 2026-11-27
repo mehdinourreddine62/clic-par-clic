@@ -6,23 +6,136 @@
  "motsCles": "empilé histogramme total composition cumul séries graphique",
  "syntaxe": "Modifier le type de graphique › Histogramme empilé",
  "ruban": true,
- "graphique": {"type":"col","labels":"A2:A5","series":["B2:B5","C2:C5"],"title":"Ventes par canal","legend":true,"at":"E2:I8"},
+ "graphique": {
+  "type": "col",
+  "labels": "A2:A5",
+  "series": [
+   "B2:B5",
+   "C2:C5"
+  ],
+  "title": "Ventes par canal",
+  "legend": true,
+  "at": "E2:I8"
+ },
  "arguments": [
-  ["Barre entière","Le total de la catégorie"],
-  ["Chaque couleur","La part d'une série dans ce total"],
-  ["Limite","Seule la série du bas se compare facilement"]
+  [
+   "Barre entière",
+   "Le total de la catégorie"
+  ],
+  [
+   "Chaque couleur",
+   "La part d'une série dans ce total"
+  ],
+  [
+   "Limite",
+   "Seule la série du bas se compare facilement"
+  ]
  ],
  "grille": [
-  ["Mois","Boutique","Internet"],
-  ["Janvier","80","40"],
-  ["Février","70","60"],
-  ["Mars","90","90"],
-  ["Avril","60","130"]
+  [
+   "Mois",
+   "Boutique",
+   "Internet"
+  ],
+  [
+   "Janvier",
+   "80",
+   "40"
+  ],
+  [
+   "Février",
+   "70",
+   "60"
+  ],
+  [
+   "Mars",
+   "90",
+   "90"
+  ],
+  [
+   "Avril",
+   "60",
+   "130"
+  ]
  ],
+ "titreSeo": "Histogramme empilé dans Excel : total et composition",
  "etapes": [
-  {"c":"A1","sel":"A1:C5","drag":1,"tab":"Insertion","btn":"Histogramme","chart":1,"t":"Côte à côte, on compare les deux canaux, mais on ne voit pas le total du mois."},
-  {"c":"A1","sel":"A1:C5","tab":"Création de graphique","btn":"Modifier le type de graphique","chart":{"type":"stack"},"t":"Empilées, les barres montrent le total de chaque mois et ce qui le compose."},
-  {"c":"A5","sel":"A5:C5","tab":"Création de graphique","chart":{"hi":3},"mark":"C5","t":"Avril est le meilleur mois, et c'est Internet qui fait la différence."},
-  {"c":"A1","tab":"Création de graphique","chart":{"hi":null,"dlabels":true},"t":"Limite à connaître : seule la série du bas se compare facilement d'un mois à l'autre."}
+  {
+   "c": "A1",
+   "sel": "A1:C5",
+   "drag": 1,
+   "tab": "Insertion",
+   "btn": "Histogramme",
+   "chart": 1,
+   "t": "Côte à côte, on compare les deux canaux, mais on ne voit pas le total du mois."
+  },
+  {
+   "c": "A1",
+   "sel": "A1:C5",
+   "tab": "Création de graphique",
+   "btn": "Modifier le type de graphique",
+   "chart": {
+    "type": "stack"
+   },
+   "t": "Empilées, les barres montrent le total de chaque mois et ce qui le compose."
+  },
+  {
+   "c": "A5",
+   "sel": "A5:C5",
+   "tab": "Création de graphique",
+   "chart": {
+    "hi": 3
+   },
+   "mark": "C5",
+   "t": "Avril est le meilleur mois, et c'est Internet qui fait la différence."
+  },
+  {
+   "c": "A1",
+   "tab": "Création de graphique",
+   "chart": {
+    "hi": null,
+    "dlabels": true
+   },
+   "t": "Limite à connaître : seule la série du bas se compare facilement d'un mois à l'autre."
+  }
+ ],
+ "guide": {
+  "question": "Comment faire un histogramme empilé dans Excel ?",
+  "intro": "Un histogramme empilé superpose plusieurs séries dans une même barre : la hauteur totale donne le total, chaque couleur montre une part. Sélectionnez les données, puis Insertion › Histogramme › Histogramme empilé, ou Modifier le type de graphique sur un graphique existant. Seule la série du bas se compare facilement d'une barre à l'autre.",
+  "exemple": {
+   "titre": "Exemple",
+   "formule": "Modifier le type de graphique › Histogramme empilé",
+   "explication": "Ventes en boutique et sur Internet : janvier 120, février 130, mars 180, avril 190. En avril, Internet (130) dépasse la boutique (60)."
+  },
+  "erreurs": [
+   [
+    "Le total n'apparaît pas",
+    "Excel n'affiche pas le total d'un empilement : ajoutez une série Total en courbe sans trait, avec étiquettes."
+   ],
+   [
+    "Les séries sont inversées",
+    "Sélectionner les données : changez l'ordre des séries avec les flèches."
+   ]
+  ],
+  "faq": [
+   [
+    "Empilé ou empilé 100 % ?",
+    "Empilé montre les montants ; empilé 100 % montre seulement les parts."
+   ],
+   [
+    "Comment comparer les deux canaux ?",
+    "Un histogramme groupé les met côte à côte."
+   ],
+   [
+    "Combien de séries empiler ?",
+    "Trois ou quatre au maximum, sinon le graphique devient illisible."
+   ]
+  ]
+ },
+ "voirAussi": [
+  "histogramme",
+  "graphique-plusieurs-series",
+  "couleurs-du-graphique",
+  "graphique-combine"
  ]
 }

@@ -3,15 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>SEQUENCE – Excel en animation | Clic par clic</title>
-<meta name="description" content="Générer automatiquement une suite de nombres. Leçon Excel animée en 4 étapes, niveau avancé, gratuite.">
+<title>SEQUENCE dans Excel : générer une suite de nombres</title>
+<meta name="description" content="SEQUENCE génère une suite de nombres qui se répand automatiquement dans les cellules voisines. Ses arguments ">
 <link rel="canonical" href="https://mehdinourreddine62.github.io/clic-par-clic/excel/sequence/">
 <meta name="robots" content="index,follow">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="Clic par clic">
-<meta property="og:title" content="SEQUENCE – Excel en animation | Clic par clic">
-<meta property="og:description" content="Générer automatiquement une suite de nombres. Leçon Excel animée en 4 étapes, niveau avancé, gratuite.">
+<meta property="og:title" content="SEQUENCE dans Excel : générer une suite de nombres">
+<meta property="og:description" content="SEQUENCE génère une suite de nombres qui se répand automatiquement dans les cellules voisines. Ses arguments ">
 <meta property="og:url" content="https://mehdinourreddine62.github.io/clic-par-clic/excel/sequence/">
 <meta property="og:image" content="https://mehdinourreddine62.github.io/clic-par-clic/assets/og-excel.png">
 <meta property="og:image:width" content="1200">
@@ -61,7 +61,18 @@
     <div class="pband" id="pband" hidden></div>
     <details class="sx"><summary>Syntaxe <code>=SEQUENCE(lignes; [colonnes]; [début]; [pas])</code></summary><dl><dt>lignes</dt><dd>Le nombre de lignes à générer</dd><dt>colonnes</dt><dd>Facultatif : le nombre de colonnes</dd><dt>début; pas</dt><dd>Facultatifs : la valeur de départ et l'écart entre deux valeurs</dd><dt>Version</dt><dd>Excel 2021 et Microsoft 365</dd></dl></details>
     <details class="sx"><summary>Résumé écrit des étapes</summary><ol class="steps"><li>SEQUENCE(5) génère les nombres de 1 à 5, qui se propagent vers le bas.</li><li>Avec deux arguments, on obtient un tableau : 3 lignes et 4 colonnes.</li><li>Les deux derniers arguments fixent le départ et le pas : on commence à 10 et on avance de 5.</li><li>Pratique pour numéroter une liste, ou générer des dates : =AUJOURDHUI()+SEQUENCE(7)-1 donne les 7 prochains jours.</li></ol></details>
-    <section class="also"><h2>Voir aussi</h2><div class="also-l"><a href="../filtre/"><b>FILTRE</b><small>Extraire les lignes d'un tableau qui respectent une condition.</small></a><a href="../unique-trier/"><b>UNIQUE et TRIER</b><small>Obtenir une liste sans doublons, classée automatiquement.</small></a><a href="../prendre-exclure/"><b>PRENDRE et EXCLURE</b><small>Garder ou retirer les premières ou dernières lignes d'un tableau.</small></a></div></section>
+    <section class="guide">
+      <h2>Comment générer automatiquement une suite de nombres avec SEQUENCE ?</h2>
+      <p>SEQUENCE génère une suite de nombres qui se répand automatiquement dans les cellules voisines. Ses arguments : nombre de lignes, nombre de colonnes, valeur de départ et pas. Elle sert à numéroter une liste ou à créer une série de dates, sans recopier. Disponible dans Excel 365 et 2021.</p>
+      <h3>Exemple</h3>
+      <p><code class="gx">=SEQUENCE(4;1;10;5)</code></p>
+      <p>Renvoie 10, 15, 20, 25 sur quatre lignes. =SEQUENCE(5) donne 1 à 5 ; =SEQUENCE(3;4) remplit un tableau de 3 lignes et 4 colonnes, de 1 à 12.</p>
+      <h3>Erreurs fréquentes</h3>
+      <ul><li><b>#PROPAGATION!</b>Une cellule de la zone de résultat n'est pas vide : libérez la place.</li><li><b>Les dates s'affichent en nombres</b>Appliquez le format Date courte à la zone.</li></ul>
+      <h3>Questions fréquentes</h3>
+      <h4>Comment générer les 7 prochains jours ?</h4><p>=AUJOURDHUI()+SEQUENCE(7)-1.</p><h4>Comment numéroter une liste qui s'allonge ?</h4><p>=SEQUENCE(NBVAL(A2:A100)).</p><h4>Peut-on compter à rebours ?</h4><p>Oui, avec un pas négatif : =SEQUENCE(5;1;5;-1).</p>
+    </section>
+    <section class="also"><h2>Voir aussi</h2><div class="also-l"><a href="../erreur-propagation/"><b>Corriger #PROPAGATION!</b><small>Libérer la place dont une formule dynamique a besoin.</small></a><a href="../recopier-une-serie/"><b>Recopier une série</b><small>Faire écrire à Excel une suite de nombres, de jours ou de dates.</small></a><a href="../let/"><b>LET</b><small>Nommer un calcul pour ne l'écrire qu'une fois.</small></a><a href="../unique-trier/"><b>UNIQUE et TRIER</b><small>Obtenir une liste sans doublons, classée automatiquement.</small></a></div></section>
     <nav class="lnav" aria-label="Leçons voisines"><a href="../unique-trier/"><small>← Précédente</small>UNIQUE et TRIER</a><a class="nx" id="nextLesson" href="../prendre-exclure/"><small>Suivante →</small>PRENDRE et EXCLURE</a></nav>
   </main>
 </div>

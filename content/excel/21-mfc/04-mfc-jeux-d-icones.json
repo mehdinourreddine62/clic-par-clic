@@ -7,22 +7,119 @@
  "syntaxe": "Mise en forme conditionnelle › Jeux d'icônes",
  "ruban": true,
  "arguments": [
-  ["Icône","Choisie selon la valeur de la cellule"],
-  ["Par défaut","Excel découpe la plage en trois tiers"],
-  ["Gérer les règles","Pour fixer ses propres seuils"]
+  [
+   "Icône",
+   "Choisie selon la valeur de la cellule"
+  ],
+  [
+   "Par défaut",
+   "Excel découpe la plage en trois tiers"
+  ],
+  [
+   "Gérer les règles",
+   "Pour fixer ses propres seuils"
+  ]
  ],
  "grille": [
-  ["Produit","Évolution"],
-  ["Stylos","12 %"],
-  ["Cahiers","-2 %"],
-  ["Classeurs","3 %"],
-  ["Trousses","8 %"],
-  ["Gommes","-11 %"]
+  [
+   "Produit",
+   "Évolution"
+  ],
+  [
+   "Stylos",
+   "12 %"
+  ],
+  [
+   "Cahiers",
+   "-2 %"
+  ],
+  [
+   "Classeurs",
+   "3 %"
+  ],
+  [
+   "Trousses",
+   "8 %"
+  ],
+  [
+   "Gommes",
+   "-11 %"
+  ]
  ],
+ "titreSeo": "Jeux d'icônes dans Excel : flèches et feux tricolores",
  "etapes": [
-  {"c":"B2","sel":"B2:B6","drag":1,"menu":"Mise en forme conditionnelle › <b>Jeux d'icônes</b> › 3 flèches","icons":{"r":"B2:B6"},"t":"Jeux d'icônes : une flèche verte, jaune ou rouge s'ajoute selon la valeur."},
-  {"c":"B3","tab":"Accueil","mark":"A3","t":"Attention : par défaut, Excel découpe en trois tiers. Les cahiers, en baisse de 2 %, reçoivent une flèche jaune."},
-  {"c":"B2","sel":"B2:B6","menu":"Mise en forme conditionnelle › Gérer les règles › <b>Modifier la règle</b>","rule":"> 0","icons":{"r":"B2:B6","hi":0.001,"lo":0},"t":"Dans Gérer les règles, fixez vos propres seuils : vert au-dessus de zéro, rouge en dessous."},
-  {"c":"B3","tab":"Accueil","mark":"A3 A4","t":"Les icônes disent maintenant la vérité : hausse en vert, baisse en rouge."}
+  {
+   "c": "B2",
+   "sel": "B2:B6",
+   "drag": 1,
+   "menu": "Mise en forme conditionnelle › <b>Jeux d'icônes</b> › 3 flèches",
+   "icons": {
+    "r": "B2:B6"
+   },
+   "t": "Jeux d'icônes : une flèche verte, jaune ou rouge s'ajoute selon la valeur."
+  },
+  {
+   "c": "B3",
+   "tab": "Accueil",
+   "mark": "A3",
+   "t": "Attention : par défaut, Excel découpe en trois tiers. Les cahiers, en baisse de 2 %, reçoivent une flèche jaune."
+  },
+  {
+   "c": "B2",
+   "sel": "B2:B6",
+   "menu": "Mise en forme conditionnelle › Gérer les règles › <b>Modifier la règle</b>",
+   "rule": "> 0",
+   "icons": {
+    "r": "B2:B6",
+    "hi": 0.001,
+    "lo": 0
+   },
+   "t": "Dans Gérer les règles, fixez vos propres seuils : vert au-dessus de zéro, rouge en dessous."
+  },
+  {
+   "c": "B3",
+   "tab": "Accueil",
+   "mark": "A3 A4",
+   "t": "Les icônes disent maintenant la vérité : hausse en vert, baisse en rouge."
+  }
+ ],
+ "guide": {
+  "question": "Comment ajouter des flèches ou des icônes selon la valeur dans Excel ?",
+  "intro": "Les jeux d'icônes ajoutent une flèche, un feu tricolore ou un symbole à côté de chaque valeur, selon des seuils. Accueil › Mise en forme conditionnelle › Jeux d'icônes. Par défaut, Excel découpe les valeurs en trois tiers, ce qui peut tromper : fixez vos propres seuils dans Gérer les règles.",
+  "exemple": {
+   "titre": "Exemple",
+   "formule": "Gérer les règles › Type : Nombre › Valeur : 0",
+   "explication": "Évolutions de -11 % à 12 % : avec des seuils à 0, les hausses (stylos, classeurs, trousses) sont en vert et les baisses (cahiers, gommes) en rouge."
+  },
+  "erreurs": [
+   [
+    "Une baisse reçoit une flèche jaune",
+    "Les seuils par défaut sont des centiles : remplacez-les par des nombres fixes."
+   ],
+   [
+    "Les icônes n'apparaissent pas",
+    "Les valeurs sont du texte : convertissez-les en nombres."
+   ]
+  ],
+  "faq": [
+   [
+    "Comment n'afficher que l'icône ?",
+    "Dans Modifier la règle, cochez Afficher l'icône uniquement."
+   ],
+   [
+    "Comment inverser les couleurs ?",
+    "Bouton Inverser l'ordre des icônes, utile pour des coûts ou des retards."
+   ],
+   [
+    "Peut-on mélanger les icônes ?",
+    "Oui, chaque seuil peut recevoir une icône choisie dans la liste."
+   ]
+  ]
+ },
+ "voirAussi": [
+  "mfc-barres-de-donnees",
+  "mfc-nuances-de-couleurs",
+  "mise-en-forme-conditionnelle",
+  "pourcentages"
  ]
 }

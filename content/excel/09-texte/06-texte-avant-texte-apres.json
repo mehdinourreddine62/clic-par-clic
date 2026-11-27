@@ -6,18 +6,98 @@
  "motsCles": "texte.avant texte.apres extraire séparateur arobase domaine découper",
  "syntaxe": "=TEXTE.AVANT(texte; \"@\")",
  "arguments": [
-  ["texte","La cellule à découper"],
-  ["délimiteur","Le caractère qui sert de repère"],
-  ["Version","Microsoft 365"]
+  [
+   "texte",
+   "La cellule à découper"
+  ],
+  [
+   "délimiteur",
+   "Le caractère qui sert de repère"
+  ],
+  [
+   "Version",
+   "Microsoft 365"
+  ]
  ],
  "grille": [
-  ["E-mail","Identifiant","Domaine"],
-  ["lea.martin@ecole.fr","",""],
-  ["tom@campus.org","",""]
+  [
+   "E-mail",
+   "Identifiant",
+   "Domaine"
+  ],
+  [
+   "lea.martin@ecole.fr",
+   "",
+   ""
+  ],
+  [
+   "tom@campus.org",
+   "",
+   ""
+  ]
  ],
+ "titreSeo": "TEXTE.AVANT et TEXTE.APRES dans Excel",
  "etapes": [
-  {"c":"B2","f":"=TEXTE.AVANT(A2;\"@\")","v":"lea.martin","fill":{"B3":"tom"},"t":"TEXTE.AVANT renvoie tout ce qui précède le caractère indiqué."},
-  {"c":"C2","f":"=TEXTE.APRES(A2;\"@\")","v":"ecole.fr","fill":{"C3":"campus.org"},"t":"TEXTE.APRES renvoie tout ce qui le suit."},
-  {"c":"C2","t":"Plus simple que CHERCHE et GAUCHE, mais réservé aux versions récentes d'Excel."}
+  {
+   "c": "B2",
+   "f": "=TEXTE.AVANT(A2;\"@\")",
+   "v": "lea.martin",
+   "fill": {
+    "B3": "tom"
+   },
+   "t": "TEXTE.AVANT renvoie tout ce qui précède le caractère indiqué."
+  },
+  {
+   "c": "C2",
+   "f": "=TEXTE.APRES(A2;\"@\")",
+   "v": "ecole.fr",
+   "fill": {
+    "C3": "campus.org"
+   },
+   "t": "TEXTE.APRES renvoie tout ce qui le suit."
+  },
+  {
+   "c": "C2",
+   "t": "Plus simple que CHERCHE et GAUCHE, mais réservé aux versions récentes d'Excel."
+  }
+ ],
+ "guide": {
+  "question": "Comment extraire le texte avant ou après un caractère dans Excel ?",
+  "intro": "TEXTE.AVANT (TEXTBEFORE en anglais) renvoie tout ce qui précède un caractère ou un mot ; TEXTE.APRES (TEXTAFTER) renvoie tout ce qui le suit. Elles remplacent les combinaisons de CHERCHE et GAUCHE, mais n'existent que dans Excel 365 et 2024.",
+  "exemple": {
+   "titre": "Exemple",
+   "formule": "=TEXTE.AVANT(A2;\"@\")",
+   "explication": "lea.martin@ecole.fr donne lea.martin ; =TEXTE.APRES(A2;\"@\") donne ecole.fr."
+  },
+  "erreurs": [
+   [
+    "#NOM?",
+    "La version d'Excel est trop ancienne : utilisez CHERCHE avec GAUCHE ou DROITE."
+   ],
+   [
+    "#N/A",
+    "Le séparateur est absent du texte : ajoutez un argument si_introuvable, ou SIERREUR."
+   ]
+  ],
+  "faq": [
+   [
+    "Comment viser le deuxième tiret ?",
+    "Ajoutez le numéro de l'occurrence : =TEXTE.AVANT(A2;\"-\";2)."
+   ],
+   [
+    "Comment partir de la fin ?",
+    "Avec un numéro négatif : -1 désigne le dernier séparateur."
+   ],
+   [
+    "Peut-on tout découper d'un coup ?",
+    "FRACTIONNER.TEXTE répartit les morceaux dans plusieurs colonnes."
+   ]
+  ]
+ },
+ "voirAussi": [
+  "cherche",
+  "gauche-droite-stxt",
+  "convertir-texte-en-colonnes",
+  "joindre-texte"
  ]
 }

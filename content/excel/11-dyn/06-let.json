@@ -6,20 +6,106 @@
  "motsCles": "let variable nommer calcul formule lisible simplifier",
  "syntaxe": "=LET(nom; valeur; calcul)",
  "arguments": [
-  ["nom","Le nom donné au calcul intermédiaire"],
-  ["valeur","Le calcul à nommer"],
-  ["calcul","La formule finale, qui utilise le nom"],
-  ["Version","Excel 2021 et Microsoft 365"]
+  [
+   "nom",
+   "Le nom donné au calcul intermédiaire"
+  ],
+  [
+   "valeur",
+   "Le calcul à nommer"
+  ],
+  [
+   "calcul",
+   "La formule finale, qui utilise le nom"
+  ],
+  [
+   "Version",
+   "Excel 2021 et Microsoft 365"
+  ]
  ],
  "grille": [
-  ["Prix HT","TVA","Remise","Prix final"],
-  ["100","20 %","10 %",""],
-  ["80","20 %","10 %",""]
+  [
+   "Prix HT",
+   "TVA",
+   "Remise",
+   "Prix final"
+  ],
+  [
+   "100",
+   "20 %",
+   "10 %",
+   ""
+  ],
+  [
+   "80",
+   "20 %",
+   "10 %",
+   ""
+  ]
  ],
+ "titreSeo": "LET dans Excel : nommer un calcul dans une formule",
  "etapes": [
-  {"c":"D2","f":"=SI(A2*(1+B2)>100;A2*(1+B2)*(1-C2);A2*(1+B2))","v":"108","t":"Remise de 10 % au-dessus de 100 € TTC. Le prix TTC est calculé trois fois : long et facile à mal recopier."},
-  {"c":"D2","f":"=LET(ttc;A2*(1+B2);SI(ttc>100;ttc*(1-C2);ttc))","v":"108","t":"LET donne un nom au calcul, ici ttc. On l'écrit une fois, on l'utilise autant de fois que nécessaire."},
-  {"c":"D2","fill":{"D3":"96"},"t":"Le résultat est identique, mais la formule se lit presque comme une phrase."},
-  {"c":"D2","t":"On peut nommer plusieurs calculs à la suite. Ces noms n'existent qu'à l'intérieur de la formule."}
+  {
+   "c": "D2",
+   "f": "=SI(A2*(1+B2)>100;A2*(1+B2)*(1-C2);A2*(1+B2))",
+   "v": "108",
+   "t": "Remise de 10 % au-dessus de 100 € TTC. Le prix TTC est calculé trois fois : long et facile à mal recopier."
+  },
+  {
+   "c": "D2",
+   "f": "=LET(ttc;A2*(1+B2);SI(ttc>100;ttc*(1-C2);ttc))",
+   "v": "108",
+   "t": "LET donne un nom au calcul, ici ttc. On l'écrit une fois, on l'utilise autant de fois que nécessaire."
+  },
+  {
+   "c": "D2",
+   "fill": {
+    "D3": "96"
+   },
+   "t": "Le résultat est identique, mais la formule se lit presque comme une phrase."
+  },
+  {
+   "c": "D2",
+   "t": "On peut nommer plusieurs calculs à la suite. Ces noms n'existent qu'à l'intérieur de la formule."
+  }
+ ],
+ "guide": {
+  "question": "À quoi sert la fonction LET dans Excel ?",
+  "intro": "LET donne un nom à un calcul à l'intérieur d'une formule : on l'écrit une seule fois, puis on réutilise ce nom. La formule devient plus courte, plus lisible et plus rapide. Les noms n'existent qu'à l'intérieur de la formule. LET est disponible dans Excel 365 et 2021.",
+  "exemple": {
+   "titre": "Exemple",
+   "formule": "=LET(ttc;A2*(1+B2);SI(ttc>100;ttc*(1-C2);ttc))",
+   "explication": "100 € HT avec 20 % de TVA donne 120 € TTC, au-dessus de 100 € : remise de 10 %, prix final 108 €. Pour 80 € HT : 96 € TTC, sans remise."
+  },
+  "erreurs": [
+   [
+    "#NOM?",
+    "Un nom contient un espace ou ressemble à une adresse de cellule (TVA1, par exemple) : choisissez ttc ou prix_ttc."
+   ],
+   [
+    "Le nombre d'arguments est incorrect",
+    "Chaque nom doit être suivi de sa valeur, et le dernier argument est le calcul final."
+   ]
+  ],
+  "faq": [
+   [
+    "Peut-on nommer plusieurs calculs ?",
+    "Oui : =LET(ttc;…;remise;…;calcul_final)."
+   ],
+   [
+    "LET remplace-t-il les noms de plage ?",
+    "Non : un nom de plage vaut pour tout le classeur, un nom LET pour une seule formule."
+   ],
+   [
+    "Quel intérêt si le résultat est le même ?",
+    "Une formule plus courte, moins d'erreurs de recopie, et un calcul fait une seule fois."
+   ]
+  ]
+ },
+ "voirAussi": [
+  "si",
+  "nommer-une-plage",
+  "lambda",
+  "tva-ht-et-ttc"
  ]
 }

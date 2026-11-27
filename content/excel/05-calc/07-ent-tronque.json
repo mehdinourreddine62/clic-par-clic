@@ -6,18 +6,102 @@
  "motsCles": "entier partie entière tronquer décimales",
  "syntaxe": "=ENT(nombre)",
  "arguments": [
-  ["ENT","L'entier immédiatement inférieur"],
-  ["TRONQUE","Supprime les décimales, sans arrondir"]
+  [
+   "ENT",
+   "L'entier immédiatement inférieur"
+  ],
+  [
+   "TRONQUE",
+   "Supprime les décimales, sans arrondir"
+  ]
  ],
  "grille": [
-  ["Valeur","ENT","TRONQUE"],
-  ["7,8","",""],
-  ["3,2","",""],
-  ["-7,8","",""]
+  [
+   "Valeur",
+   "ENT",
+   "TRONQUE"
+  ],
+  [
+   "7,8",
+   "",
+   ""
+  ],
+  [
+   "3,2",
+   "",
+   ""
+  ],
+  [
+   "-7,8",
+   "",
+   ""
+  ]
  ],
+ "titreSeo": "ENT et TRONQUE dans Excel : garder la partie entière",
  "etapes": [
-  {"c":"B2","f":"=ENT(A2)","v":"7","fill":{"B3":"3","B4":"-8"},"t":"ENT renvoie l'entier inférieur."},
-  {"c":"C2","f":"=TRONQUE(A2)","v":"7","fill":{"C3":"3","C4":"-7"},"t":"TRONQUE coupe simplement les décimales."},
-  {"c":"A4","mark":"B4 C4","t":"La différence se voit sur les nombres négatifs : -8 pour ENT, -7 pour TRONQUE."}
+  {
+   "c": "B2",
+   "f": "=ENT(A2)",
+   "v": "7",
+   "fill": {
+    "B3": "3",
+    "B4": "-8"
+   },
+   "t": "ENT renvoie l'entier inférieur."
+  },
+  {
+   "c": "C2",
+   "f": "=TRONQUE(A2)",
+   "v": "7",
+   "fill": {
+    "C3": "3",
+    "C4": "-7"
+   },
+   "t": "TRONQUE coupe simplement les décimales."
+  },
+  {
+   "c": "A4",
+   "mark": "B4 C4",
+   "t": "La différence se voit sur les nombres négatifs : -8 pour ENT, -7 pour TRONQUE."
+  }
+ ],
+ "guide": {
+  "question": "Quelle différence entre ENT et TRONQUE dans Excel ?",
+  "intro": "ENT (INT en anglais) renvoie l'entier inférieur ou égal au nombre ; TRONQUE (TRUNC) coupe simplement les décimales. Pour les nombres positifs, le résultat est identique ; la différence apparaît sur les négatifs. Aucune des deux n'arrondit : pour arrondir, utilisez ARRONDI.",
+  "exemple": {
+   "titre": "Exemple",
+   "formule": "=ENT(A2)   =TRONQUE(A2)",
+   "explication": "7,8 donne 7 avec les deux ; 3,2 donne 3 ; mais -7,8 donne -8 avec ENT et -7 avec TRONQUE."
+  },
+  "erreurs": [
+   [
+    "Le résultat semble arrondi",
+    "Le format de cellule masque les décimales : vérifiez la valeur réelle dans la barre de formule."
+   ],
+   [
+    "#VALEUR!",
+    "Le nombre est saisi comme texte."
+   ]
+  ],
+  "faq": [
+   [
+    "Comment garder une décimale ?",
+    "=TRONQUE(A2;1) coupe après la première décimale."
+   ],
+   [
+    "Comment garder seulement la partie décimale ?",
+    "=A2-ENT(A2)."
+   ],
+   [
+    "ENT ou ARRONDI ?",
+    "ENT coupe toujours vers le bas ; ARRONDI va au plus proche."
+   ]
+  ]
+ },
+ "voirAussi": [
+  "arrondi",
+  "arrondi-sup-inf",
+  "mod",
+  "abs"
  ]
 }

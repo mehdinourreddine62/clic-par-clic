@@ -6,19 +6,129 @@
  "motsCles": "feuille onglet classeur renommer ajouter feuil1",
  "syntaxe": "Un classeur = plusieurs feuilles",
  "arguments": [
-  ["+","Ajoute une feuille"],
-  ["Double-clic sur l'onglet","Renomme la feuille"],
-  ["Clic sur l'onglet","Affiche la feuille"]
+  [
+   "+",
+   "Ajoute une feuille"
+  ],
+  [
+   "Double-clic sur l'onglet",
+   "Renomme la feuille"
+  ],
+  [
+   "Clic sur l'onglet",
+   "Affiche la feuille"
+  ]
  ],
  "grille": [
-  ["Mois","Ventes"],
-  ["Janvier","1 200"],
-  ["Février","950"]
+  [
+   "Mois",
+   "Ventes"
+  ],
+  [
+   "Janvier",
+   "1 200"
+  ],
+  [
+   "Février",
+   "950"
+  ]
  ],
+ "titreSeo": "Ajouter et renommer une feuille Excel",
  "etapes": [
-  {"c":"A1","spot":"tabs","t":"Un classeur peut contenir plusieurs feuilles. Leurs onglets sont en bas."},
-  {"c":"A1","sheets":{"list":["Feuil1","Feuil2"],"on":1},"set":{"A1":"","B1":"","A2":"","B2":"","A3":"","B3":""},"spot":"tabs","t":"Le bouton + ajoute une nouvelle feuille, vide."},
-  {"c":"A1","sheets":{"list":["Feuil1","Dépenses"],"on":1},"keys":"Double-clic","t":"Double-cliquez sur un onglet pour le renommer."},
-  {"c":"A1","sheets":{"list":["Ventes","Dépenses"],"on":0},"set":{"A1":"Mois","B1":"Ventes","A2":"Janvier","B2":"1 200","A3":"Février","B3":"950"},"t":"Un clic sur un onglet affiche sa feuille. Donnez un nom clair à chacune."}
+  {
+   "c": "A1",
+   "spot": "tabs",
+   "t": "Un classeur peut contenir plusieurs feuilles. Leurs onglets sont en bas."
+  },
+  {
+   "c": "A1",
+   "sheets": {
+    "list": [
+     "Feuil1",
+     "Feuil2"
+    ],
+    "on": 1
+   },
+   "set": {
+    "A1": "",
+    "B1": "",
+    "A2": "",
+    "B2": "",
+    "A3": "",
+    "B3": ""
+   },
+   "spot": "tabs",
+   "t": "Le bouton + ajoute une nouvelle feuille, vide."
+  },
+  {
+   "c": "A1",
+   "sheets": {
+    "list": [
+     "Feuil1",
+     "Dépenses"
+    ],
+    "on": 1
+   },
+   "keys": "Double-clic",
+   "t": "Double-cliquez sur un onglet pour le renommer."
+  },
+  {
+   "c": "A1",
+   "sheets": {
+    "list": [
+     "Ventes",
+     "Dépenses"
+    ],
+    "on": 0
+   },
+   "set": {
+    "A1": "Mois",
+    "B1": "Ventes",
+    "A2": "Janvier",
+    "B2": "1 200",
+    "A3": "Février",
+    "B3": "950"
+   },
+   "t": "Un clic sur un onglet affiche sa feuille. Donnez un nom clair à chacune."
+  }
+ ],
+ "guide": {
+  "question": "Comment ajouter, renommer et parcourir les feuilles d'un classeur Excel ?",
+  "intro": "Un classeur Excel peut contenir plusieurs feuilles, dont les onglets apparaissent en bas de la fenêtre. Le bouton + à droite des onglets ajoute une feuille vide ; un double-clic sur un onglet permet de le renommer ; un clic affiche sa feuille. Donnez à chaque feuille un nom court et clair, par exemple Ventes ou Synthèse.",
+  "exemple": {
+   "titre": "À retenir",
+   "formule": "Un classeur = plusieurs feuilles",
+   "explication": "Une feuille Ventes pour les données, une feuille Synthèse pour les totaux : chacune garde son rôle."
+  },
+  "erreurs": [
+   [
+    "Le nom est refusé",
+    "Il contient un caractère interdit (/ \\ ? * [ ] :) ou dépasse 31 caractères."
+   ],
+   [
+    "Les onglets sont invisibles",
+    "La fenêtre est trop étroite, ou l'option est désactivée : Fichier › Options › Options avancées › Afficher les onglets de classeur."
+   ]
+  ],
+  "faq": [
+   [
+    "Comment déplacer ou copier une feuille ?",
+    "Faites glisser l'onglet ; avec Ctrl enfoncé, vous la copiez."
+   ],
+   [
+    "Comment supprimer une feuille ?",
+    "Clic droit sur l'onglet › Supprimer. Attention, Ctrl + Z ne l'annule pas."
+   ],
+   [
+    "Comment colorer un onglet ?",
+    "Clic droit sur l'onglet › Couleur d'onglet."
+   ]
+  ]
+ },
+ "voirAussi": [
+  "reference-a-une-autre-feuille",
+  "somme-sur-plusieurs-feuilles",
+  "raccourcis-classeur",
+  "ecran-excel"
  ]
 }

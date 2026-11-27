@@ -3,15 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>CHERCHE – Excel en animation | Clic par clic</title>
-<meta name="description" content="Trouver la position d'un caractère dans un texte. Leçon Excel animée en 3 étapes, niveau intermédiaire, gratuite.">
+<title>CHERCHE dans Excel : trouver la position d'un caractère</title>
+<meta name="description" content="CHERCHE (SEARCH en anglais) renvoie la position d'un caractère ou d'un mot dans un texte.">
 <link rel="canonical" href="https://mehdinourreddine62.github.io/clic-par-clic/excel/cherche/">
 <meta name="robots" content="index,follow">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="Clic par clic">
-<meta property="og:title" content="CHERCHE – Excel en animation | Clic par clic">
-<meta property="og:description" content="Trouver la position d'un caractère dans un texte. Leçon Excel animée en 3 étapes, niveau intermédiaire, gratuite.">
+<meta property="og:title" content="CHERCHE dans Excel : trouver la position d'un caractère">
+<meta property="og:description" content="CHERCHE (SEARCH en anglais) renvoie la position d'un caractère ou d'un mot dans un texte.">
 <meta property="og:url" content="https://mehdinourreddine62.github.io/clic-par-clic/excel/cherche/">
 <meta property="og:image" content="https://mehdinourreddine62.github.io/clic-par-clic/assets/og-excel.png">
 <meta property="og:image:width" content="1200">
@@ -61,7 +61,18 @@
     <a class="dl" href="../../fichiers/excel/cherche.xlsx" download="cherche.xlsx"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg><span><b>Télécharger le fichier d'exercice</b><small>Excel · consignes, données de départ et solution</small></span></a><div class="pband" id="pband" hidden></div>
     <details class="sx"><summary>Syntaxe <code>=CHERCHE(texte_cherché; texte)</code></summary><dl><dt>texte_cherché</dt><dd>Le caractère ou le mot à trouver</dd><dt>texte</dt><dd>La cellule où chercher</dd><dt>TROUVE</dt><dd>La même chose, en distinguant majuscules et minuscules</dd></dl></details>
     <details class="sx"><summary>Résumé écrit des étapes</summary><ol class="steps"><li>CHERCHE donne la position d'un caractère : l'arobase est le 11e caractère.</li><li>Cette position sert à découper : GAUCHE prend tout ce qui précède l'arobase.</li><li>C'est la méthode qui fonctionne dans toutes les versions d'Excel, même anciennes.</li></ol></details>
-    <section class="also"><h2>Voir aussi</h2><div class="also-l"><a href="../assembler-texte/"><b>Assembler du texte (&amp;)</b><small>Coller plusieurs textes dans une seule cellule.</small></a><a href="../gauche-droite-stxt/"><b>GAUCHE, DROITE et STXT</b><small>Extraire le début, la fin ou le milieu d'un texte.</small></a><a href="../majuscule-minuscule-nompropre/"><b>MAJUSCULE, MINUSCULE et NOMPROPRE</b><small>Uniformiser la casse de noms saisis n'importe comment.</small></a></div></section>
+    <section class="guide">
+      <h2>Comment trouver la position d'un caractère avec CHERCHE dans Excel ?</h2>
+      <p>CHERCHE (SEARCH en anglais) renvoie la position d'un caractère ou d'un mot dans un texte. Combinée à GAUCHE, DROITE ou STXT, elle permet de découper un texte à un endroit précis : avant l'arobase d'une adresse, après un tiret. Elle ignore les majuscules ; TROUVE fait la même chose en les respectant.</p>
+      <h3>Exemple</h3>
+      <p><code class="gx">=GAUCHE(A2;CHERCHE(&quot;@&quot;;A2)-1)</code></p>
+      <p>Dans lea.martin@ecole.fr, l'arobase est le 11e caractère : GAUCHE garde les 10 premiers, lea.martin.</p>
+      <h3>Erreurs fréquentes</h3>
+      <ul><li><b>#VALEUR!</b>Le caractère cherché n'existe pas dans le texte : entourez la formule de SIERREUR.</li><li><b>L'arobase est incluse</b>Oubli du -1 après CHERCHE.</li></ul>
+      <h3>Questions fréquentes</h3>
+      <h4>Quelle différence avec TROUVE ?</h4><p>TROUVE distingue majuscules et minuscules ; CHERCHE non.</p><h4>Existe-t-il plus simple ?</h4><p>Dans Excel 365, TEXTE.AVANT(A2;&quot;@&quot;) donne directement lea.martin.</p><h4>Comment savoir si un mot est présent ?</h4><p>=ESTNUM(CHERCHE(&quot;ecole&quot;;A2)) renvoie VRAI ou FAUX.</p>
+    </section>
+    <section class="also"><h2>Voir aussi</h2><div class="also-l"><a href="../texte-avant-texte-apres/"><b>TEXTE.AVANT et TEXTE.APRES</b><small>Extraire ce qui se trouve avant ou après un caractère.</small></a><a href="../gauche-droite-stxt/"><b>GAUCHE, DROITE et STXT</b><small>Extraire le début, la fin ou le milieu d'un texte.</small></a><a href="../nbcar/"><b>NBCAR</b><small>Compter le nombre de caractères d'un texte.</small></a><a href="../sierreur/"><b>SIERREUR</b><small>Remplacer un message d'erreur par la valeur de son choix.</small></a></div></section>
     <nav class="lnav" aria-label="Leçons voisines"><a href="../nbcar/"><small>← Précédente</small>NBCAR</a><a class="nx" id="nextLesson" href="../texte-avant-texte-apres/"><small>Suivante →</small>TEXTE.AVANT et TEXTE.APRES</a></nav>
   </main>
 </div>

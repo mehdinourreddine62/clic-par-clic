@@ -6,18 +6,124 @@
  "motsCles": "sequence suite nombres numéroter générer tableau propagation",
  "syntaxe": "=SEQUENCE(lignes; [colonnes]; [début]; [pas])",
  "arguments": [
-  ["lignes","Le nombre de lignes à générer"],
-  ["colonnes","Facultatif : le nombre de colonnes"],
-  ["début; pas","Facultatifs : la valeur de départ et l'écart entre deux valeurs"],
-  ["Version","Excel 2021 et Microsoft 365"]
+  [
+   "lignes",
+   "Le nombre de lignes à générer"
+  ],
+  [
+   "colonnes",
+   "Facultatif : le nombre de colonnes"
+  ],
+  [
+   "début; pas",
+   "Facultatifs : la valeur de départ et l'écart entre deux valeurs"
+  ],
+  [
+   "Version",
+   "Excel 2021 et Microsoft 365"
+  ]
  ],
  "grille": [
-  ["Numéro","","Tableau","","","","","De 5 en 5"]
+  [
+   "Numéro",
+   "",
+   "Tableau",
+   "",
+   "",
+   "",
+   "",
+   "De 5 en 5"
+  ]
  ],
+ "titreSeo": "SEQUENCE dans Excel : générer une suite de nombres",
  "etapes": [
-  {"c":"A2","f":"=SEQUENCE(5)","v":"1","set":{"A3":"2","A4":"3","A5":"4","A6":"5"},"spill":"A2:A6","t":"SEQUENCE(5) génère les nombres de 1 à 5, qui se propagent vers le bas."},
-  {"c":"C2","f":"=SEQUENCE(3;4)","v":"1","set":{"D2":"2","E2":"3","F2":"4","C3":"5","D3":"6","E3":"7","F3":"8","C4":"9","D4":"10","E4":"11","F4":"12"},"spill":"A2:A6 C2:F4","t":"Avec deux arguments, on obtient un tableau : 3 lignes et 4 colonnes."},
-  {"c":"H2","f":"=SEQUENCE(4;1;10;5)","v":"10","set":{"H3":"15","H4":"20","H5":"25"},"spill":"A2:A6 C2:F4 H2:H5","t":"Les deux derniers arguments fixent le départ et le pas : on commence à 10 et on avance de 5."},
-  {"c":"H2","t":"Pratique pour numéroter une liste, ou générer des dates : =AUJOURDHUI()+SEQUENCE(7)-1 donne les 7 prochains jours."}
+  {
+   "c": "A2",
+   "f": "=SEQUENCE(5)",
+   "v": "1",
+   "set": {
+    "A3": "2",
+    "A4": "3",
+    "A5": "4",
+    "A6": "5"
+   },
+   "spill": "A2:A6",
+   "t": "SEQUENCE(5) génère les nombres de 1 à 5, qui se propagent vers le bas."
+  },
+  {
+   "c": "C2",
+   "f": "=SEQUENCE(3;4)",
+   "v": "1",
+   "set": {
+    "D2": "2",
+    "E2": "3",
+    "F2": "4",
+    "C3": "5",
+    "D3": "6",
+    "E3": "7",
+    "F3": "8",
+    "C4": "9",
+    "D4": "10",
+    "E4": "11",
+    "F4": "12"
+   },
+   "spill": "A2:A6 C2:F4",
+   "t": "Avec deux arguments, on obtient un tableau : 3 lignes et 4 colonnes."
+  },
+  {
+   "c": "H2",
+   "f": "=SEQUENCE(4;1;10;5)",
+   "v": "10",
+   "set": {
+    "H3": "15",
+    "H4": "20",
+    "H5": "25"
+   },
+   "spill": "A2:A6 C2:F4 H2:H5",
+   "t": "Les deux derniers arguments fixent le départ et le pas : on commence à 10 et on avance de 5."
+  },
+  {
+   "c": "H2",
+   "t": "Pratique pour numéroter une liste, ou générer des dates : =AUJOURDHUI()+SEQUENCE(7)-1 donne les 7 prochains jours."
+  }
+ ],
+ "guide": {
+  "question": "Comment générer automatiquement une suite de nombres avec SEQUENCE ?",
+  "intro": "SEQUENCE génère une suite de nombres qui se répand automatiquement dans les cellules voisines. Ses arguments : nombre de lignes, nombre de colonnes, valeur de départ et pas. Elle sert à numéroter une liste ou à créer une série de dates, sans recopier. Disponible dans Excel 365 et 2021.",
+  "exemple": {
+   "titre": "Exemple",
+   "formule": "=SEQUENCE(4;1;10;5)",
+   "explication": "Renvoie 10, 15, 20, 25 sur quatre lignes. =SEQUENCE(5) donne 1 à 5 ; =SEQUENCE(3;4) remplit un tableau de 3 lignes et 4 colonnes, de 1 à 12."
+  },
+  "erreurs": [
+   [
+    "#PROPAGATION!",
+    "Une cellule de la zone de résultat n'est pas vide : libérez la place."
+   ],
+   [
+    "Les dates s'affichent en nombres",
+    "Appliquez le format Date courte à la zone."
+   ]
+  ],
+  "faq": [
+   [
+    "Comment générer les 7 prochains jours ?",
+    "=AUJOURDHUI()+SEQUENCE(7)-1."
+   ],
+   [
+    "Comment numéroter une liste qui s'allonge ?",
+    "=SEQUENCE(NBVAL(A2:A100))."
+   ],
+   [
+    "Peut-on compter à rebours ?",
+    "Oui, avec un pas négatif : =SEQUENCE(5;1;5;-1)."
+   ]
+  ]
+ },
+ "voirAussi": [
+  "erreur-propagation",
+  "recopier-une-serie",
+  "let",
+  "unique-trier"
  ]
 }

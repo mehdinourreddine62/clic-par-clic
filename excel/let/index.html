@@ -3,15 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>LET – Excel en animation | Clic par clic</title>
-<meta name="description" content="Nommer un calcul pour ne l'écrire qu'une fois. Leçon Excel animée en 4 étapes, niveau avancé, gratuite.">
+<title>LET dans Excel : nommer un calcul dans une formule</title>
+<meta name="description" content="LET donne un nom à un calcul à l'intérieur d'une formule : on l'écrit une seule fois, puis on réutilise ce nom.">
 <link rel="canonical" href="https://mehdinourreddine62.github.io/clic-par-clic/excel/let/">
 <meta name="robots" content="index,follow">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="Clic par clic">
-<meta property="og:title" content="LET – Excel en animation | Clic par clic">
-<meta property="og:description" content="Nommer un calcul pour ne l'écrire qu'une fois. Leçon Excel animée en 4 étapes, niveau avancé, gratuite.">
+<meta property="og:title" content="LET dans Excel : nommer un calcul dans une formule">
+<meta property="og:description" content="LET donne un nom à un calcul à l'intérieur d'une formule : on l'écrit une seule fois, puis on réutilise ce nom.">
 <meta property="og:url" content="https://mehdinourreddine62.github.io/clic-par-clic/excel/let/">
 <meta property="og:image" content="https://mehdinourreddine62.github.io/clic-par-clic/assets/og-excel.png">
 <meta property="og:image:width" content="1200">
@@ -61,7 +61,18 @@
     <div class="pband" id="pband" hidden></div>
     <details class="sx"><summary>Syntaxe <code>=LET(nom; valeur; calcul)</code></summary><dl><dt>nom</dt><dd>Le nom donné au calcul intermédiaire</dd><dt>valeur</dt><dd>Le calcul à nommer</dd><dt>calcul</dt><dd>La formule finale, qui utilise le nom</dd><dt>Version</dt><dd>Excel 2021 et Microsoft 365</dd></dl></details>
     <details class="sx"><summary>Résumé écrit des étapes</summary><ol class="steps"><li>Remise de 10 % au-dessus de 100 € TTC. Le prix TTC est calculé trois fois : long et facile à mal recopier.</li><li>LET donne un nom au calcul, ici ttc. On l'écrit une fois, on l'utilise autant de fois que nécessaire.</li><li>Le résultat est identique, mais la formule se lit presque comme une phrase.</li><li>On peut nommer plusieurs calculs à la suite. Ces noms n'existent qu'à l'intérieur de la formule.</li></ol></details>
-    <section class="also"><h2>Voir aussi</h2><div class="also-l"><a href="../filtre/"><b>FILTRE</b><small>Extraire les lignes d'un tableau qui respectent une condition.</small></a><a href="../unique-trier/"><b>UNIQUE et TRIER</b><small>Obtenir une liste sans doublons, classée automatiquement.</small></a><a href="../sequence/"><b>SEQUENCE</b><small>Générer automatiquement une suite de nombres.</small></a></div></section>
+    <section class="guide">
+      <h2>À quoi sert la fonction LET dans Excel ?</h2>
+      <p>LET donne un nom à un calcul à l'intérieur d'une formule : on l'écrit une seule fois, puis on réutilise ce nom. La formule devient plus courte, plus lisible et plus rapide. Les noms n'existent qu'à l'intérieur de la formule. LET est disponible dans Excel 365 et 2021.</p>
+      <h3>Exemple</h3>
+      <p><code class="gx">=LET(ttc;A2*(1+B2);SI(ttc&gt;100;ttc*(1-C2);ttc))</code></p>
+      <p>100 € HT avec 20 % de TVA donne 120 € TTC, au-dessus de 100 € : remise de 10 %, prix final 108 €. Pour 80 € HT : 96 € TTC, sans remise.</p>
+      <h3>Erreurs fréquentes</h3>
+      <ul><li><b>#NOM?</b>Un nom contient un espace ou ressemble à une adresse de cellule (TVA1, par exemple) : choisissez ttc ou prix_ttc.</li><li><b>Le nombre d'arguments est incorrect</b>Chaque nom doit être suivi de sa valeur, et le dernier argument est le calcul final.</li></ul>
+      <h3>Questions fréquentes</h3>
+      <h4>Peut-on nommer plusieurs calculs ?</h4><p>Oui : =LET(ttc;…;remise;…;calcul_final).</p><h4>LET remplace-t-il les noms de plage ?</h4><p>Non : un nom de plage vaut pour tout le classeur, un nom LET pour une seule formule.</p><h4>Quel intérêt si le résultat est le même ?</h4><p>Une formule plus courte, moins d'erreurs de recopie, et un calcul fait une seule fois.</p>
+    </section>
+    <section class="also"><h2>Voir aussi</h2><div class="also-l"><a href="../si/"><b>SI</b><small>Afficher un résultat différent selon une condition.</small></a><a href="../nommer-une-plage/"><b>Nommer une plage</b><small>Remplacer une référence par un nom lisible.</small></a><a href="../lambda/"><b>LAMBDA : créer sa propre fonction</b><small>Enregistrer un calcul sous un nom et l'utiliser comme une fonction d'Excel.</small></a><a href="../tva-ht-et-ttc/"><b>TVA : passer du HT au TTC</b><small>Ajouter la TVA, et la retirer sans se tromper.</small></a></div></section>
     <nav class="lnav" aria-label="Leçons voisines"><a href="../assembler-des-plages/"><small>← Précédente</small>ASSEMB.V : réunir plusieurs listes</a><a class="nx" id="nextLesson" href="../lambda/"><small>Suivante →</small>LAMBDA : créer sa propre fonction</a></nav>
   </main>
 </div>

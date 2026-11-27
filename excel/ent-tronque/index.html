@@ -3,15 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>ENT et TRONQUE – Excel en animation | Clic par clic</title>
-<meta name="description" content="Garder uniquement la partie entière d'un nombre. Leçon Excel animée en 3 étapes, niveau intermédiaire, gratuite.">
+<title>ENT et TRONQUE dans Excel : garder la partie entière</title>
+<meta name="description" content="ENT (INT en anglais) renvoie l'entier inférieur ou égal au nombre ; TRONQUE (TRUNC) coupe simplement les décimales.">
 <link rel="canonical" href="https://mehdinourreddine62.github.io/clic-par-clic/excel/ent-tronque/">
 <meta name="robots" content="index,follow">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="Clic par clic">
-<meta property="og:title" content="ENT et TRONQUE – Excel en animation | Clic par clic">
-<meta property="og:description" content="Garder uniquement la partie entière d'un nombre. Leçon Excel animée en 3 étapes, niveau intermédiaire, gratuite.">
+<meta property="og:title" content="ENT et TRONQUE dans Excel : garder la partie entière">
+<meta property="og:description" content="ENT (INT en anglais) renvoie l'entier inférieur ou égal au nombre ; TRONQUE (TRUNC) coupe simplement les décimales.">
 <meta property="og:url" content="https://mehdinourreddine62.github.io/clic-par-clic/excel/ent-tronque/">
 <meta property="og:image" content="https://mehdinourreddine62.github.io/clic-par-clic/assets/og-excel.png">
 <meta property="og:image:width" content="1200">
@@ -61,7 +61,18 @@
     <a class="dl" href="../../fichiers/excel/ent-tronque.xlsx" download="ent-tronque.xlsx"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg><span><b>Télécharger le fichier d'exercice</b><small>Excel · consignes, données de départ et solution</small></span></a><div class="pband" id="pband" hidden></div>
     <details class="sx"><summary>Syntaxe <code>=ENT(nombre)</code></summary><dl><dt>ENT</dt><dd>L'entier immédiatement inférieur</dd><dt>TRONQUE</dt><dd>Supprime les décimales, sans arrondir</dd></dl></details>
     <details class="sx"><summary>Résumé écrit des étapes</summary><ol class="steps"><li>ENT renvoie l'entier inférieur.</li><li>TRONQUE coupe simplement les décimales.</li><li>La différence se voit sur les nombres négatifs : -8 pour ENT, -7 pour TRONQUE.</li></ol></details>
-    <section class="also"><h2>Voir aussi</h2><div class="also-l"><a href="../somme/"><b>SOMME</b><small>Additionner une plage de cellules.</small></a><a href="../produit/"><b>PRODUIT</b><small>Multiplier toutes les valeurs d'une plage.</small></a><a href="../sommeprod/"><b>SOMMEPROD</b><small>Multiplier deux colonnes ligne par ligne, puis tout additionner.</small></a></div></section>
+    <section class="guide">
+      <h2>Quelle différence entre ENT et TRONQUE dans Excel ?</h2>
+      <p>ENT (INT en anglais) renvoie l'entier inférieur ou égal au nombre ; TRONQUE (TRUNC) coupe simplement les décimales. Pour les nombres positifs, le résultat est identique ; la différence apparaît sur les négatifs. Aucune des deux n'arrondit : pour arrondir, utilisez ARRONDI.</p>
+      <h3>Exemple</h3>
+      <p><code class="gx">=ENT(A2)   =TRONQUE(A2)</code></p>
+      <p>7,8 donne 7 avec les deux ; 3,2 donne 3 ; mais -7,8 donne -8 avec ENT et -7 avec TRONQUE.</p>
+      <h3>Erreurs fréquentes</h3>
+      <ul><li><b>Le résultat semble arrondi</b>Le format de cellule masque les décimales : vérifiez la valeur réelle dans la barre de formule.</li><li><b>#VALEUR!</b>Le nombre est saisi comme texte.</li></ul>
+      <h3>Questions fréquentes</h3>
+      <h4>Comment garder une décimale ?</h4><p>=TRONQUE(A2;1) coupe après la première décimale.</p><h4>Comment garder seulement la partie décimale ?</h4><p>=A2-ENT(A2).</p><h4>ENT ou ARRONDI ?</h4><p>ENT coupe toujours vers le bas ; ARRONDI va au plus proche.</p>
+    </section>
+    <section class="also"><h2>Voir aussi</h2><div class="also-l"><a href="../arrondi/"><b>ARRONDI</b><small>Garder le nombre de décimales voulu.</small></a><a href="../arrondi-sup-inf/"><b>ARRONDI.SUP et ARRONDI.INF</b><small>Arrondir toujours vers le haut, ou toujours vers le bas.</small></a><a href="../mod/"><b>MOD</b><small>Le reste d'une division : utile pour repérer les nombres pairs.</small></a><a href="../abs/"><b>ABS</b><small>Supprimer le signe d'un nombre pour ne garder que l'écart.</small></a></div></section>
     <nav class="lnav" aria-label="Leçons voisines"><a href="../arrondi-sup-inf/"><small>← Précédente</small>ARRONDI.SUP et ARRONDI.INF</a><a class="nx" id="nextLesson" href="../mod/"><small>Suivante →</small>MOD</a></nav>
   </main>
 </div>

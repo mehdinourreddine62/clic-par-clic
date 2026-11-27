@@ -6,17 +6,97 @@
  "motsCles": "reste division pair impair modulo",
  "syntaxe": "=MOD(nombre; diviseur)",
  "arguments": [
-  ["nombre","Le nombre à diviser"],
-  ["diviseur","Par combien on divise"]
+  [
+   "nombre",
+   "Le nombre à diviser"
+  ],
+  [
+   "diviseur",
+   "Par combien on divise"
+  ]
  ],
  "grille": [
-  ["Nombre","Reste","Pair ou impair"],
-  ["7","",""],
-  ["12","",""],
-  ["25","",""]
+  [
+   "Nombre",
+   "Reste",
+   "Pair ou impair"
+  ],
+  [
+   "7",
+   "",
+   ""
+  ],
+  [
+   "12",
+   "",
+   ""
+  ],
+  [
+   "25",
+   "",
+   ""
+  ]
  ],
+ "titreSeo": "MOD dans Excel : reste d'une division, pair ou impair",
  "etapes": [
-  {"c":"B2","f":"=MOD(A2;2)","v":"1","fill":{"B3":"0","B4":"1"},"t":"MOD renvoie le reste de la division : 7 divisé par 2 donne 3, reste 1."},
-  {"c":"C2","f":"=SI(MOD(A2;2)=0;\"Pair\";\"Impair\")","v":"Impair","fill":{"C3":"Pair","C4":"Impair"},"t":"Un reste égal à 0 signifie que le nombre est pair."}
+  {
+   "c": "B2",
+   "f": "=MOD(A2;2)",
+   "v": "1",
+   "fill": {
+    "B3": "0",
+    "B4": "1"
+   },
+   "t": "MOD renvoie le reste de la division : 7 divisé par 2 donne 3, reste 1."
+  },
+  {
+   "c": "C2",
+   "f": "=SI(MOD(A2;2)=0;\"Pair\";\"Impair\")",
+   "v": "Impair",
+   "fill": {
+    "C3": "Pair",
+    "C4": "Impair"
+   },
+   "t": "Un reste égal à 0 signifie que le nombre est pair."
+  }
+ ],
+ "guide": {
+  "question": "À quoi sert la fonction MOD dans Excel ?",
+  "intro": "MOD (MOD en anglais aussi) renvoie le reste d'une division entière. Elle sert à savoir si un nombre est pair, à repérer une ligne sur deux, ou à répartir des éléments en groupes. Un reste égal à 0 signifie que le nombre est divisible.",
+  "exemple": {
+   "titre": "Exemple",
+   "formule": "=SI(MOD(A2;2)=0;\"Pair\";\"Impair\")",
+   "explication": "7 divisé par 2 donne 3, reste 1 : impair. 12 donne un reste de 0 : pair. 25 : reste 1, impair."
+  },
+  "erreurs": [
+   [
+    "#DIV/0!",
+    "Le diviseur vaut 0."
+   ],
+   [
+    "Résultat inattendu avec un nombre négatif",
+    "Le reste prend le signe du diviseur : =MOD(-7;2) donne 1."
+   ]
+  ],
+  "faq": [
+   [
+    "Comment colorer une ligne sur deux ?",
+    "Mise en forme conditionnelle avec la formule =MOD(LIGNE();2)=0."
+   ],
+   [
+    "Quelle différence avec QUOTIENT ?",
+    "QUOTIENT donne la partie entière de la division, MOD le reste."
+   ],
+   [
+    "Comment convertir des minutes en heures et minutes ?",
+    "Heures : =QUOTIENT(A2;60) ; minutes restantes : =MOD(A2;60)."
+   ]
+  ]
+ },
+ "voirAussi": [
+  "ent-tronque",
+  "si",
+  "abs",
+  "puissance-racine"
  ]
 }

@@ -7,17 +7,133 @@
  "syntaxe": "=Ventes!B4",
  "sansEnTete": true,
  "arguments": [
-  ["Ventes","Le nom de la feuille"],
-  ["!","Sépare la feuille et la cellule"],
-  ["Apostrophes","Ajoutées si le nom contient un espace"]
+  [
+   "Ventes",
+   "Le nom de la feuille"
+  ],
+  [
+   "!",
+   "Sépare la feuille et la cellule"
+  ],
+  [
+   "Apostrophes",
+   "Ajoutées si le nom contient un espace"
+  ]
  ],
  "grille": [
-  ["Total des ventes",""]
+  [
+   "Total des ventes",
+   ""
+  ]
  ],
+ "titreSeo": "Formule Excel avec une cellule d'une autre feuille",
  "etapes": [
-  {"c":"B1","sheets":{"list":["Synthèse","Ventes"],"on":0},"spot":"tabs","t":"Les données sont sur la feuille Ventes, mais on veut leur total ici, sur Synthèse."},
-  {"c":"B4","sheets":{"list":["Synthèse","Ventes"],"on":1},"set":{"A1":"Région","B1":"Montant","A2":"Nord","B2":"430","A3":"Sud","B3":"290","A4":"Total","B4":"720"},"bar":"=Ventes!B4","t":"Tapez = puis cliquez sur l'onglet Ventes et sur la cellule B4 : Excel écrit la référence tout seul."},
-  {"c":"B1","sheets":{"list":["Synthèse","Ventes"],"on":0},"set":{"A1":"Total des ventes","B1":"720","A2":"","B2":"","A3":"","B3":"","A4":"","B4":""},"bar":"=Ventes!B4","t":"Validez : Synthèse affiche 720. Le point d'exclamation sépare le nom de la feuille et la cellule."},
-  {"c":"B1","sheets":{"list":["Synthèse","Ventes 2026"],"on":0},"bar":"='Ventes 2026'!B4","t":"Si le nom de la feuille contient un espace, Excel l'entoure d'apostrophes."}
+  {
+   "c": "B1",
+   "sheets": {
+    "list": [
+     "Synthèse",
+     "Ventes"
+    ],
+    "on": 0
+   },
+   "spot": "tabs",
+   "t": "Les données sont sur la feuille Ventes, mais on veut leur total ici, sur Synthèse."
+  },
+  {
+   "c": "B4",
+   "sheets": {
+    "list": [
+     "Synthèse",
+     "Ventes"
+    ],
+    "on": 1
+   },
+   "set": {
+    "A1": "Région",
+    "B1": "Montant",
+    "A2": "Nord",
+    "B2": "430",
+    "A3": "Sud",
+    "B3": "290",
+    "A4": "Total",
+    "B4": "720"
+   },
+   "bar": "=Ventes!B4",
+   "t": "Tapez = puis cliquez sur l'onglet Ventes et sur la cellule B4 : Excel écrit la référence tout seul."
+  },
+  {
+   "c": "B1",
+   "sheets": {
+    "list": [
+     "Synthèse",
+     "Ventes"
+    ],
+    "on": 0
+   },
+   "set": {
+    "A1": "Total des ventes",
+    "B1": "720",
+    "A2": "",
+    "B2": "",
+    "A3": "",
+    "B3": "",
+    "A4": "",
+    "B4": ""
+   },
+   "bar": "=Ventes!B4",
+   "t": "Validez : Synthèse affiche 720. Le point d'exclamation sépare le nom de la feuille et la cellule."
+  },
+  {
+   "c": "B1",
+   "sheets": {
+    "list": [
+     "Synthèse",
+     "Ventes 2026"
+    ],
+    "on": 0
+   },
+   "bar": "='Ventes 2026'!B4",
+   "t": "Si le nom de la feuille contient un espace, Excel l'entoure d'apostrophes."
+  }
+ ],
+ "guide": {
+  "question": "Comment utiliser une cellule d'une autre feuille dans une formule Excel ?",
+  "intro": "Pour reprendre une valeur d'une autre feuille, tapez =, cliquez sur l'onglet de la feuille, puis sur la cellule, et validez : Excel écrit la référence tout seul. Le point d'exclamation sépare le nom de la feuille et l'adresse de la cellule. Si le nom contient un espace, Excel l'entoure d'apostrophes.",
+  "exemple": {
+   "titre": "Exemple",
+   "formule": "=Ventes!B4",
+   "explication": "Sur la feuille Synthèse, la formule affiche 720, le total calculé en B4 de la feuille Ventes. Avec une feuille nommée Ventes 2026 : ='Ventes 2026'!B4."
+  },
+  "erreurs": [
+   [
+    "#REF!",
+    "La feuille a été supprimée."
+   ],
+   [
+    "Une fenêtre demande de choisir un fichier",
+    "Le nom de la feuille est mal écrit : Excel croit à un autre classeur. Recliquez plutôt que de taper."
+   ]
+  ],
+  "faq": [
+   [
+    "La référence suit-elle si je renomme la feuille ?",
+    "Oui, Excel met les formules à jour."
+   ],
+   [
+    "Comment additionner la même cellule sur plusieurs feuilles ?",
+    "=SOMME(Janvier:Mars!B4)."
+   ],
+   [
+    "Peut-on viser un autre fichier ?",
+    "Oui, en cliquant dans l'autre classeur ouvert ; la formule contient alors son nom entre crochets."
+   ]
+  ]
+ },
+ "voirAussi": [
+  "somme-sur-plusieurs-feuilles",
+  "feuilles-du-classeur",
+  "nommer-une-plage",
+  "erreur-ref"
  ]
 }

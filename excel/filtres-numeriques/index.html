@@ -3,15 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Filtres numériques – Excel en animation | Clic par clic</title>
-<meta name="description" content="Filtrer au-dessus d'un seuil, entre deux valeurs ou les meilleurs résultats. Leçon Excel animée en 4 étapes, niveau intermédiaire, gratuite.">
+<title>Filtres numériques Excel : supérieur à, entre, 10 premiers</title>
+<meta name="description" content="Sur une colonne de nombres, la flèche de filtre propose Filtres numériques : Supérieur à, Inférieur à, Entre, 10 premiers, Au-dessus de la moyenne… Activez…">
 <link rel="canonical" href="https://mehdinourreddine62.github.io/clic-par-clic/excel/filtres-numeriques/">
 <meta name="robots" content="index,follow">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="Clic par clic">
-<meta property="og:title" content="Filtres numériques – Excel en animation | Clic par clic">
-<meta property="og:description" content="Filtrer au-dessus d'un seuil, entre deux valeurs ou les meilleurs résultats. Leçon Excel animée en 4 étapes, niveau intermédiaire, gratuite.">
+<meta property="og:title" content="Filtres numériques Excel : supérieur à, entre, 10 premiers">
+<meta property="og:description" content="Sur une colonne de nombres, la flèche de filtre propose Filtres numériques : Supérieur à, Inférieur à, Entre, 10 premiers, Au-dessus de la moyenne… Activez…">
 <meta property="og:url" content="https://mehdinourreddine62.github.io/clic-par-clic/excel/filtres-numeriques/">
 <meta property="og:image" content="https://mehdinourreddine62.github.io/clic-par-clic/assets/og-excel.png">
 <meta property="og:image:width" content="1200">
@@ -61,7 +61,18 @@
     <div class="pband" id="pband" hidden></div>
     <details class="sx"><summary>Syntaxe <code>Flèche de filtre › Filtres numériques</code></summary><dl><dt>Supérieur à</dt><dd>Garde les valeurs au-dessus d'un seuil</dd><dt>Entre</dt><dd>Garde une fourchette</dd><dt>10 premiers</dt><dd>Garde les meilleures valeurs, en nombre réglable</dd></dl></details>
     <details class="sx"><summary>Résumé écrit des étapes</summary><ol class="steps"><li>Activez le filtre sur le tableau.</li><li>Filtres numériques › Supérieur à… 200 : seules les ventes au-dessus de 200 restent.</li><li>« 10 premiers », réglé sur 2 : les deux meilleures ventes, sans avoir à trier.</li><li>« Entre » garde une fourchette. Les filtres textuels et de dates fonctionnent de la même façon.</li></ol></details>
-    <section class="also"><h2>Voir aussi</h2><div class="also-l"><a href="../trier-sur-plusieurs-colonnes/"><b>Trier sur plusieurs colonnes</b><small>Classer par région, puis par montant à l'intérieur de chaque région.</small></a><a href="../tri-personnalise/"><b>Trier dans un ordre personnalisé</b><small>Classer selon un ordre logique, et non alphabétique.</small></a><a href="../filtrer-par-couleur/"><b>Filtrer par couleur</b><small>N'afficher que les lignes surlignées d'une couleur.</small></a></div></section>
+    <section class="guide">
+      <h2>Comment filtrer des nombres supérieurs à une valeur dans Excel ?</h2>
+      <p>Sur une colonne de nombres, la flèche de filtre propose Filtres numériques : Supérieur à, Inférieur à, Entre, 10 premiers, Au-dessus de la moyenne… Activez le filtre (Données › Filtrer), ouvrez la flèche, choisissez la condition et tapez la valeur. Les autres lignes sont masquées, pas supprimées.</p>
+      <h3>Exemple</h3>
+      <p><code class="gx">Filtres numériques › Supérieur à… 200</code></p>
+      <p>Sur six produits, seuls stylos (320), trousses (260) et cahiers (210) restent. Avec 10 premiers réglé sur 2 : stylos et trousses.</p>
+      <h3>Erreurs fréquentes</h3>
+      <ul><li><b>Filtres numériques n'apparaît pas</b>La colonne contient du texte : Excel propose alors Filtres textuels. Convertissez les nombres.</li><li><b>Une valeur égale au seuil disparaît</b>Supérieur à exclut le seuil : choisissez Supérieur ou égal à.</li></ul>
+      <h3>Questions fréquentes</h3>
+      <h4>Comment faire la somme des lignes visibles ?</h4><p>=SOUS.TOTAL(9;B2:B7), qui ignore les lignes masquées.</p><h4>Peut-on filtrer deux colonnes ?</h4><p>Oui, les filtres se cumulent colonne par colonne.</p><h4>Comment enlever tous les filtres ?</h4><p>Données › Effacer, ou Ctrl + Maj + L pour retirer les flèches.</p>
+    </section>
+    <section class="also"><h2>Voir aussi</h2><div class="also-l"><a href="../trier-et-filtrer/"><b>Trier et filtrer</b><small>Classer une liste et n'afficher que certaines lignes.</small></a><a href="../combiner-plusieurs-filtres/"><b>Combiner plusieurs filtres</b><small>Filtrer sur deux colonnes à la fois.</small></a><a href="../filtrer-par-couleur/"><b>Filtrer par couleur</b><small>N'afficher que les lignes surlignées d'une couleur.</small></a><a href="../filtre/"><b>FILTRE</b><small>Extraire les lignes d'un tableau qui respectent une condition.</small></a></div></section>
     <nav class="lnav" aria-label="Leçons voisines"><a href="../filtrer-par-couleur/"><small>← Précédente</small>Filtrer par couleur</a><a class="nx" id="nextLesson" href="../combiner-plusieurs-filtres/"><small>Suivante →</small>Combiner plusieurs filtres</a></nav>
   </main>
 </div>

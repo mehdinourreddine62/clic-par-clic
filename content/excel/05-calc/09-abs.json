@@ -6,16 +6,98 @@
  "motsCles": "valeur absolue écart signe négatif",
  "syntaxe": "=ABS(nombre)",
  "arguments": [
-  ["nombre","La valeur dont on retire le signe"]
+  [
+   "nombre",
+   "La valeur dont on retire le signe"
+  ]
  ],
  "grille": [
-  ["Prévu","Réel","Écart","Écart absolu"],
-  ["100","120","",""],
-  ["80","65","",""],
-  ["50","50","",""]
+  [
+   "Prévu",
+   "Réel",
+   "Écart",
+   "Écart absolu"
+  ],
+  [
+   "100",
+   "120",
+   "",
+   ""
+  ],
+  [
+   "80",
+   "65",
+   "",
+   ""
+  ],
+  [
+   "50",
+   "50",
+   "",
+   ""
+  ]
  ],
+ "titreSeo": "ABS dans Excel : valeur absolue d'un nombre",
  "etapes": [
-  {"c":"C2","f":"=B2-A2","v":"20","fill":{"C3":"-15","C4":"0"},"t":"L'écart peut être positif ou négatif."},
-  {"c":"D2","f":"=ABS(C2)","v":"20","fill":{"D3":"15","D4":"0"},"mark":"D3","t":"ABS retire le signe : on ne garde que la taille de l'écart."}
+  {
+   "c": "C2",
+   "f": "=B2-A2",
+   "v": "20",
+   "fill": {
+    "C3": "-15",
+    "C4": "0"
+   },
+   "t": "L'écart peut être positif ou négatif."
+  },
+  {
+   "c": "D2",
+   "f": "=ABS(C2)",
+   "v": "20",
+   "fill": {
+    "D3": "15",
+    "D4": "0"
+   },
+   "mark": "D3",
+   "t": "ABS retire le signe : on ne garde que la taille de l'écart."
+  }
+ ],
+ "guide": {
+  "question": "À quoi sert la fonction ABS dans Excel ?",
+  "intro": "ABS renvoie la valeur absolue d'un nombre, c'est-à-dire le nombre sans son signe. Elle sert à mesurer la taille d'un écart sans se soucier de son sens : un écart de -15 et un écart de +15 ont la même importance.",
+  "exemple": {
+   "titre": "Exemple",
+   "formule": "=ABS(C2)",
+   "explication": "Prévu 100, réel 120 : écart 20. Prévu 80, réel 65 : écart -15, valeur absolue 15. Prévu 50, réel 50 : 0."
+  },
+  "erreurs": [
+   [
+    "Le signe a disparu alors qu'il comptait",
+    "Gardez une colonne avec l'écart signé, et ajoutez ABS dans une autre."
+   ],
+   [
+    "#VALEUR!",
+    "La cellule contient du texte."
+   ]
+  ],
+  "faq": [
+   [
+    "Comment calculer l'écart moyen sans signe ?",
+    "=MOYENNE(D2:D4) sur la colonne des valeurs absolues."
+   ],
+   [
+    "Comment savoir si un écart dépasse 10 dans un sens ou l'autre ?",
+    "=SI(ABS(C2)>10;\"À vérifier\";\"OK\")."
+   ],
+   [
+    "ABS change-t-il un nombre positif ?",
+    "Non : il reste identique."
+   ]
+  ]
+ },
+ "voirAussi": [
+  "mod",
+  "ent-tronque",
+  "si",
+  "pourcentages"
  ]
 }

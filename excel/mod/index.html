@@ -3,15 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>MOD – Excel en animation | Clic par clic</title>
-<meta name="description" content="Le reste d'une division : utile pour repérer les nombres pairs. Leçon Excel animée en 2 étapes, niveau intermédiaire, gratuite.">
+<title>MOD dans Excel : reste d'une division, pair ou impair</title>
+<meta name="description" content="MOD (MOD en anglais aussi) renvoie le reste d'une division entière. Elle sert à savoir si un nombre est pair, à repérer une ligne sur deux, ou à répartir des…">
 <link rel="canonical" href="https://mehdinourreddine62.github.io/clic-par-clic/excel/mod/">
 <meta name="robots" content="index,follow">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="Clic par clic">
-<meta property="og:title" content="MOD – Excel en animation | Clic par clic">
-<meta property="og:description" content="Le reste d'une division : utile pour repérer les nombres pairs. Leçon Excel animée en 2 étapes, niveau intermédiaire, gratuite.">
+<meta property="og:title" content="MOD dans Excel : reste d'une division, pair ou impair">
+<meta property="og:description" content="MOD (MOD en anglais aussi) renvoie le reste d'une division entière. Elle sert à savoir si un nombre est pair, à repérer une ligne sur deux, ou à répartir des…">
 <meta property="og:url" content="https://mehdinourreddine62.github.io/clic-par-clic/excel/mod/">
 <meta property="og:image" content="https://mehdinourreddine62.github.io/clic-par-clic/assets/og-excel.png">
 <meta property="og:image:width" content="1200">
@@ -61,7 +61,18 @@
     <a class="dl" href="../../fichiers/excel/mod.xlsx" download="mod.xlsx"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg><span><b>Télécharger le fichier d'exercice</b><small>Excel · consignes, données de départ et solution</small></span></a><div class="pband" id="pband" hidden></div>
     <details class="sx"><summary>Syntaxe <code>=MOD(nombre; diviseur)</code></summary><dl><dt>nombre</dt><dd>Le nombre à diviser</dd><dt>diviseur</dt><dd>Par combien on divise</dd></dl></details>
     <details class="sx"><summary>Résumé écrit des étapes</summary><ol class="steps"><li>MOD renvoie le reste de la division : 7 divisé par 2 donne 3, reste 1.</li><li>Un reste égal à 0 signifie que le nombre est pair.</li></ol></details>
-    <section class="also"><h2>Voir aussi</h2><div class="also-l"><a href="../somme/"><b>SOMME</b><small>Additionner une plage de cellules.</small></a><a href="../produit/"><b>PRODUIT</b><small>Multiplier toutes les valeurs d'une plage.</small></a><a href="../sommeprod/"><b>SOMMEPROD</b><small>Multiplier deux colonnes ligne par ligne, puis tout additionner.</small></a></div></section>
+    <section class="guide">
+      <h2>À quoi sert la fonction MOD dans Excel ?</h2>
+      <p>MOD (MOD en anglais aussi) renvoie le reste d'une division entière. Elle sert à savoir si un nombre est pair, à repérer une ligne sur deux, ou à répartir des éléments en groupes. Un reste égal à 0 signifie que le nombre est divisible.</p>
+      <h3>Exemple</h3>
+      <p><code class="gx">=SI(MOD(A2;2)=0;&quot;Pair&quot;;&quot;Impair&quot;)</code></p>
+      <p>7 divisé par 2 donne 3, reste 1 : impair. 12 donne un reste de 0 : pair. 25 : reste 1, impair.</p>
+      <h3>Erreurs fréquentes</h3>
+      <ul><li><b>#DIV/0!</b>Le diviseur vaut 0.</li><li><b>Résultat inattendu avec un nombre négatif</b>Le reste prend le signe du diviseur : =MOD(-7;2) donne 1.</li></ul>
+      <h3>Questions fréquentes</h3>
+      <h4>Comment colorer une ligne sur deux ?</h4><p>Mise en forme conditionnelle avec la formule =MOD(LIGNE();2)=0.</p><h4>Quelle différence avec QUOTIENT ?</h4><p>QUOTIENT donne la partie entière de la division, MOD le reste.</p><h4>Comment convertir des minutes en heures et minutes ?</h4><p>Heures : =QUOTIENT(A2;60) ; minutes restantes : =MOD(A2;60).</p>
+    </section>
+    <section class="also"><h2>Voir aussi</h2><div class="also-l"><a href="../ent-tronque/"><b>ENT et TRONQUE</b><small>Garder uniquement la partie entière d'un nombre.</small></a><a href="../si/"><b>SI</b><small>Afficher un résultat différent selon une condition.</small></a><a href="../abs/"><b>ABS</b><small>Supprimer le signe d'un nombre pour ne garder que l'écart.</small></a><a href="../puissance-racine/"><b>PUISSANCE et RACINE</b><small>Calculer un carré ou une racine carrée.</small></a></div></section>
     <nav class="lnav" aria-label="Leçons voisines"><a href="../ent-tronque/"><small>← Précédente</small>ENT et TRONQUE</a><a class="nx" id="nextLesson" href="../abs/"><small>Suivante →</small>ABS</a></nav>
   </main>
 </div>

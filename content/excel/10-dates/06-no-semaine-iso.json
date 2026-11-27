@@ -6,17 +6,88 @@
  "motsCles": "numéro semaine calendrier week",
  "syntaxe": "=NO.SEMAINE.ISO(date)",
  "arguments": [
-  ["date","La date à analyser"],
-  ["Norme ISO","La semaine commence le lundi, comme en France"]
+  [
+   "date",
+   "La date à analyser"
+  ],
+  [
+   "Norme ISO",
+   "La semaine commence le lundi, comme en France"
+  ]
  ],
  "grille": [
-  ["Date","Semaine"],
-  ["13/11/2026",""],
-  ["01/01/2027",""],
-  ["04/01/2027",""]
+  [
+   "Date",
+   "Semaine"
+  ],
+  [
+   "13/11/2026",
+   ""
+  ],
+  [
+   "01/01/2027",
+   ""
+  ],
+  [
+   "04/01/2027",
+   ""
+  ]
  ],
+ "titreSeo": "Numéro de semaine dans Excel : NO.SEMAINE.ISO",
  "etapes": [
-  {"c":"B2","f":"=NO.SEMAINE.ISO(A2)","v":"46","fill":{"B3":"53","B4":"1"},"t":"NO.SEMAINE.ISO donne le numéro de semaine utilisé en France et en Europe."},
-  {"c":"B3","mark":"A3","t":"Le 1er janvier 2027 tombe un vendredi : il appartient encore à la semaine 53 de 2026."}
+  {
+   "c": "B2",
+   "f": "=NO.SEMAINE.ISO(A2)",
+   "v": "46",
+   "fill": {
+    "B3": "53",
+    "B4": "1"
+   },
+   "t": "NO.SEMAINE.ISO donne le numéro de semaine utilisé en France et en Europe."
+  },
+  {
+   "c": "B3",
+   "mark": "A3",
+   "t": "Le 1er janvier 2027 tombe un vendredi : il appartient encore à la semaine 53 de 2026."
+  }
+ ],
+ "guide": {
+  "question": "Comment obtenir le numéro de semaine d'une date dans Excel ?",
+  "intro": "NO.SEMAINE.ISO (ISOWEEKNUM en anglais) renvoie le numéro de semaine selon la norme ISO utilisée en France et en Europe : les semaines commencent le lundi, et la semaine 1 est celle qui contient le premier jeudi de l'année. Un 1er janvier peut donc appartenir à la dernière semaine de l'année précédente.",
+  "exemple": {
+   "titre": "Exemple",
+   "formule": "=NO.SEMAINE.ISO(A2)",
+   "explication": "Le 13/11/2026 est en semaine 46. Le vendredi 01/01/2027 est encore en semaine 53 de 2026 ; le lundi 04/01/2027 ouvre la semaine 1."
+  },
+  "erreurs": [
+   [
+    "Le numéro diffère d'un calendrier",
+    "NO.SEMAINE sans ISO suit la convention américaine (semaine du dimanche) : utilisez NO.SEMAINE.ISO."
+   ],
+   [
+    "#VALEUR!",
+    "La date est du texte : convertissez-la avec DATEVAL."
+   ]
+  ],
+  "faq": [
+   [
+    "Comment afficher « S46 » ?",
+    "=\"S\"&NO.SEMAINE.ISO(A2)."
+   ],
+   [
+    "Comment regrouper des ventes par semaine ?",
+    "Ajoutez une colonne avec NO.SEMAINE.ISO, puis un tableau croisé dynamique."
+   ],
+   [
+    "Comment trouver le lundi de la semaine ?",
+    "=A2-JOURSEM(A2;2)+1."
+   ]
+  ]
+ },
+ "voirAussi": [
+  "joursem",
+  "date",
+  "annee-mois-jour",
+  "tcd-grouper-par-mois"
  ]
 }

@@ -4,14 +4,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>TEXTE.AVANT et TEXTE.APRES dans Excel | Clic par clic</title>
-<meta name="description" content="Extraire ce qui se trouve avant ou après un caractère. Leçon Excel animée en 3 étapes, niveau intermédiaire, gratuite.">
+<meta name="description" content="TEXTE.AVANT (TEXTBEFORE en anglais) renvoie tout ce qui précède un caractère ou un mot ; TEXTE.APRES (TEXTAFTER) renvoie tout ce qui le suit.">
 <link rel="canonical" href="https://mehdinourreddine62.github.io/clic-par-clic/excel/texte-avant-texte-apres/">
 <meta name="robots" content="index,follow">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="Clic par clic">
 <meta property="og:title" content="TEXTE.AVANT et TEXTE.APRES dans Excel | Clic par clic">
-<meta property="og:description" content="Extraire ce qui se trouve avant ou après un caractère. Leçon Excel animée en 3 étapes, niveau intermédiaire, gratuite.">
+<meta property="og:description" content="TEXTE.AVANT (TEXTBEFORE en anglais) renvoie tout ce qui précède un caractère ou un mot ; TEXTE.APRES (TEXTAFTER) renvoie tout ce qui le suit.">
 <meta property="og:url" content="https://mehdinourreddine62.github.io/clic-par-clic/excel/texte-avant-texte-apres/">
 <meta property="og:image" content="https://mehdinourreddine62.github.io/clic-par-clic/assets/og-excel.png">
 <meta property="og:image:width" content="1200">
@@ -61,7 +61,18 @@
     <a class="dl" href="../../fichiers/excel/texte-avant-texte-apres.xlsx" download="texte-avant-texte-apres.xlsx"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg><span><b>Télécharger le fichier d'exercice</b><small>Excel · consignes, données de départ et solution</small></span></a><div class="pband" id="pband" hidden></div>
     <details class="sx"><summary>Syntaxe <code>=TEXTE.AVANT(texte; &quot;@&quot;)</code></summary><dl><dt>texte</dt><dd>La cellule à découper</dd><dt>délimiteur</dt><dd>Le caractère qui sert de repère</dd><dt>Version</dt><dd>Microsoft 365</dd></dl></details>
     <details class="sx"><summary>Résumé écrit des étapes</summary><ol class="steps"><li>TEXTE.AVANT renvoie tout ce qui précède le caractère indiqué.</li><li>TEXTE.APRES renvoie tout ce qui le suit.</li><li>Plus simple que CHERCHE et GAUCHE, mais réservé aux versions récentes d'Excel.</li></ol></details>
-    <section class="also"><h2>Voir aussi</h2><div class="also-l"><a href="../assembler-texte/"><b>Assembler du texte (&amp;)</b><small>Coller plusieurs textes dans une seule cellule.</small></a><a href="../gauche-droite-stxt/"><b>GAUCHE, DROITE et STXT</b><small>Extraire le début, la fin ou le milieu d'un texte.</small></a><a href="../majuscule-minuscule-nompropre/"><b>MAJUSCULE, MINUSCULE et NOMPROPRE</b><small>Uniformiser la casse de noms saisis n'importe comment.</small></a></div></section>
+    <section class="guide">
+      <h2>Comment extraire le texte avant ou après un caractère dans Excel ?</h2>
+      <p>TEXTE.AVANT (TEXTBEFORE en anglais) renvoie tout ce qui précède un caractère ou un mot ; TEXTE.APRES (TEXTAFTER) renvoie tout ce qui le suit. Elles remplacent les combinaisons de CHERCHE et GAUCHE, mais n'existent que dans Excel 365 et 2024.</p>
+      <h3>Exemple</h3>
+      <p><code class="gx">=TEXTE.AVANT(A2;&quot;@&quot;)</code></p>
+      <p>lea.martin@ecole.fr donne lea.martin ; =TEXTE.APRES(A2;&quot;@&quot;) donne ecole.fr.</p>
+      <h3>Erreurs fréquentes</h3>
+      <ul><li><b>#NOM?</b>La version d'Excel est trop ancienne : utilisez CHERCHE avec GAUCHE ou DROITE.</li><li><b>#N/A</b>Le séparateur est absent du texte : ajoutez un argument si_introuvable, ou SIERREUR.</li></ul>
+      <h3>Questions fréquentes</h3>
+      <h4>Comment viser le deuxième tiret ?</h4><p>Ajoutez le numéro de l'occurrence : =TEXTE.AVANT(A2;&quot;-&quot;;2).</p><h4>Comment partir de la fin ?</h4><p>Avec un numéro négatif : -1 désigne le dernier séparateur.</p><h4>Peut-on tout découper d'un coup ?</h4><p>FRACTIONNER.TEXTE répartit les morceaux dans plusieurs colonnes.</p>
+    </section>
+    <section class="also"><h2>Voir aussi</h2><div class="also-l"><a href="../cherche/"><b>CHERCHE</b><small>Trouver la position d'un caractère dans un texte.</small></a><a href="../gauche-droite-stxt/"><b>GAUCHE, DROITE et STXT</b><small>Extraire le début, la fin ou le milieu d'un texte.</small></a><a href="../convertir-texte-en-colonnes/"><b>Séparer un texte en colonnes</b><small>Répartir des données collées dans une seule colonne.</small></a><a href="../joindre-texte/"><b>JOINDRE.TEXTE</b><small>Assembler une plage de cellules avec un séparateur.</small></a></div></section>
     <nav class="lnav" aria-label="Leçons voisines"><a href="../cherche/"><small>← Précédente</small>CHERCHE</a><a class="nx" id="nextLesson" href="../substitue/"><small>Suivante →</small>SUBSTITUE</a></nav>
   </main>
 </div>
